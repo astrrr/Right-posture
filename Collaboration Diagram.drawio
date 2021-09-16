@@ -1,20 +1,23 @@
-<mxfile host="app.diagrams.net" modified="2021-09-16T13:14:39.865Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36" etag="P_iFB4SDHC9t-fPwkMxM" version="15.1.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-09-16T13:20:45.165Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36" etag="B0sIox8Nmb_yEt9XBVLT" version="15.1.4" type="github">
   <diagram id="fjc7ldtTmQNcsNeStD3s" name="Page-1">
-    <mxGraphModel dx="1185" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="yaiqaI036aTxPu-Qpi3E-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="180" width="30" height="60" as="geometry" />
+        <mxCell id="yaiqaI036aTxPu-Qpi3E-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="170" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="yaiqaI036aTxPu-Qpi3E-2" value="Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="220" y="180" width="100" height="80" as="geometry" />
+        <mxCell id="yaiqaI036aTxPu-Qpi3E-2" value="Boundary Object" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="170" width="100" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="yaiqaI036aTxPu-Qpi3E-3" value="Control Object" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="yaiqaI036aTxPu-Qpi3E-3" value="Control Object" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="425" y="170" width="70" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="yaiqaI036aTxPu-Qpi3E-4" value="Entity Object" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="320" y="430" width="80" height="80" as="geometry" />
+        <mxCell id="yaiqaI036aTxPu-Qpi3E-4" value="Entity Object" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="400" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jUaBnFoViU3fji7P434Q-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Collaboration Diagram: Register&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="120" width="320" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
