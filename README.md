@@ -2,3 +2,9 @@
 ระบบแจ้งเตือนลักษณะการนั่งทำงานที่ไม่ถูกต้องด้วยระบบการเรียนรู้ของเครื่อง (เฉพาะนักศึกษาต่อเนื่อง)
 
 [![MediaPipe](https://google.github.io/mediapipe/images/mediapipe_small.png)](https://google.github.io/mediapipe/)
+
+## Remove ".ipynb_checkpoints"
+
+```sh
+rm -rf `find -type d -name .ipynb_checkpoints`
+```
