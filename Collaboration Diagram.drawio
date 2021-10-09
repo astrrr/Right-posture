@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-09T06:57:48.121Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="TyR3UXSeQyl1T8XhuLJ6" version="15.4.3" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-10-09T17:42:29.976Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="Qv6MXepL4y0Ad2h1Drga" version="15.4.3" type="github" pages="5">
   <diagram id="fjc7ldtTmQNcsNeStD3s" name="Register">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -199,6 +199,50 @@
         </mxCell>
         <mxCell id="fcTOYN8bLcCC6jtCHj9_-9" value="Notification" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="x5EkYHpYVcg8RJxQ3UOt-1">
           <mxGeometry x="530" y="390" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="R28Xfm-PsqryF0zK5XKM" name="Calibrate Camera">
+    <mxGraphModel dx="981" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="K3Vmqt9MC-BAndYDo2Zg-0" />
+        <mxCell id="K3Vmqt9MC-BAndYDo2Zg-1" parent="K3Vmqt9MC-BAndYDo2Zg-0" />
+        <mxCell id="SzQoAxixKiIlWcR2m3mm-0" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="K3Vmqt9MC-BAndYDo2Zg-1" source="SzQoAxixKiIlWcR2m3mm-1" target="SzQoAxixKiIlWcR2m3mm-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SzQoAxixKiIlWcR2m3mm-1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
+          <mxGeometry x="80" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SzQoAxixKiIlWcR2m3mm-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="K3Vmqt9MC-BAndYDo2Zg-1" source="SzQoAxixKiIlWcR2m3mm-3" target="SzQoAxixKiIlWcR2m3mm-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SzQoAxixKiIlWcR2m3mm-3" value="Calibrate Camera Panel" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
+          <mxGeometry x="210" y="170" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SzQoAxixKiIlWcR2m3mm-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="K3Vmqt9MC-BAndYDo2Zg-1" source="SzQoAxixKiIlWcR2m3mm-6" target="SzQoAxixKiIlWcR2m3mm-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RGBgkfgTasmFGn7kktio-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.013;entryY=0.501;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="K3Vmqt9MC-BAndYDo2Zg-1" source="SzQoAxixKiIlWcR2m3mm-6" target="RGBgkfgTasmFGn7kktio-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SzQoAxixKiIlWcR2m3mm-6" value="Calibrate&lt;br&gt;Control" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
+          <mxGeometry x="400" y="170" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MJuNOGljZjmwG83CneEA-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="K3Vmqt9MC-BAndYDo2Zg-1" source="SzQoAxixKiIlWcR2m3mm-7" target="MJuNOGljZjmwG83CneEA-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SzQoAxixKiIlWcR2m3mm-7" value="Device" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
+          <mxGeometry x="360" y="310" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RGBgkfgTasmFGn7kktio-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Collaboration Diagram: Calibrate Camera&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
+          <mxGeometry x="10" y="60" width="410" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RGBgkfgTasmFGn7kktio-1" value="Setting" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
+          <mxGeometry x="570" y="170" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MJuNOGljZjmwG83CneEA-0" value="Camera" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
+          <mxGeometry x="320" y="460" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
