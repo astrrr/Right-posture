@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-09T06:19:42.727Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="clS6PiFgabac_VSK6VOa" version="15.4.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-10-09T06:20:29.430Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="sWfgDzHb_r65oLeWvrJV" version="15.4.3" type="github" pages="4">
   <diagram id="fjc7ldtTmQNcsNeStD3s" name="Register">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -161,6 +161,17 @@
         </mxCell>
         <mxCell id="gBjcL2Q_z1IrNc6z1zW4-16" value="&lt;span&gt;Session Log&lt;/span&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="BNGXoRkd15njzyYgnmIY-1">
           <mxGeometry x="710" y="180" width="30" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="jyvDDtEgbiojEJ_uR5_s" name="Page-4">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="x5EkYHpYVcg8RJxQ3UOt-0" />
+        <mxCell id="x5EkYHpYVcg8RJxQ3UOt-1" parent="x5EkYHpYVcg8RJxQ3UOt-0" />
+        <mxCell id="o3MKfYxYHTNLRZGvTpfU-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Collaboration Diagram: Setting&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="x5EkYHpYVcg8RJxQ3UOt-1">
+          <mxGeometry x="10" y="60" width="320" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
