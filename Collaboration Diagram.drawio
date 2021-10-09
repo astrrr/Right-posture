@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-09T18:11:10.318Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="DV8R6uSbkgjgUX-zwLx5" version="15.4.3" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2021-10-09T18:22:29.768Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="uptoAW0WPJGhniEtT9VA" version="15.4.3" type="github" pages="9">
   <diagram id="fjc7ldtTmQNcsNeStD3s" name="Register">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -409,6 +409,44 @@
         </mxCell>
         <mxCell id="Db7cVb24BE1-LFxRPsyw-16" value="Notification" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="dgDv74cfmZE7JUt7lPtN-1">
           <mxGeometry x="590" y="400" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="_EJOVH6VQ57uW8s-0DLh" name="Detect posture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="dwgja9_aLluJzlboGXBk-0" />
+        <mxCell id="dwgja9_aLluJzlboGXBk-1" parent="dwgja9_aLluJzlboGXBk-0" />
+        <mxCell id="hx959JsxNmS_JEfUvVRG-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Collaboration Diagram: Detect Posture&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="dwgja9_aLluJzlboGXBk-1">
+          <mxGeometry x="15" y="40" width="410" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-0" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="dwgja9_aLluJzlboGXBk-1" source="sSDFkujttd-oJQ3VF6Oa-1" target="sSDFkujttd-oJQ3VF6Oa-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="dwgja9_aLluJzlboGXBk-1">
+          <mxGeometry x="80" y="140" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="dwgja9_aLluJzlboGXBk-1" source="sSDFkujttd-oJQ3VF6Oa-3" target="sSDFkujttd-oJQ3VF6Oa-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-3" value="Detection Monitor&amp;nbsp;" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="dwgja9_aLluJzlboGXBk-1">
+          <mxGeometry x="210" y="140" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="dwgja9_aLluJzlboGXBk-1" source="sSDFkujttd-oJQ3VF6Oa-7" target="sSDFkujttd-oJQ3VF6Oa-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-7" value="Detect&lt;br&gt;Controller" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="dwgja9_aLluJzlboGXBk-1">
+          <mxGeometry x="400" y="140" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-12" value="Notofication" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="dwgja9_aLluJzlboGXBk-1">
+          <mxGeometry x="380" y="440" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Me6VDFhjH0syG713Nvmy-0" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.58;entryY=-0.012;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="dwgja9_aLluJzlboGXBk-1" source="sSDFkujttd-oJQ3VF6Oa-17" target="sSDFkujttd-oJQ3VF6Oa-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sSDFkujttd-oJQ3VF6Oa-17" value="Detecting" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="dwgja9_aLluJzlboGXBk-1">
+          <mxGeometry x="400" y="300" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
