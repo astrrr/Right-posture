@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-09T17:42:29.976Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="Qv6MXepL4y0Ad2h1Drga" version="15.4.3" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-10-09T17:45:34.195Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="U41aunQ5I0vCoQ8AqzGK" version="15.4.3" type="github" pages="6">
   <diagram id="fjc7ldtTmQNcsNeStD3s" name="Register">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -236,13 +236,51 @@
           <mxGeometry x="360" y="310" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RGBgkfgTasmFGn7kktio-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Collaboration Diagram: Calibrate Camera&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
-          <mxGeometry x="10" y="60" width="410" height="20" as="geometry" />
+          <mxGeometry x="15" y="110" width="410" height="20" as="geometry" />
         </mxCell>
         <mxCell id="RGBgkfgTasmFGn7kktio-1" value="Setting" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
           <mxGeometry x="570" y="170" width="100" height="80" as="geometry" />
         </mxCell>
         <mxCell id="MJuNOGljZjmwG83CneEA-0" value="Camera" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="K3Vmqt9MC-BAndYDo2Zg-1">
           <mxGeometry x="320" y="460" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="1QCNWz2imUXT27t_IRqx" name="Set notification">
+    <mxGraphModel dx="677" dy="378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="GXrquDd_tzQjIHSP8qKM-0" />
+        <mxCell id="GXrquDd_tzQjIHSP8qKM-1" parent="GXrquDd_tzQjIHSP8qKM-0" />
+        <mxCell id="hF3vw0Q2NBW5jNHxbiV_-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Collaboration Diagram: Set Notification&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="GXrquDd_tzQjIHSP8qKM-1">
+          <mxGeometry x="15" y="90" width="410" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-0" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="GXrquDd_tzQjIHSP8qKM-1" source="Rcd2PwfejFerqppOdsfa-1" target="Rcd2PwfejFerqppOdsfa-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="GXrquDd_tzQjIHSP8qKM-1">
+          <mxGeometry x="80" y="170" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="GXrquDd_tzQjIHSP8qKM-1" source="Rcd2PwfejFerqppOdsfa-3" target="Rcd2PwfejFerqppOdsfa-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-3" value="Notification Setting Panel" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="GXrquDd_tzQjIHSP8qKM-1">
+          <mxGeometry x="210" y="170" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="GXrquDd_tzQjIHSP8qKM-1" source="Rcd2PwfejFerqppOdsfa-6" target="Rcd2PwfejFerqppOdsfa-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.013;entryY=0.501;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="GXrquDd_tzQjIHSP8qKM-1" source="Rcd2PwfejFerqppOdsfa-6" target="Rcd2PwfejFerqppOdsfa-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-6" value="Notification&lt;br&gt;Control" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" vertex="1" parent="GXrquDd_tzQjIHSP8qKM-1">
+          <mxGeometry x="400" y="170" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-8" value="Notification" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" vertex="1" parent="GXrquDd_tzQjIHSP8qKM-1">
+          <mxGeometry x="360" y="310" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Rcd2PwfejFerqppOdsfa-9" value="Setting" style="shape=umlBoundary;whiteSpace=wrap;html=1;" vertex="1" parent="GXrquDd_tzQjIHSP8qKM-1">
+          <mxGeometry x="570" y="170" width="100" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
