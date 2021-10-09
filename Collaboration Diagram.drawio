@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-09T06:15:19.492Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="L3F--dD1bYRV3XBC7Wbx" version="15.4.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-10-09T06:15:58.661Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="L2UgBIhRDTh0O6SOs8Cc" version="15.4.3" type="github" pages="3">
   <diagram id="fjc7ldtTmQNcsNeStD3s" name="Register">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -118,6 +118,9 @@
       <root>
         <mxCell id="BNGXoRkd15njzyYgnmIY-0" />
         <mxCell id="BNGXoRkd15njzyYgnmIY-1" parent="BNGXoRkd15njzyYgnmIY-0" />
+        <mxCell id="8aECuLTwdZYs62ZEH5hH-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Collaboration Diagram: Status&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BNGXoRkd15njzyYgnmIY-1">
+          <mxGeometry x="10" y="60" width="320" height="20" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
