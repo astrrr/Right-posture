@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-11T19:23:23.988Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="bA_Yw4KcaXSTwlnxOxAL" version="15.4.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-10-11T19:25:54.576Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="LObB6GdhLstEFw6vk7xi" version="15.4.3" type="github" pages="4">
   <diagram name="Register" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="569" dy="318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -368,6 +368,17 @@
             <mxPoint as="offset" />
             <mxPoint x="585" y="339.71000000000004" as="sourcePoint" />
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="E7TYG-GxoFAQfalaBOi0" name="Setting">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="uTY7A-ZeZkjRTYnqfan5-0" />
+        <mxCell id="uTY7A-ZeZkjRTYnqfan5-1" parent="uTY7A-ZeZkjRTYnqfan5-0" />
+        <mxCell id="211vcGI3Y-S5DcLrUhaG-0" value="Sequence Diagram : Setting" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="uTY7A-ZeZkjRTYnqfan5-1">
+          <mxGeometry x="30" y="20" width="270" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
