@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-10T15:52:42.567Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="MSJ9a2Olem9VJ7qFzEbM" version="15.5.0" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2021-10-11T19:11:50.171Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="qNUoZAzJ_E1dekPu5fLa" version="15.4.3" type="github" pages="10">
   <diagram id="fjc7ldtTmQNcsNeStD3s" name="Register">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -64,7 +64,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="2xKnuyxjkbW83Z2QAkzn" name="Login">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="eyI3bxU38TPREhqzsuBK-0" />
         <mxCell id="eyI3bxU38TPREhqzsuBK-1" parent="eyI3bxU38TPREhqzsuBK-0" />
@@ -116,7 +116,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="F0qoJGEh3YIB0ssALN11" name="Status">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="BNGXoRkd15njzyYgnmIY-0" />
         <mxCell id="BNGXoRkd15njzyYgnmIY-1" parent="BNGXoRkd15njzyYgnmIY-0" />
@@ -132,7 +132,7 @@
         <mxCell id="gBjcL2Q_z1IrNc6z1zW4-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="BNGXoRkd15njzyYgnmIY-1" source="gBjcL2Q_z1IrNc6z1zW4-3" target="gBjcL2Q_z1IrNc6z1zW4-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="gBjcL2Q_z1IrNc6z1zW4-3" value="StatusFrom" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="BNGXoRkd15njzyYgnmIY-1" vertex="1">
+        <mxCell id="gBjcL2Q_z1IrNc6z1zW4-3" value="Status Panel" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="BNGXoRkd15njzyYgnmIY-1" vertex="1">
           <mxGeometry x="210" y="170" width="100" height="80" as="geometry" />
         </mxCell>
         <mxCell id="gBjcL2Q_z1IrNc6z1zW4-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="BNGXoRkd15njzyYgnmIY-1" source="gBjcL2Q_z1IrNc6z1zW4-9" target="gBjcL2Q_z1IrNc6z1zW4-10" edge="1">
@@ -168,7 +168,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="jyvDDtEgbiojEJ_uR5_s" name="Setting">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="x5EkYHpYVcg8RJxQ3UOt-0" />
         <mxCell id="x5EkYHpYVcg8RJxQ3UOt-1" parent="x5EkYHpYVcg8RJxQ3UOt-0" />
@@ -206,7 +206,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="R28Xfm-PsqryF0zK5XKM" name="Calibrate Camera">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="K3Vmqt9MC-BAndYDo2Zg-0" />
         <mxCell id="K3Vmqt9MC-BAndYDo2Zg-1" parent="K3Vmqt9MC-BAndYDo2Zg-0" />
@@ -250,7 +250,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="1QCNWz2imUXT27t_IRqx" name="Set notification">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="GXrquDd_tzQjIHSP8qKM-0" />
         <mxCell id="GXrquDd_tzQjIHSP8qKM-1" parent="GXrquDd_tzQjIHSP8qKM-0" />
@@ -300,7 +300,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="xlRFx1aNRkNpszgba4GR" name="Status History">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="4So3e5aramubywEqJuDa-0" />
         <mxCell id="4So3e5aramubywEqJuDa-1" parent="4So3e5aramubywEqJuDa-0" />
@@ -358,7 +358,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="my7UG1GfrY750owuSqza" name="Capturing">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="dgDv74cfmZE7JUt7lPtN-0" />
         <mxCell id="dgDv74cfmZE7JUt7lPtN-1" parent="dgDv74cfmZE7JUt7lPtN-0" />
@@ -428,7 +428,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="_EJOVH6VQ57uW8s-0DLh" name="Detect posture">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="dwgja9_aLluJzlboGXBk-0" />
         <mxCell id="dwgja9_aLluJzlboGXBk-1" parent="dwgja9_aLluJzlboGXBk-0" />
@@ -466,7 +466,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="_2HnFGMPuh50FqZT66Lp" name="Notification">
-    <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="4BSadGf05HlF1egvjniD-0" />
         <mxCell id="4BSadGf05HlF1egvjniD-1" parent="4BSadGf05HlF1egvjniD-0" />
