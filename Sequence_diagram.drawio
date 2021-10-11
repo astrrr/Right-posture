@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-11T19:25:54.576Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="LObB6GdhLstEFw6vk7xi" version="15.4.3" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-10-11T19:29:16.682Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36" etag="F55Dtea4q0Et7JmCLbxK" version="15.4.3" type="github" pages="4">
   <diagram name="Register" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
     <mxGraphModel dx="569" dy="318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -223,7 +223,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="hDiKA5xFq9xkfRN1VzDN" name="Status">
-    <mxGraphModel dx="981" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="813" dy="454" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="GH4L9jB5aCCVr2WscWPx-0" />
         <mxCell id="GH4L9jB5aCCVr2WscWPx-1" parent="GH4L9jB5aCCVr2WscWPx-0" />
@@ -307,9 +307,6 @@
         <mxCell id="U3F8ywb9_d-JSVccql3b-15" value="Eyes status" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="GH4L9jB5aCCVr2WscWPx-1">
           <mxGeometry x="680" y="140" width="100" height="580" as="geometry" />
         </mxCell>
-        <mxCell id="U3F8ywb9_d-JSVccql3b-16" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="GH4L9jB5aCCVr2WscWPx-1">
-          <mxGeometry x="725" y="290" width="10" height="50" as="geometry" />
-        </mxCell>
         <mxCell id="U3F8ywb9_d-JSVccql3b-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=18;endArrow=open;endFill=0;dashed=1;exitX=-0.003;exitY=0.911;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.035;entryY=0.852;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="GH4L9jB5aCCVr2WscWPx-1" source="U3F8ywb9_d-JSVccql3b-5" target="U3F8ywb9_d-JSVccql3b-1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="439.18" y="360.0342857142858" as="sourcePoint" />
@@ -368,6 +365,9 @@
             <mxPoint as="offset" />
             <mxPoint x="585" y="339.71000000000004" as="sourcePoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="U3F8ywb9_d-JSVccql3b-16" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" vertex="1" parent="GH4L9jB5aCCVr2WscWPx-1">
+          <mxGeometry x="725" y="290" width="10" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
