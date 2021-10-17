@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-17T09:04:39.840Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="7moWrD3w9l_P7XWsbwZk" version="15.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-17T09:06:39.925Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36" etag="Nh2UOkLmygIUsQyhR_7J" version="15.5.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Class Diagram">
     <mxGraphModel dx="1068" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -283,10 +283,10 @@
             <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vv1hb8bBGI_ncl7h0-FY-96" value="+ " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vv1hb8bBGI_ncl7h0-FY-95">
+        <mxCell id="vv1hb8bBGI_ncl7h0-FY-96" value="+ Home : String" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vv1hb8bBGI_ncl7h0-FY-95">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="vv1hb8bBGI_ncl7h0-FY-97" value="City" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" vertex="1" parent="vv1hb8bBGI_ncl7h0-FY-95">
+        <mxCell id="vv1hb8bBGI_ncl7h0-FY-97" value="+ Display : Display" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" vertex="1" parent="vv1hb8bBGI_ncl7h0-FY-95">
           <mxGeometry y="52" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="vv1hb8bBGI_ncl7h0-FY-98" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="vv1hb8bBGI_ncl7h0-FY-95">
