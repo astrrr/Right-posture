@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainQCSkbG.ui'
+## Form generated from reading UI file 'mainJCfoGw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.0
 ##
@@ -658,53 +658,53 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.btn_home = QPushButton(self.topMenu)
-        self.btn_home.setObjectName(u"btn_home")
-        sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
-        self.btn_home.setSizePolicy(sizePolicy)
-        self.btn_home.setMinimumSize(QSize(0, 45))
-        self.btn_home.setFont(font)
-        self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_home.setLayoutDirection(Qt.LeftToRight)
-        self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
+        self.btn_Home = QPushButton(self.topMenu)
+        self.btn_Home.setObjectName(u"btn_Home")
+        sizePolicy.setHeightForWidth(self.btn_Home.sizePolicy().hasHeightForWidth())
+        self.btn_Home.setSizePolicy(sizePolicy)
+        self.btn_Home.setMinimumSize(QSize(0, 45))
+        self.btn_Home.setFont(font)
+        self.btn_Home.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Home.setLayoutDirection(Qt.LeftToRight)
+        self.btn_Home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
 
-        self.verticalLayout_8.addWidget(self.btn_home)
+        self.verticalLayout_8.addWidget(self.btn_Home)
 
-        self.btn_widgets = QPushButton(self.topMenu)
-        self.btn_widgets.setObjectName(u"btn_widgets")
-        sizePolicy.setHeightForWidth(self.btn_widgets.sizePolicy().hasHeightForWidth())
-        self.btn_widgets.setSizePolicy(sizePolicy)
-        self.btn_widgets.setMinimumSize(QSize(0, 45))
-        self.btn_widgets.setFont(font)
-        self.btn_widgets.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_widgets.setLayoutDirection(Qt.LeftToRight)
-        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-browser);")
+        self.btn_Status = QPushButton(self.topMenu)
+        self.btn_Status.setObjectName(u"btn_Status")
+        sizePolicy.setHeightForWidth(self.btn_Status.sizePolicy().hasHeightForWidth())
+        self.btn_Status.setSizePolicy(sizePolicy)
+        self.btn_Status.setMinimumSize(QSize(0, 45))
+        self.btn_Status.setFont(font)
+        self.btn_Status.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Status.setLayoutDirection(Qt.LeftToRight)
+        self.btn_Status.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-browser);")
 
-        self.verticalLayout_8.addWidget(self.btn_widgets)
+        self.verticalLayout_8.addWidget(self.btn_Status)
 
-        self.btn_new = QPushButton(self.topMenu)
-        self.btn_new.setObjectName(u"btn_new")
-        sizePolicy.setHeightForWidth(self.btn_new.sizePolicy().hasHeightForWidth())
-        self.btn_new.setSizePolicy(sizePolicy)
-        self.btn_new.setMinimumSize(QSize(0, 45))
-        self.btn_new.setFont(font)
-        self.btn_new.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_new.setLayoutDirection(Qt.LeftToRight)
-        self.btn_new.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-user.png);")
+        self.btn_Posture = QPushButton(self.topMenu)
+        self.btn_Posture.setObjectName(u"btn_Posture")
+        sizePolicy.setHeightForWidth(self.btn_Posture.sizePolicy().hasHeightForWidth())
+        self.btn_Posture.setSizePolicy(sizePolicy)
+        self.btn_Posture.setMinimumSize(QSize(0, 45))
+        self.btn_Posture.setFont(font)
+        self.btn_Posture.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Posture.setLayoutDirection(Qt.LeftToRight)
+        self.btn_Posture.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-user);")
 
-        self.verticalLayout_8.addWidget(self.btn_new)
+        self.verticalLayout_8.addWidget(self.btn_Posture)
 
-        self.btn_save = QPushButton(self.topMenu)
-        self.btn_save.setObjectName(u"btn_save")
-        sizePolicy.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
-        self.btn_save.setSizePolicy(sizePolicy)
-        self.btn_save.setMinimumSize(QSize(0, 45))
-        self.btn_save.setFont(font)
-        self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_save.setLayoutDirection(Qt.LeftToRight)
-        self.btn_save.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-layers.png)")
+        self.btn_Tutorial = QPushButton(self.topMenu)
+        self.btn_Tutorial.setObjectName(u"btn_Tutorial")
+        sizePolicy.setHeightForWidth(self.btn_Tutorial.sizePolicy().hasHeightForWidth())
+        self.btn_Tutorial.setSizePolicy(sizePolicy)
+        self.btn_Tutorial.setMinimumSize(QSize(0, 45))
+        self.btn_Tutorial.setFont(font)
+        self.btn_Tutorial.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Tutorial.setLayoutDirection(Qt.LeftToRight)
+        self.btn_Tutorial.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-layers.png);")
 
-        self.verticalLayout_8.addWidget(self.btn_save)
+        self.verticalLayout_8.addWidget(self.btn_Tutorial)
 
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
@@ -1024,20 +1024,20 @@ class Ui_MainWindow(object):
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
-        self.home = QWidget()
-        self.home.setObjectName(u"home")
-        self.home.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
+        self.Home = QWidget()
+        self.Home.setObjectName(u"Home")
+        self.Home.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;")
-        self.stackedWidget.addWidget(self.home)
-        self.widgets = QWidget()
-        self.widgets.setObjectName(u"widgets")
-        self.widgets.setStyleSheet(u"b")
-        self.verticalLayout = QVBoxLayout(self.widgets)
+        self.stackedWidget.addWidget(self.Home)
+        self.Status = QWidget()
+        self.Status.setObjectName(u"Status")
+        self.Status.setStyleSheet(u"b")
+        self.verticalLayout = QVBoxLayout(self.Status)
         self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
-        self.row_1 = QFrame(self.widgets)
+        self.row_1 = QFrame(self.Status)
         self.row_1.setObjectName(u"row_1")
         self.row_1.setFrameShape(QFrame.StyledPanel)
         self.row_1.setFrameShadow(QFrame.Raised)
@@ -1120,7 +1120,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_1)
 
-        self.row_2 = QFrame(self.widgets)
+        self.row_2 = QFrame(self.Status)
         self.row_2.setObjectName(u"row_2")
         self.row_2.setMinimumSize(QSize(0, 150))
         self.row_2.setFrameShape(QFrame.StyledPanel)
@@ -1238,7 +1238,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_2)
 
-        self.row_3 = QFrame(self.widgets)
+        self.row_3 = QFrame(self.Status)
         self.row_3.setObjectName(u"row_3")
         self.row_3.setMinimumSize(QSize(0, 150))
         self.row_3.setFrameShape(QFrame.StyledPanel)
@@ -1370,19 +1370,30 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_3)
 
-        self.stackedWidget.addWidget(self.widgets)
-        self.new_page = QWidget()
-        self.new_page.setObjectName(u"new_page")
-        self.verticalLayout_20 = QVBoxLayout(self.new_page)
+        self.stackedWidget.addWidget(self.Status)
+        self.Posture = QWidget()
+        self.Posture.setObjectName(u"Posture")
+        self.verticalLayout_20 = QVBoxLayout(self.Posture)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.label = QLabel(self.new_page)
+        self.label = QLabel(self.Posture)
         self.label.setObjectName(u"label")
         self.label.setMinimumSize(QSize(0, 0))
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_20.addWidget(self.label)
 
-        self.stackedWidget.addWidget(self.new_page)
+        self.stackedWidget.addWidget(self.Posture)
+        self.Tutorial = QWidget()
+        self.Tutorial.setObjectName(u"Tutorial")
+        self.verticalLayout_21 = QVBoxLayout(self.Tutorial)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.label_2 = QLabel(self.Tutorial)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_21.addWidget(self.label_2)
+
+        self.stackedWidget.addWidget(self.Tutorial)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
 
@@ -1523,7 +1534,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1534,10 +1545,10 @@ class Ui_MainWindow(object):
         self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"Right Posture", None))
         self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Make life better", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
-        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Status", None))
-        self.btn_new.setText(QCoreApplication.translate("MainWindow", u"Posture", None))
-        self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Tutorial", None))
+        self.btn_Home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
+        self.btn_Status.setText(QCoreApplication.translate("MainWindow", u"Status", None))
+        self.btn_Posture.setText(QCoreApplication.translate("MainWindow", u"Posture", None))
+        self.btn_Tutorial.setText(QCoreApplication.translate("MainWindow", u"Tutorial", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Setting", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
@@ -1644,11 +1655,12 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
-        self.label.setText(QCoreApplication.translate("MainWindow", u"NEW PAGE TEST V2", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"This is Posture Page !!", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"This is Tutorial Page !!!", None))
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
-        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
+        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: WIP Team", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.5", None))
     # retranslateUi
 
