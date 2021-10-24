@@ -23,7 +23,6 @@
   <widget class="QWidget" name="styleSheet">
    <property name="font">
     <font>
-     <family>Segoe UI</family>
      <pointsize>10</pointsize>
      <italic>false</italic>
      <bold>false</bold>
@@ -675,14 +674,13 @@ Button */
              </property>
              <property name="font">
               <font>
-               <family>Segoe UI Semibold</family>
                <pointsize>12</pointsize>
                <italic>false</italic>
                <bold>false</bold>
               </font>
              </property>
              <property name="text">
-              <string>PyDracula</string>
+              <string>Right Posture</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -705,14 +703,13 @@ Button */
              </property>
              <property name="font">
               <font>
-               <family>Segoe UI</family>
                <pointsize>8</pointsize>
                <italic>false</italic>
                <bold>false</bold>
               </font>
              </property>
              <property name="text">
-              <string>Modern GUI / Flat Style</string>
+              <string>Make life better</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -790,7 +787,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -853,7 +849,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -889,7 +884,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -902,10 +896,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-gamepad.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-browser);</string>
                   </property>
                   <property name="text">
-                   <string>Widgets</string>
+                   <string>Status</string>
                   </property>
                  </widget>
                 </item>
@@ -925,7 +919,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -938,10 +931,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-file.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-user.png);</string>
                   </property>
                   <property name="text">
-                   <string>New</string>
+                   <string>Posture</string>
                   </property>
                  </widget>
                 </item>
@@ -961,7 +954,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -974,46 +966,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-save.png)</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-layers.png)</string>
                   </property>
                   <property name="text">
-                   <string>Save</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_exit">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>45</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Segoe UI</family>
-                    <pointsize>10</pointsize>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-x.png);</string>
-                  </property>
-                  <property name="text">
-                   <string>Exit</string>
+                   <string>Tutorial</string>
                   </property>
                  </widget>
                 </item>
@@ -1060,7 +1016,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -1076,7 +1031,7 @@ Button */
                    <string notr="true">background-image: url(:/icons/images/icons/icon_settings.png);</string>
                   </property>
                   <property name="text">
-                   <string>Left Box</string>
+                   <string>Setting</string>
                   </property>
                  </widget>
                 </item>
@@ -1314,7 +1269,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -1350,7 +1304,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -1386,7 +1339,6 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -1576,14 +1528,13 @@ p, li { white-space: pre-wrap; }
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
                   </property>
                   <property name="text">
-                   <string>PyDracula APP - Theme with colors based on Dracula for Python.</string>
+                   <string>Right Posture - Make life better.</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1709,7 +1660,6 @@ p, li { white-space: pre-wrap; }
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
@@ -1967,7 +1917,6 @@ background-repeat: no-repeat;</string>
                                  <widget class="QLabel" name="labelBoxBlenderInstalation">
                                   <property name="font">
                                    <font>
-                                    <family>Segoe UI</family>
                                     <pointsize>10</pointsize>
                                     <italic>false</italic>
                                     <bold>false</bold>
@@ -2027,7 +1976,6 @@ background-repeat: no-repeat;</string>
                                     </property>
                                     <property name="font">
                                      <font>
-                                      <family>Segoe UI</family>
                                       <pointsize>10</pointsize>
                                       <italic>false</italic>
                                       <bold>false</bold>
@@ -2198,7 +2146,6 @@ background-repeat: no-repeat;</string>
                              <widget class="QComboBox" name="comboBox">
                               <property name="font">
                                <font>
-                                <family>Segoe UI</family>
                                 <pointsize>10</pointsize>
                                 <italic>false</italic>
                                 <bold>false</bold>
@@ -2581,9 +2528,7 @@ background-repeat: no-repeat;</string>
                               <string>New Row</string>
                              </property>
                              <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                              </font>
+                              <font/>
                              </property>
                             </row>
                             <row>
@@ -2712,8 +2657,14 @@ background-repeat: no-repeat;</string>
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <widget class="QLabel" name="label">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="text">
-                          <string>NEW PAGE TEST</string>
+                          <string>NEW PAGE TEST V2</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignCenter</set>
@@ -2843,7 +2794,6 @@ background-repeat: no-repeat;</string>
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI</family>
                              <pointsize>10</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -2879,7 +2829,6 @@ background-repeat: no-repeat;</string>
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI</family>
                              <pointsize>10</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -2915,7 +2864,6 @@ background-repeat: no-repeat;</string>
                            </property>
                            <property name="font">
                             <font>
-                             <family>Segoe UI</family>
                              <pointsize>10</pointsize>
                              <italic>false</italic>
                              <bold>false</bold>
@@ -2993,7 +2941,6 @@ background-repeat: no-repeat;</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Segoe UI</family>
                     <pointsize>-1</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
