@@ -14,4 +14,7 @@
 ```sh
 rm -rf `find -type d -name .ipynb_checkpoints`
 ```
-
+## Install lib
+```
+pip install -r requirements.txt
+```
