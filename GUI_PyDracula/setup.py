@@ -14,11 +14,12 @@ target = Executable(
 
 # SETUP CX FREEZE
 setup(
-    name = "PyDracula",
+    name = "Right Posture",
     version = "1.0",
-    description = "Modern GUI for Python applications",
-    author = "Wanderson M. Pimenta",
+    description = "Make life better",
+    author = "Yuul B. Alwright",
     options = {'build_exe' : {'include_files' : files}},
     executables = [target]
     
 )
+#Type python setup.py build to build.exe
