@@ -81,7 +81,7 @@ class MainWindow(QMainWindow):
             UIFunctions.toggleLeftBox(self, True)
         widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
         widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
-        autoClose = False  # Toggle Auto Close Left Box when click.
+        autoClose = True  # Toggle Auto Close Left Box when click.
         if autoClose:
             widgets.btn_Camera.clicked.connect(openCloseLeftBox)
             widgets.btn_Notification.clicked.connect(openCloseLeftBox)
