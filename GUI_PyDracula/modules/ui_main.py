@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainoEtOfa.ui'
+## Form generated from reading UI file 'mainzMTdvw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.0
 ##
@@ -822,6 +822,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.btn_ProSetting = QPushButton(self.extraTopMenu)
+        self.btn_ProSetting.setObjectName(u"btn_ProSetting")
+        sizePolicy.setHeightForWidth(self.btn_ProSetting.sizePolicy().hasHeightForWidth())
+        self.btn_ProSetting.setSizePolicy(sizePolicy)
+        self.btn_ProSetting.setMinimumSize(QSize(0, 45))
+        self.btn_ProSetting.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_ProSetting.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-equalizer.png);")
+
+        self.verticalLayout_11.addWidget(self.btn_ProSetting)
+
         self.btn_Camera = QPushButton(self.extraTopMenu)
         self.btn_Camera.setObjectName(u"btn_Camera")
         sizePolicy.setHeightForWidth(self.btn_Camera.sizePolicy().hasHeightForWidth())
@@ -1048,12 +1058,7 @@ class Ui_MainWindow(object):
         self.label_3.setObjectName(u"label_3")
         self.label_3.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_3.addWidget(self.label_3, 1, 0, 1, 1)
-
-        self.row1 = QVBoxLayout()
-        self.row1.setObjectName(u"row1")
-
-        self.gridLayout_3.addLayout(self.row1, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.label_3, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.Status)
         self.Home = QWidget()
@@ -1588,6 +1593,7 @@ class Ui_MainWindow(object):
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
 #endif // QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setText("")
+        self.btn_ProSetting.setText(QCoreApplication.translate("MainWindow", u"Program Setting", None))
         self.btn_Camera.setText(QCoreApplication.translate("MainWindow", u"Camera", None))
         self.btn_Notification.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
         self.btn_Logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))

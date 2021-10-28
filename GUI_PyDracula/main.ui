@@ -1279,6 +1279,31 @@ Button */
                  <number>0</number>
                 </property>
                 <item>
+                 <widget class="QPushButton" name="btn_ProSetting">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-equalizer.png);</string>
+                  </property>
+                  <property name="text">
+                   <string>Program Setting</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButton" name="btn_Camera">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1844,7 +1869,7 @@ p, li { white-space: pre-wrap; }
                      </property>
                      <widget class="QWidget" name="Status">
                       <layout class="QGridLayout" name="gridLayout_3">
-                       <item row="1" column="0">
+                       <item row="0" column="0">
                         <widget class="QLabel" name="label_3">
                          <property name="text">
                           <string>This is Status Page !!</string>
@@ -1853,9 +1878,6 @@ p, li { white-space: pre-wrap; }
                           <set>Qt::AlignCenter</set>
                          </property>
                         </widget>
-                       </item>
-                       <item row="0" column="0">
-                        <layout class="QVBoxLayout" name="row1"/>
                        </item>
                       </layout>
                      </widget>
