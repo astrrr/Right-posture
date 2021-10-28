@@ -81,12 +81,23 @@ class MainWindow(QMainWindow):
         widgets.btn_Status.clicked.connect(self.buttonClick)
         widgets.btn_Posture.clicked.connect(self.buttonClick)
         widgets.btn_Tutorial.clicked.connect(self.buttonClick)
-
+        widgets.btn_Widgets.clicked.connect(self.buttonClick)
+        widgets.btn_Camera.clicked.connect(self.buttonClick)
+        widgets.btn_Notification.clicked.connect(self.buttonClick)
+        widgets.btn_Logout.clicked.connect(self.buttonClick)
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
         widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
         widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+        autoClose = False  #Toggle Auto Close Left Box when click.
+        if autoClose:
+            widgets.btn_Camera.clicked.connect(openCloseLeftBox)
+            widgets.btn_Notification.clicked.connect(openCloseLeftBox)
+            widgets.btn_Logout.clicked.connect(openCloseLeftBox)
+
+
+
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
@@ -123,7 +134,6 @@ class MainWindow(QMainWindow):
         # GET BUTTON CLICKED
         btn = self.sender()
         btnName = btn.objectName()
-
         # SHOW HOME PAGE
         if btnName == "btn_Home":
             widgets.stackedWidget.setCurrentWidget(widgets.Home)
@@ -147,9 +157,19 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
+        if btnName == "btn_Widgets":
+            widgets.stackedWidget.setCurrentWidget(widgets.Widgets)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+
+        if btnName == "btn_Camera":
+            widgets.stackedWidget.setCurrentWidget(widgets.Widgets)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-        notifyMe("ลงไปนอน", "ได้แล้ว")
+        #notifyMe("ลงไปนอน", "ได้แล้ว")
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
