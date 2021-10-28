@@ -71,10 +71,10 @@ class MainWindow(QMainWindow):
         widgets.btn_Posture.clicked.connect(self.buttonClick)
         widgets.btn_Tutorial.clicked.connect(self.buttonClick)
         widgets.btn_Widgets.clicked.connect(self.buttonClick)
-        widgets.btn_ProSetting.clicked.connect(self.buttonClick)
         widgets.btn_Camera.clicked.connect(self.buttonClick)
         widgets.btn_Notification.clicked.connect(self.buttonClick)
         widgets.btn_Logout.clicked.connect(self.buttonClick)
+        widgets.btn_saveNotify.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -144,15 +144,12 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
-        if btnName == "btn_Camera":
-            widgets.stackedWidget.setCurrentWidget(widgets.Widgets)  # SET PAGE
+        if btnName == "btn_Notification":
+            widgets.stackedWidget.setCurrentWidget(widgets.Notification)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-
-        if btnName == "btn_ProSetting":
-            widgets.stackedWidget.setCurrentWidget(widgets.Home)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-
+        if btnName == "btn_saveNotify":
+            print(widgets.notifyword.text())
+            notifyMe("ไปนอนซะ", widgets.notifyword.text())
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')

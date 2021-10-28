@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainzMTdvw.ui'
+## Form generated from reading UI file 'mainiEYqAU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.0
 ##
@@ -822,16 +822,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.btn_ProSetting = QPushButton(self.extraTopMenu)
-        self.btn_ProSetting.setObjectName(u"btn_ProSetting")
-        sizePolicy.setHeightForWidth(self.btn_ProSetting.sizePolicy().hasHeightForWidth())
-        self.btn_ProSetting.setSizePolicy(sizePolicy)
-        self.btn_ProSetting.setMinimumSize(QSize(0, 45))
-        self.btn_ProSetting.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_ProSetting.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-equalizer.png);")
-
-        self.verticalLayout_11.addWidget(self.btn_ProSetting)
-
         self.btn_Camera = QPushButton(self.extraTopMenu)
         self.btn_Camera.setObjectName(u"btn_Camera")
         sizePolicy.setHeightForWidth(self.btn_Camera.sizePolicy().hasHeightForWidth())
@@ -946,12 +936,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.titleRightInfo)
 
-        self.label_4 = QLabel(self.leftBox)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.horizontalLayout_3.addWidget(self.label_4)
-
 
         self.horizontalLayout.addWidget(self.leftBox)
 
@@ -1061,6 +1045,344 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.label_3, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.Status)
+        self.Notification = QWidget()
+        self.Notification.setObjectName(u"Notification")
+        self._2 = QVBoxLayout(self.Notification)
+        self._2.setObjectName(u"_2")
+        self.row_6 = QFrame(self.Notification)
+        self.row_6.setObjectName(u"row_6")
+        self.row_6.setFrameShape(QFrame.StyledPanel)
+        self.row_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_25 = QVBoxLayout(self.row_6)
+        self.verticalLayout_25.setSpacing(0)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.frame_div_content_2 = QFrame(self.row_6)
+        self.frame_div_content_2.setObjectName(u"frame_div_content_2")
+        self.frame_div_content_2.setMinimumSize(QSize(0, 110))
+        self.frame_div_content_2.setMaximumSize(QSize(16777215, 110))
+        self.frame_div_content_2.setFrameShape(QFrame.NoFrame)
+        self.frame_div_content_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_26 = QVBoxLayout(self.frame_div_content_2)
+        self.verticalLayout_26.setSpacing(0)
+        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
+        self.verticalLayout_26.setContentsMargins(0, 0, 0, 0)
+        self.frame_title_wid_2 = QFrame(self.frame_div_content_2)
+        self.frame_title_wid_2.setObjectName(u"frame_title_wid_2")
+        self.frame_title_wid_2.setMaximumSize(QSize(16777215, 35))
+        self.frame_title_wid_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_title_wid_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_27 = QVBoxLayout(self.frame_title_wid_2)
+        self.verticalLayout_27.setObjectName(u"verticalLayout_27")
+        self.labelBoxBlenderInstalation_3 = QLabel(self.frame_title_wid_2)
+        self.labelBoxBlenderInstalation_3.setObjectName(u"labelBoxBlenderInstalation_3")
+        self.labelBoxBlenderInstalation_3.setFont(font)
+        self.labelBoxBlenderInstalation_3.setStyleSheet(u"")
+
+        self.verticalLayout_27.addWidget(self.labelBoxBlenderInstalation_3)
+
+
+        self.verticalLayout_26.addWidget(self.frame_title_wid_2)
+
+        self.frame_content_wid_2 = QFrame(self.frame_div_content_2)
+        self.frame_content_wid_2.setObjectName(u"frame_content_wid_2")
+        self.frame_content_wid_2.setFrameShape(QFrame.NoFrame)
+        self.frame_content_wid_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_content_wid_2)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.gridLayout_7 = QGridLayout()
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.gridLayout_7.setContentsMargins(-1, -1, -1, 0)
+        self.notifyword = QLineEdit(self.frame_content_wid_2)
+        self.notifyword.setObjectName(u"notifyword")
+        self.notifyword.setMinimumSize(QSize(0, 30))
+        self.notifyword.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout_7.addWidget(self.notifyword, 0, 0, 1, 1)
+
+        self.btn_saveNotify = QPushButton(self.frame_content_wid_2)
+        self.btn_saveNotify.setObjectName(u"btn_saveNotify")
+        self.btn_saveNotify.setMinimumSize(QSize(150, 30))
+        self.btn_saveNotify.setFont(font)
+        self.btn_saveNotify.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_saveNotify.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon4 = QIcon()
+        icon4.addFile(u"images/icons/cil-save.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_saveNotify.setIcon(icon4)
+
+        self.gridLayout_7.addWidget(self.btn_saveNotify, 0, 1, 1, 1)
+
+        self.labelVersion_6 = QLabel(self.frame_content_wid_2)
+        self.labelVersion_6.setObjectName(u"labelVersion_6")
+        self.labelVersion_6.setStyleSheet(u"color: rgb(113, 126, 149);")
+        self.labelVersion_6.setLineWidth(1)
+        self.labelVersion_6.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_7.addWidget(self.labelVersion_6, 1, 0, 1, 2)
+
+
+        self.horizontalLayout_15.addLayout(self.gridLayout_7)
+
+
+        self.verticalLayout_26.addWidget(self.frame_content_wid_2)
+
+
+        self.verticalLayout_25.addWidget(self.frame_div_content_2)
+
+
+        self._2.addWidget(self.row_6)
+
+        self.row_5 = QFrame(self.Notification)
+        self.row_5.setObjectName(u"row_5")
+        self.row_5.setMinimumSize(QSize(0, 150))
+        self.row_5.setFrameShape(QFrame.StyledPanel)
+        self.row_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_24 = QVBoxLayout(self.row_5)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.gridLayout_4 = QGridLayout()
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.checkBox_2 = QCheckBox(self.row_5)
+        self.checkBox_2.setObjectName(u"checkBox_2")
+        self.checkBox_2.setAutoFillBackground(False)
+        self.checkBox_2.setStyleSheet(u"")
+
+        self.gridLayout_4.addWidget(self.checkBox_2, 0, 0, 1, 1)
+
+        self.radioButton_2 = QRadioButton(self.row_5)
+        self.radioButton_2.setObjectName(u"radioButton_2")
+        self.radioButton_2.setStyleSheet(u"")
+
+        self.gridLayout_4.addWidget(self.radioButton_2, 0, 1, 1, 1)
+
+        self.verticalSlider_2 = QSlider(self.row_5)
+        self.verticalSlider_2.setObjectName(u"verticalSlider_2")
+        self.verticalSlider_2.setStyleSheet(u"")
+        self.verticalSlider_2.setOrientation(Qt.Vertical)
+
+        self.gridLayout_4.addWidget(self.verticalSlider_2, 0, 2, 3, 1)
+
+        self.verticalScrollBar_2 = QScrollBar(self.row_5)
+        self.verticalScrollBar_2.setObjectName(u"verticalScrollBar_2")
+        self.verticalScrollBar_2.setStyleSheet(u" QScrollBar:vertical { background: rgb(52, 59, 72); }\n"
+" QScrollBar:horizontal { background: rgb(52, 59, 72); }")
+        self.verticalScrollBar_2.setOrientation(Qt.Vertical)
+
+        self.gridLayout_4.addWidget(self.verticalScrollBar_2, 0, 4, 3, 1)
+
+        self.scrollArea_2 = QScrollArea(self.row_5)
+        self.scrollArea_2.setObjectName(u"scrollArea_2")
+        self.scrollArea_2.setStyleSheet(u" QScrollBar:vertical {\n"
+"    background: rgb(52, 59, 72);\n"
+" }\n"
+" QScrollBar:horizontal {\n"
+"    background: rgb(52, 59, 72);\n"
+" }")
+        self.scrollArea_2.setFrameShape(QFrame.NoFrame)
+        self.scrollArea_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollArea_2.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.scrollArea_2.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 354, 218))
+        self.scrollAreaWidgetContents_2.setStyleSheet(u" QScrollBar:vertical {\n"
+"	border: none;\n"
+"    background: rgb(52, 59, 72);\n"
+"    width: 14px;\n"
+"    margin: 21px 0 21px 0;\n"
+"	border-radius: 0px;\n"
+" }")
+        self.horizontalLayout_14 = QHBoxLayout(self.scrollAreaWidgetContents_2)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.plainTextEdit_2 = QPlainTextEdit(self.scrollAreaWidgetContents_2)
+        self.plainTextEdit_2.setObjectName(u"plainTextEdit_2")
+        self.plainTextEdit_2.setMinimumSize(QSize(200, 200))
+        self.plainTextEdit_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.horizontalLayout_14.addWidget(self.plainTextEdit_2)
+
+        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.gridLayout_4.addWidget(self.scrollArea_2, 0, 5, 3, 1)
+
+        self.comboBox_2 = QComboBox(self.row_5)
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.comboBox_2.setFont(font)
+        self.comboBox_2.setAutoFillBackground(False)
+        self.comboBox_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.comboBox_2.setIconSize(QSize(16, 16))
+        self.comboBox_2.setFrame(True)
+
+        self.gridLayout_4.addWidget(self.comboBox_2, 1, 0, 1, 2)
+
+        self.horizontalScrollBar_2 = QScrollBar(self.row_5)
+        self.horizontalScrollBar_2.setObjectName(u"horizontalScrollBar_2")
+        sizePolicy.setHeightForWidth(self.horizontalScrollBar_2.sizePolicy().hasHeightForWidth())
+        self.horizontalScrollBar_2.setSizePolicy(sizePolicy)
+        self.horizontalScrollBar_2.setStyleSheet(u" QScrollBar:vertical { background: rgb(52, 59, 72); }\n"
+" QScrollBar:horizontal { background: rgb(52, 59, 72); }")
+        self.horizontalScrollBar_2.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_4.addWidget(self.horizontalScrollBar_2, 1, 3, 1, 1)
+
+        self.commandLinkButton_2 = QCommandLinkButton(self.row_5)
+        self.commandLinkButton_2.setObjectName(u"commandLinkButton_2")
+        self.commandLinkButton_2.setCursor(QCursor(Qt.PointingHandCursor))
+        self.commandLinkButton_2.setStyleSheet(u"")
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton_2.setIcon(icon5)
+
+        self.gridLayout_4.addWidget(self.commandLinkButton_2, 1, 6, 1, 1)
+
+        self.horizontalSlider_2 = QSlider(self.row_5)
+        self.horizontalSlider_2.setObjectName(u"horizontalSlider_2")
+        self.horizontalSlider_2.setStyleSheet(u"")
+        self.horizontalSlider_2.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_4.addWidget(self.horizontalSlider_2, 2, 0, 1, 2)
+
+
+        self.verticalLayout_24.addLayout(self.gridLayout_4)
+
+
+        self._2.addWidget(self.row_5)
+
+        self.row_4 = QFrame(self.Notification)
+        self.row_4.setObjectName(u"row_4")
+        self.row_4.setMinimumSize(QSize(0, 150))
+        self.row_4.setFrameShape(QFrame.StyledPanel)
+        self.row_4.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_13 = QHBoxLayout(self.row_4)
+        self.horizontalLayout_13.setSpacing(0)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.tableWidget_2 = QTableWidget(self.row_4)
+        if (self.tableWidget_2.columnCount() < 4):
+            self.tableWidget_2.setColumnCount(4)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        if (self.tableWidget_2.rowCount() < 16):
+            self.tableWidget_2.setRowCount(16)
+        font4 = QFont()
+        __qtablewidgetitem4 = QTableWidgetItem()
+        __qtablewidgetitem4.setFont(font4);
+        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem18)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(15, __qtablewidgetitem19)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.tableWidget_2.setItem(0, 0, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.tableWidget_2.setItem(0, 1, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.tableWidget_2.setItem(0, 2, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.tableWidget_2.setItem(0, 3, __qtablewidgetitem23)
+        self.tableWidget_2.setObjectName(u"tableWidget_2")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.tableWidget_2.sizePolicy().hasHeightForWidth())
+        self.tableWidget_2.setSizePolicy(sizePolicy3)
+        palette = QPalette()
+        brush = QBrush(QColor(221, 221, 221, 255))
+        brush.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        brush1 = QBrush(QColor(0, 0, 0, 0))
+        brush1.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette.setBrush(QPalette.Active, QPalette.Text, brush)
+        palette.setBrush(QPalette.Active, QPalette.ButtonText, brush)
+        brush2 = QBrush(QColor(0, 0, 0, 255))
+        brush2.setStyle(Qt.NoBrush)
+        palette.setBrush(QPalette.Active, QPalette.Base, brush2)
+        palette.setBrush(QPalette.Active, QPalette.Window, brush1)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
+#endif
+        palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette.setBrush(QPalette.Inactive, QPalette.Text, brush)
+        palette.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
+        brush3 = QBrush(QColor(0, 0, 0, 255))
+        brush3.setStyle(Qt.NoBrush)
+        palette.setBrush(QPalette.Inactive, QPalette.Base, brush3)
+        palette.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
+#endif
+        palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette.setBrush(QPalette.Disabled, QPalette.Text, brush)
+        palette.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
+        brush4 = QBrush(QColor(0, 0, 0, 255))
+        brush4.setStyle(Qt.NoBrush)
+        palette.setBrush(QPalette.Disabled, QPalette.Base, brush4)
+        palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
+#endif
+        self.tableWidget_2.setPalette(palette)
+        self.tableWidget_2.setFrameShape(QFrame.NoFrame)
+        self.tableWidget_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.tableWidget_2.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.tableWidget_2.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tableWidget_2.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tableWidget_2.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tableWidget_2.setShowGrid(True)
+        self.tableWidget_2.setGridStyle(Qt.SolidLine)
+        self.tableWidget_2.setSortingEnabled(False)
+        self.tableWidget_2.horizontalHeader().setVisible(False)
+        self.tableWidget_2.horizontalHeader().setCascadingSectionResizes(True)
+        self.tableWidget_2.horizontalHeader().setDefaultSectionSize(200)
+        self.tableWidget_2.horizontalHeader().setStretchLastSection(True)
+        self.tableWidget_2.verticalHeader().setVisible(False)
+        self.tableWidget_2.verticalHeader().setCascadingSectionResizes(False)
+        self.tableWidget_2.verticalHeader().setHighlightSections(False)
+        self.tableWidget_2.verticalHeader().setStretchLastSection(True)
+
+        self.horizontalLayout_13.addWidget(self.tableWidget_2)
+
+
+        self._2.addWidget(self.row_4)
+
+        self.stackedWidget.addWidget(self.Notification)
         self.Home = QWidget()
         self.Home.setObjectName(u"Home")
         self.Home.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
@@ -1131,9 +1453,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon4)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon6)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -1208,7 +1530,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 274, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 353, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1256,8 +1578,6 @@ class Ui_MainWindow(object):
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
         self.commandLinkButton.setIcon(icon5)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
@@ -1287,103 +1607,95 @@ class Ui_MainWindow(object):
         self.tableWidget = QTableWidget(self.row_3)
         if (self.tableWidget.columnCount() < 4):
             self.tableWidget.setColumnCount(4)
-        __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem24 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem24)
+        __qtablewidgetitem25 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem25)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem27)
         if (self.tableWidget.rowCount() < 16):
             self.tableWidget.setRowCount(16)
-        font4 = QFont()
-        __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font4);
-        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(2, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(3, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(5, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(6, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(7, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(8, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(9, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(10, __qtablewidgetitem14)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(11, __qtablewidgetitem15)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(12, __qtablewidgetitem16)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(13, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(14, __qtablewidgetitem18)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.tableWidget.setVerticalHeaderItem(15, __qtablewidgetitem19)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 0, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 1, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 2, __qtablewidgetitem22)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.tableWidget.setItem(0, 3, __qtablewidgetitem23)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        __qtablewidgetitem28.setFont(font4);
+        self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem29)
+        __qtablewidgetitem30 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(2, __qtablewidgetitem30)
+        __qtablewidgetitem31 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(3, __qtablewidgetitem31)
+        __qtablewidgetitem32 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem32)
+        __qtablewidgetitem33 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(5, __qtablewidgetitem33)
+        __qtablewidgetitem34 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(6, __qtablewidgetitem34)
+        __qtablewidgetitem35 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(7, __qtablewidgetitem35)
+        __qtablewidgetitem36 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(8, __qtablewidgetitem36)
+        __qtablewidgetitem37 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(9, __qtablewidgetitem37)
+        __qtablewidgetitem38 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(10, __qtablewidgetitem38)
+        __qtablewidgetitem39 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(11, __qtablewidgetitem39)
+        __qtablewidgetitem40 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(12, __qtablewidgetitem40)
+        __qtablewidgetitem41 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(13, __qtablewidgetitem41)
+        __qtablewidgetitem42 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(14, __qtablewidgetitem42)
+        __qtablewidgetitem43 = QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(15, __qtablewidgetitem43)
+        __qtablewidgetitem44 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 0, __qtablewidgetitem44)
+        __qtablewidgetitem45 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 1, __qtablewidgetitem45)
+        __qtablewidgetitem46 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 2, __qtablewidgetitem46)
+        __qtablewidgetitem47 = QTableWidgetItem()
+        self.tableWidget.setItem(0, 3, __qtablewidgetitem47)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
         sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy3)
-        palette = QPalette()
-        brush = QBrush(QColor(221, 221, 221, 255))
-        brush.setStyle(Qt.SolidPattern)
-        palette.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        brush1 = QBrush(QColor(0, 0, 0, 0))
-        brush1.setStyle(Qt.SolidPattern)
-        palette.setBrush(QPalette.Active, QPalette.Button, brush1)
-        palette.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        brush2 = QBrush(QColor(0, 0, 0, 255))
-        brush2.setStyle(Qt.NoBrush)
-        palette.setBrush(QPalette.Active, QPalette.Base, brush2)
-        palette.setBrush(QPalette.Active, QPalette.Window, brush1)
+        palette1 = QPalette()
+        palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette1.setBrush(QPalette.Active, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Active, QPalette.Text, brush)
+        palette1.setBrush(QPalette.Active, QPalette.ButtonText, brush)
+        brush5 = QBrush(QColor(0, 0, 0, 255))
+        brush5.setStyle(Qt.NoBrush)
+        palette1.setBrush(QPalette.Active, QPalette.Base, brush5)
+        palette1.setBrush(QPalette.Active, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
+        palette1.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
 #endif
-        palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette.setBrush(QPalette.Inactive, QPalette.Button, brush1)
-        palette.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        brush3 = QBrush(QColor(0, 0, 0, 255))
-        brush3.setStyle(Qt.NoBrush)
-        palette.setBrush(QPalette.Inactive, QPalette.Base, brush3)
-        palette.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Inactive, QPalette.Text, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
+        brush6 = QBrush(QColor(0, 0, 0, 255))
+        brush6.setStyle(Qt.NoBrush)
+        palette1.setBrush(QPalette.Inactive, QPalette.Base, brush6)
+        palette1.setBrush(QPalette.Inactive, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
+        palette1.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
 #endif
-        palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
-        palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
-        palette.setBrush(QPalette.Disabled, QPalette.Text, brush)
-        palette.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
-        brush4 = QBrush(QColor(0, 0, 0, 255))
-        brush4.setStyle(Qt.NoBrush)
-        palette.setBrush(QPalette.Disabled, QPalette.Base, brush4)
-        palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
+        palette1.setBrush(QPalette.Disabled, QPalette.Button, brush1)
+        palette1.setBrush(QPalette.Disabled, QPalette.Text, brush)
+        palette1.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
+        brush7 = QBrush(QColor(0, 0, 0, 255))
+        brush7.setStyle(Qt.NoBrush)
+        palette1.setBrush(QPalette.Disabled, QPalette.Base, brush7)
+        palette1.setBrush(QPalette.Disabled, QPalette.Window, brush1)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
+        palette1.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
 #endif
-        self.tableWidget.setPalette(palette)
+        self.tableWidget.setPalette(palette1)
         self.tableWidget.setFrameShape(QFrame.NoFrame)
         self.tableWidget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
@@ -1471,6 +1783,28 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.btn_NightMode = QPushButton(self.topMenus)
+        self.btn_NightMode.setObjectName(u"btn_NightMode")
+        sizePolicy.setHeightForWidth(self.btn_NightMode.sizePolicy().hasHeightForWidth())
+        self.btn_NightMode.setSizePolicy(sizePolicy)
+        self.btn_NightMode.setMinimumSize(QSize(0, 45))
+        self.btn_NightMode.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_NightMode.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-moon.png);")
+
+        self.verticalLayout_14.addWidget(self.btn_NightMode)
+
+        self.btn_logout = QPushButton(self.topMenus)
+        self.btn_logout.setObjectName(u"btn_logout")
+        sizePolicy.setHeightForWidth(self.btn_logout.sizePolicy().hasHeightForWidth())
+        self.btn_logout.setSizePolicy(sizePolicy)
+        self.btn_logout.setMinimumSize(QSize(0, 45))
+        self.btn_logout.setFont(font)
+        self.btn_logout.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_logout.setLayoutDirection(Qt.LeftToRight)
+        self.btn_logout.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_close.png);")
+
+        self.verticalLayout_14.addWidget(self.btn_logout)
+
         self.btn_message = QPushButton(self.topMenus)
         self.btn_message.setObjectName(u"btn_message")
         sizePolicy.setHeightForWidth(self.btn_message.sizePolicy().hasHeightForWidth())
@@ -1479,7 +1813,7 @@ class Ui_MainWindow(object):
         self.btn_message.setFont(font)
         self.btn_message.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_message.setLayoutDirection(Qt.LeftToRight)
-        self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
+        self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-volume-high.png);")
 
         self.verticalLayout_14.addWidget(self.btn_message)
 
@@ -1491,21 +1825,9 @@ class Ui_MainWindow(object):
         self.btn_print.setFont(font)
         self.btn_print.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_print.setLayoutDirection(Qt.LeftToRight)
-        self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-print.png);")
+        self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-terminal.png);")
 
         self.verticalLayout_14.addWidget(self.btn_print)
-
-        self.btn_logout = QPushButton(self.topMenus)
-        self.btn_logout.setObjectName(u"btn_logout")
-        sizePolicy.setHeightForWidth(self.btn_logout.sizePolicy().hasHeightForWidth())
-        self.btn_logout.setSizePolicy(sizePolicy)
-        self.btn_logout.setMinimumSize(QSize(0, 45))
-        self.btn_logout.setFont(font)
-        self.btn_logout.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_logout.setLayoutDirection(Qt.LeftToRight)
-        self.btn_logout.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-account-logout.png);")
-
-        self.verticalLayout_14.addWidget(self.btn_logout)
 
 
         self.verticalLayout_13.addWidget(self.topMenus, 0, Qt.AlignTop)
@@ -1571,7 +1893,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1593,7 +1915,6 @@ class Ui_MainWindow(object):
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
 #endif // QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setText("")
-        self.btn_ProSetting.setText(QCoreApplication.translate("MainWindow", u"Program Setting", None))
         self.btn_Camera.setText(QCoreApplication.translate("MainWindow", u"Camera", None))
         self.btn_Notification.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
         self.btn_Logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
@@ -1607,7 +1928,6 @@ class Ui_MainWindow(object):
                         "rgin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">MIT License</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: </span><span style=\" font-family:'JetBrains Mono','monospace'; font-size:9.8pt; color:#bd93f9;\">Yuul B. Alwright</span></p></body></html>", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"Right Posture - Make life better.", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Delete extraRightBox ?????", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
@@ -1625,6 +1945,72 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"This is Status Page !!", None))
+        self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
+        self.notifyword.setText("")
+        self.notifyword.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
+        self.btn_saveNotify.setText(QCoreApplication.translate("MainWindow", u"Save", None))
+        self.labelVersion_6.setText(QCoreApplication.translate("MainWindow", u"Type word to notify you when...", None))
+        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
+        self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Test 1", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Test 2", None))
+        self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"Test 3", None))
+
+        self.commandLinkButton_2.setText(QCoreApplication.translate("MainWindow", u"Link Button", None))
+        self.commandLinkButton_2.setDescription(QCoreApplication.translate("MainWindow", u"Link description", None))
+        ___qtablewidgetitem = self.tableWidget_2.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem1 = self.tableWidget_2.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem2 = self.tableWidget_2.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem3 = self.tableWidget_2.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"3", None));
+        ___qtablewidgetitem4 = self.tableWidget_2.verticalHeaderItem(0)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem5 = self.tableWidget_2.verticalHeaderItem(1)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem6 = self.tableWidget_2.verticalHeaderItem(2)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem7 = self.tableWidget_2.verticalHeaderItem(3)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem8 = self.tableWidget_2.verticalHeaderItem(4)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem9 = self.tableWidget_2.verticalHeaderItem(5)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem10 = self.tableWidget_2.verticalHeaderItem(6)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem11 = self.tableWidget_2.verticalHeaderItem(7)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem12 = self.tableWidget_2.verticalHeaderItem(8)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem13 = self.tableWidget_2.verticalHeaderItem(9)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem14 = self.tableWidget_2.verticalHeaderItem(10)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem15 = self.tableWidget_2.verticalHeaderItem(11)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem16 = self.tableWidget_2.verticalHeaderItem(12)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem17 = self.tableWidget_2.verticalHeaderItem(13)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem18 = self.tableWidget_2.verticalHeaderItem(14)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem19 = self.tableWidget_2.verticalHeaderItem(15)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+
+        __sortingEnabled = self.tableWidget_2.isSortingEnabled()
+        self.tableWidget_2.setSortingEnabled(False)
+        ___qtablewidgetitem20 = self.tableWidget_2.item(0, 0)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Test", None));
+        ___qtablewidgetitem21 = self.tableWidget_2.item(0, 1)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Text", None));
+        ___qtablewidgetitem22 = self.tableWidget_2.item(0, 2)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Cell", None));
+        ___qtablewidgetitem23 = self.tableWidget_2.item(0, 3)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
+        self.tableWidget_2.setSortingEnabled(__sortingEnabled)
+
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"FILE BOX", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
@@ -1638,64 +2024,65 @@ class Ui_MainWindow(object):
 
         self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"Link Button", None))
         self.commandLinkButton.setDescription(QCoreApplication.translate("MainWindow", u"Link description", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"0", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"1", None));
-        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"2", None));
-        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"3", None));
-        ___qtablewidgetitem4 = self.tableWidget.verticalHeaderItem(0)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem5 = self.tableWidget.verticalHeaderItem(1)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem6 = self.tableWidget.verticalHeaderItem(2)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem7 = self.tableWidget.verticalHeaderItem(3)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem8 = self.tableWidget.verticalHeaderItem(4)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem9 = self.tableWidget.verticalHeaderItem(5)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem10 = self.tableWidget.verticalHeaderItem(6)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem11 = self.tableWidget.verticalHeaderItem(7)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem12 = self.tableWidget.verticalHeaderItem(8)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem13 = self.tableWidget.verticalHeaderItem(9)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem14 = self.tableWidget.verticalHeaderItem(10)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem15 = self.tableWidget.verticalHeaderItem(11)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem16 = self.tableWidget.verticalHeaderItem(12)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem17 = self.tableWidget.verticalHeaderItem(13)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem18 = self.tableWidget.verticalHeaderItem(14)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        ___qtablewidgetitem19 = self.tableWidget.verticalHeaderItem(15)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem24 = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"0", None));
+        ___qtablewidgetitem25 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem26 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem27 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"3", None));
+        ___qtablewidgetitem28 = self.tableWidget.verticalHeaderItem(0)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem29 = self.tableWidget.verticalHeaderItem(1)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem30 = self.tableWidget.verticalHeaderItem(2)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem31 = self.tableWidget.verticalHeaderItem(3)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem32 = self.tableWidget.verticalHeaderItem(4)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem33 = self.tableWidget.verticalHeaderItem(5)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem34 = self.tableWidget.verticalHeaderItem(6)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem35 = self.tableWidget.verticalHeaderItem(7)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem36 = self.tableWidget.verticalHeaderItem(8)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem37 = self.tableWidget.verticalHeaderItem(9)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem38 = self.tableWidget.verticalHeaderItem(10)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem39 = self.tableWidget.verticalHeaderItem(11)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem40 = self.tableWidget.verticalHeaderItem(12)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem41 = self.tableWidget.verticalHeaderItem(13)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem42 = self.tableWidget.verticalHeaderItem(14)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem43 = self.tableWidget.verticalHeaderItem(15)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
 
-        __sortingEnabled = self.tableWidget.isSortingEnabled()
+        __sortingEnabled1 = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
-        ___qtablewidgetitem20 = self.tableWidget.item(0, 0)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Test", None));
-        ___qtablewidgetitem21 = self.tableWidget.item(0, 1)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Text", None));
-        ___qtablewidgetitem22 = self.tableWidget.item(0, 2)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Cell", None));
-        ___qtablewidgetitem23 = self.tableWidget.item(0, 3)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
-        self.tableWidget.setSortingEnabled(__sortingEnabled)
+        ___qtablewidgetitem44 = self.tableWidget.item(0, 0)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Test", None));
+        ___qtablewidgetitem45 = self.tableWidget.item(0, 1)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Text", None));
+        ___qtablewidgetitem46 = self.tableWidget.item(0, 2)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Cell", None));
+        ___qtablewidgetitem47 = self.tableWidget.item(0, 3)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Line", None));
+        self.tableWidget.setSortingEnabled(__sortingEnabled1)
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"This is Posture Page !!", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"This is Tutorial Page !!!", None))
-        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
-        self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
+        self.btn_NightMode.setText(QCoreApplication.translate("MainWindow", u"Toggle Night Mode", None))
+        self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Auto Close", None))
+        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Sound", None))
+        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: WIP Team", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.5", None))
     # retranslateUi
