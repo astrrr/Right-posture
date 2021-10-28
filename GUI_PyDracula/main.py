@@ -17,16 +17,26 @@
 import sys
 import os
 import platform
-
+import time
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
 from modules import *
 from widgets import *
+from plyer import notification
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
 widgets = None
+
+
+def notifyMe(title, message):
+    notification.notify(
+        title=title,
+        message=message,
+        app_icon="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
+        timeout=2,
+    )
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -139,8 +149,7 @@ class MainWindow(QMainWindow):
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-
-
+        notifyMe("ลงไปนอน", "ได้แล้ว")
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
