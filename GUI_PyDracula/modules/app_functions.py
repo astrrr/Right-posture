@@ -46,7 +46,8 @@ class AppFunctions(MainWindow):
                 party_size=[35, 100],
                 start=time.time()
             )
-        print("Discord Rich Presence Connected")
+            print("Discord Rich Presence Connected")
+
 
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
