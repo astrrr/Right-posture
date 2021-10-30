@@ -165,5 +165,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
-    AppFunctions.discordRichPresence(True) # TOGGLE Discord Rich Presence
+    AppFunctions.discordRichPresence(False) # TOGGLE Discord Rich Presence
     sys.exit(app.exec())
