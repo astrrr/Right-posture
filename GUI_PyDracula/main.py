@@ -27,15 +27,6 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL WIDGETS
 widgets = None
 
-# Notification function
-def notifyMe(title, message):
-    notification.notify(
-        title=title,
-        message=message,
-        app_icon="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
-        timeout=2,
-    )
-
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -149,11 +140,10 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
         if btnName == "btn_saveNotify":
             print(widgets.notifyword.text())
-            notifyMe("ไปนอนซะ", widgets.notifyword.text())
+            AppFunctions.notifyMe("ไปนอนซะ", widgets.notifyword.text())
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-        #notifyMe("ลงไปนอน", "ได้แล้ว")
 
     # RESIZE EVENTS
     def resizeEvent(self, event):
@@ -175,4 +165,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
+    AppFunctions.discordRichPresence(True) # TOGGLE Discord Rich Presence
     sys.exit(app.exec())
