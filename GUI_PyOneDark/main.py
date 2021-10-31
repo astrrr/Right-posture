@@ -215,6 +215,8 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
+    # TOGGLE Discord Rich Presence
+    # *** Not recommended if discord doesn't running in background ***
     Functions.discordRichPresence(False)
     # EXEC APP
     # ///////////////////////////////////////////////////////////////
