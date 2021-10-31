@@ -17,10 +17,38 @@
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
 import os
-
+import time
+from pypresence import Presence
+from plyer import notification
 # APP FUNCTIONS
 # ///////////////////////////////////////////////////////////////
 class Functions:
+
+    # Notification function
+    def notifyMe(self, message):
+        notification.notify(
+            title=self,
+            message=message,
+            app_icon="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
+            timeout=2
+        )
+
+    # Discord Rich Presence
+    def discordRichPresence(self):
+        if self:
+            rpc = Presence("902601121124728884")
+            rpc.connect()
+            rpc.update(  # details="Make Life Better.",
+                state="Dev GUI",
+                large_image="right_posture",
+                large_text="อยากรู้ล่ะสิ",
+                small_image="verify",
+                small_text="Verify by me",
+                buttons=[{"label": "Github", "url": "https://github.com/ussnllmn"}],
+                party_size=[35, 100],
+                start=time.time()
+            )
+            print("Discord Rich Presence Connected")
 
     # SET SVG ICON
     # ///////////////////////////////////////////////////////////////
