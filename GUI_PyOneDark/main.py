@@ -19,7 +19,6 @@
 from gui.uis.windows.main_window.functions_main_window import *
 import sys
 import os
-
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
 from qt_core import *
@@ -204,7 +203,7 @@ class MainWindow(QMainWindow):
     # ///////////////////////////////////////////////////////////////
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
-        self.dragPos = event.globalPos()
+        self.dragPos = event.globalPosition().toPoint()
 
 
 # SETTINGS WHEN TO START
@@ -216,7 +215,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
-
+    Functions.discordRichPresence(False)
     # EXEC APP
     # ///////////////////////////////////////////////////////////////
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
