@@ -56,8 +56,10 @@ class PyToggle(QCheckBox):
         self.animation.stop()
         if value:
             self.animation.setEndValue(self.width() - 26)
+            print("Status : ON")
         else:
             self.animation.setEndValue(4)
+            print("Status : OFF")
         self.animation.start()
     
     def hitButton(self, pos: QPoint):
