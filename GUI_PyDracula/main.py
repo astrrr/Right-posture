@@ -133,11 +133,11 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
         if btnName == "btn_saveNotify":
             print(widgets.notifyword.text())
-            AppFunctions.notifyFull("ไปนอนซะ", widgets.notifyword.text())
+            AppFunctions.notifyMe("ไปนอนซะ", widgets.notifyword.text())
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-        #AppFunctions.notifyStable("ไปนอนซะ","eiei")
+        #AppFunctions.notifyMe("ไปนอนซะ","eiei")
 
     # RESIZE EVENTS
     def resizeEvent(self, event):
