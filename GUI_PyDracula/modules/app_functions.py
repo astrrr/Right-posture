@@ -18,26 +18,30 @@
 # ///////////////////////////////////////////////////////////////
 from main import *
 from pypresence import Presence
-#from plyer import notification
 from pynotifier import Notification
+from notifypy import Notify
+
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 class AppFunctions(MainWindow):
 
     # Notification function
-    def notifyMe(self, message):
-        # notification.notify(
-        #     title=self,
-        #     message=message,
-        #     app_icon="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
-        #     timeout=2
-        # )
+    def notifyFull(self, message):
+        notification = Notify(
+            default_notification_title=self,
+            default_notification_application_name="Right Posture",
+            default_notification_message=message,
+            default_notification_icon="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
+            #default_notification_audio="C:\\Users\\Mero Asebi\\Downloads\\Noti\\t2.wav"
+        ).send()
+
+    def notifyStable(self, message):
         Notification(
             title=self,
             description=message,
             icon_path="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
-            duration=5,  # Duration in seconds
-            urgency='normal'
+            duration=5,
+            urgency='critical'
         ).send()
 
     # Discord Rich Presence
