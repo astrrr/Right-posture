@@ -13,7 +13,6 @@
 # https://doc.qt.io/qtforpython/licenses.html
 #
 # ///////////////////////////////////////////////////////////////
-
 import sys
 import os
 import platform
@@ -29,33 +28,66 @@ widgets = None
 
 class MainWindow(QMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        if True:
+            QMainWindow.__init__(self)
+            self.ui = Ui_MainWindow()
+            self.ui.setupUi(self)
+            global widgets
+            widgets = self.ui
 
-        # SET AS GLOBAL WIDGETS
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-        global widgets
-        widgets = self.ui
+            # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+            Settings.ENABLE_CUSTOM_TITLE_BAR = True
 
-        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
-        Settings.ENABLE_CUSTOM_TITLE_BAR = True
+            # APP NAME
+            title = "Right Posture"
+            description = "Right Posture - Make life better."
+            # APPLY TEXTS
+            self.setWindowTitle(title)
+            widgets.titleRightInfo.setText(description)
 
-        # APP NAME
-        title = "Right Posture"
-        description = "Right Posture - Make life better."
-        # APPLY TEXTS
-        self.setWindowTitle(title)
-        widgets.titleRightInfo.setText(description)
+            # TOGGLE MENU
+            widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
 
-        # TOGGLE MENU
-        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
+            # SET UI DEFINITIONS
+            UIFunctions.uiDefinitions(self)
 
-        # SET UI DEFINITIONS
-        UIFunctions.uiDefinitions(self)
+            # QTableWidget PARAMETERS
+            widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-        # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+            # EXTRA LEFT BOX
+            def openCloseLeftBox():
+                UIFunctions.toggleLeftBox(self, True)
+            widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
+            widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+            autoClose = True  # Toggle Auto Close Left Box when click.
+            if autoClose:
+                widgets.btn_Camera.clicked.connect(openCloseLeftBox)
+                widgets.btn_Notification.clicked.connect(openCloseLeftBox)
+                widgets.btn_Logout.clicked.connect(openCloseLeftBox)
 
+            # EXTRA RIGHT BOX
+            def openCloseRightBox():
+                UIFunctions.toggleRightBox(self, True)
+            widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
+
+            # SHOW APP
+            self.show()
+
+            # SET CUSTOM THEME
+            useCustomTheme = False
+            themeFile = "themes\py_dracula_light.qss"
+
+            # SET THEME AND HACKS
+            if useCustomTheme:
+                # LOAD AND APPLY STYLE
+                UIFunctions.theme(self, themeFile, True)
+
+                # SET HACKS
+                AppFunctions.setThemeHack(self)
+
+            # SET HOME PAGE AND SELECT MENU
+            widgets.stackedWidget.setCurrentWidget(widgets.Home)
+            widgets.btn_Home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Home.styleSheet()))
         # BUTTONS CLICK Don't forget to add button here
         widgets.btn_Home.clicked.connect(self.buttonClick)
         widgets.btn_Status.clicked.connect(self.buttonClick)
@@ -67,59 +99,21 @@ class MainWindow(QMainWindow):
         widgets.btn_Logout.clicked.connect(self.buttonClick)
         widgets.btn_saveNotify.clicked.connect(self.buttonClick)
 
-        # EXTRA LEFT BOX
-        def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
-        autoClose = True  # Toggle Auto Close Left Box when click.
-        if autoClose:
-            widgets.btn_Camera.clicked.connect(openCloseLeftBox)
-            widgets.btn_Notification.clicked.connect(openCloseLeftBox)
-            widgets.btn_Logout.clicked.connect(openCloseLeftBox)
-
-        # EXTRA RIGHT BOX
-        def openCloseRightBox():
-            UIFunctions.toggleRightBox(self, True)
-        widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
-
-        # SHOW APP
-        self.show()
-
-        # SET CUSTOM THEME
-        useCustomTheme = False
-        themeFile = "themes\py_dracula_light.qss"
-
-        # SET THEME AND HACKS
-        if useCustomTheme:
-            # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
-
-            # SET HACKS
-            AppFunctions.setThemeHack(self)
-
-        # SET HOME PAGE AND SELECT MENU
-        widgets.stackedWidget.setCurrentWidget(widgets.Home)
-        widgets.btn_Home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Home.styleSheet()))
-
     # BUTTONS CLICK Add button here and above
     def buttonClick(self):
-        # GET BUTTON CLICKED
         btn = self.sender()
         btnName = btn.objectName()
-        # SHOW HOME PAGE
+
         if btnName == "btn_Home":
             widgets.stackedWidget.setCurrentWidget(widgets.Home)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # SHOW WIDGETS PAGE
         if btnName == "btn_Status":
             widgets.stackedWidget.setCurrentWidget(widgets.Status)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # SHOW NEW PAGE
         if btnName == "btn_Posture":
             widgets.stackedWidget.setCurrentWidget(widgets.Posture) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
@@ -144,6 +138,7 @@ class MainWindow(QMainWindow):
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
+        #AppFunctions.notifyMe("ไปนอนซะ","eiei")
 
     # RESIZE EVENTS
     def resizeEvent(self, event):
