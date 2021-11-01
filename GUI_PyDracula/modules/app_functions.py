@@ -18,18 +18,27 @@
 # ///////////////////////////////////////////////////////////////
 from main import *
 from pypresence import Presence
+#from plyer import notification
+from pynotifier import Notification
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 class AppFunctions(MainWindow):
 
     # Notification function
     def notifyMe(self, message):
-        notification.notify(
+        # notification.notify(
+        #     title=self,
+        #     message=message,
+        #     app_icon="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
+        #     timeout=2
+        # )
+        Notification(
             title=self,
-            message=message,
-            app_icon="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
-            timeout=2
-        )
+            description=message,
+            icon_path="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
+            duration=5,  # Duration in seconds
+            urgency='normal'
+        ).send()
 
     # Discord Rich Presence
     def discordRichPresence(self):

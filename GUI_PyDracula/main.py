@@ -19,7 +19,6 @@ import platform
 import time
 from modules import *
 from widgets import *
-from plyer import notification
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
