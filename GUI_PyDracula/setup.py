@@ -22,4 +22,9 @@ setup(
     executables = [target]
     
 )
+options = {
+    'build_exe': {
+        'build_exe': './/build'
+    }
+}
 #Type python setup.py build to build.exe
