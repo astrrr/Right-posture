@@ -539,7 +539,7 @@ class SetupMainWindow:
         self.ui.load_pages.row_3_layout.addWidget(self.icon_button_3)
         self.ui.load_pages.row_3_layout.addWidget(self.push_button_1)
         self.ui.load_pages.row_3_layout.addWidget(self.push_button_2)
-        self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
+        #.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
         self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
         self.ui.load_pages.row_5_layout.addWidget(self.table_widget)
 
@@ -558,29 +558,8 @@ class SetupMainWindow:
         self.icon_right = QIcon(Functions.set_svg_icon("icon_arrow_right.svg"))
         self.right_btn_1.setIcon(self.icon_right)
         self.right_btn_1.setMaximumHeight(40)
-        self.right_btn_1.clicked.connect(lambda: MainFunctions.set_right_column_menu(
-            self,
-            self.ui.right_column.menu_2
-        ))
-        self.ui.right_column.btn_1_layout.addWidget(self.right_btn_1)
+        self.ui.right_column.ToggleNightmode.addWidget(self.toggle_button,Qt.AlignCenter,Qt.AlignCenter)
 
-        # BTN 2
-        self.right_btn_2 = PyPushButton(
-            text="Show Menu 1",
-            radius=8,
-            color=self.themes["app_color"]["text_foreground"],
-            bg_color=self.themes["app_color"]["dark_one"],
-            bg_color_hover=self.themes["app_color"]["dark_three"],
-            bg_color_pressed=self.themes["app_color"]["dark_four"]
-        )
-        self.icon_left = QIcon(Functions.set_svg_icon("icon_arrow_left.svg"))
-        self.right_btn_2.setIcon(self.icon_left)
-        self.right_btn_2.setMaximumHeight(40)
-        self.right_btn_2.clicked.connect(lambda: MainFunctions.set_right_column_menu(
-            self,
-            self.ui.right_column.menu_1
-        ))
-        self.ui.right_column.btn_2_layout.addWidget(self.right_btn_2)
 
         # ///////////////////////////////////////////////////////////////
         # END - EXAMPLE CUSTOM WIDGETS
