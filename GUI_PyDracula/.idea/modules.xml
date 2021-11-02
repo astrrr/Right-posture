@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GUI_PyDracula.iml" filepath="$PROJECT_DIR$/.idea/GUI_PyDracula.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" filepath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" />
     </modules>
   </component>
 </project>

@@ -19,7 +19,8 @@ import platform
 import time
 from modules import *
 from widgets import *
-
+from modules.setup_main_window import SetupMainWindow
+from widgets.py_toggle import PyToggle
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -32,26 +33,20 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
-
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
-
         # APP NAME
         title = "Right Posture"
         description = "Right Posture - Make life better."
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
-
         # TOGGLE MENU
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-
         # SET UI DEFINITIONS
         UIFunctions.uiDefinitions(self)
-
         # QTableWidget PARAMETERS
         widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
@@ -62,24 +57,19 @@ class MainWindow(QMainWindow):
             widgets.btn_Camera.clicked.connect(openCloseLeftBox)
             widgets.btn_Notification.clicked.connect(openCloseLeftBox)
             widgets.btn_Logout.clicked.connect(openCloseLeftBox)
-
         # EXTRA RIGHT BOX
         def openCloseRightBox():
             UIFunctions.toggleRightBox(self, True)
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
-
         # SHOW APP
         self.show()
-
         # SET CUSTOM THEME
         useCustomTheme = False
         themeFile = "themes\py_dracula_light.qss"
-
         # SET THEME AND HACKS
         if useCustomTheme:
             # LOAD AND APPLY STYLE
             UIFunctions.theme(self, themeFile, True)
-
             # SET HACKS
             AppFunctions.setThemeHack(self)
 
@@ -97,6 +87,7 @@ class MainWindow(QMainWindow):
         widgets.btn_Notification.clicked.connect(self.buttonClick)
         widgets.btn_Logout.clicked.connect(self.buttonClick)
         widgets.btn_saveNotify.clicked.connect(self.buttonClick)
+        SetupMainWindow.addWidget(self)
 
     # BUTTONS CLICK Add button here and above
     def buttonClick(self):
