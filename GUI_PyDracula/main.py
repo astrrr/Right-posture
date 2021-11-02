@@ -28,25 +28,18 @@ widgets = None
 
 class MainWindow(QMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
-        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
-        Settings.ENABLE_CUSTOM_TITLE_BAR = True
-        # APP NAME
-        title = "Right Posture"
-        description = "Right Posture - Make life better."
-        # APPLY TEXTS
-        self.setWindowTitle(title)
-        widgets.titleRightInfo.setText(description)
+        ui_Custom.setup_gui(self)
+
+
         # TOGGLE MENU
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
         # SET UI DEFINITIONS
         UIFunctions.uiDefinitions(self)
-        # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
