@@ -21,6 +21,8 @@ from modules import *
 from widgets import *
 from modules.ui_Custom import *
 from widgets.py_toggle import PyToggle
+from PySide6 import QtWidgets
+
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -34,7 +36,17 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
+        self.loaddata()
         ui_Custom.setup_gui(self)
+
+    def loaddata(self):
+        people=[{"test":"jjames", "text":"idk","cell":"eiei","Line":"las"},{"test":"qwrdsfsdf", "text":"idk","cell":"eiei","Line":"las"},{"test":"48151262", "text":"idk","cell":"eiei","Line":"las"}]
+        tablerow=0
+        self.ui.tableWidget.setRowCount(len(people))
+        for row in people:
+            self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
+            tablerow+=1
+
 
         # TOGGLE MENU
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
