@@ -87,6 +87,7 @@ class MainWindow(QMainWindow):
         widgets.btn_Notification.clicked.connect(self.buttonClick)
         widgets.btn_Logout.clicked.connect(self.buttonClick)
         widgets.btn_saveNotify.clicked.connect(self.buttonClick)
+        widgets.btn_print.clicked.connect(self.buttonClick)
         ui_Custom.addWidget(self)
 
     # BUTTONS CLICK Add button here and above
@@ -125,6 +126,9 @@ class MainWindow(QMainWindow):
         if btnName == "btn_saveNotify":
             print(widgets.notifyword.text())
             AppFunctions.notifyMe("ไปนอนซะ", widgets.notifyword.text())
+        if btnName == "btn_print":
+            print(widgets.notifyword.text())
+            AppFunctions.notifyMe("Debug", "Notification")
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
