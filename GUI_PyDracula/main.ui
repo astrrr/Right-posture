@@ -3628,329 +3628,322 @@ background-repeat: no-repeat;</string>
                         <property name="frameShadow">
                          <enum>QFrame::Raised</enum>
                         </property>
-                        <widget class="QFrame" name="NightMode">
-                         <property name="geometry">
-                          <rect>
-                           <x>0</x>
-                           <y>0</y>
-                           <width>141</width>
-                           <height>47</height>
-                          </rect>
+                        <layout class="QVBoxLayout" name="verticalLayout_14">
+                         <property name="spacing">
+                          <number>0</number>
                          </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                         <property name="leftMargin">
+                          <number>0</number>
                          </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
+                         <property name="topMargin">
+                          <number>0</number>
                          </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_6">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QPushButton" name="btn_NightMode">
-                            <property name="enabled">
-                             <bool>false</bool>
-                            </property>
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>20</width>
-                              <height>45</height>
-                             </size>
-                            </property>
-                            <property name="cursor">
-                             <cursorShape>ArrowCursor</cursorShape>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-image: url(:/icons/images/icons/cil-moon.png);</string>
-                            </property>
-                            <property name="text">
-                             <string>Night Mode</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="Toggle_Night">
-                            <property name="maximumSize">
-                             <size>
-                              <width>60</width>
-                              <height>45</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="Toggle_Night_Layout">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                        <widget class="QFrame" name="NightMode_2">
-                         <property name="geometry">
-                          <rect>
-                           <x>0</x>
-                           <y>47</y>
-                           <width>133</width>
-                           <height>47</height>
-                          </rect>
+                         <property name="rightMargin">
+                          <number>0</number>
                          </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                         <property name="bottomMargin">
+                          <number>0</number>
                          </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_7">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QPushButton" name="btn_logout_2">
-                            <property name="enabled">
-                             <bool>false</bool>
+                         <item>
+                          <widget class="QFrame" name="NightMode">
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QHBoxLayout" name="horizontalLayout_6">
+                            <property name="spacing">
+                             <number>0</number>
                             </property>
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
+                            <property name="leftMargin">
+                             <number>0</number>
                             </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>20</width>
-                              <height>45</height>
-                             </size>
+                            <property name="topMargin">
+                             <number>0</number>
                             </property>
-                            <property name="cursor">
-                             <cursorShape>ArrowCursor</cursorShape>
+                            <property name="rightMargin">
+                             <number>0</number>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-image: url(:/icons/images/icons/icon_close.png);</string>
+                            <property name="bottomMargin">
+                             <number>0</number>
                             </property>
-                            <property name="text">
-                             <string>Auto Close</string>
+                            <item>
+                             <widget class="QPushButton" name="btn_NightMode">
+                              <property name="enabled">
+                               <bool>false</bool>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>20</width>
+                                <height>45</height>
+                               </size>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>ArrowCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-image: url(:/icons/images/icons/cil-moon.png);</string>
+                              </property>
+                              <property name="text">
+                               <string>Night Mode</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QFrame" name="Toggle_Night">
+                              <property name="maximumSize">
+                               <size>
+                                <width>60</width>
+                                <height>45</height>
+                               </size>
+                              </property>
+                              <property name="frameShape">
+                               <enum>QFrame::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Raised</enum>
+                              </property>
+                              <layout class="QVBoxLayout" name="Toggle_Night_Layout">
+                               <property name="spacing">
+                                <number>0</number>
+                               </property>
+                               <property name="leftMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="topMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="rightMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                              </layout>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QFrame" name="NightMode_2">
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QHBoxLayout" name="horizontalLayout_7">
+                            <property name="spacing">
+                             <number>0</number>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="Toggle_Close">
-                            <property name="maximumSize">
-                             <size>
-                              <width>60</width>
-                              <height>45</height>
-                             </size>
+                            <property name="leftMargin">
+                             <number>0</number>
                             </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
+                            <property name="topMargin">
+                             <number>0</number>
                             </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
+                            <property name="rightMargin">
+                             <number>0</number>
                             </property>
-                            <layout class="QVBoxLayout" name="Toggle_Close_Layout">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                        <widget class="QPushButton" name="btn_print">
-                         <property name="geometry">
-                          <rect>
-                           <x>0</x>
-                           <y>141</y>
-                           <width>105</width>
-                           <height>45</height>
-                          </rect>
-                         </property>
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>45</height>
-                          </size>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <pointsize>10</pointsize>
-                           <italic>false</italic>
-                           <bold>false</bold>
-                          </font>
-                         </property>
-                         <property name="cursor">
-                          <cursorShape>PointingHandCursor</cursorShape>
-                         </property>
-                         <property name="layoutDirection">
-                          <enum>Qt::LeftToRight</enum>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-image: url(:/icons/images/icons/cil-terminal.png);</string>
-                         </property>
-                         <property name="text">
-                          <string>Debug</string>
-                         </property>
-                        </widget>
-                        <widget class="QFrame" name="NightMode_7">
-                         <property name="geometry">
-                          <rect>
-                           <x>0</x>
-                           <y>94</y>
-                           <width>107</width>
-                           <height>47</height>
-                          </rect>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_24">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QPushButton" name="btn_logout_8">
-                            <property name="enabled">
-                             <bool>false</bool>
+                            <property name="bottomMargin">
+                             <number>0</number>
                             </property>
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
+                            <item>
+                             <widget class="QPushButton" name="btn_logout_2">
+                              <property name="enabled">
+                               <bool>false</bool>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>20</width>
+                                <height>45</height>
+                               </size>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>ArrowCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-image: url(:/icons/images/icons/icon_close.png);</string>
+                              </property>
+                              <property name="text">
+                               <string>Auto Close</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QFrame" name="Toggle_Close">
+                              <property name="maximumSize">
+                               <size>
+                                <width>60</width>
+                                <height>45</height>
+                               </size>
+                              </property>
+                              <property name="frameShape">
+                               <enum>QFrame::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Raised</enum>
+                              </property>
+                              <layout class="QVBoxLayout" name="Toggle_Close_Layout">
+                               <property name="spacing">
+                                <number>0</number>
+                               </property>
+                               <property name="leftMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="topMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="rightMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                              </layout>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QFrame" name="NightMode_7">
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QHBoxLayout" name="horizontalLayout_25">
+                            <property name="spacing">
+                             <number>0</number>
                             </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>20</width>
-                              <height>45</height>
-                             </size>
+                            <property name="leftMargin">
+                             <number>0</number>
                             </property>
-                            <property name="cursor">
-                             <cursorShape>ArrowCursor</cursorShape>
+                            <property name="topMargin">
+                             <number>0</number>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-image: url(:/icons/images/icons/cil-volume-high.png);</string>
+                            <property name="rightMargin">
+                             <number>0</number>
                             </property>
-                            <property name="text">
-                             <string>Sound</string>
+                            <property name="bottomMargin">
+                             <number>0</number>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="Toggle_Close_7">
-                            <property name="maximumSize">
-                             <size>
-                              <width>60</width>
-                              <height>45</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="Toggle_Sound_Layout">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
+                            <item>
+                             <widget class="QPushButton" name="btn_logout_9">
+                              <property name="enabled">
+                               <bool>false</bool>
+                              </property>
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>20</width>
+                                <height>45</height>
+                               </size>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>ArrowCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-image: url(:/icons/images/icons/cil-volume-high.png);</string>
+                              </property>
+                              <property name="text">
+                               <string>Sound</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QFrame" name="Toggle_Close_8">
+                              <property name="maximumSize">
+                               <size>
+                                <width>60</width>
+                                <height>45</height>
+                               </size>
+                              </property>
+                              <property name="frameShape">
+                               <enum>QFrame::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Raised</enum>
+                              </property>
+                              <layout class="QVBoxLayout" name="Toggle_Sound_Layout">
+                               <property name="spacing">
+                                <number>0</number>
+                               </property>
+                               <property name="leftMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="topMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="rightMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                              </layout>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="btn_print">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <pointsize>10</pointsize>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
+                           </property>
+                           <property name="layoutDirection">
+                            <enum>Qt::LeftToRight</enum>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-image: url(:/icons/images/icons/cil-terminal.png);</string>
+                           </property>
+                           <property name="text">
+                            <string>Debug</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </widget>
                       </item>
                      </layout>
