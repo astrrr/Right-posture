@@ -21,6 +21,7 @@ from modules import *
 from widgets import *
 from modules.ui_Custom import *
 from widgets.py_toggle import PyToggle
+
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -34,7 +35,6 @@ class MainWindow(QMainWindow):
         global widgets
         widgets = self.ui
         ui_Custom.setup_gui(self)
-
 
         # TOGGLE MENU
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))

@@ -9,6 +9,7 @@ class ui_Custom:
 
     def addWidget(self):
         widgets = self.ui
+        widgets.tableWidget.setColumnWidth(0, 20)
 
         Toggle_NightMode = PyToggle()
         widgets.Toggle_Night_Layout.addWidget(Toggle_NightMode)
