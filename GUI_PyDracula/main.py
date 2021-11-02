@@ -47,7 +47,6 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
             tablerow+=1
 
-
         # TOGGLE MENU
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
         # SET UI DEFINITIONS
