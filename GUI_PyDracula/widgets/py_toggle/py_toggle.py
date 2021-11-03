@@ -16,14 +16,14 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from main import *
+from main import Ui_MainWindow
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
 widgets = None
 widgets2 = None
-
+widgets3 = None
 class PyToggle(QCheckBox):
     def __init__(
         self,
@@ -49,8 +49,10 @@ class PyToggle(QCheckBox):
         self.ui = Ui_MainWindow()
         global widgets
         global widgets2
+        global widgets3
         widgets = self.setup_animation_1
         widgets2 = self.setup_animation_2
+        widgets3 = self.setup_animation_3
 
     def Toggle_Switch(self):
         Toggle = self.ui
@@ -62,6 +64,10 @@ class PyToggle(QCheckBox):
         Toggle_Close = PyToggle()
         Toggle.Toggle_Close_Layout.addWidget(Toggle_Close)
         Toggle_Close.stateChanged.connect(widgets2)
+
+        Toggle_Sound = PyToggle()
+        Toggle.Toggle_Sound_Layout.addWidget(Toggle_Sound)
+        Toggle_Sound.stateChanged.connect(widgets3)
 
     def setup_animation_1(self, value):
         self.animation.stop()
@@ -81,6 +87,16 @@ class PyToggle(QCheckBox):
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Close")
+        self.animation.start()
+
+    def setup_animation_3(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON Sound")
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF Sound")
         self.animation.start()
 
 

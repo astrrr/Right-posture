@@ -1,5 +1,4 @@
 from main import *
-from widgets.py_toggle import *
 
 class ui_Custom:
     # def addWidget(self):
