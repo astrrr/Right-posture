@@ -16,11 +16,15 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
+from main import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
-class PyToggle_2(QCheckBox):
+widgets = None
+widgets2 = None
+
+class PyToggle(QCheckBox):
     def __init__(
         self,
         width = 50,
@@ -37,12 +41,48 @@ class PyToggle_2(QCheckBox):
         self._bg_color = bg_color
         self._circle_color = circle_color
         self._active_color = active_color
-
         self._position = 3
         self.animation = QPropertyAnimation(self, b"position")
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
-        self.stateChanged.connect(self.setup_animation)
+        #self.stateChanged.connect(self.setup_animation)
+        self.ui = Ui_MainWindow()
+        global widgets
+        global widgets2
+        widgets = self.setup_animation_1
+        widgets2 = self.setup_animation_2
+
+    def Toggle_Switch(self):
+        Toggle = self.ui
+
+        Toggle_NightMode = PyToggle()
+        Toggle.Toggle_Night_Layout.addWidget(Toggle_NightMode)
+        Toggle_NightMode.stateChanged.connect(widgets)
+
+        Toggle_Close = PyToggle()
+        Toggle.Toggle_Close_Layout.addWidget(Toggle_Close)
+        Toggle_Close.stateChanged.connect(widgets2)
+
+    def setup_animation_1(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON Night Mode")
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF Night Mode")
+        self.animation.start()
+
+    def setup_animation_2(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON Auto Close")
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF Close")
+        self.animation.start()
+
 
     @Property(float)
     def position(self):
@@ -53,17 +93,6 @@ class PyToggle_2(QCheckBox):
         self._position = pos
         self.update()
 
-    # START STOP ANIMATION
-    def setup_animation(self, value):
-        self.animation.stop()
-        if value:
-            self.animation.setEndValue(self.width() - 26)
-            print("Status : ON 2")
-        else:
-            self.animation.setEndValue(4)
-            print("Status : OFF 2")
-        self.animation.start()
-    
     def hitButton(self, pos: QPoint):
         return self.contentsRect().contains(pos)
 

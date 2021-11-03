@@ -17,11 +17,12 @@ import sys
 import os
 import platform
 import time
+
 from modules import *
 from widgets import *
 from modules.ui_Custom import *
 from PySide6 import QtWidgets
-
+from widgets.py_toggle import PyToggle
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -91,7 +92,8 @@ class MainWindow(QMainWindow):
         widgets.btn_Logout.clicked.connect(self.buttonClick)
         widgets.btn_saveNotify.clicked.connect(self.buttonClick)
         widgets.btn_print.clicked.connect(self.buttonClick)
-        ui_Custom.addWidget(self)
+        PyToggle.Toggle_Switch(self)
+        #ui_Custom.addWidget(self)
 
     # BUTTONS CLICK Add button here and above
     def buttonClick(self):

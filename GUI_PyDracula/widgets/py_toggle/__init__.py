@@ -16,8 +16,4 @@
 
 # PY PUSH BUTTON
 # ///////////////////////////////////////////////////////////////
-from .py_toggle_1 import PyToggle_1
-from .py_toggle_2 import PyToggle_2
-from .py_toggle_3 import PyToggle_3
-from .py_toggle_4 import PyToggle_4
-from .py_toggle_5 import PyToggle_5
+from .py_toggle import PyToggle
