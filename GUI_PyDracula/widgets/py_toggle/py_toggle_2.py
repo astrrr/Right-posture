@@ -20,7 +20,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
-class PyToggle(QCheckBox):
+class PyToggle_2(QCheckBox):
     def __init__(
         self,
         width = 50,
@@ -58,10 +58,10 @@ class PyToggle(QCheckBox):
         self.animation.stop()
         if value:
             self.animation.setEndValue(self.width() - 26)
-            print("Status : ON")
+            print("Status : ON 2")
         else:
             self.animation.setEndValue(4)
-            print("Status : OFF")
+            print("Status : OFF 2")
         self.animation.start()
     
     def hitButton(self, pos: QPoint):

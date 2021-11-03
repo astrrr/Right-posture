@@ -20,7 +20,6 @@ import time
 from modules import *
 from widgets import *
 from modules.ui_Custom import *
-from widgets.py_toggle import PyToggle
 from PySide6 import QtWidgets
 
 

@@ -1,5 +1,5 @@
 from main import *
-from widgets.py_toggle import PyToggle
+from widgets.py_toggle import *
 
 class ui_Custom:
     def __init__(self):
@@ -9,15 +9,16 @@ class ui_Custom:
 
     def addWidget(self):
         widgets = self.ui
-        widgets.tableWidget.setColumnWidth(0, 20)
 
-        Toggle_NightMode = PyToggle()
+        Toggle_NightMode = PyToggle_1()
+
         widgets.Toggle_Night_Layout.addWidget(Toggle_NightMode)
 
-        Toggle_Close = PyToggle()
+        Toggle_Close = PyToggle_2()
         widgets.Toggle_Close_Layout.addWidget(Toggle_Close)
 
-        Toggle_Sound = PyToggle()
+        Toggle_Sound = PyToggle_3()
+
         widgets.Toggle_Sound_Layout.addWidget(Toggle_Sound)
 
     def setup_gui(self):
@@ -38,4 +39,3 @@ class ui_Custom:
 
         # QTableWidget PARAMETERS
         widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
