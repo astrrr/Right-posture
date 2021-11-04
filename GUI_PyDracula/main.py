@@ -40,15 +40,8 @@ class MainWindow(QMainWindow):
         UIFunctions.uiDefinitions(self)
         UIFunctions.Function_Setup(self)
         PyToggle.Toggle_Switch(self)
-        self.loaddata()
 
-    def loaddata(self):
-        people=[{"test":"jjames", "text":"idk","cell":"eiei","Line":"las"},{"test":"qwrdsfsdf", "text":"idk","cell":"eiei","Line":"las"},{"test":"48151262", "text":"idk","cell":"eiei","Line":"las"}]
-        tablerow=0
-        self.ui.tableWidget.setRowCount(len(people))
-        for row in people:
-            self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
-            tablerow+=1
+        self.loaddata()
 
         # SHOW APP
         self.show()
@@ -62,9 +55,15 @@ class MainWindow(QMainWindow):
             # SET HACKS
             AppFunctions.setThemeHack(self)
 
-        # SET HOME PAGE AND SELECT MENU
-        widgets.stackedWidget.setCurrentWidget(widgets.Home)
-        widgets.btn_Home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Home.styleSheet()))
+    def loaddata(self):
+        people = [{"test": "jjames", "text": "idk", "cell": "eiei", "Line": "las"},
+                  {"test": "qwrdsfsdf", "text": "idk", "cell": "eiei", "Line": "las"},
+                  {"test": "48151262", "text": "idk", "cell": "eiei", "Line": "las"}]
+        tablerow = 0
+        self.ui.tableWidget.setRowCount(len(people))
+        for row in people:
+            self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
+            tablerow += 1
 
         # BUTTONS CLICK Don't forget to add button here
         widgets.btn_Home.clicked.connect(self.buttonClick)

@@ -37,11 +37,9 @@ class UIFunctions(MainWindow):
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
 
-        # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
-        # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # SET HOME PAGE AND SELECT MENU
+        widgets.stackedWidget.setCurrentWidget(widgets.Home)
+        widgets.btn_Home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Home.styleSheet()))
 
         # TOGGLE MENU
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
@@ -61,6 +59,12 @@ class UIFunctions(MainWindow):
         def openCloseRightBox():
             UIFunctions.toggleRightBox(self, True)
         widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
+
+        # QTableWidget PARAMETERS
+        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        # QTableWidget PARAMETERS
+        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
     # MAXIMIZE/RESTORE
     # ///////////////////////////////////////////////////////////////
