@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Change widgets --&gt; toggle">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Move more function">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_Custom.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_Custom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -455,7 +452,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635977298048</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Move some function from main to ui_function">
+      <created>1636043852324</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1636043852324</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Move more function">
+      <created>1636044086333</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1636044086333</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,8 +483,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change Notification system from plyer --&gt; pynotifier" />
-    <MESSAGE value="Add file from build" />
     <MESSAGE value="Add pynotifier &amp; notifypy" />
     <MESSAGE value="Change Description" />
     <MESSAGE value="Change notifyStable --&gt; notifyMe&#10;Use this notify into main notification system" />
@@ -497,6 +506,8 @@
     <MESSAGE value="Update addWidget" />
     <MESSAGE value="Add Toggle Sound" />
     <MESSAGE value="Change widgets --&gt; toggle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change widgets --&gt; toggle" />
+    <MESSAGE value="Move some function from main to ui_function" />
+    <MESSAGE value="Move more function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move more function" />
   </component>
 </project>

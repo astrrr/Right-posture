@@ -41,10 +41,6 @@ class MainWindow(QMainWindow):
         UIFunctions.Function_Setup(self)
         PyToggle.Toggle_Switch(self)
 
-        self.loaddata()
-
-        # SHOW APP
-        self.show()
         # SET CUSTOM THEME
         useCustomTheme = False
         themeFile = "themes\py_dracula_light.qss"
@@ -54,6 +50,10 @@ class MainWindow(QMainWindow):
             UIFunctions.theme(self, themeFile, True)
             # SET HACKS
             AppFunctions.setThemeHack(self)
+
+        # SHOW APP
+        self.show()
+        self.loaddata()
 
     def loaddata(self):
         people = [{"test": "jjames", "text": "idk", "cell": "eiei", "Line": "las"},
