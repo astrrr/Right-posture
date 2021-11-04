@@ -36,8 +36,11 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
+        # SET UI DEFINITIONS
+        UIFunctions.uiDefinitions(self)
+        UIFunctions.Function_Setup(self)
+        PyToggle.Toggle_Switch(self)
         self.loaddata()
-        ui_Custom.setup_gui(self)
 
     def loaddata(self):
         people=[{"test":"jjames", "text":"idk","cell":"eiei","Line":"las"},{"test":"qwrdsfsdf", "text":"idk","cell":"eiei","Line":"las"},{"test":"48151262", "text":"idk","cell":"eiei","Line":"las"}]
@@ -47,24 +50,6 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
             tablerow+=1
 
-        # TOGGLE MENU
-        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-        # SET UI DEFINITIONS
-        UIFunctions.uiDefinitions(self)
-        # EXTRA LEFT BOX
-        def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
-        autoClose = True  # Toggle Auto Close Left Box when click.
-        if autoClose:
-            widgets.btn_Camera.clicked.connect(openCloseLeftBox)
-            widgets.btn_Notification.clicked.connect(openCloseLeftBox)
-            widgets.btn_Logout.clicked.connect(openCloseLeftBox)
-        # EXTRA RIGHT BOX
-        def openCloseRightBox():
-            UIFunctions.toggleRightBox(self, True)
-        widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
         # SHOW APP
         self.show()
         # SET CUSTOM THEME
@@ -92,8 +77,6 @@ class MainWindow(QMainWindow):
         widgets.btn_Logout.clicked.connect(self.buttonClick)
         widgets.btn_saveNotify.clicked.connect(self.buttonClick)
         widgets.btn_print.clicked.connect(self.buttonClick)
-        PyToggle.Toggle_Switch(self)
-        #ui_Custom.addWidget(self)
 
     # BUTTONS CLICK Add button here and above
     def buttonClick(self):

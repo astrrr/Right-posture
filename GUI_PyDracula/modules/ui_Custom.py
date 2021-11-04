@@ -18,18 +18,5 @@ class ui_Custom:
     def setup_gui(self):
         widgets = self.ui
 
-        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
-        Settings.ENABLE_CUSTOM_TITLE_BAR = True
-        # APP NAME
-        title = "Right Posture"
-        description = "Right Posture - Make life better."
 
-        # APPLY TEXTS
-        self.setWindowTitle(title)
-        widgets.titleRightInfo.setText(description)
 
-        # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
-        # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)

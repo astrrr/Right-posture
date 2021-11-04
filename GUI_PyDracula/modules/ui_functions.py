@@ -24,6 +24,44 @@ GLOBAL_STATE = False
 GLOBAL_TITLE_BAR = True
 
 class UIFunctions(MainWindow):
+    def Function_Setup(self):
+        widgets = self.ui
+
+        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+        Settings.ENABLE_CUSTOM_TITLE_BAR = True
+
+        # APP NAME
+        title = "Right Posture"
+        description = "Right Posture - Make life better."
+        # APPLY TEXTS
+        self.setWindowTitle(title)
+        widgets.titleRightInfo.setText(description)
+
+        # QTableWidget PARAMETERS
+        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        # QTableWidget PARAMETERS
+        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        # TOGGLE MENU
+        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
+
+        # EXTRA LEFT BOX
+        def openCloseLeftBox():
+            UIFunctions.toggleLeftBox(self, True)
+        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
+        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+        autoClose = True  # Toggle Auto Close Left Box when click.
+        if autoClose:
+            widgets.btn_Camera.clicked.connect(openCloseLeftBox)
+            widgets.btn_Notification.clicked.connect(openCloseLeftBox)
+            widgets.btn_Logout.clicked.connect(openCloseLeftBox)
+
+        # EXTRA RIGHT BOX
+        def openCloseRightBox():
+            UIFunctions.toggleRightBox(self, True)
+        widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
+
     # MAXIMIZE/RESTORE
     # ///////////////////////////////////////////////////////////////
     def maximize_restore(self):
