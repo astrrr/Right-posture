@@ -17,20 +17,19 @@ import sys
 import os
 import platform
 import time
+import numpy as np
 
 from modules import *
 from widgets import *
 from modules.ui_Custom import *
-from PySide6 import QtWidgets
 from widgets.py_toggle import PyToggle
 
-
-import numpy as np
-from PySide6 import QtGui
-from PySide6.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout
-from PySide6.QtGui import QPixmap
 from modules import Detect
-from PySide6.QtCore import Signal, Slot, QThread
+from PySide6 import QtWidgets, QtGui
+from PySide6.QtCore import Slot
+from PySide6.QtGui import QPixmap
+from PySide6.QtWidgets import QApplication
+
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Checkpoint">
-      <change beforePath="$PROJECT_DIR$/../CE64-12.mpp" beforeDir="false" afterPath="$PROJECT_DIR$/../CE64-12.mpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GUI_PyDracula.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GUI_PyDracula.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Camera">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -499,7 +499,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636044354362</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Add Detect.py">
+      <created>1636104923869</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1636104923869</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Update CE64-12.mpp">
+      <created>1636104941994</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1636104941994</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Add Camera">
+      <created>1636105015699</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1636105015699</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -516,9 +537,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change Description" />
-    <MESSAGE value="Change notifyStable --&gt; notifyMe&#10;Use this notify into main notification system" />
-    <MESSAGE value="Change theme to dracula" />
     <MESSAGE value="IDK" />
     <MESSAGE value="Edit main" />
     <MESSAGE value="Add toggle button" />
@@ -541,6 +559,9 @@
     <MESSAGE value="Move some function from main to ui_function" />
     <MESSAGE value="Move more function" />
     <MESSAGE value="Checkpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkpoint" />
+    <MESSAGE value="Add Detect.py" />
+    <MESSAGE value="Update CE64-12.mpp" />
+    <MESSAGE value="Add Camera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Camera" />
   </component>
 </project>
