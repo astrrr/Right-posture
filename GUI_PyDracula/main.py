@@ -40,11 +40,10 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
-        # SET UI DEFINITIONS
-        UIFunctions.uiDefinitions(self)
         UIFunctions.Function_Setup(self)
         PyToggle.Toggle_Switch(self)
-
+        # Start_Camera.detect(self)
+        self.show()
         # SET CUSTOM THEME
         useCustomTheme = False
         themeFile = "themes\py_dracula_light.qss"
@@ -55,11 +54,8 @@ class MainWindow(QMainWindow):
             # SET HACKS
             AppFunctions.setThemeHack(self)
 
-        # SHOW APP
-        self.show()
-        self.loaddata()
 
-        Start_Camera.detect(self)
+        self.loaddata()
     def loaddata(self):
         people = [{"test": "jjames", "text": "idk", "cell": "eiei", "Line": "las"},
                   {"test": "qwrdsfsdf", "text": "idk", "cell": "eiei", "Line": "las"},
@@ -69,6 +65,7 @@ class MainWindow(QMainWindow):
         for row in people:
             self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
             tablerow += 1
+
 
         # BUTTONS CLICK Don't forget to add button here
         widgets.btn_Home.clicked.connect(self.buttonClick)

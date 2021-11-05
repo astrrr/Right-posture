@@ -27,6 +27,9 @@ class UIFunctions(MainWindow):
     def Function_Setup(self):
         widgets = self.ui
 
+        # SET UI DEFINITIONS
+        UIFunctions.uiDefinitions(self)
+
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
 
