@@ -162,5 +162,5 @@ if __name__ == "__main__":
     window = MainWindow()
     # TOGGLE Discord Rich Presence
     # *** Not recommended if discord doesn't running in background ***
-    AppFunctions.discordRichPresence(True)
+    AppFunctions.discordRichPresence(False)
     sys.exit(app.exec())
