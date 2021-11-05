@@ -20,10 +20,9 @@ import numpy as np
 
 from modules import *
 from widgets import *
-from modules.ui_Custom import *
+from modules.Detect import Start_Camera
 from widgets.py_toggle import PyToggle
 
-from modules import Detect
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
@@ -60,7 +59,7 @@ class MainWindow(QMainWindow):
         self.show()
         self.loaddata()
 
-        Detect.Start_Camera.detect(self)
+        Start_Camera.detect(self)
     def loaddata(self):
         people = [{"test": "jjames", "text": "idk", "cell": "eiei", "Line": "las"},
                   {"test": "qwrdsfsdf", "text": "idk", "cell": "eiei", "Line": "las"},

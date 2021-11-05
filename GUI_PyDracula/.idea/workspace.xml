@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve performance">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Resize &amp; Flip to camera">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/Detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,13 +174,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Update deprecated in code&#10;Add Tutorial page">
-      <created>1635102842027</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1635102842027</updated>
     </task>
     <task id="LOCAL-00004" summary="Update Notification system.">
       <created>1635410966956</created>
@@ -518,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636110600109</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Add Resize &amp; Flip to camera">
+      <created>1636112056391</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1636112056392</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add toggle button" />
     <MESSAGE value="Add Py_toggle" />
     <MESSAGE value="Change name to ui_Custom" />
     <MESSAGE value="Add Toggle Night Mode" />
@@ -560,6 +559,7 @@
     <MESSAGE value="Add Camera" />
     <MESSAGE value="Edit Status page and improve Detect" />
     <MESSAGE value="Improve performance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve performance" />
+    <MESSAGE value="Add Resize &amp; Flip to camera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Resize &amp; Flip to camera" />
   </component>
 </project>
