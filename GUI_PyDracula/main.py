@@ -13,10 +13,9 @@
 # https://doc.qt.io/qtforpython/licenses.html
 #
 # ///////////////////////////////////////////////////////////////
+
 import sys
 import os
-import platform
-import time
 import numpy as np
 
 from modules import *
@@ -163,5 +162,5 @@ if __name__ == "__main__":
     window = MainWindow()
     # TOGGLE Discord Rich Presence
     # *** Not recommended if discord doesn't running in background ***
-    AppFunctions.discordRichPresence(False)
+    AppFunctions.discordRichPresence(True)
     sys.exit(app.exec())

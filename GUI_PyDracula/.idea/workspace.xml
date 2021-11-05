@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Camera">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Edit Status page and improve Detect">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/Detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,13 +174,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Update icon.">
-      <created>1635079149193</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1635079149193</updated>
     </task>
     <task id="LOCAL-00002" summary="Update main.ui">
       <created>1635079244105</created>
@@ -520,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636105015699</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Edit Status page and improve Detect">
+      <created>1636110214783</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1636110214783</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,7 +535,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="IDK" />
     <MESSAGE value="Edit main" />
     <MESSAGE value="Add toggle button" />
     <MESSAGE value="Add Py_toggle" />
@@ -562,6 +559,7 @@
     <MESSAGE value="Add Detect.py" />
     <MESSAGE value="Update CE64-12.mpp" />
     <MESSAGE value="Add Camera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Camera" />
+    <MESSAGE value="Edit Status page and improve Detect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit Status page and improve Detect" />
   </component>
 </project>

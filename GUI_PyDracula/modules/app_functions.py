@@ -17,6 +17,7 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 from main import *
+import time
 from pypresence import Presence
 from pynotifier import Notification
 from notifypy import Notify
