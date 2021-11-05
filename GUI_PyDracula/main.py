@@ -24,6 +24,13 @@ from modules.ui_Custom import *
 from PySide6 import QtWidgets
 from widgets.py_toggle import PyToggle
 
+
+import numpy as np
+from PySide6 import QtGui
+from PySide6.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout
+from PySide6.QtGui import QPixmap
+from modules import Detect
+from PySide6.QtCore import Signal, Slot, QThread
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -55,6 +62,7 @@ class MainWindow(QMainWindow):
         self.show()
         self.loaddata()
 
+        Detect.Start_Camera.detect(self)
     def loaddata(self):
         people = [{"test": "jjames", "text": "idk", "cell": "eiei", "Line": "las"},
                   {"test": "qwrdsfsdf", "text": "idk", "cell": "eiei", "Line": "las"},
@@ -120,6 +128,19 @@ class MainWindow(QMainWindow):
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
         #AppFunctions.notifyMe("ไปนอนซะ","eiei")
+
+    def closeEvent(self, event):
+        self.thread.stop()
+        event.accept()
+
+    @Slot(np.ndarray)
+    def update_image(self, cv_img):
+        # img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
+        # QT側でチャネル順BGRを指定
+        qimg = QtGui.QImage(cv_img.data, cv_img.shape[1], cv_img.shape[0], cv_img.strides[0],
+                            QtGui.QImage.Format.Format_BGR888)
+        qpix = QPixmap.fromImage(qimg)
+        self.image_label.setPixmap(qpix)
 
     # RESIZE EVENTS
     def resizeEvent(self, event):

@@ -8,5 +8,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PyOneDark" />
     <orderEntry type="module" module-name="PySide-Responsive-ui-master" />
+    <orderEntry type="module" module-name="Detect" />
   </component>
 </module>

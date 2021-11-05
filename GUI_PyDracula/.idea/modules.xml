@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Downloads/Detect/.idea/Detect.iml" filepath="$USER_HOME$/Downloads/Detect/.idea/Detect.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/GUI_PyDracula.iml" filepath="$PROJECT_DIR$/.idea/GUI_PyDracula.iml" />
       <module fileurl="file://$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" filepath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" />
       <module fileurl="file://$USER_HOME$/Downloads/PySide-Responsive-ui-master/.idea/PySide-Responsive-ui-master.iml" filepath="$USER_HOME$/Downloads/PySide-Responsive-ui-master/.idea/PySide-Responsive-ui-master.iml" />
