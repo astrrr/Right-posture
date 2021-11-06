@@ -20,7 +20,8 @@ from main import *
 import time
 from pypresence import Presence
 from pynotifier import Notification
-from notifypy import Notify
+from notifypy import notify
+
 
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -37,7 +38,7 @@ class AppFunctions(MainWindow):
         ).send()
 
     def notifyFull(self, message):
-        notification = Notify(
+        notification = notify(
             default_notification_title=self,
             default_notification_application_name="Right Posture",
             default_notification_message=message,
