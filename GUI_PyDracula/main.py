@@ -159,4 +159,4 @@ if __name__ == "__main__":
     # TOGGLE Discord Rich Presence
     # *** Not recommended if discord doesn't running in background ***
     AppFunctions.discordRichPresence(False)
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
