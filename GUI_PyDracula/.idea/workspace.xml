@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze">
-      <change beforePath="$PROJECT_DIR$/.idea/GUI_PyDracula.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GUI_PyDracula.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Update app.exec()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Add Program Setting">
-      <created>1635417944009</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1635417944009</updated>
     </task>
     <task id="LOCAL-00007" summary="Add Text box to notify">
       <created>1635427925783</created>
@@ -525,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636128029092</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Update app.exec()">
+      <created>1636231710092</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1636231710092</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Toggle Night Mode" />
     <MESSAGE value="Add Toggle_Close &amp; Toggle_Sound" />
     <MESSAGE value="Add setup_gui" />
     <MESSAGE value="Update Widgets" />
@@ -567,6 +567,7 @@
     <MESSAGE value="Add Resize &amp; Flip to camera" />
     <MESSAGE value="Downgraded opencv version to from 4.5.4.58 --&gt; 4.5.3.56&#10;Because new version opencv has a bug when compile it will show ImportError: OpenCV loader: missing configuration file: ['config.py']. Check OpenCV installation. &#10;** Pls use this opencv version when compile to exe with cx_freeze ***" />
     <MESSAGE value="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze" />
+    <MESSAGE value="Update app.exec()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update app.exec()" />
   </component>
 </project>

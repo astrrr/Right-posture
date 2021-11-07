@@ -21,7 +21,6 @@ import numpy as np
 from modules import *
 from widgets import *
 from modules.Detect import Start_Camera
-from widgets.py_toggle import PyToggle
 
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtCore import Slot

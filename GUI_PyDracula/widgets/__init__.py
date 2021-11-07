@@ -15,3 +15,4 @@
 # ///////////////////////////////////////////////////////////////
 
 from . custom_grips import CustomGrip
+from . py_toggle import PyToggle
