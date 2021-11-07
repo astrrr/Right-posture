@@ -26,8 +26,14 @@ from . ui_login import Ui_Login
 # APP SETTINGS
 from . app_settings import Settings
 
-# IMPORT FUNCTIONS
-from . ui_functions import *
+# IMPORT MAIN FUNCTIONS
+from . ui_main_functions import *
+
+# IMPORT LOGIN FUNCTIONS
+from . ui_login_function import *
 
 # APP FUNCTIONS
 from . app_functions import *
+
+# DETECT FUNCTIONS
+from . Detect import Start_Camera

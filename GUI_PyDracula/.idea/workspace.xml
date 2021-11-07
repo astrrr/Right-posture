@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add ui_login_function.py">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Change Function_Setup --&gt; Function_Login_Setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Fix print bug.">
-      <created>1635620657220</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1635620657220</updated>
     </task>
     <task id="LOCAL-00013" summary="Disable discordRichPresence">
       <created>1635620671459</created>
@@ -524,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636277179602</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Change Function_Setup --&gt; Function_Login_Setup">
+      <created>1636283359798</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1636283359798</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -541,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix Bug" />
     <MESSAGE value="Add Module QtWidgets" />
     <MESSAGE value="Add tableWidget" />
     <MESSAGE value="Test load data to widget" />
@@ -566,6 +567,7 @@
     <MESSAGE value="Add Circular_progress" />
     <MESSAGE value="Add login page" />
     <MESSAGE value="Add ui_login_function.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ui_login_function.py" />
+    <MESSAGE value="Change Function_Setup --&gt; Function_Login_Setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Function_Setup --&gt; Function_Login_Setup" />
   </component>
 </project>
