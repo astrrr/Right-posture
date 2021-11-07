@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainxbipzP.ui'
+## Form generated from reading UI file 'mainbukbvN.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.2.0
+## Created by: Qt User Interface Compiler version 6.2.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################

@@ -32,7 +32,13 @@
    <string>Login. PyBlackBOX</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget{
+   <string notr="true">/* /////////////////////////////////////////////////////////////////////////////////////////////////
+
+SET APP STYLESHEET - FULL STYLES HERE
+DARK THEME - DRACULA COLOR BASED
+
+///////////////////////////////////////////////////////////////////////////////////////////////// */
+QWidget{
 	color: rgb(221, 221, 221);
 	font: 10pt &quot;Segoe UI&quot;;
 }
@@ -56,31 +62,22 @@ Bg App */
 #bg {	
 	background-color: rgb(40, 44, 52);
 	border: 1px solid rgb(44, 49, 58);
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Content App */
 #top_bar{	
 	background-color: rgb(33, 37, 43);
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
 }
-#top_ba{
-	border-top: 3px solid rgb(44, 49, 58);
-}
-
 /* Top Buttons */
 #top_btns_3 .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }
 #top_btns_3 .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; border-radius: 4px; }
-#top_btns_3.QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }
-
-/* Theme Settings */
-#extraRightBox { background-color: rgb(44, 49, 58); }
-#themeSettingsTopDetail { background-color: rgb(189, 147, 249); }
-
-/* Bottom Bar */
-#bottomBar { background-color: rgb(44, 49, 58); }
-#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
-
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////////
+#top_btns_3 .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 LineEdit */
 QLineEdit {
@@ -97,8 +94,6 @@ QLineEdit:hover {
 QLineEdit:focus {
 	border: 2px solid rgb(91, 101, 124);
 }
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////////
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Button */
 QPushButton {
@@ -113,7 +108,8 @@ QPushButton:hover {
 QPushButton:pressed {	
 	background-color: rgb(35, 40, 49);
 	border: 2px solid rgb(43, 50, 61);
-}</string>
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
@@ -404,15 +400,6 @@ QPushButton:pressed {
             </color>
            </brush>
           </colorrole>
-          <colorrole role="Highlight">
-           <brush brushstyle="SolidPattern">
-            <color alpha="255">
-             <red>0</red>
-             <green>120</green>
-             <blue>215</blue>
-            </color>
-           </brush>
-          </colorrole>
           <colorrole role="PlaceholderText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
@@ -478,15 +465,6 @@ QPushButton:pressed {
             </color>
            </brush>
           </colorrole>
-          <colorrole role="Highlight">
-           <brush brushstyle="SolidPattern">
-            <color alpha="255">
-             <red>240</red>
-             <green>240</green>
-             <blue>240</blue>
-            </color>
-           </brush>
-          </colorrole>
           <colorrole role="PlaceholderText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
@@ -549,15 +527,6 @@ QPushButton:pressed {
              <red>33</red>
              <green>37</green>
              <blue>43</blue>
-            </color>
-           </brush>
-          </colorrole>
-          <colorrole role="Highlight">
-           <brush brushstyle="SolidPattern">
-            <color alpha="255">
-             <red>0</red>
-             <green>120</green>
-             <blue>215</blue>
             </color>
            </brush>
           </colorrole>

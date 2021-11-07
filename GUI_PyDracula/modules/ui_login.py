@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginjyCvCm.ui'
+## Form generated from reading UI file 'loginlDgGqh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QVBoxLayout, QWidget)
-from .resources_rc import *
+from.resources_rc import *
 
 class Ui_Login(object):
     def setupUi(self, Login):
@@ -32,7 +32,13 @@ class Ui_Login(object):
         Login.setSizePolicy(sizePolicy)
         Login.setMinimumSize(QSize(300, 420))
         Login.setMaximumSize(QSize(900, 900))
-        Login.setStyleSheet(u"QWidget{\n"
+        Login.setStyleSheet(u"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
+"\n"
+"SET APP STYLESHEET - FULL STYLES HERE\n"
+"DARK THEME - DRACULA COLOR BASED\n"
+"\n"
+"///////////////////////////////////////////////////////////////////////////////////////////////// */\n"
+"QWidget{\n"
 "	color: rgb(221, 221, 221);\n"
 "	font: 10pt \"Segoe UI\";\n"
 "}\n"
@@ -54,41 +60,32 @@ class Ui_Login(object):
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Bg App */\n"
 "#bg {	\n"
-"	background-color: rgb(40, 44, 52);\n"
+"	background-color: rgb(40, 44"
+                        ", 52);\n"
 "	border: 1px solid rgb(44, 49, 58);\n"
+"	border-top-left-radius: 12px;\n"
+"	border-bottom-left-radius: 12px;\n"
+"	border-top-right-radius: 12px;\n"
+"	border-bottom-right-radius: 12px;\n"
 "}\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Content App */\n"
 "#top_bar{	\n"
 "	background-color: rgb(33, 37, 43);\n"
+"	border-top-left-radius: 12px;\n"
+"	border-top-right-radius: 12px;\n"
 "}\n"
-"#top_ba{\n"
-"	border-top: 3px solid rgb(44, 49, 58);\n"
-""
-                        "}\n"
-"\n"
 "/* Top Buttons */\n"
 "#top_btns_3 .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }\n"
 "#top_btns_3 .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; border-radius: 4px; }\n"
-"#top_btns_3.QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }\n"
-"\n"
-"/* Theme Settings */\n"
-"#extraRightBox { background-color: rgb(44, 49, 58); }\n"
-"#themeSettingsTopDetail { background-color: rgb(189, 147, 249); }\n"
-"\n"
-"/* Bottom Bar */\n"
-"#bottomBar { background-color: rgb(44, 49, 58); }\n"
-"#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }\n"
-"\n"
-"\n"
-"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
+"#top_btns_3 .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "LineEdit */\n"
 "QLineEdit {\n"
-"	background-color: rgb(33, 37"
-                        ", 43);\n"
+"	background-color: rgb(33, 37, 43);\n"
 "	border-radius: 5px;\n"
-"	border: 2px solid rgb(33, 37, 43);\n"
+""
+                        "	border: 2px solid rgb(33, 37, 43);\n"
 "	padding-left: 10px;\n"
 "	selection-color: rgb(255, 255, 255);\n"
 "	selection-background-color: rgb(255, 121, 198);\n"
@@ -99,8 +96,6 @@ class Ui_Login(object):
 "QLineEdit:focus {\n"
 "	border: 2px solid rgb(91, 101, 124);\n"
 "}\n"
-"\n"
-"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Button */\n"
 "QPushButton {\n"
@@ -115,7 +110,8 @@ class Ui_Login(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgb(35, 40, 49);\n"
 "	border: 2px solid rgb(43, 50, 61);\n"
-"}")
+"}\n"
+"/* /////////////////////////////////////////////////////////////////////////////////////////////////")
         self.centralwidget = QWidget(Login)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
@@ -214,9 +210,6 @@ class Ui_Login(object):
         palette.setBrush(QPalette.Active, QPalette.ButtonText, brush)
         palette.setBrush(QPalette.Active, QPalette.Base, brush1)
         palette.setBrush(QPalette.Active, QPalette.Window, brush1)
-        brush2 = QBrush(QColor(0, 120, 215, 255))
-        brush2.setStyle(Qt.SolidPattern)
-        palette.setBrush(QPalette.Active, QPalette.Highlight, brush2)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
 #endif
@@ -226,9 +219,6 @@ class Ui_Login(object):
         palette.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
         palette.setBrush(QPalette.Inactive, QPalette.Base, brush1)
         palette.setBrush(QPalette.Inactive, QPalette.Window, brush1)
-        brush3 = QBrush(QColor(240, 240, 240, 255))
-        brush3.setStyle(Qt.SolidPattern)
-        palette.setBrush(QPalette.Inactive, QPalette.Highlight, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
 #endif
@@ -238,7 +228,6 @@ class Ui_Login(object):
         palette.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
         palette.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
-        palette.setBrush(QPalette.Disabled, QPalette.Highlight, brush2)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
 #endif
@@ -264,6 +253,8 @@ class Ui_Login(object):
         palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Active, QPalette.Text, brush)
         palette1.setBrush(QPalette.Active, QPalette.ButtonText, brush)
+        brush2 = QBrush(QColor(0, 120, 215, 255))
+        brush2.setStyle(Qt.SolidPattern)
         palette1.setBrush(QPalette.Active, QPalette.Highlight, brush2)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
@@ -271,6 +262,8 @@ class Ui_Login(object):
         palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Inactive, QPalette.Text, brush)
         palette1.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
+        brush3 = QBrush(QColor(240, 240, 240, 255))
+        brush3.setStyle(Qt.SolidPattern)
         palette1.setBrush(QPalette.Inactive, QPalette.Highlight, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
