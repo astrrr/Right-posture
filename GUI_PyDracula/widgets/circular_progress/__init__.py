@@ -8,12 +8,7 @@
 # respective credits only in the Python scripts, any information in the visual
 # interface (GUI) can be modified without any implication.
 #
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
 # ///////////////////////////////////////////////////////////////
 
-from . custom_grips import CustomGrip
-from . py_toggle import PyToggle
+# CIRCULAR PROGRESS BAR
 from . circular_progress import CircularProgress

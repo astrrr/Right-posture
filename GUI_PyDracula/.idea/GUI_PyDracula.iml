@@ -9,5 +9,6 @@
     <orderEntry type="module" module-name="PyOneDark" />
     <orderEntry type="module" module-name="PySide-Responsive-ui-master" />
     <orderEntry type="module" module-name="Detect" />
+    <orderEntry type="module" module-name="PyBlackBox_Qt_Widgets_PySide6_Or_PyQt6_v1.0.0-master" />
   </component>
 </module>
