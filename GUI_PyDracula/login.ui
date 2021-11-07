@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
+    <width>300</width>
     <height>420</height>
    </rect>
   </property>
@@ -168,7 +168,7 @@ QPushButton:pressed {
         <rect>
          <x>0</x>
          <y>70</y>
-         <width>881</width>
+         <width>280</width>
          <height>720</height>
         </rect>
        </property>
@@ -204,33 +204,26 @@ QPushButton:pressed {
          <number>10</number>
         </property>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <property name="spacing">
-           <number>0</number>
+         <widget class="QFrame" name="preloader">
+          <property name="minimumSize">
+           <size>
+            <width>240</width>
+            <height>240</height>
+           </size>
           </property>
-          <item>
-           <widget class="QFrame" name="preloader">
-            <property name="minimumSize">
-             <size>
-              <width>240</width>
-              <height>240</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>260</width>
-              <height>260</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
+          <property name="maximumSize">
+           <size>
+            <width>260</width>
+            <height>260</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
         </item>
         <item>
          <spacer name="verticalSpacer">
@@ -327,7 +320,7 @@ QPushButton:pressed {
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>881</width>
+         <width>281</width>
          <height>50</height>
         </rect>
        </property>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginlDgGqh.ui'
+## Form generated from reading UI file 'logincwnBnu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -18,13 +18,13 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QVBoxLayout, QWidget)
-from.resources_rc import *
+from .resources_rc import *
 
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(900, 420)
+        Login.resize(300, 420)
         sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -131,7 +131,7 @@ class Ui_Login(object):
         self.bg.setFrameShadow(QFrame.Raised)
         self.frame_widgets = QFrame(self.bg)
         self.frame_widgets.setObjectName(u"frame_widgets")
-        self.frame_widgets.setGeometry(QRect(0, 70, 881, 720))
+        self.frame_widgets.setGeometry(QRect(0, 70, 280, 720))
         self.frame_widgets.setMinimumSize(QSize(280, 720))
         self.frame_widgets.setMouseTracking(False)
         self.frame_widgets.setFrameShape(QFrame.NoFrame)
@@ -140,9 +140,6 @@ class Ui_Login(object):
         self.verticalLayout_2.setSpacing(5)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(20, 10, 20, 10)
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.preloader = QFrame(self.frame_widgets)
         self.preloader.setObjectName(u"preloader")
         self.preloader.setMinimumSize(QSize(240, 240))
@@ -150,10 +147,7 @@ class Ui_Login(object):
         self.preloader.setFrameShape(QFrame.NoFrame)
         self.preloader.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout_5.addWidget(self.preloader)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_5)
+        self.verticalLayout_2.addWidget(self.preloader)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -196,7 +190,7 @@ class Ui_Login(object):
 
         self.top_bar = QFrame(self.bg)
         self.top_bar.setObjectName(u"top_bar")
-        self.top_bar.setGeometry(QRect(0, 0, 881, 50))
+        self.top_bar.setGeometry(QRect(0, 0, 281, 50))
         self.top_bar.setMinimumSize(QSize(0, 50))
         self.top_bar.setMaximumSize(QSize(16777215, 45))
         palette = QPalette()
