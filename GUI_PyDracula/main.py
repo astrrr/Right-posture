@@ -74,8 +74,8 @@ class LoginWindow(QMainWindow):
         self.shadow.setColor(QColor(0, 0, 0, 80))
         self.ui.bg.setGraphicsEffect(self.shadow)
 
-        ui_functions.UiFunctions.set_ui_definitions2(self)
-
+        UIFunctions.LoginUiDefinitions(self)
+        
         # QTIMER
         # ///////////////////////////////////////////////////////////////
         self.timer = QTimer()
@@ -280,7 +280,8 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
-    window = MainWindow()
+    # window = MainWindow()
+    window = LoginWindow()
     # TOGGLE Discord Rich Presence
     # *** Not recommended if discord doesn't running in background ***
     AppFunctions.discordRichPresence(False)

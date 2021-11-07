@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Update app.exec()">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/__init__.py" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Circular_progress">
+      <change beforePath="$PROJECT_DIR$/modules/ui_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +39,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/widgets" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\widgets" />
       <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula" />
       <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\widgets\py_toggle" />
     </key>
@@ -182,27 +180,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Add Text box to notify">
-      <created>1635427925783</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1635427925783</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Enable autoClose">
-      <created>1635428047570</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1635428047570</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add discordRichPresence, notifyMe">
-      <created>1635620329013</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1635620329013</updated>
     </task>
     <task id="LOCAL-00010" summary="Move notifyMe to app_functions&#10;Add discordRichPresence">
       <created>1635620402311</created>
@@ -526,7 +503,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636231710092</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Improve performance">
+      <created>1636275219579</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1636275219584</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Add Login GUI">
+      <created>1636275243499</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1636275243499</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Add Circular_progress">
+      <created>1636275388919</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1636275388919</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,8 +541,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Toggle_Close &amp; Toggle_Sound" />
-    <MESSAGE value="Add setup_gui" />
     <MESSAGE value="Update Widgets" />
     <MESSAGE value="Move some code to ui_Custom" />
     <MESSAGE value="Fix Bug" />
@@ -563,11 +559,13 @@
     <MESSAGE value="Update CE64-12.mpp" />
     <MESSAGE value="Add Camera" />
     <MESSAGE value="Edit Status page and improve Detect" />
-    <MESSAGE value="Improve performance" />
     <MESSAGE value="Add Resize &amp; Flip to camera" />
     <MESSAGE value="Downgraded opencv version to from 4.5.4.58 --&gt; 4.5.3.56&#10;Because new version opencv has a bug when compile it will show ImportError: OpenCV loader: missing configuration file: ['config.py']. Check OpenCV installation. &#10;** Pls use this opencv version when compile to exe with cx_freeze ***" />
     <MESSAGE value="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze" />
     <MESSAGE value="Update app.exec()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update app.exec()" />
+    <MESSAGE value="Improve performance" />
+    <MESSAGE value="Add Login GUI" />
+    <MESSAGE value="Add Circular_progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Circular_progress" />
   </component>
 </project>
