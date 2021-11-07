@@ -22,6 +22,8 @@ from modules import *
 from widgets import *
 from modules.Detect import Start_Camera
 
+from modules.ui_login_function import UILoginFunctions
+
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
@@ -35,7 +37,6 @@ counter = 0
 
 
 class LoginWindow(QMainWindow):
-
     def __init__(self):
         QMainWindow.__init__(self)
         # GET WIDGETS FROM "ui_login.py"
@@ -43,50 +44,8 @@ class LoginWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_Login()
         self.ui.setupUi(self)
-
-        # REMOVE TITLE BAR
-        # ///////////////////////////////////////////////////////////////
-        self.setWindowFlag(Qt.FramelessWindowHint)
-        self.setAttribute(Qt.WA_TranslucentBackground)
-
-        # IMPORT CIRCULAR PROGRESS
-        # ///////////////////////////////////////////////////////////////
-        self.progress = CircularProgress()
-        self.progress.width = 240
-        self.progress.height = 240
-        self.progress.value = 0
-        self.progress.setFixedSize(self.progress.width, self.progress.height)
-        self.progress.font_size = 20
-        self.progress.add_shadow(True)
-        self.progress.progress_width = 4
-        self.progress.progress_color = QColor("#bdff00")
-        self.progress.text_color = QColor("#E6E6E6")
-        self.progress.bg_color = QColor("#222222")
-        self.progress.setParent(self.ui.preloader)
-        self.progress.show()
-
-        # ADD DROP SHADOW
-        # ///////////////////////////////////////////////////////////////
-        self.shadow = QGraphicsDropShadowEffect(self)
-        self.shadow.setBlurRadius(15)
-        self.shadow.setXOffset(0)
-        self.shadow.setYOffset(0)
-        self.shadow.setColor(QColor(0, 0, 0, 80))
-        self.ui.bg.setGraphicsEffect(self.shadow)
-
+        UILoginFunctions.Function_Login_Setup(self)
         UIFunctions.LoginUiDefinitions(self)
-        
-        # QTIMER
-        # ///////////////////////////////////////////////////////////////
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.update)
-        self.timer.start(30)
-
-        # KEY PRESS EVENT
-        # ///////////////////////////////////////////////////////////////
-        self.ui.username.keyReleaseEvent = self.check_login
-        self.ui.password.keyReleaseEvent = self.check_login
-
         self.show()
 
     # CHECK LOGIN
@@ -99,7 +58,7 @@ class LoginWindow(QMainWindow):
             def open_main():
                 # SHOW MAIN WINDOW
                 self.main = MainWindow()
-                self.main.top_user.label_user.setText(username.capitalize())
+                # self.main.top_user.label_user.setText(username.capitalize())
                 self.main.show()
                 self.close()
 
@@ -156,7 +115,7 @@ class LoginWindow(QMainWindow):
 
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
-        self.dragPos = event.globalPos()
+        self.dragPos = event.globalPosition().toPoint()
 
 class MainWindow(QMainWindow):
     def __init__(self):
