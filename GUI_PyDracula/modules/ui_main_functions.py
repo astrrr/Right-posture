@@ -24,7 +24,7 @@ GLOBAL_STATE = False
 GLOBAL_TITLE_BAR = True
 
 class UIFunctions(MainWindow):
-    def Function_Setup(self):
+    def Function_Main_Setup(self):
         widgets = self.ui
 
         # SET UI DEFINITIONS

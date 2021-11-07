@@ -124,7 +124,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
-        UIFunctions.Function_Setup(self)
+        UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
         # Start_Camera.detect(self)
         self.show()
