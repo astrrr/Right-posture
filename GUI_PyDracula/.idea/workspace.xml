@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Change Function_Setup --&gt; Function_Login_Setup">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Optimize function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/login.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ui_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,13 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Disable discordRichPresence">
-      <created>1635620671459</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1635620671459</updated>
     </task>
     <task id="LOCAL-00014" summary="Add Recommended comment in Discord Rich Presence&#10;*** Not recommended if discord doesn't running in background ***">
       <created>1635621595652</created>
@@ -526,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636283359798</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Optimize function">
+      <created>1636283786338</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1636283786338</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +544,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Module QtWidgets" />
     <MESSAGE value="Add tableWidget" />
     <MESSAGE value="Test load data to widget" />
     <MESSAGE value="Add py_toggle 1-5" />
@@ -568,6 +568,7 @@
     <MESSAGE value="Add login page" />
     <MESSAGE value="Add ui_login_function.py" />
     <MESSAGE value="Change Function_Setup --&gt; Function_Login_Setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Function_Setup --&gt; Function_Login_Setup" />
+    <MESSAGE value="Optimize function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimize function" />
   </component>
 </project>

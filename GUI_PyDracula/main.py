@@ -32,7 +32,6 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 widgets = None
 counter = 0
 
-
 class LoginWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
