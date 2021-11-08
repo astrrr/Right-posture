@@ -30,6 +30,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 widgets = None
+Camera = None
 counter = 0
 
 class LoginWindow(QMainWindow):
@@ -118,12 +119,15 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        global widgets
+        global widgets, Camera
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
+        Camera = False
+        if Camera:
+            Start_Camera.detect(self)
 
-        # Start_Camera.detect(self)
+
         self.show()
         # SET CUSTOM THEME
         useCustomTheme = False
@@ -205,8 +209,9 @@ class MainWindow(QMainWindow):
         #AppFunctions.notifyMe("ไปนอนซะ","eiei")
 
     def closeEvent(self, event):
-        self.thread.stop()
-        event.accept()
+        if Camera:
+            self.thread.stop()
+            event.accept()
 
     @Slot(np.ndarray)
     def update_image(self, cv_img):
