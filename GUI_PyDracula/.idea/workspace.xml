@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Rounded corners login">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Resize login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/login.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/ui_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Rearrange code">
-      <created>1635769329778</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1635769329778</updated>
     </task>
     <task id="LOCAL-00017" summary="Add status page">
       <created>1635774890923</created>
@@ -526,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636291891721</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Resize login">
+      <created>1636308876904</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1636308876904</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add py_toggle 1-5" />
     <MESSAGE value="Optimize toggle button" />
     <MESSAGE value="Update addWidget" />
     <MESSAGE value="Add Toggle Sound" />
@@ -568,6 +567,7 @@
     <MESSAGE value="Optimize function" />
     <MESSAGE value="Update login.ui" />
     <MESSAGE value="Rounded corners login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rounded corners login" />
+    <MESSAGE value="Resize login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resize login" />
   </component>
 </project>
