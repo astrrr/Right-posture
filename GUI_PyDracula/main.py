@@ -127,7 +127,6 @@ class MainWindow(QMainWindow):
         if Camera:
             Start_Camera.detect(self)
 
-
         self.show()
         # SET CUSTOM THEME
         useCustomTheme = False
