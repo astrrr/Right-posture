@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>720</height>
+    <height>678</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1834,178 +1834,6 @@ p, li { white-space: pre-wrap; }
                      </property>
                      <widget class="QWidget" name="Status">
                       <layout class="QGridLayout" name="gridLayout_3">
-                       <item row="6" column="0">
-                        <widget class="QFrame" name="row_9">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>100</height>
-                          </size>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_24">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item row="2" column="0">
-                        <widget class="QWidget" name="row_8" native="true">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>300</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>300</height>
-                          </size>
-                         </property>
-                         <property name="layoutDirection">
-                          <enum>Qt::LeftToRight</enum>
-                         </property>
-                         <property name="autoFillBackground">
-                          <bool>false</bool>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border-top-style: solid;
-border-bottom-style: solid;
-border-width: 1px;
-border-color: #2c313c;</string>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_10">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>0</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QFrame" name="Camera_Frame_1">
-                            <property name="maximumSize">
-                             <size>
-                              <width>300</width>
-                              <height>300</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="Camera_Frame_1_Layout">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="frame">
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="Camera_Frame_2">
-                            <property name="maximumSize">
-                             <size>
-                              <width>300</width>
-                              <height>300</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="Camera_Frame_2_Layout">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
                        <item row="1" column="0">
                         <widget class="QFrame" name="row_7">
                          <property name="frameShape">
@@ -2586,6 +2414,199 @@ border-color: #2c313c;</string>
                          </item>
                         </widget>
                        </item>
+                       <item row="6" column="0">
+                        <widget class="QFrame" name="row_9">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>100</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_24">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QWidget" name="row_8" native="true">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>260</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="autoFillBackground">
+                          <bool>false</bool>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true"/>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_10">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>10</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>10</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>10</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>10</number>
+                          </property>
+                          <item>
+                           <widget class="QFrame" name="Camera_Frame_1">
+                            <property name="maximumSize">
+                             <size>
+                              <width>320</width>
+                              <height>240</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">border: 2px solid #bd93f9;
+background-position: center;
+background-repeat: no-repeat;
+background-image: url(:/images/images/images/PyDracula.png)
+
+</string>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="Camera_Frame_1_Layout">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="frame">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>240</height>
+                             </size>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="Camera_Frame_2">
+                            <property name="maximumSize">
+                             <size>
+                              <width>320</width>
+                              <height>240</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">border: 2px solid #ff79c6;
+</string>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="Camera_Frame_2_Layout">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                            </layout>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="Notification">
@@ -2863,7 +2884,7 @@ border-color: #2c313c;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>218</width>
+                                 <width>354</width>
                                  <height>218</height>
                                 </rect>
                                </property>
@@ -3705,7 +3726,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>218</width>
+                                 <width>353</width>
                                  <height>218</height>
                                 </rect>
                                </property>

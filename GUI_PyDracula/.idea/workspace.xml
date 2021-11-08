@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Resize login">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Rename Detect.py to app_detect.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/widgets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GUI_Detect" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -182,20 +181,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Add status page">
-      <created>1635774890923</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1635774890923</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Add options to avoid pywintypes.error: (2, 'BeginUpdateResource', 'The system cannot find the file specified.')">
-      <created>1635774919439</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1635774919439</updated>
     </task>
     <task id="LOCAL-00019" summary="Change Notification system from plyer --&gt; pynotifier">
       <created>1635774979007</created>
@@ -526,7 +511,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636308876904</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Hide maximizeRestoreAppBtn &amp; minimizeAppBtn in login">
+      <created>1636384814576</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1636384814576</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Rename Detect.py to app_detect.py">
+      <created>1636384881365</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1636384881365</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,8 +542,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Optimize toggle button" />
-    <MESSAGE value="Update addWidget" />
     <MESSAGE value="Add Toggle Sound" />
     <MESSAGE value="Change widgets --&gt; toggle" />
     <MESSAGE value="Move some function from main to ui_function" />
@@ -568,6 +565,8 @@
     <MESSAGE value="Update login.ui" />
     <MESSAGE value="Rounded corners login" />
     <MESSAGE value="Resize login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resize login" />
+    <MESSAGE value="Hide maximizeRestoreAppBtn &amp; minimizeAppBtn in login" />
+    <MESSAGE value="Rename Detect.py to app_detect.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename Detect.py to app_detect.py" />
   </component>
 </project>

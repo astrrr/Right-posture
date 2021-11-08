@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainbukbvN.ui'
+## Form generated from reading UI file 'mainJIEcrT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1280, 678)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1038,74 +1038,6 @@ class Ui_MainWindow(object):
         self.Status.setObjectName(u"Status")
         self.gridLayout_3 = QGridLayout(self.Status)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.row_9 = QFrame(self.Status)
-        self.row_9.setObjectName(u"row_9")
-        sizePolicy2.setHeightForWidth(self.row_9.sizePolicy().hasHeightForWidth())
-        self.row_9.setSizePolicy(sizePolicy2)
-        self.row_9.setMinimumSize(QSize(0, 0))
-        self.row_9.setMaximumSize(QSize(16777215, 100))
-        self.row_9.setFrameShape(QFrame.StyledPanel)
-        self.row_9.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_24 = QHBoxLayout(self.row_9)
-        self.horizontalLayout_24.setSpacing(0)
-        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
-
-        self.gridLayout_3.addWidget(self.row_9, 6, 0, 1, 1)
-
-        self.row_8 = QWidget(self.Status)
-        self.row_8.setObjectName(u"row_8")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.row_8.sizePolicy().hasHeightForWidth())
-        self.row_8.setSizePolicy(sizePolicy3)
-        self.row_8.setMinimumSize(QSize(0, 300))
-        self.row_8.setMaximumSize(QSize(16777215, 300))
-        self.row_8.setLayoutDirection(Qt.LeftToRight)
-        self.row_8.setAutoFillBackground(False)
-        self.row_8.setStyleSheet(u"border-top-style: solid;\n"
-"border-bottom-style: solid;\n"
-"border-width: 1px;\n"
-"border-color: #2c313c;")
-        self.horizontalLayout_10 = QHBoxLayout(self.row_8)
-        self.horizontalLayout_10.setSpacing(0)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.Camera_Frame_1 = QFrame(self.row_8)
-        self.Camera_Frame_1.setObjectName(u"Camera_Frame_1")
-        self.Camera_Frame_1.setMaximumSize(QSize(300, 300))
-        self.Camera_Frame_1.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_1.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout = QVBoxLayout(self.Camera_Frame_1)
-        self.Camera_Frame_1_Layout.setSpacing(0)
-        self.Camera_Frame_1_Layout.setObjectName(u"Camera_Frame_1_Layout")
-        self.Camera_Frame_1_Layout.setContentsMargins(0, 0, 0, 0)
-
-        self.horizontalLayout_10.addWidget(self.Camera_Frame_1)
-
-        self.frame = QFrame(self.row_8)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_10.addWidget(self.frame)
-
-        self.Camera_Frame_2 = QFrame(self.row_8)
-        self.Camera_Frame_2.setObjectName(u"Camera_Frame_2")
-        self.Camera_Frame_2.setMaximumSize(QSize(300, 300))
-        self.Camera_Frame_2.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_2.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_2_Layout = QVBoxLayout(self.Camera_Frame_2)
-        self.Camera_Frame_2_Layout.setSpacing(0)
-        self.Camera_Frame_2_Layout.setObjectName(u"Camera_Frame_2_Layout")
-        self.Camera_Frame_2_Layout.setContentsMargins(0, 0, 0, 0)
-
-        self.horizontalLayout_10.addWidget(self.Camera_Frame_2)
-
-
-        self.gridLayout_3.addWidget(self.row_8, 2, 0, 1, 1)
-
         self.row_7 = QFrame(self.Status)
         self.row_7.setObjectName(u"row_7")
         self.row_7.setFrameShape(QFrame.StyledPanel)
@@ -1245,11 +1177,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem23 = QTableWidgetItem()
         self.tableWidget_5.setItem(0, 3, __qtablewidgetitem23)
         self.tableWidget_5.setObjectName(u"tableWidget_5")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.tableWidget_5.sizePolicy().hasHeightForWidth())
-        self.tableWidget_5.setSizePolicy(sizePolicy4)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.tableWidget_5.sizePolicy().hasHeightForWidth())
+        self.tableWidget_5.setSizePolicy(sizePolicy3)
         self.tableWidget_5.setMinimumSize(QSize(0, 500))
         self.tableWidget_5.setMaximumSize(QSize(16777215, 100))
         palette = QPalette()
@@ -1310,6 +1242,82 @@ class Ui_MainWindow(object):
         self.tableWidget_5.verticalHeader().setStretchLastSection(True)
 
         self.gridLayout_3.addWidget(self.tableWidget_5, 3, 0, 1, 1)
+
+        self.row_9 = QFrame(self.Status)
+        self.row_9.setObjectName(u"row_9")
+        sizePolicy2.setHeightForWidth(self.row_9.sizePolicy().hasHeightForWidth())
+        self.row_9.setSizePolicy(sizePolicy2)
+        self.row_9.setMinimumSize(QSize(0, 0))
+        self.row_9.setMaximumSize(QSize(16777215, 100))
+        self.row_9.setFrameShape(QFrame.StyledPanel)
+        self.row_9.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_24 = QHBoxLayout(self.row_9)
+        self.horizontalLayout_24.setSpacing(0)
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
+
+        self.gridLayout_3.addWidget(self.row_9, 6, 0, 1, 1)
+
+        self.row_8 = QWidget(self.Status)
+        self.row_8.setObjectName(u"row_8")
+        sizePolicy1.setHeightForWidth(self.row_8.sizePolicy().hasHeightForWidth())
+        self.row_8.setSizePolicy(sizePolicy1)
+        self.row_8.setMinimumSize(QSize(0, 260))
+        self.row_8.setMaximumSize(QSize(16777215, 16777215))
+        self.row_8.setLayoutDirection(Qt.LeftToRight)
+        self.row_8.setAutoFillBackground(False)
+        self.row_8.setStyleSheet(u"")
+        self.horizontalLayout_10 = QHBoxLayout(self.row_8)
+        self.horizontalLayout_10.setSpacing(0)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setContentsMargins(10, 10, 10, 10)
+        self.Camera_Frame_1 = QFrame(self.row_8)
+        self.Camera_Frame_1.setObjectName(u"Camera_Frame_1")
+        self.Camera_Frame_1.setMaximumSize(QSize(320, 240))
+        self.Camera_Frame_1.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+"background-position: center;\n"
+"background-repeat: no-repeat;\n"
+"background-image: url(:/images/images/images/PyDracula.png)\n"
+"\n"
+"")
+        self.Camera_Frame_1.setFrameShape(QFrame.StyledPanel)
+        self.Camera_Frame_1.setFrameShadow(QFrame.Raised)
+        self.Camera_Frame_1_Layout = QVBoxLayout(self.Camera_Frame_1)
+        self.Camera_Frame_1_Layout.setSpacing(0)
+        self.Camera_Frame_1_Layout.setObjectName(u"Camera_Frame_1_Layout")
+        self.Camera_Frame_1_Layout.setContentsMargins(0, 0, 0, 0)
+
+        self.horizontalLayout_10.addWidget(self.Camera_Frame_1)
+
+        self.frame = QFrame(self.row_8)
+        self.frame.setObjectName(u"frame")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy4)
+        self.frame.setMaximumSize(QSize(16777215, 240))
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_10.addWidget(self.frame)
+
+        self.Camera_Frame_2 = QFrame(self.row_8)
+        self.Camera_Frame_2.setObjectName(u"Camera_Frame_2")
+        self.Camera_Frame_2.setMaximumSize(QSize(320, 240))
+        self.Camera_Frame_2.setStyleSheet(u"border: 2px solid #ff79c6;\n"
+"")
+        self.Camera_Frame_2.setFrameShape(QFrame.StyledPanel)
+        self.Camera_Frame_2.setFrameShadow(QFrame.Raised)
+        self.Camera_Frame_2_Layout = QVBoxLayout(self.Camera_Frame_2)
+        self.Camera_Frame_2_Layout.setSpacing(0)
+        self.Camera_Frame_2_Layout.setObjectName(u"Camera_Frame_2_Layout")
+        self.Camera_Frame_2_Layout.setContentsMargins(0, 0, 0, 0)
+
+        self.horizontalLayout_10.addWidget(self.Camera_Frame_2)
+
+
+        self.gridLayout_3.addWidget(self.row_8, 2, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.Status)
         self.Notification = QWidget()
@@ -1450,7 +1458,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 354, 218))
         self.scrollAreaWidgetContents_2.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1581,8 +1589,8 @@ class Ui_MainWindow(object):
         __qtablewidgetitem47 = QTableWidgetItem()
         self.tableWidget_2.setItem(0, 3, __qtablewidgetitem47)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
-        sizePolicy4.setHeightForWidth(self.tableWidget_2.sizePolicy().hasHeightForWidth())
-        self.tableWidget_2.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.tableWidget_2.sizePolicy().hasHeightForWidth())
+        self.tableWidget_2.setSizePolicy(sizePolicy3)
         palette1 = QPalette()
         palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Active, QPalette.Button, brush1)
@@ -1789,7 +1797,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 353, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1918,8 +1926,8 @@ class Ui_MainWindow(object):
         __qtablewidgetitem71 = QTableWidgetItem()
         self.tableWidget.setItem(0, 3, __qtablewidgetitem71)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy4.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy3)
         palette2 = QPalette()
         palette2.setBrush(QPalette.Active, QPalette.WindowText, brush)
         palette2.setBrush(QPalette.Active, QPalette.Button, brush1)

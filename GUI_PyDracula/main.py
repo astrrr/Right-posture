@@ -122,6 +122,7 @@ class MainWindow(QMainWindow):
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
+
         # Start_Camera.detect(self)
         self.show()
         # SET CUSTOM THEME
@@ -235,8 +236,8 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
-    # window = MainWindow()
-    window = LoginWindow()
+    window = MainWindow()
+    # window = LoginWindow()
     # TOGGLE Discord Rich Presence
     # *** Not recommended if discord doesn't running in background ***
     AppFunctions.discordRichPresence(False)
