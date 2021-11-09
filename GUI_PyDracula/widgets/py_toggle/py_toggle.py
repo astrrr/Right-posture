@@ -26,10 +26,6 @@ Toggle1 = None
 Toggle2 = None
 Toggle3 = None
 
-Night = 0
-Close = 0
-Sound = 0
-
 save_file = open("modules/save_setting.json", "r")
 json_object = json.load(save_file)
 save_file.close()
@@ -100,9 +96,11 @@ class PyToggle(QCheckBox):
         if value:
             self.animation.setEndValue(self.width() - 26)
             print("Status : ON Auto Close")
+            self.save_data("Close", 1)
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Close")
+            self.save_data("Close", 0)
         self.animation.start()
 
     def setup_animation_3(self, value):
@@ -110,9 +108,11 @@ class PyToggle(QCheckBox):
         if value:
             self.animation.setEndValue(self.width() - 26)
             print("Status : ON Sound")
+            self.save_data("Sound", 1)
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Sound")
+            self.save_data("Sound", 0)
         self.animation.start()
 
     def save_data(self, setting, value):

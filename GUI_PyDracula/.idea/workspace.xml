@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="SetChecked in toggle">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add save_setting.json">
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,13 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Add pynotifier &amp; notifypy">
-      <created>1635791803407</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1635791803407</updated>
     </task>
     <task id="LOCAL-00022" summary="Change Description">
       <created>1635791836659</created>
@@ -528,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636473171137</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Add save_setting.json">
+      <created>1636477676949</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1636477676950</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +544,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Move some function from main to ui_function" />
     <MESSAGE value="Move more function" />
     <MESSAGE value="Checkpoint" />
     <MESSAGE value="Add Detect.py" />
@@ -570,6 +568,7 @@
     <MESSAGE value="Rename Detect.py to app_detect.py" />
     <MESSAGE value="Upstream PyOneDark" />
     <MESSAGE value="SetChecked in toggle" />
-    <option name="LAST_COMMIT_MESSAGE" value="SetChecked in toggle" />
+    <MESSAGE value="Add save_setting.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add save_setting.json" />
   </component>
 </project>
