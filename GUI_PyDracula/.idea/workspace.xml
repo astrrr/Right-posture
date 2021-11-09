@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve save system">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iconMark1.ico" beforeDir="false" afterPath="$PROJECT_DIR$/bin/iconMark1.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iconTimer.ico" beforeDir="false" afterPath="$PROJECT_DIR$/bin/iconTimer.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/app_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,20 +187,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Change theme to dracula">
-      <created>1635845322985</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1635845322985</updated>
-    </task>
-    <task id="LOCAL-00025" summary="IDK">
-      <created>1635845338368</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1635845338368</updated>
     </task>
     <task id="LOCAL-00026" summary="Edit main">
       <created>1635845375510</created>
@@ -534,7 +517,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636478298027</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Add important file to bin">
+      <created>1636479419515</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1636479419516</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Add bin folder when compile">
+      <created>1636479468598</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1636479468598</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -551,8 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Checkpoint" />
-    <MESSAGE value="Add Detect.py" />
     <MESSAGE value="Update CE64-12.mpp" />
     <MESSAGE value="Add Camera" />
     <MESSAGE value="Edit Status page and improve Detect" />
@@ -576,6 +571,8 @@
     <MESSAGE value="SetChecked in toggle" />
     <MESSAGE value="Add save_setting.json" />
     <MESSAGE value="Improve save system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve save system" />
+    <MESSAGE value="Add important file to bin" />
+    <MESSAGE value="Add bin folder when compile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add bin folder when compile" />
   </component>
 </project>

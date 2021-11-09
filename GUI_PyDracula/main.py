@@ -17,6 +17,7 @@
 import sys
 import os
 import numpy as np
+import json
 
 from modules import *
 from widgets import *
@@ -32,6 +33,10 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 widgets = None
 Camera = None
 counter = 0
+
+save_file = open("bin/save_setting.json", "r")
+loaded_object = json.load(save_file)
+save_file.close()
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -123,7 +128,7 @@ class MainWindow(QMainWindow):
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
-        Camera = False
+        Camera = loaded_object["Night"]
         if Camera:
             Start_Camera.detect(self)
 

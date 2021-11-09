@@ -27,13 +27,13 @@ Toggle2 = None
 Toggle3 = None
 
 save_file = open("bin/save_setting.json", "r")
-json_object = json.load(save_file)
+loaded_object = json.load(save_file)
 save_file.close()
 
 def save_data(setting, value):
-    json_object[setting] = value
+    loaded_object[setting] = value
     with open('bin/save_setting.json', 'w') as f:
-        json.dump(json_object, f)
+        json.dump(loaded_object, f)
 
 class PyToggle(QCheckBox):
     def __init__(
@@ -68,19 +68,19 @@ class PyToggle(QCheckBox):
         Toggle_NightMode = PyToggle()
         widgets.Toggle_Night_Layout.addWidget(Toggle_NightMode)
         Toggle_NightMode.stateChanged.connect(Toggle1)
-        Night = json_object["Night"]
+        Night = loaded_object["Night"]
         Toggle_NightMode.setChecked(Night)
 
         Toggle_Close = PyToggle()
         widgets.Toggle_Close_Layout.addWidget(Toggle_Close)
         Toggle_Close.stateChanged.connect(Toggle2)
-        Close = json_object["Close"]
+        Close = loaded_object["Close"]
         Toggle_Close.setChecked(Close)
 
         Toggle_Sound = PyToggle()
         widgets.Toggle_Sound_Layout.addWidget(Toggle_Sound)
         Toggle_Sound.stateChanged.connect(Toggle3)
-        Sound = json_object["Sound"]
+        Sound = loaded_object["Sound"]
         Toggle_Sound.setChecked(Sound)
 
     def setup_animation_1(self, value):
