@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbc324d1-c4cc-478b-ba1d-248313f032cf" name="Changes" comment="New right_column">
-      <change afterPath="$PROJECT_DIR$/../GUI_PyDracula/modules/setup_main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PyOneDark.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyOneDark.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

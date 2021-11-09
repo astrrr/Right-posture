@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Rename Detect.py to app_detect.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ui_main_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GUI_Detect" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
