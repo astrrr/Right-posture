@@ -24,6 +24,8 @@ from PySide6.QtWidgets import *
 Toggle1 = None
 Toggle2 = None
 Toggle3 = None
+
+t = 1
 class PyToggle(QCheckBox):
     def __init__(
         self,
@@ -66,6 +68,7 @@ class PyToggle(QCheckBox):
         Toggle_Sound = PyToggle()
         widgets.Toggle_Sound_Layout.addWidget(Toggle_Sound)
         Toggle_Sound.stateChanged.connect(Toggle3)
+        Toggle_Sound.setChecked(t)
 
     def setup_animation_1(self, value):
         self.animation.stop()
