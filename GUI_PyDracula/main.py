@@ -34,9 +34,8 @@ widgets = None
 Camera = None
 counter = 0
 
-save_file = open("bin/save_setting.json", "r")
-loaded_object = json.load(save_file)
-save_file.close()
+with open("bin/save_setting.json", "r") as read_file:
+    loaded_object = json.load(read_file)
 
 class LoginWindow(QMainWindow):
     def __init__(self):
