@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Upstream PyOneDark">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="SetChecked in toggle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
@@ -48,6 +48,9 @@
       <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\widgets" />
       <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula" />
       <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\widgets\py_toggle" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\modules" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -181,13 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Add file from build">
-      <created>1635775114365</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1635775114365</updated>
     </task>
     <task id="LOCAL-00021" summary="Add pynotifier &amp; notifypy">
       <created>1635791803407</created>
@@ -525,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636471843424</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="SetChecked in toggle">
+      <created>1636473171137</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1636473171137</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change widgets --&gt; toggle" />
     <MESSAGE value="Move some function from main to ui_function" />
     <MESSAGE value="Move more function" />
     <MESSAGE value="Checkpoint" />
@@ -567,6 +569,7 @@
     <MESSAGE value="Hide maximizeRestoreAppBtn &amp; minimizeAppBtn in login" />
     <MESSAGE value="Rename Detect.py to app_detect.py" />
     <MESSAGE value="Upstream PyOneDark" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upstream PyOneDark" />
+    <MESSAGE value="SetChecked in toggle" />
+    <option name="LAST_COMMIT_MESSAGE" value="SetChecked in toggle" />
   </component>
 </project>

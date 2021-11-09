@@ -16,6 +16,7 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
+import json
 from main import Ui_MainWindow
 from PySide6.QtCore import *
 from PySide6.QtGui import *
@@ -25,7 +26,14 @@ Toggle1 = None
 Toggle2 = None
 Toggle3 = None
 
-t = 1
+Night = 0
+Close = 0
+Sound = 0
+
+save_file = open("modules/save_setting.json", "r")
+json_object = json.load(save_file)
+save_file.close()
+
 class PyToggle(QCheckBox):
     def __init__(
         self,
@@ -60,24 +68,31 @@ class PyToggle(QCheckBox):
         Toggle_NightMode = PyToggle()
         widgets.Toggle_Night_Layout.addWidget(Toggle_NightMode)
         Toggle_NightMode.stateChanged.connect(Toggle1)
+        Night = json_object["Night"]
+        Toggle_NightMode.setChecked(Night)
 
         Toggle_Close = PyToggle()
         widgets.Toggle_Close_Layout.addWidget(Toggle_Close)
         Toggle_Close.stateChanged.connect(Toggle2)
+        Close = json_object["Close"]
+        Toggle_Close.setChecked(Close)
 
         Toggle_Sound = PyToggle()
         widgets.Toggle_Sound_Layout.addWidget(Toggle_Sound)
         Toggle_Sound.stateChanged.connect(Toggle3)
-        Toggle_Sound.setChecked(t)
+        Sound = json_object["Sound"]
+        Toggle_Sound.setChecked(Sound)
 
     def setup_animation_1(self, value):
         self.animation.stop()
         if value:
             self.animation.setEndValue(self.width() - 26)
             print("Status : ON Night Mode")
+            self.save_data("Night", 1)
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Night Mode")
+            self.save_data("Night", 0)
         self.animation.start()
 
     def setup_animation_2(self, value):
@@ -100,6 +115,10 @@ class PyToggle(QCheckBox):
             print("Status : OFF Sound")
         self.animation.start()
 
+    def save_data(self, setting, value):
+        json_object[setting] = value
+        with open('modules/save_setting.json', 'w') as f:
+            json.dump(json_object, f)
 
     @Property(float)
     def position(self):
