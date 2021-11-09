@@ -3,7 +3,7 @@ import os
 from cx_Freeze import setup, Executable
 
 # ADD FILES
-files = ['icon.ico','themes/']
+files = ['icon.ico', 'themes/', 'bin/']
 
 # TARGET
 target = Executable(
@@ -20,11 +20,5 @@ setup(
     author = "Yuul B. Alwright",
     options = {'build_exe' : {'include_files' : files}},
     executables = [target]
-    
 )
-options = {
-    'build_exe': {
-        'build_exe': './/build'
-    }
-}
 #Type python setup.py build to build.exe
