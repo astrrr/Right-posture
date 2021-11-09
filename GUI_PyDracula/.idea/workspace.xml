@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add toggle to camera">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve read_file in main">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,20 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Add toggle button">
-      <created>1635848868825</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1635848868825</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Add Py_toggle">
-      <created>1635848914441</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1635848914441</updated>
     </task>
     <task id="LOCAL-00029" summary="Change name to ui_Custom">
       <created>1635851846617</created>
@@ -529,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636480532833</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Improve read_file">
+      <created>1636480849501</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1636480849501</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Improve read_file in main">
+      <created>1636480876224</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1636480876224</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -546,8 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Camera" />
-    <MESSAGE value="Edit Status page and improve Detect" />
     <MESSAGE value="Add Resize &amp; Flip to camera" />
     <MESSAGE value="Downgraded opencv version to from 4.5.4.58 --&gt; 4.5.3.56&#10;Because new version opencv has a bug when compile it will show ImportError: OpenCV loader: missing configuration file: ['config.py']. Check OpenCV installation. &#10;** Pls use this opencv version when compile to exe with cx_freeze ***" />
     <MESSAGE value="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze" />
@@ -571,6 +569,8 @@
     <MESSAGE value="Add important file to bin" />
     <MESSAGE value="Add bin folder when compile" />
     <MESSAGE value="Add toggle to camera" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add toggle to camera" />
+    <MESSAGE value="Improve read_file" />
+    <MESSAGE value="Improve read_file in main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve read_file in main" />
   </component>
 </project>
