@@ -21,7 +21,7 @@ import json
 
 from modules import *
 from widgets import *
-
+from modules.ui_Custom import ui_Custom
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
@@ -34,8 +34,6 @@ widgets = None
 Camera = None
 counter = 0
 
-with open("bin/save_setting.json", "r") as read_file:
-    loaded_object = json.load(read_file)
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -127,6 +125,9 @@ class MainWindow(QMainWindow):
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
+
+        loaded_object = ui_Custom.load(self)
+
         Camera = loaded_object["Night"]
         if Camera:
             Start_Camera.detect(self)

@@ -16,8 +16,9 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-import json
-from main import Ui_MainWindow
+
+from main import *
+from modules.ui_Custom import ui_Custom
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
@@ -25,9 +26,7 @@ from PySide6.QtWidgets import *
 Toggle1 = None
 Toggle2 = None
 Toggle3 = None
-
-with open("bin/save_setting.json", "r") as read_file:
-    loaded_object = json.load(read_file)
+loaded_object = None
 
 def save_data(setting, value):
     loaded_object[setting] = value
@@ -56,10 +55,12 @@ class PyToggle(QCheckBox):
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
         self.ui = Ui_MainWindow()
-        global Toggle1, Toggle2, Toggle3
+        global Toggle1, Toggle2, Toggle3, loaded_object
         Toggle1 = self.setup_animation_1
         Toggle2 = self.setup_animation_2
         Toggle3 = self.setup_animation_3
+
+        loaded_object = ui_Custom.load(self)
 
     def Toggle_Switch(self):
         widgets = self.ui
