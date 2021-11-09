@@ -32,7 +32,7 @@ class AppFunctions(MainWindow):
         Notification(
             title=self,
             description=message,
-            icon_path="C:\\Users\\Mero Asebi\\Documents\\GitHub\\Right-posture\\GUI_PyDracula\\iconTimer.ico",
+            icon_path="bin/iconTimer.ico",
             duration=5,
             urgency='critical'
         ).send()

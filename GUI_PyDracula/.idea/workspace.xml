@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve save system">
-      <change beforePath="$PROJECT_DIR$/modules/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/save_setting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iconMark1.ico" beforeDir="false" afterPath="$PROJECT_DIR$/bin/iconMark1.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iconTimer.ico" beforeDir="false" afterPath="$PROJECT_DIR$/bin/iconTimer.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +55,7 @@
       <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\widgets\py_toggle" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\bin" />
       <recent name="C:\Users\Mero Asebi\Documents\GitHub\Right-posture\GUI_PyDracula\modules" />
     </key>
   </component>
@@ -184,13 +190,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Change notifyStable --&gt; notifyMe&#10;Use this notify into main notification system">
-      <created>1635798368118</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1635798368118</updated>
     </task>
     <task id="LOCAL-00024" summary="Change theme to dracula">
       <created>1635845322985</created>
@@ -528,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636477960411</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Improve save system">
+      <created>1636478298027</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1636478298027</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
