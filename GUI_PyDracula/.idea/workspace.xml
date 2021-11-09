@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add save_setting.json">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve save system">
+      <change beforePath="$PROJECT_DIR$/modules/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/save_setting.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,13 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Change Description">
-      <created>1635791836659</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1635791836659</updated>
     </task>
     <task id="LOCAL-00023" summary="Change notifyStable --&gt; notifyMe&#10;Use this notify into main notification system">
       <created>1635798368118</created>
@@ -527,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636477676950</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Improve save system">
+      <created>1636477960411</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1636477960411</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -544,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Move more function" />
     <MESSAGE value="Checkpoint" />
     <MESSAGE value="Add Detect.py" />
     <MESSAGE value="Update CE64-12.mpp" />
@@ -569,6 +569,7 @@
     <MESSAGE value="Upstream PyOneDark" />
     <MESSAGE value="SetChecked in toggle" />
     <MESSAGE value="Add save_setting.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add save_setting.json" />
+    <MESSAGE value="Improve save system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve save system" />
   </component>
 </project>

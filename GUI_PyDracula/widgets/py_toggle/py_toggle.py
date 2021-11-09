@@ -30,6 +30,11 @@ save_file = open("modules/save_setting.json", "r")
 json_object = json.load(save_file)
 save_file.close()
 
+def save_data(setting, value):
+    json_object[setting] = value
+    with open('modules/save_setting.json', 'w') as f:
+        json.dump(json_object, f)
+
 class PyToggle(QCheckBox):
     def __init__(
         self,
@@ -51,7 +56,6 @@ class PyToggle(QCheckBox):
         self.animation = QPropertyAnimation(self, b"position")
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
-        #self.stateChanged.connect(self.setup_animation)
         self.ui = Ui_MainWindow()
         global Toggle1, Toggle2, Toggle3
         Toggle1 = self.setup_animation_1
@@ -84,11 +88,11 @@ class PyToggle(QCheckBox):
         if value:
             self.animation.setEndValue(self.width() - 26)
             print("Status : ON Night Mode")
-            self.save_data("Night", 1)
+            save_data("Night", 1)
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Night Mode")
-            self.save_data("Night", 0)
+            save_data("Night", 0)
         self.animation.start()
 
     def setup_animation_2(self, value):
@@ -96,11 +100,11 @@ class PyToggle(QCheckBox):
         if value:
             self.animation.setEndValue(self.width() - 26)
             print("Status : ON Auto Close")
-            self.save_data("Close", 1)
+            save_data("Close", 1)
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Close")
-            self.save_data("Close", 0)
+            save_data("Close", 0)
         self.animation.start()
 
     def setup_animation_3(self, value):
@@ -108,17 +112,12 @@ class PyToggle(QCheckBox):
         if value:
             self.animation.setEndValue(self.width() - 26)
             print("Status : ON Sound")
-            self.save_data("Sound", 1)
+            save_data("Sound", 1)
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Sound")
-            self.save_data("Sound", 0)
+            save_data("Sound", 0)
         self.animation.start()
-
-    def save_data(self, setting, value):
-        json_object[setting] = value
-        with open('modules/save_setting.json', 'w') as f:
-            json.dump(json_object, f)
 
     @Property(float)
     def position(self):
