@@ -26,14 +26,13 @@ Toggle1 = None
 Toggle2 = None
 Toggle3 = None
 
-save_file = open("bin/save_setting.json", "r")
-loaded_object = json.load(save_file)
-save_file.close()
+with open("bin/save_setting.json", "r") as read_file:
+    loaded_object = json.load(read_file)
 
 def save_data(setting, value):
     loaded_object[setting] = value
-    with open('bin/save_setting.json', 'w') as f:
-        json.dump(loaded_object, f)
+    with open('bin/save_setting.json', 'w') as write_file:
+        json.dump(loaded_object, write_file)
 
 class PyToggle(QCheckBox):
     def __init__(

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add toggle to camera">
       <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Edit main">
-      <created>1635845375510</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1635845375510</updated>
     </task>
     <task id="LOCAL-00027" summary="Add toggle button">
       <created>1635848868825</created>
@@ -531,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636479468598</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Add toggle to camera">
+      <created>1636480532833</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1636480532833</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update CE64-12.mpp" />
     <MESSAGE value="Add Camera" />
     <MESSAGE value="Edit Status page and improve Detect" />
     <MESSAGE value="Add Resize &amp; Flip to camera" />
@@ -573,6 +570,7 @@
     <MESSAGE value="Improve save system" />
     <MESSAGE value="Add important file to bin" />
     <MESSAGE value="Add bin folder when compile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add bin folder when compile" />
+    <MESSAGE value="Add toggle to camera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add toggle to camera" />
   </component>
 </project>
