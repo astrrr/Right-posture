@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve read_file in main">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Refactor ui_Custom.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_Custom.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_Custom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,20 +189,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Change name to ui_Custom">
-      <created>1635851846617</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1635851846617</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Add Toggle Night Mode">
-      <created>1635851861779</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1635851861780</updated>
     </task>
     <task id="LOCAL-00031" summary="Add Toggle_Close &amp; Toggle_Sound">
       <created>1635855128882</created>
@@ -531,7 +519,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636480876224</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Add load function">
+      <created>1636486200536</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1636486200536</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Refactor ui_Custom.py">
+      <created>1636486798944</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1636486798949</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,8 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Resize &amp; Flip to camera" />
-    <MESSAGE value="Downgraded opencv version to from 4.5.4.58 --&gt; 4.5.3.56&#10;Because new version opencv has a bug when compile it will show ImportError: OpenCV loader: missing configuration file: ['config.py']. Check OpenCV installation. &#10;** Pls use this opencv version when compile to exe with cx_freeze ***" />
     <MESSAGE value="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze" />
     <MESSAGE value="Update app.exec()" />
     <MESSAGE value="Improve performance" />
@@ -573,6 +573,8 @@
     <MESSAGE value="Add toggle to camera" />
     <MESSAGE value="Improve read_file" />
     <MESSAGE value="Improve read_file in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve read_file in main" />
+    <MESSAGE value="Add load function" />
+    <MESSAGE value="Refactor ui_Custom.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor ui_Custom.py" />
   </component>
 </project>
