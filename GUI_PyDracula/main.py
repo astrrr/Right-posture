@@ -17,11 +17,10 @@
 import sys
 import os
 import numpy as np
-import json
 
 from modules import *
 from widgets import *
-from modules.ui_Custom import ui_Custom
+
 from PySide6 import QtWidgets, QtGui
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
@@ -33,7 +32,6 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 widgets = None
 Camera = None
 counter = 0
-
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -126,7 +124,7 @@ class MainWindow(QMainWindow):
         UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
 
-        loaded_object = ui_Custom.load(self)
+        loaded_object = load()
 
         Camera = loaded_object["Night"]
         if Camera:

@@ -18,7 +18,6 @@
 # ///////////////////////////////////////////////////////////////
 
 from main import *
-from modules.ui_Custom import ui_Custom
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
@@ -60,7 +59,7 @@ class PyToggle(QCheckBox):
         Toggle2 = self.setup_animation_2
         Toggle3 = self.setup_animation_3
 
-        loaded_object = ui_Custom.load(self)
+        loaded_object = load()
 
     def Toggle_Switch(self):
         widgets = self.ui
