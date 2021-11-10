@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add discord icon">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Take note on setup.py to delete PyQt5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,13 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Update CE64-12.mpp">
-      <created>1636104941994</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1636104941994</updated>
     </task>
     <task id="LOCAL-00049" summary="Add Camera">
       <created>1636105015699</created>
@@ -528,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636548825520</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Take note on setup.py to delete PyQt5">
+      <created>1636549551050</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1636549551051</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve save system" />
     <MESSAGE value="Add important file to bin" />
     <MESSAGE value="Add bin folder when compile" />
     <MESSAGE value="Add toggle to camera" />
@@ -570,6 +569,7 @@
     <MESSAGE value="Optimize discordRichPresence" />
     <MESSAGE value="Disable print loaded" />
     <MESSAGE value="Add discord icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add discord icon" />
+    <MESSAGE value="Take note on setup.py to delete PyQt5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Take note on setup.py to delete PyQt5" />
   </component>
 </project>
