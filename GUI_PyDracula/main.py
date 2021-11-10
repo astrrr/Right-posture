@@ -61,14 +61,14 @@ class LoginWindow(QMainWindow):
 
             if username and password == "123456":
                 self.ui.user_description.setText(f"Welcome {username}!")
-                self.ui.user_description.setStyleSheet("#user_description { color: #bdff00 }")
-                self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bdff00; }")
-                self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bdff00; }")
+                self.ui.user_description.setStyleSheet("#user_description { color: #bd93f9 }")
+                self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bd93f9; }")
+                self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")
                 QTimer.singleShot(1200, lambda: open_main())
             else:
                 # SET STYLESHEET
-                self.ui.username.setStyleSheet("#username:focus { border: 3px solid rgb(255, 0, 127); }")
-                self.ui.password.setStyleSheet("#password:focus { border: 3px solid rgb(255, 0, 127); }")
+                self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
+                self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
                 self.shacke_window()
 
     def shacke_window(self):
@@ -243,8 +243,8 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
-    window = MainWindow()
-    # window = LoginWindow()
+    # window = MainWindow()
+    window = LoginWindow()
     # TOGGLE Discord Rich Presence
     # *** Not recommended if discord doesn't running in background ***
     AppFunctions.discordRichPresence(False)
