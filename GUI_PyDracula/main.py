@@ -250,6 +250,6 @@ if __name__ == "__main__":
     # window = LoginWindow()
 
     # TOGGLE Discord Rich Presence
-    Discord(loaded_object["Discord"])
+    AppFunctions.discordRichPresence(loaded_object["Discord"])
 
     sys.exit(app.exec())
