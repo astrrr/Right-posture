@@ -243,9 +243,15 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
-    # window = MainWindow()
-    window = LoginWindow()
+
+    window = MainWindow()
+    # window = LoginWindow()
+
     # TOGGLE Discord Rich Presence
     # *** Not recommended if discord doesn't running in background ***
-    AppFunctions.discordRichPresence(False)
+    try:
+        AppFunctions.discordRichPresence(True)
+    except:
+        print("Pipe Not Found - Is Discord Running?")
+
     sys.exit(app.exec())

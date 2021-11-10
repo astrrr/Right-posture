@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Change Login color">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Send username to titleRightInfo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_main_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main_functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,20 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Test load data to widget">
-      <created>1635884934251</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1635884934251</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Add py_toggle 1-5">
-      <created>1635943064735</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1635943064735</updated>
     </task>
     <task id="LOCAL-00040" summary="Optimize toggle button">
       <created>1635968070775</created>
@@ -530,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636538892751</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Disable description">
+      <created>1636539321002</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1636539321002</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Send username to titleRightInfo">
+      <created>1636539351571</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1636539351571</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,8 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change Function_Setup --&gt; Function_Login_Setup" />
-    <MESSAGE value="Optimize function" />
     <MESSAGE value="Update login.ui" />
     <MESSAGE value="Rounded corners login" />
     <MESSAGE value="Resize login" />
@@ -572,6 +569,8 @@
     <MESSAGE value="Add app_data.py" />
     <MESSAGE value="Improve Toggle" />
     <MESSAGE value="Change Login color" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Login color" />
+    <MESSAGE value="Disable description" />
+    <MESSAGE value="Send username to titleRightInfo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Send username to titleRightInfo" />
   </component>
 </project>
