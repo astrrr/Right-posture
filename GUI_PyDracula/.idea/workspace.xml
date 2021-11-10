@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Switch windows">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,20 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Edit Status page and improve Detect">
-      <created>1636110214783</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1636110214783</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Improve performance">
-      <created>1636110600108</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1636110600109</updated>
     </task>
     <task id="LOCAL-00052" summary="Add Resize &amp; Flip to camera">
       <created>1636112056391</created>
@@ -528,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636568140680</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Change progress_color">
+      <created>1636568578242</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1636568578242</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Switch windows">
+      <created>1636568666866</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1636568666866</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,8 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add bin folder when compile" />
-    <MESSAGE value="Add toggle to camera" />
     <MESSAGE value="Improve read_file" />
     <MESSAGE value="Improve read_file in main" />
     <MESSAGE value="Add load function" />
@@ -570,6 +569,8 @@
     <MESSAGE value="Add discord icon" />
     <MESSAGE value="Take note on setup.py to delete PyQt5" />
     <MESSAGE value="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow" />
+    <MESSAGE value="Change progress_color" />
+    <MESSAGE value="Switch windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch windows" />
   </component>
 </project>
