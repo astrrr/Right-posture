@@ -16,8 +16,8 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-
-from main import *
+from main import Ui_MainWindow
+from modules.app_data import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
@@ -26,11 +26,6 @@ Toggle1 = None
 Toggle2 = None
 Toggle3 = None
 loaded_object = None
-
-def save_data(setting, value):
-    loaded_object[setting] = value
-    with open('bin/save_setting.json', 'w') as write_file:
-        json.dump(loaded_object, write_file)
 
 class PyToggle(QCheckBox):
     def __init__(
@@ -59,7 +54,7 @@ class PyToggle(QCheckBox):
         Toggle2 = self.setup_animation_2
         Toggle3 = self.setup_animation_3
 
-        loaded_object = load()
+        loaded_object = load_data()
 
     def Toggle_Switch(self):
         widgets = self.ui

@@ -124,7 +124,7 @@ class MainWindow(QMainWindow):
         UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
 
-        loaded_object = load()
+        loaded_object = load_data()
 
         Camera = loaded_object["Night"]
         if Camera:

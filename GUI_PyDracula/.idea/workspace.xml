@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add loaded_object">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Optimize app_settings.py">
       <change afterPath="$PROJECT_DIR$/modules/app_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
@@ -187,13 +188,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Move some code to ui_Custom">
-      <created>1635870047746</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1635870047746</updated>
     </task>
     <task id="LOCAL-00035" summary="Fix Bug">
       <created>1635874692418</created>
@@ -531,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636487098199</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Optimize app_settings.py">
+      <created>1636534428009</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1636534428009</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,7 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Login GUI" />
     <MESSAGE value="Add Circular_progress" />
     <MESSAGE value="Add login page" />
     <MESSAGE value="Add ui_login_function.py" />
@@ -573,6 +573,7 @@
     <MESSAGE value="Import load" />
     <MESSAGE value="Add load" />
     <MESSAGE value="Add loaded_object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add loaded_object" />
+    <MESSAGE value="Optimize app_settings.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimize app_settings.py" />
   </component>
 </project>

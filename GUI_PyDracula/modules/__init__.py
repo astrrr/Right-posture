@@ -37,3 +37,6 @@ from . app_functions import *
 
 # DETECT FUNCTIONS
 from . app_detect import Start_Camera
+
+# APP DATA
+from . app_data import *
