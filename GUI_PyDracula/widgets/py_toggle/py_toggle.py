@@ -25,7 +25,8 @@ from PySide6.QtWidgets import *
 Toggle1 = None
 Toggle2 = None
 Toggle3 = None
-loaded_object = None
+
+loaded_object = load_data()
 
 class PyToggle(QCheckBox):
     def __init__(
@@ -49,30 +50,28 @@ class PyToggle(QCheckBox):
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
         self.ui = Ui_MainWindow()
-        global Toggle1, Toggle2, Toggle3, loaded_object
+        global Toggle1, Toggle2, Toggle3
         Toggle1 = self.setup_animation_1
         Toggle2 = self.setup_animation_2
         Toggle3 = self.setup_animation_3
 
-        loaded_object = load_data()
-
     def Toggle_Switch(self):
-        widgets = self.ui
+        Toggle = self.ui
 
         Toggle_NightMode = PyToggle()
-        widgets.Toggle_Night_Layout.addWidget(Toggle_NightMode)
+        Toggle.Toggle_Night_Layout.addWidget(Toggle_NightMode)
         Toggle_NightMode.stateChanged.connect(Toggle1)
         Night = loaded_object["Night"]
         Toggle_NightMode.setChecked(Night)
 
         Toggle_Close = PyToggle()
-        widgets.Toggle_Close_Layout.addWidget(Toggle_Close)
+        Toggle.Toggle_Close_Layout.addWidget(Toggle_Close)
         Toggle_Close.stateChanged.connect(Toggle2)
         Close = loaded_object["Close"]
         Toggle_Close.setChecked(Close)
 
         Toggle_Sound = PyToggle()
-        widgets.Toggle_Sound_Layout.addWidget(Toggle_Sound)
+        Toggle.Toggle_Sound_Layout.addWidget(Toggle_Sound)
         Toggle_Sound.stateChanged.connect(Toggle3)
         Sound = loaded_object["Sound"]
         Toggle_Sound.setChecked(Sound)
