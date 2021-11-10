@@ -33,6 +33,8 @@ widgets = None
 Camera = None
 counter = 0
 
+loaded_object = None
+
 class LoginWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -119,7 +121,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        global widgets, Camera
+        global widgets, Camera, loaded_object
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
         PyToggle.Toggle_Switch(self)
@@ -248,10 +250,6 @@ if __name__ == "__main__":
     # window = LoginWindow()
 
     # TOGGLE Discord Rich Presence
-    # *** Not recommended if discord doesn't running in background ***
-    try:
-        AppFunctions.discordRichPresence(True)
-    except:
-        print("Pipe Not Found - Is Discord Running?")
+    Discord(loaded_object["Discord"])
 
     sys.exit(app.exec())
