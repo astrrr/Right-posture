@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Edit app_data.py">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Disable print loaded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/app_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resources_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/resources_rc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,20 +187,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Move more function">
-      <created>1636044086333</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1636044086333</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Checkpoint">
-      <created>1636044354362</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1636044354362</updated>
     </task>
     <task id="LOCAL-00047" summary="Add Detect.py">
       <created>1636104923869</created>
@@ -531,7 +517,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636545540537</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Optimize discordRichPresence">
+      <created>1636546500330</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1636546500330</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Disable print loaded">
+      <created>1636546644839</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1636546644839</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,8 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Upstream PyOneDark" />
-    <MESSAGE value="SetChecked in toggle" />
     <MESSAGE value="Add save_setting.json" />
     <MESSAGE value="Improve save system" />
     <MESSAGE value="Add important file to bin" />
@@ -573,6 +571,8 @@
     <MESSAGE value="Add discord button" />
     <MESSAGE value="Move discordRichPresence" />
     <MESSAGE value="Edit app_data.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit app_data.py" />
+    <MESSAGE value="Optimize discordRichPresence" />
+    <MESSAGE value="Disable print loaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Disable print loaded" />
   </component>
 </project>
