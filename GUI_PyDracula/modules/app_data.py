@@ -4,7 +4,7 @@ def load_data():
     try:
         with open("bin/save_setting.json", "r") as read_file:
             loaded_object = json.load(read_file)
-        print("Loaded setting from save_setting.json")
+        # print("Loaded setting from save_setting.json")
         return loaded_object
 
     except FileNotFoundError:
