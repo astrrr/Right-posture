@@ -55,12 +55,12 @@ class LoginWindow(QMainWindow):
             def open_main():
                 # SHOW MAIN WINDOW
                 self.main = MainWindow()
-                # self.main.top_user.label_user.setText(username.capitalize())
+                self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
                 self.main.show()
                 self.close()
 
             if username and password == "123456":
-                self.ui.user_description.setText(f"Welcome {username}!")
+                self.ui.user_description.setText(f"Welcome {username} !")
                 self.ui.user_description.setStyleSheet("#user_description { color: #bd93f9 }")
                 self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bd93f9; }")
                 self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")

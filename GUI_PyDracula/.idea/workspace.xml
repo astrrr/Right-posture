@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add app_data.py">
-      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Change Login color">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ui_main_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main_functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,20 +186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Add Module QtWidgets">
-      <created>1635876088170</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1635876088170</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Add tableWidget">
-      <created>1635876107988</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1635876107988</updated>
     </task>
     <task id="LOCAL-00038" summary="Test load data to widget">
       <created>1635884934251</created>
@@ -530,7 +516,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636534667058</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Improve Toggle">
+      <created>1636535076333</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1636535076333</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Change Login color">
+      <created>1636538892746</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1636538892751</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,8 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add login page" />
-    <MESSAGE value="Add ui_login_function.py" />
     <MESSAGE value="Change Function_Setup --&gt; Function_Login_Setup" />
     <MESSAGE value="Optimize function" />
     <MESSAGE value="Update login.ui" />
@@ -572,6 +570,8 @@
     <MESSAGE value="Add loaded_object" />
     <MESSAGE value="Optimize app_settings.py" />
     <MESSAGE value="Add app_data.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add app_data.py" />
+    <MESSAGE value="Improve Toggle" />
+    <MESSAGE value="Change Login color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Login color" />
   </component>
 </project>
