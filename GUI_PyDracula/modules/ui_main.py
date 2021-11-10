@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainFgiGdE.ui'
+## Form generated from reading UI file 'mainvNkYmN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -23,6 +23,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
     QVBoxLayout, QWidget)
 from .resources_rc import *
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -2137,6 +2138,40 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_14.addWidget(self.NightMode_7)
 
+        self.NightMode_8 = QFrame(self.topMenus)
+        self.NightMode_8.setObjectName(u"NightMode_8")
+        self.NightMode_8.setFrameShape(QFrame.StyledPanel)
+        self.NightMode_8.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_26 = QHBoxLayout(self.NightMode_8)
+        self.horizontalLayout_26.setSpacing(0)
+        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
+        self.horizontalLayout_26.setContentsMargins(0, 0, 0, 0)
+        self.btn_logout_10 = QPushButton(self.NightMode_8)
+        self.btn_logout_10.setObjectName(u"btn_logout_10")
+        self.btn_logout_10.setEnabled(False)
+        sizePolicy5.setHeightForWidth(self.btn_logout_10.sizePolicy().hasHeightForWidth())
+        self.btn_logout_10.setSizePolicy(sizePolicy5)
+        self.btn_logout_10.setMinimumSize(QSize(20, 45))
+        self.btn_logout_10.setCursor(QCursor(Qt.ArrowCursor))
+        self.btn_logout_10.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-discord.png);")
+
+        self.horizontalLayout_26.addWidget(self.btn_logout_10)
+
+        self.Toggle_Close_9 = QFrame(self.NightMode_8)
+        self.Toggle_Close_9.setObjectName(u"Toggle_Close_9")
+        self.Toggle_Close_9.setMaximumSize(QSize(60, 45))
+        self.Toggle_Close_9.setFrameShape(QFrame.StyledPanel)
+        self.Toggle_Close_9.setFrameShadow(QFrame.Raised)
+        self.Toggle_Discord_Layout = QVBoxLayout(self.Toggle_Close_9)
+        self.Toggle_Discord_Layout.setSpacing(0)
+        self.Toggle_Discord_Layout.setObjectName(u"Toggle_Discord_Layout")
+        self.Toggle_Discord_Layout.setContentsMargins(0, 0, 0, 0)
+
+        self.horizontalLayout_26.addWidget(self.Toggle_Close_9)
+
+
+        self.verticalLayout_14.addWidget(self.NightMode_8)
+
         self.btn_print = QPushButton(self.topMenus)
         self.btn_print.setObjectName(u"btn_print")
         sizePolicy.setHeightForWidth(self.btn_print.sizePolicy().hasHeightForWidth())
@@ -2459,6 +2494,7 @@ class Ui_MainWindow(object):
         self.btn_NightMode.setText(QCoreApplication.translate("MainWindow", u"Night Mode", None))
         self.btn_logout_2.setText(QCoreApplication.translate("MainWindow", u"Auto Close", None))
         self.btn_logout_9.setText(QCoreApplication.translate("MainWindow", u"Sound", None))
+        self.btn_logout_10.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: WIP Team", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.5", None))
