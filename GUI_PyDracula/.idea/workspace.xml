@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Disable print loaded">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add discord icon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/resources_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/resources_rc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,13 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Add Detect.py">
-      <created>1636104923869</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1636104923869</updated>
     </task>
     <task id="LOCAL-00048" summary="Update CE64-12.mpp">
       <created>1636104941994</created>
@@ -531,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636546644839</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Add discord icon">
+      <created>1636548825518</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1636548825520</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add save_setting.json" />
     <MESSAGE value="Improve save system" />
     <MESSAGE value="Add important file to bin" />
     <MESSAGE value="Add bin folder when compile" />
@@ -573,6 +569,7 @@
     <MESSAGE value="Edit app_data.py" />
     <MESSAGE value="Optimize discordRichPresence" />
     <MESSAGE value="Disable print loaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Disable print loaded" />
+    <MESSAGE value="Add discord icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add discord icon" />
   </component>
 </project>

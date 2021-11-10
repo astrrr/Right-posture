@@ -21,4 +21,5 @@ setup(
     options = {'build_exe' : {'include_files' : files}},
     executables = [target]
 )
-#Type python setup.py build to build.exe
+# Type python setup.py build to build.exe
+# Don't forget to delete PyQt5 on build/lib to reduce file size for 100+MB
