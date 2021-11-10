@@ -88,7 +88,7 @@ class CircularProgress(QWidget):
             paint.drawArc(margin, margin, width, height, 0, 360 * 16) 
 
         # CREATE ARC / CIRCULAR PROGRESS
-        pen.setColor(QColor(self.progress_color))
+        pen.setColor(QColor(0xff79c6))
         paint.setPen(pen)      
         paint.drawArc(margin, margin, width, height, -90 * 16, -value * 16)       
 
