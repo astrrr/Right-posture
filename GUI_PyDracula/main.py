@@ -168,6 +168,9 @@ class MainWindow(QMainWindow):
         widgets.btn_saveNotify.clicked.connect(self.buttonClick)
         widgets.btn_print.clicked.connect(self.buttonClick)
 
+        # TOGGLE Discord Rich Presence
+        AppFunctions.discordRichPresence(loaded_object["Discord"])
+
     # BUTTONS CLICK Add button here and above
     def buttonClick(self):
         btn = self.sender()
@@ -246,10 +249,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    window = MainWindow()
-    # window = LoginWindow()
-
-    # TOGGLE Discord Rich Presence
-    AppFunctions.discordRichPresence(loaded_object["Discord"])
+    # window = MainWindow()
+    window = LoginWindow()
 
     sys.exit(app.exec())
