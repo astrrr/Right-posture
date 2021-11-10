@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Refactor ui_Custom.py">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add loaded_object">
+      <change afterPath="$PROJECT_DIR$/modules/app_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/app_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/py_toggle/py_toggle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,27 +187,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Add Toggle_Close &amp; Toggle_Sound">
-      <created>1635855128882</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1635855128882</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Add setup_gui">
-      <created>1635870010211</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1635870010211</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Update Widgets">
-      <created>1635870022102</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1635870022102</updated>
     </task>
     <task id="LOCAL-00034" summary="Move some code to ui_Custom">
       <created>1635870047746</created>
@@ -533,7 +510,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636486798949</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Import load">
+      <created>1636486936344</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1636486936344</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Add load">
+      <created>1636487016234</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1636487016234</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Add loaded_object">
+      <created>1636487098199</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1636487098199</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,9 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze" />
-    <MESSAGE value="Update app.exec()" />
-    <MESSAGE value="Improve performance" />
     <MESSAGE value="Add Login GUI" />
     <MESSAGE value="Add Circular_progress" />
     <MESSAGE value="Add login page" />
@@ -575,6 +570,9 @@
     <MESSAGE value="Improve read_file in main" />
     <MESSAGE value="Add load function" />
     <MESSAGE value="Refactor ui_Custom.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor ui_Custom.py" />
+    <MESSAGE value="Import load" />
+    <MESSAGE value="Add load" />
+    <MESSAGE value="Add loaded_object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add loaded_object" />
   </component>
 </project>

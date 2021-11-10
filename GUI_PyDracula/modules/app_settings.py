@@ -1,10 +1,3 @@
-import json
-
-def load():
-    with open("bin/save_setting.json", "r") as read_file:
-        loaded_object = json.load(read_file)
-    return loaded_object
-
 class Settings:
     # APP SETTINGS
     # ///////////////////////////////////////////////////////////////
