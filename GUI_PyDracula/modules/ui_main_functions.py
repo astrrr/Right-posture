@@ -35,10 +35,10 @@ class UIFunctions(MainWindow):
 
         # APP NAME
         title = "Right Posture"
-        description = "Right Posture - Make life better."
+        # description = "Right Posture - Make life better."
         # APPLY TEXTS
         self.setWindowTitle(title)
-        widgets.titleRightInfo.setText(description)
+        # widgets.titleRightInfo.setText(description)
 
         # SET HOME PAGE AND SELECT MENU
         widgets.stackedWidget.setCurrentWidget(widgets.Home)
