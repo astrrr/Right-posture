@@ -16,7 +16,7 @@
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
-from main import *
+from main import MainWindow
 from pynotifier import Notification
 from notifypy import notify
 from pypresence import Presence
