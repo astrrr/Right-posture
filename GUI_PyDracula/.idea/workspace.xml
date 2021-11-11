@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Preview camera button">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add PreCam1">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/app_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/app_detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_detect.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Update app.exec()">
-      <created>1636231710092</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1636231710092</updated>
     </task>
     <task id="LOCAL-00056" summary="Improve performance">
       <created>1636275219579</created>
@@ -533,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636622769276</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Add PreCam1">
+      <created>1636624024282</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1636624024283</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add load function" />
     <MESSAGE value="Refactor ui_Custom.py" />
     <MESSAGE value="Import load" />
     <MESSAGE value="Add load" />
@@ -575,6 +570,7 @@
     <MESSAGE value="Switch windows" />
     <MESSAGE value="Add Stop Camera" />
     <MESSAGE value="Add Preview camera button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Preview camera button" />
+    <MESSAGE value="Add PreCam1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PreCam1" />
   </component>
 </project>

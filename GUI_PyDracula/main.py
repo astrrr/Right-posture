@@ -128,10 +128,6 @@ class MainWindow(QMainWindow):
 
         loaded_object = load_data()
 
-        # Camera = loaded_object["Night"]
-        # if Camera:
-        #     Start_Camera.detect(self)
-
         self.show()
         # SET CUSTOM THEME
         useCustomTheme = False
@@ -155,8 +151,6 @@ class MainWindow(QMainWindow):
     #         self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
     #         tablerow += 1
 
-
-        widgets.pre_cam_1.clicked.connect(self.buttonClick)
         # BUTTONS CLICK Don't forget to add button here
         widgets.btn_Home.clicked.connect(self.buttonClick)
         widgets.btn_Status.clicked.connect(self.buttonClick)
@@ -168,24 +162,19 @@ class MainWindow(QMainWindow):
         widgets.btn_Logout.clicked.connect(self.buttonClick)
         widgets.btn_saveNotify.clicked.connect(self.buttonClick)
         widgets.btn_print.clicked.connect(self.buttonClick)
-        # TOGGLE Discord Rich Presence
+
+        # Preview Camera 1
+        widgets.pre_cam_1.setChecked(loaded_object["PreCam1"])
+        widgets.pre_cam_1.clicked.connect(self.Camera_1)
+        self.Camera_1()
+
+        # Discord Rich Presence
         AppFunctions.discordRichPresence(loaded_object["Discord"])
 
     # BUTTONS CLICK Add button here and above
     def buttonClick(self):
-        global Camera
         btn = self.sender()
         btnName = btn.objectName()
-
-        if btnName == "pre_cam_1":
-            if widgets.pre_cam_1.isChecked():
-                Camera = True
-                Start_Camera.detect(self, True)
-                print("on")
-            else:
-                Camera = False
-                Start_Camera.detect(self, False)
-                print("off")
 
         if btnName == "btn_Home":
             widgets.stackedWidget.setCurrentWidget(widgets.Home)
@@ -224,22 +213,35 @@ class MainWindow(QMainWindow):
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-        #AppFunctions.notifyMe("ไปนอนซะ","eiei")
+
+    def Camera_1(self):
+        if widgets.pre_cam_1.isChecked():
+            Start_Camera.detect(self, True)
+            save_data("PreCam1", 1)
+            print("Start Camera")
+        else:
+            Start_Camera.detect(self, False)
+            save_data("PreCam1", 0)
+            print("Stop Camera")
 
     def closeEvent(self, event):
-        if Camera:
+        try:
             self.thread.stop()
             event.accept()
+        except:
+            pass
 
     @Slot(np.ndarray)
     def update_image(self, cv_img):
-        if Camera:
+        try:
             # img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
             # QT側でチャネル順BGRを指定
             qimg = QtGui.QImage(cv_img.data, cv_img.shape[1], cv_img.shape[0], cv_img.strides[0],
                                 QtGui.QImage.Format.Format_BGR888)
             qpix = QPixmap.fromImage(qimg)
             self.image_label.setPixmap(qpix)
+        except:
+            pass
 
     # RESIZE EVENTS
     def resizeEvent(self, event):

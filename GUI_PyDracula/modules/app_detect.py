@@ -78,6 +78,9 @@ class Start_Camera:
 
             self.thread.start()  # スレッドを起動
         else:
-            self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
-            self.image_label.deleteLater()
-            self.thread.stop()
+            try:
+                self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
+                self.image_label.deleteLater()
+                self.thread.stop()
+            except:
+                pass
