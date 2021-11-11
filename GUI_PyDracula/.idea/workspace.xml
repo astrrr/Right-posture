@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Switch windows">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Preview camera button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/app_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/app_detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,20 +189,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Downgraded opencv version to from 4.5.4.58 --&gt; 4.5.3.56&#10;Because new version opencv has a bug when compile it will show ImportError: OpenCV loader: missing configuration file: ['config.py']. Check OpenCV installation. &#10;** Pls use this opencv version when compile to exe with cx_freeze ***">
-      <created>1636127860879</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1636127860879</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Change &quot;from modules import Detect&quot; --&gt; &quot;from modules.Detect import Start_Camera&quot; &#10;To avoid circular imports when compile to exe with cx_freeze">
-      <created>1636128029092</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1636128029092</updated>
     </task>
     <task id="LOCAL-00055" summary="Update app.exec()">
       <created>1636231710092</created>
@@ -533,7 +519,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636572554775</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Add Stop Camera">
+      <created>1636622737757</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1636622737757</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Add Preview camera button">
+      <created>1636622769276</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1636622769276</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,8 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve read_file" />
-    <MESSAGE value="Improve read_file in main" />
     <MESSAGE value="Add load function" />
     <MESSAGE value="Refactor ui_Custom.py" />
     <MESSAGE value="Import load" />
@@ -575,6 +573,8 @@
     <MESSAGE value="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow" />
     <MESSAGE value="Change progress_color" />
     <MESSAGE value="Switch windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switch windows" />
+    <MESSAGE value="Add Stop Camera" />
+    <MESSAGE value="Add Preview camera button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Preview camera button" />
   </component>
 </project>

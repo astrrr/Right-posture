@@ -8,7 +8,7 @@ def load_data():
         return loaded_object
 
     except FileNotFoundError:
-        new_file = {"Night": 0, "Close": 0, "Sound": 0, "Discord": 0}
+        new_file = {"Night": 0, "Close": 0, "Sound": 0, "Discord": 0, "PreCam1": 0}
         with open('bin/save_setting.json', 'w') as write_file:
             json.dump(new_file, write_file)
         print("File not found we will create a default file")
