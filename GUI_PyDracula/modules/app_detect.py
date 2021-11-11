@@ -60,19 +60,24 @@ class VideoThread(QThread):
         self.wait()
 
 class Start_Camera:
-    def detect(self):
-        self.image_label = QLabel(self)
+    def detect(self, enable):
+        if enable:
+            self.image_label = QLabel(self)
 
-        # vboxにQLabelをセット
-        Camera_1 = self.ui.Camera_Frame_1_Layout
-        Camera_1.addWidget(self.image_label)
+            # vboxにQLabelをセット
+            Camera_1 = self.ui.Camera_Frame_1_Layout
+            Camera_1.addWidget(self.image_label)
 
-        # vboxをレイアウトとして配置
-        self.setLayout(Camera_1)
+            # vboxをレイアウトとして配置
+            self.setLayout(Camera_1)
 
-        # ビデオキャプチャ用のスレッドオブジェクトを生成
-        self.thread = VideoThread()
-        # ビデオスレッド内のchange_pixmap_signalオブジェクトのシグナルに対するslot
-        self.thread.change_pixmap_signal.connect(self.update_image)
+            # ビデオキャプチャ用のスレッドオブジェクトを生成
+            self.thread = VideoThread()
+            # ビデオスレッド内のchange_pixmap_signalオブジェクトのシグナルに対するslot
+            self.thread.change_pixmap_signal.connect(self.update_image)
 
-        self.thread.start()  # スレッドを起動
+            self.thread.start()  # スレッドを起動
+        else:
+            self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
+            self.image_label.deleteLater()
+            self.thread.stop()
