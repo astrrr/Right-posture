@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainJRZFSE.ui'
+## Form generated from reading UI file 'mainAEgbgw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1245,7 +1245,7 @@ class Ui_MainWindow(object):
         self.row_8.setObjectName(u"row_8")
         sizePolicy1.setHeightForWidth(self.row_8.sizePolicy().hasHeightForWidth())
         self.row_8.setSizePolicy(sizePolicy1)
-        self.row_8.setMinimumSize(QSize(0, 260))
+        self.row_8.setMinimumSize(QSize(0, 280))
         self.row_8.setMaximumSize(QSize(16777215, 16777215))
         self.row_8.setLayoutDirection(Qt.LeftToRight)
         self.row_8.setAutoFillBackground(False)
@@ -1253,8 +1253,18 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10 = QHBoxLayout(self.row_8)
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(10, 10, 10, 10)
-        self.Camera_Frame_1 = QFrame(self.row_8)
+        self.horizontalLayout_10.setContentsMargins(10, 0, 10, 0)
+        self.frame_2 = QFrame(self.row_8)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setMinimumSize(QSize(240, 0))
+        self.frame_2.setMaximumSize(QSize(320, 16777215))
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_23 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_23.setSpacing(0)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.Camera_Frame_1 = QFrame(self.frame_2)
         self.Camera_Frame_1.setObjectName(u"Camera_Frame_1")
         self.Camera_Frame_1.setMaximumSize(QSize(320, 240))
         self.Camera_Frame_1.setStyleSheet(u"border: 2px solid #bd93f9;\n"
@@ -1270,7 +1280,16 @@ class Ui_MainWindow(object):
         self.Camera_Frame_1_Layout.setObjectName(u"Camera_Frame_1_Layout")
         self.Camera_Frame_1_Layout.setContentsMargins(0, 0, 0, 0)
 
-        self.horizontalLayout_10.addWidget(self.Camera_Frame_1)
+        self.verticalLayout_23.addWidget(self.Camera_Frame_1)
+
+        self.pre_cam_1 = QCheckBox(self.frame_2)
+        self.pre_cam_1.setObjectName(u"pre_cam_1")
+        self.pre_cam_1.setMaximumSize(QSize(320, 16777215))
+
+        self.verticalLayout_23.addWidget(self.pre_cam_1)
+
+
+        self.horizontalLayout_10.addWidget(self.frame_2)
 
         self.frame = QFrame(self.row_8)
         self.frame.setObjectName(u"frame")
@@ -1285,19 +1304,42 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addWidget(self.frame)
 
-        self.Camera_Frame_2 = QFrame(self.row_8)
-        self.Camera_Frame_2.setObjectName(u"Camera_Frame_2")
-        self.Camera_Frame_2.setMaximumSize(QSize(320, 240))
-        self.Camera_Frame_2.setStyleSheet(u"border: 2px solid #ff79c6;\n"
+        self.frame_3 = QFrame(self.row_8)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setMinimumSize(QSize(240, 0))
+        self.frame_3.setMaximumSize(QSize(320, 16777215))
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_28 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_28.setSpacing(0)
+        self.verticalLayout_28.setObjectName(u"verticalLayout_28")
+        self.verticalLayout_28.setContentsMargins(0, 0, 0, 0)
+        self.Camera_Frame_3 = QFrame(self.frame_3)
+        self.Camera_Frame_3.setObjectName(u"Camera_Frame_3")
+        self.Camera_Frame_3.setMaximumSize(QSize(320, 240))
+        self.Camera_Frame_3.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+"background-position: center;\n"
+"background-repeat: no-repeat;\n"
+"background-image: url(:/images/images/images/PyDracula.png)\n"
+"\n"
 "")
-        self.Camera_Frame_2.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_2.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_2_Layout = QVBoxLayout(self.Camera_Frame_2)
-        self.Camera_Frame_2_Layout.setSpacing(0)
-        self.Camera_Frame_2_Layout.setObjectName(u"Camera_Frame_2_Layout")
-        self.Camera_Frame_2_Layout.setContentsMargins(0, 0, 0, 0)
+        self.Camera_Frame_3.setFrameShape(QFrame.StyledPanel)
+        self.Camera_Frame_3.setFrameShadow(QFrame.Raised)
+        self.Camera_Frame_1_Layout_2 = QVBoxLayout(self.Camera_Frame_3)
+        self.Camera_Frame_1_Layout_2.setSpacing(0)
+        self.Camera_Frame_1_Layout_2.setObjectName(u"Camera_Frame_1_Layout_2")
+        self.Camera_Frame_1_Layout_2.setContentsMargins(0, 0, 0, 0)
 
-        self.horizontalLayout_10.addWidget(self.Camera_Frame_2)
+        self.verticalLayout_28.addWidget(self.Camera_Frame_3)
+
+        self.pre_cam_2 = QCheckBox(self.frame_3)
+        self.pre_cam_2.setObjectName(u"pre_cam_2")
+        self.pre_cam_2.setMaximumSize(QSize(320, 16777215))
+
+        self.verticalLayout_28.addWidget(self.pre_cam_2)
+
+
+        self.horizontalLayout_10.addWidget(self.frame_3)
 
 
         self.gridLayout_3.addWidget(self.row_8, 2, 0, 1, 1)
@@ -2357,6 +2399,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled)
 
+        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
+        self.pre_cam_2.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 2", None))
         self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
         self.notifyword.setText("")
         self.notifyword.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))

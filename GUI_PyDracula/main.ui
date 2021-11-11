@@ -2448,20 +2448,18 @@ p, li { white-space: pre-wrap; }
                            <number>10</number>
                           </property>
                           <item>
-                           <widget class="QFrame" name="Camera_Frame_1">
+                           <widget class="QFrame" name="frame_2">
+                            <property name="minimumSize">
+                             <size>
+                              <width>240</width>
+                              <height>0</height>
+                             </size>
+                            </property>
                             <property name="maximumSize">
                              <size>
                               <width>320</width>
-                              <height>240</height>
+                              <height>16777215</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">border: 2px solid #bd93f9;
-background-position: center;
-background-repeat: no-repeat;
-background-image: url(:/images/images/images/PyDracula.png)
-
-</string>
                             </property>
                             <property name="frameShape">
                              <enum>QFrame::StyledPanel</enum>
@@ -2469,7 +2467,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QVBoxLayout" name="Camera_Frame_1_Layout">
+                            <layout class="QVBoxLayout" name="verticalLayout_23">
                              <property name="spacing">
                               <number>0</number>
                              </property>
@@ -2485,6 +2483,60 @@ background-image: url(:/images/images/images/PyDracula.png)
                              <property name="bottomMargin">
                               <number>0</number>
                              </property>
+                             <item>
+                              <widget class="QFrame" name="Camera_Frame_1">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>320</width>
+                                 <height>240</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border: 2px solid #bd93f9;
+background-position: center;
+background-repeat: no-repeat;
+background-image: url(:/images/images/images/PyDracula.png)
+
+</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="Camera_Frame_1_Layout">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QCheckBox" name="checkBox_3">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>320</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="text">
+                                <string>Preview Camera</string>
+                               </property>
+                              </widget>
+                             </item>
                             </layout>
                            </widget>
                           </item>
