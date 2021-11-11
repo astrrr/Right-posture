@@ -40,3 +40,6 @@ from . app_detect import Start_Camera
 
 # APP DATA
 from . app_data import *
+
+# APP BUTTONS
+from . app_buttons import *
