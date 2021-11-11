@@ -30,10 +30,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 widgets = None
-Camera = None
 counter = 0
-
-loaded_object = None
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -121,13 +118,11 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        global widgets, Camera, loaded_object
+        global widgets
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
+        AppButtons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
-
-        loaded_object = load_data()
-
         self.show()
 
     #     self.loaddata()
@@ -140,69 +135,6 @@ class MainWindow(QMainWindow):
     #     for row in people:
     #         self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
     #         tablerow += 1
-
-        # BUTTONS CLICK Don't forget to add button here
-        widgets.btn_Home.clicked.connect(self.buttonClick)
-        widgets.btn_Status.clicked.connect(self.buttonClick)
-        widgets.btn_Posture.clicked.connect(self.buttonClick)
-        widgets.btn_Tutorial.clicked.connect(self.buttonClick)
-        widgets.btn_Widgets.clicked.connect(self.buttonClick)
-        widgets.btn_Camera.clicked.connect(self.buttonClick)
-        widgets.btn_Notification.clicked.connect(self.buttonClick)
-        widgets.btn_Logout.clicked.connect(self.buttonClick)
-        widgets.btn_saveNotify.clicked.connect(self.buttonClick)
-        widgets.btn_print.clicked.connect(self.buttonClick)
-
-        # Preview Camera 1
-        widgets.pre_cam_1.setChecked(loaded_object["PreCam1"])
-        widgets.pre_cam_1.clicked.connect(self.Camera_1)
-        self.Camera_1()
-
-        # Discord Rich Presence
-        AppFunctions.discordRichPresence(loaded_object["Discord"])
-
-    # BUTTONS CLICK Add button here and above
-    def buttonClick(self):
-        btn = self.sender()
-        btnName = btn.objectName()
-
-        if btnName == "btn_Home":
-            widgets.stackedWidget.setCurrentWidget(widgets.Home)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-
-        if btnName == "btn_Status":
-            widgets.stackedWidget.setCurrentWidget(widgets.Status)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-
-        if btnName == "btn_Posture":
-            widgets.stackedWidget.setCurrentWidget(widgets.Posture) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
-
-        if btnName == "btn_Tutorial":
-            widgets.stackedWidget.setCurrentWidget(widgets.Tutorial) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
-
-        if btnName == "btn_Widgets":
-            widgets.stackedWidget.setCurrentWidget(widgets.Widgets)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-
-        if btnName == "btn_Notification":
-            widgets.stackedWidget.setCurrentWidget(widgets.Notification)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-        if btnName == "btn_saveNotify":
-            print(widgets.notifyword.text())
-            AppFunctions.notifyMe("ไปนอนซะ", widgets.notifyword.text())
-        if btnName == "btn_print":
-            print(widgets.notifyword.text())
-            AppFunctions.notifyMe("Debug", "Notification")
-
-        # PRINT BTN NAME
-        print(f'Button "{btnName}" pressed!')
 
     def Camera_1(self):
         if widgets.pre_cam_1.isChecked():
@@ -232,6 +164,10 @@ class MainWindow(QMainWindow):
             self.image_label.setPixmap(qpix)
         except:
             pass
+
+    # BUTTONS CLICK Add button here and above
+    def buttonInterface(self):
+        AppButtons.buttonClick(self)
 
     # RESIZE EVENTS
     def resizeEvent(self, event):

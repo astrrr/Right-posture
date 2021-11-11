@@ -1,27 +1,38 @@
-from main import MainWindow
+from main import *
 from .ui_main_functions import UIFunctions
 from .app_functions import AppFunctions
+from .app_data import *
 
 class AppButtons(MainWindow):
 
     def defineButtons(self):
         button = self.ui
+        loaded_object = load_data()
         button.btn_Home.clicked.connect(self.buttonInterface)
         button.btn_Status.clicked.connect(self.buttonInterface)
         button.btn_Posture.clicked.connect(self.buttonInterface)
         button.btn_Tutorial.clicked.connect(self.buttonInterface)
-        # button.btn_button.clicked.connect(self.buttonInterface)
+        button.btn_Widgets.clicked.connect(self.buttonInterface)
         button.btn_Camera.clicked.connect(self.buttonInterface)
         button.btn_Notification.clicked.connect(self.buttonInterface)
         button.btn_Logout.clicked.connect(self.buttonInterface)
         button.btn_saveNotify.clicked.connect(self.buttonInterface)
         button.btn_print.clicked.connect(self.buttonInterface)
 
+        # Preview Camera 1
+        button.pre_cam_1.setChecked(loaded_object["PreCam1"])
+        button.pre_cam_1.clicked.connect(self.Camera_1)
+        self.Camera_1()
+
+        # Discord Rich Presence
+        AppFunctions.discordRichPresence(loaded_object["Discord"])
+
+
     def buttonClick(self):
         button = self.ui
         btn = self.sender()
         btnName = btn.objectName()
-        
+
         if btnName == "btn_Home":
             button.stackedWidget.setCurrentWidget(button.Home)
             UIFunctions.resetStyle(self, btnName)
@@ -42,8 +53,8 @@ class AppButtons(MainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
-        if btnName == "btn_button":
-            button.stackedWidget.setCurrentWidget(button.button)  # SET PAGE
+        if btnName == "btn_Widgets":
+            button.stackedWidget.setCurrentWidget(button.Widgets)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
@@ -61,5 +72,3 @@ class AppButtons(MainWindow):
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
-
-
