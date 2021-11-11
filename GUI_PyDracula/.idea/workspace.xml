@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Refactor PreCam1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="import Settings">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_main_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/circular_progress/circular_progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/circular_progress/circular_progress.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,20 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Add Login GUI">
-      <created>1636275243499</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1636275243499</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Add Circular_progress">
-      <created>1636275388919</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1636275388919</updated>
     </task>
     <task id="LOCAL-00059" summary="Add login page">
       <created>1636275820265</created>
@@ -531,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636624277581</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Refactor Function_Main_Setup">
+      <created>1636626050019</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1636626050020</updated>
+    </task>
+    <task id="LOCAL-00107" summary="import Settings">
+      <created>1636626074301</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1636626074301</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,8 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Import load" />
-    <MESSAGE value="Add load" />
     <MESSAGE value="Add loaded_object" />
     <MESSAGE value="Optimize app_settings.py" />
     <MESSAGE value="Add app_data.py" />
@@ -573,6 +569,8 @@
     <MESSAGE value="Add Preview camera button" />
     <MESSAGE value="Add PreCam1" />
     <MESSAGE value="Add Refactor PreCam1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Refactor PreCam1" />
+    <MESSAGE value="Refactor Function_Main_Setup" />
+    <MESSAGE value="import Settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="import Settings" />
   </component>
 </project>
