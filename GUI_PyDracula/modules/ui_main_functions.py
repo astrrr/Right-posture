@@ -30,9 +30,6 @@ class UIFunctions(MainWindow):
         # SET UI DEFINITIONS
         UIFunctions.uiDefinitions(self)
 
-        # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
-        Settings.ENABLE_CUSTOM_TITLE_BAR = True
-
         # APP NAME
         title = "Right Posture"
         # description = "Right Posture - Make life better."
@@ -68,6 +65,21 @@ class UIFunctions(MainWindow):
 
         # QTableWidget PARAMETERS
         widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        # ///////////////////////////////////////////////////////////////
+        # # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+        # Settings.ENABLE_CUSTOM_TITLE_BAR = True
+        #
+        # # SET CUSTOM THEME
+        # useCustomTheme = False
+        # themeFile = "themes\py_dracula_light.qss"
+        # # SET THEME AND HACKS
+        # if useCustomTheme:
+        #     # LOAD AND APPLY STYLE
+        #     UIFunctions.theme(self, themeFile, True)
+        #     # SET HACKS
+        #     AppFunctions.setThemeHack(self)
+        # ///////////////////////////////////////////////////////////////
 
     # MAXIMIZE/RESTORE
     # ///////////////////////////////////////////////////////////////
