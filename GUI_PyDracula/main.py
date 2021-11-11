@@ -129,16 +129,6 @@ class MainWindow(QMainWindow):
         loaded_object = load_data()
 
         self.show()
-        # SET CUSTOM THEME
-        useCustomTheme = False
-        themeFile = "themes\py_dracula_light.qss"
-        # SET THEME AND HACKS
-        if useCustomTheme:
-            # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
-            # SET HACKS
-            AppFunctions.setThemeHack(self)
-
 
     #     self.loaddata()
     # def loaddata(self):
