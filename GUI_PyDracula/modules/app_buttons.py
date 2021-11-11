@@ -1,7 +1,5 @@
-from main import *
-from .ui_main_functions import UIFunctions
-from .app_functions import AppFunctions
-from .app_data import *
+from main import MainWindow
+from modules import UIFunctions, AppFunctions, load_data
 
 class AppButtons(MainWindow):
 
