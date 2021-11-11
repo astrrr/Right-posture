@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Move SET CUSTOM THEME">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve import">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/app_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_functions.py" afterDir="false" />
@@ -186,13 +187,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Optimize function">
-      <created>1636283786338</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1636283786338</updated>
     </task>
     <task id="LOCAL-00063" summary="Update login.ui">
       <created>1636289787107</created>
@@ -530,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636626367548</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Improve import">
+      <created>1636626687144</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1636626687144</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve Toggle" />
     <MESSAGE value="Change Login color" />
     <MESSAGE value="Disable description" />
     <MESSAGE value="Send username to titleRightInfo" />
@@ -572,6 +572,7 @@
     <MESSAGE value="Return to default" />
     <MESSAGE value="Change color CircularProgress" />
     <MESSAGE value="Move SET CUSTOM THEME" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move SET CUSTOM THEME" />
+    <MESSAGE value="Improve import" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve import" />
   </component>
 </project>
