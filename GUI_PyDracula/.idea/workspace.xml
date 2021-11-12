@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add shake_window &amp; animation_login">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Move shake_window &amp; animation_login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,13 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Upstream PyOneDark">
-      <created>1636471843424</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1636471843424</updated>
     </task>
     <task id="LOCAL-00069" summary="SetChecked in toggle">
       <created>1636473171137</created>
@@ -529,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636692103446</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Move shake_window &amp; animation_login">
+      <created>1636693527644</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1636693527644</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -546,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add discord button" />
     <MESSAGE value="Move discordRichPresence" />
     <MESSAGE value="Edit app_data.py" />
     <MESSAGE value="Optimize discordRichPresence" />
@@ -571,6 +569,7 @@
     <MESSAGE value="Move button to app_buttons.py" />
     <MESSAGE value="Improve import in app_buttons.py" />
     <MESSAGE value="Add shake_window &amp; animation_login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add shake_window &amp; animation_login" />
+    <MESSAGE value="Move shake_window &amp; animation_login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move shake_window &amp; animation_login" />
   </component>
 </project>
