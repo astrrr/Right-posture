@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainAEgbgw.ui'
+## Form generated from reading UI file 'maingKltGq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1301,6 +1301,10 @@ class Ui_MainWindow(object):
         self.frame.setMaximumSize(QSize(16777215, 240))
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
+        self.Test_Layout = QVBoxLayout(self.frame)
+        self.Test_Layout.setSpacing(0)
+        self.Test_Layout.setObjectName(u"Test_Layout")
+        self.Test_Layout.setContentsMargins(0, 0, 0, 0)
 
         self.horizontalLayout_10.addWidget(self.frame)
 
@@ -1434,76 +1438,14 @@ class Ui_MainWindow(object):
 
         self.row_5 = QFrame(self.Notification)
         self.row_5.setObjectName(u"row_5")
-        self.row_5.setMinimumSize(QSize(0, 150))
+        self.row_5.setMinimumSize(QSize(0, 130))
         self.row_5.setFrameShape(QFrame.StyledPanel)
         self.row_5.setFrameShadow(QFrame.Raised)
         self.verticalLayout_24 = QVBoxLayout(self.row_5)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
         self.gridLayout_4 = QGridLayout()
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.checkBox_2 = QCheckBox(self.row_5)
-        self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setAutoFillBackground(False)
-        self.checkBox_2.setStyleSheet(u"")
-
-        self.gridLayout_4.addWidget(self.checkBox_2, 0, 0, 1, 1)
-
-        self.radioButton_2 = QRadioButton(self.row_5)
-        self.radioButton_2.setObjectName(u"radioButton_2")
-        self.radioButton_2.setStyleSheet(u"")
-
-        self.gridLayout_4.addWidget(self.radioButton_2, 0, 1, 1, 1)
-
-        self.verticalSlider_2 = QSlider(self.row_5)
-        self.verticalSlider_2.setObjectName(u"verticalSlider_2")
-        self.verticalSlider_2.setStyleSheet(u"")
-        self.verticalSlider_2.setOrientation(Qt.Vertical)
-
-        self.gridLayout_4.addWidget(self.verticalSlider_2, 0, 2, 3, 1)
-
-        self.verticalScrollBar_2 = QScrollBar(self.row_5)
-        self.verticalScrollBar_2.setObjectName(u"verticalScrollBar_2")
-        self.verticalScrollBar_2.setStyleSheet(u" QScrollBar:vertical { background: rgb(52, 59, 72); }\n"
-" QScrollBar:horizontal { background: rgb(52, 59, 72); }")
-        self.verticalScrollBar_2.setOrientation(Qt.Vertical)
-
-        self.gridLayout_4.addWidget(self.verticalScrollBar_2, 0, 4, 3, 1)
-
-        self.scrollArea_2 = QScrollArea(self.row_5)
-        self.scrollArea_2.setObjectName(u"scrollArea_2")
-        self.scrollArea_2.setStyleSheet(u" QScrollBar:vertical {\n"
-"    background: rgb(52, 59, 72);\n"
-" }\n"
-" QScrollBar:horizontal {\n"
-"    background: rgb(52, 59, 72);\n"
-" }")
-        self.scrollArea_2.setFrameShape(QFrame.NoFrame)
-        self.scrollArea_2.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
-        self.scrollArea_2.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-        self.scrollArea_2.setWidgetResizable(True)
-        self.scrollAreaWidgetContents_2 = QWidget()
-        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 218, 218))
-        self.scrollAreaWidgetContents_2.setStyleSheet(u" QScrollBar:vertical {\n"
-"	border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    width: 14px;\n"
-"    margin: 21px 0 21px 0;\n"
-"	border-radius: 0px;\n"
-" }")
-        self.horizontalLayout_14 = QHBoxLayout(self.scrollAreaWidgetContents_2)
-        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.plainTextEdit_2 = QPlainTextEdit(self.scrollAreaWidgetContents_2)
-        self.plainTextEdit_2.setObjectName(u"plainTextEdit_2")
-        self.plainTextEdit_2.setMinimumSize(QSize(200, 200))
-        self.plainTextEdit_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-
-        self.horizontalLayout_14.addWidget(self.plainTextEdit_2)
-
-        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
-
-        self.gridLayout_4.addWidget(self.scrollArea_2, 0, 5, 3, 1)
-
+        self.gridLayout_4.setVerticalSpacing(6)
         self.comboBox_2 = QComboBox(self.row_5)
         self.comboBox_2.addItem("")
         self.comboBox_2.addItem("")
@@ -1515,40 +1457,106 @@ class Ui_MainWindow(object):
         self.comboBox_2.setIconSize(QSize(16, 16))
         self.comboBox_2.setFrame(True)
 
-        self.gridLayout_4.addWidget(self.comboBox_2, 1, 0, 1, 2)
+        self.gridLayout_4.addWidget(self.comboBox_2, 1, 0, 1, 1)
 
-        self.horizontalScrollBar_2 = QScrollBar(self.row_5)
-        self.horizontalScrollBar_2.setObjectName(u"horizontalScrollBar_2")
-        sizePolicy.setHeightForWidth(self.horizontalScrollBar_2.sizePolicy().hasHeightForWidth())
-        self.horizontalScrollBar_2.setSizePolicy(sizePolicy)
-        self.horizontalScrollBar_2.setStyleSheet(u" QScrollBar:vertical { background: rgb(52, 59, 72); }\n"
-" QScrollBar:horizontal { background: rgb(52, 59, 72); }")
-        self.horizontalScrollBar_2.setOrientation(Qt.Horizontal)
+        self.labelBoxBlenderInstalation_15 = QLabel(self.row_5)
+        self.labelBoxBlenderInstalation_15.setObjectName(u"labelBoxBlenderInstalation_15")
+        self.labelBoxBlenderInstalation_15.setFont(font)
+        self.labelBoxBlenderInstalation_15.setStyleSheet(u"")
 
-        self.gridLayout_4.addWidget(self.horizontalScrollBar_2, 1, 3, 1, 1)
+        self.gridLayout_4.addWidget(self.labelBoxBlenderInstalation_15, 0, 1, 1, 1)
 
-        self.commandLinkButton_2 = QCommandLinkButton(self.row_5)
-        self.commandLinkButton_2.setObjectName(u"commandLinkButton_2")
-        self.commandLinkButton_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.commandLinkButton_2.setStyleSheet(u"")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton_2.setIcon(icon6)
+        self.comboBox_3 = QComboBox(self.row_5)
+        self.comboBox_3.addItem("")
+        self.comboBox_3.addItem("")
+        self.comboBox_3.addItem("")
+        self.comboBox_3.setObjectName(u"comboBox_3")
+        self.comboBox_3.setFont(font)
+        self.comboBox_3.setAutoFillBackground(False)
+        self.comboBox_3.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.comboBox_3.setIconSize(QSize(16, 16))
+        self.comboBox_3.setFrame(True)
 
-        self.gridLayout_4.addWidget(self.commandLinkButton_2, 1, 6, 1, 1)
+        self.gridLayout_4.addWidget(self.comboBox_3, 1, 1, 1, 1)
 
-        self.horizontalSlider_2 = QSlider(self.row_5)
-        self.horizontalSlider_2.setObjectName(u"horizontalSlider_2")
-        self.horizontalSlider_2.setStyleSheet(u"")
-        self.horizontalSlider_2.setOrientation(Qt.Horizontal)
+        self.labelBoxBlenderInstalation_14 = QLabel(self.row_5)
+        self.labelBoxBlenderInstalation_14.setObjectName(u"labelBoxBlenderInstalation_14")
+        self.labelBoxBlenderInstalation_14.setFont(font)
+        self.labelBoxBlenderInstalation_14.setStyleSheet(u"")
 
-        self.gridLayout_4.addWidget(self.horizontalSlider_2, 2, 0, 1, 2)
+        self.gridLayout_4.addWidget(self.labelBoxBlenderInstalation_14, 0, 0, 1, 1)
+
+        self.frame_4 = QFrame(self.row_5)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.TestNoti_Layout = QVBoxLayout(self.frame_4)
+        self.TestNoti_Layout.setSpacing(0)
+        self.TestNoti_Layout.setObjectName(u"TestNoti_Layout")
+        self.TestNoti_Layout.setContentsMargins(0, 0, 0, 0)
+
+        self.gridLayout_4.addWidget(self.frame_4, 2, 1, 1, 1)
+
+        self.checkBox_4 = QCheckBox(self.row_5)
+        self.checkBox_4.setObjectName(u"checkBox_4")
+        self.checkBox_4.setAutoFillBackground(False)
+        self.checkBox_4.setStyleSheet(u"")
+
+        self.gridLayout_4.addWidget(self.checkBox_4, 2, 0, 1, 1)
 
 
         self.verticalLayout_24.addLayout(self.gridLayout_4)
 
 
         self._2.addWidget(self.row_5)
+
+        self.row_9 = QFrame(self.Notification)
+        self.row_9.setObjectName(u"row_9")
+        self.row_9.setMinimumSize(QSize(0, 150))
+        self.row_9.setFrameShape(QFrame.StyledPanel)
+        self.row_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_29 = QVBoxLayout(self.row_9)
+        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.gridLayout_5 = QGridLayout()
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.labelBoxBlenderInstalation_17 = QLabel(self.row_9)
+        self.labelBoxBlenderInstalation_17.setObjectName(u"labelBoxBlenderInstalation_17")
+        self.labelBoxBlenderInstalation_17.setFont(font)
+        self.labelBoxBlenderInstalation_17.setStyleSheet(u"")
+
+        self.gridLayout_5.addWidget(self.labelBoxBlenderInstalation_17, 0, 1, 1, 1)
+
+        self.radioButton_3 = QRadioButton(self.row_9)
+        self.radioButton_3.setObjectName(u"radioButton_3")
+        self.radioButton_3.setStyleSheet(u"")
+
+        self.gridLayout_5.addWidget(self.radioButton_3, 4, 0, 1, 1)
+
+        self.checkBox_3 = QCheckBox(self.row_9)
+        self.checkBox_3.setObjectName(u"checkBox_3")
+        self.checkBox_3.setAutoFillBackground(False)
+        self.checkBox_3.setStyleSheet(u"")
+
+        self.gridLayout_5.addWidget(self.checkBox_3, 4, 1, 1, 1)
+
+        self.comboBox_5 = QComboBox(self.row_9)
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.setObjectName(u"comboBox_5")
+        self.comboBox_5.setFont(font)
+        self.comboBox_5.setAutoFillBackground(False)
+        self.comboBox_5.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.comboBox_5.setIconSize(QSize(16, 16))
+        self.comboBox_5.setFrame(True)
+
+        self.gridLayout_5.addWidget(self.comboBox_5, 1, 1, 1, 1)
+
+
+        self.verticalLayout_29.addLayout(self.gridLayout_5)
+
+
+        self._2.addWidget(self.row_9)
 
         self.row_4 = QFrame(self.Notification)
         self.row_4.setObjectName(u"row_4")
@@ -1745,9 +1753,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon6)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -1870,7 +1878,9 @@ class Ui_MainWindow(object):
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"")
-        self.commandLinkButton.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton.setIcon(icon7)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
 
@@ -2290,7 +2300,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2401,19 +2411,29 @@ class Ui_MainWindow(object):
 
         self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
         self.pre_cam_2.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 2", None))
-        self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
+        self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"Notification Message", None))
         self.notifyword.setText("")
         self.notifyword.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
         self.btn_saveNotify.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.labelVersion_6.setText(QCoreApplication.translate("MainWindow", u"Type word to notify you when...", None))
-        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
-        self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
-        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Test 1", None))
-        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Test 2", None))
-        self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"Test 3", None))
+        self.labelVersion_6.setText(QCoreApplication.translate("MainWindow", u"Type word to notify you when found something incorrect.", None))
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"1 Hour", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"2 Hour", None))
+        self.comboBox_2.setItemText(2, QCoreApplication.translate("MainWindow", u"3 Hour", None))
 
-        self.commandLinkButton_2.setText(QCoreApplication.translate("MainWindow", u"Link Button", None))
-        self.commandLinkButton_2.setDescription(QCoreApplication.translate("MainWindow", u"Link description", None))
+        self.labelBoxBlenderInstalation_15.setText(QCoreApplication.translate("MainWindow", u"Notification duration after the first notification.", None))
+        self.comboBox_3.setItemText(0, QCoreApplication.translate("MainWindow", u"5 Min", None))
+        self.comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"10 Min", None))
+        self.comboBox_3.setItemText(2, QCoreApplication.translate("MainWindow", u"15 Min", None))
+
+        self.labelBoxBlenderInstalation_14.setText(QCoreApplication.translate("MainWindow", u"How long to be notified when sitting for a long time.", None))
+        self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Notify", None))
+        self.labelBoxBlenderInstalation_17.setText(QCoreApplication.translate("MainWindow", u"How long to be notified when sitting for a long time", None))
+        self.radioButton_3.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
+        self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"Notify", None))
+        self.comboBox_5.setItemText(0, QCoreApplication.translate("MainWindow", u"1 Hour", None))
+        self.comboBox_5.setItemText(1, QCoreApplication.translate("MainWindow", u"2 Hour", None))
+        self.comboBox_5.setItemText(2, QCoreApplication.translate("MainWindow", u"3 Hour", None))
+
         ___qtablewidgetitem24 = self.tableWidget_2.horizontalHeaderItem(0)
         ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"0", None));
         ___qtablewidgetitem25 = self.tableWidget_2.horizontalHeaderItem(1)

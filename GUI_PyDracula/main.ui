@@ -1830,7 +1830,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="Status">
                       <layout class="QGridLayout" name="gridLayout_3">
@@ -2560,6 +2560,23 @@ background-image: url(:/images/images/images/PyDracula.png)
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
+                            <layout class="QVBoxLayout" name="Test_Layout">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                            </layout>
                            </widget>
                           </item>
                           <item>
@@ -2750,7 +2767,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                                    <string notr="true"/>
                                   </property>
                                   <property name="text">
-                                   <string>Notification</string>
+                                   <string>Notification Message</string>
                                   </property>
                                  </widget>
                                 </item>
@@ -2829,7 +2846,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                                      <number>1</number>
                                     </property>
                                     <property name="text">
-                                     <string>Type word to notify you when...</string>
+                                     <string>Type word to notify you when found something incorrect.</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2852,7 +2869,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>150</height>
+                           <height>130</height>
                           </size>
                          </property>
                          <property name="frameShape">
@@ -2864,109 +2881,10 @@ background-image: url(:/images/images/images/PyDracula.png)
                          <layout class="QVBoxLayout" name="verticalLayout_24">
                           <item>
                            <layout class="QGridLayout" name="gridLayout_4">
-                            <item row="0" column="0">
-                             <widget class="QCheckBox" name="checkBox_2">
-                              <property name="autoFillBackground">
-                               <bool>false</bool>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="text">
-                               <string>CheckBox</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="1">
-                             <widget class="QRadioButton" name="radioButton_2">
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="text">
-                               <string>RadioButton</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="2" rowspan="3">
-                             <widget class="QSlider" name="verticalSlider_2">
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="4" rowspan="3">
-                             <widget class="QScrollBar" name="verticalScrollBar_2">
-                              <property name="styleSheet">
-                               <string notr="true"> QScrollBar:vertical { background: rgb(52, 59, 72); }
- QScrollBar:horizontal { background: rgb(52, 59, 72); }</string>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Vertical</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="5" rowspan="3">
-                             <widget class="QScrollArea" name="scrollArea_2">
-                              <property name="styleSheet">
-                               <string notr="true"> QScrollBar:vertical {
-    background: rgb(52, 59, 72);
- }
- QScrollBar:horizontal {
-    background: rgb(52, 59, 72);
- }</string>
-                              </property>
-                              <property name="frameShape">
-                               <enum>QFrame::NoFrame</enum>
-                              </property>
-                              <property name="verticalScrollBarPolicy">
-                               <enum>Qt::ScrollBarAlwaysOn</enum>
-                              </property>
-                              <property name="horizontalScrollBarPolicy">
-                               <enum>Qt::ScrollBarAsNeeded</enum>
-                              </property>
-                              <property name="widgetResizable">
-                               <bool>true</bool>
-                              </property>
-                              <widget class="QWidget" name="scrollAreaWidgetContents_2">
-                               <property name="geometry">
-                                <rect>
-                                 <x>0</x>
-                                 <y>0</y>
-                                 <width>218</width>
-                                 <height>218</height>
-                                </rect>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"> QScrollBar:vertical {
-	border: none;
-    background: rgb(52, 59, 72);
-    width: 14px;
-    margin: 21px 0 21px 0;
-	border-radius: 0px;
- }</string>
-                               </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_14">
-                                <item>
-                                 <widget class="QPlainTextEdit" name="plainTextEdit_2">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>200</width>
-                                    <height>200</height>
-                                   </size>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: rgb(33, 37, 43);</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </widget>
-                            </item>
-                            <item row="1" column="0" colspan="2">
+                            <property name="verticalSpacing">
+                             <number>6</number>
+                            </property>
+                            <item row="1" column="0">
                              <widget class="QComboBox" name="comboBox_2">
                               <property name="font">
                                <font>
@@ -2992,66 +2910,237 @@ background-image: url(:/images/images/images/PyDracula.png)
                               </property>
                               <item>
                                <property name="text">
-                                <string>Test 1</string>
+                                <string>1 Hour</string>
                                </property>
                               </item>
                               <item>
                                <property name="text">
-                                <string>Test 2</string>
+                                <string>2 Hour</string>
                                </property>
                               </item>
                               <item>
                                <property name="text">
-                                <string>Test 3</string>
+                                <string>3 Hour</string>
                                </property>
                               </item>
                              </widget>
                             </item>
-                            <item row="1" column="3">
-                             <widget class="QScrollBar" name="horizontalScrollBar_2">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"> QScrollBar:vertical { background: rgb(52, 59, 72); }
- QScrollBar:horizontal { background: rgb(52, 59, 72); }</string>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="1" column="6">
-                             <widget class="QCommandLinkButton" name="commandLinkButton_2">
-                              <property name="cursor">
-                               <cursorShape>PointingHandCursor</cursorShape>
+                            <item row="0" column="1">
+                             <widget class="QLabel" name="labelBoxBlenderInstalation_15">
+                              <property name="font">
+                               <font>
+                                <pointsize>10</pointsize>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
                               </property>
                               <property name="styleSheet">
                                <string notr="true"/>
                               </property>
                               <property name="text">
-                               <string>Link Button</string>
-                              </property>
-                              <property name="icon">
-                               <iconset resource="resources.qrc">
-                                <normaloff>:/icons/images/icons/cil-link.png</normaloff>:/icons/images/icons/cil-link.png</iconset>
-                              </property>
-                              <property name="description">
-                               <string>Link description</string>
+                               <string>Notification duration after the first notification.</string>
                               </property>
                              </widget>
                             </item>
-                            <item row="2" column="0" colspan="2">
-                             <widget class="QSlider" name="horizontalSlider_2">
+                            <item row="1" column="1">
+                             <widget class="QComboBox" name="comboBox_3">
+                              <property name="font">
+                               <font>
+                                <pointsize>10</pointsize>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="autoFillBackground">
+                               <bool>false</bool>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>16</width>
+                                <height>16</height>
+                               </size>
+                              </property>
+                              <property name="frame">
+                               <bool>true</bool>
+                              </property>
+                              <item>
+                               <property name="text">
+                                <string>5 Min</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>10 Min</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>15 Min</string>
+                               </property>
+                              </item>
+                             </widget>
+                            </item>
+                            <item row="0" column="0">
+                             <widget class="QLabel" name="labelBoxBlenderInstalation_14">
+                              <property name="font">
+                               <font>
+                                <pointsize>10</pointsize>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
                               <property name="styleSheet">
                                <string notr="true"/>
                               </property>
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
+                              <property name="text">
+                               <string>How long to be notified when sitting for a long time.</string>
                               </property>
+                             </widget>
+                            </item>
+                            <item row="2" column="1">
+                             <widget class="QFrame" name="frame_4">
+                              <property name="frameShape">
+                               <enum>QFrame::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Raised</enum>
+                              </property>
+                              <layout class="QVBoxLayout" name="TestNoti_Layout">
+                               <property name="spacing">
+                                <number>0</number>
+                               </property>
+                               <property name="leftMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="topMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="rightMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                              </layout>
+                             </widget>
+                            </item>
+                            <item row="2" column="0">
+                             <widget class="QCheckBox" name="checkBox_4">
+                              <property name="autoFillBackground">
+                               <bool>false</bool>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="text">
+                               <string>Notify</string>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="row_9">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>150</height>
+                          </size>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_29">
+                          <item>
+                           <layout class="QGridLayout" name="gridLayout_5">
+                            <item row="0" column="1">
+                             <widget class="QLabel" name="labelBoxBlenderInstalation_17">
+                              <property name="font">
+                               <font>
+                                <pointsize>10</pointsize>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="text">
+                               <string>How long to be notified when sitting for a long time</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="4" column="0">
+                             <widget class="QRadioButton" name="radioButton_3">
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="text">
+                               <string>RadioButton</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="4" column="1">
+                             <widget class="QCheckBox" name="checkBox_3">
+                              <property name="autoFillBackground">
+                               <bool>false</bool>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="text">
+                               <string>Notify</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="1" column="1">
+                             <widget class="QComboBox" name="comboBox_5">
+                              <property name="font">
+                               <font>
+                                <pointsize>10</pointsize>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="autoFillBackground">
+                               <bool>false</bool>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="iconSize">
+                               <size>
+                                <width>16</width>
+                                <height>16</height>
+                               </size>
+                              </property>
+                              <property name="frame">
+                               <bool>true</bool>
+                              </property>
+                              <item>
+                               <property name="text">
+                                <string>1 Hour</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>2 Hour</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>3 Hour</string>
+                               </property>
+                              </item>
                              </widget>
                             </item>
                            </layout>
