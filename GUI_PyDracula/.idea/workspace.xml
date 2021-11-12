@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Edit windows">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Update Notification_Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
     </list>
@@ -187,13 +186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Add save_setting.json">
-      <created>1636477676949</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1636477676950</updated>
     </task>
     <task id="LOCAL-00071" summary="Improve save system">
       <created>1636477960411</created>
@@ -531,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636711543291</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="Update Notification_Page">
+      <created>1636717758010</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1636717758010</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -548,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Edit app_data.py" />
     <MESSAGE value="Optimize discordRichPresence" />
     <MESSAGE value="Disable print loaded" />
     <MESSAGE value="Add discord icon" />
@@ -573,6 +571,7 @@
     <MESSAGE value="Add shake_window &amp; animation_login" />
     <MESSAGE value="Move shake_window &amp; animation_login" />
     <MESSAGE value="Edit windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit windows" />
+    <MESSAGE value="Update Notification_Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Notification_Page" />
   </component>
 </project>
