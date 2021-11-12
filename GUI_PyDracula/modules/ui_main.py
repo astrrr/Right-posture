@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainjXrlQh.ui'
+## Form generated from reading UI file 'maincvEhPi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1452,69 +1452,26 @@ class Ui_MainWindow(object):
         self.TestNoti_Layout.setSpacing(0)
         self.TestNoti_Layout.setObjectName(u"TestNoti_Layout")
         self.TestNoti_Layout.setContentsMargins(0, 0, 0, 0)
+        self.Test_radioButton_1 = QRadioButton(self.frame_4)
+        self.Test_radioButton_1.setObjectName(u"Test_radioButton_1")
+
+        self.TestNoti_Layout.addWidget(self.Test_radioButton_1)
+
 
         self.gridLayout_4.addWidget(self.frame_4, 2, 1, 1, 1)
 
-        self.checkBox_4 = QCheckBox(self.row_5)
-        self.checkBox_4.setObjectName(u"checkBox_4")
-        self.checkBox_4.setAutoFillBackground(False)
-        self.checkBox_4.setStyleSheet(u"")
+        self.Test_checkBox_4 = QCheckBox(self.row_5)
+        self.Test_checkBox_4.setObjectName(u"Test_checkBox_4")
+        self.Test_checkBox_4.setAutoFillBackground(False)
+        self.Test_checkBox_4.setStyleSheet(u"")
 
-        self.gridLayout_4.addWidget(self.checkBox_4, 2, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.Test_checkBox_4, 2, 0, 1, 1)
 
 
         self.verticalLayout_24.addLayout(self.gridLayout_4)
 
 
         self._2.addWidget(self.row_5)
-
-        self.row_9 = QFrame(self.Notification)
-        self.row_9.setObjectName(u"row_9")
-        self.row_9.setMinimumSize(QSize(0, 150))
-        self.row_9.setFrameShape(QFrame.StyledPanel)
-        self.row_9.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_29 = QVBoxLayout(self.row_9)
-        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
-        self.gridLayout_5 = QGridLayout()
-        self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.labelBoxBlenderInstalation_17 = QLabel(self.row_9)
-        self.labelBoxBlenderInstalation_17.setObjectName(u"labelBoxBlenderInstalation_17")
-        self.labelBoxBlenderInstalation_17.setFont(font)
-        self.labelBoxBlenderInstalation_17.setStyleSheet(u"")
-
-        self.gridLayout_5.addWidget(self.labelBoxBlenderInstalation_17, 0, 1, 1, 1)
-
-        self.radioButton_3 = QRadioButton(self.row_9)
-        self.radioButton_3.setObjectName(u"radioButton_3")
-        self.radioButton_3.setStyleSheet(u"")
-
-        self.gridLayout_5.addWidget(self.radioButton_3, 4, 0, 1, 1)
-
-        self.checkBox_3 = QCheckBox(self.row_9)
-        self.checkBox_3.setObjectName(u"checkBox_3")
-        self.checkBox_3.setAutoFillBackground(False)
-        self.checkBox_3.setStyleSheet(u"")
-
-        self.gridLayout_5.addWidget(self.checkBox_3, 4, 1, 1, 1)
-
-        self.comboBox_5 = QComboBox(self.row_9)
-        self.comboBox_5.addItem("")
-        self.comboBox_5.addItem("")
-        self.comboBox_5.addItem("")
-        self.comboBox_5.setObjectName(u"comboBox_5")
-        self.comboBox_5.setFont(font)
-        self.comboBox_5.setAutoFillBackground(False)
-        self.comboBox_5.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.comboBox_5.setIconSize(QSize(16, 16))
-        self.comboBox_5.setFrame(True)
-
-        self.gridLayout_5.addWidget(self.comboBox_5, 1, 1, 1, 1)
-
-
-        self.verticalLayout_29.addLayout(self.gridLayout_5)
-
-
-        self._2.addWidget(self.row_9)
 
         self.row_4 = QFrame(self.Notification)
         self.row_4.setObjectName(u"row_4")
@@ -1789,7 +1746,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 353, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -2259,7 +2216,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2380,14 +2337,8 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(2, QCoreApplication.translate("MainWindow", u"15 Min", None))
 
         self.labelBoxBlenderInstalation_14.setText(QCoreApplication.translate("MainWindow", u"How long to be notified when sitting for a long time.", None))
-        self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Notify", None))
-        self.labelBoxBlenderInstalation_17.setText(QCoreApplication.translate("MainWindow", u"How long to be notified when sitting for a long time", None))
-        self.radioButton_3.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
-        self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"Notify", None))
-        self.comboBox_5.setItemText(0, QCoreApplication.translate("MainWindow", u"1 Hour", None))
-        self.comboBox_5.setItemText(1, QCoreApplication.translate("MainWindow", u"2 Hour", None))
-        self.comboBox_5.setItemText(2, QCoreApplication.translate("MainWindow", u"3 Hour", None))
-
+        self.Test_radioButton_1.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
+        self.Test_checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Notify", None))
         ___qtablewidgetitem24 = self.tableWidget_2.horizontalHeaderItem(0)
         ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"0", None));
         ___qtablewidgetitem25 = self.tableWidget_2.horizontalHeaderItem(1)

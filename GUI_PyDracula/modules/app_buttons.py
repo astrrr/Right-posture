@@ -17,6 +17,8 @@ class AppButtons(MainWindow):
         button.btn_saveNotify.clicked.connect(self.buttonInterface)
         button.btn_print.clicked.connect(self.buttonInterface)
 
+        # button.Test_radioButton_1.clicked.connect(self.buttonInterface)
+
         # Preview Camera 1
         button.pre_cam_1.setChecked(loaded_object["PreCam1"])
         button.pre_cam_1.clicked.connect(self.Camera_1)

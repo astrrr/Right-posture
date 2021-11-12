@@ -2909,11 +2909,18 @@ background-image: url(:/images/images/images/PyDracula.png)
                                <property name="bottomMargin">
                                 <number>0</number>
                                </property>
+                               <item>
+                                <widget class="QRadioButton" name="Test_radioButton_1">
+                                 <property name="text">
+                                  <string>RadioButton</string>
+                                 </property>
+                                </widget>
+                               </item>
                               </layout>
                              </widget>
                             </item>
                             <item row="2" column="0">
-                             <widget class="QCheckBox" name="checkBox_4">
+                             <widget class="QCheckBox" name="Test_checkBox_4">
                               <property name="autoFillBackground">
                                <bool>false</bool>
                               </property>
@@ -3648,7 +3655,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>353</width>
+                                 <width>218</width>
                                  <height>218</height>
                                 </rect>
                                </property>

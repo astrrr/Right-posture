@@ -121,11 +121,11 @@ class MainWindow(QMainWindow):
         if widgets.pre_cam_1.isChecked():
             Start_Camera.detect(self, True)
             save_data("PreCam1", 1)
-            print("Start Camera")
+            # print("Start Camera_1")
         else:
             Start_Camera.detect(self, False)
             save_data("PreCam1", 0)
-            print("Stop Camera")
+            # print("Stop Camera_1")
 
     def closeEvent(self, event):
         try:
