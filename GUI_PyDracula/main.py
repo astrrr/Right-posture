@@ -21,7 +21,7 @@ import numpy as np
 from modules import *
 from widgets import *
 
-from PySide6 import QtGui
+from PySide6 import QtGui, QtWidgets
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
@@ -99,16 +99,19 @@ class MainWindow(QMainWindow):
         PyToggle.Toggle_Switch(self)
         self.show()
 
-    #     self.loaddata()
-    # def loaddata(self):
-    #     people = [{"test": "jjames", "text": "idk", "cell": "eiei", "Line": "las"},
-    #               {"test": "qwrdsfsdf", "text": "idk", "cell": "eiei", "Line": "las"},
-    #               {"test": "48151262", "text": "idk", "cell": "eiei", "Line": "las"}]
-    #     tablerow = 0
-    #     self.ui.tableWidget.setRowCount(len(people))
+    #     self.Load_Table()
+    # def Load_Table(self):
+    #     people = [{"test": "james", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "eak", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "sun", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "cry", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "a", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "lot", "text": "idk", "cell": "eiei", "Line": "las"}]
+    #     table_row = 0
+    #     self.ui.Status_Widgets.setRowCount(len(people))
     #     for row in people:
-    #         self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
-    #         tablerow += 1
+    #         self.ui.Status_Widgets.setItem(table_row, 0, QtWidgets.QTableWidgetItem(row["test"]))
+    #         table_row += 1
 
     # BUTTONS CLICK Add button here and above
     def buttonInterface(self):

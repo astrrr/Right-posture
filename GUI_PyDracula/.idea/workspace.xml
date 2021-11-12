@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Update Notification_Page">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Decorate Status Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,13 +186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Improve save system">
-      <created>1636477960411</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1636477960411</updated>
     </task>
     <task id="LOCAL-00072" summary="Improve save system">
       <created>1636478298027</created>
@@ -530,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636717758010</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Decorate Status Page">
+      <created>1636731632320</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1636731632320</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Optimize discordRichPresence" />
     <MESSAGE value="Disable print loaded" />
     <MESSAGE value="Add discord icon" />
     <MESSAGE value="Take note on setup.py to delete PyQt5" />
@@ -572,6 +571,7 @@
     <MESSAGE value="Move shake_window &amp; animation_login" />
     <MESSAGE value="Edit windows" />
     <MESSAGE value="Update Notification_Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Notification_Page" />
+    <MESSAGE value="Decorate Status Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Decorate Status Page" />
   </component>
 </project>
