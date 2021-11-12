@@ -43,3 +43,25 @@ class UILoginFunctions:
         # ///////////////////////////////////////////////////////////////
         self.ui.username.keyReleaseEvent = self.check_login
         self.ui.password.keyReleaseEvent = self.check_login
+
+    # START ANIMATION TO LOGIN
+    # ///////////////////////////////////////////////////////////////
+    def animation_login(self):
+        # ANIMATION
+        self.animation = QPropertyAnimation(self.ui.frame_widgets, b"geometry")
+        self.animation.setDuration(1500)
+        self.animation.setStartValue(QRect(0, 70, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
+        self.animation.setEndValue(QRect(0, -325, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
+        self.animation.setEasingCurve(QEasingCurve.InOutQuart)
+        self.animation.start()
+
+    def shake_window(self):
+        # SHAKE WINDOW
+        actual_pos = self.pos()
+        QTimer.singleShot(0, lambda: self.move(actual_pos.x() + 1, actual_pos.y()))
+        QTimer.singleShot(50, lambda: self.move(actual_pos.x() + -2, actual_pos.y()))
+        QTimer.singleShot(100, lambda: self.move(actual_pos.x() + 4, actual_pos.y()))
+        QTimer.singleShot(150, lambda: self.move(actual_pos.x() + -5, actual_pos.y()))
+        QTimer.singleShot(200, lambda: self.move(actual_pos.x() + 4, actual_pos.y()))
+        QTimer.singleShot(250, lambda: self.move(actual_pos.x() + -2, actual_pos.y()))
+        QTimer.singleShot(300, lambda: self.move(actual_pos.x(), actual_pos.y()))

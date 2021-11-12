@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Move button to app_buttons.py">
-      <change beforePath="$PROJECT_DIR$/modules/app_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_buttons.py" afterDir="false" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Improve import in app_buttons.py">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ui_login_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_login_function.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,13 +186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Hide maximizeRestoreAppBtn &amp; minimizeAppBtn in login">
-      <created>1636384814576</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1636384814576</updated>
     </task>
     <task id="LOCAL-00067" summary="Rename Detect.py to app_detect.py">
       <created>1636384881365</created>
@@ -528,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636657775513</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Improve import in app_buttons.py">
+      <created>1636658167970</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1636658167970</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add try &amp; except for discordRichPresence &#10;To avoid error when discord doesn't running in background" />
     <MESSAGE value="Add try &amp; except for load_data&#10;To avoid FileNotFoundError" />
     <MESSAGE value="Add discord button" />
     <MESSAGE value="Move discordRichPresence" />
@@ -570,6 +571,7 @@
     <MESSAGE value="Edit notifypy" />
     <MESSAGE value="Add app_buttons.py" />
     <MESSAGE value="Move button to app_buttons.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move button to app_buttons.py" />
+    <MESSAGE value="Improve import in app_buttons.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve import in app_buttons.py" />
   </component>
 </project>
