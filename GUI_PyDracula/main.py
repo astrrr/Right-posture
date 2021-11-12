@@ -35,9 +35,6 @@ counter = 0
 class LoginWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        # GET WIDGETS FROM "ui_login.py"
-        # Load widgets inside LoginWindow
-        # ///////////////////////////////////////////////////////////////
         self.ui = Ui_Login()
         self.ui.setupUi(self)
         UILoginFunctions.Function_Login_Setup(self)
@@ -68,18 +65,7 @@ class LoginWindow(QMainWindow):
                 # SET STYLESHEET
                 self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
                 self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
-                self.shacke_window()
-
-    def shacke_window(self):
-        # SHACKE WINDOW
-        actual_pos = self.pos()
-        QTimer.singleShot(0, lambda: self.move(actual_pos.x() + 1, actual_pos.y()))
-        QTimer.singleShot(50, lambda: self.move(actual_pos.x() + -2, actual_pos.y()))
-        QTimer.singleShot(100, lambda: self.move(actual_pos.x() + 4, actual_pos.y()))
-        QTimer.singleShot(150, lambda: self.move(actual_pos.x() + -5, actual_pos.y()))
-        QTimer.singleShot(200, lambda: self.move(actual_pos.x() + 4, actual_pos.y()))
-        QTimer.singleShot(250, lambda: self.move(actual_pos.x() + -2, actual_pos.y()))
-        QTimer.singleShot(300, lambda: self.move(actual_pos.x(), actual_pos.y()))
+                UILoginFunctions.shake_window(self)
 
     # UPDATE PROGRESS BAR
     # ///////////////////////////////////////////////////////////////
@@ -93,21 +79,9 @@ class LoginWindow(QMainWindow):
         if counter >= 100:
             # STOP TIMER
             self.timer.stop()
-            self.animation_login()
-
+            UILoginFunctions.animation_login(self)
         # INCREASE COUNTER
         counter += 1
-
-    # START ANIMATION TO LOGIN
-    # ///////////////////////////////////////////////////////////////
-    def animation_login(self):
-        # ANIMATION
-        self.animation = QPropertyAnimation(self.ui.frame_widgets, b"geometry")
-        self.animation.setDuration(1500)
-        self.animation.setStartValue(QRect(0, 70, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
-        self.animation.setEndValue(QRect(0, -325, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
-        self.animation.setEasingCurve(QEasingCurve.InOutQuart)
-        self.animation.start()
 
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
@@ -135,6 +109,10 @@ class MainWindow(QMainWindow):
     #     for row in people:
     #         self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
     #         tablerow += 1
+
+    # BUTTONS CLICK Add button here and above
+    def buttonInterface(self):
+        AppButtons.buttonClick(self)
 
     def Camera_1(self):
         if widgets.pre_cam_1.isChecked():
@@ -165,10 +143,6 @@ class MainWindow(QMainWindow):
         except:
             pass
 
-    # BUTTONS CLICK Add button here and above
-    def buttonInterface(self):
-        AppButtons.buttonClick(self)
-
     # RESIZE EVENTS
     def resizeEvent(self, event):
         # Update Size Grips
@@ -189,7 +163,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    windows = MainWindow()
-    # windows = LoginWindow()
+    # windows = MainWindow()
+    windows = LoginWindow()
 
     sys.exit(app.exec())
