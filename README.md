@@ -1,19 +1,16 @@
 ## Warning system for incorrect sitting posture with machine learning
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-
 ระบบแจ้งเตือนลักษณะการนั่งทำงานที่ไม่ถูกต้องด้วยระบบการเรียนรู้ของเครื่อง (เฉพาะนักศึกษาต่อเนื่อง)
-
 
 [![MediaPipe](https://google.github.io/mediapipe/images/mediapipe_small.png)](https://google.github.io/mediapipe/)
 
-
-
 ## Remove ".ipynb_checkpoints"
-
 ```sh
 rm -rf `find -type d -name .ipynb_checkpoints`
 ```
+# Screenshot
+![Status_Page](https://sv1.picz.in.th/images/2021/11/17/6duwqq.png)
 
 # High DPI
 > Qt Widgets is an old technology and does not have a good support for high DPI settings, making these images look distorted when your system has DPI applied above 100%.
