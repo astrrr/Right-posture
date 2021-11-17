@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Load_Table">
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Radio Button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/app_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/app_buttons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ui_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Add important file to bin">
-      <created>1636479419515</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1636479419516</updated>
     </task>
     <task id="LOCAL-00074" summary="Add bin folder when compile">
       <created>1636479468598</created>
@@ -532,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636734119122</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Add Radio Button">
+      <created>1636735403123</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1636735403123</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add discord icon" />
     <MESSAGE value="Take note on setup.py to delete PyQt5" />
     <MESSAGE value="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow" />
     <MESSAGE value="Change progress_color" />
@@ -574,6 +570,7 @@
     <MESSAGE value="Update Notification_Page" />
     <MESSAGE value="Decorate Status Page" />
     <MESSAGE value="Add Load_Table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Load_Table" />
+    <MESSAGE value="Add Radio Button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Radio Button" />
   </component>
 </project>
