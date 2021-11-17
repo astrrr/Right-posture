@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Add Radio Button">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/save_setting.json" afterDir="false" />
-    </list>
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Switch windows" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Elasticsearch-Python-GUI" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -185,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Add bin folder when compile">
-      <created>1636479468598</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1636479468598</updated>
     </task>
     <task id="LOCAL-00075" summary="Add toggle to camera">
       <created>1636480532833</created>
@@ -529,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636735403123</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Switch windows">
+      <created>1637172396238</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1637172396238</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +546,6 @@
     <MESSAGE value="Take note on setup.py to delete PyQt5" />
     <MESSAGE value="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow" />
     <MESSAGE value="Change progress_color" />
-    <MESSAGE value="Switch windows" />
     <MESSAGE value="Add Stop Camera" />
     <MESSAGE value="Add Preview camera button" />
     <MESSAGE value="Add PreCam1" />
@@ -571,6 +567,7 @@
     <MESSAGE value="Decorate Status Page" />
     <MESSAGE value="Add Load_Table" />
     <MESSAGE value="Add Radio Button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Radio Button" />
+    <MESSAGE value="Switch windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch windows" />
   </component>
 </project>
