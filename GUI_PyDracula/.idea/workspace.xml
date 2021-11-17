@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Switch windows" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Fix bottomMenu color when hover&amp;pressed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Add toggle to camera">
-      <created>1636480532833</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1636480532833</updated>
     </task>
     <task id="LOCAL-00076" summary="Improve read_file">
       <created>1636480849501</created>
@@ -526,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637172396238</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Fix bottomMenu color when hover&amp;pressed">
+      <created>1637186036569</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1637186036569</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Take note on setup.py to delete PyQt5" />
     <MESSAGE value="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow" />
     <MESSAGE value="Change progress_color" />
     <MESSAGE value="Add Stop Camera" />
@@ -568,6 +567,7 @@
     <MESSAGE value="Add Load_Table" />
     <MESSAGE value="Add Radio Button" />
     <MESSAGE value="Switch windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switch windows" />
+    <MESSAGE value="Fix bottomMenu color when hover&amp;pressed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bottomMenu color when hover&amp;pressed" />
   </component>
 </project>
