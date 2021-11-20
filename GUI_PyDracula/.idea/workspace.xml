@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Fix bottomMenu color when hover&amp;pressed" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Adjust topLogoInfo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,10 +161,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.Basic_Camera" />
-      <item itemvalue="Python.detect" />
       <item itemvalue="Python.Detect_Pyside6" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.OpenCV_PySide6" />
+      <item itemvalue="Python.detect" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -182,13 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Improve read_file">
-      <created>1636480849501</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1636480849501</updated>
     </task>
     <task id="LOCAL-00077" summary="Improve read_file in main">
       <created>1636480876224</created>
@@ -526,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637186036569</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Adjust topLogoInfo">
+      <created>1637187423579</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1637187423579</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Move discordRichPresence to MainWindow&#10;To avoid error when start with LoginWindow" />
     <MESSAGE value="Change progress_color" />
     <MESSAGE value="Add Stop Camera" />
     <MESSAGE value="Add Preview camera button" />
@@ -568,6 +569,7 @@
     <MESSAGE value="Add Radio Button" />
     <MESSAGE value="Switch windows" />
     <MESSAGE value="Fix bottomMenu color when hover&amp;pressed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bottomMenu color when hover&amp;pressed" />
+    <MESSAGE value="Adjust topLogoInfo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjust topLogoInfo" />
   </component>
 </project>
