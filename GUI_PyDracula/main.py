@@ -13,21 +13,79 @@
 # https://doc.qt.io/qtforpython/licenses.html
 #
 # ///////////////////////////////////////////////////////////////
+
 import sys
 import os
-import platform
-import time
+import numpy as np
+
 from modules import *
 from widgets import *
-from modules.ui_Custom import *
-from widgets.py_toggle import PyToggle
-from PySide6 import QtWidgets
 
+from PySide6 import QtGui, QtWidgets
+from PySide6.QtCore import Slot
+from PySide6.QtGui import QPixmap
+from PySide6.QtWidgets import QApplication
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 widgets = None
+counter = 0
+
+class LoginWindow(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_Login()
+        self.ui.setupUi(self)
+        UILoginFunctions.Function_Login_Setup(self)
+        UIFunctions.LoginUiDefinitions(self)
+        self.show()
+
+    # CHECK LOGIN
+    # ///////////////////////////////////////////////////////////////
+    def check_login(self, event):
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            username = self.ui.username.text()
+            password = self.ui.password.text()
+
+            def open_main():
+                # SHOW MAIN WINDOW
+                self.main = MainWindow()
+                self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
+                self.main.show()
+                self.close()
+
+            if username and password == "123456":
+                self.ui.user_description.setText(f"Welcome {username} !")
+                self.ui.user_description.setStyleSheet("#user_description { color: #bd93f9 }")
+                self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bd93f9; }")
+                self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")
+                QTimer.singleShot(1200, lambda: open_main())
+            else:
+                # SET STYLESHEET
+                self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
+                self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
+                UILoginFunctions.shake_window(self)
+
+    # UPDATE PROGRESS BAR
+    # ///////////////////////////////////////////////////////////////
+    def update(self):
+        global counter
+
+        # SET VALUE TO PROGRESS BAR
+        self.progress.set_value(counter)
+
+        # CLOSE SPLASH SCREEN AND OPEN MAIN APP
+        if counter >= 100:
+            # STOP TIMER
+            self.timer.stop()
+            UILoginFunctions.animation_login(self)
+        # INCREASE COUNTER
+        counter += 1
+
+    def mousePressEvent(self, event):
+        # SET DRAG POS WINDOW
+        self.dragPos = event.globalPosition().toPoint()
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -36,108 +94,57 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global widgets
         widgets = self.ui
-        self.loaddata()
-        ui_Custom.setup_gui(self)
-
-    def loaddata(self):
-        people=[{"test":"jjames", "text":"idk","cell":"eiei","Line":"las"},{"test":"qwrdsfsdf", "text":"idk","cell":"eiei","Line":"las"},{"test":"48151262", "text":"idk","cell":"eiei","Line":"las"}]
-        tablerow=0
-        self.ui.tableWidget.setRowCount(len(people))
-        for row in people:
-            self.ui.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row["test"]))
-            tablerow+=1
-
-
-        # TOGGLE MENU
-        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
-        # SET UI DEFINITIONS
-        UIFunctions.uiDefinitions(self)
-        # EXTRA LEFT BOX
-        def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
-        autoClose = True  # Toggle Auto Close Left Box when click.
-        if autoClose:
-            widgets.btn_Camera.clicked.connect(openCloseLeftBox)
-            widgets.btn_Notification.clicked.connect(openCloseLeftBox)
-            widgets.btn_Logout.clicked.connect(openCloseLeftBox)
-        # EXTRA RIGHT BOX
-        def openCloseRightBox():
-            UIFunctions.toggleRightBox(self, True)
-        widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
-        # SHOW APP
+        UIFunctions.Function_Main_Setup(self)
+        AppButtons.defineButtons(self)
+        PyToggle.Toggle_Switch(self)
         self.show()
-        # SET CUSTOM THEME
-        useCustomTheme = False
-        themeFile = "themes\py_dracula_light.qss"
-        # SET THEME AND HACKS
-        if useCustomTheme:
-            # LOAD AND APPLY STYLE
-            UIFunctions.theme(self, themeFile, True)
-            # SET HACKS
-            AppFunctions.setThemeHack(self)
 
-        # SET HOME PAGE AND SELECT MENU
-        widgets.stackedWidget.setCurrentWidget(widgets.Home)
-        widgets.btn_Home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Home.styleSheet()))
-
-        # BUTTONS CLICK Don't forget to add button here
-        widgets.btn_Home.clicked.connect(self.buttonClick)
-        widgets.btn_Status.clicked.connect(self.buttonClick)
-        widgets.btn_Posture.clicked.connect(self.buttonClick)
-        widgets.btn_Tutorial.clicked.connect(self.buttonClick)
-        widgets.btn_Widgets.clicked.connect(self.buttonClick)
-        widgets.btn_Camera.clicked.connect(self.buttonClick)
-        widgets.btn_Notification.clicked.connect(self.buttonClick)
-        widgets.btn_Logout.clicked.connect(self.buttonClick)
-        widgets.btn_saveNotify.clicked.connect(self.buttonClick)
-        widgets.btn_print.clicked.connect(self.buttonClick)
-        ui_Custom.addWidget(self)
+    #     self.Load_Table()
+    # def Load_Table(self):
+    #     people = [{"test": "james", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "eak", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "sun", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "cry", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "a", "text": "idk", "cell": "eiei", "Line": "las"},
+    #               {"test": "lot", "text": "idk", "cell": "eiei", "Line": "las"}]
+    #     table_row = 0
+    #     self.ui.Status_Widgets.setRowCount(len(people))
+    #     for row in people:
+    #         self.ui.Status_Widgets.setItem(table_row, 0, QtWidgets.QTableWidgetItem(row["test"]))
+    #         table_row += 1
 
     # BUTTONS CLICK Add button here and above
-    def buttonClick(self):
-        btn = self.sender()
-        btnName = btn.objectName()
+    def buttonInterface(self):
+        AppButtons.buttonClick(self)
 
-        if btnName == "btn_Home":
-            widgets.stackedWidget.setCurrentWidget(widgets.Home)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+    def Camera_1(self):
+        if widgets.pre_cam_1.isChecked():
+            Start_Camera.detect(self, True)
+            save_data("PreCam1", 1)
+            # print("Start Camera_1")
+        else:
+            Start_Camera.detect(self, False)
+            save_data("PreCam1", 0)
+            # print("Stop Camera_1")
 
-        if btnName == "btn_Status":
-            widgets.stackedWidget.setCurrentWidget(widgets.Status)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+    def closeEvent(self, event):
+        try:
+            self.thread.stop()
+            event.accept()
+        except:
+            pass
 
-        if btnName == "btn_Posture":
-            widgets.stackedWidget.setCurrentWidget(widgets.Posture) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
-
-        if btnName == "btn_Tutorial":
-            widgets.stackedWidget.setCurrentWidget(widgets.Tutorial) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
-
-        if btnName == "btn_Widgets":
-            widgets.stackedWidget.setCurrentWidget(widgets.Widgets)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-
-        if btnName == "btn_Notification":
-            widgets.stackedWidget.setCurrentWidget(widgets.Notification)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-        if btnName == "btn_saveNotify":
-            print(widgets.notifyword.text())
-            AppFunctions.notifyMe("ไปนอนซะ", widgets.notifyword.text())
-        if btnName == "btn_print":
-            print(widgets.notifyword.text())
-            AppFunctions.notifyMe("Debug", "Notification")
-
-        # PRINT BTN NAME
-        print(f'Button "{btnName}" pressed!')
-        #AppFunctions.notifyMe("ไปนอนซะ","eiei")
+    @Slot(np.ndarray)
+    def update_image(self, cv_img):
+        try:
+            # img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
+            # QT側でチャネル順BGRを指定
+            qimg = QtGui.QImage(cv_img.data, cv_img.shape[1], cv_img.shape[0], cv_img.strides[0],
+                                QtGui.QImage.Format.Format_BGR888)
+            qpix = QPixmap.fromImage(qimg)
+            self.image_label.setPixmap(qpix)
+        except:
+            pass
 
     # RESIZE EVENTS
     def resizeEvent(self, event):
@@ -158,8 +165,8 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
-    window = MainWindow()
-    # TOGGLE Discord Rich Presence
-    # *** Not recommended if discord doesn't running in background ***
-    AppFunctions.discordRichPresence(False)
+
+    windows = MainWindow()
+    # windows = LoginWindow()
+
     sys.exit(app.exec())

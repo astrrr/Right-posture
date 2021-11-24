@@ -16,9 +16,17 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
+from main import Ui_MainWindow
+from modules.app_data import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
+
+Toggle1 = None
+Toggle2 = None
+Toggle3 = None
+Toggle4 = None
+loaded_object = load_data()
 
 class PyToggle(QCheckBox):
     def __init__(
@@ -37,12 +45,91 @@ class PyToggle(QCheckBox):
         self._bg_color = bg_color
         self._circle_color = circle_color
         self._active_color = active_color
-
         self._position = 3
         self.animation = QPropertyAnimation(self, b"position")
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
-        self.stateChanged.connect(self.setup_animation)
+        self.ui = Ui_MainWindow()
+        global Toggle1, Toggle2, Toggle3, Toggle4
+        Toggle1 = self.setup_animation_1
+        Toggle2 = self.setup_animation_2
+        Toggle3 = self.setup_animation_3
+        Toggle4 = self.setup_animation_4
+
+    def Toggle_Switch(self):
+        Toggle = self.ui
+
+        Toggle_NightMode = PyToggle()
+        Toggle.Toggle_Night_Layout.addWidget(Toggle_NightMode)
+        Toggle_NightMode.stateChanged.connect(Toggle1)
+        Night = loaded_object["Night"]
+        Toggle_NightMode.setChecked(Night)
+
+        Toggle_Close = PyToggle()
+        Toggle.Toggle_Close_Layout.addWidget(Toggle_Close)
+        Toggle_Close.stateChanged.connect(Toggle2)
+        Close = loaded_object["Close"]
+        Toggle_Close.setChecked(Close)
+
+        Toggle_Sound = PyToggle()
+        Toggle.Toggle_Sound_Layout.addWidget(Toggle_Sound)
+        Toggle_Sound.stateChanged.connect(Toggle3)
+        Sound = loaded_object["Sound"]
+        Toggle_Sound.setChecked(Sound)
+
+        Toggle_Discord = PyToggle()
+        Toggle.Toggle_Discord_Layout.addWidget(Toggle_Discord)
+        Toggle_Discord.stateChanged.connect(Toggle4)
+        Discord = loaded_object["Discord"]
+        Toggle_Discord.setChecked(Discord)
+
+    def setup_animation_1(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON Night Mode")
+            save_data("Night", 1)
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF Night Mode")
+            save_data("Night", 0)
+        self.animation.start()
+
+    def setup_animation_2(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON Auto Close")
+            save_data("Close", 1)
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF Close")
+            save_data("Close", 0)
+        self.animation.start()
+
+    def setup_animation_3(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON Sound")
+            save_data("Sound", 1)
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF Sound")
+            save_data("Sound", 0)
+        self.animation.start()
+
+    def setup_animation_4(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON Discord")
+            save_data("Discord", 1)
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF Discord")
+            save_data("Discord", 0)
+        self.animation.start()
 
     @Property(float)
     def position(self):
@@ -53,17 +140,6 @@ class PyToggle(QCheckBox):
         self._position = pos
         self.update()
 
-    # START STOP ANIMATION
-    def setup_animation(self, value):
-        self.animation.stop()
-        if value:
-            self.animation.setEndValue(self.width() - 26)
-            print("Status : ON")
-        else:
-            self.animation.setEndValue(4)
-            print("Status : OFF")
-        self.animation.start()
-    
     def hitButton(self, pos: QPoint):
         return self.contentsRect().contains(pos)
 

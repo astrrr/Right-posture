@@ -24,6 +24,63 @@ GLOBAL_STATE = False
 GLOBAL_TITLE_BAR = True
 
 class UIFunctions(MainWindow):
+    def Function_Main_Setup(self):
+        widgets = self.ui
+
+        # SET UI DEFINITIONS
+        UIFunctions.uiDefinitions(self)
+
+        # APP NAME
+        title = "Right Posture"
+        # description = "Right Posture - Make life better."
+        # APPLY TEXTS
+        self.setWindowTitle(title)
+        # widgets.titleRightInfo.setText(description)
+
+        # SET HOME PAGE AND SELECT MENU
+        widgets.stackedWidget.setCurrentWidget(widgets.Home)
+        widgets.btn_Home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Home.styleSheet()))
+
+        # TOGGLE MENU
+        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
+
+        # EXTRA LEFT BOX
+        def openCloseLeftBox():
+            UIFunctions.toggleLeftBox(self, True)
+        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
+        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+        autoClose = True  # Toggle Auto Close Left Box when click.
+        if autoClose:
+            widgets.btn_Camera.clicked.connect(openCloseLeftBox)
+            widgets.btn_Notification.clicked.connect(openCloseLeftBox)
+            widgets.btn_Logout.clicked.connect(openCloseLeftBox)
+
+        # EXTRA RIGHT BOX
+        def openCloseRightBox():
+            UIFunctions.toggleRightBox(self, True)
+        widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
+
+        # QTableWidget PARAMETERS
+        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        # QTableWidget PARAMETERS
+        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        # ///////////////////////////////////////////////////////////////
+        # # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+        # Settings.ENABLE_CUSTOM_TITLE_BAR = True
+        #
+        # # SET CUSTOM THEME
+        # useCustomTheme = False
+        # themeFile = "themes\py_dracula_light.qss"
+        # # SET THEME AND HACKS
+        # if useCustomTheme:
+        #     # LOAD AND APPLY STYLE
+        #     UIFunctions.theme(self, themeFile, True)
+        #     # SET HACKS
+        #     AppFunctions.setThemeHack(self)
+        # ///////////////////////////////////////////////////////////////
+
     # MAXIMIZE/RESTORE
     # ///////////////////////////////////////////////////////////////
     def maximize_restore(self):
@@ -261,6 +318,29 @@ class UIFunctions(MainWindow):
         # RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
         self.sizegrip.setStyleSheet("width: 20px; height: 20px; margin 0px; padding: 0px;")
+
+        # MINIMIZE
+        self.ui.minimizeAppBtn.clicked.connect(lambda: self.showMinimized())
+
+        # MAXIMIZE/RESTORE
+        self.ui.maximizeRestoreAppBtn.clicked.connect(lambda: UIFunctions.maximize_restore(self))
+
+        # CLOSE APPLICATION
+        self.ui.closeAppBtn.clicked.connect(lambda: self.close())
+
+    def LoginUiDefinitions(self):
+
+        # MOVE WINDOW / MAXIMIZE / RESTORE
+        def moveWindow(event):
+            # IF MAXIMIZED CHANGE TO NORMAL
+            if UIFunctions.returStatus(self):
+                UIFunctions.maximize_restore(self)
+            # MOVE WINDOW
+            if event.buttons() == Qt.LeftButton:
+                self.move(self.pos() + event.globalPos() - self.dragPos)
+                self.dragPos = event.globalPos()
+                event.accept()
+        self.ui.title_bar_3.mouseMoveEvent = moveWindow
 
         # MINIMIZE
         self.ui.minimizeAppBtn.clicked.connect(lambda: self.showMinimized())
