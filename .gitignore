@@ -1,2 +1,5 @@
-
-GUI_PyDracula/.idea/workspace.xml
+GUI_PyDracula/__pycache__/
+GUI_PyDracula/.idea/
+GUI_PyDracula/.git/
+GUI_PyDracula/.pyc
+GUI_PyDracula/build/
