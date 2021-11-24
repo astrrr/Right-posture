@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Adjust topLogoInfo" />
+    <list default="true" id="119529a4-569e-40cc-b8d1-8bc1094a4fa9" name="Changes" comment="Edit save_setting.json" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,13 +182,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635077826301</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Improve read_file in main">
-      <created>1636480876224</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1636480876224</updated>
     </task>
     <task id="LOCAL-00078" summary="Add load function">
       <created>1636486200536</created>
@@ -526,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637187423579</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Edit save_setting.json">
+      <created>1637750485267</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1637750485267</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -543,7 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change progress_color" />
     <MESSAGE value="Add Stop Camera" />
     <MESSAGE value="Add Preview camera button" />
     <MESSAGE value="Add PreCam1" />
@@ -568,6 +567,7 @@
     <MESSAGE value="Switch windows" />
     <MESSAGE value="Fix bottomMenu color when hover&amp;pressed" />
     <MESSAGE value="Adjust topLogoInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjust topLogoInfo" />
+    <MESSAGE value="Edit save_setting.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit save_setting.json" />
   </component>
 </project>
