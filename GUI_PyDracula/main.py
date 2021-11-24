@@ -39,6 +39,7 @@ class LoginWindow(QMainWindow):
         self.ui.setupUi(self)
         UILoginFunctions.Function_Login_Setup(self)
         UIFunctions.LoginUiDefinitions(self)
+        self.ui.title_bar_3.setText("Login V1 Right Posture")
         self.show()
 
     # CHECK LOGIN
