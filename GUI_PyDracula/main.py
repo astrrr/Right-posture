@@ -70,19 +70,19 @@ class LoginWindow(QMainWindow):
 
     # UPDATE PROGRESS BAR
     # ///////////////////////////////////////////////////////////////
-    def update(self):
-        global counter
-
-        # SET VALUE TO PROGRESS BAR
-        self.progress.set_value(counter)
-
-        # CLOSE SPLASH SCREEN AND OPEN MAIN APP
-        if counter >= 100:
-            # STOP TIMER
-            self.timer.stop()
-            UILoginFunctions.animation_login(self)
-        # INCREASE COUNTER
-        counter += 1
+    # def update(self):
+    #     global counter
+    #
+    #     # SET VALUE TO PROGRESS BAR
+    #     self.progress.set_value(counter)
+    #
+    #     # CLOSE SPLASH SCREEN AND OPEN MAIN APP
+    #     if counter >= 100:
+    #         # STOP TIMER
+    #         self.timer.stop()
+    #         UILoginFunctions.animation_login(self)
+    #     # INCREASE COUNTER
+    #     counter += 1
 
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    windows = MainWindow()
-    # windows = LoginWindow()
+    # windows = MainWindow()
+    windows = LoginWindow()
 
     sys.exit(app.exec())

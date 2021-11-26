@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'logindBeiQT.ui'
+## Form generated from reading UI file 'loginqULbSI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -17,14 +17,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QVBoxLayout, QWidget)
+    QVBoxLayout, QWidget)
 from .resources_rc import *
 
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(300, 420)
+        Login.resize(900, 761)
         sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -131,36 +131,25 @@ class Ui_Login(object):
         self.bg.setFrameShadow(QFrame.Raised)
         self.frame_widgets = QFrame(self.bg)
         self.frame_widgets.setObjectName(u"frame_widgets")
-        self.frame_widgets.setGeometry(QRect(0, 70, 280, 720))
+        self.frame_widgets.setGeometry(QRect(0, 70, 881, 788))
         self.frame_widgets.setMinimumSize(QSize(280, 720))
         self.frame_widgets.setMouseTracking(False)
         self.frame_widgets.setFrameShape(QFrame.NoFrame)
         self.frame_widgets.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.frame_widgets)
-        self.verticalLayout_2.setSpacing(5)
+        self.verticalLayout_2.setSpacing(8)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(20, 10, 20, 10)
-        self.preloader = QFrame(self.frame_widgets)
-        self.preloader.setObjectName(u"preloader")
-        self.preloader.setMinimumSize(QSize(240, 240))
-        self.preloader.setMaximumSize(QSize(260, 260))
-        self.preloader.setFrameShape(QFrame.NoFrame)
-        self.preloader.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_2.addWidget(self.preloader)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_2.addItem(self.verticalSpacer)
-
         self.logo = QFrame(self.frame_widgets)
         self.logo.setObjectName(u"logo")
-        self.logo.setMinimumSize(QSize(0, 260))
+        self.logo.setMinimumSize(QSize(0, 400))
+        self.logo.setMaximumSize(QSize(16777215, 400))
         self.logo.setStyleSheet(u"#logo {\n"
+"	background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
 "	border-radius: 10px;\n"
-"	background-image: url(:/images/images/images/PyDracula.png);\n"
 "	background-position: center;\n"
 "	background-repeat: no-repeat;\n"
+"    /*border: 1px solid #73AD21;*/\n"
 "}")
         self.logo.setFrameShape(QFrame.NoFrame)
         self.logo.setFrameShadow(QFrame.Raised)
@@ -169,7 +158,12 @@ class Ui_Login(object):
 
         self.user_description = QLabel(self.frame_widgets)
         self.user_description.setObjectName(u"user_description")
-        self.user_description.setStyleSheet(u"background: transparent;")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.user_description.sizePolicy().hasHeightForWidth())
+        self.user_description.setSizePolicy(sizePolicy1)
+        self.user_description.setMaximumSize(QSize(16777215, 20))
 
         self.verticalLayout_2.addWidget(self.user_description)
 
@@ -188,9 +182,37 @@ class Ui_Login(object):
 
         self.verticalLayout_2.addWidget(self.password)
 
+        self.btn_Login = QPushButton(self.frame_widgets)
+        self.btn_Login.setObjectName(u"btn_Login")
+        self.btn_Login.setMinimumSize(QSize(0, 30))
+        self.btn_Login.setMaximumSize(QSize(16777215, 30))
+
+        self.verticalLayout_2.addWidget(self.btn_Login)
+
+        self.btn_Register = QPushButton(self.frame_widgets)
+        self.btn_Register.setObjectName(u"btn_Register")
+        self.btn_Register.setMinimumSize(QSize(0, 30))
+        self.btn_Register.setMaximumSize(QSize(16777215, 30))
+
+        self.verticalLayout_2.addWidget(self.btn_Register)
+
+        self.btn_Fpassword = QPushButton(self.frame_widgets)
+        self.btn_Fpassword.setObjectName(u"btn_Fpassword")
+        self.btn_Fpassword.setMinimumSize(QSize(0, 30))
+        self.btn_Fpassword.setMaximumSize(QSize(16777215, 30))
+
+        self.verticalLayout_2.addWidget(self.btn_Fpassword)
+
+        self.frame = QFrame(self.frame_widgets)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_2.addWidget(self.frame)
+
         self.top_bar = QFrame(self.bg)
         self.top_bar.setObjectName(u"top_bar")
-        self.top_bar.setGeometry(QRect(0, 0, 281, 50))
+        self.top_bar.setGeometry(QRect(0, 0, 881, 50))
         self.top_bar.setMinimumSize(QSize(0, 50))
         self.top_bar.setMaximumSize(QSize(16777215, 45))
         palette = QPalette()
@@ -204,6 +226,9 @@ class Ui_Login(object):
         palette.setBrush(QPalette.Active, QPalette.ButtonText, brush)
         palette.setBrush(QPalette.Active, QPalette.Base, brush1)
         palette.setBrush(QPalette.Active, QPalette.Window, brush1)
+        brush2 = QBrush(QColor(0, 120, 215, 255))
+        brush2.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Active, QPalette.Highlight, brush2)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
 #endif
@@ -213,6 +238,9 @@ class Ui_Login(object):
         palette.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
         palette.setBrush(QPalette.Inactive, QPalette.Base, brush1)
         palette.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        brush3 = QBrush(QColor(240, 240, 240, 255))
+        brush3.setStyle(Qt.SolidPattern)
+        palette.setBrush(QPalette.Inactive, QPalette.Highlight, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
 #endif
@@ -222,6 +250,7 @@ class Ui_Login(object):
         palette.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
         palette.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        palette.setBrush(QPalette.Disabled, QPalette.Highlight, brush2)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
 #endif
@@ -247,25 +276,18 @@ class Ui_Login(object):
         palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Active, QPalette.Text, brush)
         palette1.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        brush2 = QBrush(QColor(0, 120, 215, 255))
-        brush2.setStyle(Qt.SolidPattern)
-        palette1.setBrush(QPalette.Active, QPalette.Highlight, brush2)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Active, QPalette.PlaceholderText, brush)
 #endif
         palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Inactive, QPalette.Text, brush)
         palette1.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        brush3 = QBrush(QColor(240, 240, 240, 255))
-        brush3.setStyle(Qt.SolidPattern)
-        palette1.setBrush(QPalette.Inactive, QPalette.Highlight, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush)
 #endif
         palette1.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Disabled, QPalette.Text, brush)
         palette1.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
-        palette1.setBrush(QPalette.Disabled, QPalette.Highlight, brush2)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush)
 #endif
@@ -278,16 +300,6 @@ class Ui_Login(object):
         self.top_btn_layout_3.setSpacing(5)
         self.top_btn_layout_3.setObjectName(u"top_btn_layout_3")
         self.top_btn_layout_3.setContentsMargins(0, 0, 0, 0)
-        self.minimizeAppBtn = QPushButton(self.top_btns_3)
-        self.minimizeAppBtn.setObjectName(u"minimizeAppBtn")
-        self.minimizeAppBtn.setEnabled(False)
-        self.minimizeAppBtn.setMinimumSize(QSize(28, 28))
-        self.minimizeAppBtn.setMaximumSize(QSize(28, 28))
-        self.minimizeAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.minimizeAppBtn.setIconSize(QSize(20, 20))
-
-        self.top_btn_layout_3.addWidget(self.minimizeAppBtn)
-
         self.maximizeRestoreAppBtn = QPushButton(self.top_btns_3)
         self.maximizeRestoreAppBtn.setObjectName(u"maximizeRestoreAppBtn")
         self.maximizeRestoreAppBtn.setEnabled(False)
@@ -304,15 +316,28 @@ class Ui_Login(object):
 
         self.top_btn_layout_3.addWidget(self.maximizeRestoreAppBtn)
 
+        self.minimizeAppBtn = QPushButton(self.top_btns_3)
+        self.minimizeAppBtn.setObjectName(u"minimizeAppBtn")
+        self.minimizeAppBtn.setEnabled(True)
+        self.minimizeAppBtn.setMinimumSize(QSize(28, 28))
+        self.minimizeAppBtn.setMaximumSize(QSize(28, 28))
+        self.minimizeAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon = QIcon()
+        icon.addFile(u":/icons/images/icons/cil-minus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.minimizeAppBtn.setIcon(icon)
+        self.minimizeAppBtn.setIconSize(QSize(20, 20))
+
+        self.top_btn_layout_3.addWidget(self.minimizeAppBtn)
+
         self.closeAppBtn = QPushButton(self.top_btns_3)
         self.closeAppBtn.setObjectName(u"closeAppBtn")
         self.closeAppBtn.setMinimumSize(QSize(28, 28))
         self.closeAppBtn.setMaximumSize(QSize(28, 28))
         self.closeAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.closeAppBtn.setStyleSheet(u"")
-        icon = QIcon()
-        icon.addFile(u":/icons/images/icons/icon_close.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.closeAppBtn.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/images/icons/icon_close.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.closeAppBtn.setIcon(icon1)
         self.closeAppBtn.setIconSize(QSize(20, 20))
 
         self.top_btn_layout_3.addWidget(self.closeAppBtn)
@@ -332,18 +357,21 @@ class Ui_Login(object):
 
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"Login. PyBlackBOX", None))
-        self.user_description.setText(QCoreApplication.translate("Login", u"Login (pass: 123456):", None))
+        self.user_description.setText(QCoreApplication.translate("Login", u"Login (Pass: 123456)", None))
         self.username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
         self.password.setPlaceholderText(QCoreApplication.translate("Login", u"Password", None))
+        self.btn_Login.setText(QCoreApplication.translate("Login", u"Login", None))
+        self.btn_Register.setText(QCoreApplication.translate("Login", u"Register", None))
+        self.btn_Fpassword.setText(QCoreApplication.translate("Login", u"Forget password", None))
         self.title_bar_3.setText(QCoreApplication.translate("Login", u"Login V1 PyDracula", None))
-#if QT_CONFIG(tooltip)
-        self.minimizeAppBtn.setToolTip(QCoreApplication.translate("Login", u"Minimize", None))
-#endif // QT_CONFIG(tooltip)
-        self.minimizeAppBtn.setText("")
 #if QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setToolTip(QCoreApplication.translate("Login", u"Maximize", None))
 #endif // QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setText("")
+#if QT_CONFIG(tooltip)
+        self.minimizeAppBtn.setToolTip(QCoreApplication.translate("Login", u"Minimize", None))
+#endif // QT_CONFIG(tooltip)
+        self.minimizeAppBtn.setText("")
 #if QT_CONFIG(tooltip)
         self.closeAppBtn.setToolTip(QCoreApplication.translate("Login", u"Close", None))
 #endif // QT_CONFIG(tooltip)
