@@ -2,6 +2,11 @@ from main import *
 
 class UILoginFunctions:
     def Function_Login_Setup(self):
+        # ADD BUTTON
+        # ///////////////////////////////////////////////////////////////
+        self.ui.btn_Login.clicked.connect(self.buttonClick)
+        self.ui.btn_Register.clicked.connect(self.buttonClick)
+        self.ui.btn_Fpassword.clicked.connect(self.buttonClick)
 
         # REMOVE TITLE BAR
         # ///////////////////////////////////////////////////////////////
@@ -41,8 +46,8 @@ class UILoginFunctions:
 
         # KEY PRESS EVENT
         # ///////////////////////////////////////////////////////////////
-        self.ui.username.keyReleaseEvent = self.check_login
-        self.ui.password.keyReleaseEvent = self.check_login
+        self.ui.username.keyReleaseEvent = self.check_enter
+        self.ui.password.keyReleaseEvent = self.check_enter
 
     # START ANIMATION TO LOGIN
     # ///////////////////////////////////////////////////////////////
