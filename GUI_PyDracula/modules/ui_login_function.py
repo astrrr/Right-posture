@@ -8,7 +8,12 @@ class UILoginFunctions:
         self.ui.btn_Login.clicked.connect(self.buttonClick)
         self.ui.btn_Register.clicked.connect(self.buttonClick)
         self.ui.btn_Fpassword.clicked.connect(self.buttonClick)
+
+        self.ui.btn_Com_Register.clicked.connect(self.buttonClick)
         self.ui.btn_Reg_Back.clicked.connect(self.buttonClick)
+
+        self.ui.btn_Forget_Email.clicked.connect(self.buttonClick)
+        self.ui.btn_Forget_Back.clicked.connect(self.buttonClick)
 
         # REMOVE TITLE BAR
         # ///////////////////////////////////////////////////////////////
@@ -53,12 +58,21 @@ class UILoginFunctions:
 
     # START ANIMATION TO LOGIN
     # ///////////////////////////////////////////////////////////////
-    def animation_login(self):
+    def animation_to_Forget(self):
         # ANIMATION
         self.animation = QPropertyAnimation(self.ui.frame_widgets, b"geometry")
         self.animation.setDuration(1500)
-        self.animation.setStartValue(QRect(0, 70, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
+        self.animation.setStartValue(QRect(0, 60, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
         self.animation.setEndValue(QRect(0, -600, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
+        self.animation.setEasingCurve(QEasingCurve.InOutQuart)
+        self.animation.start()
+
+    def animation_back_to_Login(self):
+        # ANIMATION
+        self.animation = QPropertyAnimation(self.ui.frame_widgets, b"geometry")
+        self.animation.setDuration(1500)
+        self.animation.setStartValue(QRect(0, -600, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
+        self.animation.setEndValue(QRect(0, 60, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
         self.animation.setEasingCurve(QEasingCurve.InOutQuart)
         self.animation.start()
 

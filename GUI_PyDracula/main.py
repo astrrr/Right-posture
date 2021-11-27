@@ -53,15 +53,18 @@ class LoginWindow(QMainWindow):
             self.check_login()
 
         if btnName == "btn_Register":
-            # self.timer.stop()
-            # UILoginFunctions.animation_login(self)
             self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Register_page)
 
         if btnName == "btn_Fpassword":
-            self.check_login()
+            UILoginFunctions.animation_to_Forget(self)
+            # self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Forget_page)
 
         if btnName == "btn_Reg_Back":
             self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
+
+        if btnName == "btn_Forget_Back":
+            UILoginFunctions.animation_back_to_Login(self)
+            # self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
 
     def check_enter(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
