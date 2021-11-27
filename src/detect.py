@@ -47,6 +47,8 @@ with mp_pose.Pose(
 
 # For webcam input:
 cap = cv2.VideoCapture(2)
+img_counter_cor = 0
+img_counter_in = 0
 with mp_pose.Pose(
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5) as pose:
@@ -73,6 +75,20 @@ with mp_pose.Pose(
         landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
     # Flip the image horizontally for a selfie-view display.
     cv2.imshow('MediaPipe Pose', cv2.flip(image, 1))
-    if cv2.waitKey(5) & 0xFF == 27:
+    if cv2.waitKey(1) & 0xFF == 27:
       break
+    
+    #capture pic ture for data set
+    #press space bar to take correct picture
+    elif cv2.waitKey(1) & 0xFF == 32:
+      img_name = "santok_correct_{}.png".format(img_counter_cor)
+      cv2.imwrite(img_name, image)
+      print("{} written!".format(img_name))
+      img_counter_cor += 1
+    #press '-' to take incorrect picture
+    elif cv2.waitKey(1) & 0xFF == 45:
+      img_name = "santok_incorrect_{}.png".format(img_counter_in)
+      cv2.imwrite(img_name, image)
+      print("{} written!".format(img_name))
+      img_counter_in += 1
 cap.release()
