@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8e54aeb-a284-48ad-9a81-a06c391ecbac" name="Changes" comment="Add Register page">
+    <list default="true" id="c8e54aeb-a284-48ad-9a81-a06c391ecbac" name="Changes" comment="Add Forget page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/bin/save_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/bin/save_setting.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/login.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login_function.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638012070416</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add Forget page">
+      <created>1638022306701</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638022306701</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +305,7 @@
     <MESSAGE value="Add button to login" />
     <MESSAGE value="Add Animation login" />
     <MESSAGE value="Add Register page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Register page" />
+    <MESSAGE value="Add Forget page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Forget page" />
   </component>
 </project>

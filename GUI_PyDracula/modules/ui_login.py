@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginJdKXKZ.ui'
+## Form generated from reading UI file 'loginYeBAgb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
