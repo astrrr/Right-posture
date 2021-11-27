@@ -2,11 +2,13 @@ from main import *
 
 class UILoginFunctions:
     def Function_Login_Setup(self):
+        self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
         # ADD BUTTON
         # ///////////////////////////////////////////////////////////////
         self.ui.btn_Login.clicked.connect(self.buttonClick)
         self.ui.btn_Register.clicked.connect(self.buttonClick)
         self.ui.btn_Fpassword.clicked.connect(self.buttonClick)
+        self.ui.btn_Reg_Back.clicked.connect(self.buttonClick)
 
         # REMOVE TITLE BAR
         # ///////////////////////////////////////////////////////////////

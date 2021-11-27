@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8e54aeb-a284-48ad-9a81-a06c391ecbac" name="Changes" comment="Add button to login">
+    <list default="true" id="c8e54aeb-a284-48ad-9a81-a06c391ecbac" name="Changes" comment="Add Animation login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/login.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/main.py" afterDir="false" />
@@ -255,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637953703578</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add Animation login">
+      <created>1638004754538</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1638004754538</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,6 +291,7 @@
     <MESSAGE value="Edit background" />
     <MESSAGE value="Renew UI" />
     <MESSAGE value="Add button to login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add button to login" />
+    <MESSAGE value="Add Animation login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Animation login" />
   </component>
 </project>

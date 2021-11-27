@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'logineKDuoU.ui'
+## Form generated from reading UI file 'loginKfKJXw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -15,16 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QSpacerItem, QStackedWidget, QVBoxLayout,
+    QWidget)
 from .resources_rc import *
 
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(900, 737)
+        Login.resize(900, 725)
         sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -42,6 +43,7 @@ class Ui_Login(object):
 "	color: rgb(221, 221, 221);\n"
 "	font: 10pt \"Segoe UI\";\n"
 "}\n"
+"\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Tooltip */\n"
 "QToolTip {\n"
@@ -60,8 +62,8 @@ class Ui_Login(object):
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Bg App */\n"
 "#bg {	\n"
-"	background-color: rgb(40, 44"
-                        ", 52);\n"
+"	background-color: rgb(4"
+                        "0, 44, 52);\n"
 "	border: 1px solid rgb(44, 49, 58);\n"
 "	border-top-left-radius: 12px;\n"
 "	border-bottom-left-radius: 12px;\n"
@@ -83,9 +85,9 @@ class Ui_Login(object):
 "LineEdit */\n"
 "QLineEdit {\n"
 "	background-color: rgb(33, 37, 43);\n"
-"	border-radius: 5px;\n"
-""
-                        "	border: 2px solid rgb(33, 37, 43);\n"
+"	border-radius: 5p"
+                        "x;\n"
+"	border: 2px solid rgb(33, 37, 43);\n"
 "	padding-left: 10px;\n"
 "	selection-color: rgb(255, 255, 255);\n"
 "	selection-background-color: rgb(255, 121, 198);\n"
@@ -117,7 +119,10 @@ class Ui_Login(object):
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setMaximumSize(QSize(1000, 1200))
-        self.centralwidget.setStyleSheet(u"")
+        self.centralwidget.setStyleSheet(u"#stackedWidget{\n"
+"	background: transparent;\n"
+"		border: 1px solid red;\n"
+"}")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -131,7 +136,7 @@ class Ui_Login(object):
         self.bg.setFrameShadow(QFrame.Raised)
         self.frame_widgets = QFrame(self.bg)
         self.frame_widgets.setObjectName(u"frame_widgets")
-        self.frame_widgets.setGeometry(QRect(0, 70, 881, 788))
+        self.frame_widgets.setGeometry(QRect(0, 70, 878, 720))
         self.frame_widgets.setMinimumSize(QSize(280, 720))
         self.frame_widgets.setMouseTracking(False)
         self.frame_widgets.setFrameShape(QFrame.NoFrame)
@@ -139,8 +144,16 @@ class Ui_Login(object):
         self.verticalLayout_2 = QVBoxLayout(self.frame_widgets)
         self.verticalLayout_2.setSpacing(8)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(20, 10, 20, 10)
-        self.logo = QFrame(self.frame_widgets)
+        self.verticalLayout_2.setContentsMargins(20, 0, 20, 10)
+        self.Login_stackedWidget = QStackedWidget(self.frame_widgets)
+        self.Login_stackedWidget.setObjectName(u"Login_stackedWidget")
+        self.Login_stackedWidget.setStyleSheet(u"background: transparent;")
+        self.Login_page = QWidget()
+        self.Login_page.setObjectName(u"Login_page")
+        self._2 = QVBoxLayout(self.Login_page)
+        self._2.setObjectName(u"_2")
+        self._2.setContentsMargins(-1, -1, 9, -1)
+        self.logo = QFrame(self.Login_page)
         self.logo.setObjectName(u"logo")
         self.logo.setMinimumSize(QSize(0, 400))
         self.logo.setMaximumSize(QSize(16777215, 400))
@@ -154,9 +167,9 @@ class Ui_Login(object):
         self.logo.setFrameShape(QFrame.NoFrame)
         self.logo.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_2.addWidget(self.logo)
+        self._2.addWidget(self.logo)
 
-        self.user_description = QLabel(self.frame_widgets)
+        self.user_description = QLabel(self.Login_page)
         self.user_description.setObjectName(u"user_description")
         sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
         sizePolicy1.setHorizontalStretch(0)
@@ -165,54 +178,166 @@ class Ui_Login(object):
         self.user_description.setSizePolicy(sizePolicy1)
         self.user_description.setMaximumSize(QSize(16777215, 20))
 
-        self.verticalLayout_2.addWidget(self.user_description)
+        self._2.addWidget(self.user_description)
 
-        self.username = QLineEdit(self.frame_widgets)
+        self.username = QLineEdit(self.Login_page)
         self.username.setObjectName(u"username")
         self.username.setMinimumSize(QSize(0, 30))
-        self.username.setMaximumSize(QSize(16777215, 40))
+        self.username.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
-        self.verticalLayout_2.addWidget(self.username)
+        self._2.addWidget(self.username)
 
-        self.password = QLineEdit(self.frame_widgets)
+        self.password = QLineEdit(self.Login_page)
         self.password.setObjectName(u"password")
         self.password.setMinimumSize(QSize(0, 30))
-        self.password.setMaximumSize(QSize(16777215, 40))
+        self.password.setStyleSheet(u"background-color: rgb(33, 37, 43);")
         self.password.setEchoMode(QLineEdit.Password)
 
-        self.verticalLayout_2.addWidget(self.password)
+        self._2.addWidget(self.password)
 
-        self.btn_Login = QPushButton(self.frame_widgets)
+        self.btn_Login = QPushButton(self.Login_page)
         self.btn_Login.setObjectName(u"btn_Login")
-        self.btn_Login.setMinimumSize(QSize(0, 30))
-        self.btn_Login.setMaximumSize(QSize(16777215, 30))
+        self.btn_Login.setMinimumSize(QSize(150, 30))
+        font = QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        self.btn_Login.setFont(font)
+        self.btn_Login.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Login.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon = QIcon()
+        icon.addFile(u"Backup/images/icons/cil-save.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_Login.setIcon(icon)
 
-        self.verticalLayout_2.addWidget(self.btn_Login)
+        self._2.addWidget(self.btn_Login)
 
-        self.btn_Register = QPushButton(self.frame_widgets)
+        self.btn_Register = QPushButton(self.Login_page)
         self.btn_Register.setObjectName(u"btn_Register")
-        self.btn_Register.setMinimumSize(QSize(0, 30))
-        self.btn_Register.setMaximumSize(QSize(16777215, 30))
+        self.btn_Register.setMinimumSize(QSize(150, 30))
+        self.btn_Register.setFont(font)
+        self.btn_Register.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Register.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Register.setIcon(icon)
 
-        self.verticalLayout_2.addWidget(self.btn_Register)
+        self._2.addWidget(self.btn_Register)
 
-        self.btn_Fpassword = QPushButton(self.frame_widgets)
+        self.btn_Fpassword = QPushButton(self.Login_page)
         self.btn_Fpassword.setObjectName(u"btn_Fpassword")
-        self.btn_Fpassword.setMinimumSize(QSize(0, 30))
-        self.btn_Fpassword.setMaximumSize(QSize(16777215, 30))
+        self.btn_Fpassword.setMinimumSize(QSize(150, 30))
+        self.btn_Fpassword.setFont(font)
+        self.btn_Fpassword.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Fpassword.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Fpassword.setIcon(icon)
 
-        self.verticalLayout_2.addWidget(self.btn_Fpassword)
+        self._2.addWidget(self.btn_Fpassword)
+
+        self.Login_stackedWidget.addWidget(self.Login_page)
+        self.Register_page = QWidget()
+        self.Register_page.setObjectName(u"Register_page")
+        self.gridLayout = QGridLayout(self.Register_page)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.Reg_username = QLineEdit(self.Register_page)
+        self.Reg_username.setObjectName(u"Reg_username")
+        self.Reg_username.setMinimumSize(QSize(0, 30))
+        self.Reg_username.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout.addWidget(self.Reg_username, 6, 0, 1, 2)
+
+        self.user_description_5 = QLabel(self.Register_page)
+        self.user_description_5.setObjectName(u"user_description_5")
+        sizePolicy1.setHeightForWidth(self.user_description_5.sizePolicy().hasHeightForWidth())
+        self.user_description_5.setSizePolicy(sizePolicy1)
+        self.user_description_5.setMaximumSize(QSize(16777215, 20))
+
+        self.gridLayout.addWidget(self.user_description_5, 9, 0, 1, 1)
+
+        self.Reg_password_2 = QLineEdit(self.Register_page)
+        self.Reg_password_2.setObjectName(u"Reg_password_2")
+        self.Reg_password_2.setMinimumSize(QSize(0, 30))
+        self.Reg_password_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.Reg_password_2.setEchoMode(QLineEdit.Password)
+
+        self.gridLayout.addWidget(self.Reg_password_2, 10, 1, 1, 1)
+
+        self.user_description_7 = QLabel(self.Register_page)
+        self.user_description_7.setObjectName(u"user_description_7")
+        sizePolicy1.setHeightForWidth(self.user_description_7.sizePolicy().hasHeightForWidth())
+        self.user_description_7.setSizePolicy(sizePolicy1)
+        self.user_description_7.setMaximumSize(QSize(16777215, 20))
+
+        self.gridLayout.addWidget(self.user_description_7, 9, 1, 1, 1)
+
+        self.user_description_9 = QLabel(self.Register_page)
+        self.user_description_9.setObjectName(u"user_description_9")
+        sizePolicy1.setHeightForWidth(self.user_description_9.sizePolicy().hasHeightForWidth())
+        self.user_description_9.setSizePolicy(sizePolicy1)
+        self.user_description_9.setMaximumSize(QSize(16777215, 20))
+
+        self.gridLayout.addWidget(self.user_description_9, 1, 0, 1, 2)
+
+        self.btn_Com_Register = QPushButton(self.Register_page)
+        self.btn_Com_Register.setObjectName(u"btn_Com_Register")
+        self.btn_Com_Register.setMinimumSize(QSize(150, 30))
+        self.btn_Com_Register.setFont(font)
+        self.btn_Com_Register.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Com_Register.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Com_Register.setIcon(icon)
+
+        self.gridLayout.addWidget(self.btn_Com_Register, 13, 0, 1, 2)
+
+        self.btn_Reg_Back = QPushButton(self.Register_page)
+        self.btn_Reg_Back.setObjectName(u"btn_Reg_Back")
+        self.btn_Reg_Back.setMinimumSize(QSize(150, 30))
+        self.btn_Reg_Back.setFont(font)
+        self.btn_Reg_Back.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Reg_Back.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Reg_Back.setIcon(icon)
+
+        self.gridLayout.addWidget(self.btn_Reg_Back, 14, 0, 1, 2)
+
+        self.user_description_8 = QLabel(self.Register_page)
+        self.user_description_8.setObjectName(u"user_description_8")
+        sizePolicy1.setHeightForWidth(self.user_description_8.sizePolicy().hasHeightForWidth())
+        self.user_description_8.setSizePolicy(sizePolicy1)
+        self.user_description_8.setMaximumSize(QSize(16777215, 20))
+
+        self.gridLayout.addWidget(self.user_description_8, 7, 0, 1, 1)
+
+        self.Reg_password = QLineEdit(self.Register_page)
+        self.Reg_password.setObjectName(u"Reg_password")
+        self.Reg_password.setMinimumSize(QSize(0, 30))
+        self.Reg_password.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.Reg_password.setEchoMode(QLineEdit.Password)
+
+        self.gridLayout.addWidget(self.Reg_password, 10, 0, 1, 1)
+
+        self.Reg_email = QLineEdit(self.Register_page)
+        self.Reg_email.setObjectName(u"Reg_email")
+        self.Reg_email.setMinimumSize(QSize(0, 30))
+        self.Reg_email.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout.addWidget(self.Reg_email, 8, 0, 1, 2)
+
+        self.frame_3 = QFrame(self.Register_page)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
+"border-radius: 10px;\n"
+"background-position: center;\n"
+"background-repeat: no-repeat;\n"
+" /*border: 1px solid #73AD21;*/\n"
+"")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout.addWidget(self.frame_3, 0, 0, 1, 2)
+
+        self.Login_stackedWidget.addWidget(self.Register_page)
+
+        self.verticalLayout_2.addWidget(self.Login_stackedWidget)
 
         self.verticalSpacer = QSpacerItem(838, 55, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
-
-        self.frame = QFrame(self.frame_widgets)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_2.addWidget(self.frame)
 
         self.top_bar = QFrame(self.bg)
         self.top_bar.setObjectName(u"top_bar")
@@ -309,12 +434,12 @@ class Ui_Login(object):
         self.maximizeRestoreAppBtn.setEnabled(False)
         self.maximizeRestoreAppBtn.setMinimumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
-        font = QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setStyleStrategy(QFont.PreferDefault)
-        self.maximizeRestoreAppBtn.setFont(font)
+        font1 = QFont()
+        font1.setPointSize(10)
+        font1.setBold(False)
+        font1.setItalic(False)
+        font1.setStyleStrategy(QFont.PreferDefault)
+        self.maximizeRestoreAppBtn.setFont(font1)
         self.maximizeRestoreAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.maximizeRestoreAppBtn.setIconSize(QSize(20, 20))
 
@@ -326,9 +451,9 @@ class Ui_Login(object):
         self.minimizeAppBtn.setMinimumSize(QSize(28, 28))
         self.minimizeAppBtn.setMaximumSize(QSize(28, 28))
         self.minimizeAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon = QIcon()
-        icon.addFile(u":/icons/images/icons/cil-minus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.minimizeAppBtn.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/images/icons/cil-minus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.minimizeAppBtn.setIcon(icon1)
         self.minimizeAppBtn.setIconSize(QSize(20, 20))
 
         self.top_btn_layout_3.addWidget(self.minimizeAppBtn)
@@ -339,9 +464,9 @@ class Ui_Login(object):
         self.closeAppBtn.setMaximumSize(QSize(28, 28))
         self.closeAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.closeAppBtn.setStyleSheet(u"")
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/images/icons/icon_close.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.closeAppBtn.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/images/icons/icon_close.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.closeAppBtn.setIcon(icon2)
         self.closeAppBtn.setIconSize(QSize(20, 20))
 
         self.top_btn_layout_3.addWidget(self.closeAppBtn)
@@ -356,17 +481,36 @@ class Ui_Login(object):
 
         self.retranslateUi(Login)
 
+        self.Login_stackedWidget.setCurrentIndex(1)
+
+
         QMetaObject.connectSlotsByName(Login)
     # setupUi
 
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"Login. PyBlackBOX", None))
         self.user_description.setText(QCoreApplication.translate("Login", u"Login (Pass: 123456)", None))
+        self.username.setText("")
         self.username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
+        self.password.setText("")
         self.password.setPlaceholderText(QCoreApplication.translate("Login", u"Password", None))
         self.btn_Login.setText(QCoreApplication.translate("Login", u"Login", None))
         self.btn_Register.setText(QCoreApplication.translate("Login", u"Register", None))
         self.btn_Fpassword.setText(QCoreApplication.translate("Login", u"Forget password", None))
+        self.Reg_username.setText("")
+        self.Reg_username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
+        self.user_description_5.setText(QCoreApplication.translate("Login", u"Password ", None))
+        self.Reg_password_2.setText("")
+        self.Reg_password_2.setPlaceholderText(QCoreApplication.translate("Login", u"Verify Password ", None))
+        self.user_description_7.setText(QCoreApplication.translate("Login", u"Verify Password ", None))
+        self.user_description_9.setText(QCoreApplication.translate("Login", u"Username", None))
+        self.btn_Com_Register.setText(QCoreApplication.translate("Login", u"Register", None))
+        self.btn_Reg_Back.setText(QCoreApplication.translate("Login", u"Back", None))
+        self.user_description_8.setText(QCoreApplication.translate("Login", u"E-mail", None))
+        self.Reg_password.setText("")
+        self.Reg_password.setPlaceholderText(QCoreApplication.translate("Login", u"Password", None))
+        self.Reg_email.setText("")
+        self.Reg_email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
         self.title_bar_3.setText(QCoreApplication.translate("Login", u"Login V1 PyDracula", None))
 #if QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setToolTip(QCoreApplication.translate("Login", u"Maximize", None))
