@@ -56,7 +56,7 @@ class UILoginFunctions:
         self.animation = QPropertyAnimation(self.ui.frame_widgets, b"geometry")
         self.animation.setDuration(1500)
         self.animation.setStartValue(QRect(0, 70, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
-        self.animation.setEndValue(QRect(0, -325, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
+        self.animation.setEndValue(QRect(0, -600, self.ui.frame_widgets.width(), self.ui.frame_widgets.height()))
         self.animation.setEasingCurve(QEasingCurve.InOutQuart)
         self.animation.start()
 

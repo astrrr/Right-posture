@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginqULbSI.ui'
+## Form generated from reading UI file 'logineKDuoU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -17,14 +17,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QVBoxLayout, QWidget)
+    QSpacerItem, QVBoxLayout, QWidget)
 from .resources_rc import *
 
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(900, 761)
+        Login.resize(900, 737)
         sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -202,6 +202,10 @@ class Ui_Login(object):
         self.btn_Fpassword.setMaximumSize(QSize(16777215, 30))
 
         self.verticalLayout_2.addWidget(self.btn_Fpassword)
+
+        self.verticalSpacer = QSpacerItem(838, 55, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer)
 
         self.frame = QFrame(self.frame_widgets)
         self.frame.setObjectName(u"frame")

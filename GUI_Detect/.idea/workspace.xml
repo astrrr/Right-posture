@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8e54aeb-a284-48ad-9a81-a06c391ecbac" name="Changes" comment="Renew UI">
+    <list default="true" id="c8e54aeb-a284-48ad-9a81-a06c391ecbac" name="Changes" comment="Add button to login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/login.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/login.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI_PyDracula/modules/ui_login_function.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637948089066</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add button to login">
+      <created>1637953703578</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637953703578</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,6 +283,7 @@
     <MESSAGE value="Add Camera toggle" />
     <MESSAGE value="Edit background" />
     <MESSAGE value="Renew UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renew UI" />
+    <MESSAGE value="Add button to login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add button to login" />
   </component>
 </project>

@@ -53,7 +53,8 @@ class LoginWindow(QMainWindow):
             self.check_login()
 
         if btnName == "btn_Register":
-            self.check_login()
+            self.timer.stop()
+            UILoginFunctions.animation_login(self)
 
         if btnName == "btn_Fpassword":
             self.check_login()
