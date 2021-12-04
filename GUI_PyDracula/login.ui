@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>900</width>
-    <height>720</height>
+    <height>710</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -252,7 +252,7 @@ QPushButton:pressed {
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="user_description">
+             <widget class="QLabel" name="Login_Status">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -405,104 +405,6 @@ QPushButton:pressed {
           </widget>
           <widget class="QWidget" name="Register_page">
            <layout class="QGridLayout" name="gridLayout">
-            <item row="6" column="0" colspan="2">
-             <widget class="QLineEdit" name="Reg_username">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(33, 37, 43);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="placeholderText">
-               <string>Username</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="0">
-             <widget class="QLabel" name="user_description_5">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Password </string>
-              </property>
-             </widget>
-            </item>
-            <item row="10" column="1">
-             <widget class="QLineEdit" name="Reg_password_2">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(33, 37, 43);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="echoMode">
-               <enum>QLineEdit::Password</enum>
-              </property>
-              <property name="placeholderText">
-               <string>Verify Password </string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="1">
-             <widget class="QLabel" name="user_description_7">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Verify Password </string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0" colspan="2">
-             <widget class="QLabel" name="user_description_9">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Username</string>
-              </property>
-             </widget>
-            </item>
             <item row="13" column="0" colspan="2">
              <widget class="QPushButton" name="btn_Com_Register">
               <property name="minimumSize">
@@ -563,8 +465,26 @@ QPushButton:pressed {
               </property>
              </widget>
             </item>
-            <item row="7" column="0">
-             <widget class="QLabel" name="user_description_8">
+            <item row="0" column="0" colspan="2">
+             <widget class="QFrame" name="frame_3">
+              <property name="styleSheet">
+               <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
+border-radius: 10px;
+background-position: center;
+background-repeat: no-repeat;
+ /*border: 1px solid #73AD21;*/
+</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QLabel" name="Reg_Status">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -578,11 +498,49 @@ QPushButton:pressed {
                </size>
               </property>
               <property name="text">
+               <string>Status</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0" colspan="2">
+             <widget class="QLineEdit" name="Reg_email">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(33, 37, 43);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="placeholderText">
                <string>E-mail</string>
               </property>
              </widget>
             </item>
-            <item row="10" column="0">
+            <item row="7" column="0" colspan="2">
+             <widget class="QLineEdit" name="Reg_username">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(33, 37, 43);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>Username</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
              <widget class="QLineEdit" name="Reg_password">
               <property name="minimumSize">
                <size>
@@ -604,8 +562,8 @@ QPushButton:pressed {
               </property>
              </widget>
             </item>
-            <item row="8" column="0" colspan="2">
-             <widget class="QLineEdit" name="Reg_email">
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="Reg_password_2">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -618,26 +576,11 @@ QPushButton:pressed {
               <property name="text">
                <string/>
               </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
               <property name="placeholderText">
-               <string>E-mail</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QFrame" name="frame_3">
-              <property name="styleSheet">
-               <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
-border-radius: 10px;
-background-position: center;
-background-repeat: no-repeat;
- /*border: 1px solid #73AD21;*/
-</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+               <string>Verify Password </string>
               </property>
              </widget>
             </item>
@@ -1375,6 +1318,25 @@ background-repeat: no-repeat;
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>username</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>btn_Login</tabstop>
+  <tabstop>btn_Register</tabstop>
+  <tabstop>btn_Fpassword</tabstop>
+  <tabstop>Forget_Email</tabstop>
+  <tabstop>btn_Forget_Email</tabstop>
+  <tabstop>btn_Forget_Back</tabstop>
+  <tabstop>Reg_username</tabstop>
+  <tabstop>Reg_password</tabstop>
+  <tabstop>Reg_password_2</tabstop>
+  <tabstop>Reg_email</tabstop>
+  <tabstop>btn_Com_Register</tabstop>
+  <tabstop>btn_Reg_Back</tabstop>
+  <tabstop>maximizeRestoreAppBtn</tabstop>
+  <tabstop>minimizeAppBtn</tabstop>
+  <tabstop>closeAppBtn</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
   <include location="resources.qrc"/>

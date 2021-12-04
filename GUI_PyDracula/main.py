@@ -65,13 +65,32 @@ class LoginWindow(QMainWindow):
 
         if btnName == "btn_Forget_Back":
             UILoginFunctions.animation_back_to_Login(self)
-            # self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
 
-    def check_enter(self, event):
-        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
-            self.check_login()
-    # CHECK LOGIN
-    # ///////////////////////////////////////////////////////////////
+        if btnName == "btn_Com_Register":
+            self.check_register()
+
+    def check_register(self):
+        username = self.ui.Reg_username.text()
+        password = self.ui.Reg_password.text()
+        con_Password = self.ui.Reg_password_2.text()
+        email = self.ui.Reg_email.text()
+
+        if len(username) == 0 or len(password) == 0 or len(con_Password) == 0 or len(email) == 0:
+            self.ui.Reg_Status.setText("Please fill in all inputs.")
+
+        elif password != con_Password:
+            self.ui.Reg_Status.setText("Passwords do not match.")
+        else:
+            conn = sqlite3.connect("shop_data.db")
+            cur = conn.cursor()
+
+            user_info = [username, password, email]
+            cur.execute('INSERT INTO login_info (username, password, email) VALUES (?,?,?)', user_info)
+
+            conn.commit()
+            conn.close()
+            self.ui.Reg_Status.setText("Register Complete !")
+
     def check_login(self):
         username = self.ui.username.text()
         password = self.ui.password.text()
@@ -83,7 +102,7 @@ class LoginWindow(QMainWindow):
             self.close()
 
         if len(username) == 0 or len(password) == 0:
-            self.ui.user_description.setText("Please input all fields.")
+            self.ui.Login_Status.setText("Please input all fields.")
             self.login_fail()
         else:
             conn = sqlite3.connect("shop_data.db")
@@ -93,23 +112,27 @@ class LoginWindow(QMainWindow):
             try:
                 result_pass = cur.fetchone()[0]
                 if result_pass == password:
-                    self.ui.user_description.setText(f"Welcome {username} !")
-                    self.ui.user_description.setStyleSheet("#user_description { color: #bd93f9 }")
+                    self.ui.Login_Status.setText(f"Welcome {username} !")
+                    self.ui.Login_Status.setStyleSheet("#Login_Status { color: #bd93f9 }")
                     self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bd93f9; }")
                     self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")
                     QTimer.singleShot(1200, lambda: open_main())
                 else:
-                    self.ui.user_description.setText("Invalid username or password")
+                    self.ui.Login_Status.setText("Invalid username or password")
                     self.login_fail()
             except:
-                self.ui.user_description.setText("Invalid username or password")
+                self.ui.Login_Status.setText("Invalid username or password")
                 self.login_fail()
 
     def login_fail(self):
-        self.ui.user_description.setStyleSheet("#user_description { color: #ff79c6 }")
+        self.ui.Login_Status.setStyleSheet("#Login_Status { color: #ff79c6 }")
         self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
         self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
         UILoginFunctions.shake_window(self)
+
+    def check_enter(self, event):
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            self.check_login()
 
     # UPDATE PROGRESS BAR
     # ///////////////////////////////////////////////////////////////

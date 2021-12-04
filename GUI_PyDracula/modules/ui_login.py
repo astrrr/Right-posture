@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginQJkYEK.ui'
+## Form generated from reading UI file 'logindXlwwd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -25,7 +25,7 @@ class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(900, 720)
+        Login.resize(900, 710)
         sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -169,16 +169,16 @@ class Ui_Login(object):
 
         self._2.addWidget(self.logo)
 
-        self.user_description = QLabel(self.Login_page)
-        self.user_description.setObjectName(u"user_description")
+        self.Login_Status = QLabel(self.Login_page)
+        self.Login_Status.setObjectName(u"Login_Status")
         sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.user_description.sizePolicy().hasHeightForWidth())
-        self.user_description.setSizePolicy(sizePolicy1)
-        self.user_description.setMaximumSize(QSize(16777215, 20))
+        sizePolicy1.setHeightForWidth(self.Login_Status.sizePolicy().hasHeightForWidth())
+        self.Login_Status.setSizePolicy(sizePolicy1)
+        self.Login_Status.setMaximumSize(QSize(16777215, 20))
 
-        self._2.addWidget(self.user_description)
+        self._2.addWidget(self.Login_Status)
 
         self.username = QLineEdit(self.Login_page)
         self.username.setObjectName(u"username")
@@ -236,45 +236,6 @@ class Ui_Login(object):
         self.Register_page.setObjectName(u"Register_page")
         self.gridLayout = QGridLayout(self.Register_page)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.Reg_username = QLineEdit(self.Register_page)
-        self.Reg_username.setObjectName(u"Reg_username")
-        self.Reg_username.setMinimumSize(QSize(0, 30))
-        self.Reg_username.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-
-        self.gridLayout.addWidget(self.Reg_username, 6, 0, 1, 2)
-
-        self.user_description_5 = QLabel(self.Register_page)
-        self.user_description_5.setObjectName(u"user_description_5")
-        sizePolicy1.setHeightForWidth(self.user_description_5.sizePolicy().hasHeightForWidth())
-        self.user_description_5.setSizePolicy(sizePolicy1)
-        self.user_description_5.setMaximumSize(QSize(16777215, 20))
-
-        self.gridLayout.addWidget(self.user_description_5, 9, 0, 1, 1)
-
-        self.Reg_password_2 = QLineEdit(self.Register_page)
-        self.Reg_password_2.setObjectName(u"Reg_password_2")
-        self.Reg_password_2.setMinimumSize(QSize(0, 30))
-        self.Reg_password_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.Reg_password_2.setEchoMode(QLineEdit.Password)
-
-        self.gridLayout.addWidget(self.Reg_password_2, 10, 1, 1, 1)
-
-        self.user_description_7 = QLabel(self.Register_page)
-        self.user_description_7.setObjectName(u"user_description_7")
-        sizePolicy1.setHeightForWidth(self.user_description_7.sizePolicy().hasHeightForWidth())
-        self.user_description_7.setSizePolicy(sizePolicy1)
-        self.user_description_7.setMaximumSize(QSize(16777215, 20))
-
-        self.gridLayout.addWidget(self.user_description_7, 9, 1, 1, 1)
-
-        self.user_description_9 = QLabel(self.Register_page)
-        self.user_description_9.setObjectName(u"user_description_9")
-        sizePolicy1.setHeightForWidth(self.user_description_9.sizePolicy().hasHeightForWidth())
-        self.user_description_9.setSizePolicy(sizePolicy1)
-        self.user_description_9.setMaximumSize(QSize(16777215, 20))
-
-        self.gridLayout.addWidget(self.user_description_9, 1, 0, 1, 2)
-
         self.btn_Com_Register = QPushButton(self.Register_page)
         self.btn_Com_Register.setObjectName(u"btn_Com_Register")
         self.btn_Com_Register.setMinimumSize(QSize(150, 30))
@@ -295,29 +256,6 @@ class Ui_Login(object):
 
         self.gridLayout.addWidget(self.btn_Reg_Back, 14, 0, 1, 2)
 
-        self.user_description_8 = QLabel(self.Register_page)
-        self.user_description_8.setObjectName(u"user_description_8")
-        sizePolicy1.setHeightForWidth(self.user_description_8.sizePolicy().hasHeightForWidth())
-        self.user_description_8.setSizePolicy(sizePolicy1)
-        self.user_description_8.setMaximumSize(QSize(16777215, 20))
-
-        self.gridLayout.addWidget(self.user_description_8, 7, 0, 1, 1)
-
-        self.Reg_password = QLineEdit(self.Register_page)
-        self.Reg_password.setObjectName(u"Reg_password")
-        self.Reg_password.setMinimumSize(QSize(0, 30))
-        self.Reg_password.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.Reg_password.setEchoMode(QLineEdit.Password)
-
-        self.gridLayout.addWidget(self.Reg_password, 10, 0, 1, 1)
-
-        self.Reg_email = QLineEdit(self.Register_page)
-        self.Reg_email.setObjectName(u"Reg_email")
-        self.Reg_email.setMinimumSize(QSize(0, 30))
-        self.Reg_email.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-
-        self.gridLayout.addWidget(self.Reg_email, 8, 0, 1, 2)
-
         self.frame_3 = QFrame(self.Register_page)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
@@ -330,6 +268,44 @@ class Ui_Login(object):
         self.frame_3.setFrameShadow(QFrame.Raised)
 
         self.gridLayout.addWidget(self.frame_3, 0, 0, 1, 2)
+
+        self.Reg_Status = QLabel(self.Register_page)
+        self.Reg_Status.setObjectName(u"Reg_Status")
+        sizePolicy1.setHeightForWidth(self.Reg_Status.sizePolicy().hasHeightForWidth())
+        self.Reg_Status.setSizePolicy(sizePolicy1)
+        self.Reg_Status.setMaximumSize(QSize(16777215, 20))
+
+        self.gridLayout.addWidget(self.Reg_Status, 1, 0, 1, 2)
+
+        self.Reg_email = QLineEdit(self.Register_page)
+        self.Reg_email.setObjectName(u"Reg_email")
+        self.Reg_email.setMinimumSize(QSize(0, 30))
+        self.Reg_email.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout.addWidget(self.Reg_email, 9, 0, 1, 2)
+
+        self.Reg_username = QLineEdit(self.Register_page)
+        self.Reg_username.setObjectName(u"Reg_username")
+        self.Reg_username.setMinimumSize(QSize(0, 30))
+        self.Reg_username.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout.addWidget(self.Reg_username, 7, 0, 1, 2)
+
+        self.Reg_password = QLineEdit(self.Register_page)
+        self.Reg_password.setObjectName(u"Reg_password")
+        self.Reg_password.setMinimumSize(QSize(0, 30))
+        self.Reg_password.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.Reg_password.setEchoMode(QLineEdit.Password)
+
+        self.gridLayout.addWidget(self.Reg_password, 8, 0, 1, 1)
+
+        self.Reg_password_2 = QLineEdit(self.Register_page)
+        self.Reg_password_2.setObjectName(u"Reg_password_2")
+        self.Reg_password_2.setMinimumSize(QSize(0, 30))
+        self.Reg_password_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.Reg_password_2.setEchoMode(QLineEdit.Password)
+
+        self.gridLayout.addWidget(self.Reg_password_2, 8, 1, 1, 1)
 
         self.Login_stackedWidget.addWidget(self.Register_page)
 
@@ -539,6 +515,22 @@ class Ui_Login(object):
         self.verticalLayout.addWidget(self.bg)
 
         Login.setCentralWidget(self.centralwidget)
+        QWidget.setTabOrder(self.username, self.password)
+        QWidget.setTabOrder(self.password, self.btn_Login)
+        QWidget.setTabOrder(self.btn_Login, self.btn_Register)
+        QWidget.setTabOrder(self.btn_Register, self.btn_Fpassword)
+        QWidget.setTabOrder(self.btn_Fpassword, self.Forget_Email)
+        QWidget.setTabOrder(self.Forget_Email, self.btn_Forget_Email)
+        QWidget.setTabOrder(self.btn_Forget_Email, self.btn_Forget_Back)
+        QWidget.setTabOrder(self.btn_Forget_Back, self.Reg_username)
+        QWidget.setTabOrder(self.Reg_username, self.Reg_password)
+        QWidget.setTabOrder(self.Reg_password, self.Reg_password_2)
+        QWidget.setTabOrder(self.Reg_password_2, self.Reg_email)
+        QWidget.setTabOrder(self.Reg_email, self.btn_Com_Register)
+        QWidget.setTabOrder(self.btn_Com_Register, self.btn_Reg_Back)
+        QWidget.setTabOrder(self.btn_Reg_Back, self.maximizeRestoreAppBtn)
+        QWidget.setTabOrder(self.maximizeRestoreAppBtn, self.minimizeAppBtn)
+        QWidget.setTabOrder(self.minimizeAppBtn, self.closeAppBtn)
 
         self.retranslateUi(Login)
 
@@ -550,7 +542,7 @@ class Ui_Login(object):
 
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"Login. PyBlackBOX", None))
-        self.user_description.setText(QCoreApplication.translate("Login", u"Login (Pass: 123456)", None))
+        self.Login_Status.setText(QCoreApplication.translate("Login", u"Login (Pass: 123456)", None))
         self.username.setText("")
         self.username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
         self.password.setText("")
@@ -558,20 +550,17 @@ class Ui_Login(object):
         self.btn_Login.setText(QCoreApplication.translate("Login", u"Login", None))
         self.btn_Register.setText(QCoreApplication.translate("Login", u"Register", None))
         self.btn_Fpassword.setText(QCoreApplication.translate("Login", u"Forget password", None))
-        self.Reg_username.setText("")
-        self.Reg_username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
-        self.user_description_5.setText(QCoreApplication.translate("Login", u"Password ", None))
-        self.Reg_password_2.setText("")
-        self.Reg_password_2.setPlaceholderText(QCoreApplication.translate("Login", u"Verify Password ", None))
-        self.user_description_7.setText(QCoreApplication.translate("Login", u"Verify Password ", None))
-        self.user_description_9.setText(QCoreApplication.translate("Login", u"Username", None))
         self.btn_Com_Register.setText(QCoreApplication.translate("Login", u"Register", None))
         self.btn_Reg_Back.setText(QCoreApplication.translate("Login", u"Back", None))
-        self.user_description_8.setText(QCoreApplication.translate("Login", u"E-mail", None))
-        self.Reg_password.setText("")
-        self.Reg_password.setPlaceholderText(QCoreApplication.translate("Login", u"Password", None))
+        self.Reg_Status.setText(QCoreApplication.translate("Login", u"Status", None))
         self.Reg_email.setText("")
         self.Reg_email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
+        self.Reg_username.setText("")
+        self.Reg_username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
+        self.Reg_password.setText("")
+        self.Reg_password.setPlaceholderText(QCoreApplication.translate("Login", u"Password", None))
+        self.Reg_password_2.setText("")
+        self.Reg_password_2.setPlaceholderText(QCoreApplication.translate("Login", u"Verify Password ", None))
         self.Forget_Email.setText("")
         self.Forget_Email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
         self.btn_Forget_Email.setText(QCoreApplication.translate("Login", u"Send E-mail", None))
