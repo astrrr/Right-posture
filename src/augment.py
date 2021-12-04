@@ -1,4 +1,24 @@
 import os
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import ImageDataGenerator,load_img, img_to_array, smart_resize
+
+CWD = os.getcwd().replace('\\','/') # get current workspace directory
+IMAGE_DIR = f'{CWD}/../data'
+TRAIN_DATASET_DIR = f'{IMAGE_DIR}/train'
+TEST_DATASET_DIR = f'{IMAGE_DIR}/test'
+VAL_DATASET_DIR = f'{IMAGE_DIR}/validation'
+
+CATEGORIES = ['correct','incorrect']
+#CATEGORIES = ['test']
+
+IMAGE_RESIZE = (224, 224) # size of image to put in Model
+
+AUGMENT_N_IMAGE = 5 # how many time each image get the augmentation
+
+AUGMENT_SAVE_PREFIX = 'aug'
+
+
 
 def run_augmentation( isRun = 0 ):
 
@@ -13,7 +33,7 @@ def run_augmentation( isRun = 0 ):
             shear_range=0.2,
             zoom_range=0.2,
             horizontal_flip=True,
-            fill_mode='reflect' # optional : nearest, constant(125), reflect, wrap
+            fill_mode='nearest' # optional : nearest, constant(125), reflect, wrap
         ) 
 
         try:
@@ -21,7 +41,7 @@ def run_augmentation( isRun = 0 ):
 
                 train_image_in_directory = [] 
 
-                train_category_directory = f"{TRAIN_DATASET_DIR}/{category}"
+                train_category_directory = f"{'D:/RightPoseture/data/validation'}/{category}"
 
                 for i, image_name in enumerate(os.listdir(train_category_directory)):
                     
@@ -57,3 +77,5 @@ def run_augmentation( isRun = 0 ):
 
             print('\nAugmentation Failed...')
             print('Exception is\n',e)
+
+run_augmentation(1)
