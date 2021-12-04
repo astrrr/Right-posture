@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginYeBAgb.ui'
+## Form generated from reading UI file 'loginQJkYEK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -147,7 +147,7 @@ class Ui_Login(object):
         self.verticalLayout_2.setContentsMargins(20, 0, 20, 10)
         self.Login_stackedWidget = QStackedWidget(self.frame_widgets)
         self.Login_stackedWidget.setObjectName(u"Login_stackedWidget")
-        self.Login_stackedWidget.setStyleSheet(u"background: transparent;")
+        self.Login_stackedWidget.setStyleSheet(u"/*background: transparent;*/")
         self.Login_page = QWidget()
         self.Login_page.setObjectName(u"Login_page")
         self._2 = QVBoxLayout(self.Login_page)

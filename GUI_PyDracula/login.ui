@@ -210,7 +210,7 @@ QPushButton:pressed {
         <item>
          <widget class="QStackedWidget" name="Login_stackedWidget">
           <property name="styleSheet">
-           <string notr="true">background: transparent;</string>
+           <string notr="true">/*background: transparent;*/</string>
           </property>
           <property name="currentIndex">
            <number>0</number>

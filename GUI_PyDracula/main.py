@@ -69,10 +69,10 @@ class LoginWindow(QMainWindow):
 
     def check_enter(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
-            self.chk_login()
+            self.check_login()
     # CHECK LOGIN
     # ///////////////////////////////////////////////////////////////
-    def chk_login(self):
+    def check_login(self):
         username = self.ui.username.text()
         password = self.ui.password.text()
 
@@ -84,7 +84,7 @@ class LoginWindow(QMainWindow):
 
         if len(username) == 0 or len(password) == 0:
             self.ui.user_description.setText("Please input all fields.")
-
+            self.login_fail()
         else:
             conn = sqlite3.connect("shop_data.db")
             cur = conn.cursor()
@@ -99,36 +99,17 @@ class LoginWindow(QMainWindow):
                     self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")
                     QTimer.singleShot(1200, lambda: open_main())
                 else:
-                    self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
-                    self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
-                    UILoginFunctions.shake_window(self)
+                    self.ui.user_description.setText("Invalid username or password")
+                    self.login_fail()
             except:
-                self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
-                self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
-                UILoginFunctions.shake_window(self)
+                self.ui.user_description.setText("Invalid username or password")
+                self.login_fail()
 
-    def check_login(self):
-        username = self.ui.username.text()
-        password = self.ui.password.text()
-
-        def open_main():
-            # SHOW MAIN WINDOW
-            self.main = MainWindow()
-            self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
-            self.main.show()
-            self.close()
-
-        if username and password == "123456":
-            self.ui.user_description.setText(f"Welcome {username} !")
-            self.ui.user_description.setStyleSheet("#user_description { color: #bd93f9 }")
-            self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bd93f9; }")
-            self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")
-            QTimer.singleShot(1200, lambda: open_main())
-        else:
-            # SET STYLESHEET
-            self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
-            self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
-            UILoginFunctions.shake_window(self)
+    def login_fail(self):
+        self.ui.user_description.setStyleSheet("#user_description { color: #ff79c6 }")
+        self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
+        self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
+        UILoginFunctions.shake_window(self)
 
     # UPDATE PROGRESS BAR
     # ///////////////////////////////////////////////////////////////
