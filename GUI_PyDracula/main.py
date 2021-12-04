@@ -17,6 +17,7 @@
 import sys
 import os
 import numpy as np
+import sqlite3
 
 from modules import *
 from widgets import *
@@ -68,9 +69,44 @@ class LoginWindow(QMainWindow):
 
     def check_enter(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
-            self.check_login()
+            self.chk_login()
     # CHECK LOGIN
     # ///////////////////////////////////////////////////////////////
+    def chk_login(self):
+        username = self.ui.username.text()
+        password = self.ui.password.text()
+
+        def open_main():
+            self.main = MainWindow()
+            self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
+            self.main.show()
+            self.close()
+
+        if len(username) == 0 or len(password) == 0:
+            self.ui.user_description.setText("Please input all fields.")
+
+        else:
+            conn = sqlite3.connect("shop_data.db")
+            cur = conn.cursor()
+            query = 'SELECT password FROM login_info WHERE username =\'' + username + "\'"
+            cur.execute(query)
+            try:
+                result_pass = cur.fetchone()[0]
+                if result_pass == password:
+                    self.ui.user_description.setText(f"Welcome {username} !")
+                    self.ui.user_description.setStyleSheet("#user_description { color: #bd93f9 }")
+                    self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bd93f9; }")
+                    self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")
+                    QTimer.singleShot(1200, lambda: open_main())
+                else:
+                    self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
+                    self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
+                    UILoginFunctions.shake_window(self)
+            except:
+                self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
+                self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
+                UILoginFunctions.shake_window(self)
+
     def check_login(self):
         username = self.ui.username.text()
         password = self.ui.password.text()
