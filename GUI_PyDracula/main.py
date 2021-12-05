@@ -81,7 +81,7 @@ class LoginWindow(QMainWindow):
         elif password != con_Password:
             self.ui.Reg_Status.setText("Passwords do not match.")
         else:
-            conn = sqlite3.connect("shop_data.db")
+            conn = sqlite3.connect("Accounts.db")
             cur = conn.cursor()
 
             user_info = [username, password, email]
@@ -105,7 +105,7 @@ class LoginWindow(QMainWindow):
             self.ui.Login_Status.setText("Please input all fields.")
             self.login_fail()
         else:
-            conn = sqlite3.connect("shop_data.db")
+            conn = sqlite3.connect("Accounts.db")
             cur = conn.cursor()
             query = 'SELECT password FROM login_info WHERE username =\'' + username + "\'"
             cur.execute(query)
