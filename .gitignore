@@ -1,8 +1,9 @@
+*.pyc
 GUI_PyDracula/.idea/
 GUI_PyDracula/.git/
 GUI_PyDracula/build/
+GUI_PyDracula/DN121v3/
 
-GUI_Detect/.idea/workspace.xml
-*.pyc
+GUI_Detect/.idea/
 
 src/.idea/
