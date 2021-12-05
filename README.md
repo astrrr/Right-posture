@@ -9,6 +9,12 @@
 ```sh
 rm -rf `find -type d -name .ipynb_checkpoints`
 ```
+<<<<<<< HEAD
+## Install lib
+```
+pip install -r requirements.txt
+```
+=======
 # Screenshot
 ![Status_Page](https://sv1.picz.in.th/images/2021/11/17/6duwqq.png)
 
@@ -64,3 +70,4 @@ Up
 After expoting in .py and change the line "import resources_rc" to "from. Resoucers_rc import *" to use as a module.
 
 > **images/**: put all your images and icons here before converting to Python (resources_re.py) ```pyside6-rcc resources.qrc -o resources_rc.py```.
+>>>>>>> f3214219cbeee99176ae65f8dcb5d86f1f027ec7
