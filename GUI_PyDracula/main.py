@@ -204,6 +204,11 @@ class MainWindow(QMainWindow):
     @Slot(np.ndarray)
     def update_image(self, cv_img):
         try:
+            # ///// CLEAR LOG IN GUI //////
+            # if Camera.clear_log:
+            #     self.ui.Detect_LOG.clear()
+            #     Camera.clear_log = False
+
             # img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
             # QT側でチャネル順BGRを指定
             qimg = QtGui.QImage(cv_img.data, cv_img.shape[1], cv_img.shape[0], cv_img.strides[0],
