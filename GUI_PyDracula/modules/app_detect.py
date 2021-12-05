@@ -16,7 +16,6 @@ cwd = os.getcwd()
 model = tf.keras.models.load_model(f'{cwd}\DN121v3')
 
 def predict(img):
-    global log
     img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
     # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
 
@@ -30,11 +29,17 @@ def predict(img):
 
     # correct > incorrect
     if float(val[0][0]) > float(val[0][1]):
+        # ///////////////////////////////////////////////////////////////////////////////
+        Camera.log = (Camera.log + '\nmodel prediction : correct')
         print('model prediction : correct')
+        # ///////////////////////////////////////////////////////////////////////////////
         return 0
         # incorrect > correct
     elif float(val[0][0]) < float(val[0][1]):
+        # ///////////////////////////////////////////////////////////////////////////////
+        Camera.log = (Camera.log + '\nmodel prediction : incorrect')
         print('model prediction : incorrect')
+        # ///////////////////////////////////////////////////////////////////////////////
         return 1
 
 class VideoThread(QThread):
@@ -82,13 +87,19 @@ class VideoThread(QThread):
                 # capture pic ture for data set
                 img_name = "temp_{}.png".format(img_counter_cor)
                 cv2.imwrite(img_name, image)
+                # ///////////////////////////////////////////////////////////////////////////////
+                Camera.log = ("{} written!".format(img_name))
                 print("{} written!".format(img_name))
+                # ///////////////////////////////////////////////////////////////////////////////
                 img_counter_cor += 1
 
                 predict
                 for i in os.listdir(cwd):
                     if '.png' in i:
+                        # ///////////////////////////////////////////////////////////////////////////////
+                        Camera.log = (Camera.log + '\n=======================')
                         print('=======================')
+                        # ///////////////////////////////////////////////////////////////////////////////
                         pred = predict(i)
                         #     print(pred)
                         os.remove(i)
@@ -106,6 +117,7 @@ class VideoThread(QThread):
         self.wait()
 
 class Camera:
+    log = ""
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)

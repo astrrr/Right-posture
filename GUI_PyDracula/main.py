@@ -166,8 +166,6 @@ class MainWindow(QMainWindow):
         PyToggle.Toggle_Switch(self)
         self.show()
 
-        # self.ui.Detect_LOG.append("jasfnasfknasbavjibvijege")
-
     #     self.Load_Table()
     # def Load_Table(self):
     #     people = [{"test": "james", "text": "idk", "cell": "eiei", "Line": "las"},
@@ -212,6 +210,7 @@ class MainWindow(QMainWindow):
                                 QtGui.QImage.Format.Format_BGR888)
             qpix = QPixmap.fromImage(qimg)
             self.image_label.setPixmap(qpix)
+            self.ui.Detect_LOG.append(Camera.log)
         except:
             pass
 
