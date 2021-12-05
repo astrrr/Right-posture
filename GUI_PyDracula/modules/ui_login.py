@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginrVNlyK.ui'
+## Form generated from reading UI file 'logingpovuY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -158,7 +158,7 @@ class Ui_Login(object):
         self.logo.setMinimumSize(QSize(0, 400))
         self.logo.setMaximumSize(QSize(16777215, 400))
         self.logo.setStyleSheet(u"#logo {\n"
-"	background-image: url(:/images/images/images/Logo_Big (1).png);\n"
+"	background-image: url(:/images/images/images/Logo_Big (8).png);\n"
 "	/*background-image: url(:/images/images/images/PyDracula_vertical.png);*/\n"
 "	border-radius: 10px;\n"
 "	background-position: center;\n"
@@ -300,7 +300,7 @@ class Ui_Login(object):
         self.logo_2.setMinimumSize(QSize(0, 400))
         self.logo_2.setMaximumSize(QSize(16777215, 400))
         self.logo_2.setStyleSheet(u"#logo_2{\n"
-"	background-image: url(:/images/images/images/Logo_Big (1).png);\n"
+"	background-image: url(:/images/images/images/Logo_Big (8).png);\n"
 "	/*background-image: url(:/images/images/images/PyDracula_vertical.png);*/\n"
 "	border-radius: 10px;\n"
 "	background-position: center;\n"

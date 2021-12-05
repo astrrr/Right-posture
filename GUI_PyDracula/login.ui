@@ -236,7 +236,7 @@ QPushButton:pressed {
               </property>
               <property name="styleSheet">
                <string notr="true">#logo {
-	background-image: url(:/images/images/images/Logo_Big (1).png);
+	background-image: url(:/images/images/images/Logo_Big (8).png);
 	/*background-image: url(:/images/images/images/PyDracula_vertical.png);*/
 	border-radius: 10px;
 	background-position: center;
@@ -583,7 +583,7 @@ QPushButton:pressed {
               </property>
               <property name="styleSheet">
                <string notr="true">#logo_2{
-	background-image: url(:/images/images/images/Logo_Big (1).png);
+	background-image: url(:/images/images/images/Logo_Big (8).png);
 	/*background-image: url(:/images/images/images/PyDracula_vertical.png);*/
 	border-radius: 10px;
 	background-position: center;

@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/Logo_Big (8).png</file>
+    <file>images/images/Logo_Small (8).png</file>
     <file>images/images/Logo_Big (1).png</file>
     <file>images/images/Logo_Big (2).png</file>
     <file>images/images/Logo_Big (3).png</file>

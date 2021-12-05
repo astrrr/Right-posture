@@ -10,7 +10,6 @@ class AppButtons(MainWindow):
         button.btn_Status.clicked.connect(self.buttonInterface)
         button.btn_Posture.clicked.connect(self.buttonInterface)
         button.btn_Tutorial.clicked.connect(self.buttonInterface)
-        button.btn_Widgets.clicked.connect(self.buttonInterface)
         button.btn_Camera.clicked.connect(self.buttonInterface)
         button.btn_Notification.clicked.connect(self.buttonInterface)
         button.btn_Logout.clicked.connect(self.buttonInterface)
@@ -50,11 +49,6 @@ class AppButtons(MainWindow):
 
         if btnName == "btn_Tutorial":
             button.stackedWidget.setCurrentWidget(button.Tutorial)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-
-        if btnName == "btn_Widgets":
-            button.stackedWidget.setCurrentWidget(button.Widgets)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 

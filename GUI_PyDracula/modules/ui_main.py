@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maindZxkmv.ui'
+## Form generated from reading UI file 'mainoCjWCA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -728,16 +728,6 @@ class Ui_MainWindow(object):
         self.btn_Tutorial.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-layers.png);")
 
         self.verticalLayout_8.addWidget(self.btn_Tutorial)
-
-        self.btn_Widgets = QPushButton(self.topMenu)
-        self.btn_Widgets.setObjectName(u"btn_Widgets")
-        sizePolicy.setHeightForWidth(self.btn_Widgets.sizePolicy().hasHeightForWidth())
-        self.btn_Widgets.setSizePolicy(sizePolicy)
-        self.btn_Widgets.setMinimumSize(QSize(0, 45))
-        self.btn_Widgets.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_Widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-airplane-mode);")
-
-        self.verticalLayout_8.addWidget(self.btn_Widgets)
 
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
@@ -1769,7 +1759,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 353, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -2254,7 +2244,6 @@ class Ui_MainWindow(object):
         self.btn_Status.setText(QCoreApplication.translate("MainWindow", u"Status", None))
         self.btn_Posture.setText(QCoreApplication.translate("MainWindow", u"Posture", None))
         self.btn_Tutorial.setText(QCoreApplication.translate("MainWindow", u"Tutorial", None))
-        self.btn_Widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Setting", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Setting", None))
 #if QT_CONFIG(tooltip)
