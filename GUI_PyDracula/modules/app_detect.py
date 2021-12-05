@@ -3,9 +3,7 @@ import mediapipe as mp
 
 from main import *
 
-from tensorflow import keras
 import tensorflow as tf
-from tensorflow.keras.models import Model
 import numpy as np
 
 mp_drawing = mp.solutions.drawing_utils
@@ -13,9 +11,12 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
 cwd = os.getcwd()
+print("start model")
 model = tf.keras.models.load_model(f'{cwd}\DN121v3')
+print("end model")
 
 def predict(img):
+    print("predic")
     img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
     # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
 
@@ -61,7 +62,7 @@ class VideoThread(QThread):
                 min_tracking_confidence=0.5) as pose:
             while self._run_flag:
                 success, raw = cap.read()
-                resize = cv2.resize(raw, (320, 240))
+                resize = cv2.resize(raw, (384, 288))
                 image = cv2.flip(resize, 1)
 
                 image.flags.writeable = False
