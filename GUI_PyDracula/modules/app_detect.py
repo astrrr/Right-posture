@@ -16,6 +16,7 @@ cwd = os.getcwd()
 model = tf.keras.models.load_model(f'{cwd}\DN121v3')
 
 def predict(img):
+    global log
     img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
     # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
 
@@ -104,7 +105,7 @@ class VideoThread(QThread):
         self._run_flag = False
         self.wait()
 
-class Start_Camera:
+class Camera:
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)

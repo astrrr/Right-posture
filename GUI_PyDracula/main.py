@@ -166,6 +166,8 @@ class MainWindow(QMainWindow):
         PyToggle.Toggle_Switch(self)
         self.show()
 
+        # self.ui.Detect_LOG.append("jasfnasfknasbavjibvijege")
+
     #     self.Load_Table()
     # def Load_Table(self):
     #     people = [{"test": "james", "text": "idk", "cell": "eiei", "Line": "las"},
@@ -186,11 +188,11 @@ class MainWindow(QMainWindow):
 
     def Camera_1(self):
         if widgets.pre_cam_1.isChecked():
-            Start_Camera.detect(self, True)
+            Camera.detect(self, True)
             save_data("PreCam1", 1)
             # print("Start Camera_1")
         else:
-            Start_Camera.detect(self, False)
+            Camera.detect(self, False)
             save_data("PreCam1", 0)
             # print("Stop Camera_1")
 

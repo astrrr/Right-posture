@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainoCjWCA.ui'
+## Form generated from reading UI file 'mainiGJKbi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -20,8 +20,8 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QHBoxLayout, QHeaderView, QLabel, QLineEdit,
     QMainWindow, QPlainTextEdit, QPushButton, QRadioButton,
     QScrollArea, QScrollBar, QSizePolicy, QSlider,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
-    QVBoxLayout, QWidget)
+    QStackedWidget, QTableWidget, QTableWidgetItem, QTextBrowser,
+    QTextEdit, QVBoxLayout, QWidget)
 from .resources_rc import *
 
 class Ui_MainWindow(object):
@@ -1214,48 +1214,6 @@ class Ui_MainWindow(object):
         self.gridLayout_9.setHorizontalSpacing(85)
         self.gridLayout_9.setVerticalSpacing(0)
         self.gridLayout_9.setContentsMargins(9, 0, 9, 0)
-        self.pre_cam_2 = QCheckBox(self.row_8)
-        self.pre_cam_2.setObjectName(u"pre_cam_2")
-        self.pre_cam_2.setMaximumSize(QSize(320, 16777215))
-
-        self.gridLayout_9.addWidget(self.pre_cam_2, 3, 1, 1, 1)
-
-        self.Camera_Frame_7 = QFrame(self.row_8)
-        self.Camera_Frame_7.setObjectName(u"Camera_Frame_7")
-        self.Camera_Frame_7.setMaximumSize(QSize(320, 240))
-        self.Camera_Frame_7.setStyleSheet(u"border: 2px solid #bd93f9;\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;\n"
-"background-image: url(:/images/images/images/PyDracula.png)\n"
-"\n"
-"")
-        self.Camera_Frame_7.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_7.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout_2 = QVBoxLayout(self.Camera_Frame_7)
-        self.Camera_Frame_1_Layout_2.setSpacing(0)
-        self.Camera_Frame_1_Layout_2.setObjectName(u"Camera_Frame_1_Layout_2")
-        self.Camera_Frame_1_Layout_2.setContentsMargins(0, 0, 0, 0)
-
-        self.gridLayout_9.addWidget(self.Camera_Frame_7, 2, 3, 1, 1)
-
-        self.pre_his_pic = QCheckBox(self.row_8)
-        self.pre_his_pic.setObjectName(u"pre_his_pic")
-        self.pre_his_pic.setMaximumSize(QSize(320, 16777215))
-
-        self.gridLayout_9.addWidget(self.pre_his_pic, 3, 3, 1, 1)
-
-        self.labelBoxBlenderInstalation_9 = QLabel(self.row_8)
-        self.labelBoxBlenderInstalation_9.setObjectName(u"labelBoxBlenderInstalation_9")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.labelBoxBlenderInstalation_9.sizePolicy().hasHeightForWidth())
-        self.labelBoxBlenderInstalation_9.setSizePolicy(sizePolicy5)
-        self.labelBoxBlenderInstalation_9.setFont(font)
-        self.labelBoxBlenderInstalation_9.setStyleSheet(u"")
-
-        self.gridLayout_9.addWidget(self.labelBoxBlenderInstalation_9, 0, 3, 1, 1)
-
         self.pre_cam_1 = QCheckBox(self.row_8)
         self.pre_cam_1.setObjectName(u"pre_cam_1")
         self.pre_cam_1.setMaximumSize(QSize(320, 16777215))
@@ -1264,12 +1222,36 @@ class Ui_MainWindow(object):
 
         self.labelBoxBlenderInstalation_7 = QLabel(self.row_8)
         self.labelBoxBlenderInstalation_7.setObjectName(u"labelBoxBlenderInstalation_7")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
         sizePolicy5.setHeightForWidth(self.labelBoxBlenderInstalation_7.sizePolicy().hasHeightForWidth())
         self.labelBoxBlenderInstalation_7.setSizePolicy(sizePolicy5)
         self.labelBoxBlenderInstalation_7.setFont(font)
         self.labelBoxBlenderInstalation_7.setStyleSheet(u"")
 
         self.gridLayout_9.addWidget(self.labelBoxBlenderInstalation_7, 0, 0, 1, 1)
+
+        self.Camera_Frame_2 = QFrame(self.row_8)
+        self.Camera_Frame_2.setObjectName(u"Camera_Frame_2")
+        self.Camera_Frame_2.setMaximumSize(QSize(320, 240))
+        self.Camera_Frame_2.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+"\n"
+"\n"
+"")
+        self.Camera_Frame_2.setFrameShape(QFrame.StyledPanel)
+        self.Camera_Frame_2.setFrameShadow(QFrame.Raised)
+        self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Camera_Frame_2)
+        self.Camera_Frame_1_Layout_3.setSpacing(0)
+        self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
+        self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
+        self.Detect_LOG = QTextBrowser(self.Camera_Frame_2)
+        self.Detect_LOG.setObjectName(u"Detect_LOG")
+
+        self.Camera_Frame_1_Layout_3.addWidget(self.Detect_LOG)
+
+
+        self.gridLayout_9.addWidget(self.Camera_Frame_2, 2, 1, 1, 1)
 
         self.labelBoxBlenderInstalation_8 = QLabel(self.row_8)
         self.labelBoxBlenderInstalation_8.setObjectName(u"labelBoxBlenderInstalation_8")
@@ -1298,23 +1280,38 @@ class Ui_MainWindow(object):
 
         self.gridLayout_9.addWidget(self.Camera_Frame_1, 2, 0, 1, 1)
 
-        self.Camera_Frame_2 = QFrame(self.row_8)
-        self.Camera_Frame_2.setObjectName(u"Camera_Frame_2")
-        self.Camera_Frame_2.setMaximumSize(QSize(320, 240))
-        self.Camera_Frame_2.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+        self.pre_his_pic = QCheckBox(self.row_8)
+        self.pre_his_pic.setObjectName(u"pre_his_pic")
+        self.pre_his_pic.setMaximumSize(QSize(320, 16777215))
+
+        self.gridLayout_9.addWidget(self.pre_his_pic, 3, 3, 1, 1)
+
+        self.labelBoxBlenderInstalation_9 = QLabel(self.row_8)
+        self.labelBoxBlenderInstalation_9.setObjectName(u"labelBoxBlenderInstalation_9")
+        sizePolicy5.setHeightForWidth(self.labelBoxBlenderInstalation_9.sizePolicy().hasHeightForWidth())
+        self.labelBoxBlenderInstalation_9.setSizePolicy(sizePolicy5)
+        self.labelBoxBlenderInstalation_9.setFont(font)
+        self.labelBoxBlenderInstalation_9.setStyleSheet(u"")
+
+        self.gridLayout_9.addWidget(self.labelBoxBlenderInstalation_9, 0, 3, 1, 1)
+
+        self.Camera_Frame_7 = QFrame(self.row_8)
+        self.Camera_Frame_7.setObjectName(u"Camera_Frame_7")
+        self.Camera_Frame_7.setMaximumSize(QSize(320, 240))
+        self.Camera_Frame_7.setStyleSheet(u"border: 2px solid #bd93f9;\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;\n"
 "background-image: url(:/images/images/images/PyDracula.png)\n"
 "\n"
 "")
-        self.Camera_Frame_2.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_2.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Camera_Frame_2)
-        self.Camera_Frame_1_Layout_3.setSpacing(0)
-        self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
-        self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
+        self.Camera_Frame_7.setFrameShape(QFrame.StyledPanel)
+        self.Camera_Frame_7.setFrameShadow(QFrame.Raised)
+        self.Camera_Frame_1_Layout_2 = QVBoxLayout(self.Camera_Frame_7)
+        self.Camera_Frame_1_Layout_2.setSpacing(0)
+        self.Camera_Frame_1_Layout_2.setObjectName(u"Camera_Frame_1_Layout_2")
+        self.Camera_Frame_1_Layout_2.setContentsMargins(0, 0, 0, 0)
 
-        self.gridLayout_9.addWidget(self.Camera_Frame_2, 2, 1, 1, 1)
+        self.gridLayout_9.addWidget(self.Camera_Frame_7, 2, 3, 1, 1)
 
 
         self.gridLayout_3.addWidget(self.row_8, 3, 0, 1, 1)
@@ -1759,7 +1756,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 353, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1975,7 +1972,7 @@ class Ui_MainWindow(object):
 
         self.stackedWidget.addWidget(self.Tutorial)
 
-        self.verticalLayout_15.addWidget(self.stackedWidget, 0, Qt.AlignTop)
+        self.verticalLayout_15.addWidget(self.stackedWidget)
 
 
         self.horizontalLayout_4.addWidget(self.pagesContainer)
@@ -2328,12 +2325,16 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
         ___qtablewidgetitem23 = self.Status_Widgets.verticalHeaderItem(18)
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        self.pre_cam_2.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 2", None))
-        self.pre_his_pic.setText(QCoreApplication.translate("MainWindow", u"Preview History Picture", None))
-        self.labelBoxBlenderInstalation_9.setText(QCoreApplication.translate("MainWindow", u"History Picture", None))
         self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
         self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera 1", None))
-        self.labelBoxBlenderInstalation_8.setText(QCoreApplication.translate("MainWindow", u"Camera 2", None))
+        self.Detect_LOG.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.labelBoxBlenderInstalation_8.setText(QCoreApplication.translate("MainWindow", u"Detect Log", None))
+        self.pre_his_pic.setText(QCoreApplication.translate("MainWindow", u"Preview History Picture", None))
+        self.labelBoxBlenderInstalation_9.setText(QCoreApplication.translate("MainWindow", u"History Picture", None))
         self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"Notification Message", None))
         self.notifyword.setText("")
         self.notifyword.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
