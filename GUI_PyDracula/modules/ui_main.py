@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainYbwHKS.ui'
+## Form generated from reading UI file 'maingkmOzU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1138,31 +1138,31 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_23.addWidget(self.labelBoxBlenderInstalation_10)
 
-        self.Camera_Frame_2 = QFrame(self.frame_5)
-        self.Camera_Frame_2.setObjectName(u"Camera_Frame_2")
-        self.Camera_Frame_2.setMinimumSize(QSize(384, 288))
-        self.Camera_Frame_2.setMaximumSize(QSize(384, 288))
-        self.Camera_Frame_2.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+        self.History_Frame = QFrame(self.frame_5)
+        self.History_Frame.setObjectName(u"History_Frame")
+        self.History_Frame.setMinimumSize(QSize(384, 288))
+        self.History_Frame.setMaximumSize(QSize(384, 288))
+        self.History_Frame.setStyleSheet(u"border: 2px solid #bd93f9;\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;\n"
 "background-image: url(:/images/images/images/PyDracula.png)\n"
 "\n"
 "")
-        self.Camera_Frame_2.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_2.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Camera_Frame_2)
+        self.History_Frame.setFrameShape(QFrame.StyledPanel)
+        self.History_Frame.setFrameShadow(QFrame.Raised)
+        self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.History_Frame)
         self.Camera_Frame_1_Layout_3.setSpacing(0)
         self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
         self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
 
-        self.verticalLayout_23.addWidget(self.Camera_Frame_2)
+        self.verticalLayout_23.addWidget(self.History_Frame)
 
-        self.pre_cam_2 = QCheckBox(self.frame_5)
-        self.pre_cam_2.setObjectName(u"pre_cam_2")
-        self.pre_cam_2.setMinimumSize(QSize(0, 0))
-        self.pre_cam_2.setMaximumSize(QSize(384, 16777215))
+        self.pre_history = QCheckBox(self.frame_5)
+        self.pre_history.setObjectName(u"pre_history")
+        self.pre_history.setMinimumSize(QSize(0, 0))
+        self.pre_history.setMaximumSize(QSize(384, 16777215))
 
-        self.verticalLayout_23.addWidget(self.pre_cam_2)
+        self.verticalLayout_23.addWidget(self.pre_history)
 
 
         self.horizontalLayout_8.addWidget(self.frame_5)
@@ -2328,8 +2328,8 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setText("")
         self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera 1", None))
         self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
-        self.labelBoxBlenderInstalation_10.setText(QCoreApplication.translate("MainWindow", u"Camera 2", None))
-        self.pre_cam_2.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 2", None))
+        self.labelBoxBlenderInstalation_10.setText(QCoreApplication.translate("MainWindow", u"History", None))
+        self.pre_history.setText(QCoreApplication.translate("MainWindow", u"Preview History", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Status History", None))
         ___qtablewidgetitem = self.Status_Widgets.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Day 1", None));
