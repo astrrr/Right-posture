@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainiGJKbi.ui'
+## Form generated from reading UI file 'mainENuiVF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QScrollArea, QScrollBar, QSizePolicy, QSlider,
     QStackedWidget, QTableWidget, QTableWidgetItem, QTextBrowser,
     QTextEdit, QVBoxLayout, QWidget)
-from .resources_rc import *
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1049,33 +1049,53 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"background: transparent;")
         self.Status = QWidget()
         self.Status.setObjectName(u"Status")
+        self.Status.setStyleSheet(u"")
         self.gridLayout_3 = QGridLayout(self.Status)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.row_7 = QFrame(self.Status)
-        self.row_7.setObjectName(u"row_7")
-        self.row_7.setFrameShape(QFrame.StyledPanel)
-        self.row_7.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_36 = QVBoxLayout(self.row_7)
-        self.verticalLayout_36.setSpacing(0)
-        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
-        self.verticalLayout_36.setContentsMargins(11, 10, 11, 0)
-        self.label_3 = QLabel(self.row_7)
-        self.label_3.setObjectName(u"label_3")
+        self.frame_2 = QFrame(self.Status)
+        self.frame_2.setObjectName(u"frame_2")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
+        self.frame_2.setSizePolicy(sizePolicy3)
+        self.frame_2.setMinimumSize(QSize(300, 0))
+        self.frame_2.setMaximumSize(QSize(300, 16777215))
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_28 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_28.setSpacing(6)
+        self.verticalLayout_28.setObjectName(u"verticalLayout_28")
+        self.verticalLayout_28.setContentsMargins(-1, 3, -1, 10)
+        self.labelBoxBlenderInstalation_8 = QLabel(self.frame_2)
+        self.labelBoxBlenderInstalation_8.setObjectName(u"labelBoxBlenderInstalation_8")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.labelBoxBlenderInstalation_8.sizePolicy().hasHeightForWidth())
+        self.labelBoxBlenderInstalation_8.setSizePolicy(sizePolicy4)
+        self.labelBoxBlenderInstalation_8.setFont(font)
+        self.labelBoxBlenderInstalation_8.setStyleSheet(u"")
 
-        self.verticalLayout_36.addWidget(self.label_3)
+        self.verticalLayout_28.addWidget(self.labelBoxBlenderInstalation_8)
+
+        self.Detect_LOG = QTextBrowser(self.frame_2)
+        self.Detect_LOG.setObjectName(u"Detect_LOG")
+        self.Detect_LOG.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+"")
+
+        self.verticalLayout_28.addWidget(self.Detect_LOG)
+
+        self.pre_log = QCheckBox(self.frame_2)
+        self.pre_log.setObjectName(u"pre_log")
+        self.pre_log.setMaximumSize(QSize(320, 16777215))
+
+        self.verticalLayout_28.addWidget(self.pre_log)
 
 
-        self.gridLayout_3.addWidget(self.row_7, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.frame_2, 3, 1, 3, 1)
 
-        self.frame = QFrame(self.Status)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_22 = QVBoxLayout(self.frame)
-        self.verticalLayout_22.setSpacing(0)
-        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
-        self.verticalLayout_22.setContentsMargins(1, 0, 1, 0)
-        self.Status_Widgets = QTableWidget(self.frame)
+        self.Status_Widgets = QTableWidget(self.Status)
         if (self.Status_Widgets.columnCount() < 5):
             self.Status_Widgets.setColumnCount(5)
         __qtablewidgetitem = QTableWidgetItem()
@@ -1129,11 +1149,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem23 = QTableWidgetItem()
         self.Status_Widgets.setVerticalHeaderItem(18, __qtablewidgetitem23)
         self.Status_Widgets.setObjectName(u"Status_Widgets")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.Status_Widgets.sizePolicy().hasHeightForWidth())
-        self.Status_Widgets.setSizePolicy(sizePolicy3)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.Status_Widgets.sizePolicy().hasHeightForWidth())
+        self.Status_Widgets.setSizePolicy(sizePolicy5)
         palette = QPalette()
         brush = QBrush(QColor(221, 221, 221, 255))
         brush.setStyle(Qt.SolidPattern)
@@ -1192,18 +1212,31 @@ class Ui_MainWindow(object):
         self.Status_Widgets.verticalHeader().setProperty("showSortIndicator", False)
         self.Status_Widgets.verticalHeader().setStretchLastSection(False)
 
-        self.verticalLayout_22.addWidget(self.Status_Widgets)
+        self.gridLayout_3.addWidget(self.Status_Widgets, 4, 0, 1, 1)
+
+        self.row_7 = QFrame(self.Status)
+        self.row_7.setObjectName(u"row_7")
+        self.row_7.setFrameShape(QFrame.StyledPanel)
+        self.row_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_36 = QVBoxLayout(self.row_7)
+        self.verticalLayout_36.setSpacing(0)
+        self.verticalLayout_36.setObjectName(u"verticalLayout_36")
+        self.verticalLayout_36.setContentsMargins(8, 10, 11, 0)
+        self.label_3 = QLabel(self.row_7)
+        self.label_3.setObjectName(u"label_3")
+
+        self.verticalLayout_36.addWidget(self.label_3)
 
 
-        self.gridLayout_3.addWidget(self.frame, 4, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.row_7, 0, 0, 1, 2)
 
         self.row_8 = QWidget(self.Status)
         self.row_8.setObjectName(u"row_8")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.row_8.sizePolicy().hasHeightForWidth())
-        self.row_8.setSizePolicy(sizePolicy4)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.row_8.sizePolicy().hasHeightForWidth())
+        self.row_8.setSizePolicy(sizePolicy6)
         self.row_8.setMinimumSize(QSize(0, 300))
         self.row_8.setMaximumSize(QSize(16777215, 16777215))
         self.row_8.setLayoutDirection(Qt.LeftToRight)
@@ -1214,56 +1247,37 @@ class Ui_MainWindow(object):
         self.gridLayout_9.setHorizontalSpacing(85)
         self.gridLayout_9.setVerticalSpacing(0)
         self.gridLayout_9.setContentsMargins(9, 0, 9, 0)
-        self.pre_cam_1 = QCheckBox(self.row_8)
-        self.pre_cam_1.setObjectName(u"pre_cam_1")
-        self.pre_cam_1.setMaximumSize(QSize(320, 16777215))
+        self.Camera_Frame_7 = QFrame(self.row_8)
+        self.Camera_Frame_7.setObjectName(u"Camera_Frame_7")
+        self.Camera_Frame_7.setMinimumSize(QSize(320, 240))
+        self.Camera_Frame_7.setMaximumSize(QSize(320, 240))
+        self.Camera_Frame_7.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+"background-position: center;\n"
+"background-repeat: no-repeat;\n"
+"background-image: url(:/images/images/images/PyDracula.png)\n"
+"\n"
+"")
+        self.Camera_Frame_7.setFrameShape(QFrame.StyledPanel)
+        self.Camera_Frame_7.setFrameShadow(QFrame.Raised)
+        self.Camera_Frame_1_Layout_2 = QVBoxLayout(self.Camera_Frame_7)
+        self.Camera_Frame_1_Layout_2.setSpacing(0)
+        self.Camera_Frame_1_Layout_2.setObjectName(u"Camera_Frame_1_Layout_2")
+        self.Camera_Frame_1_Layout_2.setContentsMargins(0, 0, 0, 0)
 
-        self.gridLayout_9.addWidget(self.pre_cam_1, 3, 0, 1, 1)
+        self.gridLayout_9.addWidget(self.Camera_Frame_7, 2, 3, 1, 1)
 
         self.labelBoxBlenderInstalation_7 = QLabel(self.row_8)
         self.labelBoxBlenderInstalation_7.setObjectName(u"labelBoxBlenderInstalation_7")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.labelBoxBlenderInstalation_7.sizePolicy().hasHeightForWidth())
-        self.labelBoxBlenderInstalation_7.setSizePolicy(sizePolicy5)
+        sizePolicy4.setHeightForWidth(self.labelBoxBlenderInstalation_7.sizePolicy().hasHeightForWidth())
+        self.labelBoxBlenderInstalation_7.setSizePolicy(sizePolicy4)
         self.labelBoxBlenderInstalation_7.setFont(font)
         self.labelBoxBlenderInstalation_7.setStyleSheet(u"")
 
         self.gridLayout_9.addWidget(self.labelBoxBlenderInstalation_7, 0, 0, 1, 1)
 
-        self.Camera_Frame_2 = QFrame(self.row_8)
-        self.Camera_Frame_2.setObjectName(u"Camera_Frame_2")
-        self.Camera_Frame_2.setMaximumSize(QSize(320, 240))
-        self.Camera_Frame_2.setStyleSheet(u"border: 2px solid #bd93f9;\n"
-"\n"
-"\n"
-"")
-        self.Camera_Frame_2.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_2.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Camera_Frame_2)
-        self.Camera_Frame_1_Layout_3.setSpacing(0)
-        self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
-        self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
-        self.Detect_LOG = QTextBrowser(self.Camera_Frame_2)
-        self.Detect_LOG.setObjectName(u"Detect_LOG")
-
-        self.Camera_Frame_1_Layout_3.addWidget(self.Detect_LOG)
-
-
-        self.gridLayout_9.addWidget(self.Camera_Frame_2, 2, 1, 1, 1)
-
-        self.labelBoxBlenderInstalation_8 = QLabel(self.row_8)
-        self.labelBoxBlenderInstalation_8.setObjectName(u"labelBoxBlenderInstalation_8")
-        sizePolicy5.setHeightForWidth(self.labelBoxBlenderInstalation_8.sizePolicy().hasHeightForWidth())
-        self.labelBoxBlenderInstalation_8.setSizePolicy(sizePolicy5)
-        self.labelBoxBlenderInstalation_8.setFont(font)
-        self.labelBoxBlenderInstalation_8.setStyleSheet(u"")
-
-        self.gridLayout_9.addWidget(self.labelBoxBlenderInstalation_8, 0, 1, 1, 1)
-
         self.Camera_Frame_1 = QFrame(self.row_8)
         self.Camera_Frame_1.setObjectName(u"Camera_Frame_1")
+        self.Camera_Frame_1.setMinimumSize(QSize(320, 240))
         self.Camera_Frame_1.setMaximumSize(QSize(320, 240))
         self.Camera_Frame_1.setStyleSheet(u"border: 2px solid #bd93f9;\n"
 "background-position: center;\n"
@@ -1280,38 +1294,33 @@ class Ui_MainWindow(object):
 
         self.gridLayout_9.addWidget(self.Camera_Frame_1, 2, 0, 1, 1)
 
+        self.pre_cam_1 = QCheckBox(self.row_8)
+        self.pre_cam_1.setObjectName(u"pre_cam_1")
+        self.pre_cam_1.setMaximumSize(QSize(320, 16777215))
+
+        self.gridLayout_9.addWidget(self.pre_cam_1, 3, 0, 1, 1)
+
+        self.labelBoxBlenderInstalation_9 = QLabel(self.row_8)
+        self.labelBoxBlenderInstalation_9.setObjectName(u"labelBoxBlenderInstalation_9")
+        sizePolicy4.setHeightForWidth(self.labelBoxBlenderInstalation_9.sizePolicy().hasHeightForWidth())
+        self.labelBoxBlenderInstalation_9.setSizePolicy(sizePolicy4)
+        self.labelBoxBlenderInstalation_9.setFont(font)
+        self.labelBoxBlenderInstalation_9.setStyleSheet(u"")
+
+        self.gridLayout_9.addWidget(self.labelBoxBlenderInstalation_9, 0, 3, 1, 1)
+
         self.pre_his_pic = QCheckBox(self.row_8)
         self.pre_his_pic.setObjectName(u"pre_his_pic")
         self.pre_his_pic.setMaximumSize(QSize(320, 16777215))
 
         self.gridLayout_9.addWidget(self.pre_his_pic, 3, 3, 1, 1)
 
-        self.labelBoxBlenderInstalation_9 = QLabel(self.row_8)
-        self.labelBoxBlenderInstalation_9.setObjectName(u"labelBoxBlenderInstalation_9")
-        sizePolicy5.setHeightForWidth(self.labelBoxBlenderInstalation_9.sizePolicy().hasHeightForWidth())
-        self.labelBoxBlenderInstalation_9.setSizePolicy(sizePolicy5)
-        self.labelBoxBlenderInstalation_9.setFont(font)
-        self.labelBoxBlenderInstalation_9.setStyleSheet(u"")
+        self.frame_3 = QFrame(self.row_8)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_9.addWidget(self.labelBoxBlenderInstalation_9, 0, 3, 1, 1)
-
-        self.Camera_Frame_7 = QFrame(self.row_8)
-        self.Camera_Frame_7.setObjectName(u"Camera_Frame_7")
-        self.Camera_Frame_7.setMaximumSize(QSize(320, 240))
-        self.Camera_Frame_7.setStyleSheet(u"border: 2px solid #bd93f9;\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;\n"
-"background-image: url(:/images/images/images/PyDracula.png)\n"
-"\n"
-"")
-        self.Camera_Frame_7.setFrameShape(QFrame.StyledPanel)
-        self.Camera_Frame_7.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout_2 = QVBoxLayout(self.Camera_Frame_7)
-        self.Camera_Frame_1_Layout_2.setSpacing(0)
-        self.Camera_Frame_1_Layout_2.setObjectName(u"Camera_Frame_1_Layout_2")
-        self.Camera_Frame_1_Layout_2.setContentsMargins(0, 0, 0, 0)
-
-        self.gridLayout_9.addWidget(self.Camera_Frame_7, 2, 3, 1, 1)
+        self.gridLayout_9.addWidget(self.frame_3, 2, 1, 1, 1)
 
 
         self.gridLayout_3.addWidget(self.row_8, 3, 0, 1, 1)
@@ -1548,8 +1557,8 @@ class Ui_MainWindow(object):
         __qtablewidgetitem47 = QTableWidgetItem()
         self.tableWidget_2.setItem(0, 3, __qtablewidgetitem47)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
-        sizePolicy3.setHeightForWidth(self.tableWidget_2.sizePolicy().hasHeightForWidth())
-        self.tableWidget_2.setSizePolicy(sizePolicy3)
+        sizePolicy5.setHeightForWidth(self.tableWidget_2.sizePolicy().hasHeightForWidth())
+        self.tableWidget_2.setSizePolicy(sizePolicy5)
         palette1 = QPalette()
         palette1.setBrush(QPalette.Active, QPalette.WindowText, brush)
         palette1.setBrush(QPalette.Active, QPalette.Button, brush1)
@@ -1887,8 +1896,8 @@ class Ui_MainWindow(object):
         __qtablewidgetitem71 = QTableWidgetItem()
         self.tableWidget.setItem(0, 3, __qtablewidgetitem71)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy3)
+        sizePolicy5.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy5)
         palette2 = QPalette()
         palette2.setBrush(QPalette.Active, QPalette.WindowText, brush)
         palette2.setBrush(QPalette.Active, QPalette.Button, brush1)
@@ -2022,11 +2031,11 @@ class Ui_MainWindow(object):
         self.btn_NightMode = QPushButton(self.NightMode)
         self.btn_NightMode.setObjectName(u"btn_NightMode")
         self.btn_NightMode.setEnabled(False)
-        sizePolicy6 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.btn_NightMode.sizePolicy().hasHeightForWidth())
-        self.btn_NightMode.setSizePolicy(sizePolicy6)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.btn_NightMode.sizePolicy().hasHeightForWidth())
+        self.btn_NightMode.setSizePolicy(sizePolicy7)
         self.btn_NightMode.setMinimumSize(QSize(20, 45))
         self.btn_NightMode.setCursor(QCursor(Qt.ArrowCursor))
         self.btn_NightMode.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-moon.png);")
@@ -2059,8 +2068,8 @@ class Ui_MainWindow(object):
         self.btn_logout_2 = QPushButton(self.NightMode_2)
         self.btn_logout_2.setObjectName(u"btn_logout_2")
         self.btn_logout_2.setEnabled(False)
-        sizePolicy6.setHeightForWidth(self.btn_logout_2.sizePolicy().hasHeightForWidth())
-        self.btn_logout_2.setSizePolicy(sizePolicy6)
+        sizePolicy7.setHeightForWidth(self.btn_logout_2.sizePolicy().hasHeightForWidth())
+        self.btn_logout_2.setSizePolicy(sizePolicy7)
         self.btn_logout_2.setMinimumSize(QSize(20, 45))
         self.btn_logout_2.setCursor(QCursor(Qt.ArrowCursor))
         self.btn_logout_2.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_close.png);")
@@ -2093,8 +2102,8 @@ class Ui_MainWindow(object):
         self.btn_logout_9 = QPushButton(self.NightMode_7)
         self.btn_logout_9.setObjectName(u"btn_logout_9")
         self.btn_logout_9.setEnabled(False)
-        sizePolicy6.setHeightForWidth(self.btn_logout_9.sizePolicy().hasHeightForWidth())
-        self.btn_logout_9.setSizePolicy(sizePolicy6)
+        sizePolicy7.setHeightForWidth(self.btn_logout_9.sizePolicy().hasHeightForWidth())
+        self.btn_logout_9.setSizePolicy(sizePolicy7)
         self.btn_logout_9.setMinimumSize(QSize(20, 45))
         self.btn_logout_9.setCursor(QCursor(Qt.ArrowCursor))
         self.btn_logout_9.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-volume-high.png);")
@@ -2127,8 +2136,8 @@ class Ui_MainWindow(object):
         self.btn_logout_10 = QPushButton(self.NightMode_8)
         self.btn_logout_10.setObjectName(u"btn_logout_10")
         self.btn_logout_10.setEnabled(False)
-        sizePolicy6.setHeightForWidth(self.btn_logout_10.sizePolicy().hasHeightForWidth())
-        self.btn_logout_10.setSizePolicy(sizePolicy6)
+        sizePolicy7.setHeightForWidth(self.btn_logout_10.sizePolicy().hasHeightForWidth())
+        self.btn_logout_10.setSizePolicy(sizePolicy7)
         self.btn_logout_10.setMinimumSize(QSize(20, 45))
         self.btn_logout_10.setCursor(QCursor(Qt.ArrowCursor))
         self.btn_logout_10.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-discord.png);")
@@ -2276,7 +2285,13 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Status History", None))
+        self.labelBoxBlenderInstalation_8.setText(QCoreApplication.translate("MainWindow", u"Detect Log", None))
+        self.Detect_LOG.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.pre_log.setText(QCoreApplication.translate("MainWindow", u"Preview detect log", None))
         ___qtablewidgetitem = self.Status_Widgets.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Day 1", None));
         ___qtablewidgetitem1 = self.Status_Widgets.horizontalHeaderItem(1)
@@ -2325,16 +2340,11 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
         ___qtablewidgetitem23 = self.Status_Widgets.verticalHeaderItem(18)
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
-        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Status History", None))
         self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera 1", None))
-        self.Detect_LOG.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.labelBoxBlenderInstalation_8.setText(QCoreApplication.translate("MainWindow", u"Detect Log", None))
-        self.pre_his_pic.setText(QCoreApplication.translate("MainWindow", u"Preview History Picture", None))
+        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
         self.labelBoxBlenderInstalation_9.setText(QCoreApplication.translate("MainWindow", u"History Picture", None))
+        self.pre_his_pic.setText(QCoreApplication.translate("MainWindow", u"Preview History Picture", None))
         self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"Notification Message", None))
         self.notifyword.setText("")
         self.notifyword.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
