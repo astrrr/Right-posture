@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/Downloads/Detect/.idea/Detect.iml" filepath="$USER_HOME$/Downloads/Detect/.idea/Detect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GUI_PyDracula.iml" filepath="$PROJECT_DIR$/.idea/GUI_PyDracula.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/Login/PyBlackBox_Qt_Widgets_PySide6_Or_PyQt6_v1.0.0-master/.idea/PyBlackBox_Qt_Widgets_PySide6_Or_PyQt6_v1.0.0-master.iml" filepath="$USER_HOME$/Downloads/Login/PyBlackBox_Qt_Widgets_PySide6_Or_PyQt6_v1.0.0-master/.idea/PyBlackBox_Qt_Widgets_PySide6_Or_PyQt6_v1.0.0-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" filepath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/PySide-Responsive-ui-master/.idea/PySide-Responsive-ui-master.iml" filepath="$USER_HOME$/Downloads/PySide-Responsive-ui-master/.idea/PySide-Responsive-ui-master.iml" />
+    </modules>
+  </component>
+</project>

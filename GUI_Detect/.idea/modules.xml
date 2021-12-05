@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Detect.iml" filepath="$PROJECT_DIR$/.idea/Detect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GUI_PyDracula/.idea/GUI_PyDracula.iml" filepath="$PROJECT_DIR$/../GUI_PyDracula/.idea/GUI_PyDracula.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/Login_With_PySide6_And_VSCode-master/.idea/Login_With_PySide6_And_VSCode-master.iml" filepath="$USER_HOME$/Downloads/Login_With_PySide6_And_VSCode-master/.idea/Login_With_PySide6_And_VSCode-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" filepath="$PROJECT_DIR$/../GUI_PyOneDark/.idea/PyOneDark.iml" />
+    </modules>
+  </component>
+</project>
