@@ -236,7 +236,8 @@ QPushButton:pressed {
               </property>
               <property name="styleSheet">
                <string notr="true">#logo {
-	background-image: url(:/images/images/images/PyDracula_vertical.png);
+	background-image: url(:/images/images/images/Logo_Big (1).png);
+	/*background-image: url(:/images/images/images/PyDracula_vertical.png);*/
 	border-radius: 10px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -465,40 +466,47 @@ QPushButton:pressed {
               </property>
              </widget>
             </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QFrame" name="frame_3">
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="Reg_password_2">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
-border-radius: 10px;
-background-position: center;
-background-repeat: no-repeat;
- /*border: 1px solid #73AD21;*/
-</string>
+               <string notr="true">background-color: rgb(33, 37, 43);</string>
               </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+              <property name="text">
+               <string/>
               </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+              <property name="placeholderText">
+               <string>Verify Password </string>
               </property>
              </widget>
             </item>
-            <item row="1" column="0" colspan="2">
-             <widget class="QLabel" name="Reg_Status">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
+            <item row="8" column="0">
+             <widget class="QLineEdit" name="Reg_password">
+              <property name="minimumSize">
                <size>
-                <width>16777215</width>
-                <height>20</height>
+                <width>0</width>
+                <height>30</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(33, 37, 43);</string>
+              </property>
               <property name="text">
-               <string>Status</string>
+               <string/>
+              </property>
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+              <property name="placeholderText">
+               <string>Password</string>
               </property>
              </widget>
             </item>
@@ -540,47 +548,54 @@ background-repeat: no-repeat;
               </property>
              </widget>
             </item>
-            <item row="8" column="0">
-             <widget class="QLineEdit" name="Reg_password">
-              <property name="minimumSize">
+            <item row="2" column="0">
+             <widget class="QLabel" name="Reg_Status">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
                <size>
-                <width>0</width>
-                <height>30</height>
+                <width>16777215</width>
+                <height>20</height>
                </size>
               </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(33, 37, 43);</string>
-              </property>
               <property name="text">
-               <string/>
-              </property>
-              <property name="echoMode">
-               <enum>QLineEdit::Password</enum>
-              </property>
-              <property name="placeholderText">
-               <string>Password</string>
+               <string>Status</string>
               </property>
              </widget>
             </item>
-            <item row="8" column="1">
-             <widget class="QLineEdit" name="Reg_password_2">
+            <item row="1" column="0" colspan="2">
+             <widget class="QFrame" name="logo_2">
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>30</height>
+                <height>400</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>400</height>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(33, 37, 43);</string>
+               <string notr="true">#logo_2{
+	background-image: url(:/images/images/images/Logo_Big (1).png);
+	/*background-image: url(:/images/images/images/PyDracula_vertical.png);*/
+	border-radius: 10px;
+	background-position: center;
+	background-repeat: no-repeat;
+    /*border: 1px solid #73AD21;*/
+}</string>
               </property>
-              <property name="text">
-               <string/>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
               </property>
-              <property name="echoMode">
-               <enum>QLineEdit::Password</enum>
-              </property>
-              <property name="placeholderText">
-               <string>Verify Password </string>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
               </property>
              </widget>
             </item>
@@ -1004,7 +1019,8 @@ background-repeat: no-repeat;
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(33, 37, 43);
-background-image: url(:/images/images/images/PyDracula.png);
+background-image: url(:/images/images/images/Logo_Small (6).png);
+/*background-image: url(:/images/images/images/PyDracula.png);*/
 background-position: centered;
 background-repeat: no-repeat;
 </string>
@@ -1338,7 +1354,6 @@ background-repeat: no-repeat;
   <tabstop>closeAppBtn</tabstop>
  </tabstops>
  <resources>
-  <include location="resources.qrc"/>
   <include location="resources.qrc"/>
  </resources>
  <connections/>

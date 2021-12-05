@@ -1,5 +1,20 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/Logo_Big (1).png</file>
+    <file>images/images/Logo_Big (2).png</file>
+    <file>images/images/Logo_Big (3).png</file>
+    <file>images/images/Logo_Big (4).png</file>
+    <file>images/images/Logo_Big (5).png</file>
+    <file>images/images/Logo_Big (6).png</file>
+    <file>images/images/Logo_Big (7).png</file>
+    <file>images/images/Logo_Small (1).png</file>
+    <file>images/images/Logo_Small (2).png</file>
+    <file>images/images/Logo_Small (3).png</file>
+    <file>images/images/Logo_Small (4).png</file>
+    <file>images/images/Logo_Small (5).png</file>
+    <file>images/images/Logo_Small (6).png</file>
+    <file>images/images/Logo_Small (7).png</file>
+    <file>images/images/PyDracula_horizontal.png</file>
     <file>images/images/PyDracula.png</file>
     <file>images/images/PyDracula_vertical.png</file>
   </qresource>
