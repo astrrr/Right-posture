@@ -10,7 +10,12 @@ cwd = os.getcwd()
 
 def predict(img):
   img = tf.keras.preprocessing.image.load_img(cwd+'//'+img, target_size=(224,224))
+  # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
+  
+  #resized = cv2.resize(img, (224, 224), interpolation = cv2.INTER_AREA)
   X= tf.keras.preprocessing.image.img_to_array(img)
+  
+  # X= tf.keras.preprocessing.image.img_to_array(resized)
   X= np.expand_dims(X,axis=0)
   image = np.vstack([X])
   val = model.predict(image)
@@ -61,6 +66,7 @@ with mp_pose.Pose(
     # Draw the pose annotation on the image.
     image.flags.writeable = True
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    # image = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
     mp_drawing.draw_landmarks(
         image,
         results.pose_landmarks,
@@ -74,6 +80,10 @@ with mp_pose.Pose(
       cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)  
     
     
+    # print('==============================')
+    # predict(image)
+
+
     # Flip the image horizontally for a selfie-view display.
     #cv2.imshow('MediaPipe Pose', cv2.flip(image, 1))
     cv2.imshow('MediaPipe Pose', image)
@@ -86,16 +96,16 @@ with mp_pose.Pose(
     print("{} written!".format(img_name))
     img_counter_cor += 1
     
-    #predict
+    predict
     for i in os.listdir(cwd):
       if '.png' in i:
         print('=======================')
         pred = predict(i)
         
         
-        print(pred)
+    #     print(pred)
         os.remove(i)
-        
+    
     
     
     #press ESC to exit
