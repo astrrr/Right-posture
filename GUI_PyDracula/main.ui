@@ -2057,7 +2057,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                                 <string notr="true"/>
                                </property>
                                <property name="text">
-                                <string>Camera 2</string>
+                                <string>History</string>
                                </property>
                               </widget>
                              </item>
@@ -2123,7 +2123,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                                 </size>
                                </property>
                                <property name="text">
-                                <string>Preview Camera 2</string>
+                                <string>Preview History</string>
                                </property>
                               </widget>
                              </item>
@@ -2647,6 +2647,36 @@ p, li { white-space: pre-wrap; }
                             </property>
                             <property name="text">
                              <string>Preview detect log</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_clear_log">
+                            <property name="minimumSize">
+                             <size>
+                              <width>150</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Clear log</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-x-circle.png</normaloff>:/icons/images/icons/cil-x-circle.png</iconset>
                             </property>
                            </widget>
                           </item>

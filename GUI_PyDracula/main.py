@@ -180,9 +180,14 @@ class MainWindow(QMainWindow):
     #         self.ui.Status_Widgets.setItem(table_row, 0, QtWidgets.QTableWidgetItem(row["test"]))
     #         table_row += 1
 
-    # BUTTONS CLICK Add button here and above
-    def buttonInterface(self):
-        AppButtons.buttonClick(self)
+    def Detect_Log(self):
+        if widgets.pre_log.isChecked():
+            self.ui.Detect_LOG.append(Camera.log)
+            save_data("PreLog", 1)
+            # print("Start Logging")
+        else:
+            save_data("PreLog", 0)
+            # print("Stop Logging")
 
     def Camera_1(self):
         if widgets.pre_cam_1.isChecked():
@@ -204,20 +209,19 @@ class MainWindow(QMainWindow):
     @Slot(np.ndarray)
     def update_image(self, cv_img):
         try:
-            # ///// CLEAR LOG IN GUI //////
-            # if Camera.clear_log:
-            #     self.ui.Detect_LOG.clear()
-            #     Camera.clear_log = False
-
             # img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
             # QT側でチャネル順BGRを指定
             qimg = QtGui.QImage(cv_img.data, cv_img.shape[1], cv_img.shape[0], cv_img.strides[0],
                                 QtGui.QImage.Format.Format_BGR888)
             qpix = QPixmap.fromImage(qimg)
             self.image_label.setPixmap(qpix)
-            self.ui.Detect_LOG.append(Camera.log)
+            self.Detect_Log()
         except:
             pass
+
+    # BUTTONS CLICK Add button here and above
+    def buttonInterface(self):
+        AppButtons.buttonClick(self)
 
     # RESIZE EVENTS
     def resizeEvent(self, event):

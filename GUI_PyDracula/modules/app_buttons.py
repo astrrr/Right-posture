@@ -15,8 +15,14 @@ class AppButtons(MainWindow):
         button.btn_Logout.clicked.connect(self.buttonInterface)
         button.btn_saveNotify.clicked.connect(self.buttonInterface)
         button.btn_print.clicked.connect(self.buttonInterface)
+        button.btn_clear_log.clicked.connect(self.buttonInterface)
 
         # button.Test_radioButton_1.clicked.connect(self.buttonInterface)
+
+        # Preview Detect log
+        button.pre_log.setChecked(loaded_object["PreLog"])
+        button.pre_log.clicked.connect(self.Detect_Log)
+        self.Detect_Log()
 
         # Preview Camera 1
         button.pre_cam_1.setChecked(loaded_object["PreCam1"])
@@ -26,11 +32,13 @@ class AppButtons(MainWindow):
         # Discord Rich Presence
         AppFunctions.discordRichPresence(loaded_object["Discord"])
 
-
     def buttonClick(self):
         button = self.ui
         btn = self.sender()
         btnName = btn.objectName()
+
+        if btnName == "btn_clear_log":
+            self.ui.Detect_LOG.clear()
 
         if btnName == "btn_Home":
             button.stackedWidget.setCurrentWidget(button.Home)

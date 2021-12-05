@@ -21,9 +21,9 @@ class VideoThread(QThread):
         global model
         global first_load
         if first_load:
-            print("start model")
+            print("Start Load model")
             modeling = tf.keras.models.load_model(f'{cwd}\DN121v3')
-            print("end model")
+            print("Finish load model")
             model = modeling
             first_load = False
     # QThreadのrunメソッドを定義
@@ -78,13 +78,6 @@ class VideoThread(QThread):
                         print('=======================')
                         # ///////////////////////////////////////////////////////////////////////////////
                         pred = self.predict(i)
-
-                        # ///// CLEAR LOG IN GUI //////
-                        # count_log += 1
-                        # if count_log >= 10:
-                        #     Camera.clear_log = True
-                        #     count_log = 0
-
                         #     print(pred)
                         os.remove(i)
 
@@ -97,7 +90,6 @@ class VideoThread(QThread):
         # videoCaptureのリリース処理
 
     def predict(self, img):
-        print("predic")
         img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
         # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
 
@@ -131,7 +123,6 @@ class VideoThread(QThread):
 
 class Camera:
     log = ""
-    clear_log = False
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)

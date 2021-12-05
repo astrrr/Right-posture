@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainRJtaqp.ui'
+## Form generated from reading UI file 'mainYbwHKS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1351,6 +1351,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.pre_log)
 
+        self.btn_clear_log = QPushButton(self.frame_2)
+        self.btn_clear_log.setObjectName(u"btn_clear_log")
+        self.btn_clear_log.setMinimumSize(QSize(150, 30))
+        self.btn_clear_log.setFont(font)
+        self.btn_clear_log.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_clear_log.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/images/icons/cil-x-circle.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_clear_log.setIcon(icon4)
+
+        self.verticalLayout_28.addWidget(self.btn_clear_log)
+
 
         self.gridLayout_3.addWidget(self.frame_2, 1, 1, 5, 1)
 
@@ -1416,9 +1428,9 @@ class Ui_MainWindow(object):
         self.btn_saveNotify.setFont(font)
         self.btn_saveNotify.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_saveNotify.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon4 = QIcon()
-        icon4.addFile(u"../../../../../../.designer/backup/images/icons/cil-save.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_saveNotify.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u"../../../../../../.designer/backup/images/icons/cil-save.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_saveNotify.setIcon(icon5)
 
         self.gridLayout_7.addWidget(self.btn_saveNotify, 0, 1, 1, 1)
 
@@ -1717,9 +1729,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon6)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -1842,9 +1854,9 @@ class Ui_MainWindow(object):
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton.setIcon(icon7)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
 
@@ -2374,6 +2386,7 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.pre_log.setText(QCoreApplication.translate("MainWindow", u"Preview detect log", None))
+        self.btn_clear_log.setText(QCoreApplication.translate("MainWindow", u"Clear log", None))
         self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"Notification Message", None))
         self.notifyword.setText("")
         self.notifyword.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
