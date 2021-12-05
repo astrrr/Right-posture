@@ -22,7 +22,7 @@ class VideoThread(QThread):
         global first_load
         if first_load:
             print("Start Load model")
-            modeling = tf.keras.models.load_model(f'{cwd}\DN121v3')
+            modeling = tf.keras.models.load_model(f'{cwd}\\bin\Model\DN121v3')
             print("Finish load model")
             model = modeling
             first_load = False

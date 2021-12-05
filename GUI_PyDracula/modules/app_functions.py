@@ -30,7 +30,7 @@ class AppFunctions(MainWindow):
         Notification(
             title=self,
             description=message,
-            icon_path="bin/iconTimer.ico",
+            icon_path="bin/Icon/iconTimer.ico",
             duration=5,
             urgency='critical'
         ).send()
@@ -40,7 +40,7 @@ class AppFunctions(MainWindow):
             default_notification_title=self,
             default_notification_application_name="Right Posture",
             default_notification_message=message,
-            default_notification_icon="bin/iconTimer.ico",
+            default_notification_icon="bin/Icon/iconTimer.ico",
             #default_notification_audio="C:\\Users\\Mero Asebi\\Downloads\\Noti\\t2.wav"
         ).send()
 
