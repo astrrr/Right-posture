@@ -1,7 +1,9 @@
 from main import *
 import cv2
 import mediapipe as mp
+from tensorflow import keras
 import tensorflow as tf
+from tensorflow.keras.models import Model
 import numpy as np
 
 mp_drawing = mp.solutions.drawing_utils
@@ -22,7 +24,7 @@ class VideoThread(QThread):
         global first_load
         if first_load:
             print("Start Load model")
-            modeling = tf.keras.models.load_model(f'{cwd}\\bin\Model\DN121v3')
+            modeling = tf.keras.models.load_model('bin/Model/MNv2_V3')
             print("Finish load model")
             model = modeling
             first_load = False
