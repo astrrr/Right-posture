@@ -14,12 +14,12 @@ target = Executable(
 
 # SETUP CX FREEZE
 setup(
-    name = "Right Posture",
-    version = "1.0",
-    description = "Right Posture",
-    author = "Yuul B. Alwright",
-    options = {"build_exe": {"packages":["keras"], 'include_files' : files}},
-    executables = [target]
+    name="Right Posture",
+    version="1.0.5",
+    description="Right Posture",
+    author="Yuul B. Alwright",
+    options={"build_exe": {"packages": ["keras"], 'include_files': files}},
+    executables=[target]
 )
 # Type python setup.py build to build.exe
 # Don't forget to delete PyQt5 on build/lib to reduce file size for 100+MB

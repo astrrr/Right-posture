@@ -72,12 +72,7 @@ Left Menu */
 	border-top-left-radius: 12px;
 	border-bottom-left-radius: 12px;
 }
-#topLogo {
-	background-color: rgb(33, 37, 43);
-	background-image: url(:/images/images/images/PyDracula.png);
-	background-position: centered;
-	background-repeat: no-repeat;
-}
+
 #titleLeftApp { font: 63 12pt &quot;Segoe UI Semibold&quot;; }
 #titleLeftDescription { font: 8pt &quot;Segoe UI&quot;; color: rgb(189, 147, 249); }
 
@@ -677,6 +672,14 @@ Button */
                <width>42</width>
                <height>42</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#topLogo {
+	background-color: rgb(33, 37, 43);
+	background-image: url(:/images/images/images/Logo_Small (5).png);
+	background-position: centered;
+	background-repeat: no-repeat;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::NoFrame</enum>
@@ -1944,7 +1947,7 @@ p, li { white-space: pre-wrap; }
                                 <string notr="true">border: 2px solid #bd93f9;
 background-position: center;
 background-repeat: no-repeat;
-background-image: url(:/images/images/images/PyDracula.png)
+background-image: url(:/images/images/images/Logo_Small (8).png);
 
 </string>
                                </property>
@@ -2079,7 +2082,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                                 <string notr="true">border: 2px solid #bd93f9;
 background-position: center;
 background-repeat: no-repeat;
-background-image: url(:/images/images/images/PyDracula.png)
+background-image: url(:/images/images/images/Logo_Small (8).png);
 
 </string>
                                </property>
@@ -2170,10 +2173,15 @@ background-image: url(:/images/images/images/PyDracula.png)
                             </property>
                             <property name="styleSheet">
                              <string notr="true">font: 12pt &quot;Segoe UI&quot;;
-font-weight: bold;</string>
+font-weight: bold;
+border-radius: 5px;
+border: 2px solid #ff79c6;</string>
                             </property>
                             <property name="text">
                              <string>Status History</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2626,6 +2634,7 @@ font-weight: bold;</string>
                            <widget class="QTextBrowser" name="Detect_LOG">
                             <property name="styleSheet">
                              <string notr="true">border: 2px solid #bd93f9;
+
 </string>
                             </property>
                             <property name="html">
@@ -3480,7 +3489,7 @@ p, li { white-space: pre-wrap; }
                      </widget>
                      <widget class="QWidget" name="Home">
                       <property name="styleSheet">
-                       <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
+                       <string notr="true">background-image: url(:/images/images/images/Logo_Big (8).png);
 background-position: center;
 background-repeat: no-repeat;</string>
                       </property>
@@ -3778,7 +3787,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>218</width>
+                                 <width>353</width>
                                  <height>218</height>
                                 </rect>
                                </property>
@@ -4910,7 +4919,7 @@ background-repeat: no-repeat;</string>
                    </font>
                   </property>
                   <property name="text">
-                   <string>By: WIP Team</string>
+                   <string>By: Right Posture Team</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
