@@ -18,7 +18,7 @@ setup(
     version = "1.0",
     description = "Right Posture",
     author = "Yuul B. Alwright",
-    options = {'build_exe' : {'include_files' : files}},
+    options = {"build_exe": {"packages":["keras"], 'include_files' : files}},
     executables = [target]
 )
 # Type python setup.py build to build.exe

@@ -1,9 +1,7 @@
 from main import *
 import cv2
 import mediapipe as mp
-from tensorflow import keras
 import tensorflow as tf
-from tensorflow.keras.models import Model
 import numpy as np
 
 mp_drawing = mp.solutions.drawing_utils
