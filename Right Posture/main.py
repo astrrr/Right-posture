@@ -168,6 +168,21 @@ class MainWindow(QMainWindow):
         widgets.Detail_text.append("Camera: 1 (VideoCapture(0))"
                                    "\nModel: MNv2_V3")
 
+    # UPDATE PROGRESS BAR
+    # ///////////////////////////////////////////////////////////////
+    # def update(self):
+    #     global counter
+    #
+    #     # SET VALUE TO PROGRESS BAR
+    #     self.progress.set_value(counter)
+    #
+    #     # CLOSE SPLASH SCREEN AND OPEN MAIN APP
+    #     if counter >= 100:
+    #         # STOP TIMER
+    #         self.timer.stop()
+    #     # INCREASE COUNTER
+    #     counter += 1
+
     #     self.Load_Table()
     # def Load_Table(self):
     #     people = [{"test": "james", "text": "idk", "cell": "eiei", "Line": "las"},
@@ -193,6 +208,11 @@ class MainWindow(QMainWindow):
 
     def Camera_1(self):
         if widgets.pre_cam_1.isChecked():
+
+            # self.timer = QTimer()
+            # self.timer.timeout.connect(self.update)
+            # self.timer.start(100)
+
             Camera.detect(self, True)
             save_data("PreCam1", 1)
             # print("Start Camera_1")
@@ -245,7 +265,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    # windows = MainWindow()
-    windows = LoginWindow()
+    windows = MainWindow()
+    # windows = LoginWindow()
 
     sys.exit(app.exec())
