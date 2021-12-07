@@ -2,13 +2,15 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Right Posture"
-#define MyAppVersion "1.0.5"
+#define MyAppVersion "1.0.4"
 #define MyAppPublisher "Right Posture TEAM"
 #define MyAppURL "https://github.com/astrrr/Right-posture"
 #define MyAppExeName "main.exe"
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".myp"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
+
+#define AppId "{3D7B9F82-D821-46F3-B4E0-CB6EA4F093C3}"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -25,9 +27,8 @@ DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Build Installer\Info.txt
-InfoBeforeFile=C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Build Installer\Info.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
+PrivilegesRequired=admin
 OutputDir=C:\Users\Mero Asebi\Downloads
 OutputBaseFilename=Right Posture
 SetupIconFile=C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\icon.ico
@@ -35,32 +36,67 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 
+[CustomMessages]
+english.NewerVersionExists=A newer version of {#MyAppName} is already installed.%nDo you want to uninstall it?%n%nInstaller version: {#MyAppVersion}%nCurrent version: 
+english.OlderVersionExists=An old version of {#MyAppName} was detected.%nDo you want to uninstall it?
+
+[Code]
+function GetUninstallString: string;
+var
+  sUnInstPath: string;
+  sUnInstallString: String;
+begin
+  Result := '';
+  sUnInstPath := ExpandConstant('Software\Microsoft\Windows\CurrentVersion\Uninstall\{{#AppId}_is1'); { Your App GUID/ID }
+  sUnInstallString := '';
+  if not RegQueryStringValue(HKLM, sUnInstPath, 'UninstallString', sUnInstallString) then
+    RegQueryStringValue(HKCU, sUnInstPath, 'UninstallString', sUnInstallString);
+  Result := sUnInstallString;
+end;
+
+function IsUpgrade: Boolean;
+begin
+  Result := (GetUninstallString() <> '');
+end;
+
+function InitializeSetup: Boolean;
+var
+  V: Integer;
+  iResultCode: Integer;
+  sUnInstallString: string;
+  Version: String;
+  Text: String;
+begin
+  Result := True; { in case when no previous version is found }
+  if RegValueExists(HKEY_LOCAL_MACHINE,'Software\Microsoft\Windows\CurrentVersion\Uninstall\{#AppId}_is1', 'UninstallString') then  { Your App GUID/ID }
+  begin
+    RegQueryStringValue(HKEY_LOCAL_MACHINE,'Software\Microsoft\Windows\CurrentVersion\Uninstall\{#AppId}_is1', 'DisplayVersion', Version);
+    if Version > '{#MyAppVersion}' then
+      begin
+        Text := ('{cm:NewerVersionExists} '+Version);
+        Result := False;
+      end
+    else
+      begin
+        Text := ('{cm:OlderVersionExists} ');
+        Result := True;
+      end;
+    V := MsgBox(ExpandConstant(Text), mbInformation, MB_YESNO); { Custom Message if App installed }
+    if V = IDYES then
+    begin
+      sUnInstallString := GetUninstallString();
+      sUnInstallString :=  RemoveQuotes(sUnInstallString);
+      Exec(ExpandConstant(sUnInstallString), '', '', SW_SHOW, ewWaitUntilTerminated, iResultCode);
+      Result := True; { if you want to proceed after uninstall }
+      { Exit; //if you want to quit after uninstall }
+    end
+    else
+      Result := False; { when older version present and not uninstalled }
+  end;
+end;
+
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
-Name: "armenian"; MessagesFile: "compiler:Languages\Armenian.isl"
-Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
-Name: "bulgarian"; MessagesFile: "compiler:Languages\Bulgarian.isl"
-Name: "catalan"; MessagesFile: "compiler:Languages\Catalan.isl"
-Name: "corsican"; MessagesFile: "compiler:Languages\Corsican.isl"
-Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
-Name: "danish"; MessagesFile: "compiler:Languages\Danish.isl"
-Name: "dutch"; MessagesFile: "compiler:Languages\Dutch.isl"
-Name: "finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
-Name: "french"; MessagesFile: "compiler:Languages\French.isl"
-Name: "german"; MessagesFile: "compiler:Languages\German.isl"
-Name: "hebrew"; MessagesFile: "compiler:Languages\Hebrew.isl"
-Name: "icelandic"; MessagesFile: "compiler:Languages\Icelandic.isl"
-Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
-Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"
-Name: "norwegian"; MessagesFile: "compiler:Languages\Norwegian.isl"
-Name: "polish"; MessagesFile: "compiler:Languages\Polish.isl"
-Name: "portuguese"; MessagesFile: "compiler:Languages\Portuguese.isl"
-Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
-Name: "slovak"; MessagesFile: "compiler:Languages\Slovak.isl"
-Name: "slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
-Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
-Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
-Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -70,9 +106,9 @@ Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python3.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python39.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\themes\*"; DestDir: "{app}\themes"; Flags: ignoreversion recursesubdirs
-Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs
-Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\bin\*"; DestDir: "{app}\bin"; Flags: ignoreversion recursesubdirs
+//Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\themes\*"; DestDir: "{app}\themes"; Flags: ignoreversion recursesubdirs
+//Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs
+//Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\bin\*"; DestDir: "{app}\bin"; Flags: ignoreversion recursesubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
@@ -87,5 +123,5 @@ Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent runascurrentuser
 
