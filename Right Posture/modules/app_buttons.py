@@ -20,8 +20,8 @@ class AppButtons(MainWindow):
         # button.Test_radioButton_1.clicked.connect(self.buttonInterface)
 
         # Preview Detect log
-        button.pre_log.setChecked(loaded_object["PreLog"])
-        button.pre_log.clicked.connect(self.Detect_Log)
+        button.show_log.setChecked(loaded_object["PreLog"])
+        button.show_log.clicked.connect(self.Detect_Log)
         self.Detect_Log()
 
         # Preview Camera 1

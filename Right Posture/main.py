@@ -166,6 +166,9 @@ class MainWindow(QMainWindow):
         PyToggle.Toggle_Switch(self)
         self.show()
 
+        widgets.Detail_text.append("Camera: 1 (VideoCapture(0))"
+                                   "\nModel: MNv2_V3")
+
     #     self.Load_Table()
     # def Load_Table(self):
     #     people = [{"test": "james", "text": "idk", "cell": "eiei", "Line": "las"},
@@ -181,7 +184,7 @@ class MainWindow(QMainWindow):
     #         table_row += 1
 
     def Detect_Log(self):
-        if widgets.pre_log.isChecked():
+        if widgets.show_log.isChecked():
             self.ui.Detect_LOG.append(Camera.log)
             save_data("PreLog", 1)
             # print("Start Logging")
@@ -243,7 +246,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    windows = MainWindow()
-    # windows = LoginWindow()
+    # windows = MainWindow()
+    windows = LoginWindow()
 
     sys.exit(app.exec())

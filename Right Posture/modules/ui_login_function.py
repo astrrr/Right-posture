@@ -12,8 +12,8 @@ class UILoginFunctions:
         self.ui.btn_Com_Register.clicked.connect(self.buttonClick)
         self.ui.btn_Reg_Back.clicked.connect(self.buttonClick)
 
-        self.ui.btn_Forget_Email.clicked.connect(self.buttonClick)
-        self.ui.btn_Forget_Back.clicked.connect(self.buttonClick)
+        # self.ui.btn_Forget_Email.clicked.connect(self.buttonClick)
+        # self.ui.btn_Forget_Back.clicked.connect(self.buttonClick)
 
         # REMOVE TITLE BAR
         # ///////////////////////////////////////////////////////////////

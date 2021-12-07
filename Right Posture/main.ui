@@ -1993,16 +1993,6 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                            </widget>
                           </item>
                           <item>
-                           <widget class="QFrame" name="frame_6">
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
                            <widget class="QFrame" name="frame_5">
                             <property name="minimumSize">
                              <size>
@@ -2012,7 +2002,7 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                             </property>
                             <property name="maximumSize">
                              <size>
-                              <width>384</width>
+                              <width>16777215</width>
                               <height>16777215</height>
                              </size>
                             </property>
@@ -2060,12 +2050,12 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                                 <string notr="true"/>
                                </property>
                                <property name="text">
-                                <string>History</string>
+                                <string>Detail</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QFrame" name="History_Frame">
+                              <widget class="QFrame" name="Detail_Frame">
                                <property name="minimumSize">
                                 <size>
                                  <width>384</width>
@@ -2074,15 +2064,13 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                                </property>
                                <property name="maximumSize">
                                 <size>
-                                 <width>384</width>
+                                 <width>16777215</width>
                                  <height>288</height>
                                 </size>
                                </property>
                                <property name="styleSheet">
                                 <string notr="true">border: 2px solid #bd93f9;
-background-position: center;
-background-repeat: no-repeat;
-background-image: url(:/images/images/images/Logo_Small (8).png);
+
 
 </string>
                                </property>
@@ -2108,11 +2096,27 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                                 <property name="bottomMargin">
                                  <number>0</number>
                                 </property>
+                                <item>
+                                 <widget class="QTextBrowser" name="Detail_text">
+                                  <property name="styleSheet">
+                                   <string notr="true">border: 2px solid #bd93f9;
+
+</string>
+                                  </property>
+                                  <property name="html">
+                                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                  </property>
+                                 </widget>
+                                </item>
                                </layout>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QCheckBox" name="pre_history">
+                              <widget class="QCheckBox" name="show_detail">
                                <property name="minimumSize">
                                 <size>
                                  <width>0</width>
@@ -2126,7 +2130,7 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                                 </size>
                                </property>
                                <property name="text">
-                                <string>Preview History</string>
+                                <string>Show Detail</string>
                                </property>
                               </widget>
                              </item>
@@ -2647,7 +2651,7 @@ p, li { white-space: pre-wrap; }
                            </widget>
                           </item>
                           <item>
-                           <widget class="QCheckBox" name="pre_log">
+                           <widget class="QCheckBox" name="show_log">
                             <property name="maximumSize">
                              <size>
                               <width>320</width>
@@ -2655,7 +2659,7 @@ p, li { white-space: pre-wrap; }
                              </size>
                             </property>
                             <property name="text">
-                             <string>Preview detect log</string>
+                             <string>Show detect log</string>
                             </property>
                            </widget>
                           </item>
