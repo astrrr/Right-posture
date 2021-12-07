@@ -1,0 +1,6 @@
+__pycache__/
+.git/
+.pyc
+build/
+.idea
+.idea/workspace.xml

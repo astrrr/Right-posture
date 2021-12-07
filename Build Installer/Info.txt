@@ -1,0 +1,2 @@
+Warning system for incorrect sitting posture with machine learning
+Make by Right Posture TEAM
