@@ -41,13 +41,13 @@ class LoginWindow(QMainWindow):
         UILoginFunctions.Function_Login_Setup(self)
         UIFunctions.LoginUiDefinitions(self)
         self.ui.title_bar_3.setText("Login V1 Right Posture")
-
+        self.ui.Login_Status.setText("Login")
+        self.ui.Reg_Status.setText("Register")
         self.show()
 
     def buttonClick(self):
         btn = self.sender()
         btnName = btn.objectName()
-        # print(btnName)
 
         if btnName == "btn_Login":
             self.check_login()
@@ -57,7 +57,6 @@ class LoginWindow(QMainWindow):
 
         if btnName == "btn_Fpassword":
             UILoginFunctions.animation_to_Forget(self)
-            # self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Forget_page)
 
         if btnName == "btn_Reg_Back":
             self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
@@ -76,19 +75,31 @@ class LoginWindow(QMainWindow):
 
         if len(username) == 0 or len(password) == 0 or len(con_Password) == 0 or len(email) == 0:
             self.ui.Reg_Status.setText("Please fill in all inputs.")
-
+            self.regis_fail()
         elif password != con_Password:
             self.ui.Reg_Status.setText("Passwords do not match.")
+            self.regis_fail()
         else:
             conn = sqlite3.connect("bin/Data/Accounts.db")
             cur = conn.cursor()
-
             user_info = [username, password, email]
-            cur.execute('INSERT INTO login_info (username, password, email) VALUES (?,?,?)', user_info)
-
-            conn.commit()
-            conn.close()
-            self.ui.Reg_Status.setText("Register Complete !")
+            try:
+                cur.execute('INSERT INTO login_info (username, password, email) VALUES (?,?,?)', user_info)
+                conn.commit()
+                conn.close()
+                self.ui.Reg_username.clear()
+                self.ui.Reg_password.clear()
+                self.ui.Reg_password_2.clear()
+                self.ui.Reg_email.clear()
+                self.ui.Reg_Status.setStyleSheet("#Reg_Status { color: #50fa7b }")
+                self.ui.Reg_username.setStyleSheet("#Reg_username:focus { border: 2px solid rgb(91, 101, 124); }")
+                self.ui.Reg_password.setStyleSheet("#Reg_password:focus { border: 2px solid rgb(91, 101, 124); }")
+                self.ui.Reg_password_2.setStyleSheet("#Reg_password_2:focus { border: 2px solid rgb(91, 101, 124); }")
+                self.ui.Reg_email.setStyleSheet("#Reg_email:focus { border: 2px solid rgb(91, 101, 124); }")
+                self.ui.Reg_Status.setText("Register Complete !")
+            except:
+                self.ui.Reg_Status.setText("This username is already registered in the database.")
+                self.regis_fail()
 
     def check_login(self):
         username = self.ui.username.text()
@@ -112,9 +123,9 @@ class LoginWindow(QMainWindow):
                 result_pass = cur.fetchone()[0]
                 if result_pass == password:
                     self.ui.Login_Status.setText(f"Welcome {username} !")
-                    self.ui.Login_Status.setStyleSheet("#Login_Status { color: #bd93f9 }")
-                    self.ui.username.setStyleSheet("#username:focus { border: 3px solid #bd93f9; }")
-                    self.ui.password.setStyleSheet("#password:focus { border: 3px solid #bd93f9; }")
+                    self.ui.Login_Status.setStyleSheet("#Login_Status { color: #50fa7b }")
+                    self.ui.username.setStyleSheet("#username:focus { border: 3px solid #50fa7b; }")
+                    self.ui.password.setStyleSheet("#password:focus { border: 3px solid #50fa7b; }")
                     QTimer.singleShot(1200, lambda: open_main())
                 else:
                     self.ui.Login_Status.setText("Invalid username or password")
@@ -123,15 +134,27 @@ class LoginWindow(QMainWindow):
                 self.ui.Login_Status.setText("Invalid username or password")
                 self.login_fail()
 
-    def login_fail(self):
-        self.ui.Login_Status.setStyleSheet("#Login_Status { color: #ff79c6 }")
-        self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff79c6; }")
-        self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff79c6; }")
+    def regis_fail(self):
+        self.ui.Reg_Status.setStyleSheet("#Reg_Status { color: #ff5555 }")
+        self.ui.Reg_username.setStyleSheet("#Reg_username:focus { border: 2px solid #ff5555; }")
+        self.ui.Reg_password.setStyleSheet("#Reg_password:focus { border: 2px solid #ff5555; }")
+        self.ui.Reg_password_2.setStyleSheet("#Reg_password_2:focus { border: 2px solid #ff5555; }")
+        self.ui.Reg_email.setStyleSheet("#Reg_email:focus { border: 2px solid #ff5555; }")
         UILoginFunctions.shake_window(self)
 
-    def check_enter(self, event):
+    def login_fail(self):
+        self.ui.Login_Status.setStyleSheet("#Login_Status { color: #ff5555 }")
+        self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff5555; }")
+        self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff5555; }")
+        UILoginFunctions.shake_window(self)
+
+    def enter_login(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             self.check_login()
+
+    def enter_regis(self, event):
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            self.check_register()
 
     # UPDATE PROGRESS BAR
     # ///////////////////////////////////////////////////////////////

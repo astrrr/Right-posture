@@ -28,7 +28,7 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Build Installer\Info.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-PrivilegesRequired=admin
+;PrivilegesRequired=lowest
 OutputDir=C:\Users\Mero Asebi\Downloads
 OutputBaseFilename=Right Posture
 SetupIconFile=C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\icon.ico
@@ -106,9 +106,9 @@ Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python3.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python39.dll"; DestDir: "{app}"; Flags: ignoreversion
-//Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\themes\*"; DestDir: "{app}\themes"; Flags: ignoreversion recursesubdirs
-//Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs
-//Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\bin\*"; DestDir: "{app}\bin"; Flags: ignoreversion recursesubdirs
+Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\themes\*"; DestDir: "{app}\themes"; Flags: ignoreversion recursesubdirs
+Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs
+Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\bin\*"; DestDir: "{app}\bin"; Flags: ignoreversion recursesubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
