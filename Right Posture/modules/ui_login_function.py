@@ -53,8 +53,13 @@ class UILoginFunctions:
 
         # KEY PRESS EVENT
         # ///////////////////////////////////////////////////////////////
-        self.ui.username.keyReleaseEvent = self.check_enter
-        self.ui.password.keyReleaseEvent = self.check_enter
+        self.ui.username.keyReleaseEvent = self.enter_login
+        self.ui.password.keyReleaseEvent = self.enter_login
+
+        self.ui.Reg_username.keyReleaseEvent = self.enter_regis
+        self.ui.Reg_password.keyReleaseEvent = self.enter_regis
+        self.ui.Reg_password_2.keyReleaseEvent = self.enter_regis
+        self.ui.Reg_email.keyReleaseEvent = self.enter_regis
 
     # START ANIMATION TO LOGIN
     # ///////////////////////////////////////////////////////////////
