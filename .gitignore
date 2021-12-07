@@ -1,7 +1,5 @@
-*.pyc
-
 Right Posture/.git/
 Right Posture/build/
 Right Posture/bin/Model/
-
-GUI_Detect/.idea/
+Right Posture/__pycache__/
+Right Posture/.idea/workspace.xml
