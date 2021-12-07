@@ -1,8 +1,7 @@
 *.pyc
-GUI_PyDracula/.idea/
-GUI_PyDracula/.git/
-GUI_PyDracula/build/
-GUI_PyDracula/bin/Model/
-GUI_Detect/.idea/
+Right Posture/.idea/
+Right Posture/.git/
+Right Posture/build/
+Right Posture/bin/Model/
 
-src/.idea/
+GUI_Detect/.idea/
