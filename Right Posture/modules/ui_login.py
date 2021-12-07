@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginVUdZIl.ui'
+## Form generated from reading UI file 'loginFSKCYB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -32,7 +32,7 @@ class Ui_Login(object):
         sizePolicy.setHeightForWidth(Login.sizePolicy().hasHeightForWidth())
         Login.setSizePolicy(sizePolicy)
         Login.setMinimumSize(QSize(900, 710))
-        Login.setMaximumSize(QSize(900, 1200))
+        Login.setMaximumSize(QSize(900, 1000))
         Login.setStyleSheet(u"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "\n"
 "SET APP STYLESHEET - FULL STYLES HERE\n"
@@ -136,7 +136,7 @@ class Ui_Login(object):
         self.bg.setFrameShadow(QFrame.Raised)
         self.frame_widgets = QFrame(self.bg)
         self.frame_widgets.setObjectName(u"frame_widgets")
-        self.frame_widgets.setGeometry(QRect(0, 60, 878, 989))
+        self.frame_widgets.setGeometry(QRect(0, 60, 878, 811))
         self.frame_widgets.setMinimumSize(QSize(280, 720))
         self.frame_widgets.setMouseTracking(False)
         self.frame_widgets.setFrameShape(QFrame.NoFrame)
@@ -320,32 +320,49 @@ class Ui_Login(object):
 
         self.verticalLayout_2.addItem(self.verticalSpacer)
 
-        self.frame_2 = QFrame(self.frame_widgets)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setStyleSheet(u"/*border: 1px solid #73AD21;")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.frame_2)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.preloader = QFrame(self.frame_2)
-        self.preloader.setObjectName(u"preloader")
-        self.preloader.setMinimumSize(QSize(240, 240))
-        self.preloader.setMaximumSize(QSize(260, 260))
-        self.preloader.setFrameShape(QFrame.NoFrame)
-        self.preloader.setFrameShadow(QFrame.Raised)
+        self.frame = QFrame(self.frame_widgets)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.gridLayout_4 = QGridLayout(self.frame)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.Forget_Email = QLineEdit(self.frame)
+        self.Forget_Email.setObjectName(u"Forget_Email")
+        self.Forget_Email.setMinimumSize(QSize(0, 30))
+        self.Forget_Email.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
-        self.verticalLayout_3.addWidget(self.preloader, 0, Qt.AlignHCenter)
+        self.gridLayout_4.addWidget(self.Forget_Email, 1, 0, 1, 1)
 
-        self.Login_Status_2 = QLabel(self.frame_2)
-        self.Login_Status_2.setObjectName(u"Login_Status_2")
-        sizePolicy1.setHeightForWidth(self.Login_Status_2.sizePolicy().hasHeightForWidth())
-        self.Login_Status_2.setSizePolicy(sizePolicy1)
-        self.Login_Status_2.setMaximumSize(QSize(16777215, 20))
+        self.btn_Forget_Email = QPushButton(self.frame)
+        self.btn_Forget_Email.setObjectName(u"btn_Forget_Email")
+        self.btn_Forget_Email.setMinimumSize(QSize(150, 30))
+        self.btn_Forget_Email.setFont(font)
+        self.btn_Forget_Email.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Forget_Email.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Forget_Email.setIcon(icon)
 
-        self.verticalLayout_3.addWidget(self.Login_Status_2, 0, Qt.AlignHCenter)
+        self.gridLayout_4.addWidget(self.btn_Forget_Email, 2, 0, 1, 1)
+
+        self.user_description_15 = QLabel(self.frame)
+        self.user_description_15.setObjectName(u"user_description_15")
+        sizePolicy1.setHeightForWidth(self.user_description_15.sizePolicy().hasHeightForWidth())
+        self.user_description_15.setSizePolicy(sizePolicy1)
+        self.user_description_15.setMaximumSize(QSize(16777215, 20))
+
+        self.gridLayout_4.addWidget(self.user_description_15, 0, 0, 1, 1)
+
+        self.btn_Forget_Back = QPushButton(self.frame)
+        self.btn_Forget_Back.setObjectName(u"btn_Forget_Back")
+        self.btn_Forget_Back.setMinimumSize(QSize(150, 30))
+        self.btn_Forget_Back.setFont(font)
+        self.btn_Forget_Back.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Forget_Back.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Forget_Back.setIcon(icon)
+
+        self.gridLayout_4.addWidget(self.btn_Forget_Back, 3, 0, 1, 1)
 
 
-        self.verticalLayout_2.addWidget(self.frame_2)
+        self.verticalLayout_2.addWidget(self.frame)
 
         self.top_bar = QFrame(self.bg)
         self.top_bar.setObjectName(u"top_bar")
@@ -507,7 +524,10 @@ class Ui_Login(object):
         QWidget.setTabOrder(self.password, self.btn_Login)
         QWidget.setTabOrder(self.btn_Login, self.btn_Register)
         QWidget.setTabOrder(self.btn_Register, self.btn_Fpassword)
-        QWidget.setTabOrder(self.btn_Fpassword, self.Reg_username)
+        QWidget.setTabOrder(self.btn_Fpassword, self.Forget_Email)
+        QWidget.setTabOrder(self.Forget_Email, self.btn_Forget_Email)
+        QWidget.setTabOrder(self.btn_Forget_Email, self.btn_Forget_Back)
+        QWidget.setTabOrder(self.btn_Forget_Back, self.Reg_username)
         QWidget.setTabOrder(self.Reg_username, self.Reg_password)
         QWidget.setTabOrder(self.Reg_password, self.Reg_password_2)
         QWidget.setTabOrder(self.Reg_password_2, self.Reg_email)
@@ -546,7 +566,11 @@ class Ui_Login(object):
         self.Reg_username.setText("")
         self.Reg_username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
         self.Reg_Status.setText(QCoreApplication.translate("Login", u"Status", None))
-        self.Login_Status_2.setText(QCoreApplication.translate("Login", u"Loading Mainwindows", None))
+        self.Forget_Email.setText("")
+        self.Forget_Email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
+        self.btn_Forget_Email.setText(QCoreApplication.translate("Login", u"Send E-mail", None))
+        self.user_description_15.setText(QCoreApplication.translate("Login", u"E-mail", None))
+        self.btn_Forget_Back.setText(QCoreApplication.translate("Login", u"Back", None))
         self.title_bar_3.setText(QCoreApplication.translate("Login", u"Login V1 PyDracula", None))
 #if QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setToolTip(QCoreApplication.translate("Login", u"Maximize", None))

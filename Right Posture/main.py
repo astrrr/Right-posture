@@ -45,7 +45,6 @@ class LoginWindow(QMainWindow):
         self.show()
 
     def buttonClick(self):
-        button = self.ui
         btn = self.sender()
         btnName = btn.objectName()
         # print(btnName)
