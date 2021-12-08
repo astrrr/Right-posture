@@ -96,7 +96,7 @@ class CircularProgress(QWidget):
         if self.enable_text:
             pen.setColor(QColor(self.text_color))
             paint.setPen(pen)
-            paint.drawText(rect, Qt.AlignCenter, f"{self.value}{self.suffix}")          
+            paint.drawText(rect, Qt.AlignCenter, f"Loading Model\n{self.value}{self.suffix}")
 
         # END
         paint.end()

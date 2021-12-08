@@ -19,6 +19,11 @@ class AppButtons(MainWindow):
 
         # button.Test_radioButton_1.clicked.connect(self.buttonInterface)
 
+        # Preview Detail
+        button.show_detail.setChecked(loaded_object["PreDetail"])
+        button.show_detail.clicked.connect(self.Show_Detail)
+        self.Show_Detail()
+
         # Preview Detect log
         button.show_log.setChecked(loaded_object["PreLog"])
         button.show_log.clicked.connect(self.Detect_Log)
@@ -73,4 +78,4 @@ class AppButtons(MainWindow):
             AppFunctions.notifyMe("Debug", "Notification")
 
         # PRINT BTN NAME
-        print(f'Button "{btnName}" pressed!')
+        # print(f'Button "{btnName}" pressed!')
