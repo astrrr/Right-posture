@@ -83,19 +83,19 @@ class UIFunctions(MainWindow):
 
         # IMPORT CIRCULAR PROGRESS
         # ///////////////////////////////////////////////////////////////
-        # self.progress = CircularProgress()
-        # self.progress.width = 240
-        # self.progress.height = 240
-        # self.progress.value = 0
-        # self.progress.setFixedSize(self.progress.width, self.progress.height)
-        # self.progress.font_size = 20
-        # self.progress.add_shadow(True)
-        # self.progress.progress_width = 4
-        # self.progress.progress_color = QColor("#ff79c6")
-        # self.progress.text_color = QColor("#E6E6E6")
-        # self.progress.bg_color = QColor("#222222")
-        # self.progress.setParent(self.ui.Camera_Frame_1)
-        # self.progress.show()
+        self.progress = CircularProgress()
+        self.progress.width = 240
+        self.progress.height = 240
+        self.progress.value = 0
+        self.progress.setFixedSize(self.progress.width, self.progress.height)
+        self.progress.font_size = 20
+        self.progress.add_shadow(True)
+        self.progress.progress_width = 4
+        self.progress.progress_color = QColor("#ff79c6")
+        self.progress.text_color = QColor("#E6E6E6")
+        self.progress.bg_color = QColor("#222222")
+        self.progress.setParent(self.ui.Camera_Frame_1)
+        self.progress.show()
         # ///////////////////////////////////////////////////////////////
 
     # MAXIMIZE/RESTORE

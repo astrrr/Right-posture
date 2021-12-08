@@ -10,7 +10,41 @@ mp_pose = mp.solutions.pose
 
 cwd = os.getcwd()
 model = None
-first_load = True
+
+import sys
+import time
+import traceback
+
+class WorkerSignals(QObject):
+    finished = Signal()
+    error = Signal(tuple)
+    result = Signal(object)
+    progress = Signal(int)
+
+class Worker(QRunnable):
+    def __init__(self, fn, *args, **kwargs):
+        super(Worker, self).__init__()
+        # Store constructor arguments (re-used for processing)
+        self.fn = fn
+        self.args = args
+        self.kwargs = kwargs
+        self.signals = WorkerSignals()
+        # Add the callback to our kwargs
+        self.kwargs['progress_callback'] = self.signals.progress
+
+    @Slot()
+    def run(self):
+        # Retrieve args/kwargs here; and fire processing using them
+        try:
+            result = self.fn(*self.args, **self.kwargs)
+        except:
+            traceback.print_exc()
+            exctype, value = sys.exc_info()[:2]
+            self.signals.error.emit((exctype, value, traceback.format_exc()))
+        else:
+            self.signals.result.emit(result)  # Return the result of the processing
+        finally:
+            self.signals.finished.emit()  # Done
 
 class VideoThread(QThread):
     # シグナル設定
@@ -18,76 +52,109 @@ class VideoThread(QThread):
     def __init__(self):
         super().__init__()
         self._run_flag = True
+        self.threadpool = QThreadPool()
+        print("Multithreading with maximum %d threads" % self.threadpool.maxThreadCount())
+
+        self.timer = QTimer()
+        self.timer.setInterval(1000)
+        self.timer.timeout.connect(self.recurring_timer)
+        self.timer.start()
+        # QThreadのrunメソッドを定義
+
+    def progress_fn(self, n):
+        print("%d%% done" % n)
+
+    def execute_this_fn(self, progress_callback):
+        for n in range(0, 5):
+            time.sleep(1)
+            progress_callback.emit(n*100/4)
+
+        return "Done."
+
+    def print_output(self, s):
+        print(s)
+
+    def thread_complete(self):
+        print("THREAD COMPLETE!")
+
+    def recurring_timer(self):
+        print(Camera.start_cam)
+
+    def run(self):
         global model
-        global first_load
-        if first_load:
+        if Camera.first_load:
+            worker = Worker(self.execute_this_fn)  # Any other args, kwargs are passed to the run function
+            worker.signals.result.connect(self.print_output)
+            worker.signals.finished.connect(self.thread_complete)
+            worker.signals.progress.connect(self.progress_fn)
+
+            # Execute
+            self.threadpool.start(worker)
+
             print("Start Load model")
             modeling = tf.keras.models.load_model('bin/Model/MNv2_V3')
             print("Finish load model")
             model = modeling
-            first_load = False
-    # QThreadのrunメソッドを定義
-    def run(self):
-        # load model
-        count_log = 0
-        cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-        pred = 3
-        img_counter_cor = 0
-        with mp_pose.Pose(
-                min_detection_confidence=0.5,
-                min_tracking_confidence=0.5) as pose:
-            while self._run_flag:
-                success, raw = cap.read()
-                resize = cv2.resize(raw, (384, 288))
-                image = cv2.flip(resize, 1)
 
-                image.flags.writeable = False
-                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                results = pose.process(image)
+        if Camera.start_cam:
+            cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+            pred = 3
+            img_counter_cor = 0
+            with mp_pose.Pose(
+                    min_detection_confidence=0.5,
+                    min_tracking_confidence=0.5) as pose:
+                while self._run_flag:
+                    success, raw = cap.read()
+                    resize = cv2.resize(raw, (384, 288))
+                    image = cv2.flip(resize, 1)
 
-                # Draw the pose annotation on the image.
-                image.flags.writeable = True
-                image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-                # image = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
-                mp_drawing.draw_landmarks(
-                    image,
-                    results.pose_landmarks,
-                    mp_pose.POSE_CONNECTIONS,
-                    landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
+                    image.flags.writeable = False
+                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                    results = pose.process(image)
 
-                if pred == 0:
-                    cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
+                    # Draw the pose annotation on the image.
+                    image.flags.writeable = True
+                    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+                    # image = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
+                    mp_drawing.draw_landmarks(
+                        image,
+                        results.pose_landmarks,
+                        mp_pose.POSE_CONNECTIONS,
+                        landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
 
-                if pred == 1:
-                    cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
+                    if pred == 0:
+                        cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
 
-                # capture pic ture for data set
-                img_name = "temp_{}.png".format(img_counter_cor)
-                cv2.imwrite(img_name, image)
-                # ///////////////////////////////////////////////////////////////////////////////
-                Camera.log = ("{} written!".format(img_name))
-                print("{} written!".format(img_name))
-                # ///////////////////////////////////////////////////////////////////////////////
-                img_counter_cor += 1
+                    if pred == 1:
+                        cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
 
-                self.predict
-                for i in os.listdir(cwd):
-                    if '.png' in i:
-                        # ///////////////////////////////////////////////////////////////////////////////
-                        Camera.log = (Camera.log + '\n=======================')
-                        print('=======================')
-                        # ///////////////////////////////////////////////////////////////////////////////
-                        pred = self.predict(i)
-                        #     print(pred)
-                        os.remove(i)
+                    # capture pic ture for data set
+                    img_name = "temp_{}.png".format(img_counter_cor)
+                    cv2.imwrite(img_name, image)
+                    # ///////////////////////////////////////////////////////////////////////////////
+                    Camera.log = ("{} written!".format(img_name))
+                    print("{} written!".format(img_name))
+                    # ///////////////////////////////////////////////////////////////////////////////
+                    img_counter_cor += 1
 
-                # 新たなフレームを取得できたら
-                # シグナル発信(cv_imgオブジェクトを発信)
-                if success:
-                    self.change_pixmap_signal.emit(image)
-            cap.release()
-            cv2.destroyAllWindows()
-        # videoCaptureのリリース処理
+                    self.predict
+                    for i in os.listdir(cwd):
+                        if '.png' in i:
+                            # ///////////////////////////////////////////////////////////////////////////////
+                            Camera.log = (Camera.log + '\n=======================')
+                            print('=======================')
+                            # ///////////////////////////////////////////////////////////////////////////////
+                            pred = self.predict(i)
+                            #     print(pred)
+                            os.remove(i)
+
+                    # 新たなフレームを取得できたら
+                    # シグナル発信(cv_imgオブジェクトを発信)
+                    if success:
+                        self.change_pixmap_signal.emit(image)
+                cap.release()
+                cv2.destroyAllWindows()
+            # videoCaptureのリリース処理
 
     def predict(self, img):
         img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
@@ -123,6 +190,8 @@ class VideoThread(QThread):
 
 class Camera:
     log = ""
+    first_load = True
+    start_cam = False
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)

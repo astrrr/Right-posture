@@ -27,6 +27,7 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
 
+from modules.app_detect import VideoThread
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -193,18 +194,22 @@ class MainWindow(QMainWindow):
 
     # UPDATE PROGRESS BAR
     # ///////////////////////////////////////////////////////////////
-    # def update(self):
-    #     global counter
-    #
-    #     # SET VALUE TO PROGRESS BAR
-    #     self.progress.set_value(counter)
-    #
-    #     # CLOSE SPLASH SCREEN AND OPEN MAIN APP
-    #     if counter >= 100:
-    #         # STOP TIMER
-    #         self.timer.stop()
-    #     # INCREASE COUNTER
-    #     counter += 1
+    def update(self):
+        global counter
+
+        # SET VALUE TO PROGRESS BAR
+        self.progress.set_value(counter)
+
+        # CLOSE SPLASH SCREEN AND OPEN MAIN APP
+        if counter >= 100:
+            # STOP TIMER
+            self.timer.stop()
+            Camera.first_load = False
+            Camera.start_cam = True
+            Camera.detect(self, False)
+            Camera.detect(self, True)
+        # INCREASE COUNTER
+        counter += 1
 
     #     self.Load_Table()
     # def Load_Table(self):
@@ -232,9 +237,9 @@ class MainWindow(QMainWindow):
     def Camera_1(self):
         if widgets.pre_cam_1.isChecked():
 
-            # self.timer = QTimer()
-            # self.timer.timeout.connect(self.update)
-            # self.timer.start(100)
+            self.timer = QTimer()
+            self.timer.timeout.connect(self.update)
+            self.timer.start(100)
 
             Camera.detect(self, True)
             save_data("PreCam1", 1)
@@ -288,7 +293,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    # windows = MainWindow()
-    windows = LoginWindow()
+    windows = MainWindow()
+    # windows = LoginWindow()
 
     sys.exit(app.exec())
