@@ -1,5 +1,6 @@
 from main import *
 import cv2
+import traceback
 import mediapipe as mp
 import tensorflow as tf
 import numpy as np
@@ -11,41 +12,6 @@ mp_pose = mp.solutions.pose
 cwd = os.getcwd()
 model = None
 
-import sys
-import time
-import traceback
-
-class WorkerSignals(QObject):
-    finished = Signal()
-    error = Signal(tuple)
-    result = Signal(object)
-    progress = Signal(int)
-
-class Worker(QRunnable):
-    def __init__(self, fn, *args, **kwargs):
-        super(Worker, self).__init__()
-        # Store constructor arguments (re-used for processing)
-        self.fn = fn
-        self.args = args
-        self.kwargs = kwargs
-        self.signals = WorkerSignals()
-        # Add the callback to our kwargs
-        self.kwargs['progress_callback'] = self.signals.progress
-
-    @Slot()
-    def run(self):
-        # Retrieve args/kwargs here; and fire processing using them
-        try:
-            result = self.fn(*self.args, **self.kwargs)
-        except:
-            traceback.print_exc()
-            exctype, value = sys.exc_info()[:2]
-            self.signals.error.emit((exctype, value, traceback.format_exc()))
-        else:
-            self.signals.result.emit(result)  # Return the result of the processing
-        finally:
-            self.signals.finished.emit()  # Done
-
 class VideoThread(QThread):
     # シグナル設定
     change_pixmap_signal = Signal(np.ndarray)
@@ -53,50 +19,17 @@ class VideoThread(QThread):
         super().__init__()
         self._run_flag = True
         self.threadpool = QThreadPool()
-        print("Multithreading with maximum %d threads" % self.threadpool.maxThreadCount())
 
-        self.timer = QTimer()
-        self.timer.setInterval(1000)
-        self.timer.timeout.connect(self.recurring_timer)
-        self.timer.start()
-        # QThreadのrunメソッドを定義
-
-    def progress_fn(self, n):
-        print("%d%% done" % n)
-
-    def execute_this_fn(self, progress_callback):
-        for n in range(0, 5):
-            time.sleep(1)
-            progress_callback.emit(n*100/4)
-
-        return "Done."
-
-    def print_output(self, s):
-        print(s)
-
-    def thread_complete(self):
-        print("THREAD COMPLETE!")
-
-    def recurring_timer(self):
-        print(Camera.start_cam)
-
+    # QThreadのrunメソッドを定義
     def run(self):
-        global model
-        if Camera.first_load:
-            worker = Worker(self.execute_this_fn)  # Any other args, kwargs are passed to the run function
-            worker.signals.result.connect(self.print_output)
-            worker.signals.finished.connect(self.thread_complete)
-            worker.signals.progress.connect(self.progress_fn)
-
-            # Execute
-            self.threadpool.start(worker)
-
+        if Camera.First_load_model:
             print("Start Load model")
-            modeling = tf.keras.models.load_model('bin/Model/MNv2_V3')
-            print("Finish load model")
-            model = modeling
-
-        if Camera.start_cam:
+            worker = Worker(self.execute_this_fn)  # Any other args, kwargs are passed to the run function
+            # worker.signals.result.connect(self.print_output)
+            # worker.signals.progress.connect(self.progress_fn)
+            worker.signals.finished.connect(self.thread_complete)
+            self.threadpool.start(worker)
+        else:
             cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
             pred = 3
             img_counter_cor = 0
@@ -188,10 +121,23 @@ class VideoThread(QThread):
         self._run_flag = False
         self.wait()
 
+    def progress_fn(self, n):
+        print("%d%% done" % n)
+
+    def execute_this_fn(self):
+        global model
+        modeling = tf.keras.models.load_model('bin/Model/MNv2_V3')
+        model = modeling
+
+    def print_output(self, s):
+        print(s)
+
+    def thread_complete(self):
+        print("Finish load model")
+
 class Camera:
     log = ""
-    first_load = True
-    start_cam = False
+    First_load_model = True
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)
@@ -216,3 +162,34 @@ class Camera:
                 self.thread.stop()
             except:
                 pass
+
+class WorkerSignals(QObject):
+    finished = Signal()
+    error = Signal(tuple)
+    result = Signal(object)
+    progress = Signal(int)
+
+class Worker(QRunnable):
+    def __init__(self, fn, *args, **kwargs):
+        super(Worker, self).__init__()
+        # Store constructor arguments (re-used for processing)
+        self.fn = fn
+        self.args = args
+        self.kwargs = kwargs
+        self.signals = WorkerSignals()
+        # Add the callback to our kwargs
+        self.kwargs['progress_callback'] = self.signals.progress
+
+    @Slot()
+    def run(self):
+        # Retrieve args/kwargs here; and fire processing using them
+        try:
+            result = self.fn(*self.args)
+        except:
+            traceback.print_exc()
+            exctype, value = sys.exc_info()[:2]
+            self.signals.error.emit((exctype, value, traceback.format_exc()))
+        else:
+            self.signals.result.emit(result)  # Return the result of the processing
+        finally:
+            self.signals.finished.emit()  # Done

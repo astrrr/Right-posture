@@ -73,4 +73,4 @@ class AppButtons(MainWindow):
             AppFunctions.notifyMe("Debug", "Notification")
 
         # PRINT BTN NAME
-        print(f'Button "{btnName}" pressed!')
+        # print(f'Button "{btnName}" pressed!')

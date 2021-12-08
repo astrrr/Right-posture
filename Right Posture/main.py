@@ -204,7 +204,7 @@ class MainWindow(QMainWindow):
         if counter >= 100:
             # STOP TIMER
             self.timer.stop()
-            Camera.first_load = False
+            Camera.First_load_model = False
             Camera.start_cam = True
             Camera.detect(self, False)
             Camera.detect(self, True)
@@ -284,10 +284,10 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPosition().toPoint()
 
         # PRINT MOUSE EVENTS
-        if event.buttons() == Qt.LeftButton:
-            print('Mouse click: LEFT CLICK')
-        if event.buttons() == Qt.RightButton:
-            print('Mouse click: RIGHT CLICK')
+        # if event.buttons() == Qt.LeftButton:
+        #     print('Mouse click: LEFT CLICK')
+        # if event.buttons() == Qt.RightButton:
+        #     print('Mouse click: RIGHT CLICK')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
