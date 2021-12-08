@@ -34,6 +34,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 widgets = None
 counter = 0
 CircularProgress_timer = 100
+model_status = "Not loaded"
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -189,34 +190,6 @@ class MainWindow(QMainWindow):
         AppButtons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
         self.show()
-        widgets.Detail_text.setText("Camera: 1 (VideoCapture(0))"
-                                   "\nModel: MNv2_V3 (Not loaded)")
-
-    # UPDATE PROGRESS BAR
-    # ///////////////////////////////////////////////////////////////
-    def update(self):
-        global counter
-
-        # SET VALUE TO PROGRESS BAR
-        self.progress.set_value(counter)
-
-        # CLOSE SPLASH SCREEN AND OPEN MAIN APP
-        if counter >= 100:
-            # STOP TIMER
-            self.timer.stop()
-            Camera.First_load_model = False
-            Camera.start_cam = True
-            Camera.detect(self, False)
-            Camera.detect(self, True)
-            self.progress.setParent(None)
-            self.progress.close()
-            widgets.Detail_text.setText("Camera: 1 (VideoCapture(0))"
-                                        "\nModel: MNv2_V3 (Loaded)")
-            self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
-            self.ui.pre_cam_1.setEnabled(True)
-
-        # INCREASE COUNTER
-        counter += 1
 
     #     self.Load_Table()
     # def Load_Table(self):
@@ -232,8 +205,19 @@ class MainWindow(QMainWindow):
     #         self.ui.Status_Widgets.setItem(table_row, 0, QtWidgets.QTableWidgetItem(row["test"]))
     #         table_row += 1
 
+    def Show_Detail(self):
+        if self.ui.show_detail.isChecked():
+            self.ui.Detail_text.setText(f"Camera: 1 (VideoCapture(0))\n"
+                                        f"Model: MNv2_V3 ({model_status})")
+            save_data("PreDetail", 1)
+            # print("Start Detail")
+        else:
+            self.ui.Detail_text.clear()
+            save_data("PreDetail", 0)
+            # print("Stop Detail")
+
     def Detect_Log(self):
-        if widgets.show_log.isChecked():
+        if self.ui.show_log.isChecked():
             self.ui.Detect_LOG.append(Camera.log)
             save_data("PreLog", 1)
             # print("Start Logging")
@@ -241,13 +225,33 @@ class MainWindow(QMainWindow):
             save_data("PreLog", 0)
             # print("Stop Logging")
 
+    # UPDATE PROGRESS BAR
+    def update(self):
+        global counter
+        global model_status
+        self.progress.set_value(counter)
+        if counter >= 100:
+            # STOP TIMER
+            self.timer.stop()
+            Camera.First_load_model = False
+            Camera.start_cam = True
+            Camera.detect(self, False)
+            Camera.detect(self, True)
+            self.progress.setParent(None)
+            self.progress.close()
+            model_status = "Loaded"
+            self.Show_Detail()
+            self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
+            self.ui.pre_cam_1.setEnabled(True)
+        counter += 1
+
     def Camera_1(self):
         if Camera.First_load_model:
-            widgets.Camera1_label.setText("The model hasn't loaded yet.")
+            self.ui.Camera1_label.setText("The model hasn't loaded yet.")
         else:
-            widgets.Camera1_label.setText("The model is loaded.")
+            self.ui.Camera1_label.setText("The model is loaded.")
 
-        if widgets.pre_cam_1.isChecked():
+        if self.ui.pre_cam_1.isChecked():
             if Camera.First_load_model:
                 self.ui.pre_cam_1.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
@@ -311,7 +315,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    # windows = MainWindow()
-    windows = LoginWindow()
+    windows = MainWindow()
+    # windows = LoginWindow()
 
     sys.exit(app.exec())
