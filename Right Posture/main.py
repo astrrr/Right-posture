@@ -33,7 +33,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL WIDGETS
 widgets = None
 counter = 0
-CircularProgress_timer = 100
+CircularProgress_timer = 300
 model_status = "Not loaded"
 
 class LoginWindow(QMainWindow):
@@ -315,7 +315,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    windows = MainWindow()
-    # windows = LoginWindow()
+    # windows = MainWindow()
+    windows = LoginWindow()
 
     sys.exit(app.exec())

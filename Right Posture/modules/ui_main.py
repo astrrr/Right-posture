@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainkaCiyz.ui'
+## Form generated from reading UI file 'mainyJoCay.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1156,13 +1156,13 @@ class Ui_MainWindow(object):
         self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Detail_Frame)
         self.Camera_Frame_1_Layout_3.setSpacing(0)
         self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
-        self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
-        self.Detail_text = QTextBrowser(self.Detail_Frame)
+        self.Camera_Frame_1_Layout_3.setContentsMargins(4, 0, 0, 0)
+        self.Detail_text = QLabel(self.Detail_Frame)
         self.Detail_text.setObjectName(u"Detail_text")
-        self.Detail_text.setMaximumSize(QSize(16777215, 16777215))
-        self.Detail_text.setStyleSheet(u"")
+        self.Detail_text.setMinimumSize(QSize(0, 0))
+        self.Detail_text.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
-        self.Camera_Frame_1_Layout_3.addWidget(self.Detail_text)
+        self.Camera_Frame_1_Layout_3.addWidget(self.Detail_text, 0, Qt.AlignTop)
 
 
         self.verticalLayout_23.addWidget(self.Detail_Frame)
@@ -2339,11 +2339,7 @@ class Ui_MainWindow(object):
         self.Camera1_label.setText("")
         self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
         self.labelBoxBlenderInstalation_10.setText(QCoreApplication.translate("MainWindow", u"Detail", None))
-        self.Detail_text.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.Detail_text.setText("")
         self.show_detail.setText(QCoreApplication.translate("MainWindow", u"Show Detail", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Status History", None))
         ___qtablewidgetitem = self.Status_Widgets.horizontalHeaderItem(0)
