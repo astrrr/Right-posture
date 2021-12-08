@@ -95,8 +95,8 @@ class UIFunctions(MainWindow):
         self.progress.text_color = QColor("#E6E6E6")
         self.progress.bg_color = QColor("#222222")
         self.progress.move(75, 25)
-        self.progress.setParent(self.ui.Camera_Frame_1)
-        self.progress.show()
+        # self.progress.setParent(self.ui.Camera_Frame_1)
+        # self.progress.show()
         # ///////////////////////////////////////////////////////////////
 
     # MAXIMIZE/RESTORE

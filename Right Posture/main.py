@@ -189,8 +189,8 @@ class MainWindow(QMainWindow):
         AppButtons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
         self.show()
-        widgets.Detail_text.append("Camera: 1 (VideoCapture(0))"
-                                   "\nModel: MNv2_V3")
+        widgets.Detail_text.setText("Camera: 1 (VideoCapture(0))"
+                                   "\nModel: MNv2_V3 (Not loaded)")
 
     # UPDATE PROGRESS BAR
     # ///////////////////////////////////////////////////////////////
@@ -208,7 +208,13 @@ class MainWindow(QMainWindow):
             Camera.start_cam = True
             Camera.detect(self, False)
             Camera.detect(self, True)
+            self.progress.setParent(None)
             self.progress.close()
+            widgets.Detail_text.setText("Camera: 1 (VideoCapture(0))"
+                                        "\nModel: MNv2_V3 (Loaded)")
+            self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
+            self.ui.pre_cam_1.setEnabled(True)
+
         # INCREASE COUNTER
         counter += 1
 
@@ -236,16 +242,27 @@ class MainWindow(QMainWindow):
             # print("Stop Logging")
 
     def Camera_1(self):
+        if Camera.First_load_model:
+            widgets.Camera1_label.setText("The model hasn't loaded yet.")
+        else:
+            widgets.Camera1_label.setText("The model is loaded.")
+
         if widgets.pre_cam_1.isChecked():
             if Camera.First_load_model:
+                self.ui.pre_cam_1.setEnabled(False)
+                self.ui.Camera1_label.setText(" ")
                 self.timer = QTimer()
                 self.timer.timeout.connect(self.update)
                 self.timer.start(CircularProgress_timer)
-
+                self.progress.setParent(self.ui.Camera_Frame_1)
+                self.progress.show()
+            self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
             Camera.detect(self, True)
             save_data("PreCam1", 1)
             # print("Start Camera_1")
         else:
+            self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
+            self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             Camera.detect(self, False)
             save_data("PreCam1", 0)
             # print("Stop Camera_1")
