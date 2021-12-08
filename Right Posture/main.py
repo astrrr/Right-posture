@@ -33,6 +33,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL WIDGETS
 widgets = None
 counter = 0
+CircularProgress_timer = 100
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -236,10 +237,10 @@ class MainWindow(QMainWindow):
 
     def Camera_1(self):
         if widgets.pre_cam_1.isChecked():
-
-            self.timer = QTimer()
-            self.timer.timeout.connect(self.update)
-            self.timer.start(100)
+            if Camera.First_load_model:
+                self.timer = QTimer()
+                self.timer.timeout.connect(self.update)
+                self.timer.start(CircularProgress_timer)
 
             Camera.detect(self, True)
             save_data("PreCam1", 1)
