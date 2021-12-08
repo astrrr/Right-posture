@@ -1420,7 +1420,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Right Posture&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by ₳ʂєъί.&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;MIT License&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bd93f9;&quot;&gt;Created by: &lt;/span&gt;&lt;span style=&quot; font-family:'JetBrains Mono','monospace'; font-size:9.8pt; color:#bd93f9;&quot;&gt;Yuul B. Alwright&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bd93f9;&quot;&gt;Created by: &lt;/span&gt;&lt;span style=&quot; font-family:'JetBrains Mono,monospace'; font-size:9.8pt; color:#bd93f9;&quot;&gt;Yuul B. Alwright&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -1684,7 +1684,6 @@ p, li { white-space: pre-wrap; }
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
-                    <stylestrategy>PreferDefault</stylestrategy>
                    </font>
                   </property>
                   <property name="cursor">
@@ -1929,7 +1928,7 @@ p, li { white-space: pre-wrap; }
                                </property>
                               </widget>
                              </item>
-                             <item>
+                             <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
                               <widget class="QFrame" name="Camera_Frame_1">
                                <property name="minimumSize">
                                 <size>
@@ -1944,10 +1943,12 @@ p, li { white-space: pre-wrap; }
                                 </size>
                                </property>
                                <property name="styleSheet">
-                                <string notr="true">border: 2px solid #bd93f9;
-background-position: center;
-background-repeat: no-repeat;
-background-image: url(:/images/images/images/Logo_Small (8).png);
+                                <string notr="true">#Camera_Frame_1 {
+	border: 2px solid #bd93f9;
+	/*background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(:/images/images/images/Logo_Small (8).png);*/
+}
 
 </string>
                                </property>
@@ -1996,7 +1997,7 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                            <widget class="QFrame" name="frame_5">
                             <property name="minimumSize">
                              <size>
-                              <width>385</width>
+                              <width>0</width>
                               <height>0</height>
                              </size>
                             </property>
@@ -2058,8 +2059,8 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                               <widget class="QFrame" name="Detail_Frame">
                                <property name="minimumSize">
                                 <size>
-                                 <width>384</width>
-                                 <height>288</height>
+                                 <width>0</width>
+                                 <height>0</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -2069,7 +2070,9 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                                 </size>
                                </property>
                                <property name="styleSheet">
-                                <string notr="true">border: 2px solid #bd93f9;
+                                <string notr="true">#Detail_Frame{
+	border: 2px solid #bd93f9;
+}
 
 
 </string>
@@ -2098,9 +2101,14 @@ background-image: url(:/images/images/images/Logo_Small (8).png);
                                 </property>
                                 <item>
                                  <widget class="QTextBrowser" name="Detail_text">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
                                   <property name="styleSheet">
-                                   <string notr="true">border: 2px solid #bd93f9;
-
+                                   <string notr="true">
 </string>
                                   </property>
                                   <property name="html">
@@ -2171,8 +2179,6 @@ p, li { white-space: pre-wrap; }
                               <pointsize>12</pointsize>
                               <italic>false</italic>
                               <bold>true</bold>
-                              <underline>false</underline>
-                              <strikeout>false</strikeout>
                              </font>
                             </property>
                             <property name="styleSheet">
@@ -3791,7 +3797,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>353</width>
+                                 <width>218</width>
                                  <height>218</height>
                                 </rect>
                                </property>

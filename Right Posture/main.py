@@ -189,7 +189,6 @@ class MainWindow(QMainWindow):
         AppButtons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
         self.show()
-
         widgets.Detail_text.append("Camera: 1 (VideoCapture(0))"
                                    "\nModel: MNv2_V3")
 
@@ -209,6 +208,7 @@ class MainWindow(QMainWindow):
             Camera.start_cam = True
             Camera.detect(self, False)
             Camera.detect(self, True)
+            self.progress.close()
         # INCREASE COUNTER
         counter += 1
 

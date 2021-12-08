@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainaKjCLu.ui'
+## Form generated from reading UI file 'mainSUYUiJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -990,12 +990,7 @@ class Ui_MainWindow(object):
         self.maximizeRestoreAppBtn.setObjectName(u"maximizeRestoreAppBtn")
         self.maximizeRestoreAppBtn.setMinimumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
-        font3 = QFont()
-        font3.setPointSize(10)
-        font3.setBold(False)
-        font3.setItalic(False)
-        font3.setStyleStrategy(QFont.PreferDefault)
-        self.maximizeRestoreAppBtn.setFont(font3)
+        self.maximizeRestoreAppBtn.setFont(font)
         self.maximizeRestoreAppBtn.setCursor(QCursor(Qt.PointingHandCursor))
         icon3 = QIcon()
         icon3.addFile(u":/icons/images/icons/icon_maximize.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -1089,10 +1084,12 @@ class Ui_MainWindow(object):
         self.Camera_Frame_1.setObjectName(u"Camera_Frame_1")
         self.Camera_Frame_1.setMinimumSize(QSize(384, 288))
         self.Camera_Frame_1.setMaximumSize(QSize(384, 288))
-        self.Camera_Frame_1.setStyleSheet(u"border: 2px solid #bd93f9;\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;\n"
-"background-image: url(:/images/images/images/Logo_Small (8).png);\n"
+        self.Camera_Frame_1.setStyleSheet(u"#Camera_Frame_1 {\n"
+"	border: 2px solid #bd93f9;\n"
+"	/*background-position: center;\n"
+"	background-repeat: no-repeat;\n"
+"	background-image: url(:/images/images/images/Logo_Small (8).png);*/\n"
+"}\n"
 "\n"
 "")
         self.Camera_Frame_1.setFrameShape(QFrame.StyledPanel)
@@ -1102,7 +1099,7 @@ class Ui_MainWindow(object):
         self.Camera_Frame_1_Layout.setObjectName(u"Camera_Frame_1_Layout")
         self.Camera_Frame_1_Layout.setContentsMargins(0, 0, 0, 0)
 
-        self.verticalLayout_22.addWidget(self.Camera_Frame_1)
+        self.verticalLayout_22.addWidget(self.Camera_Frame_1, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
         self.pre_cam_1 = QCheckBox(self.frame_3)
         self.pre_cam_1.setObjectName(u"pre_cam_1")
@@ -1115,7 +1112,7 @@ class Ui_MainWindow(object):
 
         self.frame_5 = QFrame(self.frame)
         self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setMinimumSize(QSize(385, 0))
+        self.frame_5.setMinimumSize(QSize(0, 0))
         self.frame_5.setMaximumSize(QSize(16777215, 16777215))
         self.frame_5.setFrameShape(QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QFrame.Raised)
@@ -1134,9 +1131,11 @@ class Ui_MainWindow(object):
 
         self.Detail_Frame = QFrame(self.frame_5)
         self.Detail_Frame.setObjectName(u"Detail_Frame")
-        self.Detail_Frame.setMinimumSize(QSize(384, 288))
+        self.Detail_Frame.setMinimumSize(QSize(0, 0))
         self.Detail_Frame.setMaximumSize(QSize(16777215, 288))
-        self.Detail_Frame.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+        self.Detail_Frame.setStyleSheet(u"#Detail_Frame{\n"
+"	border: 2px solid #bd93f9;\n"
+"}\n"
 "\n"
 "\n"
 "")
@@ -1148,9 +1147,8 @@ class Ui_MainWindow(object):
         self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
         self.Detail_text = QTextBrowser(self.Detail_Frame)
         self.Detail_text.setObjectName(u"Detail_text")
-        self.Detail_text.setStyleSheet(u"border: 2px solid #bd93f9;\n"
-"\n"
-"")
+        self.Detail_text.setMaximumSize(QSize(16777215, 16777215))
+        self.Detail_text.setStyleSheet(u"")
 
         self.Camera_Frame_1_Layout_3.addWidget(self.Detail_text)
 
@@ -1180,13 +1178,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_36.setContentsMargins(8, 10, 11, 0)
         self.label_3 = QLabel(self.row_7)
         self.label_3.setObjectName(u"label_3")
-        font4 = QFont()
-        font4.setPointSize(12)
-        font4.setBold(True)
-        font4.setItalic(False)
-        font4.setUnderline(False)
-        font4.setStrikeOut(False)
-        self.label_3.setFont(font4)
+        font3 = QFont()
+        font3.setPointSize(12)
+        font3.setBold(True)
+        font3.setItalic(False)
+        self.label_3.setFont(font3)
         self.label_3.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
 "font-weight: bold;\n"
 "border-radius: 5px;\n"
@@ -1559,9 +1555,9 @@ class Ui_MainWindow(object):
         self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem27)
         if (self.tableWidget_2.rowCount() < 16):
             self.tableWidget_2.setRowCount(16)
-        font5 = QFont()
+        font4 = QFont()
         __qtablewidgetitem28 = QTableWidgetItem()
-        __qtablewidgetitem28.setFont(font5);
+        __qtablewidgetitem28.setFont(font4);
         self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem28)
         __qtablewidgetitem29 = QTableWidgetItem()
         self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem29)
@@ -1810,7 +1806,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 353, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1900,7 +1896,7 @@ class Ui_MainWindow(object):
         if (self.tableWidget.rowCount() < 16):
             self.tableWidget.setRowCount(16)
         __qtablewidgetitem52 = QTableWidgetItem()
-        __qtablewidgetitem52.setFont(font5);
+        __qtablewidgetitem52.setFont(font4);
         self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem52)
         __qtablewidgetitem53 = QTableWidgetItem()
         self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem53)
@@ -2241,10 +2237,10 @@ class Ui_MainWindow(object):
         self.creditsLabel = QLabel(self.bottomBar)
         self.creditsLabel.setObjectName(u"creditsLabel")
         self.creditsLabel.setMaximumSize(QSize(16777215, 16))
-        font6 = QFont()
-        font6.setBold(False)
-        font6.setItalic(False)
-        self.creditsLabel.setFont(font6)
+        font5 = QFont()
+        font5.setBold(False)
+        font5.setItalic(False)
+        self.creditsLabel.setFont(font5)
         self.creditsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_5.addWidget(self.creditsLabel)
@@ -2312,7 +2308,7 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by \u20b3\u0282\u0454\u044a\u03b9\u0301.</span></p>\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; ma"
                         "rgin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">MIT License</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: </span><span style=\" font-family:'JetBrains Mono','monospace'; font-size:9.8pt; color:#bd93f9;\">Yuul B. Alwright</span></p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: </span><span style=\" font-family:'JetBrains Mono,monospace'; font-size:9.8pt; color:#bd93f9;\">Yuul B. Alwright</span></p></body></html>", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"Right Posture - Make life better.", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
