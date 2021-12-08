@@ -1976,12 +1976,18 @@ p, li { white-space: pre-wrap; }
                                 </property>
                                 <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
                                  <widget class="QLabel" name="Camera1_label">
+                                  <property name="sizePolicy">
+                                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                   </sizepolicy>
+                                  </property>
                                   <property name="styleSheet">
                                    <string notr="true">font: 15pt &quot;Segoe UI&quot;;
 color: #E6E6E6;</string>
                                   </property>
                                   <property name="text">
-                                   <string>The model hasn't been loaded yet.</string>
+                                   <string/>
                                   </property>
                                  </widget>
                                 </item>
