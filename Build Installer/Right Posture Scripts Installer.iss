@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Right Posture"
-#define MyAppVersion "1.0.4"
+#define MyAppVersion "1.0.5"
 #define MyAppPublisher "Right Posture TEAM"
 #define MyAppURL "https://github.com/astrrr/Right-posture"
 #define MyAppExeName "main.exe"
@@ -28,7 +28,7 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Build Installer\Info.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
+PrivilegesRequired=admin
 OutputDir=C:\Users\Mero Asebi\Downloads
 OutputBaseFilename=Right Posture
 SetupIconFile=C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\icon.ico
@@ -101,11 +101,14 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
+[Dirs]
+Name: "{app}"; Permissions: everyone-full
+
 [Files]
-Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python39.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Permissions: everyone-full
+Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\icon.ico"; DestDir: "{app}"; Flags: ignoreversion; Permissions: everyone-full
+Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python3.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: everyone-full
+Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\python39.dll"; DestDir: "{app}"; Flags: ignoreversion; Permissions: everyone-full
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\themes\*"; DestDir: "{app}\themes"; Flags: ignoreversion recursesubdirs; Permissions: everyone-full
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs; Permissions: everyone-full
 Source: "C:\Users\Mero Asebi\Documents\GitHub\Right-posture\Right Posture\build\exe.win-amd64-3.9\bin\*"; DestDir: "{app}\bin"; Flags: ignoreversion recursesubdirs; Permissions: everyone-full
@@ -123,5 +126,5 @@ Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent runascurrentuser
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: runascurrentuser nowait postinstall skipifsilent;
 
