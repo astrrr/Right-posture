@@ -1,2 +1,8 @@
-Warning system for incorrect sitting posture with machine learning
-Make by Right Posture TEAM
+Right Posture version 1.1.0
+
+This application an open source project build in project 1.
+Project name : Warning system for incorrect sitting posture with machine learning
+Project group: CE64-12
+
+The update will be coming soon please be patient.
+Make by Right Posture TEAM.
