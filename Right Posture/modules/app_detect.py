@@ -29,7 +29,7 @@ class VideoThread(QThread):
             # worker.signals.progress.connect(self.progress_fn)
             worker.signals.finished.connect(self.thread_complete)
             self.threadpool.start(worker)
-        else:
+        if Camera.Finish_load_model:
             cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
             pred = 3
             img_counter_cor = 0
@@ -133,11 +133,15 @@ class VideoThread(QThread):
         print(s)
 
     def thread_complete(self):
+        Camera.Finish_load_model = True
+        Camera.model_status = "Loaded"
         print("Finish load model")
 
 class Camera:
     log = ""
+    model_status = "Not loaded"
     First_load_model = True
+    Finish_load_model = False
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)

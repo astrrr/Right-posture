@@ -33,8 +33,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL WIDGETS
 widgets = None
 counter = 0
-CircularProgress_timer = 300
-model_status = "Not loaded"
+CircularProgress_timer = 20
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -208,7 +207,7 @@ class MainWindow(QMainWindow):
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():
             self.ui.Detail_text.setText(f"Camera: 1 (VideoCapture(0))\n"
-                                        f"Model: MNv2_V3 ({model_status})")
+                                        f"Model: MNv2_V3 ({Camera.model_status})")
             save_data("PreDetail", 1)
             # print("Start Detail")
         else:
@@ -228,22 +227,26 @@ class MainWindow(QMainWindow):
     # UPDATE PROGRESS BAR
     def update(self):
         global counter
-        global model_status
         self.progress.set_value(counter)
         if counter >= 100:
             # STOP TIMER
-            self.timer.stop()
+            # self.timer.stop()
             Camera.First_load_model = False
             Camera.start_cam = True
-            Camera.detect(self, False)
-            Camera.detect(self, True)
-            self.progress.setParent(None)
-            self.progress.close()
-            model_status = "Loaded"
-            self.Show_Detail()
-            self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
-            self.ui.pre_cam_1.setEnabled(True)
-        counter += 1
+            if Camera.Finish_load_model:
+                self.timer.stop()
+                Camera.detect(self, False)
+                Camera.detect(self, True)
+                self.progress.setParent(None)
+                self.progress.close()
+                self.Show_Detail()
+                self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
+                self.ui.pre_cam_1.setEnabled(True)
+            else:
+                Camera.model_status = "Waiting for model"
+                self.Show_Detail()
+        else:
+            counter += 1
 
     def Camera_1(self):
         if Camera.First_load_model:
@@ -315,7 +318,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    # windows = MainWindow()
-    windows = LoginWindow()
+    windows = MainWindow()
+    # windows = LoginWindow()
 
     sys.exit(app.exec())
