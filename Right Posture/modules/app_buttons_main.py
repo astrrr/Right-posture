@@ -42,6 +42,9 @@ class Main_buttons(MainWindow):
         btn = self.sender()
         btnName = btn.objectName()
 
+        if btnName == "btn_Logout":
+            self.Logout()
+
         if btnName == "btn_clear_log":
             self.ui.Detect_LOG.clear()
 

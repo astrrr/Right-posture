@@ -5,29 +5,32 @@ class Login_Buttons(LoginWindow):
 
     def defineButtons(self):
         button = self.ui
-        # ADD BUTTON
-        # ///////////////////////////////////////////////////////////////
-        self.ui.btn_Login.clicked.connect(self.buttonInterface)
-        self.ui.btn_Register.clicked.connect(self.buttonInterface)
-        self.ui.btn_Fpassword.clicked.connect(self.buttonInterface)
 
-        self.ui.btn_Com_Register.clicked.connect(self.buttonInterface)
-        self.ui.btn_Reg_Back.clicked.connect(self.buttonInterface)
+        # LOGIN BUTTON
+        button.btn_Login.clicked.connect(self.buttonInterface)
+        button.btn_Register.clicked.connect(self.buttonInterface)
+        button.btn_Fpassword.clicked.connect(self.buttonInterface)
 
-        self.ui.btn_Forget_Email.clicked.connect(self.buttonInterface)
-        self.ui.btn_Forget_Back.clicked.connect(self.buttonInterface)
+        # REGISTER BUTTON
+        button.btn_Com_Register.clicked.connect(self.buttonInterface)
+        button.btn_Reg_Back.clicked.connect(self.buttonInterface)
+
+        # FORGET BUTTON
+        button.btn_Forget_Email.clicked.connect(self.buttonInterface)
+        button.btn_Forget_Back.clicked.connect(self.buttonInterface)
 
         # KEY PRESS EVENT
         # ///////////////////////////////////////////////////////////////
-        self.ui.username.keyReleaseEvent = self.enter_login
-        self.ui.password.keyReleaseEvent = self.enter_login
+        button.username.keyReleaseEvent = self.enter_login
+        button.password.keyReleaseEvent = self.enter_login
 
-        self.ui.Reg_username.keyReleaseEvent = self.enter_regis
-        self.ui.Reg_password.keyReleaseEvent = self.enter_regis
-        self.ui.Reg_password_2.keyReleaseEvent = self.enter_regis
-        self.ui.Reg_email.keyReleaseEvent = self.enter_regis
+        button.Reg_username.keyReleaseEvent = self.enter_regis
+        button.Reg_password.keyReleaseEvent = self.enter_regis
+        button.Reg_password_2.keyReleaseEvent = self.enter_regis
+        button.Reg_email.keyReleaseEvent = self.enter_regis
 
     def buttonClick(self):
+        button = self.ui
         btn = self.sender()
         btnName = btn.objectName()
 
@@ -35,13 +38,13 @@ class Login_Buttons(LoginWindow):
             self.check_login()
 
         if btnName == "btn_Register":
-            self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Register_page)
+            button.Login_stackedWidget.setCurrentWidget(button.Register_page)
 
         if btnName == "btn_Fpassword":
             UILoginFunctions.animation_to_Forget(self)
 
         if btnName == "btn_Reg_Back":
-            self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
+            button.Login_stackedWidget.setCurrentWidget(button.Login_page)
 
         if btnName == "btn_Forget_Back":
             UILoginFunctions.animation_back_to_Login(self)

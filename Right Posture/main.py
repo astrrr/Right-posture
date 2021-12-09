@@ -31,6 +31,8 @@ from modules.app_detect import VideoThread
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
+# main "1" = MainWindow() , main "0" = LoginWindow
+main = 1
 widgets = None
 counter = 0
 CircularProgress_timer = 20
@@ -275,6 +277,13 @@ class MainWindow(QMainWindow):
         except:
             pass
 
+    def Logout(self):
+        QTimer.singleShot(1200, lambda: open_Login())
+        def open_Login():
+            self.Login = LoginWindow()
+            self.Login.show()
+            self.close()
+
     # BUTTONS INTERFACE TO app_button_main
     def buttonInterface(self):
         Main_buttons.buttonClick(self)
@@ -299,7 +308,9 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    # windows = MainWindow()
-    windows = LoginWindow()
+    if main:
+        windows = MainWindow()
+    else:
+        windows = LoginWindow()
 
     sys.exit(app.exec())
