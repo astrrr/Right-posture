@@ -230,11 +230,10 @@ class MainWindow(QMainWindow):
         self.progress.set_value(counter)
         if counter >= 100:
             # STOP TIMER
-            # self.timer.stop()
-            Camera.First_load_model = False
-            Camera.start_cam = True
             if Camera.Finish_load_model:
                 self.timer.stop()
+                Camera.First_load_model = False
+                Camera.start_cam = True
                 Camera.detect(self, False)
                 Camera.detect(self, True)
                 self.progress.setParent(None)
@@ -246,9 +245,14 @@ class MainWindow(QMainWindow):
                 Camera.model_status = "Waiting for model"
                 self.Show_Detail()
         else:
+            if Camera.Error_load_model:
+                self.timer.stop()
+                self.Show_Detail()
+                self.ui.pre_cam_1.setEnabled(True)
             counter += 1
 
     def Camera_1(self):
+        global counter
         if Camera.First_load_model:
             self.ui.Camera1_label.setText("The model hasn't loaded yet.")
         else:
@@ -256,6 +260,7 @@ class MainWindow(QMainWindow):
 
         if self.ui.pre_cam_1.isChecked():
             if Camera.First_load_model:
+                counter = 0
                 self.ui.pre_cam_1.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
                 self.timer = QTimer()
@@ -268,8 +273,12 @@ class MainWindow(QMainWindow):
             save_data("PreCam1", 1)
             # print("Start Camera_1")
         else:
+            counter = 0
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
+            self.progress.setParent(None)
+            self.progress.close()
+            Camera.Error_load_model = False
             Camera.detect(self, False)
             save_data("PreCam1", 0)
             # print("Stop Camera_1")
@@ -291,6 +300,8 @@ class MainWindow(QMainWindow):
             qpix = QPixmap.fromImage(qimg)
             self.image_label.setPixmap(qpix)
             self.Detect_Log()
+            if Camera.Error_load_model:
+                self.Show_Detail()
         except:
             pass
 

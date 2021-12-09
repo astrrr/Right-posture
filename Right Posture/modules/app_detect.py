@@ -99,22 +99,26 @@ class VideoThread(QThread):
         # X= tf.keras.preprocessing.image.img_to_array(resized)
         X = np.expand_dims(X, axis=0)
         image = np.vstack([X])
-        val = model.predict(image)
-
-        # correct > incorrect
-        if float(val[0][0]) > float(val[0][1]):
-            # ///////////////////////////////////////////////////////////////////////////////
-            Camera.log = (Camera.log + '\nmodel prediction : correct')
-            print('model prediction : correct')
-            # ///////////////////////////////////////////////////////////////////////////////
-            return 0
-            # incorrect > correct
-        elif float(val[0][0]) < float(val[0][1]):
-            # ///////////////////////////////////////////////////////////////////////////////
-            Camera.log = (Camera.log + '\nmodel prediction : incorrect')
-            print('model prediction : incorrect')
-            # ///////////////////////////////////////////////////////////////////////////////
-            return 1
+        try:
+            val = model.predict(image)
+            # correct > incorrect
+            if float(val[0][0]) > float(val[0][1]):
+                # ///////////////////////////////////////////////////////////////////////////////
+                Camera.log = (Camera.log + '\nmodel prediction : correct')
+                print('model prediction : correct')
+                # ///////////////////////////////////////////////////////////////////////////////
+                return 0
+                # incorrect > correct
+            elif float(val[0][0]) < float(val[0][1]):
+                # ///////////////////////////////////////////////////////////////////////////////
+                Camera.log = (Camera.log + '\nmodel prediction : incorrect')
+                print('model prediction : incorrect')
+                # ///////////////////////////////////////////////////////////////////////////////
+                return 1
+        except:
+            Camera.Error_load_model = True
+            Camera.model_status = "Critical error in model"
+            print("Critical error in model")
 
     # スレッドが終了するまでwaitをかける
     def stop(self):
@@ -126,22 +130,30 @@ class VideoThread(QThread):
 
     def execute_this_fn(self):
         global model
-        modeling = tf.keras.models.load_model('bin/Model/MNv2_V3')
-        model = modeling
+        dir_model = 'bin/Model/MNv2_V3'
+        try:
+            modeling = tf.keras.models.load_model(dir_model)
+            model = modeling
+        except:
+            Camera.Error_load_model = True
+            Camera.model_status = f"Model not found in {dir_model}"
+            print(f"Model not found in {dir_model}")
 
     def print_output(self, s):
         print(s)
 
     def thread_complete(self):
-        Camera.Finish_load_model = True
-        Camera.model_status = "Loaded"
-        print("Finish load model")
+        if not Camera.Error_load_model:
+            Camera.Finish_load_model = True
+            Camera.model_status = "Loaded"
+            print("Finish load model")
 
 class Camera:
     log = ""
     model_status = "Not loaded"
     First_load_model = True
     Finish_load_model = False
+    Error_load_model = False
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)
