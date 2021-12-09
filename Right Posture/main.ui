@@ -1418,9 +1418,8 @@ Button */
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Right Posture&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by ₳ʂєъί.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;MIT License&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bd93f9;&quot;&gt;Created by: &lt;/span&gt;&lt;span style=&quot; font-family:'JetBrains Mono,monospace'; font-size:9.8pt; color:#bd93f9;&quot;&gt;Yuul B. Alwright&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Warning system for incorrect sitting posture with machine learning.&lt;br /&gt;Based on Python 3.9.7 and PySide6.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bd93f9;&quot;&gt;Created by: Right Posture Team&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -2089,10 +2088,7 @@ color: #E6E6E6;</string>
                                <property name="styleSheet">
                                 <string notr="true">#Detail_Frame{
 	border: 2px solid #bd93f9;
-}
-
-
-</string>
+}</string>
                                </property>
                                <property name="frameShape">
                                 <enum>QFrame::StyledPanel</enum>
@@ -2105,7 +2101,7 @@ color: #E6E6E6;</string>
                                  <number>0</number>
                                 </property>
                                 <property name="leftMargin">
-                                 <number>4</number>
+                                 <number>0</number>
                                 </property>
                                 <property name="topMargin">
                                  <number>0</number>
@@ -2116,7 +2112,7 @@ color: #E6E6E6;</string>
                                 <property name="bottomMargin">
                                  <number>0</number>
                                 </property>
-                                <item alignment="Qt::AlignTop">
+                                <item>
                                  <widget class="QLabel" name="Detail_text">
                                   <property name="minimumSize">
                                    <size>
@@ -2129,6 +2125,9 @@ color: #E6E6E6;</string>
                                   </property>
                                   <property name="alignment">
                                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                                  </property>
+                                  <property name="margin">
+                                   <number>5</number>
                                   </property>
                                  </widget>
                                 </item>
@@ -2653,19 +2652,52 @@ border: 2px solid #ff79c6;</string>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QTextBrowser" name="Detect_LOG">
+                           <widget class="QFrame" name="Detect_frame">
                             <property name="styleSheet">
-                             <string notr="true">border: 2px solid #bd93f9;
+                             <string notr="true">#Detect_frame {
+	border: 2px solid #bd93f9;
+}
 
 </string>
                             </property>
-                            <property name="html">
-                             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_29">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QTextBrowser" name="Detect_LOG">
+                               <property name="styleSheet">
+                                <string notr="true">
+</string>
+                               </property>
+                               <property name="html">
+                                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                            </property>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
                            </widget>
                           </item>
                           <item>
@@ -4951,7 +4983,7 @@ background-repeat: no-repeat;</string>
                 <item>
                  <widget class="QLabel" name="version">
                   <property name="text">
-                   <string>v1.0.5</string>
+                   <string>v1.1.0</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

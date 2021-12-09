@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainyJoCay.ui'
+## Form generated from reading UI file 'mainNFktRi.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1147,22 +1147,20 @@ class Ui_MainWindow(object):
         self.Detail_Frame.setMaximumSize(QSize(16777215, 288))
         self.Detail_Frame.setStyleSheet(u"#Detail_Frame{\n"
 "	border: 2px solid #bd93f9;\n"
-"}\n"
-"\n"
-"\n"
-"")
+"}")
         self.Detail_Frame.setFrameShape(QFrame.StyledPanel)
         self.Detail_Frame.setFrameShadow(QFrame.Raised)
         self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Detail_Frame)
         self.Camera_Frame_1_Layout_3.setSpacing(0)
         self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
-        self.Camera_Frame_1_Layout_3.setContentsMargins(4, 0, 0, 0)
+        self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
         self.Detail_text = QLabel(self.Detail_Frame)
         self.Detail_text.setObjectName(u"Detail_text")
         self.Detail_text.setMinimumSize(QSize(0, 0))
         self.Detail_text.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.Detail_text.setMargin(5)
 
-        self.Camera_Frame_1_Layout_3.addWidget(self.Detail_text, 0, Qt.AlignTop)
+        self.Camera_Frame_1_Layout_3.addWidget(self.Detail_text)
 
 
         self.verticalLayout_23.addWidget(self.Detail_Frame)
@@ -1349,13 +1347,27 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.labelBoxBlenderInstalation_8)
 
-        self.Detect_LOG = QTextBrowser(self.frame_2)
-        self.Detect_LOG.setObjectName(u"Detect_LOG")
-        self.Detect_LOG.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+        self.Detect_frame = QFrame(self.frame_2)
+        self.Detect_frame.setObjectName(u"Detect_frame")
+        self.Detect_frame.setStyleSheet(u"#Detect_frame {\n"
+"	border: 2px solid #bd93f9;\n"
+"}\n"
 "\n"
 "")
+        self.Detect_frame.setFrameShape(QFrame.StyledPanel)
+        self.Detect_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_29 = QVBoxLayout(self.Detect_frame)
+        self.verticalLayout_29.setSpacing(0)
+        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.Detect_LOG = QTextBrowser(self.Detect_frame)
+        self.Detect_LOG.setObjectName(u"Detect_LOG")
+        self.Detect_LOG.setStyleSheet(u"")
 
-        self.verticalLayout_28.addWidget(self.Detect_LOG)
+        self.verticalLayout_29.addWidget(self.Detect_LOG)
+
+
+        self.verticalLayout_28.addWidget(self.Detect_frame)
 
         self.show_log = QCheckBox(self.frame_2)
         self.show_log.setObjectName(u"show_log")
@@ -2314,10 +2326,9 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Right Posture</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by \u20b3\u0282\u0454\u044a\u03b9\u0301.</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; ma"
-                        "rgin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">MIT License</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: </span><span style=\" font-family:'JetBrains Mono,monospace'; font-size:9.8pt; color:#bd93f9;\">Yuul B. Alwright</span></p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Warning system for incorrect sitting posture with machine learning.<br />Based on Python 3.9.7 and PySide6.</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0"
+                        "px;\"><span style=\" color:#bd93f9;\">Created by: Right Posture Team</span></p></body></html>", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"Right Posture - Make life better.", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -2542,6 +2553,6 @@ class Ui_MainWindow(object):
         self.btn_logout_10.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Right Posture Team", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.5", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.1.0", None))
     # retranslateUi
 
