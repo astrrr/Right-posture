@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainuJxuQK.ui'
+## Form generated from reading UI file 'mainQUZeBh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1143,8 +1143,9 @@ class Ui_MainWindow(object):
 
         self.Detail_text = QTextBrowser(self.frame_5)
         self.Detail_text.setObjectName(u"Detail_text")
-        self.Detail_text.setStyleSheet(u"border: 2px solid #bd93f9;\n"
-"")
+        self.Detail_text.setStyleSheet(u"#Detail_text {\n"
+"	border: 2px solid #bd93f9;\n"
+"}")
 
         self.verticalLayout_23.addWidget(self.Detail_text)
 
@@ -1332,9 +1333,9 @@ class Ui_MainWindow(object):
 
         self.Detect_LOG = QTextBrowser(self.frame_2)
         self.Detect_LOG.setObjectName(u"Detect_LOG")
-        self.Detect_LOG.setStyleSheet(u"border: 2px solid #bd93f9;\n"
-"\n"
-"")
+        self.Detect_LOG.setStyleSheet(u"#Detect_LOG {\n"
+"	border: 2px solid #bd93f9;\n"
+"}")
 
         self.verticalLayout_28.addWidget(self.Detect_LOG)
 

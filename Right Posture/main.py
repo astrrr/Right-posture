@@ -177,7 +177,8 @@ class MainWindow(QMainWindow):
         if self.ui.show_detail.isChecked():
             self.ui.Detail_text.setText(f"Camera VideoCapture(0): {camera_status}\n\n"
                                         f"Models: MNv2_V3\n"
-                                        f"Models Status: {Camera.model_status}")
+                                        f"Models Status: {Camera.model_status}\n"
+                                        f"{Camera.traceback}")
             save_data("PreDetail", 1)
             # print("Start Detail")
         else:
@@ -254,6 +255,7 @@ class MainWindow(QMainWindow):
         else:
             counter = 0
             camera_status = "OFF"
+            Camera.traceback = ""
             self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)

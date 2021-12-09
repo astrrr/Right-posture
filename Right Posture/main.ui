@@ -2074,8 +2074,9 @@ color: #E6E6E6;</string>
                              <item>
                               <widget class="QTextBrowser" name="Detail_text">
                                <property name="styleSheet">
-                                <string notr="true">border: 2px solid #bd93f9;
-</string>
+                                <string notr="true">#Detail_text {
+	border: 2px solid #bd93f9;
+}</string>
                                </property>
                                <property name="html">
                                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2606,9 +2607,9 @@ border: 2px solid #ff79c6;</string>
                           <item>
                            <widget class="QTextBrowser" name="Detect_LOG">
                             <property name="styleSheet">
-                             <string notr="true">border: 2px solid #bd93f9;
-
-</string>
+                             <string notr="true">#Detect_LOG {
+	border: 2px solid #bd93f9;
+}</string>
                             </property>
                             <property name="html">
                              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

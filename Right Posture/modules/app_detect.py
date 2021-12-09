@@ -12,6 +12,11 @@ mp_pose = mp.solutions.pose
 cwd = os.getcwd()
 model = None
 
+def Print_exception():
+    traceback.print_exc()
+    exctype, value = sys.exc_info()[:2]
+    Camera.traceback = f"\nException error\n{exctype}\n{value}\n{traceback.format_exc()}"
+
 class VideoThread(QThread):
     # シグナル設定
     change_pixmap_signal = Signal(np.ndarray)
@@ -118,6 +123,7 @@ class VideoThread(QThread):
         except:
             Camera.Error_load_model = True
             Camera.model_status = "Critical error in model please restart and try again."
+            Print_exception()
             print("Critical error in model please restart and try again.")
 
     # スレッドが終了するまでwaitをかける
@@ -136,10 +142,10 @@ class VideoThread(QThread):
             model = modeling
         except:
             # Use to trick critical error check
-            # Camera.Finish_load_model = True
-
+            Camera.Finish_load_model = True
             Camera.Error_load_model = True
             Camera.model_status = f"Model not found in '{dir_model}'."
+            Print_exception()
             print(f"Model not found in '{dir_model}'.")
 
     def print_output(self, s):
@@ -153,6 +159,7 @@ class VideoThread(QThread):
 
 class Camera:
     log = ""
+    traceback = ""
     model_status = "Not loaded"
     First_load_model = True
     Finish_load_model = False
