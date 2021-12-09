@@ -46,7 +46,6 @@ class LoginWindow(QMainWindow):
         UILoginFunctions.Function_Login_Setup(self)
         UIFunctions.LoginUiDefinitions(self)
         Login_Buttons.defineButtons(self)
-        self.ui.title_bar_3.setText("Login V1 Right Posture")
         self.ui.Login_Status.setText("Login")
         self.ui.Reg_Status.setText("Register")
         self.show()
@@ -217,12 +216,8 @@ class MainWindow(QMainWindow):
                 self.Show_Detail()
         else:
             if Camera.Finish_load_model:
-                if counter < 87:
-                    QTimer.singleShot(500, lambda: set_counter(87))
-                    counter += 1
-                    QTimer.singleShot(500, lambda: set_counter(100))
-                else:
-                    QTimer.singleShot(500, lambda: set_counter(100))
+                if counter <= 80:
+                    counter = 81
 
             if Camera.Error_load_model:
                 self.timer.stop()
@@ -317,10 +312,6 @@ class MainWindow(QMainWindow):
         #     print('Mouse click: LEFT CLICK')
         # if event.buttons() == Qt.RightButton:
         #     print('Mouse click: RIGHT CLICK')
-
-def set_counter(value):
-    global counter
-    counter = value
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

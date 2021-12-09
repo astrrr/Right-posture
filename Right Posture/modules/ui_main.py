@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainNFktRi.ui'
+## Form generated from reading UI file 'mainuJxuQK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1141,29 +1141,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_23.addWidget(self.labelBoxBlenderInstalation_10)
 
-        self.Detail_Frame = QFrame(self.frame_5)
-        self.Detail_Frame.setObjectName(u"Detail_Frame")
-        self.Detail_Frame.setMinimumSize(QSize(0, 0))
-        self.Detail_Frame.setMaximumSize(QSize(16777215, 288))
-        self.Detail_Frame.setStyleSheet(u"#Detail_Frame{\n"
-"	border: 2px solid #bd93f9;\n"
-"}")
-        self.Detail_Frame.setFrameShape(QFrame.StyledPanel)
-        self.Detail_Frame.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Detail_Frame)
-        self.Camera_Frame_1_Layout_3.setSpacing(0)
-        self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
-        self.Camera_Frame_1_Layout_3.setContentsMargins(0, 0, 0, 0)
-        self.Detail_text = QLabel(self.Detail_Frame)
+        self.Detail_text = QTextBrowser(self.frame_5)
         self.Detail_text.setObjectName(u"Detail_text")
-        self.Detail_text.setMinimumSize(QSize(0, 0))
-        self.Detail_text.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.Detail_text.setMargin(5)
+        self.Detail_text.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+"")
 
-        self.Camera_Frame_1_Layout_3.addWidget(self.Detail_text)
-
-
-        self.verticalLayout_23.addWidget(self.Detail_Frame)
+        self.verticalLayout_23.addWidget(self.Detail_text)
 
         self.show_detail = QCheckBox(self.frame_5)
         self.show_detail.setObjectName(u"show_detail")
@@ -1347,27 +1330,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.labelBoxBlenderInstalation_8)
 
-        self.Detect_frame = QFrame(self.frame_2)
-        self.Detect_frame.setObjectName(u"Detect_frame")
-        self.Detect_frame.setStyleSheet(u"#Detect_frame {\n"
-"	border: 2px solid #bd93f9;\n"
-"}\n"
+        self.Detect_LOG = QTextBrowser(self.frame_2)
+        self.Detect_LOG.setObjectName(u"Detect_LOG")
+        self.Detect_LOG.setStyleSheet(u"border: 2px solid #bd93f9;\n"
 "\n"
 "")
-        self.Detect_frame.setFrameShape(QFrame.StyledPanel)
-        self.Detect_frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_29 = QVBoxLayout(self.Detect_frame)
-        self.verticalLayout_29.setSpacing(0)
-        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
-        self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
-        self.Detect_LOG = QTextBrowser(self.Detect_frame)
-        self.Detect_LOG.setObjectName(u"Detect_LOG")
-        self.Detect_LOG.setStyleSheet(u"")
 
-        self.verticalLayout_29.addWidget(self.Detect_LOG)
-
-
-        self.verticalLayout_28.addWidget(self.Detect_frame)
+        self.verticalLayout_28.addWidget(self.Detect_LOG)
 
         self.show_log = QCheckBox(self.frame_2)
         self.show_log.setObjectName(u"show_log")
@@ -2346,12 +2315,16 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera 1", None))
+        self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera", None))
         self.Camera1_label.setText("")
-        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
+        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview camera", None))
         self.labelBoxBlenderInstalation_10.setText(QCoreApplication.translate("MainWindow", u"Detail", None))
-        self.Detail_text.setText("")
-        self.show_detail.setText(QCoreApplication.translate("MainWindow", u"Show Detail", None))
+        self.Detail_text.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.show_detail.setText(QCoreApplication.translate("MainWindow", u"Show detail", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Status History", None))
         ___qtablewidgetitem = self.Status_Widgets.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Day 1", None));

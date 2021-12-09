@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginFSKCYB.ui'
+## Form generated from reading UI file 'logingqIQPX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -431,14 +431,16 @@ class Ui_Login(object):
 
         self.horizontalLayout_3.addWidget(self.topLogo)
 
-        self.title_bar_3 = QLabel(self.top_bar)
-        self.title_bar_3.setObjectName(u"title_bar_3")
-        self.title_bar_3.setFrameShape(QFrame.NoFrame)
-        self.title_bar_3.setLineWidth(0)
-        self.title_bar_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.title_bar_3.setMargin(20)
+        self.Login_title_bar = QLabel(self.top_bar)
+        self.Login_title_bar.setObjectName(u"Login_title_bar")
+        self.Login_title_bar.setFont(font)
+        self.Login_title_bar.setFrameShape(QFrame.NoFrame)
+        self.Login_title_bar.setLineWidth(0)
+        self.Login_title_bar.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.Login_title_bar.setMargin(0)
+        self.Login_title_bar.setIndent(20)
 
-        self.horizontalLayout_3.addWidget(self.title_bar_3)
+        self.horizontalLayout_3.addWidget(self.Login_title_bar)
 
         self.top_btns_3 = QFrame(self.top_bar)
         self.top_btns_3.setObjectName(u"top_btns_3")
@@ -571,7 +573,7 @@ class Ui_Login(object):
         self.btn_Forget_Email.setText(QCoreApplication.translate("Login", u"Send E-mail", None))
         self.user_description_15.setText(QCoreApplication.translate("Login", u"E-mail", None))
         self.btn_Forget_Back.setText(QCoreApplication.translate("Login", u"Back", None))
-        self.title_bar_3.setText(QCoreApplication.translate("Login", u"Login V1 PyDracula", None))
+        self.Login_title_bar.setText(QCoreApplication.translate("Login", u"Login Right Posture", None))
 #if QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setToolTip(QCoreApplication.translate("Login", u"Maximize", None))
 #endif // QT_CONFIG(tooltip)
