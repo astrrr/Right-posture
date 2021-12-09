@@ -207,7 +207,8 @@ class MainWindow(QMainWindow):
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():
             self.ui.Detail_text.setText(f"Camera: 1 (VideoCapture(0))\n"
-                                        f"Model: MNv2_V3 ({Camera.model_status})")
+                                        f"Model: MNv2_V3\n"
+                                        f"Status: {Camera.model_status}")
             save_data("PreDetail", 1)
             # print("Start Detail")
         else:
@@ -242,7 +243,7 @@ class MainWindow(QMainWindow):
                 self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
                 self.ui.pre_cam_1.setEnabled(True)
             else:
-                Camera.model_status = "Waiting for model"
+                Camera.model_status = "Waiting for model."
                 self.Show_Detail()
         else:
             if Camera.Error_load_model:
@@ -261,6 +262,8 @@ class MainWindow(QMainWindow):
         if self.ui.pre_cam_1.isChecked():
             if Camera.First_load_model:
                 counter = 0
+                Camera.model_status = "Loading model"
+                self.Show_Detail()
                 self.ui.pre_cam_1.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
                 self.timer = QTimer()

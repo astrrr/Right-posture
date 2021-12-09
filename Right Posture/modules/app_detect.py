@@ -117,8 +117,8 @@ class VideoThread(QThread):
                 return 1
         except:
             Camera.Error_load_model = True
-            Camera.model_status = "Critical error in model"
-            print("Critical error in model")
+            Camera.model_status = "Critical error in model please restart and try again."
+            print("Critical error in model please restart and try again.")
 
     # スレッドが終了するまでwaitをかける
     def stop(self):
@@ -135,9 +135,12 @@ class VideoThread(QThread):
             modeling = tf.keras.models.load_model(dir_model)
             model = modeling
         except:
+            # Use to trick critical error check
+            # Camera.Finish_load_model = True
+
             Camera.Error_load_model = True
-            Camera.model_status = f"Model not found in {dir_model}"
-            print(f"Model not found in {dir_model}")
+            Camera.model_status = f"Model not found in '{dir_model}'."
+            print(f"Model not found in '{dir_model}'.")
 
     def print_output(self, s):
         print(s)
