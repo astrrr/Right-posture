@@ -32,7 +32,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 # main "1" = MainWindow() , main "0" = LoginWindow
-main = 1
+main = 0
 widgets = None
 counter = 0
 camera_status = ""
