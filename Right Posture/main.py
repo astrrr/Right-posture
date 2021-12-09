@@ -217,8 +217,12 @@ class MainWindow(QMainWindow):
                 self.Show_Detail()
         else:
             if Camera.Finish_load_model:
-                if counter <= 80:
-                    counter = 81
+                if counter < 50:
+                    QTimer.singleShot(500, lambda: set_counter(65))
+                elif counter < 68:
+                    QTimer.singleShot(500, lambda: set_counter(87))
+                elif counter < 88:
+                    counter = 95
 
             if Camera.Error_load_model:
                 self.timer.stop()
@@ -255,8 +259,6 @@ class MainWindow(QMainWindow):
         else:
             counter = 0
             camera_status = "OFF"
-            Camera.traceback = ""
-            self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             self.progress.setParent(None)
@@ -314,6 +316,10 @@ class MainWindow(QMainWindow):
         #     print('Mouse click: LEFT CLICK')
         # if event.buttons() == Qt.RightButton:
         #     print('Mouse click: RIGHT CLICK')
+
+def set_counter(value):
+    global counter
+    counter = value
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

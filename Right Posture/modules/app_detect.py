@@ -14,8 +14,40 @@ model = None
 
 def Print_exception():
     traceback.print_exc()
-    exctype, value = sys.exc_info()[:2]
-    Camera.traceback = f"\nException error\n{exctype}\n{value}\n{traceback.format_exc()}"
+    excType, value = sys.exc_info()[:2]
+    Camera.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
+
+def predict(img):
+    img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
+    # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
+
+    # resized = cv2.resize(img, (224, 224), interpolation = cv2.INTER_AREA)
+    X = tf.keras.preprocessing.image.img_to_array(img)
+
+    # X= tf.keras.preprocessing.image.img_to_array(resized)
+    X = np.expand_dims(X, axis=0)
+    image = np.vstack([X])
+    try:
+        val = model.predict(image)
+        # correct > incorrect
+        if float(val[0][0]) > float(val[0][1]):
+            # ///////////////////////////////////////////////////////////////////////////////
+            Camera.log = (Camera.log + '\nmodel prediction : correct')
+            print('model prediction : correct')
+            # ///////////////////////////////////////////////////////////////////////////////
+            return 0
+            # incorrect > correct
+        elif float(val[0][0]) < float(val[0][1]):
+            # ///////////////////////////////////////////////////////////////////////////////
+            Camera.log = (Camera.log + '\nmodel prediction : incorrect')
+            print('model prediction : incorrect')
+            # ///////////////////////////////////////////////////////////////////////////////
+            return 1
+    except:
+        Camera.Error_load_model = True
+        Camera.model_status = "Critical error in model please restart and try again."
+        Print_exception()
+        print("Critical error in model please restart and try again.")
 
 class VideoThread(QThread):
     # シグナル設定
@@ -75,14 +107,13 @@ class VideoThread(QThread):
                     # ///////////////////////////////////////////////////////////////////////////////
                     img_counter_cor += 1
 
-                    self.predict
                     for i in os.listdir(cwd):
                         if '.png' in i:
                             # ///////////////////////////////////////////////////////////////////////////////
                             Camera.log = (Camera.log + '\n=======================')
                             print('=======================')
                             # ///////////////////////////////////////////////////////////////////////////////
-                            pred = self.predict(i)
+                            pred = predict(i)
                             #     print(pred)
                             os.remove(i)
 
@@ -93,38 +124,6 @@ class VideoThread(QThread):
                 cap.release()
                 cv2.destroyAllWindows()
             # videoCaptureのリリース処理
-
-    def predict(self, img):
-        img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
-        # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
-
-        # resized = cv2.resize(img, (224, 224), interpolation = cv2.INTER_AREA)
-        X = tf.keras.preprocessing.image.img_to_array(img)
-
-        # X= tf.keras.preprocessing.image.img_to_array(resized)
-        X = np.expand_dims(X, axis=0)
-        image = np.vstack([X])
-        try:
-            val = model.predict(image)
-            # correct > incorrect
-            if float(val[0][0]) > float(val[0][1]):
-                # ///////////////////////////////////////////////////////////////////////////////
-                Camera.log = (Camera.log + '\nmodel prediction : correct')
-                print('model prediction : correct')
-                # ///////////////////////////////////////////////////////////////////////////////
-                return 0
-                # incorrect > correct
-            elif float(val[0][0]) < float(val[0][1]):
-                # ///////////////////////////////////////////////////////////////////////////////
-                Camera.log = (Camera.log + '\nmodel prediction : incorrect')
-                print('model prediction : incorrect')
-                # ///////////////////////////////////////////////////////////////////////////////
-                return 1
-        except:
-            Camera.Error_load_model = True
-            Camera.model_status = "Critical error in model please restart and try again."
-            Print_exception()
-            print("Critical error in model please restart and try again.")
 
     # スレッドが終了するまでwaitをかける
     def stop(self):
