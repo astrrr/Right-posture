@@ -142,7 +142,8 @@ class VideoThread(QThread):
             model = modeling
         except:
             # Use to trick critical error check
-            Camera.Finish_load_model = True
+            # Camera.Finish_load_model = True
+
             Camera.Error_load_model = True
             Camera.model_status = f"Model not found in '{dir_model}'."
             Print_exception()
