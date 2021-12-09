@@ -3,38 +3,11 @@ from main import *
 class UILoginFunctions:
     def Function_Login_Setup(self):
         self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
-        # ADD BUTTON
-        # ///////////////////////////////////////////////////////////////
-        self.ui.btn_Login.clicked.connect(self.buttonClick)
-        self.ui.btn_Register.clicked.connect(self.buttonClick)
-        self.ui.btn_Fpassword.clicked.connect(self.buttonClick)
-
-        self.ui.btn_Com_Register.clicked.connect(self.buttonClick)
-        self.ui.btn_Reg_Back.clicked.connect(self.buttonClick)
-
-        self.ui.btn_Forget_Email.clicked.connect(self.buttonClick)
-        self.ui.btn_Forget_Back.clicked.connect(self.buttonClick)
 
         # REMOVE TITLE BAR
         # ///////////////////////////////////////////////////////////////
         self.setWindowFlag(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
-
-        # IMPORT CIRCULAR PROGRESS
-        # ///////////////////////////////////////////////////////////////
-        # self.progress = CircularProgress()
-        # self.progress.width = 240
-        # self.progress.height = 240
-        # self.progress.value = 0
-        # self.progress.setFixedSize(self.progress.width, self.progress.height)
-        # self.progress.font_size = 20
-        # self.progress.add_shadow(True)
-        # self.progress.progress_width = 4
-        # self.progress.progress_color = QColor("#ff79c6")
-        # self.progress.text_color = QColor("#E6E6E6")
-        # self.progress.bg_color = QColor("#222222")
-        # self.progress.setParent(self.ui.preloader)
-        # self.progress.show()
 
         # ADD DROP SHADOW
         # ///////////////////////////////////////////////////////////////
@@ -50,16 +23,6 @@ class UILoginFunctions:
         self.timer = QTimer()
         self.timer.timeout.connect(self.update)
         self.timer.start(30)
-
-        # KEY PRESS EVENT
-        # ///////////////////////////////////////////////////////////////
-        self.ui.username.keyReleaseEvent = self.enter_login
-        self.ui.password.keyReleaseEvent = self.enter_login
-
-        self.ui.Reg_username.keyReleaseEvent = self.enter_regis
-        self.ui.Reg_password.keyReleaseEvent = self.enter_regis
-        self.ui.Reg_password_2.keyReleaseEvent = self.enter_regis
-        self.ui.Reg_email.keyReleaseEvent = self.enter_regis
 
     # START ANIMATION TO LOGIN
     # ///////////////////////////////////////////////////////////////

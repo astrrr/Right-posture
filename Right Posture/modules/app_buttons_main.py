@@ -1,7 +1,7 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
 
-class AppButtons(MainWindow):
+class Main_buttons(MainWindow):
 
     def defineButtons(self):
         button = self.ui

@@ -42,32 +42,11 @@ class LoginWindow(QMainWindow):
         self.ui.setupUi(self)
         UILoginFunctions.Function_Login_Setup(self)
         UIFunctions.LoginUiDefinitions(self)
+        Login_Buttons.defineButtons(self)
         self.ui.title_bar_3.setText("Login V1 Right Posture")
         self.ui.Login_Status.setText("Login")
         self.ui.Reg_Status.setText("Register")
         self.show()
-
-    def buttonClick(self):
-        btn = self.sender()
-        btnName = btn.objectName()
-
-        if btnName == "btn_Login":
-            self.check_login()
-
-        if btnName == "btn_Register":
-            self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Register_page)
-
-        if btnName == "btn_Fpassword":
-            UILoginFunctions.animation_to_Forget(self)
-
-        if btnName == "btn_Reg_Back":
-            self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
-
-        if btnName == "btn_Forget_Back":
-            UILoginFunctions.animation_back_to_Login(self)
-
-        if btnName == "btn_Com_Register":
-            self.check_register()
 
     def check_register(self):
         username = self.ui.Reg_username.text()
@@ -158,21 +137,9 @@ class LoginWindow(QMainWindow):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             self.check_register()
 
-    # UPDATE PROGRESS BAR
-    # ///////////////////////////////////////////////////////////////
-    # def update(self):
-    #     global counter
-    #
-    #     # SET VALUE TO PROGRESS BAR
-    #     self.progress.set_value(counter)
-    #
-    #     # CLOSE SPLASH SCREEN AND OPEN MAIN APP
-    #     if counter >= 100:
-    #         # STOP TIMER
-    #         self.timer.stop()
-    #         UILoginFunctions.animation_login(self)
-    #     # INCREASE COUNTER
-    #     counter += 1
+    # BUTTONS INTERFACE TO app_button_login
+    def buttonInterface(self):
+        Login_Buttons.buttonClick(self)
 
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
@@ -186,7 +153,7 @@ class MainWindow(QMainWindow):
         global widgets
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
-        AppButtons.defineButtons(self)
+        Main_buttons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
         self.show()
 
@@ -308,9 +275,9 @@ class MainWindow(QMainWindow):
         except:
             pass
 
-    # BUTTONS CLICK Add button here and above
+    # BUTTONS INTERFACE TO app_button_main
     def buttonInterface(self):
-        AppButtons.buttonClick(self)
+        Main_buttons.buttonClick(self)
 
     # RESIZE EVENTS
     def resizeEvent(self, event):
@@ -332,7 +299,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    windows = MainWindow()
-    # windows = LoginWindow()
+    # windows = MainWindow()
+    windows = LoginWindow()
 
     sys.exit(app.exec())
