@@ -360,7 +360,7 @@ class UIFunctions(MainWindow):
                 self.move(self.pos() + event.globalPos() - self.dragPos)
                 self.dragPos = event.globalPos()
                 event.accept()
-        self.ui.title_bar_3.mouseMoveEvent = moveWindow
+        self.ui.Login_title_bar.mouseMoveEvent = moveWindow
 
         # MINIMIZE
         self.ui.minimizeAppBtn.clicked.connect(lambda: self.showMinimized())

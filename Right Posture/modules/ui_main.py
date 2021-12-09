@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainyJoCay.ui'
+## Form generated from reading UI file 'mainuJxuQK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1141,31 +1141,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_23.addWidget(self.labelBoxBlenderInstalation_10)
 
-        self.Detail_Frame = QFrame(self.frame_5)
-        self.Detail_Frame.setObjectName(u"Detail_Frame")
-        self.Detail_Frame.setMinimumSize(QSize(0, 0))
-        self.Detail_Frame.setMaximumSize(QSize(16777215, 288))
-        self.Detail_Frame.setStyleSheet(u"#Detail_Frame{\n"
-"	border: 2px solid #bd93f9;\n"
-"}\n"
-"\n"
-"\n"
-"")
-        self.Detail_Frame.setFrameShape(QFrame.StyledPanel)
-        self.Detail_Frame.setFrameShadow(QFrame.Raised)
-        self.Camera_Frame_1_Layout_3 = QVBoxLayout(self.Detail_Frame)
-        self.Camera_Frame_1_Layout_3.setSpacing(0)
-        self.Camera_Frame_1_Layout_3.setObjectName(u"Camera_Frame_1_Layout_3")
-        self.Camera_Frame_1_Layout_3.setContentsMargins(4, 0, 0, 0)
-        self.Detail_text = QLabel(self.Detail_Frame)
+        self.Detail_text = QTextBrowser(self.frame_5)
         self.Detail_text.setObjectName(u"Detail_text")
-        self.Detail_text.setMinimumSize(QSize(0, 0))
-        self.Detail_text.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.Detail_text.setStyleSheet(u"border: 2px solid #bd93f9;\n"
+"")
 
-        self.Camera_Frame_1_Layout_3.addWidget(self.Detail_text, 0, Qt.AlignTop)
-
-
-        self.verticalLayout_23.addWidget(self.Detail_Frame)
+        self.verticalLayout_23.addWidget(self.Detail_text)
 
         self.show_detail = QCheckBox(self.frame_5)
         self.show_detail.setObjectName(u"show_detail")
@@ -2314,10 +2295,9 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Right Posture</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by \u20b3\u0282\u0454\u044a\u03b9\u0301.</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; ma"
-                        "rgin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">MIT License</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: </span><span style=\" font-family:'JetBrains Mono,monospace'; font-size:9.8pt; color:#bd93f9;\">Yuul B. Alwright</span></p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Warning system for incorrect sitting posture with machine learning.<br />Based on Python 3.9.7 and PySide6.</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0"
+                        "px;\"><span style=\" color:#bd93f9;\">Created by: Right Posture Team</span></p></body></html>", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"Right Posture - Make life better.", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
@@ -2335,12 +2315,16 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera 1", None))
+        self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera", None))
         self.Camera1_label.setText("")
-        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview Camera 1", None))
+        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview camera", None))
         self.labelBoxBlenderInstalation_10.setText(QCoreApplication.translate("MainWindow", u"Detail", None))
-        self.Detail_text.setText("")
-        self.show_detail.setText(QCoreApplication.translate("MainWindow", u"Show Detail", None))
+        self.Detail_text.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.show_detail.setText(QCoreApplication.translate("MainWindow", u"Show detail", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Status History", None))
         ___qtablewidgetitem = self.Status_Widgets.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Day 1", None));
@@ -2542,6 +2526,6 @@ class Ui_MainWindow(object):
         self.btn_logout_10.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Right Posture Team", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.5", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.1.0", None))
     # retranslateUi
 

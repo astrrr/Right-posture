@@ -41,5 +41,8 @@ from . app_detect import Camera
 # APP DATA
 from . app_data import *
 
-# APP BUTTONS
-from . app_buttons import *
+# MAIN BUTTONS
+from . app_buttons_main import *
+
+# LOGIN BUTTONS
+from .app_buttons_login import *

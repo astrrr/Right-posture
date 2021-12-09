@@ -1,7 +1,7 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
 
-class AppButtons(MainWindow):
+class Main_buttons(MainWindow):
 
     def defineButtons(self):
         button = self.ui
@@ -41,6 +41,9 @@ class AppButtons(MainWindow):
         button = self.ui
         btn = self.sender()
         btnName = btn.objectName()
+
+        if btnName == "btn_Logout":
+            self.Logout()
 
         if btnName == "btn_clear_log":
             self.ui.Detect_LOG.clear()

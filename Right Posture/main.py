@@ -31,10 +31,12 @@ from modules.app_detect import VideoThread
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
+# main "1" = MainWindow() , main "0" = LoginWindow
+main = 0
 widgets = None
 counter = 0
+camera_status = ""
 CircularProgress_timer = 300
-model_status = "Not loaded"
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -43,32 +45,10 @@ class LoginWindow(QMainWindow):
         self.ui.setupUi(self)
         UILoginFunctions.Function_Login_Setup(self)
         UIFunctions.LoginUiDefinitions(self)
-        self.ui.title_bar_3.setText("Login V1 Right Posture")
+        Login_Buttons.defineButtons(self)
         self.ui.Login_Status.setText("Login")
         self.ui.Reg_Status.setText("Register")
         self.show()
-
-    def buttonClick(self):
-        btn = self.sender()
-        btnName = btn.objectName()
-
-        if btnName == "btn_Login":
-            self.check_login()
-
-        if btnName == "btn_Register":
-            self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Register_page)
-
-        if btnName == "btn_Fpassword":
-            UILoginFunctions.animation_to_Forget(self)
-
-        if btnName == "btn_Reg_Back":
-            self.ui.Login_stackedWidget.setCurrentWidget(self.ui.Login_page)
-
-        if btnName == "btn_Forget_Back":
-            UILoginFunctions.animation_back_to_Login(self)
-
-        if btnName == "btn_Com_Register":
-            self.check_register()
 
     def check_register(self):
         username = self.ui.Reg_username.text()
@@ -159,21 +139,9 @@ class LoginWindow(QMainWindow):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             self.check_register()
 
-    # UPDATE PROGRESS BAR
-    # ///////////////////////////////////////////////////////////////
-    # def update(self):
-    #     global counter
-    #
-    #     # SET VALUE TO PROGRESS BAR
-    #     self.progress.set_value(counter)
-    #
-    #     # CLOSE SPLASH SCREEN AND OPEN MAIN APP
-    #     if counter >= 100:
-    #         # STOP TIMER
-    #         self.timer.stop()
-    #         UILoginFunctions.animation_login(self)
-    #     # INCREASE COUNTER
-    #     counter += 1
+    # BUTTONS INTERFACE TO app_button_login
+    def buttonInterface(self):
+        Login_Buttons.buttonClick(self)
 
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
@@ -187,7 +155,7 @@ class MainWindow(QMainWindow):
         global widgets
         widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
-        AppButtons.defineButtons(self)
+        Main_buttons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
         self.show()
 
@@ -207,8 +175,9 @@ class MainWindow(QMainWindow):
 
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():
-            self.ui.Detail_text.setText(f"Camera: 1 (VideoCapture(0))\n"
-                                        f"Model: MNv2_V3 ({model_status})")
+            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {camera_status}\n\n"
+                                        f"Models: MNv2_V3\n"
+                                        f"Models Status: {Camera.model_status}")
             save_data("PreDetail", 1)
             # print("Start Detail")
         else:
@@ -228,24 +197,37 @@ class MainWindow(QMainWindow):
     # UPDATE PROGRESS BAR
     def update(self):
         global counter
-        global model_status
         self.progress.set_value(counter)
         if counter >= 100:
             # STOP TIMER
-            self.timer.stop()
-            Camera.First_load_model = False
-            Camera.start_cam = True
-            Camera.detect(self, False)
-            Camera.detect(self, True)
-            self.progress.setParent(None)
-            self.progress.close()
-            model_status = "Loaded"
-            self.Show_Detail()
-            self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
-            self.ui.pre_cam_1.setEnabled(True)
-        counter += 1
+            if Camera.Finish_load_model:
+                self.timer.stop()
+                Camera.First_load_model = False
+                Camera.start_cam = True
+                Camera.detect(self, False)
+                Camera.detect(self, True)
+                self.progress.setParent(None)
+                self.progress.close()
+                self.Show_Detail()
+                self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
+                self.ui.pre_cam_1.setEnabled(True)
+            else:
+                Camera.model_status = "Waiting for model."
+                self.Show_Detail()
+        else:
+            if Camera.Finish_load_model:
+                if counter <= 80:
+                    counter = 81
+
+            if Camera.Error_load_model:
+                self.timer.stop()
+                self.Show_Detail()
+                self.ui.pre_cam_1.setEnabled(True)
+            counter += 1
 
     def Camera_1(self):
+        global counter
+        global camera_status
         if Camera.First_load_model:
             self.ui.Camera1_label.setText("The model hasn't loaded yet.")
         else:
@@ -253,6 +235,9 @@ class MainWindow(QMainWindow):
 
         if self.ui.pre_cam_1.isChecked():
             if Camera.First_load_model:
+                counter = 0
+                Camera.model_status = "Loading model"
+                self.Show_Detail()
                 self.ui.pre_cam_1.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
                 self.timer = QTimer()
@@ -260,13 +245,21 @@ class MainWindow(QMainWindow):
                 self.timer.start(CircularProgress_timer)
                 self.progress.setParent(self.ui.Camera_Frame_1)
                 self.progress.show()
+            camera_status = "ON"
+            self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
             Camera.detect(self, True)
             save_data("PreCam1", 1)
             # print("Start Camera_1")
         else:
+            counter = 0
+            camera_status = "OFF"
+            self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
+            self.progress.setParent(None)
+            self.progress.close()
+            Camera.Error_load_model = False
             Camera.detect(self, False)
             save_data("PreCam1", 0)
             # print("Stop Camera_1")
@@ -288,12 +281,21 @@ class MainWindow(QMainWindow):
             qpix = QPixmap.fromImage(qimg)
             self.image_label.setPixmap(qpix)
             self.Detect_Log()
+            if Camera.Error_load_model:
+                self.Show_Detail()
         except:
             pass
 
-    # BUTTONS CLICK Add button here and above
+    def Logout(self):
+        QTimer.singleShot(1200, lambda: open_Login())
+        def open_Login():
+            self.Login = LoginWindow()
+            self.Login.show()
+            self.close()
+
+    # BUTTONS INTERFACE TO app_button_main
     def buttonInterface(self):
-        AppButtons.buttonClick(self)
+        Main_buttons.buttonClick(self)
 
     # RESIZE EVENTS
     def resizeEvent(self, event):
@@ -315,7 +317,9 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
-    # windows = MainWindow()
-    windows = LoginWindow()
+    if main:
+        windows = MainWindow()
+    else:
+        windows = LoginWindow()
 
     sys.exit(app.exec())

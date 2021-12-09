@@ -1033,7 +1033,14 @@ background-repeat: no-repeat;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="title_bar_3">
+         <widget class="QLabel" name="Login_title_bar">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
           </property>
@@ -1041,12 +1048,15 @@ background-repeat: no-repeat;</string>
            <number>0</number>
           </property>
           <property name="text">
-           <string>Login V1 PyDracula</string>
+           <string>Login Right Posture</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
           </property>
           <property name="margin">
+           <number>0</number>
+          </property>
+          <property name="indent">
            <number>20</number>
           </property>
          </widget>

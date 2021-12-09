@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Right Posture"
-#define MyAppVersion "1.0.5"
+#define MyAppVersion "1.1.0"
 #define MyAppPublisher "Right Posture TEAM"
 #define MyAppURL "https://github.com/astrrr/Right-posture"
 #define MyAppExeName "main.exe"
