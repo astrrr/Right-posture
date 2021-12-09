@@ -32,9 +32,10 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 # main "1" = MainWindow() , main "0" = LoginWindow
-main = 0
+main = 1
 widgets = None
 counter = 0
+camera_status = ""
 CircularProgress_timer = 300
 
 class LoginWindow(QMainWindow):
@@ -175,9 +176,9 @@ class MainWindow(QMainWindow):
 
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():
-            self.ui.Detail_text.setText(f"Camera: 1 (VideoCapture(0))\n"
-                                        f"Model: MNv2_V3\n"
-                                        f"Status: {Camera.model_status}")
+            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {camera_status}\n\n"
+                                        f"Models: MNv2_V3\n"
+                                        f"Models Status: {Camera.model_status}")
             save_data("PreDetail", 1)
             # print("Start Detail")
         else:
@@ -215,6 +216,14 @@ class MainWindow(QMainWindow):
                 Camera.model_status = "Waiting for model."
                 self.Show_Detail()
         else:
+            if Camera.Finish_load_model:
+                if counter < 87:
+                    QTimer.singleShot(500, lambda: set_counter(87))
+                    counter += 1
+                    QTimer.singleShot(500, lambda: set_counter(100))
+                else:
+                    QTimer.singleShot(500, lambda: set_counter(100))
+
             if Camera.Error_load_model:
                 self.timer.stop()
                 self.Show_Detail()
@@ -223,6 +232,7 @@ class MainWindow(QMainWindow):
 
     def Camera_1(self):
         global counter
+        global camera_status
         if Camera.First_load_model:
             self.ui.Camera1_label.setText("The model hasn't loaded yet.")
         else:
@@ -240,12 +250,16 @@ class MainWindow(QMainWindow):
                 self.timer.start(CircularProgress_timer)
                 self.progress.setParent(self.ui.Camera_Frame_1)
                 self.progress.show()
+            camera_status = "ON"
+            self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
             Camera.detect(self, True)
             save_data("PreCam1", 1)
             # print("Start Camera_1")
         else:
             counter = 0
+            camera_status = "OFF"
+            self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             self.progress.setParent(None)
@@ -303,6 +317,10 @@ class MainWindow(QMainWindow):
         #     print('Mouse click: LEFT CLICK')
         # if event.buttons() == Qt.RightButton:
         #     print('Mouse click: RIGHT CLICK')
+
+def set_counter(value):
+    global counter
+    counter = value
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
