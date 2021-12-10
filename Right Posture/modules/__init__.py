@@ -46,3 +46,6 @@ from . app_buttons_main import *
 
 # LOGIN BUTTONS
 from .app_buttons_login import *
+
+# MAIN CHECKBOX
+from .app_checkbox import *

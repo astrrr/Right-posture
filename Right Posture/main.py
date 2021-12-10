@@ -32,10 +32,9 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
 # main "1" = MainWindow() , main "0" = LoginWindow
-main = 0
+main = 1
 widgets = None
 counter = 0
-camera_status = ""
 CircularProgress_timer = 300
 
 class LoginWindow(QMainWindow):
@@ -173,28 +172,6 @@ class MainWindow(QMainWindow):
     #         self.ui.Status_Widgets.setItem(table_row, 0, QtWidgets.QTableWidgetItem(row["test"]))
     #         table_row += 1
 
-    def Show_Detail(self):
-        if self.ui.show_detail.isChecked():
-            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {camera_status}\n\n"
-                                        f"Models: MNv2_V3\n"
-                                        f"Models Status: {Camera.model_status}\n"
-                                        f"{Camera.traceback}")
-            save_data("PreDetail", 1)
-            # print("Start Detail")
-        else:
-            self.ui.Detail_text.clear()
-            save_data("PreDetail", 0)
-            # print("Stop Detail")
-
-    def Detect_Log(self):
-        if self.ui.show_log.isChecked():
-            self.ui.Detect_LOG.append(Camera.log)
-            save_data("PreLog", 1)
-            # print("Start Logging")
-        else:
-            save_data("PreLog", 0)
-            # print("Stop Logging")
-
     # UPDATE PROGRESS BAR
     def update(self):
         global counter
@@ -250,7 +227,7 @@ class MainWindow(QMainWindow):
                 self.timer.start(CircularProgress_timer)
                 self.progress.setParent(self.ui.Camera_Frame_1)
                 self.progress.show()
-            camera_status = "ON"
+            Main_checkbox.camera_status = "ON"
             self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
             Camera.detect(self, True)
@@ -258,7 +235,7 @@ class MainWindow(QMainWindow):
             # print("Start Camera_1")
         else:
             counter = 0
-            camera_status = "OFF"
+            Main_checkbox.camera_status = "OFF"
             self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
@@ -298,6 +275,12 @@ class MainWindow(QMainWindow):
             self.Login.show()
             self.close()
 
+    def Show_Detail(self):
+        Main_checkbox.Show_Detail(self)
+
+    def Detect_Log(self):
+        Main_checkbox.Detect_Log(self)
+
     # BUTTONS INTERFACE TO app_button_main
     def buttonInterface(self):
         Main_buttons.buttonClick(self)
@@ -311,12 +294,6 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPosition().toPoint()
-
-        # PRINT MOUSE EVENTS
-        # if event.buttons() == Qt.LeftButton:
-        #     print('Mouse click: LEFT CLICK')
-        # if event.buttons() == Qt.RightButton:
-        #     print('Mouse click: RIGHT CLICK')
 
 def set_counter(value):
     global counter
