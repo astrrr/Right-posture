@@ -1,6 +1,7 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
-
+import traceback
+import sys
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
@@ -78,7 +79,11 @@ class Main_buttons(MainWindow):
 
         if btnName == "btn_print":
             print(button.notifyword.text())
-            AppFunctions.notifyMe("Debug", "Notification")
-
+            try:
+                AppFunctions.notifyMe(self, "Debug", "Notification")
+            except:
+                traceback.print_exc()
+                excType, value = sys.exc_info()[:2]
+                self.ui.Detail_text.append = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
