@@ -28,7 +28,7 @@ def predict(img):
     X = np.expand_dims(X, axis=0)
     image = np.vstack([X])
     try:
-        val = model.predict(image)
+        val = model(image)
         # correct > incorrect
         if float(val[0][0]) > float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
