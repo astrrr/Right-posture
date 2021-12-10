@@ -191,10 +191,9 @@ class Worker(QRunnable):
             self.signals.finished.emit()  # Done
 
 class Camera:
-    model_name = model_name
-    VideoCapture = VideoCapture
     log = ""
     traceback = ""
+    get_model_name = model_name
     model_status = "Not loaded"
     First_load_model = True
     Finish_load_model = False

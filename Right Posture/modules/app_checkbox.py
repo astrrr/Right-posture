@@ -5,8 +5,8 @@ class Main_checkbox(MainWindow):
     camera_status = ""
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():
-            self.ui.Detail_text.setText(f"Camera VideoCapture({Camera.VideoCapture}): {Main_checkbox.camera_status}\n\n"
-                                        f"Models: {Camera.model_name}\n"
+            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {Main_checkbox.camera_status}\n\n"
+                                        f"Models: {Camera.get_model_name}\n"
                                         f"Models Status: {Camera.model_status}\n"
                                         f"{Camera.traceback}")
             save_data("PreDetail", 1)
