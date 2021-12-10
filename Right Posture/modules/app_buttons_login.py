@@ -7,17 +7,17 @@ class Login_Buttons(LoginWindow):
         button = self.ui
 
         # LOGIN BUTTON
-        button.btn_Login.clicked.connect(self.buttonInterface)
-        button.btn_Register.clicked.connect(self.buttonInterface)
-        button.btn_Fpassword.clicked.connect(self.buttonInterface)
+        button.btn_Login.clicked.connect(self.Login_button_Interface)
+        button.btn_Register.clicked.connect(self.Login_button_Interface)
+        button.btn_Fpassword.clicked.connect(self.Login_button_Interface)
 
         # REGISTER BUTTON
-        button.btn_Com_Register.clicked.connect(self.buttonInterface)
-        button.btn_Reg_Back.clicked.connect(self.buttonInterface)
+        button.btn_Com_Register.clicked.connect(self.Login_button_Interface)
+        button.btn_Reg_Back.clicked.connect(self.Login_button_Interface)
 
         # FORGET BUTTON
-        button.btn_Forget_Email.clicked.connect(self.buttonInterface)
-        button.btn_Forget_Back.clicked.connect(self.buttonInterface)
+        button.btn_Forget_Email.clicked.connect(self.Login_button_Interface)
+        button.btn_Forget_Back.clicked.connect(self.Login_button_Interface)
 
         # KEY PRESS EVENT
         # ///////////////////////////////////////////////////////////////

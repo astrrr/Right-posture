@@ -12,6 +12,7 @@ mp_pose = mp.solutions.pose
 cwd = os.getcwd()
 model = None
 model_name = 'MNv2_V3'
+VideoCapture = 0
 
 def Print_exception():
     traceback.print_exc()
@@ -68,7 +69,7 @@ class VideoThread(QThread):
             worker.signals.finished.connect(self.thread_complete)
             self.threadpool.start(worker)
         if Camera.Finish_load_model:
-            cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+            cap = cv2.VideoCapture(VideoCapture, cv2.CAP_DSHOW)
             pred = 3
             img_counter_cor = 0
             with mp_pose.Pose(
@@ -158,39 +159,6 @@ class VideoThread(QThread):
             Camera.model_status = "Loaded"
             print("Finish load model")
 
-class Camera:
-    model_name = model_name
-    log = ""
-    traceback = ""
-    model_status = "Not loaded"
-    First_load_model = True
-    Finish_load_model = False
-    Error_load_model = False
-    def detect(self, enable):
-        if enable:
-            self.image_label = QLabel(self)
-
-            # vboxにQLabelをセット
-            Camera_1 = self.ui.Camera_Frame_1_Layout
-            Camera_1.addWidget(self.image_label)
-
-            # vboxをレイアウトとして配置
-            self.setLayout(Camera_1)
-
-            # ビデオキャプチャ用のスレッドオブジェクトを生成
-            self.thread = VideoThread()
-            # ビデオスレッド内のchange_pixmap_signalオブジェクトのシグナルに対するslot
-            self.thread.change_pixmap_signal.connect(self.update_image)
-
-            self.thread.start()  # スレッドを起動
-        else:
-            try:
-                self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
-                self.image_label.deleteLater()
-                self.thread.stop()
-            except:
-                pass
-
 class WorkerSignals(QObject):
     finished = Signal()
     error = Signal(tuple)
@@ -221,3 +189,37 @@ class Worker(QRunnable):
             self.signals.result.emit(result)  # Return the result of the processing
         finally:
             self.signals.finished.emit()  # Done
+
+class Camera:
+    model_name = model_name
+    VideoCapture = VideoCapture
+    log = ""
+    traceback = ""
+    model_status = "Not loaded"
+    First_load_model = True
+    Finish_load_model = False
+    Error_load_model = False
+    def detect(self, enable):
+        if enable:
+            self.image_label = QLabel(self)
+
+            # vboxにQLabelをセット
+            Camera_1 = self.ui.Camera_Frame_1_Layout
+            Camera_1.addWidget(self.image_label)
+
+            # vboxをレイアウトとして配置
+            self.setLayout(Camera_1)
+
+            # ビデオキャプチャ用のスレッドオブジェクトを生成
+            self.thread = VideoThread()
+            # ビデオスレッド内のchange_pixmap_signalオブジェクトのシグナルに対するslot
+            self.thread.change_pixmap_signal.connect(self.update_image)
+
+            self.thread.start()  # スレッドを起動
+        else:
+            try:
+                self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
+                self.image_label.deleteLater()
+                self.thread.stop()
+            except:
+                pass

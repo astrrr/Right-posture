@@ -6,28 +6,28 @@ class Main_buttons(MainWindow):
     def defineButtons(self):
         button = self.ui
         loaded_object = load_data()
-        button.btn_Home.clicked.connect(self.buttonInterface)
-        button.btn_Status.clicked.connect(self.buttonInterface)
-        button.btn_Posture.clicked.connect(self.buttonInterface)
-        button.btn_Tutorial.clicked.connect(self.buttonInterface)
-        button.btn_Camera.clicked.connect(self.buttonInterface)
-        button.btn_Notification.clicked.connect(self.buttonInterface)
-        button.btn_Logout.clicked.connect(self.buttonInterface)
-        button.btn_saveNotify.clicked.connect(self.buttonInterface)
-        button.btn_print.clicked.connect(self.buttonInterface)
-        button.btn_clear_log.clicked.connect(self.buttonInterface)
+        button.btn_Home.clicked.connect(self.Main_button_Interface)
+        button.btn_Status.clicked.connect(self.Main_button_Interface)
+        button.btn_Posture.clicked.connect(self.Main_button_Interface)
+        button.btn_Tutorial.clicked.connect(self.Main_button_Interface)
+        button.btn_Camera.clicked.connect(self.Main_button_Interface)
+        button.btn_Notification.clicked.connect(self.Main_button_Interface)
+        button.btn_Logout.clicked.connect(self.Main_button_Interface)
+        button.btn_saveNotify.clicked.connect(self.Main_button_Interface)
+        button.btn_print.clicked.connect(self.Main_button_Interface)
+        button.btn_clear_log.clicked.connect(self.Main_button_Interface)
 
-        # button.Test_radioButton_1.clicked.connect(self.buttonInterface)
+        # button.Test_radioButton_1.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
         button.show_detail.setChecked(loaded_object["PreDetail"])
-        button.show_detail.clicked.connect(self.Show_Detail)
-        self.Show_Detail()
+        button.show_detail.clicked.connect(self.Show_Detail_Interface)
+        self.Show_Detail_Interface()
 
         # Preview Detect log
         button.show_log.setChecked(loaded_object["PreLog"])
-        button.show_log.clicked.connect(self.Detect_Log)
-        self.Detect_Log()
+        button.show_log.clicked.connect(self.Detect_Log_Interface)
+        self.Detect_Log_Interface()
 
         # Preview Camera 1
         button.pre_cam_1.setChecked(loaded_object["PreCam1"])

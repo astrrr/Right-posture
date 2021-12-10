@@ -27,12 +27,10 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
 
-from modules.app_detect import VideoThread
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
-# SET AS GLOBAL WIDGETS
 # main "1" = MainWindow() , main "0" = LoginWindow
-main = 1
+main = 0
 widgets = None
 counter = 0
 CircularProgress_timer = 300
@@ -139,7 +137,7 @@ class LoginWindow(QMainWindow):
             self.check_register()
 
     # BUTTONS INTERFACE TO app_button_login
-    def buttonInterface(self):
+    def Login_button_Interface(self):
         Login_Buttons.buttonClick(self)
 
     def mousePressEvent(self, event):
@@ -186,12 +184,12 @@ class MainWindow(QMainWindow):
                 Camera.detect(self, True)
                 self.progress.setParent(None)
                 self.progress.close()
-                self.Show_Detail()
+                self.Show_Detail_Interface()
                 self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
                 self.ui.pre_cam_1.setEnabled(True)
             else:
                 Camera.model_status = "Waiting for model."
-                self.Show_Detail()
+                self.Show_Detail_Interface()
         else:
             if Camera.Finish_load_model:
                 if counter < 50:
@@ -203,7 +201,7 @@ class MainWindow(QMainWindow):
 
             if Camera.Error_load_model:
                 self.timer.stop()
-                self.Show_Detail()
+                self.Show_Detail_Interface()
                 self.ui.pre_cam_1.setEnabled(True)
             counter += 1
 
@@ -219,7 +217,7 @@ class MainWindow(QMainWindow):
             if Camera.First_load_model:
                 counter = 0
                 Camera.model_status = "Loading model"
-                self.Show_Detail()
+                self.Show_Detail_Interface()
                 self.ui.pre_cam_1.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
                 self.timer = QTimer()
@@ -228,7 +226,7 @@ class MainWindow(QMainWindow):
                 self.progress.setParent(self.ui.Camera_Frame_1)
                 self.progress.show()
             Main_checkbox.camera_status = "ON"
-            self.Show_Detail()
+            self.Show_Detail_Interface()
             self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
             Camera.detect(self, True)
             save_data("PreCam1", 1)
@@ -236,7 +234,7 @@ class MainWindow(QMainWindow):
         else:
             counter = 0
             Main_checkbox.camera_status = "OFF"
-            self.Show_Detail()
+            self.Show_Detail_Interface()
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             self.progress.setParent(None)
@@ -262,27 +260,20 @@ class MainWindow(QMainWindow):
                                 QtGui.QImage.Format.Format_BGR888)
             qpix = QPixmap.fromImage(qimg)
             self.image_label.setPixmap(qpix)
-            self.Detect_Log()
+            self.Detect_Log_Interface()
             if Camera.Error_load_model:
-                self.Show_Detail()
+                self.Show_Detail_Interface()
         except:
             pass
 
-    def Logout(self):
-        QTimer.singleShot(1200, lambda: open_Login())
-        def open_Login():
-            self.Login = LoginWindow()
-            self.Login.show()
-            self.close()
-
-    def Show_Detail(self):
+    def Show_Detail_Interface(self):
         Main_checkbox.Show_Detail(self)
 
-    def Detect_Log(self):
+    def Detect_Log_Interface(self):
         Main_checkbox.Detect_Log(self)
 
     # BUTTONS INTERFACE TO app_button_main
-    def buttonInterface(self):
+    def Main_button_Interface(self):
         Main_buttons.buttonClick(self)
 
     # RESIZE EVENTS
@@ -294,7 +285,14 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPosition().toPoint()
-
+        
+    def Logout(self):
+        QTimer.singleShot(1200, lambda: open_Login())
+        def open_Login():
+            self.Login = LoginWindow()
+            self.Login.show()
+            self.close()
+            
 def set_counter(value):
     global counter
     counter = value
