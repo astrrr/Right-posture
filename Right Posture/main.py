@@ -259,6 +259,7 @@ class MainWindow(QMainWindow):
         else:
             counter = 0
             camera_status = "OFF"
+            self.Show_Detail()
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             self.progress.setParent(None)
