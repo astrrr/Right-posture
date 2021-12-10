@@ -11,6 +11,7 @@ mp_pose = mp.solutions.pose
 
 cwd = os.getcwd()
 model = None
+model_name = 'MNv2_V3'
 
 def Print_exception():
     traceback.print_exc()
@@ -135,7 +136,7 @@ class VideoThread(QThread):
 
     def execute_this_fn(self):
         global model
-        dir_model = 'bin/Model/MNv2_V3'
+        dir_model = f"bin/Model/{model_name}"
         try:
             modeling = tf.keras.models.load_model(dir_model)
             model = modeling
@@ -158,6 +159,7 @@ class VideoThread(QThread):
             print("Finish load model")
 
 class Camera:
+    model_name = model_name
     log = ""
     traceback = ""
     model_status = "Not loaded"
