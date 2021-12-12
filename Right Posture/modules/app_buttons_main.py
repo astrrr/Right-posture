@@ -1,5 +1,6 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
+from modules.app_checkbox import Main_checkbox
 import traceback
 import sys
 class Main_buttons(MainWindow):
@@ -22,13 +23,11 @@ class Main_buttons(MainWindow):
 
         # Preview Detail
         button.show_detail.setChecked(loaded_object["PreDetail"])
-        button.show_detail.clicked.connect(self.Show_Detail_Interface)
-        self.Show_Detail_Interface()
+        button.show_detail.clicked.connect(self.Main_button_Interface)
 
         # Preview Detect log
         button.show_log.setChecked(loaded_object["PreLog"])
-        button.show_log.clicked.connect(self.Detect_Log_Interface)
-        self.Detect_Log_Interface()
+        button.show_log.clicked.connect(self.Main_button_Interface)
 
         # Preview Camera 1
         button.pre_cam_1.setChecked(loaded_object["PreCam1"])
@@ -42,6 +41,14 @@ class Main_buttons(MainWindow):
         button = self.ui
         btn = self.sender()
         btnName = btn.objectName()
+
+        # ////////// CHECK BOX ZONE //////////
+        if btnName == "show_log":
+            Main_checkbox.Detect_Log(self)
+
+        if btnName == "show_detail":
+            Main_checkbox.Show_Detail(self)
+        # ////////////////////////////////////
 
         if btnName == "btn_Logout":
             self.Logout()
@@ -78,7 +85,6 @@ class Main_buttons(MainWindow):
             AppFunctions.notifyMe("ไปนอนซะ", button.notifyword.text())
 
         if btnName == "btn_print":
-            print(button.notifyword.text())
             try:
                 AppFunctions.notifyMe(self, "Debug", "Notification")
             except:
