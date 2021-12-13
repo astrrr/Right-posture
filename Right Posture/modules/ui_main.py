@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainscKHCE.ui'
+## Form generated from reading UI file 'mainukcSiz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -2527,6 +2527,6 @@ class Ui_MainWindow(object):
         self.btn_logout_10.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Right Posture Team", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.1.0", None))
+        self.version.setText(QCoreApplication.translate("MainWindow", u"Demo", None))
     # retranslateUi
 

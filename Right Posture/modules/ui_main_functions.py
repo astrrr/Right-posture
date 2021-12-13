@@ -30,6 +30,9 @@ class UIFunctions(MainWindow):
         # SET UI DEFINITIONS
         UIFunctions.uiDefinitions(self)
 
+        # SET VERSION
+        widgets.version.setText(MainWindow.versions)
+
         # APP NAME
         title = "Right Posture"
         # description = "Right Posture - Make life better."

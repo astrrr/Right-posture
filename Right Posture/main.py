@@ -30,6 +30,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
+version = "1.1.1"
 widgets = None
 counter = 0
 CircularProgress_timer = 300
@@ -70,6 +71,8 @@ class AuthWindow(QMainWindow):
         self.dragPos = event.globalPosition().toPoint()
 
 class MainWindow(QMainWindow):
+    global version
+    versions = version
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
