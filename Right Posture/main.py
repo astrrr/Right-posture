@@ -28,20 +28,20 @@ from PySide6.QtWidgets import QApplication
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
-# main "1" = MainWindow() , main "0" = LoginWindow
+# main "1" = MainWindow , main "0" = AuthWindow
 main = 0
 widgets = None
 counter = 0
 CircularProgress_timer = 300
 
-class LoginWindow(QMainWindow):
+class AuthWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_Login()
         self.ui.setupUi(self)
         UILoginFunctions.Function_Login_Setup(self)
         UIFunctions.LoginUiDefinitions(self)
-        Login_buttons.defineButtons(self)
+        Auth_buttons.defineButtons(self)
         self.ui.Login_Status.setText("Login")
         self.ui.Reg_Status.setText("Register")
         self.show()
@@ -63,7 +63,7 @@ class LoginWindow(QMainWindow):
 
     # BUTTONS INTERFACE TO app_button_login
     def Login_button_Interface(self):
-        Login_buttons.buttonClick(self)
+        Auth_buttons.buttonClick(self)
 
     def mousePressEvent(self, event):
         # SET DRAG POS WINDOW
@@ -81,19 +81,7 @@ class MainWindow(QMainWindow):
         PyToggle.Toggle_Switch(self)
         self.show()
 
-    #     self.Load_Table()
-    # def Load_Table(self):
-    #     people = [{"test": "james", "text": "idk", "cell": "eiei", "Line": "las"},
-    #               {"test": "eak", "text": "idk", "cell": "eiei", "Line": "las"},
-    #               {"test": "sun", "text": "idk", "cell": "eiei", "Line": "las"},
-    #               {"test": "cry", "text": "idk", "cell": "eiei", "Line": "las"},
-    #               {"test": "a", "text": "idk", "cell": "eiei", "Line": "las"},
-    #               {"test": "lot", "text": "idk", "cell": "eiei", "Line": "las"}]
-    #     table_row = 0
-    #     self.ui.Status_Widgets.setRowCount(len(people))
-    #     for row in people:
-    #         self.ui.Status_Widgets.setItem(table_row, 0, QtWidgets.QTableWidgetItem(row["test"]))
-    #         table_row += 1
+        Main_table.Load_Table(self)
 
     # UPDATE PROGRESS BAR
     def update(self):
@@ -207,7 +195,7 @@ class MainWindow(QMainWindow):
     def Logout(self):
         QTimer.singleShot(1200, lambda: open_Login())
         def open_Login():
-            self.Login = LoginWindow()
+            self.Login = AuthWindow()
             self.Login.show()
             self.close()
             
@@ -222,6 +210,6 @@ if __name__ == "__main__":
     if main:
         windows = MainWindow()
     else:
-        windows = LoginWindow()
+        windows = AuthWindow()
 
     sys.exit(app.exec())

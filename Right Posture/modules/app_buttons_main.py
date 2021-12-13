@@ -1,8 +1,7 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
 from modules.app_checkbox import Main_checkbox
-import traceback
-import sys
+
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
@@ -85,11 +84,6 @@ class Main_buttons(MainWindow):
             AppFunctions.notifyMe("ไปนอนซะ", button.notifyword.text())
 
         if btnName == "btn_print":
-            try:
-                AppFunctions.notifyMe(self, "Debug", "Notification")
-            except:
-                traceback.print_exc()
-                excType, value = sys.exc_info()[:2]
-                self.ui.Detail_text.append = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
+            AppFunctions.notifyMe(self, "Debug", "Notification")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')

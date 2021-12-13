@@ -44,11 +44,14 @@ from . app_data import *
 # MAIN BUTTONS
 from . app_buttons_main import Main_buttons
 
-# LOGIN BUTTONS
-from .app_buttons_login import Login_buttons
-
 # MAIN CHECKBOX
 from .app_checkbox import Main_checkbox
+
+# APP TABLE
+from .app_table import Main_table
+
+# LOGIN BUTTONS
+from .app_buttons_login import Auth_buttons
 
 # APP AUTHENTICATION
 from .app_auth import Auth_system
