@@ -2074,8 +2074,9 @@ color: #E6E6E6;</string>
                              <item>
                               <widget class="QTextBrowser" name="Detail_text">
                                <property name="styleSheet">
-                                <string notr="true">border: 2px solid #bd93f9;
-</string>
+                                <string notr="true">#Detail_text {
+	border: 2px solid #bd93f9;
+}</string>
                                </property>
                                <property name="html">
                                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2606,9 +2607,9 @@ border: 2px solid #ff79c6;</string>
                           <item>
                            <widget class="QTextBrowser" name="Detect_LOG">
                             <property name="styleSheet">
-                             <string notr="true">border: 2px solid #bd93f9;
-
-</string>
+                             <string notr="true">#Detect_LOG {
+	border: 2px solid #bd93f9;
+}</string>
                             </property>
                             <property name="html">
                              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -4361,7 +4362,7 @@ background-repeat: no-repeat;</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <layout class="QVBoxLayout" name="Toggle_Light_Layout_2">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -4466,7 +4467,7 @@ background-repeat: no-repeat;</string>
                              <number>0</number>
                             </property>
                             <item>
-                             <widget class="QPushButton" name="btn_NightMode">
+                             <widget class="QPushButton" name="btn_LightMode">
                               <property name="enabled">
                                <bool>false</bool>
                               </property>
@@ -4486,15 +4487,15 @@ background-repeat: no-repeat;</string>
                                <cursorShape>ArrowCursor</cursorShape>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">background-image: url(:/icons/images/icons/cil-moon.png);</string>
+                               <string notr="true">background-image: url(:/icons/images/icons/cil-lightbulb.png);</string>
                               </property>
                               <property name="text">
-                               <string>Night Mode</string>
+                               <string>Light Mode</string>
                               </property>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QFrame" name="Toggle_Night">
+                             <widget class="QFrame" name="Toggle_Light">
                               <property name="maximumSize">
                                <size>
                                 <width>60</width>
@@ -4507,7 +4508,7 @@ background-repeat: no-repeat;</string>
                               <property name="frameShadow">
                                <enum>QFrame::Raised</enum>
                               </property>
-                              <layout class="QVBoxLayout" name="Toggle_Night_Layout">
+                              <layout class="QVBoxLayout" name="Toggle_Light_Layout">
                                <property name="spacing">
                                 <number>0</number>
                                </property>
@@ -4902,7 +4903,7 @@ background-repeat: no-repeat;</string>
                 <item>
                  <widget class="QLabel" name="version">
                   <property name="text">
-                   <string>v1.1.0</string>
+                   <string>Demo</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

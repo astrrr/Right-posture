@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Downloads/Modern_GUI_PyDracula_PySide6_or_PyQt6-master/.idea/Modern_GUI_PyDracula_PySide6_or_PyQt6-master.iml" filepath="$USER_HOME$/Downloads/Modern_GUI_PyDracula_PySide6_or_PyQt6-master/.idea/Modern_GUI_PyDracula_PySide6_or_PyQt6-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Right Posture.iml" filepath="$PROJECT_DIR$/.idea/Right Posture.iml" />
     </modules>
   </component>

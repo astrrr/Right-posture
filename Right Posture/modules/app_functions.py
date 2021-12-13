@@ -16,9 +16,8 @@
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
-from main import MainWindow
-from pynotifier import Notification
-from notifypy import Notify
+from main import MainWindow, Settings
+from plyer import notification
 from pypresence import Presence
 import time
 # WITH ACCESS TO MAIN WINDOW WIDGETS
@@ -26,23 +25,14 @@ import time
 class AppFunctions(MainWindow):
 
     # Notification function
-    def notifyMe(self, message):
-        Notification(
-            title=self,
-            description=message,
-            icon_path="bin/Icon/iconTimer.ico",
-            duration=5,
-            urgency='critical'
-        ).send()
-
-    def notifyFull(self, message):
-        notification = Notify(
-            default_notification_title=self,
-            default_notification_application_name="Right Posture",
-            default_notification_message=message,
-            default_notification_icon="bin/Icon/iconTimer.ico",
-            #default_notification_audio="C:\\Users\\Mero Asebi\\Downloads\\Noti\\t2.wav"
-        ).send()
+    def notifyMe(self, title, message):
+        notification.notify(
+            title=title,
+            message=message,
+            timeout=10,
+            app_icon="bin/Icon/iconTimer.ico"
+        )
+        self.ui.Detail_text.append("Print notification")
 
     # Discord Rich Presence
     def discordRichPresence(self):
@@ -64,6 +54,8 @@ class AppFunctions(MainWindow):
             except:
                 print("Pipe Not Found - Is Discord Running?")
 
+    # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+    Settings.ENABLE_CUSTOM_TITLE_BAR = True
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
         Settings.BTN_RIGHT_BOX_COLOR = "background-color: #495474;"
@@ -71,7 +63,6 @@ class AppFunctions(MainWindow):
         border-left: 22px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:0.216, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0));
         background-color: #566388;
         """
-
         # SET MANUAL STYLES
         self.ui.lineEdit.setStyleSheet("background-color: #6272a4;")
         self.ui.pushButton.setStyleSheet("background-color: #6272a4;")

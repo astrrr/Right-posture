@@ -1,33 +1,32 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
+from modules.app_checkbox import Main_checkbox
 
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
         button = self.ui
         loaded_object = load_data()
-        button.btn_Home.clicked.connect(self.buttonInterface)
-        button.btn_Status.clicked.connect(self.buttonInterface)
-        button.btn_Posture.clicked.connect(self.buttonInterface)
-        button.btn_Tutorial.clicked.connect(self.buttonInterface)
-        button.btn_Camera.clicked.connect(self.buttonInterface)
-        button.btn_Notification.clicked.connect(self.buttonInterface)
-        button.btn_Logout.clicked.connect(self.buttonInterface)
-        button.btn_saveNotify.clicked.connect(self.buttonInterface)
-        button.btn_print.clicked.connect(self.buttonInterface)
-        button.btn_clear_log.clicked.connect(self.buttonInterface)
+        button.btn_Home.clicked.connect(self.Main_button_Interface)
+        button.btn_Status.clicked.connect(self.Main_button_Interface)
+        button.btn_Posture.clicked.connect(self.Main_button_Interface)
+        button.btn_Tutorial.clicked.connect(self.Main_button_Interface)
+        button.btn_Camera.clicked.connect(self.Main_button_Interface)
+        button.btn_Notification.clicked.connect(self.Main_button_Interface)
+        button.btn_Logout.clicked.connect(self.Main_button_Interface)
+        button.btn_saveNotify.clicked.connect(self.Main_button_Interface)
+        button.btn_print.clicked.connect(self.Main_button_Interface)
+        button.btn_clear_log.clicked.connect(self.Main_button_Interface)
 
-        # button.Test_radioButton_1.clicked.connect(self.buttonInterface)
+        # button.Test_radioButton_1.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
         button.show_detail.setChecked(loaded_object["PreDetail"])
-        button.show_detail.clicked.connect(self.Show_Detail)
-        self.Show_Detail()
+        button.show_detail.clicked.connect(self.Main_button_Interface)
 
         # Preview Detect log
         button.show_log.setChecked(loaded_object["PreLog"])
-        button.show_log.clicked.connect(self.Detect_Log)
-        self.Detect_Log()
+        button.show_log.clicked.connect(self.Main_button_Interface)
 
         # Preview Camera 1
         button.pre_cam_1.setChecked(loaded_object["PreCam1"])
@@ -41,6 +40,14 @@ class Main_buttons(MainWindow):
         button = self.ui
         btn = self.sender()
         btnName = btn.objectName()
+
+        # ////////// CHECK BOX ZONE //////////
+        if btnName == "show_log":
+            Main_checkbox.Detect_Log(self)
+
+        if btnName == "show_detail":
+            Main_checkbox.Show_Detail(self)
+        # ////////////////////////////////////
 
         if btnName == "btn_Logout":
             self.Logout()
@@ -77,8 +84,25 @@ class Main_buttons(MainWindow):
             AppFunctions.notifyMe("ไปนอนซะ", button.notifyword.text())
 
         if btnName == "btn_print":
-            print(button.notifyword.text())
-            AppFunctions.notifyMe("Debug", "Notification")
-
+            AppFunctions.notifyMe(self, "Debug", "Notification")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
+
+    def set_custom_theme(self):
+        # SET CUSTOM THEME
+        # ///////////////////////////////////////////////////////////////
+        loaded_object = load_data()
+        useCustomTheme = loaded_object["Light"]
+        themeFile = "themes\py_dracula_light.qss"
+
+        # SET THEME AND HACKS
+        if useCustomTheme:
+            # LOAD AND APPLY STYLE
+            UIFunctions.theme(self, themeFile, True)
+
+            # SET HACKS
+            AppFunctions.setThemeHack(self)
+
+        # SET HOME PAGE AND SELECT MENU
+        self.ui.stackedWidget.setCurrentWidget(self.ui.Status)
+        self.ui.btn_Status.setStyleSheet(UIFunctions.selectMenu(self.ui.btn_Status.styleSheet()))

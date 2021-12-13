@@ -15,10 +15,10 @@ target = Executable(
 # SETUP CX FREEZE
 setup(
     name="Right Posture",
-    version="1.1.0",
+    version="1.1.1",
     description="Right Posture",
     author="Right Posture TEAM",
-    options={"build_exe": {"packages": ["keras"], 'include_files': files, "excludes": ["PyQt5"]}},
+    options={"build_exe": {"packages": ["keras", "plyer"], 'include_files': files, "excludes": ["PyQt5"]}},
     executables=[target]
 )
 # Type python setup.py build to build.exe.

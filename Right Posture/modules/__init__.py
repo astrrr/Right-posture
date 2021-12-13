@@ -36,13 +36,22 @@ from . ui_login_function import *
 from . app_functions import *
 
 # DETECT FUNCTIONS
-from . app_detect import Camera
+from . app_detect import Camera, Camera_detail
 
 # APP DATA
 from . app_data import *
 
 # MAIN BUTTONS
-from . app_buttons_main import *
+from . app_buttons_main import Main_buttons
+
+# MAIN CHECKBOX
+from .app_checkbox import Main_checkbox
+
+# APP TABLE
+from .app_table import Main_table
 
 # LOGIN BUTTONS
-from .app_buttons_login import *
+from .app_buttons_login import Auth_buttons
+
+# APP AUTHENTICATION
+from .app_auth import Auth_system

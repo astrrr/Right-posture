@@ -11,6 +11,45 @@ mp_pose = mp.solutions.pose
 
 cwd = os.getcwd()
 model = None
+model_name = 'MNv2_V3'
+VideoCapture = 0
+
+def Print_exception():
+    traceback.print_exc()
+    excType, value = sys.exc_info()[:2]
+    Camera_detail.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
+
+def predict(img):
+    img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
+    # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
+
+    # resized = cv2.resize(img, (224, 224), interpolation = cv2.INTER_AREA)
+    X = tf.keras.preprocessing.image.img_to_array(img)
+
+    # X= tf.keras.preprocessing.image.img_to_array(resized)
+    X = np.expand_dims(X, axis=0)
+    image = np.vstack([X])
+    try:
+        val = model(image)
+        # correct > incorrect
+        if float(val[0][0]) > float(val[0][1]):
+            # ///////////////////////////////////////////////////////////////////////////////
+            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : correct')
+            print('model prediction : correct')
+            # ///////////////////////////////////////////////////////////////////////////////
+            return 0
+            # incorrect > correct
+        elif float(val[0][0]) < float(val[0][1]):
+            # ///////////////////////////////////////////////////////////////////////////////
+            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : incorrect')
+            print('model prediction : incorrect')
+            # ///////////////////////////////////////////////////////////////////////////////
+            return 1
+    except:
+        Camera_detail.Error_load_model = True
+        Camera_detail.model_status = "Critical error in model please restart and try again."
+        Print_exception()
+        print("Critical error in model please restart and try again.")
 
 class VideoThread(QThread):
     # シグナル設定
@@ -22,15 +61,15 @@ class VideoThread(QThread):
 
     # QThreadのrunメソッドを定義
     def run(self):
-        if Camera.First_load_model:
+        if Camera_detail.First_load_model:
             print("Start Load model")
             worker = Worker(self.execute_this_fn)  # Any other args, kwargs are passed to the run function
             # worker.signals.result.connect(self.print_output)
             # worker.signals.progress.connect(self.progress_fn)
             worker.signals.finished.connect(self.thread_complete)
             self.threadpool.start(worker)
-        if Camera.Finish_load_model:
-            cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        if Camera_detail.Finish_load_model:
+            cap = cv2.VideoCapture(VideoCapture, cv2.CAP_DSHOW)
             pred = 3
             img_counter_cor = 0
             with mp_pose.Pose(
@@ -65,19 +104,18 @@ class VideoThread(QThread):
                     img_name = "temp_{}.png".format(img_counter_cor)
                     cv2.imwrite(img_name, image)
                     # ///////////////////////////////////////////////////////////////////////////////
-                    Camera.log = ("{} written!".format(img_name))
+                    Camera_detail.log = ("{} written!".format(img_name))
                     print("{} written!".format(img_name))
                     # ///////////////////////////////////////////////////////////////////////////////
                     img_counter_cor += 1
 
-                    self.predict
                     for i in os.listdir(cwd):
                         if '.png' in i:
                             # ///////////////////////////////////////////////////////////////////////////////
-                            Camera.log = (Camera.log + '\n=======================')
+                            Camera_detail.log = (Camera_detail.log + '\n=======================')
                             print('=======================')
                             # ///////////////////////////////////////////////////////////////////////////////
-                            pred = self.predict(i)
+                            pred = predict(i)
                             #     print(pred)
                             os.remove(i)
 
@@ -89,37 +127,6 @@ class VideoThread(QThread):
                 cv2.destroyAllWindows()
             # videoCaptureのリリース処理
 
-    def predict(self, img):
-        img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
-        # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
-
-        # resized = cv2.resize(img, (224, 224), interpolation = cv2.INTER_AREA)
-        X = tf.keras.preprocessing.image.img_to_array(img)
-
-        # X= tf.keras.preprocessing.image.img_to_array(resized)
-        X = np.expand_dims(X, axis=0)
-        image = np.vstack([X])
-        try:
-            val = model.predict(image)
-            # correct > incorrect
-            if float(val[0][0]) > float(val[0][1]):
-                # ///////////////////////////////////////////////////////////////////////////////
-                Camera.log = (Camera.log + '\nmodel prediction : correct')
-                print('model prediction : correct')
-                # ///////////////////////////////////////////////////////////////////////////////
-                return 0
-                # incorrect > correct
-            elif float(val[0][0]) < float(val[0][1]):
-                # ///////////////////////////////////////////////////////////////////////////////
-                Camera.log = (Camera.log + '\nmodel prediction : incorrect')
-                print('model prediction : incorrect')
-                # ///////////////////////////////////////////////////////////////////////////////
-                return 1
-        except:
-            Camera.Error_load_model = True
-            Camera.model_status = "Critical error in model please restart and try again."
-            print("Critical error in model please restart and try again.")
-
     # スレッドが終了するまでwaitをかける
     def stop(self):
         self._run_flag = False
@@ -130,57 +137,27 @@ class VideoThread(QThread):
 
     def execute_this_fn(self):
         global model
-        dir_model = 'bin/Model/MNv2_V3'
+        dir_model = f"bin/Model/{model_name}"
         try:
             modeling = tf.keras.models.load_model(dir_model)
             model = modeling
         except:
             # Use to trick critical error check
-            # Camera.Finish_load_model = True
+            # Camera_detail.Finish_load_model = True
 
-            Camera.Error_load_model = True
-            Camera.model_status = f"Model not found in '{dir_model}'."
+            Camera_detail.Error_load_model = True
+            Camera_detail.model_status = f"Model not found in '{dir_model}'."
+            Print_exception()
             print(f"Model not found in '{dir_model}'.")
 
     def print_output(self, s):
         print(s)
 
     def thread_complete(self):
-        if not Camera.Error_load_model:
-            Camera.Finish_load_model = True
-            Camera.model_status = "Loaded"
+        if not Camera_detail.Error_load_model:
+            Camera_detail.Finish_load_model = True
+            Camera_detail.model_status = "Loaded"
             print("Finish load model")
-
-class Camera:
-    log = ""
-    model_status = "Not loaded"
-    First_load_model = True
-    Finish_load_model = False
-    Error_load_model = False
-    def detect(self, enable):
-        if enable:
-            self.image_label = QLabel(self)
-
-            # vboxにQLabelをセット
-            Camera_1 = self.ui.Camera_Frame_1_Layout
-            Camera_1.addWidget(self.image_label)
-
-            # vboxをレイアウトとして配置
-            self.setLayout(Camera_1)
-
-            # ビデオキャプチャ用のスレッドオブジェクトを生成
-            self.thread = VideoThread()
-            # ビデオスレッド内のchange_pixmap_signalオブジェクトのシグナルに対するslot
-            self.thread.change_pixmap_signal.connect(self.update_image)
-
-            self.thread.start()  # スレッドを起動
-        else:
-            try:
-                self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
-                self.image_label.deleteLater()
-                self.thread.stop()
-            except:
-                pass
 
 class WorkerSignals(QObject):
     finished = Signal()
@@ -212,3 +189,38 @@ class Worker(QRunnable):
             self.signals.result.emit(result)  # Return the result of the processing
         finally:
             self.signals.finished.emit()  # Done
+class Camera_detail:
+    log = ""
+    traceback = ""
+    get_model_name = model_name
+    model_status = "Not loaded"
+    First_load_model = True
+    Finish_load_model = False
+    Error_load_model = False
+
+class Camera:
+    
+    def detect(self, enable):
+        if enable:
+            self.image_label = QLabel(self)
+
+            # vboxにQLabelをセット
+            Camera_1 = self.ui.Camera_Frame_1_Layout
+            Camera_1.addWidget(self.image_label)
+
+            # vboxをレイアウトとして配置
+            self.setLayout(Camera_1)
+
+            # ビデオキャプチャ用のスレッドオブジェクトを生成
+            self.thread = VideoThread()
+            # ビデオスレッド内のchange_pixmap_signalオブジェクトのシグナルに対するslot
+            self.thread.change_pixmap_signal.connect(self.update_image)
+
+            self.thread.start()  # スレッドを起動
+        else:
+            try:
+                self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
+                self.image_label.deleteLater()
+                self.thread.stop()
+            except:
+                pass

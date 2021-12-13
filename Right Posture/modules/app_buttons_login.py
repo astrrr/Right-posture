@@ -1,23 +1,24 @@
-from main import LoginWindow
-from modules import UILoginFunctions
+from main import AuthWindow
+from modules.ui_login_function import UILoginFunctions
+from modules.app_auth import Auth_system
 
-class Login_Buttons(LoginWindow):
+class Auth_buttons(AuthWindow):
 
     def defineButtons(self):
         button = self.ui
 
         # LOGIN BUTTON
-        button.btn_Login.clicked.connect(self.buttonInterface)
-        button.btn_Register.clicked.connect(self.buttonInterface)
-        button.btn_Fpassword.clicked.connect(self.buttonInterface)
+        button.btn_Login.clicked.connect(self.Login_button_Interface)
+        button.btn_Register.clicked.connect(self.Login_button_Interface)
+        button.btn_Fpassword.clicked.connect(self.Login_button_Interface)
 
         # REGISTER BUTTON
-        button.btn_Com_Register.clicked.connect(self.buttonInterface)
-        button.btn_Reg_Back.clicked.connect(self.buttonInterface)
+        button.btn_Com_Register.clicked.connect(self.Login_button_Interface)
+        button.btn_Reg_Back.clicked.connect(self.Login_button_Interface)
 
         # FORGET BUTTON
-        button.btn_Forget_Email.clicked.connect(self.buttonInterface)
-        button.btn_Forget_Back.clicked.connect(self.buttonInterface)
+        button.btn_Forget_Email.clicked.connect(self.Login_button_Interface)
+        button.btn_Forget_Back.clicked.connect(self.Login_button_Interface)
 
         # KEY PRESS EVENT
         # ///////////////////////////////////////////////////////////////
@@ -35,7 +36,10 @@ class Login_Buttons(LoginWindow):
         btnName = btn.objectName()
 
         if btnName == "btn_Login":
-            self.check_login()
+            Auth_system.check_login(self)
+
+        if btnName == "btn_Com_Register":
+            Auth_system.check_register(self)
 
         if btnName == "btn_Register":
             button.Login_stackedWidget.setCurrentWidget(button.Register_page)
@@ -48,6 +52,3 @@ class Login_Buttons(LoginWindow):
 
         if btnName == "btn_Forget_Back":
             UILoginFunctions.animation_back_to_Login(self)
-
-        if btnName == "btn_Com_Register":
-            self.check_register()
