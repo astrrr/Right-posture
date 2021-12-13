@@ -17,7 +17,7 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 from main import *
-
+from modules.Version_control import version
 # GLOBALS
 # ///////////////////////////////////////////////////////////////
 GLOBAL_STATE = False
@@ -25,45 +25,47 @@ GLOBAL_TITLE_BAR = True
 
 class UIFunctions(MainWindow):
     def Function_Main_Setup(self):
-        widgets = self.ui
 
         # SET UI DEFINITIONS
         UIFunctions.uiDefinitions(self)
 
         # SET VERSION
-        widgets.version.setText(MainWindow.versions)
+        if version.thisVersion is None:
+            self.ui.version.setText("Version not found")
+        else:
+            self.ui.version.setText(version.thisVersion)
 
         # APP NAME
         title = "Right Posture"
         # description = "Right Posture - Make life better."
         # APPLY TEXTS
         self.setWindowTitle(title)
-        # widgets.titleRightInfo.setText(description)
+        # self.ui.titleRightInfo.setText(description)
 
         # TOGGLE MENU
-        widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
+        self.ui.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+        self.ui.toggleLeftBox.clicked.connect(openCloseLeftBox)
+        self.ui.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
         autoClose = True  # Toggle Auto Close Left Box when click.
         if autoClose:
-            widgets.btn_Camera.clicked.connect(openCloseLeftBox)
-            widgets.btn_Notification.clicked.connect(openCloseLeftBox)
-            widgets.btn_Logout.clicked.connect(openCloseLeftBox)
+            self.ui.btn_Camera.clicked.connect(openCloseLeftBox)
+            self.ui.btn_Notification.clicked.connect(openCloseLeftBox)
+            self.ui.btn_Logout.clicked.connect(openCloseLeftBox)
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
             UIFunctions.toggleRightBox(self, True)
-        widgets.settingsTopBtn.clicked.connect(openCloseRightBox)
+        self.ui.settingsTopBtn.clicked.connect(openCloseRightBox)
 
         # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # QTableWidget PARAMETERS
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # IMPORT CIRCULAR PROGRESS
         # ///////////////////////////////////////////////////////////////

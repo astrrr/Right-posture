@@ -26,11 +26,14 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
 
+from modules.Version_control import version
+
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
-version = "1.1.1"
+version.thisVersion = "3.1.1.5"
+# /////////////////////////////////////////////
 widgets = None
 counter = 0
 CircularProgress_timer = 300
@@ -71,8 +74,6 @@ class AuthWindow(QMainWindow):
         self.dragPos = event.globalPosition().toPoint()
 
 class MainWindow(QMainWindow):
-    global version
-    versions = version
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
