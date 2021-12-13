@@ -1,8 +1,8 @@
-from main import LoginWindow, QTimer
+from main import AuthWindow, QTimer
 from modules.ui_login_function import UILoginFunctions
 import sqlite3
 
-class Auth_system(LoginWindow):
+class Auth_system(AuthWindow):
 
     def check_login(self):
         username = self.ui.username.text()

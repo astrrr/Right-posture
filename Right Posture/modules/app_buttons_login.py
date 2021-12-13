@@ -1,8 +1,8 @@
-from main import LoginWindow
+from main import AuthWindow
 from modules.ui_login_function import UILoginFunctions
 from modules.app_auth import Auth_system
 
-class Login_buttons(LoginWindow):
+class Auth_buttons(AuthWindow):
 
     def defineButtons(self):
         button = self.ui
