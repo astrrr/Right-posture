@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainQUZeBh.ui'
+## Form generated from reading UI file 'mainucVJSD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -2027,17 +2027,17 @@ class Ui_MainWindow(object):
         self.extraRightBox.setMaximumSize(QSize(0, 16777215))
         self.extraRightBox.setFrameShape(QFrame.NoFrame)
         self.extraRightBox.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_7 = QVBoxLayout(self.extraRightBox)
-        self.verticalLayout_7.setSpacing(0)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.Toggle_Light_Layout_2 = QVBoxLayout(self.extraRightBox)
+        self.Toggle_Light_Layout_2.setSpacing(0)
+        self.Toggle_Light_Layout_2.setObjectName(u"Toggle_Light_Layout_2")
+        self.Toggle_Light_Layout_2.setContentsMargins(0, 0, 0, 0)
         self.themeSettingsTopDetail = QFrame(self.extraRightBox)
         self.themeSettingsTopDetail.setObjectName(u"themeSettingsTopDetail")
         self.themeSettingsTopDetail.setMaximumSize(QSize(16777215, 3))
         self.themeSettingsTopDetail.setFrameShape(QFrame.NoFrame)
         self.themeSettingsTopDetail.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_7.addWidget(self.themeSettingsTopDetail)
+        self.Toggle_Light_Layout_2.addWidget(self.themeSettingsTopDetail)
 
         self.contentSettings = QFrame(self.extraRightBox)
         self.contentSettings.setObjectName(u"contentSettings")
@@ -2063,28 +2063,28 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.btn_NightMode = QPushButton(self.NightMode)
-        self.btn_NightMode.setObjectName(u"btn_NightMode")
-        self.btn_NightMode.setEnabled(False)
-        sizePolicy4.setHeightForWidth(self.btn_NightMode.sizePolicy().hasHeightForWidth())
-        self.btn_NightMode.setSizePolicy(sizePolicy4)
-        self.btn_NightMode.setMinimumSize(QSize(20, 45))
-        self.btn_NightMode.setCursor(QCursor(Qt.ArrowCursor))
-        self.btn_NightMode.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-moon.png);")
+        self.btn_LightMode = QPushButton(self.NightMode)
+        self.btn_LightMode.setObjectName(u"btn_LightMode")
+        self.btn_LightMode.setEnabled(False)
+        sizePolicy4.setHeightForWidth(self.btn_LightMode.sizePolicy().hasHeightForWidth())
+        self.btn_LightMode.setSizePolicy(sizePolicy4)
+        self.btn_LightMode.setMinimumSize(QSize(20, 45))
+        self.btn_LightMode.setCursor(QCursor(Qt.ArrowCursor))
+        self.btn_LightMode.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-moon.png);")
 
-        self.horizontalLayout_6.addWidget(self.btn_NightMode)
+        self.horizontalLayout_6.addWidget(self.btn_LightMode)
 
-        self.Toggle_Night = QFrame(self.NightMode)
-        self.Toggle_Night.setObjectName(u"Toggle_Night")
-        self.Toggle_Night.setMaximumSize(QSize(60, 45))
-        self.Toggle_Night.setFrameShape(QFrame.StyledPanel)
-        self.Toggle_Night.setFrameShadow(QFrame.Raised)
-        self.Toggle_Night_Layout = QVBoxLayout(self.Toggle_Night)
-        self.Toggle_Night_Layout.setSpacing(0)
-        self.Toggle_Night_Layout.setObjectName(u"Toggle_Night_Layout")
-        self.Toggle_Night_Layout.setContentsMargins(0, 0, 0, 0)
+        self.Toggle_Light = QFrame(self.NightMode)
+        self.Toggle_Light.setObjectName(u"Toggle_Light")
+        self.Toggle_Light.setMaximumSize(QSize(60, 45))
+        self.Toggle_Light.setFrameShape(QFrame.StyledPanel)
+        self.Toggle_Light.setFrameShadow(QFrame.Raised)
+        self.Toggle_Light_Layout = QVBoxLayout(self.Toggle_Light)
+        self.Toggle_Light_Layout.setSpacing(0)
+        self.Toggle_Light_Layout.setObjectName(u"Toggle_Light_Layout")
+        self.Toggle_Light_Layout.setContentsMargins(0, 0, 0, 0)
 
-        self.horizontalLayout_6.addWidget(self.Toggle_Night)
+        self.horizontalLayout_6.addWidget(self.Toggle_Light)
 
 
         self.verticalLayout_14.addWidget(self.NightMode)
@@ -2207,7 +2207,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.addWidget(self.topMenus, 0, Qt.AlignTop)
 
 
-        self.verticalLayout_7.addWidget(self.contentSettings)
+        self.Toggle_Light_Layout_2.addWidget(self.contentSettings)
 
 
         self.horizontalLayout_4.addWidget(self.extraRightBox)
@@ -2521,7 +2521,7 @@ class Ui_MainWindow(object):
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"This is Posture Page !!", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"This is Tutorial Page !!!", None))
-        self.btn_NightMode.setText(QCoreApplication.translate("MainWindow", u"Night Mode", None))
+        self.btn_LightMode.setText(QCoreApplication.translate("MainWindow", u"Light Mode", None))
         self.btn_logout_2.setText(QCoreApplication.translate("MainWindow", u"Auto Close", None))
         self.btn_logout_9.setText(QCoreApplication.translate("MainWindow", u"Sound", None))
         self.btn_logout_10.setText(QCoreApplication.translate("MainWindow", u"Discord", None))

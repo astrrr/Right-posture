@@ -59,11 +59,11 @@ class PyToggle(QCheckBox):
     def Toggle_Switch(self):
         Toggle = self.ui
 
-        Toggle_NightMode = PyToggle()
-        Toggle.Toggle_Night_Layout.addWidget(Toggle_NightMode)
-        Toggle_NightMode.stateChanged.connect(Toggle1)
-        Night = loaded_object["Night"]
-        Toggle_NightMode.setChecked(Night)
+        Toggle_LightMode = PyToggle()
+        Toggle.Toggle_Light_Layout.addWidget(Toggle_LightMode)
+        Toggle_LightMode.stateChanged.connect(Toggle1)
+        Light = loaded_object["Light"]
+        Toggle_LightMode.setChecked(Light)
 
         Toggle_Close = PyToggle()
         Toggle.Toggle_Close_Layout.addWidget(Toggle_Close)
@@ -87,12 +87,12 @@ class PyToggle(QCheckBox):
         self.animation.stop()
         if value:
             self.animation.setEndValue(self.width() - 26)
-            print("Status : ON Night Mode")
-            save_data("Night", 1)
+            print("Status : ON Light Mode")
+            save_data("Light", 1)
         else:
             self.animation.setEndValue(4)
-            print("Status : OFF Night Mode")
-            save_data("Night", 0)
+            print("Status : OFF Light Mode")
+            save_data("Light", 0)
         self.animation.start()
 
     def setup_animation_2(self, value):

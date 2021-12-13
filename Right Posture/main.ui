@@ -4362,7 +4362,7 @@ background-repeat: no-repeat;</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <layout class="QVBoxLayout" name="Toggle_Light_Layout_2">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -4467,7 +4467,7 @@ background-repeat: no-repeat;</string>
                              <number>0</number>
                             </property>
                             <item>
-                             <widget class="QPushButton" name="btn_NightMode">
+                             <widget class="QPushButton" name="btn_LightMode">
                               <property name="enabled">
                                <bool>false</bool>
                               </property>
@@ -4490,12 +4490,12 @@ background-repeat: no-repeat;</string>
                                <string notr="true">background-image: url(:/icons/images/icons/cil-moon.png);</string>
                               </property>
                               <property name="text">
-                               <string>Night Mode</string>
+                               <string>Light Mode</string>
                               </property>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QFrame" name="Toggle_Night">
+                             <widget class="QFrame" name="Toggle_Light">
                               <property name="maximumSize">
                                <size>
                                 <width>60</width>
@@ -4508,7 +4508,7 @@ background-repeat: no-repeat;</string>
                               <property name="frameShadow">
                                <enum>QFrame::Raised</enum>
                               </property>
-                              <layout class="QVBoxLayout" name="Toggle_Night_Layout">
+                              <layout class="QVBoxLayout" name="Toggle_Light_Layout">
                                <property name="spacing">
                                 <number>0</number>
                                </property>

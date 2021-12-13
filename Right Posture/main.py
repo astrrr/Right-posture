@@ -80,6 +80,7 @@ class MainWindow(QMainWindow):
         Main_buttons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
         self.show()
+        Main_buttons.set_custom_theme(self)
         # Main_table.Load_Table(self)
 
     # UPDATE PROGRESS BAR

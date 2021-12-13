@@ -87,3 +87,18 @@ class Main_buttons(MainWindow):
             AppFunctions.notifyMe(self, "Debug", "Notification")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
+
+    def set_custom_theme(self):
+        # SET CUSTOM THEME
+        # ///////////////////////////////////////////////////////////////
+        loaded_object = load_data()
+        useCustomTheme = loaded_object["Light"]
+        themeFile = "themes\py_dracula_light.qss"
+
+        # SET THEME AND HACKS
+        if useCustomTheme:
+            # LOAD AND APPLY STYLE
+            UIFunctions.theme(self, themeFile, True)
+
+            # SET HACKS
+            AppFunctions.setThemeHack(self)
