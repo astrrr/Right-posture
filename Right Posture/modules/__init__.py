@@ -42,10 +42,13 @@ from . app_detect import Camera
 from . app_data import *
 
 # MAIN BUTTONS
-from . app_buttons_main import *
+from . app_buttons_main import Main_buttons
 
 # LOGIN BUTTONS
-from .app_buttons_login import *
+from .app_buttons_login import Login_buttons
 
 # MAIN CHECKBOX
-from .app_checkbox import *
+from .app_checkbox import Main_checkbox
+
+# APP AUTHENTICATION
+from .app_auth import Auth_system

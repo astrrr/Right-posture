@@ -1,7 +1,7 @@
 from main import LoginWindow
 from modules import UILoginFunctions
-
-class Login_Buttons(LoginWindow):
+from modules.app_auth import Auth_system
+class Login_buttons(LoginWindow):
 
     def defineButtons(self):
         button = self.ui
@@ -37,6 +37,9 @@ class Login_Buttons(LoginWindow):
         if btnName == "btn_Login":
             self.check_login()
 
+        if btnName == "btn_Com_Register":
+            Auth_system.check_register(self)
+
         if btnName == "btn_Register":
             button.Login_stackedWidget.setCurrentWidget(button.Register_page)
 
@@ -48,6 +51,3 @@ class Login_Buttons(LoginWindow):
 
         if btnName == "btn_Forget_Back":
             UILoginFunctions.animation_back_to_Login(self)
-
-        if btnName == "btn_Com_Register":
-            self.check_register()
