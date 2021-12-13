@@ -1,8 +1,35 @@
-from main import LoginWindow
+from main import LoginWindow, QTimer
 from modules.ui_login_function import UILoginFunctions
 import sqlite3
 
 class Auth_system(LoginWindow):
+
+    def check_login(self):
+        username = self.ui.username.text()
+        password = self.ui.password.text()
+
+        if len(username) == 0 or len(password) == 0:
+            self.ui.Login_Status.setText("Please input all fields.")
+            Auth_system.login_fail(self)
+        else:
+            conn = sqlite3.connect("bin/Data/Accounts.db")
+            cur = conn.cursor()
+            query = 'SELECT password FROM login_info WHERE username =\'' + username + "\'"
+            cur.execute(query)
+            try:
+                result_pass = cur.fetchone()[0]
+                if result_pass == password:
+                    self.ui.Login_Status.setText(f"Welcome {username} !")
+                    self.ui.Login_Status.setStyleSheet("#Login_Status { color: #50fa7b }")
+                    self.ui.username.setStyleSheet("#username:focus { border: 3px solid #50fa7b; }")
+                    self.ui.password.setStyleSheet("#password:focus { border: 3px solid #50fa7b; }")
+                    QTimer.singleShot(1200, lambda: self.open_main())
+                else:
+                    self.ui.Login_Status.setText("Invalid username or password")
+                    Auth_system.login_fail(self)
+            except:
+                self.ui.Login_Status.setText("Invalid username or password")
+                Auth_system.login_fail(self)
 
     def check_register(self):
         username = self.ui.Reg_username.text()

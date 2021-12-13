@@ -36,7 +36,7 @@ class Login_buttons(LoginWindow):
         btnName = btn.objectName()
 
         if btnName == "btn_Login":
-            self.check_login()
+            Auth_system.check_login(self)
 
         if btnName == "btn_Com_Register":
             Auth_system.check_register(self)

@@ -17,7 +17,6 @@
 import sys
 import os
 import numpy as np
-import sqlite3
 
 from modules import *
 from widgets import *
@@ -28,8 +27,6 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
-
-
 
 # main "1" = MainWindow() , main "0" = LoginWindow
 main = 0
@@ -49,42 +46,16 @@ class LoginWindow(QMainWindow):
         self.ui.Reg_Status.setText("Register")
         self.show()
 
-    def check_login(self):
+    def open_main(self):
         username = self.ui.username.text()
-        password = self.ui.password.text()
-
-        def open_main():
-            self.main = MainWindow()
-            self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
-            self.main.show()
-            self.close()
-
-        if len(username) == 0 or len(password) == 0:
-            self.ui.Login_Status.setText("Please input all fields.")
-            Auth_system.login_fail(self)
-        else:
-            conn = sqlite3.connect("bin/Data/Accounts.db")
-            cur = conn.cursor()
-            query = 'SELECT password FROM login_info WHERE username =\'' + username + "\'"
-            cur.execute(query)
-            try:
-                result_pass = cur.fetchone()[0]
-                if result_pass == password:
-                    self.ui.Login_Status.setText(f"Welcome {username} !")
-                    self.ui.Login_Status.setStyleSheet("#Login_Status { color: #50fa7b }")
-                    self.ui.username.setStyleSheet("#username:focus { border: 3px solid #50fa7b; }")
-                    self.ui.password.setStyleSheet("#password:focus { border: 3px solid #50fa7b; }")
-                    QTimer.singleShot(1200, lambda: open_main())
-                else:
-                    self.ui.Login_Status.setText("Invalid username or password")
-                    Auth_system.login_fail(self)
-            except:
-                self.ui.Login_Status.setText("Invalid username or password")
-                Auth_system.login_fail(self)
+        self.main = MainWindow()
+        self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
+        self.main.show()
+        self.close()
 
     def enter_login(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
-            self.check_login()
+            Auth_system.check_login(self)
 
     def enter_regis(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
