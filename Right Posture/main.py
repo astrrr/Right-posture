@@ -21,7 +21,7 @@ import numpy as np
 from modules import *
 from widgets import *
 
-from PySide6 import QtGui, QtWidgets
+from PySide6 import QtGui
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
@@ -80,8 +80,7 @@ class MainWindow(QMainWindow):
         Main_buttons.defineButtons(self)
         PyToggle.Toggle_Switch(self)
         self.show()
-
-        Main_table.Load_Table(self)
+        # Main_table.Load_Table(self)
 
     # UPDATE PROGRESS BAR
     def update(self):
@@ -168,10 +167,10 @@ class MainWindow(QMainWindow):
         try:
             # img = cv.cvtColor(cv_img, cv.COLOR_BGR2RGB)
             # QT側でチャネル順BGRを指定
-            qimg = QtGui.QImage(cv_img.data, cv_img.shape[1], cv_img.shape[0], cv_img.strides[0],
+            qImg = QtGui.QImage(cv_img.data, cv_img.shape[1], cv_img.shape[0], cv_img.strides[0],
                                 QtGui.QImage.Format.Format_BGR888)
-            qpix = QPixmap.fromImage(qimg)
-            self.image_label.setPixmap(qpix)
+            qPix = QPixmap.fromImage(qImg)
+            self.image_label.setPixmap(qPix)
             Main_checkbox.Detect_Log(self)
             if Camera.Error_load_model:
                 Main_checkbox.Show_Detail(self)

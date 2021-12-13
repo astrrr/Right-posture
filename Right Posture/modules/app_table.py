@@ -1,4 +1,5 @@
-from main import MainWindow, QtWidgets
+from main import MainWindow
+from PySide6 import QtWidgets
 
 class Main_table(MainWindow):
 
