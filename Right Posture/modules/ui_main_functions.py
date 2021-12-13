@@ -37,12 +37,6 @@ class UIFunctions(MainWindow):
         self.setWindowTitle(title)
         # widgets.titleRightInfo.setText(description)
 
-        # SET HOME PAGE AND SELECT MENU
-        # widgets.stackedWidget.setCurrentWidget(widgets.Home)
-        # widgets.btn_Home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Home.styleSheet()))
-        widgets.stackedWidget.setCurrentWidget(widgets.Status)
-        widgets.btn_Status.setStyleSheet(UIFunctions.selectMenu(widgets.btn_Status.styleSheet()))
-
         # TOGGLE MENU
         widgets.toggleButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, True))
 
@@ -67,21 +61,6 @@ class UIFunctions(MainWindow):
 
         # QTableWidget PARAMETERS
         widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
-        # ///////////////////////////////////////////////////////////////
-        # # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
-        # Settings.ENABLE_CUSTOM_TITLE_BAR = True
-        #
-        # # SET CUSTOM THEME
-        # useCustomTheme = False
-        # themeFile = "themes\py_dracula_light.qss"
-        # # SET THEME AND HACKS
-        # if useCustomTheme:
-        #     # LOAD AND APPLY STYLE
-        #     UIFunctions.theme(self, themeFile, True)
-        #     # SET HACKS
-        #     AppFunctions.setThemeHack(self)
-        # ///////////////////////////////////////////////////////////////
 
         # IMPORT CIRCULAR PROGRESS
         # ///////////////////////////////////////////////////////////////

@@ -54,6 +54,8 @@ class AppFunctions(MainWindow):
             except:
                 print("Pipe Not Found - Is Discord Running?")
 
+    # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
+    Settings.ENABLE_CUSTOM_TITLE_BAR = True
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
         Settings.BTN_RIGHT_BOX_COLOR = "background-color: #495474;"
@@ -61,7 +63,6 @@ class AppFunctions(MainWindow):
         border-left: 22px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:0.216, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0));
         background-color: #566388;
         """
-
         # SET MANUAL STYLES
         self.ui.lineEdit.setStyleSheet("background-color: #6272a4;")
         self.ui.pushButton.setStyleSheet("background-color: #6272a4;")

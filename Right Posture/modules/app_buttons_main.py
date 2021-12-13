@@ -102,3 +102,7 @@ class Main_buttons(MainWindow):
 
             # SET HACKS
             AppFunctions.setThemeHack(self)
+
+        # SET HOME PAGE AND SELECT MENU
+        self.ui.stackedWidget.setCurrentWidget(self.ui.Status)
+        self.ui.btn_Status.setStyleSheet(UIFunctions.selectMenu(self.ui.btn_Status.styleSheet()))
