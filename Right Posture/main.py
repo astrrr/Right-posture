@@ -29,7 +29,7 @@ from PySide6.QtWidgets import QApplication
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
-main = 1
+main = 0
 widgets = None
 counter = 0
 CircularProgress_timer = 300
