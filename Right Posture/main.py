@@ -49,8 +49,6 @@ class LoginWindow(QMainWindow):
         self.ui.Reg_Status.setText("Register")
         self.show()
 
-
-
     def check_login(self):
         username = self.ui.username.text()
         password = self.ui.password.text()
@@ -63,7 +61,7 @@ class LoginWindow(QMainWindow):
 
         if len(username) == 0 or len(password) == 0:
             self.ui.Login_Status.setText("Please input all fields.")
-            self.login_fail()
+            Auth_system.login_fail(self)
         else:
             conn = sqlite3.connect("bin/Data/Accounts.db")
             cur = conn.cursor()
@@ -79,24 +77,10 @@ class LoginWindow(QMainWindow):
                     QTimer.singleShot(1200, lambda: open_main())
                 else:
                     self.ui.Login_Status.setText("Invalid username or password")
-                    self.login_fail()
+                    Auth_system.login_fail(self)
             except:
                 self.ui.Login_Status.setText("Invalid username or password")
-                self.login_fail()
-
-    def regis_fail(self):
-        self.ui.Reg_Status.setStyleSheet("#Reg_Status { color: #ff5555 }")
-        self.ui.Reg_username.setStyleSheet("#Reg_username:focus { border: 2px solid #ff5555; }")
-        self.ui.Reg_password.setStyleSheet("#Reg_password:focus { border: 2px solid #ff5555; }")
-        self.ui.Reg_password_2.setStyleSheet("#Reg_password_2:focus { border: 2px solid #ff5555; }")
-        self.ui.Reg_email.setStyleSheet("#Reg_email:focus { border: 2px solid #ff5555; }")
-        UILoginFunctions.shake_window(self)
-
-    def login_fail(self):
-        self.ui.Login_Status.setStyleSheet("#Login_Status { color: #ff5555 }")
-        self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff5555; }")
-        self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff5555; }")
-        UILoginFunctions.shake_window(self)
+                Auth_system.login_fail(self)
 
     def enter_login(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
