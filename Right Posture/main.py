@@ -132,7 +132,6 @@ class MainWindow(QMainWindow):
 
     def Camera_1(self):
         global counter
-        global camera_status
         if Camera.First_load_model:
             self.ui.Camera1_label.setText("The model hasn't loaded yet.")
         else:

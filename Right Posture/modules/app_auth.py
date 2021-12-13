@@ -27,7 +27,8 @@ class Auth_system(LoginWindow):
                 else:
                     self.ui.Login_Status.setText("Invalid username or password")
                     Auth_system.login_fail(self)
-            except:
+            except Exception as e:
+                print(e)
                 self.ui.Login_Status.setText("Invalid username or password")
                 Auth_system.login_fail(self)
 
@@ -61,7 +62,8 @@ class Auth_system(LoginWindow):
                 self.ui.Reg_password_2.setStyleSheet("#Reg_password_2:focus { border: 2px solid rgb(91, 101, 124); }")
                 self.ui.Reg_email.setStyleSheet("#Reg_email:focus { border: 2px solid rgb(91, 101, 124); }")
                 self.ui.Reg_Status.setText("Register Complete !")
-            except:
+            except Exception as e:
+                print(e)
                 self.ui.Reg_Status.setText("This username is already registered in the database.")
                 Auth_system.regis_fail(self)
 
