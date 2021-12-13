@@ -32,7 +32,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
-version.thisVersion = "3.1.1.5"
+version.thisVersion = "1.1.1.2"
 # /////////////////////////////////////////////
 widgets = None
 counter = 0
