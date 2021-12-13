@@ -17,7 +17,7 @@ VideoCapture = 0
 def Print_exception():
     traceback.print_exc()
     excType, value = sys.exc_info()[:2]
-    Camera.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
+    Camera_detail.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
 
 def predict(img):
     img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
@@ -34,20 +34,20 @@ def predict(img):
         # correct > incorrect
         if float(val[0][0]) > float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
-            Camera.log = (Camera.log + '\nmodel prediction : correct')
+            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : correct')
             print('model prediction : correct')
             # ///////////////////////////////////////////////////////////////////////////////
             return 0
             # incorrect > correct
         elif float(val[0][0]) < float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
-            Camera.log = (Camera.log + '\nmodel prediction : incorrect')
+            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : incorrect')
             print('model prediction : incorrect')
             # ///////////////////////////////////////////////////////////////////////////////
             return 1
     except:
-        Camera.Error_load_model = True
-        Camera.model_status = "Critical error in model please restart and try again."
+        Camera_detail.Error_load_model = True
+        Camera_detail.model_status = "Critical error in model please restart and try again."
         Print_exception()
         print("Critical error in model please restart and try again.")
 
@@ -61,14 +61,14 @@ class VideoThread(QThread):
 
     # QThreadのrunメソッドを定義
     def run(self):
-        if Camera.First_load_model:
+        if Camera_detail.First_load_model:
             print("Start Load model")
             worker = Worker(self.execute_this_fn)  # Any other args, kwargs are passed to the run function
             # worker.signals.result.connect(self.print_output)
             # worker.signals.progress.connect(self.progress_fn)
             worker.signals.finished.connect(self.thread_complete)
             self.threadpool.start(worker)
-        if Camera.Finish_load_model:
+        if Camera_detail.Finish_load_model:
             cap = cv2.VideoCapture(VideoCapture, cv2.CAP_DSHOW)
             pred = 3
             img_counter_cor = 0
@@ -104,7 +104,7 @@ class VideoThread(QThread):
                     img_name = "temp_{}.png".format(img_counter_cor)
                     cv2.imwrite(img_name, image)
                     # ///////////////////////////////////////////////////////////////////////////////
-                    Camera.log = ("{} written!".format(img_name))
+                    Camera_detail.log = ("{} written!".format(img_name))
                     print("{} written!".format(img_name))
                     # ///////////////////////////////////////////////////////////////////////////////
                     img_counter_cor += 1
@@ -112,7 +112,7 @@ class VideoThread(QThread):
                     for i in os.listdir(cwd):
                         if '.png' in i:
                             # ///////////////////////////////////////////////////////////////////////////////
-                            Camera.log = (Camera.log + '\n=======================')
+                            Camera_detail.log = (Camera_detail.log + '\n=======================')
                             print('=======================')
                             # ///////////////////////////////////////////////////////////////////////////////
                             pred = predict(i)
@@ -143,10 +143,10 @@ class VideoThread(QThread):
             model = modeling
         except:
             # Use to trick critical error check
-            # Camera.Finish_load_model = True
+            # Camera_detail.Finish_load_model = True
 
-            Camera.Error_load_model = True
-            Camera.model_status = f"Model not found in '{dir_model}'."
+            Camera_detail.Error_load_model = True
+            Camera_detail.model_status = f"Model not found in '{dir_model}'."
             Print_exception()
             print(f"Model not found in '{dir_model}'.")
 
@@ -154,9 +154,9 @@ class VideoThread(QThread):
         print(s)
 
     def thread_complete(self):
-        if not Camera.Error_load_model:
-            Camera.Finish_load_model = True
-            Camera.model_status = "Loaded"
+        if not Camera_detail.Error_load_model:
+            Camera_detail.Finish_load_model = True
+            Camera_detail.model_status = "Loaded"
             print("Finish load model")
 
 class WorkerSignals(QObject):
@@ -189,8 +189,7 @@ class Worker(QRunnable):
             self.signals.result.emit(result)  # Return the result of the processing
         finally:
             self.signals.finished.emit()  # Done
-
-class Camera:
+class Camera_detail:
     log = ""
     traceback = ""
     get_model_name = model_name
@@ -198,6 +197,9 @@ class Camera:
     First_load_model = True
     Finish_load_model = False
     Error_load_model = False
+
+class Camera:
+    
     def detect(self, enable):
         if enable:
             self.image_label = QLabel(self)

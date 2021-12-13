@@ -29,7 +29,7 @@ from PySide6.QtWidgets import QApplication
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
-main = 0
+main = 1
 widgets = None
 counter = 0
 CircularProgress_timer = 300
@@ -88,10 +88,10 @@ class MainWindow(QMainWindow):
         self.progress.set_value(counter)
         if counter >= 100:
             # STOP TIMER
-            if Camera.Finish_load_model:
+            if Camera_detail.Finish_load_model:
                 self.timer.stop()
-                Camera.First_load_model = False
-                Camera.start_cam = True
+                Camera_detail.First_load_model = False
+                Camera_detail.start_cam = True
                 Camera.detect(self, False)
                 Camera.detect(self, True)
                 self.progress.setParent(None)
@@ -100,10 +100,10 @@ class MainWindow(QMainWindow):
                 self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
                 self.ui.pre_cam_1.setEnabled(True)
             else:
-                Camera.model_status = "Waiting for model."
+                Camera_detail.model_status = "Waiting for model."
                 Main_checkbox.Show_Detail(self)
         else:
-            if Camera.Finish_load_model:
+            if Camera_detail.Finish_load_model:
                 if counter < 50:
                     QTimer.singleShot(500, lambda: set_counter(65))
                 elif counter < 68:
@@ -111,7 +111,7 @@ class MainWindow(QMainWindow):
                 elif counter < 88:
                     counter = 95
 
-            if Camera.Error_load_model:
+            if Camera_detail.Error_load_model:
                 self.timer.stop()
                 Main_checkbox.Show_Detail(self)
                 self.ui.pre_cam_1.setEnabled(True)
@@ -119,15 +119,15 @@ class MainWindow(QMainWindow):
 
     def Camera_1(self):
         global counter
-        if Camera.First_load_model:
+        if Camera_detail.First_load_model:
             self.ui.Camera1_label.setText("The model hasn't loaded yet.")
         else:
             self.ui.Camera1_label.setText("The model is loaded.")
 
         if self.ui.pre_cam_1.isChecked():
-            if Camera.First_load_model:
+            if Camera_detail.First_load_model:
                 counter = 0
-                Camera.model_status = "Loading model"
+                Camera_detail.model_status = "Loading model"
                 Main_checkbox.Show_Detail(self)
                 self.ui.pre_cam_1.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
@@ -150,7 +150,7 @@ class MainWindow(QMainWindow):
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             self.progress.setParent(None)
             self.progress.close()
-            Camera.Error_load_model = False
+            Camera_detail.Error_load_model = False
             Camera.detect(self, False)
             save_data("PreCam1", 0)
             # print("Stop Camera_1")
@@ -172,7 +172,7 @@ class MainWindow(QMainWindow):
             qPix = QPixmap.fromImage(qImg)
             self.image_label.setPixmap(qPix)
             Main_checkbox.Detect_Log(self)
-            if Camera.Error_load_model:
+            if Camera_detail.Error_load_model:
                 Main_checkbox.Show_Detail(self)
         except:
             pass

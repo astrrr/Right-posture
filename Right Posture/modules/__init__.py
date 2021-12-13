@@ -36,7 +36,7 @@ from . ui_login_function import *
 from . app_functions import *
 
 # DETECT FUNCTIONS
-from . app_detect import Camera
+from . app_detect import Camera, Camera_detail
 
 # APP DATA
 from . app_data import *
