@@ -4487,7 +4487,7 @@ background-repeat: no-repeat;</string>
                                <cursorShape>ArrowCursor</cursorShape>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">background-image: url(:/icons/images/icons/cil-moon.png);</string>
+                               <string notr="true">background-image: url(:/icons/images/icons/cil-lightbulb.png);</string>
                               </property>
                               <property name="text">
                                <string>Light Mode</string>

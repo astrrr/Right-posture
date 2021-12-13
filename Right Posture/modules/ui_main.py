@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainucVJSD.ui'
+## Form generated from reading UI file 'mainscKHCE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -2070,7 +2070,7 @@ class Ui_MainWindow(object):
         self.btn_LightMode.setSizePolicy(sizePolicy4)
         self.btn_LightMode.setMinimumSize(QSize(20, 45))
         self.btn_LightMode.setCursor(QCursor(Qt.ArrowCursor))
-        self.btn_LightMode.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-moon.png);")
+        self.btn_LightMode.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-lightbulb.png);")
 
         self.horizontalLayout_6.addWidget(self.btn_LightMode)
 
