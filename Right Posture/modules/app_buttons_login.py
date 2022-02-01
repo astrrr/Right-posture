@@ -1,14 +1,7 @@
-import re
 from main import AuthWindow
 from modules.ui_login_function import UILoginFunctions
 from modules.app_auth import Auth_system
-
-regex = re.compile(r"([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\[[\t -Z^-~]*])")
-def Check_email(email):
-    if re.fullmatch(regex, email):
-        return True
-    else:
-        return False
+from email_validator import validate_email, EmailNotValidError
 
 class Auth_buttons(AuthWindow):
 
@@ -62,7 +55,15 @@ class Auth_buttons(AuthWindow):
             UILoginFunctions.animation_back_to_Login(self)
 
         if btnName == "btn_Forget_Email":
-            if Check_email(button.Forget_Email.text()):
-                button.Forget_Status.setText("Valid")
-            else:
-                button.Forget_Status.setText("InValid")
+            email = button.Forget_Email.text()
+            try:
+                # Validate.
+                valid = validate_email(email)
+                # Update with the normalized form.
+                email = valid.email
+                print("val"+email)
+                print("raw"+button.Forget_Email.text())
+                button.Forget_Status.setText("Send email")
+            except EmailNotValidError as e:
+                # email is not valid, exception message is human-readable
+                button.Forget_Status.setText(str(e))
