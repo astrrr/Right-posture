@@ -675,7 +675,7 @@ QPushButton:pressed {
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="user_description_15">
+            <widget class="QLabel" name="Forget_Status">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                <horstretch>0</horstretch>
@@ -689,7 +689,7 @@ QPushButton:pressed {
               </size>
              </property>
              <property name="text">
-              <string>E-mail</string>
+              <string>Forget password : Please fill your email that you register</string>
              </property>
             </widget>
            </item>

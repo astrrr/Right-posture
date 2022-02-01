@@ -1,6 +1,14 @@
+import re
 from main import AuthWindow
 from modules.ui_login_function import UILoginFunctions
 from modules.app_auth import Auth_system
+
+regex = re.compile(r"([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\[[\t -Z^-~]*])")
+def Check_email(email):
+    if re.fullmatch(regex, email):
+        return True
+    else:
+        return False
 
 class Auth_buttons(AuthWindow):
 
@@ -52,3 +60,9 @@ class Auth_buttons(AuthWindow):
 
         if btnName == "btn_Forget_Back":
             UILoginFunctions.animation_back_to_Login(self)
+
+        if btnName == "btn_Forget_Email":
+            if Check_email(button.Forget_Email.text()):
+                button.Forget_Status.setText("Valid")
+            else:
+                button.Forget_Status.setText("InValid")

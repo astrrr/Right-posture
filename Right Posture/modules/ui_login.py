@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'logingqIQPX.ui'
+## Form generated from reading UI file 'loginowuzqa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -343,13 +343,13 @@ class Ui_Login(object):
 
         self.gridLayout_4.addWidget(self.btn_Forget_Email, 2, 0, 1, 1)
 
-        self.user_description_15 = QLabel(self.frame)
-        self.user_description_15.setObjectName(u"user_description_15")
-        sizePolicy1.setHeightForWidth(self.user_description_15.sizePolicy().hasHeightForWidth())
-        self.user_description_15.setSizePolicy(sizePolicy1)
-        self.user_description_15.setMaximumSize(QSize(16777215, 20))
+        self.Forget_Status = QLabel(self.frame)
+        self.Forget_Status.setObjectName(u"Forget_Status")
+        sizePolicy1.setHeightForWidth(self.Forget_Status.sizePolicy().hasHeightForWidth())
+        self.Forget_Status.setSizePolicy(sizePolicy1)
+        self.Forget_Status.setMaximumSize(QSize(16777215, 20))
 
-        self.gridLayout_4.addWidget(self.user_description_15, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.Forget_Status, 0, 0, 1, 1)
 
         self.btn_Forget_Back = QPushButton(self.frame)
         self.btn_Forget_Back.setObjectName(u"btn_Forget_Back")
@@ -571,7 +571,7 @@ class Ui_Login(object):
         self.Forget_Email.setText("")
         self.Forget_Email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
         self.btn_Forget_Email.setText(QCoreApplication.translate("Login", u"Send E-mail", None))
-        self.user_description_15.setText(QCoreApplication.translate("Login", u"E-mail", None))
+        self.Forget_Status.setText(QCoreApplication.translate("Login", u"Forget password : Please fill your email that you register", None))
         self.btn_Forget_Back.setText(QCoreApplication.translate("Login", u"Back", None))
         self.Login_title_bar.setText(QCoreApplication.translate("Login", u"Login Right Posture", None))
 #if QT_CONFIG(tooltip)
