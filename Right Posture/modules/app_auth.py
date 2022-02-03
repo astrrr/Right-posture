@@ -12,10 +12,12 @@ class Auth_system(AuthWindow):
             valid = validate_email(email)
             # Update with the normalized form.
             email = valid.email
-            print("Email = " + email)
-            self.ui.Forget_Status.setText("Send email")
+            self.ui.Forget_Status.setText(f"Sending to email {email}")
+            self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
+            self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
         except EmailNotValidError as e:
             # email is not valid, exception message is human-readable
+            Auth_system.forget_fail(self)
             self.ui.Forget_Status.setText(str(e))
 
     def check_login(self):
@@ -35,8 +37,8 @@ class Auth_system(AuthWindow):
                 if result_pass == password:
                     self.ui.Login_Status.setText(f"Welcome {username} !")
                     self.ui.Login_Status.setStyleSheet("#Login_Status { color: #50fa7b }")
-                    self.ui.username.setStyleSheet("#username:focus { border: 3px solid #50fa7b; }")
-                    self.ui.password.setStyleSheet("#password:focus { border: 3px solid #50fa7b; }")
+                    self.ui.username.setStyleSheet("#username:focus { border: 2px solid #50fa7b; }")
+                    self.ui.password.setStyleSheet("#password:focus { border: 2px solid #50fa7b; }")
                     QTimer.singleShot(1200, lambda: self.open_main())
                 else:
                     self.ui.Login_Status.setText("Invalid username or password")
@@ -93,4 +95,9 @@ class Auth_system(AuthWindow):
         self.ui.Login_Status.setStyleSheet("#Login_Status { color: #ff5555 }")
         self.ui.username.setStyleSheet("#username:focus { border: 2px solid #ff5555; }")
         self.ui.password.setStyleSheet("#password:focus { border: 2px solid #ff5555; }")
+        UILoginFunctions.shake_window(self)
+
+    def forget_fail(self):
+        self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #ff5555 }")
+        self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #ff5555; }")
         UILoginFunctions.shake_window(self)
