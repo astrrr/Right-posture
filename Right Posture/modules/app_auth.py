@@ -12,7 +12,7 @@ class Auth_system(AuthWindow):
             valid = validate_email(email)
             # Update with the normalized form.
             email = valid.email
-            print("val = " + email)
+            print("Email = " + email)
             self.ui.Forget_Status.setText("Send email")
         except EmailNotValidError as e:
             # email is not valid, exception message is human-readable
