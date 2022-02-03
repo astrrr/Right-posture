@@ -1,8 +1,22 @@
 from main import AuthWindow, QTimer
 from modules.ui_login_function import UILoginFunctions
 import sqlite3
+from email_validator import validate_email, EmailNotValidError
 
 class Auth_system(AuthWindow):
+
+    def check_email(self):
+        email = self.ui.Forget_Email.text()
+        try:
+            # Validate.
+            valid = validate_email(email)
+            # Update with the normalized form.
+            email = valid.email
+            print("val = " + email)
+            self.ui.Forget_Status.setText("Send email")
+        except EmailNotValidError as e:
+            # email is not valid, exception message is human-readable
+            self.ui.Forget_Status.setText(str(e))
 
     def check_login(self):
         username = self.ui.username.text()
