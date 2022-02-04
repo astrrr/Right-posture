@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginowuzqa.ui'
+## Form generated from reading UI file 'loginDUpycI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -333,6 +333,22 @@ class Ui_Login(object):
 
         self.gridLayout_4.addWidget(self.Forget_Email, 1, 0, 1, 1)
 
+        self.Forget_Status = QLabel(self.frame)
+        self.Forget_Status.setObjectName(u"Forget_Status")
+        sizePolicy1.setHeightForWidth(self.Forget_Status.sizePolicy().hasHeightForWidth())
+        self.Forget_Status.setSizePolicy(sizePolicy1)
+        self.Forget_Status.setMaximumSize(QSize(16777215, 20))
+
+        self.gridLayout_4.addWidget(self.Forget_Status, 0, 0, 1, 1)
+
+        self.Forget_Auth = QLineEdit(self.frame)
+        self.Forget_Auth.setObjectName(u"Forget_Auth")
+        self.Forget_Auth.setMinimumSize(QSize(0, 30))
+        self.Forget_Auth.setMaximumSize(QSize(200, 16777215))
+        self.Forget_Auth.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout_4.addWidget(self.Forget_Auth, 1, 1, 1, 1)
+
         self.btn_Forget_Email = QPushButton(self.frame)
         self.btn_Forget_Email.setObjectName(u"btn_Forget_Email")
         self.btn_Forget_Email.setMinimumSize(QSize(150, 30))
@@ -341,15 +357,7 @@ class Ui_Login(object):
         self.btn_Forget_Email.setStyleSheet(u"background-color: rgb(52, 59, 72);")
         self.btn_Forget_Email.setIcon(icon)
 
-        self.gridLayout_4.addWidget(self.btn_Forget_Email, 2, 0, 1, 1)
-
-        self.Forget_Status = QLabel(self.frame)
-        self.Forget_Status.setObjectName(u"Forget_Status")
-        sizePolicy1.setHeightForWidth(self.Forget_Status.sizePolicy().hasHeightForWidth())
-        self.Forget_Status.setSizePolicy(sizePolicy1)
-        self.Forget_Status.setMaximumSize(QSize(16777215, 20))
-
-        self.gridLayout_4.addWidget(self.Forget_Status, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.btn_Forget_Email, 2, 0, 1, 2)
 
         self.btn_Forget_Back = QPushButton(self.frame)
         self.btn_Forget_Back.setObjectName(u"btn_Forget_Back")
@@ -359,7 +367,7 @@ class Ui_Login(object):
         self.btn_Forget_Back.setStyleSheet(u"background-color: rgb(52, 59, 72);")
         self.btn_Forget_Back.setIcon(icon)
 
-        self.gridLayout_4.addWidget(self.btn_Forget_Back, 3, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.btn_Forget_Back, 3, 0, 1, 2)
 
 
         self.verticalLayout_2.addWidget(self.frame)
@@ -570,8 +578,10 @@ class Ui_Login(object):
         self.Reg_Status.setText(QCoreApplication.translate("Login", u"Status", None))
         self.Forget_Email.setText("")
         self.Forget_Email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
-        self.btn_Forget_Email.setText(QCoreApplication.translate("Login", u"Send E-mail", None))
         self.Forget_Status.setText(QCoreApplication.translate("Login", u"Forget password : Please fill your email that you register", None))
+        self.Forget_Auth.setText("")
+        self.Forget_Auth.setPlaceholderText(QCoreApplication.translate("Login", u"Authentication key", None))
+        self.btn_Forget_Email.setText(QCoreApplication.translate("Login", u"Send E-mail", None))
         self.btn_Forget_Back.setText(QCoreApplication.translate("Login", u"Back", None))
         self.Login_title_bar.setText(QCoreApplication.translate("Login", u"Login Right Posture", None))
 #if QT_CONFIG(tooltip)
