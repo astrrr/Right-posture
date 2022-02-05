@@ -26,15 +26,17 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
 
+from modules.Version_control import version
+
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
-version = "1.1.1"
-widgets = None
+version.thisVersion = "1.1.1.2"
+# /////////////////////////////////////////////
 counter = 0
 CircularProgress_timer = 300
-
+# /////////////////////////////////////////////
 class AuthWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -54,6 +56,8 @@ class AuthWindow(QMainWindow):
         self.main.show()
         self.close()
 
+    # ENTER EVENT
+    # ///////////////////////////////////////////////////////////////
     def enter_login(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             Auth_system.check_login(self)
@@ -61,6 +65,10 @@ class AuthWindow(QMainWindow):
     def enter_regis(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             Auth_system.check_register(self)
+
+    def enter_forget(self, event):
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            Auth_system.check_email(self)
 
     # BUTTONS INTERFACE TO app_button_login
     def Login_button_Interface(self):
@@ -71,14 +79,10 @@ class AuthWindow(QMainWindow):
         self.dragPos = event.globalPosition().toPoint()
 
 class MainWindow(QMainWindow):
-    global version
-    versions = version
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        global widgets
-        widgets = self.ui
         UIFunctions.Function_Main_Setup(self)
         Main_buttons.defineButtons(self)
         PyToggle.Toggle_Switch(self)

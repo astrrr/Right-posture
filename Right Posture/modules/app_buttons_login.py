@@ -30,6 +30,8 @@ class Auth_buttons(AuthWindow):
         button.Reg_password_2.keyReleaseEvent = self.enter_regis
         button.Reg_email.keyReleaseEvent = self.enter_regis
 
+        button.Forget_Email.keyReleaseEvent = self.enter_forget
+
     def buttonClick(self):
         button = self.ui
         btn = self.sender()
@@ -52,3 +54,6 @@ class Auth_buttons(AuthWindow):
 
         if btnName == "btn_Forget_Back":
             UILoginFunctions.animation_back_to_Login(self)
+
+        if btnName == "btn_Forget_Email":
+            Auth_system.check_email(self)

@@ -1,6 +1,11 @@
 import sys
 import os
 from cx_Freeze import setup, Executable
+from modules.Version_control import version
+
+Compile_version = version.thisVersion
+if Compile_version is None:
+    Compile_version = "0.0.0.0"
 
 # ADD FILES
 files = ['icon.ico', 'themes/', 'bin/']
@@ -15,7 +20,7 @@ target = Executable(
 # SETUP CX FREEZE
 setup(
     name="Right Posture",
-    version="1.1.1",
+    version=Compile_version,
     description="Right Posture",
     author="Right Posture TEAM",
     options={"build_exe": {"packages": ["keras", "plyer"], 'include_files': files, "excludes": ["PyQt5"]}},

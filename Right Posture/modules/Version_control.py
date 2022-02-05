@@ -1,0 +1,2 @@
+class version:
+    thisVersion = None

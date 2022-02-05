@@ -2,6 +2,12 @@ import glob
 import sys
 import os
 from cx_Freeze import setup, Executable
+from modules.Version_control import version
+
+Compile_version = version.thisVersion
+if Compile_version is None:
+    Compile_version = "0.0.0.0"
+
 
 # ADD FILES
 files = ['icon.ico', 'themes/', 'bin/']
@@ -10,13 +16,13 @@ mplBackendsPath = os.path.join(os.path.split(sys.executable)[0], "Lib/site-packa
 
 fileList = glob.glob(mplBackendsPath)
 
-moduleList = ["PyQt5", "tensorflow", "PySide6", "tensorboard",
-              "pandas", "numpy", "tensorflow_estimator"]
-
+# moduleList = ["PyQt5", "tensorflow", "PySide6", "tensorboard",
+#               "pandas", "numpy", "tensorflow_estimator"]
+moduleList = []
 for mod in fileList:
     modules = os.path.splitext(os.path.basename(mod))[0]
-    if not modules == "win32_setctime.py":
-        moduleList.append(modules)
+    # if not modules == "":
+    moduleList.append(modules)
 
 # TARGET
 target = Executable(
@@ -28,10 +34,10 @@ target = Executable(
 # SETUP CX FREEZE
 setup(
     name="Right Posture",
-    version="1.1.0",
+    version=Compile_version,
     description="Right Posture",
     author="Right Posture TEAM",
-    options={"build_exe": {"packages": ["win32_setctime.py"], 'include_files': files, "excludes": ["PyQt5"] + moduleList}},
+    options={"build_exe": {'include_files': files, "excludes": ["PyQt5"] + moduleList}},
     executables=[target]
 )
 # Type python setup.py build to build.exe.
