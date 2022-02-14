@@ -47,13 +47,18 @@ class Auth_buttons(AuthWindow):
             button.Login_stackedWidget.setCurrentWidget(button.Register_page)
 
         if btnName == "btn_Fpassword":
-            UILoginFunctions.animation_to_Forget(self)
+            button.Login_stackedWidget.setCurrentWidget(button.Forget_page)
+            # UILoginFunctions.animation_to_Forget(self)
+
+        # if btnName == "btn_guest":
+        #     UILoginFunctions.animation_back_to_Login(self)
 
         if btnName == "btn_Reg_Back":
             button.Login_stackedWidget.setCurrentWidget(button.Login_page)
 
         if btnName == "btn_Forget_Back":
-            UILoginFunctions.animation_back_to_Login(self)
+            button.Login_stackedWidget.setCurrentWidget(button.Login_page)
+            # UILoginFunctions.animation_back_to_Login(self)
 
         if btnName == "btn_Forget_Email":
             Auth_system.check_email(self)
