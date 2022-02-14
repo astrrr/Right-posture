@@ -6,15 +6,33 @@ from email_validator import validate_email, EmailNotValidError
 class Auth_system(AuthWindow):
 
     def check_email(self):
+        username = self.ui.username.text()
         email = self.ui.Forget_Email.text()
         try:
             # Validate.
             valid = validate_email(email)
             # Update with the normalized form.
             email = valid.email
-            self.ui.Forget_Status.setText(f"Sending to email {email}")
-            self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
-            self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
+
+            conn = sqlite3.connect("bin/Data/Accounts.db")
+            cur = conn.cursor()
+            query = 'SELECT email FROM login_info WHERE username =\'' + username + "\'"
+            cur.execute(query)
+
+            result_pass = cur.fetchone()[0]
+            print(result_pass)
+            if result_pass == email:
+                self.ui.Forget_Status.setText(f"Sending to email {email}")
+                self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
+                self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
+            else:
+                self.ui.Forget_Status.setText(f"Invalid")
+                Auth_system.forget_fail(self)
+
+            # self.ui.Forget_Status.setText(f"Sending to email {email}")
+            # self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
+            # self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
+
         except EmailNotValidError as e:
             # email is not valid, exception message is human-readable
             Auth_system.forget_fail(self)
