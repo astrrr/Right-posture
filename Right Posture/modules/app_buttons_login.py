@@ -31,6 +31,7 @@ class Auth_buttons(AuthWindow):
         button.Reg_password_2.keyReleaseEvent = self.enter_regis
         button.Reg_email.keyReleaseEvent = self.enter_regis
 
+        button.Forget_Username.keyReleaseEvent = self.enter_forget
         button.Forget_Email.keyReleaseEvent = self.enter_forget
 
     def buttonClick(self):

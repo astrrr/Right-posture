@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginJmqAZz.ui'
+## Form generated from reading UI file 'loginjccsFc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -247,13 +247,12 @@ class Ui_Login(object):
         self.Forget_page.setObjectName(u"Forget_page")
         self.gridLayout_2 = QGridLayout(self.Forget_page)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.Forget_Auth = QLineEdit(self.Forget_page)
-        self.Forget_Auth.setObjectName(u"Forget_Auth")
-        self.Forget_Auth.setMinimumSize(QSize(0, 30))
-        self.Forget_Auth.setMaximumSize(QSize(200, 16777215))
-        self.Forget_Auth.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.Forget_Username = QLineEdit(self.Forget_page)
+        self.Forget_Username.setObjectName(u"Forget_Username")
+        self.Forget_Username.setMinimumSize(QSize(0, 30))
+        self.Forget_Username.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
-        self.gridLayout_2.addWidget(self.Forget_Auth, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.Forget_Username, 2, 0, 1, 2)
 
         self.Forget_Status = QLabel(self.Forget_page)
         self.Forget_Status.setObjectName(u"Forget_Status")
@@ -262,33 +261,6 @@ class Ui_Login(object):
         self.Forget_Status.setMaximumSize(QSize(16777215, 20))
 
         self.gridLayout_2.addWidget(self.Forget_Status, 1, 0, 1, 1)
-
-        self.Forget_Email = QLineEdit(self.Forget_page)
-        self.Forget_Email.setObjectName(u"Forget_Email")
-        self.Forget_Email.setMinimumSize(QSize(0, 30))
-        self.Forget_Email.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-
-        self.gridLayout_2.addWidget(self.Forget_Email, 2, 0, 1, 1)
-
-        self.btn_Forget_Email = QPushButton(self.Forget_page)
-        self.btn_Forget_Email.setObjectName(u"btn_Forget_Email")
-        self.btn_Forget_Email.setMinimumSize(QSize(150, 30))
-        self.btn_Forget_Email.setFont(font)
-        self.btn_Forget_Email.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_Forget_Email.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        self.btn_Forget_Email.setIcon(icon)
-
-        self.gridLayout_2.addWidget(self.btn_Forget_Email, 3, 0, 1, 2)
-
-        self.btn_Forget_Back = QPushButton(self.Forget_page)
-        self.btn_Forget_Back.setObjectName(u"btn_Forget_Back")
-        self.btn_Forget_Back.setMinimumSize(QSize(150, 30))
-        self.btn_Forget_Back.setFont(font)
-        self.btn_Forget_Back.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_Forget_Back.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        self.btn_Forget_Back.setIcon(icon)
-
-        self.gridLayout_2.addWidget(self.btn_Forget_Back, 4, 0, 1, 2)
 
         self.logo_3 = QFrame(self.Forget_page)
         self.logo_3.setObjectName(u"logo_3")
@@ -306,6 +278,41 @@ class Ui_Login(object):
         self.logo_3.setFrameShadow(QFrame.Raised)
 
         self.gridLayout_2.addWidget(self.logo_3, 0, 0, 1, 2)
+
+        self.btn_Forget_Email = QPushButton(self.Forget_page)
+        self.btn_Forget_Email.setObjectName(u"btn_Forget_Email")
+        self.btn_Forget_Email.setMinimumSize(QSize(150, 30))
+        self.btn_Forget_Email.setFont(font)
+        self.btn_Forget_Email.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Forget_Email.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Forget_Email.setIcon(icon)
+
+        self.gridLayout_2.addWidget(self.btn_Forget_Email, 4, 0, 1, 2)
+
+        self.btn_Forget_Back = QPushButton(self.Forget_page)
+        self.btn_Forget_Back.setObjectName(u"btn_Forget_Back")
+        self.btn_Forget_Back.setMinimumSize(QSize(150, 30))
+        self.btn_Forget_Back.setFont(font)
+        self.btn_Forget_Back.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Forget_Back.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Forget_Back.setIcon(icon)
+
+        self.gridLayout_2.addWidget(self.btn_Forget_Back, 5, 0, 1, 2)
+
+        self.Forget_Auth = QLineEdit(self.Forget_page)
+        self.Forget_Auth.setObjectName(u"Forget_Auth")
+        self.Forget_Auth.setMinimumSize(QSize(0, 30))
+        self.Forget_Auth.setMaximumSize(QSize(200, 16777215))
+        self.Forget_Auth.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout_2.addWidget(self.Forget_Auth, 3, 1, 1, 1)
+
+        self.Forget_Email = QLineEdit(self.Forget_page)
+        self.Forget_Email.setObjectName(u"Forget_Email")
+        self.Forget_Email.setMinimumSize(QSize(0, 30))
+        self.Forget_Email.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout_2.addWidget(self.Forget_Email, 3, 0, 1, 1)
 
         self.Login_stackedWidget.addWidget(self.Forget_page)
         self.Register_page = QWidget()
@@ -553,28 +560,29 @@ class Ui_Login(object):
         self.verticalLayout.addWidget(self.bg)
 
         Login.setCentralWidget(self.centralwidget)
+        QWidget.setTabOrder(self.minimizeAppBtn, self.username)
         QWidget.setTabOrder(self.username, self.password)
         QWidget.setTabOrder(self.password, self.btn_Login)
         QWidget.setTabOrder(self.btn_Login, self.btn_Register)
         QWidget.setTabOrder(self.btn_Register, self.btn_Fpassword)
         QWidget.setTabOrder(self.btn_Fpassword, self.btn_guest)
-        QWidget.setTabOrder(self.btn_guest, self.maximizeRestoreAppBtn)
-        QWidget.setTabOrder(self.maximizeRestoreAppBtn, self.minimizeAppBtn)
-        QWidget.setTabOrder(self.minimizeAppBtn, self.closeAppBtn)
-        QWidget.setTabOrder(self.closeAppBtn, self.Reg_username)
-        QWidget.setTabOrder(self.Reg_username, self.Reg_password)
-        QWidget.setTabOrder(self.Reg_password, self.Reg_password_2)
-        QWidget.setTabOrder(self.Reg_password_2, self.Reg_email)
-        QWidget.setTabOrder(self.Reg_email, self.btn_Com_Register)
-        QWidget.setTabOrder(self.btn_Com_Register, self.btn_Reg_Back)
-        QWidget.setTabOrder(self.btn_Reg_Back, self.Forget_Email)
+        QWidget.setTabOrder(self.btn_guest, self.Forget_Username)
+        QWidget.setTabOrder(self.Forget_Username, self.Forget_Email)
         QWidget.setTabOrder(self.Forget_Email, self.Forget_Auth)
         QWidget.setTabOrder(self.Forget_Auth, self.btn_Forget_Email)
         QWidget.setTabOrder(self.btn_Forget_Email, self.btn_Forget_Back)
+        QWidget.setTabOrder(self.btn_Forget_Back, self.Reg_username)
+        QWidget.setTabOrder(self.Reg_username, self.Reg_password_2)
+        QWidget.setTabOrder(self.Reg_password_2, self.closeAppBtn)
+        QWidget.setTabOrder(self.closeAppBtn, self.Reg_email)
+        QWidget.setTabOrder(self.Reg_email, self.Reg_password)
+        QWidget.setTabOrder(self.Reg_password, self.btn_Com_Register)
+        QWidget.setTabOrder(self.btn_Com_Register, self.btn_Reg_Back)
+        QWidget.setTabOrder(self.btn_Reg_Back, self.maximizeRestoreAppBtn)
 
         self.retranslateUi(Login)
 
-        self.Login_stackedWidget.setCurrentIndex(0)
+        self.Login_stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Login)
@@ -591,13 +599,15 @@ class Ui_Login(object):
         self.btn_Register.setText(QCoreApplication.translate("Login", u"Register", None))
         self.btn_Fpassword.setText(QCoreApplication.translate("Login", u"Forget password", None))
         self.btn_guest.setText(QCoreApplication.translate("Login", u"Guest", None))
-        self.Forget_Auth.setText("")
-        self.Forget_Auth.setPlaceholderText(QCoreApplication.translate("Login", u"Authentication key", None))
-        self.Forget_Status.setText(QCoreApplication.translate("Login", u"Forget password : Please fill your email that you register", None))
-        self.Forget_Email.setText("")
-        self.Forget_Email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
+        self.Forget_Username.setText("")
+        self.Forget_Username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
+        self.Forget_Status.setText(QCoreApplication.translate("Login", u"Please fill your username and email that you register", None))
         self.btn_Forget_Email.setText(QCoreApplication.translate("Login", u"Send E-mail", None))
         self.btn_Forget_Back.setText(QCoreApplication.translate("Login", u"Back", None))
+        self.Forget_Auth.setText("")
+        self.Forget_Auth.setPlaceholderText(QCoreApplication.translate("Login", u"Authentication key", None))
+        self.Forget_Email.setText("")
+        self.Forget_Email.setPlaceholderText(QCoreApplication.translate("Login", u"E-mail", None))
         self.btn_Com_Register.setText(QCoreApplication.translate("Login", u"Register", None))
         self.btn_Reg_Back.setText(QCoreApplication.translate("Login", u"Back", None))
         self.Reg_password_2.setText("")

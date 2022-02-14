@@ -213,7 +213,7 @@ QPushButton:pressed {
            <string notr="true">/*background: transparent;*/</string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="Login_page">
            <layout class="QVBoxLayout" name="_2">
@@ -436,18 +436,12 @@ QPushButton:pressed {
           </widget>
           <widget class="QWidget" name="Forget_page">
            <layout class="QGridLayout" name="gridLayout_2">
-            <item row="2" column="1">
-             <widget class="QLineEdit" name="Forget_Auth">
+            <item row="2" column="0" colspan="2">
+             <widget class="QLineEdit" name="Forget_Username">
               <property name="minimumSize">
                <size>
                 <width>0</width>
                 <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -457,7 +451,7 @@ QPushButton:pressed {
                <string/>
               </property>
               <property name="placeholderText">
-               <string>Authentication key</string>
+               <string>Username</string>
               </property>
              </widget>
             </item>
@@ -476,86 +470,7 @@ QPushButton:pressed {
                </size>
               </property>
               <property name="text">
-               <string>Forget password : Please fill your email that you register</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLineEdit" name="Forget_Email">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(33, 37, 43);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="placeholderText">
-               <string>E-mail</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0" colspan="2">
-             <widget class="QPushButton" name="btn_Forget_Email">
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <italic>false</italic>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(52, 59, 72);</string>
-              </property>
-              <property name="text">
-               <string>Send E-mail</string>
-              </property>
-              <property name="icon">
-               <iconset>
-                <normaloff>Backup/images/icons/cil-save.png</normaloff>Backup/images/icons/cil-save.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0" colspan="2">
-             <widget class="QPushButton" name="btn_Forget_Back">
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <italic>false</italic>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(52, 59, 72);</string>
-              </property>
-              <property name="text">
-               <string>Back</string>
-              </property>
-              <property name="icon">
-               <iconset>
-                <normaloff>Backup/images/icons/cil-save.png</normaloff>Backup/images/icons/cil-save.png</iconset>
+               <string>Please fill your username and email that you register</string>
               </property>
              </widget>
             </item>
@@ -588,6 +503,110 @@ QPushButton:pressed {
               </property>
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QPushButton" name="btn_Forget_Email">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(52, 59, 72);</string>
+              </property>
+              <property name="text">
+               <string>Send E-mail</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>Backup/images/icons/cil-save.png</normaloff>Backup/images/icons/cil-save.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="2">
+             <widget class="QPushButton" name="btn_Forget_Back">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(52, 59, 72);</string>
+              </property>
+              <property name="text">
+               <string>Back</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>Backup/images/icons/cil-save.png</normaloff>Backup/images/icons/cil-save.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="Forget_Auth">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(33, 37, 43);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>Authentication key</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLineEdit" name="Forget_Email">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(33, 37, 43);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>E-mail</string>
               </property>
              </widget>
             </item>
