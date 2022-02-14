@@ -11,6 +11,7 @@ class Auth_buttons(AuthWindow):
         button.btn_Login.clicked.connect(self.Login_button_Interface)
         button.btn_Register.clicked.connect(self.Login_button_Interface)
         button.btn_Fpassword.clicked.connect(self.Login_button_Interface)
+        button.btn_guest.clicked.connect(self.Login_button_Interface)
 
         # REGISTER BUTTON
         button.btn_Com_Register.clicked.connect(self.Login_button_Interface)
@@ -38,7 +39,7 @@ class Auth_buttons(AuthWindow):
         btnName = btn.objectName()
 
         if btnName == "btn_Login":
-            Auth_system.check_login(self)
+            Auth_system.check_login(self, False)
 
         if btnName == "btn_Com_Register":
             Auth_system.check_register(self)
@@ -50,8 +51,8 @@ class Auth_buttons(AuthWindow):
             button.Login_stackedWidget.setCurrentWidget(button.Forget_page)
             # UILoginFunctions.animation_to_Forget(self)
 
-        # if btnName == "btn_guest":
-        #     UILoginFunctions.animation_back_to_Login(self)
+        if btnName == "btn_guest":
+            Auth_system.check_login(self, True)
 
         if btnName == "btn_Reg_Back":
             button.Login_stackedWidget.setCurrentWidget(button.Login_page)
