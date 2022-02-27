@@ -20,9 +20,35 @@ from main import MainWindow, Settings
 from plyer import notification
 from pypresence import Presence
 import time
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+# E-mail
+username = 'rightposture.kmitl.team@gmail.com'
+password = 'admin159123'
+
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 class AppFunctions(MainWindow):
+
+    def send_Email(self, text=None, subject='Forget password', from_email='rightposture.kmitl.team@gmail.com', to_emails=None):
+        assert isinstance(to_emails, list)
+        msg = MIMEMultipart('alternative')
+        msg['From'] = from_email
+        msg['To'] = ", ".join(to_emails)
+        msg['Subject'] = subject
+        txt_part = MIMEText(text, 'plain')
+        msg.attach(txt_part)
+        msg_str = msg.as_string()
+
+        # login to my smtp server
+        server = smtplib.SMTP(host='smtp.gmail.com', port=587)
+        server.ehlo()
+        server.starttls()
+        server.login(username, password)
+        server.sendmail(from_email, to_emails, msg_str)
+        server.quit()
 
     # Notification function
     def notifyMe(self, title, message):
