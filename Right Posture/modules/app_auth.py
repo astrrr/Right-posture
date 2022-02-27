@@ -29,8 +29,11 @@ class Auth_system(AuthWindow):
                     result_pass = cur.fetchone()[0]
                     if result_pass == email:
                         auth_key = AppFunctions.generate_auth_key(5)
-                        AppFunctions.send_Email(self, text=f"Your auth key is {auth_key}", to_emails=[email])
-                        AppFunctions.notifyMe(self, "Notification", f"Sending to email {email}")
+                        try:
+                            AppFunctions.send_Email(self, text=f"Your auth key is {auth_key}", to_emails=[email])
+                        except:
+                            AppFunctions.notifyMe(self, "Notification", f"Fail Sending to email {email}")
+
                         self.ui.Forget_Status.setText(f"Sending to email {email} |auth key is {auth_key}|")
                         self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
                         self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #50fa7b; }")
