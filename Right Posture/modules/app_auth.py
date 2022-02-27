@@ -1,11 +1,15 @@
 from main import AuthWindow, QTimer
 from modules.ui_login_function import UILoginFunctions
+from modules import AppFunctions
 import sqlite3
 from email_validator import validate_email, EmailNotValidError
+
+auth_key = None
 
 class Auth_system(AuthWindow):
 
     def check_email(self):
+        global auth_key
         username = self.ui.Forget_Username.text()
         email = self.ui.Forget_Email.text()
         if len(username) == 0 or len(email) == 0:
@@ -24,7 +28,10 @@ class Auth_system(AuthWindow):
                 try:
                     result_pass = cur.fetchone()[0]
                     if result_pass == email:
-                        self.ui.Forget_Status.setText(f"Sending to email {email}")
+                        auth_key = AppFunctions.generate_auth_key(5)
+                        AppFunctions.send_Email(self, text=f"Your auth key is {auth_key}", to_emails=[email])
+                        AppFunctions.notifyMe(self, "Notification", f"Sending to email {email}")
+                        self.ui.Forget_Status.setText(f"Sending to email {email} |auth key is {auth_key}|")
                         self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
                         self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #50fa7b; }")
                         self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")

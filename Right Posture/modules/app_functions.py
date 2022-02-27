@@ -19,6 +19,7 @@
 from main import MainWindow, Settings
 from plyer import notification
 from pypresence import Presence
+from random import randint
 import time
 import smtplib
 from email.mime.text import MIMEText
@@ -50,6 +51,11 @@ class AppFunctions(MainWindow):
         server.sendmail(from_email, to_emails, msg_str)
         server.quit()
 
+    def generate_auth_key(n):
+        range_start = 10 ** (n - 1)
+        range_end = (10 ** n) - 1
+        return randint(range_start, range_end)
+
     # Notification function
     def notifyMe(self, title, message):
         notification.notify(
@@ -58,7 +64,6 @@ class AppFunctions(MainWindow):
             timeout=10,
             app_icon="bin/Icon/iconTimer.ico"
         )
-        self.ui.Detail_text.append("Print notification")
 
     # Discord Rich Presence
     def discordRichPresence(self):
