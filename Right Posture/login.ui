@@ -173,7 +173,7 @@ QPushButton:pressed {
          <x>0</x>
          <y>60</y>
          <width>878</width>
-         <height>720</height>
+         <height>811</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -566,31 +566,6 @@ QPushButton:pressed {
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
-             <widget class="QLineEdit" name="Forget_Auth">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(33, 37, 43);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="placeholderText">
-               <string>Authentication key</string>
-              </property>
-             </widget>
-            </item>
             <item row="3" column="0">
              <widget class="QLineEdit" name="Forget_Email">
               <property name="minimumSize">
@@ -823,6 +798,122 @@ QPushButton:pressed {
            </size>
           </property>
          </spacer>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="2" column="0">
+            <widget class="QPushButton" name="btn_Auth_key">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(52, 59, 72);</string>
+             </property>
+             <property name="text">
+              <string>Auth</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>Backup/Backup/images/icons/cil-save.png</normaloff>Backup/Backup/images/icons/cil-save.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="btn_Auth_back">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(52, 59, 72);</string>
+             </property>
+             <property name="text">
+              <string>Back</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>Backup/Backup/images/icons/cil-save.png</normaloff>Backup/Backup/images/icons/cil-save.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="Forget_Auth">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(33, 37, 43);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Authentication key</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="Auth_Status">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Authentication key that you receive in e-mail.</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -1442,25 +1533,34 @@ background-repeat: no-repeat;</string>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>Forget_Username</tabstop>
+  <tabstop>Forget_Email</tabstop>
+  <tabstop>btn_Forget_Email</tabstop>
+  <tabstop>btn_Forget_Back</tabstop>
   <tabstop>username</tabstop>
   <tabstop>password</tabstop>
   <tabstop>btn_Login</tabstop>
   <tabstop>btn_Register</tabstop>
   <tabstop>btn_Fpassword</tabstop>
   <tabstop>btn_guest</tabstop>
-  <tabstop>maximizeRestoreAppBtn</tabstop>
-  <tabstop>minimizeAppBtn</tabstop>
-  <tabstop>closeAppBtn</tabstop>
+  <tabstop>Forget_Auth</tabstop>
+  <tabstop>btn_Auth_key</tabstop>
+  <tabstop>btn_Auth_back</tabstop>
   <tabstop>Reg_username</tabstop>
   <tabstop>Reg_password</tabstop>
   <tabstop>Reg_password_2</tabstop>
   <tabstop>Reg_email</tabstop>
   <tabstop>btn_Com_Register</tabstop>
   <tabstop>btn_Reg_Back</tabstop>
-  <tabstop>Forget_Email</tabstop>
-  <tabstop>Forget_Auth</tabstop>
-  <tabstop>btn_Forget_Email</tabstop>
-  <tabstop>btn_Forget_Back</tabstop>
+  <tabstop>Forget_Email_2</tabstop>
+  <tabstop>btn_Forget_Email_2</tabstop>
+  <tabstop>btn_Forget_Back_2</tabstop>
+  <tabstop>btn_Forget_Email_3</tabstop>
+  <tabstop>btn_Forget_Back_3</tabstop>
+  <tabstop>Forget_Email_3</tabstop>
+  <tabstop>minimizeAppBtn</tabstop>
+  <tabstop>maximizeRestoreAppBtn</tabstop>
+  <tabstop>closeAppBtn</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>

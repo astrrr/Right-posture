@@ -26,7 +26,7 @@ class UILoginFunctions:
 
     # START ANIMATION TO LOGIN
     # ///////////////////////////////////////////////////////////////
-    def animation_to_Forget(self):
+    def animation_to_Auth_key(self):
         # ANIMATION
         self.animation = QPropertyAnimation(self.ui.frame_widgets, b"geometry")
         self.animation.setDuration(1500)
@@ -35,7 +35,7 @@ class UILoginFunctions:
         self.animation.setEasingCurve(QEasingCurve.InOutQuart)
         self.animation.start()
 
-    def animation_back_to_Login(self):
+    def animation_back_to_Forget(self):
         # ANIMATION
         self.animation = QPropertyAnimation(self.ui.frame_widgets, b"geometry")
         self.animation.setDuration(1500)
