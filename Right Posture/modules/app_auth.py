@@ -8,6 +8,14 @@ auth_key = None
 
 class Auth_system(AuthWindow):
 
+    def change_password(self):
+        global auth_key
+        if self.ui.Auth_key.text() == auth_key:
+            self.ui.Auth_Status.setText(f"auth correct")
+            self.ui.Auth_Status.setStyleSheet("#Auth_Status { color: #50fa7b }")
+        else:
+            Auth_system.auth_fail(self)
+
     def check_email(self):
         global auth_key
         username = self.ui.Forget_Username.text()
@@ -141,4 +149,10 @@ class Auth_system(AuthWindow):
         self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #ff5555 }")
         self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #ff5555; }")
         self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #ff5555; }")
+        UILoginFunctions.shake_window(self)
+
+    def auth_fail(self):
+        self.ui.Auth_Status.setStyleSheet("#Auth_Status { color: #ff5555 }")
+        self.ui.Auth_key.setStyleSheet("#Auth_key:focus { border: 2px solid #ff5555; }")
+        self.ui.Auth_new_password.setStyleSheet("#Auth_new_password:focus { border: 2px solid #ff5555; }")
         UILoginFunctions.shake_window(self)
