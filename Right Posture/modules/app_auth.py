@@ -32,15 +32,16 @@ class Auth_system(AuthWindow):
                         try:
                             AppFunctions.send_Email(self, text=f"Your auth key is {auth_key}", to_emails=[email])
                             UILoginFunctions.animation_to_Auth_key(self)
+                            self.ui.Auth_Status.setText(f"Sending to email {email} |auth key is {auth_key}|")
+                            self.ui.Auth_Status.setStyleSheet("#Auth_Status { color: #50fa7b }")
+                            self.ui.Forget_Status.setText(f"Sending to email {email}")
+                            self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
+                            self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #50fa7b; }")
+                            self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
                         except:
+                            self.ui.Forget_Status.setText(f"No internet connection !!!")
+                            Auth_system.forget_fail(self)
                             AppFunctions.notifyMe(self, "Notification", f"Fail Sending to email {email}")
-
-                        self.ui.Auth_Status.setText(f"Sending to email {email} |auth key is {auth_key}|")
-                        self.ui.Auth_Status.setStyleSheet("#Auth_Status { color: #50fa7b }")
-                        self.ui.Forget_Status.setText(f"Sending to email {email}")
-                        self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
-                        self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #50fa7b; }")
-                        self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
                     else:
                         self.ui.Forget_Status.setText(f"Invalid username or e-mail")
                         Auth_system.forget_fail(self)
