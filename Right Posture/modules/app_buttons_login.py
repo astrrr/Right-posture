@@ -20,8 +20,11 @@ class Auth_buttons(AuthWindow):
         # FORGET BUTTON
         button.btn_Forget_Email.clicked.connect(self.Login_button_Interface)
         button.btn_Forget_Back.clicked.connect(self.Login_button_Interface)
-        button.btn_Auth_key.clicked.connect(self.Login_button_Interface)
+
+        # AUTH BUTTON
+        button.btn_Auth_confirm.clicked.connect(self.Login_button_Interface)
         button.btn_Auth_back.clicked.connect(self.Login_button_Interface)
+        button.btn_Auth_back_login.clicked.connect(self.Login_button_Interface)
         # KEY PRESS EVENT
         # ///////////////////////////////////////////////////////////////
         button.username.keyReleaseEvent = self.enter_login
@@ -65,6 +68,10 @@ class Auth_buttons(AuthWindow):
             Auth_system.check_email(self)
 
         if btnName == "btn_Auth_back":
-            UILoginFunctions.animation_back_to_Forget(self)
+            UILoginFunctions.animation_back(self)
 
-        # if btnName == "btn_Auth_key":
+        if btnName == "btn_Auth_back_login":
+            button.Login_stackedWidget.setCurrentWidget(button.Login_page)
+            UILoginFunctions.animation_back(self)
+
+        # if btnName == "btn_Auth_confirm":

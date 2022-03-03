@@ -173,7 +173,7 @@ QPushButton:pressed {
          <x>0</x>
          <y>60</y>
          <width>878</width>
-         <height>811</height>
+         <height>881</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -808,8 +808,8 @@ QPushButton:pressed {
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QGridLayout" name="gridLayout_6">
-           <item row="2" column="0">
-            <widget class="QPushButton" name="btn_Auth_key">
+           <item row="3" column="0">
+            <widget class="QPushButton" name="btn_Auth_confirm">
              <property name="minimumSize">
               <size>
                <width>150</width>
@@ -830,7 +830,7 @@ QPushButton:pressed {
               <string notr="true">background-color: rgb(52, 59, 72);</string>
              </property>
              <property name="text">
-              <string>Auth</string>
+              <string>Change password</string>
              </property>
              <property name="icon">
               <iconset>
@@ -838,7 +838,32 @@ QPushButton:pressed {
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
+           <item row="2" column="0">
+            <widget class="QLineEdit" name="Auth_new_password">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(33, 37, 43);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>New password</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
             <widget class="QPushButton" name="btn_Auth_back">
              <property name="minimumSize">
               <size>
@@ -869,7 +894,7 @@ QPushButton:pressed {
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QLineEdit" name="Forget_Auth">
+            <widget class="QLineEdit" name="Auth_key">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -908,7 +933,37 @@ QPushButton:pressed {
               </size>
              </property>
              <property name="text">
-              <string>Authentication key that you receive in e-mail.</string>
+              <string>Authentication key that you receive in e-mail and type new password</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QPushButton" name="btn_Auth_back_login">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(52, 59, 72);</string>
+             </property>
+             <property name="text">
+              <string>Login</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>Backup/Backup/images/icons/cil-save.png</normaloff>Backup/Backup/images/icons/cil-save.png</iconset>
              </property>
             </widget>
            </item>
@@ -1543,8 +1598,8 @@ background-repeat: no-repeat;</string>
   <tabstop>btn_Register</tabstop>
   <tabstop>btn_Fpassword</tabstop>
   <tabstop>btn_guest</tabstop>
-  <tabstop>Forget_Auth</tabstop>
-  <tabstop>btn_Auth_key</tabstop>
+  <tabstop>Auth_key</tabstop>
+  <tabstop>btn_Auth_confirm</tabstop>
   <tabstop>btn_Auth_back</tabstop>
   <tabstop>Reg_username</tabstop>
   <tabstop>Reg_password</tabstop>

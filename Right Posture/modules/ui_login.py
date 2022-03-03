@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginsEYrvL.ui'
+## Form generated from reading UI file 'loginMUJGzF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -136,7 +136,7 @@ class Ui_Login(object):
         self.bg.setFrameShadow(QFrame.Raised)
         self.frame_widgets = QFrame(self.bg)
         self.frame_widgets.setObjectName(u"frame_widgets")
-        self.frame_widgets.setGeometry(QRect(0, 60, 878, 811))
+        self.frame_widgets.setGeometry(QRect(0, 60, 878, 881))
         self.frame_widgets.setMinimumSize(QSize(280, 720))
         self.frame_widgets.setMouseTracking(False)
         self.frame_widgets.setFrameShape(QFrame.NoFrame)
@@ -400,17 +400,25 @@ class Ui_Login(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.gridLayout_6 = QGridLayout(self.frame)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.btn_Auth_key = QPushButton(self.frame)
-        self.btn_Auth_key.setObjectName(u"btn_Auth_key")
-        self.btn_Auth_key.setMinimumSize(QSize(150, 30))
-        self.btn_Auth_key.setFont(font)
-        self.btn_Auth_key.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_Auth_key.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Auth_confirm = QPushButton(self.frame)
+        self.btn_Auth_confirm.setObjectName(u"btn_Auth_confirm")
+        self.btn_Auth_confirm.setMinimumSize(QSize(150, 30))
+        self.btn_Auth_confirm.setFont(font)
+        self.btn_Auth_confirm.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Auth_confirm.setStyleSheet(u"background-color: rgb(52, 59, 72);")
         icon1 = QIcon()
         icon1.addFile(u"Backup/Backup/images/icons/cil-save.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_Auth_key.setIcon(icon1)
+        self.btn_Auth_confirm.setIcon(icon1)
 
-        self.gridLayout_6.addWidget(self.btn_Auth_key, 2, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.btn_Auth_confirm, 3, 0, 1, 1)
+
+        self.Auth_new_password = QLineEdit(self.frame)
+        self.Auth_new_password.setObjectName(u"Auth_new_password")
+        self.Auth_new_password.setMinimumSize(QSize(0, 30))
+        self.Auth_new_password.setMaximumSize(QSize(16777215, 16777215))
+        self.Auth_new_password.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.gridLayout_6.addWidget(self.Auth_new_password, 2, 0, 1, 1)
 
         self.btn_Auth_back = QPushButton(self.frame)
         self.btn_Auth_back.setObjectName(u"btn_Auth_back")
@@ -420,15 +428,15 @@ class Ui_Login(object):
         self.btn_Auth_back.setStyleSheet(u"background-color: rgb(52, 59, 72);")
         self.btn_Auth_back.setIcon(icon1)
 
-        self.gridLayout_6.addWidget(self.btn_Auth_back, 3, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.btn_Auth_back, 5, 0, 1, 1)
 
-        self.Forget_Auth = QLineEdit(self.frame)
-        self.Forget_Auth.setObjectName(u"Forget_Auth")
-        self.Forget_Auth.setMinimumSize(QSize(0, 30))
-        self.Forget_Auth.setMaximumSize(QSize(16777215, 16777215))
-        self.Forget_Auth.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.Auth_key = QLineEdit(self.frame)
+        self.Auth_key.setObjectName(u"Auth_key")
+        self.Auth_key.setMinimumSize(QSize(0, 30))
+        self.Auth_key.setMaximumSize(QSize(16777215, 16777215))
+        self.Auth_key.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
-        self.gridLayout_6.addWidget(self.Forget_Auth, 1, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.Auth_key, 1, 0, 1, 1)
 
         self.Auth_Status = QLabel(self.frame)
         self.Auth_Status.setObjectName(u"Auth_Status")
@@ -437,6 +445,16 @@ class Ui_Login(object):
         self.Auth_Status.setMaximumSize(QSize(16777215, 20))
 
         self.gridLayout_6.addWidget(self.Auth_Status, 0, 0, 1, 1)
+
+        self.btn_Auth_back_login = QPushButton(self.frame)
+        self.btn_Auth_back_login.setObjectName(u"btn_Auth_back_login")
+        self.btn_Auth_back_login.setMinimumSize(QSize(150, 30))
+        self.btn_Auth_back_login.setFont(font)
+        self.btn_Auth_back_login.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_Auth_back_login.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.btn_Auth_back_login.setIcon(icon1)
+
+        self.gridLayout_6.addWidget(self.btn_Auth_back_login, 4, 0, 1, 1)
 
 
         self.verticalLayout_2.addWidget(self.frame)
@@ -608,9 +626,9 @@ class Ui_Login(object):
         QWidget.setTabOrder(self.btn_Login, self.btn_Register)
         QWidget.setTabOrder(self.btn_Register, self.btn_Fpassword)
         QWidget.setTabOrder(self.btn_Fpassword, self.btn_guest)
-        QWidget.setTabOrder(self.btn_guest, self.Forget_Auth)
-        QWidget.setTabOrder(self.Forget_Auth, self.btn_Auth_key)
-        QWidget.setTabOrder(self.btn_Auth_key, self.btn_Auth_back)
+        QWidget.setTabOrder(self.btn_guest, self.Auth_key)
+        QWidget.setTabOrder(self.Auth_key, self.btn_Auth_confirm)
+        QWidget.setTabOrder(self.btn_Auth_confirm, self.btn_Auth_back)
         QWidget.setTabOrder(self.btn_Auth_back, self.Reg_username)
         QWidget.setTabOrder(self.Reg_username, self.Reg_password)
         QWidget.setTabOrder(self.Reg_password, self.Reg_password_2)
@@ -658,11 +676,14 @@ class Ui_Login(object):
         self.Reg_username.setText("")
         self.Reg_username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
         self.Reg_Status.setText(QCoreApplication.translate("Login", u"Status", None))
-        self.btn_Auth_key.setText(QCoreApplication.translate("Login", u"Auth", None))
+        self.btn_Auth_confirm.setText(QCoreApplication.translate("Login", u"Change password", None))
+        self.Auth_new_password.setText("")
+        self.Auth_new_password.setPlaceholderText(QCoreApplication.translate("Login", u"New password", None))
         self.btn_Auth_back.setText(QCoreApplication.translate("Login", u"Back", None))
-        self.Forget_Auth.setText("")
-        self.Forget_Auth.setPlaceholderText(QCoreApplication.translate("Login", u"Authentication key", None))
-        self.Auth_Status.setText(QCoreApplication.translate("Login", u"Authentication key that you receive in e-mail.", None))
+        self.Auth_key.setText("")
+        self.Auth_key.setPlaceholderText(QCoreApplication.translate("Login", u"Authentication key", None))
+        self.Auth_Status.setText(QCoreApplication.translate("Login", u"Authentication key that you receive in e-mail and type new password", None))
+        self.btn_Auth_back_login.setText(QCoreApplication.translate("Login", u"Login", None))
         self.Login_title_bar.setText(QCoreApplication.translate("Login", u"Login Right Posture", None))
 #if QT_CONFIG(tooltip)
         self.maximizeRestoreAppBtn.setToolTip(QCoreApplication.translate("Login", u"Maximize", None))
