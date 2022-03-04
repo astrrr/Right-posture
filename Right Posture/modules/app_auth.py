@@ -1,11 +1,41 @@
 from main import AuthWindow, QTimer
 from modules.ui_login_function import UILoginFunctions
+from modules import AppFunctions
 import sqlite3
 from email_validator import validate_email, EmailNotValidError
 
+auth_key = None
+
 class Auth_system(AuthWindow):
 
+    def change_password(self):
+        global auth_key
+        new_password = self.ui.Auth_new_password.text()
+        email = self.ui.Forget_Email.text()
+        if self.ui.Auth_key.text() == str(auth_key):
+            try:
+                conn = sqlite3.connect("bin/Data/Accounts.db")
+                cur = conn.cursor()
+                query = f"UPDATE login_info set password  = \'{new_password}\' WHERE email = \'{email}\'"
+                cur.execute(query)
+                conn.commit()
+                conn.close()
+            except sqlite3.Error as error:
+                self.ui.Auth_Status.setText(error)
+                Auth_system.auth_fail(self)
+            finally:
+                if conn:
+                    conn.close()
+            self.ui.Auth_Status.setText(f"Change password successfully")
+            self.ui.Auth_Status.setStyleSheet("#Auth_Status { color: #50fa7b }")
+            self.ui.Auth_key.setStyleSheet("#Auth_key:focus { border: 2px solid #50fa7b; }")
+            self.ui.Auth_new_password.setStyleSheet("#Auth_new_password:focus { border: 2px solid #50fa7b; }")
+        else:
+            self.ui.Auth_Status.setText(f"Auth incorrect please try again.")
+            Auth_system.auth_fail(self)
+
     def check_email(self):
+        global auth_key
         username = self.ui.Forget_Username.text()
         email = self.ui.Forget_Email.text()
         if len(username) == 0 or len(email) == 0:
@@ -19,15 +49,23 @@ class Auth_system(AuthWindow):
                 # SQL
                 conn = sqlite3.connect("bin/Data/Accounts.db")
                 cur = conn.cursor()
-                query = 'SELECT email FROM login_info WHERE username =\'' + username + "\'"
+                query = f"SELECT email FROM login_info WHERE username = \'{username}\'"
                 cur.execute(query)
                 try:
                     result_pass = cur.fetchone()[0]
                     if result_pass == email:
-                        self.ui.Forget_Status.setText(f"Sending to email {email}")
-                        self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
-                        self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #50fa7b; }")
-                        self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
+                        auth_key = AppFunctions.generate_auth_key(5)
+                        try:
+                            AppFunctions.send_Email(self, text=f"Your auth key is {auth_key}", to_emails=[email])
+                            UILoginFunctions.animation_to_Auth_key(self)
+                            self.ui.Forget_Status.setText(f"Auth key is send to {email} please check your email.")
+                            self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #50fa7b }")
+                            self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #50fa7b; }")
+                            self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #50fa7b; }")
+                        except:
+                            self.ui.Forget_Status.setText(f"No internet connection !!!")
+                            Auth_system.forget_fail(self)
+                            AppFunctions.notifyMe(self, "Notification", f"Fail Sending to email {email}")
                     else:
                         self.ui.Forget_Status.setText(f"Invalid username or e-mail")
                         Auth_system.forget_fail(self)
@@ -56,7 +94,7 @@ class Auth_system(AuthWindow):
             else:
                 conn = sqlite3.connect("bin/Data/Accounts.db")
                 cur = conn.cursor()
-                query = 'SELECT password FROM login_info WHERE username =\'' + username + "\'"
+                query = f"SELECT password FROM login_info WHERE username = \'{username}\'"
                 cur.execute(query)
                 try:
                     result_pass = cur.fetchone()[0]
@@ -127,4 +165,10 @@ class Auth_system(AuthWindow):
         self.ui.Forget_Status.setStyleSheet("#Forget_Status { color: #ff5555 }")
         self.ui.Forget_Username.setStyleSheet("#Forget_Username:focus { border: 2px solid #ff5555; }")
         self.ui.Forget_Email.setStyleSheet("#Forget_Email:focus { border: 2px solid #ff5555; }")
+        UILoginFunctions.shake_window(self)
+
+    def auth_fail(self):
+        self.ui.Auth_Status.setStyleSheet("#Auth_Status { color: #ff5555 }")
+        self.ui.Auth_key.setStyleSheet("#Auth_key:focus { border: 2px solid #ff5555; }")
+        self.ui.Auth_new_password.setStyleSheet("#Auth_new_password:focus { border: 2px solid #ff5555; }")
         UILoginFunctions.shake_window(self)

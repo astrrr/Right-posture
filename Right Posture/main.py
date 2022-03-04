@@ -32,7 +32,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
-version.thisVersion = "1.1.1.2"
+version.thisVersion = "1.1.1.3"
 # /////////////////////////////////////////////
 counter = 0
 CircularProgress_timer = 300
@@ -69,6 +69,10 @@ class AuthWindow(QMainWindow):
     def enter_forget(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             Auth_system.check_email(self)
+
+    def enter_auth(self, event):
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            Auth_system.change_password(self)
 
     # BUTTONS INTERFACE TO app_button_login
     def Login_button_Interface(self):
