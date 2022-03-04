@@ -38,6 +38,9 @@ class Auth_buttons(AuthWindow):
         button.Forget_Username.keyReleaseEvent = self.enter_forget
         button.Forget_Email.keyReleaseEvent = self.enter_forget
 
+        button.Auth_key.keyReleaseEvent = self.enter_auth
+        button.Auth_new_password.keyReleaseEvent = self.enter_auth
+
     def buttonClick(self):
         button = self.ui
         btn = self.sender()
@@ -74,4 +77,5 @@ class Auth_buttons(AuthWindow):
             button.Login_stackedWidget.setCurrentWidget(button.Login_page)
             UILoginFunctions.animation_back(self)
 
-        # if btnName == "btn_Auth_confirm":
+        if btnName == "btn_Auth_confirm":
+            Auth_system.change_password(self)
