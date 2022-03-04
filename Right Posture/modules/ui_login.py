@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginMUJGzF.ui'
+## Form generated from reading UI file 'loginyIlVfc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -417,6 +417,7 @@ class Ui_Login(object):
         self.Auth_new_password.setMinimumSize(QSize(0, 30))
         self.Auth_new_password.setMaximumSize(QSize(16777215, 16777215))
         self.Auth_new_password.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.Auth_new_password.setEchoMode(QLineEdit.Password)
 
         self.gridLayout_6.addWidget(self.Auth_new_password, 2, 0, 1, 1)
 
@@ -617,6 +618,11 @@ class Ui_Login(object):
         self.verticalLayout.addWidget(self.bg)
 
         Login.setCentralWidget(self.centralwidget)
+        QWidget.setTabOrder(self.Auth_key, self.Auth_new_password)
+        QWidget.setTabOrder(self.Auth_new_password, self.btn_Auth_confirm)
+        QWidget.setTabOrder(self.btn_Auth_confirm, self.btn_Auth_back_login)
+        QWidget.setTabOrder(self.btn_Auth_back_login, self.btn_Auth_back)
+        QWidget.setTabOrder(self.btn_Auth_back, self.Forget_Username)
         QWidget.setTabOrder(self.Forget_Username, self.Forget_Email)
         QWidget.setTabOrder(self.Forget_Email, self.btn_Forget_Email)
         QWidget.setTabOrder(self.btn_Forget_Email, self.btn_Forget_Back)
@@ -626,22 +632,19 @@ class Ui_Login(object):
         QWidget.setTabOrder(self.btn_Login, self.btn_Register)
         QWidget.setTabOrder(self.btn_Register, self.btn_Fpassword)
         QWidget.setTabOrder(self.btn_Fpassword, self.btn_guest)
-        QWidget.setTabOrder(self.btn_guest, self.Auth_key)
-        QWidget.setTabOrder(self.Auth_key, self.btn_Auth_confirm)
-        QWidget.setTabOrder(self.btn_Auth_confirm, self.btn_Auth_back)
-        QWidget.setTabOrder(self.btn_Auth_back, self.Reg_username)
+        QWidget.setTabOrder(self.btn_guest, self.Reg_username)
         QWidget.setTabOrder(self.Reg_username, self.Reg_password)
         QWidget.setTabOrder(self.Reg_password, self.Reg_password_2)
         QWidget.setTabOrder(self.Reg_password_2, self.Reg_email)
         QWidget.setTabOrder(self.Reg_email, self.btn_Com_Register)
         QWidget.setTabOrder(self.btn_Com_Register, self.btn_Reg_Back)
-        QWidget.setTabOrder(self.btn_Reg_Back, self.minimizeAppBtn)
-        QWidget.setTabOrder(self.minimizeAppBtn, self.maximizeRestoreAppBtn)
-        QWidget.setTabOrder(self.maximizeRestoreAppBtn, self.closeAppBtn)
+        QWidget.setTabOrder(self.btn_Reg_Back, self.closeAppBtn)
+        QWidget.setTabOrder(self.closeAppBtn, self.maximizeRestoreAppBtn)
+        QWidget.setTabOrder(self.maximizeRestoreAppBtn, self.minimizeAppBtn)
 
         self.retranslateUi(Login)
 
-        self.Login_stackedWidget.setCurrentIndex(1)
+        self.Login_stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Login)
@@ -682,7 +685,7 @@ class Ui_Login(object):
         self.btn_Auth_back.setText(QCoreApplication.translate("Login", u"Back", None))
         self.Auth_key.setText("")
         self.Auth_key.setPlaceholderText(QCoreApplication.translate("Login", u"Authentication key", None))
-        self.Auth_Status.setText(QCoreApplication.translate("Login", u"Authentication key that you receive in e-mail and type new password", None))
+        self.Auth_Status.setText(QCoreApplication.translate("Login", u"Fill authentication key that you receive in e-mail and type new password", None))
         self.btn_Auth_back_login.setText(QCoreApplication.translate("Login", u"Login", None))
         self.Login_title_bar.setText(QCoreApplication.translate("Login", u"Login Right Posture", None))
 #if QT_CONFIG(tooltip)

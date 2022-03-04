@@ -70,6 +70,10 @@ class AuthWindow(QMainWindow):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
             Auth_system.check_email(self)
 
+    def enter_auth(self, event):
+        if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+            Auth_system.change_password(self)
+
     # BUTTONS INTERFACE TO app_button_login
     def Login_button_Interface(self):
         Auth_buttons.buttonClick(self)

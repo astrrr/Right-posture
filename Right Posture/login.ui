@@ -213,7 +213,7 @@ QPushButton:pressed {
            <string notr="true">/*background: transparent;*/</string>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="Login_page">
            <layout class="QVBoxLayout" name="_2">
@@ -858,6 +858,9 @@ QPushButton:pressed {
              <property name="text">
               <string/>
              </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
              <property name="placeholderText">
               <string>New password</string>
              </property>
@@ -933,7 +936,7 @@ QPushButton:pressed {
               </size>
              </property>
              <property name="text">
-              <string>Authentication key that you receive in e-mail and type new password</string>
+              <string>Fill authentication key that you receive in e-mail and type new password</string>
              </property>
             </widget>
            </item>
@@ -1588,6 +1591,11 @@ background-repeat: no-repeat;</string>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>Auth_key</tabstop>
+  <tabstop>Auth_new_password</tabstop>
+  <tabstop>btn_Auth_confirm</tabstop>
+  <tabstop>btn_Auth_back_login</tabstop>
+  <tabstop>btn_Auth_back</tabstop>
   <tabstop>Forget_Username</tabstop>
   <tabstop>Forget_Email</tabstop>
   <tabstop>btn_Forget_Email</tabstop>
@@ -1598,24 +1606,15 @@ background-repeat: no-repeat;</string>
   <tabstop>btn_Register</tabstop>
   <tabstop>btn_Fpassword</tabstop>
   <tabstop>btn_guest</tabstop>
-  <tabstop>Auth_key</tabstop>
-  <tabstop>btn_Auth_confirm</tabstop>
-  <tabstop>btn_Auth_back</tabstop>
   <tabstop>Reg_username</tabstop>
   <tabstop>Reg_password</tabstop>
   <tabstop>Reg_password_2</tabstop>
   <tabstop>Reg_email</tabstop>
   <tabstop>btn_Com_Register</tabstop>
   <tabstop>btn_Reg_Back</tabstop>
-  <tabstop>Forget_Email_2</tabstop>
-  <tabstop>btn_Forget_Email_2</tabstop>
-  <tabstop>btn_Forget_Back_2</tabstop>
-  <tabstop>btn_Forget_Email_3</tabstop>
-  <tabstop>btn_Forget_Back_3</tabstop>
-  <tabstop>Forget_Email_3</tabstop>
-  <tabstop>minimizeAppBtn</tabstop>
-  <tabstop>maximizeRestoreAppBtn</tabstop>
   <tabstop>closeAppBtn</tabstop>
+  <tabstop>maximizeRestoreAppBtn</tabstop>
+  <tabstop>minimizeAppBtn</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>
