@@ -4,14 +4,22 @@ import traceback
 import mediapipe as mp
 import tensorflow as tf
 import numpy as np
+import sqlite3
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
+conn = sqlite3.connect('sessions.db')
+print('connect DB')
+session_db = conn.cursor()
+session_db.execute("CREATE TABLE sessions (user_id INT PRIMARY KEY, time_start TEXT, time_end TEXT, incorrect_count INT)")
+
+
 cwd = os.getcwd()
 model = None
-model_name = 'MNv2_V3'
+#model_name = 'MNv2_V3'
+model_name = 'MN_Fix_angle_augmented_model3_3'
 VideoCapture = 0
 
 def Print_exception():
