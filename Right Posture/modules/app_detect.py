@@ -5,16 +5,18 @@ import mediapipe as mp
 import tensorflow as tf
 import numpy as np
 import sqlite3
+import time
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
-conn = sqlite3.connect('sessions.db')
+conn = sqlite3.connect('sessions.db', check_same_thread=False)
 print('connect DB')
 session_db = conn.cursor()
-session_db.execute("CREATE TABLE sessions (user_id INT PRIMARY KEY, time_start TEXT, time_end TEXT, incorrect_count INT)")
-
+#session_db.execute("CREATE TABLE sessions (session_id INT PRIMARY KEY, user_id INT , time_start TEXT, time_end TEXT, incorrect_count INT)")
+start_time = time.asctime(time.localtime(time.time()))
+session = [('1', '1', start_time, start_time, 0)]
 
 cwd = os.getcwd()
 model = None
@@ -28,6 +30,8 @@ def Print_exception():
     Camera_detail.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
 
 def predict(img):
+    session_db.executemany("INSERT OR IGNORE INTO sessions VALUES (?,?,?,?,?)", session)
+    conn.commit()
     img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
     # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
 
@@ -131,6 +135,12 @@ class VideoThread(QThread):
                     # シグナル発信(cv_imgオブジェクトを発信)
                     if success:
                         self.change_pixmap_signal.emit(image)
+                
+                end_time = time.asctime(time.localtime(time.time()))
+                
+                session_db.execute("UPDATE sessions SET time_end = ? WHERE session_id = 1",(end_time,))
+                conn.commit()
+                print('update end time!!')
                 cap.release()
                 cv2.destroyAllWindows()
             # videoCaptureのリリース処理
