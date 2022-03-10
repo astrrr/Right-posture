@@ -1,4 +1,8 @@
 from main import *
+
+
+
+
 import cv2
 import traceback
 import mediapipe as mp
@@ -7,16 +11,25 @@ import numpy as np
 import sqlite3
 import time
 
+
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
 conn = sqlite3.connect('sessions.db', check_same_thread=False)
 print('connect DB')
-session_db = conn.cursor()
+cur = conn.cursor()
 #session_db.execute("CREATE TABLE sessions (session_id INT PRIMARY KEY, user_id INT , time_start TEXT, time_end TEXT, incorrect_count INT)")
 start_time = time.asctime(time.localtime(time.time()))
-session = [('1', '1', start_time, start_time, 0)]
+
+cur.execute("SELECT * FROM sessions")
+sess_items = cur.fetchall()
+
+print('item : ', sess_items[-1])
+
+sess_id = int(sess_items[-1][0])+1
+session = [(sess_id, '1', start_time, start_time, 0)]
+
 
 cwd = os.getcwd()
 model = None
@@ -30,7 +43,7 @@ def Print_exception():
     Camera_detail.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
 
 def predict(img):
-    session_db.executemany("INSERT OR IGNORE INTO sessions VALUES (?,?,?,?,?)", session)
+    cur.executemany("INSERT OR IGNORE INTO sessions VALUES (?,?,?,?,?)", session)
     conn.commit()
     img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
     # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
@@ -138,11 +151,16 @@ class VideoThread(QThread):
                 
                 end_time = time.asctime(time.localtime(time.time()))
                 
-                session_db.execute("UPDATE sessions SET time_end = ? WHERE session_id = 1",(end_time,))
+
+                
+                f = open('temp.txt','r')
+                user = f.read()
+                print(f.read())
+                cur.execute("UPDATE sessions SET time_end = ? , user_id = ? WHERE session_id = ?",(end_time, user, sess_id,))
                 conn.commit()
-                print('update end time!!')
                 cap.release()
                 cv2.destroyAllWindows()
+                
             # videoCaptureのリリース処理
 
     # スレッドが終了するまでwaitをかける
@@ -176,6 +194,8 @@ class VideoThread(QThread):
             Camera_detail.Finish_load_model = True
             Camera_detail.model_status = "Loaded"
             print("Finish load model")
+            
+            
 
 class WorkerSignals(QObject):
     finished = Signal()
@@ -215,6 +235,7 @@ class Camera_detail:
     First_load_model = True
     Finish_load_model = False
     Error_load_model = False
+
 
 class Camera:
     
