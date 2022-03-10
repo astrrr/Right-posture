@@ -19,7 +19,16 @@ mp_pose = mp.solutions.pose
 conn = sqlite3.connect('sessions.db', check_same_thread=False)
 print('connect DB')
 cur = conn.cursor()
-#session_db.execute("CREATE TABLE sessions (session_id INT PRIMARY KEY, user_id INT , time_start TEXT, time_end TEXT, incorrect_count INT)")
+
+#cur.execute("CREATE TABLE sessions (session_id INT PRIMARY KEY, user_id TEXT , time_start TEXT, time_end TEXT, incorrect_time FLOAT, correct_time FLOAT, totol_time FLOAT, incorrect_per FLOAT, correct_per FLOAT)")
+
+
+t_start = time.time()
+t_incorrect_last = 0
+t_incorrect_total = 0
+t_total = 0
+tick_flag = 0
+
 start_time = time.asctime(time.localtime(time.time()))
 
 cur.execute("SELECT * FROM sessions")
@@ -28,7 +37,7 @@ sess_items = cur.fetchall()
 print('item : ', sess_items[-1])
 
 sess_id = int(sess_items[-1][0])+1
-session = [(sess_id, '1', start_time, start_time, 0)]
+session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
 
 
 cwd = os.getcwd()
@@ -43,7 +52,7 @@ def Print_exception():
     Camera_detail.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
 
 def predict(img):
-    cur.executemany("INSERT OR IGNORE INTO sessions VALUES (?,?,?,?,?)", session)
+    cur.executemany("INSERT OR IGNORE INTO sessions VALUES (?,?,?,?,?,?,?,?,?)", session)
     conn.commit()
     img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
     # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
@@ -86,6 +95,8 @@ class VideoThread(QThread):
 
     # QThreadのrunメソッドを定義
     def run(self):
+        global t_incorrect_last, t_start, t_incorrect_total, t_total, tick_flag
+        
         if Camera_detail.First_load_model:
             print("Start Load model")
             worker = Worker(self.execute_this_fn)  # Any other args, kwargs are passed to the run function
@@ -118,12 +129,20 @@ class VideoThread(QThread):
                         results.pose_landmarks,
                         mp_pose.POSE_CONNECTIONS,
                         landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
-
+                    
                     if pred == 0:
                         cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
-
+                        if tick_flag==1 :
+                            t_incorrect_total = t_incorrect_total + (time.time() - t_incorrect_last)
+                        tick_flag = 0
+                        
                     if pred == 1:
                         cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
+                        if tick_flag == 0:
+                            t_incorrect_last = time.time()
+                        tick_flag = 1
+                        
+                            
 
                     # capture pic ture for data set
                     img_name = "temp_{}.png".format(img_counter_cor)
@@ -150,13 +169,23 @@ class VideoThread(QThread):
                         self.change_pixmap_signal.emit(image)
                 
                 end_time = time.asctime(time.localtime(time.time()))
-                
+                t_incorrect_total = t_incorrect_total + (time.time() - t_incorrect_last)
 
                 
                 f = open('temp.txt','r')
                 user = f.read()
                 print(f.read())
-                cur.execute("UPDATE sessions SET time_end = ? , user_id = ? WHERE session_id = ?",(end_time, user, sess_id,))
+                t_total = time.time() - t_start
+                t_cor = t_total - t_incorrect_total
+                inc_per = (t_incorrect_total/t_total)*100
+                cor_per = ((t_total-t_incorrect_total)/t_total)*100
+                print('t_incorrect_last  : ',t_incorrect_last)
+                print('t_incorrect       : {} sec'.format(t_incorrect_total))
+                print('t_cor             : {} sec'.format(t_cor))
+                print('t_total           : {} sec'.format(t_total))
+                print('inc_per           : {} %'.format(inc_per))
+                print('cor_per           : {} %'.format(cor_per))
+                cur.execute("UPDATE sessions SET time_end = ? , user_id = ? , incorrect_time = ? , correct_time = ? , total_time = ? , incorrect_per = ? , correct_per = ? WHERE session_id = ?",(end_time, user, t_incorrect_total, t_cor, t_total, inc_per, cor_per, sess_id,))
                 conn.commit()
                 cap.release()
                 cv2.destroyAllWindows()
