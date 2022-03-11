@@ -54,6 +54,8 @@ class AuthWindow(QMainWindow):
     def open_main(self):
         username = self.ui.username.text()
         self.main = MainWindow()
+        if username == "":
+            username = "Guest"
         f = open("temp.txt", "w")
         f.write(username)
         f.close()
