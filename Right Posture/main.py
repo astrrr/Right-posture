@@ -18,6 +18,7 @@ import sys
 import os
 import numpy as np
 
+
 from modules import *
 from widgets import *
 
@@ -27,6 +28,7 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication
 
 from modules.Version_control import version
+
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -52,9 +54,14 @@ class AuthWindow(QMainWindow):
     def open_main(self):
         username = self.ui.username.text()
         self.main = MainWindow()
+        f = open("temp.txt", "w")
+        f.write(username)
+        f.close()
+        print('write '+username+' in temp')
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
         self.main.show()
         self.close()
+
 
     # ENTER EVENT
     # ///////////////////////////////////////////////////////////////
