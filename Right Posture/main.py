@@ -18,28 +18,20 @@ import sys
 import os
 import numpy as np
 
-
 from modules import *
 from widgets import *
 
-from PySide6 import QtCore, QtGui, QtWidgets, QtCharts
+from PySide6 import QtCore, QtGui, QtCharts
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
-# from modules.app_charts import donut
-from modules.Version_control import version
 
-import pandas as pd
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
+from modules.Version_control import version
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
-main = 1
+main = 0
 version.thisVersion = "1.1.1.3"
 # /////////////////////////////////////////////
 counter = 0
@@ -62,14 +54,11 @@ class AuthWindow(QMainWindow):
         self.main = MainWindow()
         if username == "":
             username = "Guest"
-        f = open("temp.txt", "w")
-        f.write(username)
-        f.close()
+        Camera_detail.user = username
         print('write '+username+' in temp')
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
         self.main.show()
         self.close()
-
 
     # ENTER EVENT
     # ///////////////////////////////////////////////////////////////
