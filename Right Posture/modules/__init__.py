@@ -55,3 +55,6 @@ from .app_buttons_login import Auth_buttons
 
 # APP AUTHENTICATION
 from .app_auth import Auth_system
+
+# APP CHARTS
+from .app_charts import Line_charts

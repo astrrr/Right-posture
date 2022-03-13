@@ -17,14 +17,11 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 
-
-class Example(QWidget):
+class Line_charts(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('SPC Chart Example')
+        self.setWindowTitle('Test line charts')
         self.init_ui()
-        print('PySide6', PySide6.__version__)
-        print('matplotlib', matplotlib.__version__)
 
     def init_ui(self):
         # Example dataframe
@@ -88,27 +85,15 @@ class Example(QWidget):
         # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_
         # Canvas & Toolbar
         canvas = FigureCanvas(fig)
-        toolbar = NavigationToolbar(canvas, self)
-        unwanted_buttons = ['Back', 'Forward']
-        for x in toolbar.actions():
-            if x.text() in unwanted_buttons:
-                toolbar.removeAction(x)
+        # toolbar = NavigationToolbar(canvas, self)
+        # unwanted_buttons = ['Back', 'Forward']
+        # for x in toolbar.actions():
+        #     if x.text() in unwanted_buttons:
+        #         toolbar.removeAction(x)
         # _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_
         # Layout
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
-        layout.addWidget(toolbar)
+        # layout.addWidget(toolbar)
         layout.addWidget(canvas)
-
-
-
-def main():
-    app = QApplication(sys.argv)
-    ex = Example()
-    ex.show()
-    sys.exit(app.exec())
-
-
-if __name__ == '__main__':
-    main()
