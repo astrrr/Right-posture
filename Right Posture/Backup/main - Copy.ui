@@ -72,12 +72,7 @@ Left Menu */
 	border-top-left-radius: 12px;
 	border-bottom-left-radius: 12px;
 }
-#topLogo {
-	background-color: rgb(33, 37, 43);
-	background-image: url(:/images/images/images/PyDracula.png);
-	background-position: centered;
-	background-repeat: no-repeat;
-}
+
 #titleLeftApp { font: 63 12pt &quot;Segoe UI Semibold&quot;; }
 #titleLeftDescription { font: 8pt &quot;Segoe UI&quot;; color: rgb(189, 147, 249); }
 
@@ -677,6 +672,14 @@ Button */
                <width>42</width>
                <height>42</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#topLogo {
+	background-color: rgb(33, 37, 43);
+	background-image: url(:/images/images/images/Logo_Small (5).png);
+	background-position: centered;
+	background-repeat: no-repeat;
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::NoFrame</enum>
@@ -1415,9 +1418,8 @@ Button */
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ff79c6;&quot;&gt;Right Posture&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by ₳ʂєъί.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;MIT License&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bd93f9;&quot;&gt;Created by: &lt;/span&gt;&lt;span style=&quot; font-family:'JetBrains Mono','monospace'; font-size:9.8pt; color:#bd93f9;&quot;&gt;Yuul B. Alwright&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Warning system for incorrect sitting posture with machine learning.&lt;br /&gt;Based on Python 3.9.7 and PySide6.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bd93f9;&quot;&gt;Created by: Right Posture Team&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -1681,7 +1683,6 @@ p, li { white-space: pre-wrap; }
                     <pointsize>10</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
-                    <stylestrategy>PreferDefault</stylestrategy>
                    </font>
                   </property>
                   <property name="cursor">
@@ -1835,40 +1836,31 @@ p, li { white-space: pre-wrap; }
                       </property>
                       <layout class="QGridLayout" name="gridLayout_3">
                        <item row="1" column="0">
-                        <widget class="QWidget" name="row_8" native="true">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
+                        <widget class="QFrame" name="frame">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>350</height>
+                           <height>0</height>
                           </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <property name="layoutDirection">
-                          <enum>Qt::LeftToRight</enum>
-                         </property>
-                         <property name="autoFillBackground">
-                          <bool>false</bool>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">/*border: 1px solid #73AD21;*/</string>
+                          <string notr="true">/*border: 1px solid #73AD21;</string>
                          </property>
-                         <layout class="QGridLayout" name="gridLayout_9">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_8">
+                          <property name="spacing">
+                           <number>6</number>
+                          </property>
                           <property name="leftMargin">
                            <number>9</number>
                           </property>
                           <property name="topMargin">
-                           <number>0</number>
+                           <number>9</number>
                           </property>
                           <property name="rightMargin">
                            <number>9</number>
@@ -1876,92 +1868,19 @@ p, li { white-space: pre-wrap; }
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
-                          <property name="horizontalSpacing">
-                           <number>85</number>
-                          </property>
-                          <property name="verticalSpacing">
-                           <number>0</number>
-                          </property>
-                          <item row="0" column="1">
-                           <widget class="QLabel" name="labelBoxBlenderInstalation_10">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string>Camera 2</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="0">
-                           <widget class="QLabel" name="labelBoxBlenderInstalation_7">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string>Camera 1</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="3" column="0">
-                           <widget class="QCheckBox" name="pre_cam_1">
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="text">
-                             <string>Preview Camera 1</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="2" column="0">
-                           <widget class="QFrame" name="Camera_Frame_1">
+                          <item>
+                           <widget class="QFrame" name="frame_3">
                             <property name="minimumSize">
                              <size>
-                              <width>384</width>
-                              <height>288</height>
+                              <width>385</width>
+                              <height>0</height>
                              </size>
                             </property>
                             <property name="maximumSize">
                              <size>
                               <width>384</width>
-                              <height>288</height>
+                              <height>16777215</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">border: 2px solid #bd93f9;
-background-position: center;
-background-repeat: no-repeat;
-background-image: url(:/images/images/images/PyDracula.png)
-
-</string>
                             </property>
                             <property name="frameShape">
                              <enum>QFrame::StyledPanel</enum>
@@ -1969,9 +1888,9 @@ background-image: url(:/images/images/images/PyDracula.png)
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QVBoxLayout" name="Camera_Frame_1_Layout">
+                            <layout class="QVBoxLayout" name="verticalLayout_22">
                              <property name="spacing">
-                              <number>0</number>
+                              <number>6</number>
                              </property>
                              <property name="leftMargin">
                               <number>0</number>
@@ -1985,43 +1904,124 @@ background-image: url(:/images/images/images/PyDracula.png)
                              <property name="bottomMargin">
                               <number>0</number>
                              </property>
+                             <item>
+                              <widget class="QLabel" name="labelBoxBlenderInstalation_7">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <pointsize>10</pointsize>
+                                 <italic>false</italic>
+                                 <bold>false</bold>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>Camera</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                              <widget class="QFrame" name="Camera_Frame_1">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>384</width>
+                                 <height>288</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>384</width>
+                                 <height>288</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">#Camera_Frame_1 {
+	border: 2px solid #bd93f9;
+	/*background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(:/images/images/images/Logo_Small (8).png);*/
+}
+
+</string>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="Camera_Frame_1_Layout">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                                 <widget class="QLabel" name="Camera1_label">
+                                  <property name="sizePolicy">
+                                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                   </sizepolicy>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">font: 15pt &quot;Segoe UI&quot;;
+color: #E6E6E6;</string>
+                                  </property>
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QCheckBox" name="pre_cam_1">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="text">
+                                <string>Preview camera</string>
+                               </property>
+                              </widget>
+                             </item>
                             </layout>
                            </widget>
                           </item>
-                          <item row="3" column="1">
-                           <widget class="QCheckBox" name="pre_cam_2">
+                          <item>
+                           <widget class="QFrame" name="frame_5">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>0</height>
+                             </size>
+                            </property>
                             <property name="maximumSize">
                              <size>
                               <width>16777215</width>
                               <height>16777215</height>
                              </size>
-                            </property>
-                            <property name="text">
-                             <string>Preview Camera 2</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="2" column="1">
-                           <widget class="QFrame" name="Camera_Frame_2">
-                            <property name="minimumSize">
-                             <size>
-                              <width>384</width>
-                              <height>288</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>384</width>
-                              <height>288</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">border: 2px solid #bd93f9;
-background-position: center;
-background-repeat: no-repeat;
-background-image: url(:/images/images/images/PyDracula.png)
-
-</string>
                             </property>
                             <property name="frameShape">
                              <enum>QFrame::StyledPanel</enum>
@@ -2029,10 +2029,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QVBoxLayout" name="Camera_Frame_1_Layout_3">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_23">
                              <property name="leftMargin">
                               <number>0</number>
                              </property>
@@ -2045,6 +2042,70 @@ background-image: url(:/images/images/images/PyDracula.png)
                              <property name="bottomMargin">
                               <number>0</number>
                              </property>
+                             <item>
+                              <widget class="QLabel" name="labelBoxBlenderInstalation_10">
+                               <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                 <horstretch>0</horstretch>
+                                 <verstretch>0</verstretch>
+                                </sizepolicy>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>384</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <pointsize>10</pointsize>
+                                 <italic>false</italic>
+                                 <bold>false</bold>
+                                </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="text">
+                                <string>Detail</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QTextBrowser" name="Detail_text">
+                               <property name="styleSheet">
+                                <string notr="true">#Detail_text {
+	border: 2px solid #bd93f9;
+}</string>
+                               </property>
+                               <property name="html">
+                                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QCheckBox" name="show_detail">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>384</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="text">
+                                <string>Show detail</string>
+                               </property>
+                              </widget>
+                             </item>
                             </layout>
                            </widget>
                           </item>
@@ -2077,8 +2138,24 @@ background-image: url(:/images/images/images/PyDracula.png)
                           </property>
                           <item>
                            <widget class="QLabel" name="label_3">
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                              <italic>false</italic>
+                              <bold>true</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+font-weight: bold;
+border-radius: 5px;
+border: 2px solid #ff79c6;</string>
+                            </property>
                             <property name="text">
                              <string>Status History</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2499,7 +2576,7 @@ background-image: url(:/images/images/images/PyDracula.png)
                            <number>6</number>
                           </property>
                           <property name="topMargin">
-                           <number>3</number>
+                           <number>10</number>
                           </property>
                           <property name="bottomMargin">
                            <number>10</number>
@@ -2530,8 +2607,9 @@ background-image: url(:/images/images/images/PyDracula.png)
                           <item>
                            <widget class="QTextBrowser" name="Detect_LOG">
                             <property name="styleSheet">
-                             <string notr="true">border: 2px solid #bd93f9;
-</string>
+                             <string notr="true">#Detect_LOG {
+	border: 2px solid #bd93f9;
+}</string>
                             </property>
                             <property name="html">
                              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2543,7 +2621,7 @@ p, li { white-space: pre-wrap; }
                            </widget>
                           </item>
                           <item>
-                           <widget class="QCheckBox" name="pre_log">
+                           <widget class="QCheckBox" name="show_log">
                             <property name="maximumSize">
                              <size>
                               <width>320</width>
@@ -2551,7 +2629,37 @@ p, li { white-space: pre-wrap; }
                              </size>
                             </property>
                             <property name="text">
-                             <string>Preview detect log</string>
+                             <string>Show detect log</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_clear_log">
+                            <property name="minimumSize">
+                             <size>
+                              <width>150</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Clear log</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-x-circle.png</normaloff>:/icons/images/icons/cil-x-circle.png</iconset>
                             </property>
                            </widget>
                           </item>
@@ -3355,7 +3463,7 @@ p, li { white-space: pre-wrap; }
                      </widget>
                      <widget class="QWidget" name="Home">
                       <property name="styleSheet">
-                       <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
+                       <string notr="true">background-image: url(:/images/images/images/Logo_Big (8).png);
 background-position: center;
 background-repeat: no-repeat;</string>
                       </property>
@@ -4254,7 +4362,7 @@ background-repeat: no-repeat;</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <layout class="QVBoxLayout" name="Toggle_Light_Layout_2">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -4359,7 +4467,7 @@ background-repeat: no-repeat;</string>
                              <number>0</number>
                             </property>
                             <item>
-                             <widget class="QPushButton" name="btn_NightMode">
+                             <widget class="QPushButton" name="btn_LightMode">
                               <property name="enabled">
                                <bool>false</bool>
                               </property>
@@ -4379,15 +4487,15 @@ background-repeat: no-repeat;</string>
                                <cursorShape>ArrowCursor</cursorShape>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">background-image: url(:/icons/images/icons/cil-moon.png);</string>
+                               <string notr="true">background-image: url(:/icons/images/icons/cil-lightbulb.png);</string>
                               </property>
                               <property name="text">
-                               <string>Night Mode</string>
+                               <string>Light Mode</string>
                               </property>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QFrame" name="Toggle_Night">
+                             <widget class="QFrame" name="Toggle_Light">
                               <property name="maximumSize">
                                <size>
                                 <width>60</width>
@@ -4400,7 +4508,7 @@ background-repeat: no-repeat;</string>
                               <property name="frameShadow">
                                <enum>QFrame::Raised</enum>
                               </property>
-                              <layout class="QVBoxLayout" name="Toggle_Night_Layout">
+                              <layout class="QVBoxLayout" name="Toggle_Light_Layout">
                                <property name="spacing">
                                 <number>0</number>
                                </property>
@@ -4785,7 +4893,7 @@ background-repeat: no-repeat;</string>
                    </font>
                   </property>
                   <property name="text">
-                   <string>By: WIP Team</string>
+                   <string>By: Right Posture Team</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -4795,7 +4903,7 @@ background-repeat: no-repeat;</string>
                 <item>
                  <widget class="QLabel" name="version">
                   <property name="text">
-                   <string>v1.0.5</string>
+                   <string>Demo</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

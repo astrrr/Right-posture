@@ -7,14 +7,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1400</width>
-    <height>860</height>
+    <width>1280</width>
+    <height>760</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1400</width>
-    <height>860</height>
+    <width>1280</width>
+    <height>760</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -1835,68 +1835,12 @@ p, li { white-space: pre-wrap; }
                        <string notr="true"/>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_3">
-                       <item row="0" column="0" colspan="2">
-                        <widget class="QFrame" name="row_7">
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_36">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>8</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>10</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>11</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
-                          <item>
-                           <widget class="QLabel" name="label_3">
-                            <property name="font">
-                             <font>
-                              <pointsize>12</pointsize>
-                              <italic>false</italic>
-                              <bold>true</bold>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
-font-weight: bold;
-border-radius: 5px;
-border: 2px solid #ff79c6;</string>
-                            </property>
-                            <property name="text">
-                             <string>Status History</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
                        <item row="1" column="0">
                         <widget class="QFrame" name="frame">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
                            <height>0</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>352</height>
                           </size>
                          </property>
                          <property name="styleSheet">
@@ -2168,6 +2112,56 @@ p, li { white-space: pre-wrap; }
                          </layout>
                         </widget>
                        </item>
+                       <item row="0" column="0" colspan="2">
+                        <widget class="QFrame" name="row_7">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_36">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>8</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>10</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>11</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QLabel" name="label_3">
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                              <italic>false</italic>
+                              <bold>true</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+font-weight: bold;
+border-radius: 5px;
+border: 2px solid #ff79c6;</string>
+                            </property>
+                            <property name="text">
+                             <string>Status History</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
                        <item row="1" column="1" rowspan="4">
                         <widget class="QFrame" name="frame_2">
                          <property name="sizePolicy">
@@ -2289,8 +2283,8 @@ p, li { white-space: pre-wrap; }
                          </layout>
                         </widget>
                        </item>
-                       <item row="2" column="0">
-                        <widget class="QFrame" name="frame_charts">
+                       <item row="3" column="0">
+                        <widget class="QFrame" name="aframe_6">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -2303,102 +2297,7 @@ p, li { white-space: pre-wrap; }
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_10">
-                          <property name="spacing">
-                           <number>6</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>9</number>
-                          </property>
-                          <item>
-                           <widget class="QFrame" name="frame_donut">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>384</width>
-                              <height>0</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>600</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">#frame_donut{
-	border: 2px solid #bd93f9;
-}</string>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="Donut_Frame_Layout">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="frame_line">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">#frame_line{
-	border: 2px solid #bd93f9;
-}</string>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="Line_Frame_Layout">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                         </layout>
+                         <layout class="QHBoxLayout" name="horizontalLayout_10"/>
                         </widget>
                        </item>
                       </layout>
@@ -2809,7 +2708,7 @@ p, li { white-space: pre-wrap; }
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QTableWidget" name="Status_Widgets">
+                           <widget class="QTableWidget" name="tableWidget_2">
                             <property name="sizePolicy">
                              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                               <horstretch>0</horstretch>
@@ -3016,7 +2915,7 @@ p, li { white-space: pre-wrap; }
                              </palette>
                             </property>
                             <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
+                             <enum>QFrame::NoFrame</enum>
                             </property>
                             <property name="verticalScrollBarPolicy">
                              <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -3043,19 +2942,19 @@ p, li { white-space: pre-wrap; }
                              <bool>false</bool>
                             </property>
                             <attribute name="horizontalHeaderVisible">
-                             <bool>true</bool>
+                             <bool>false</bool>
                             </attribute>
                             <attribute name="horizontalHeaderCascadingSectionResizes">
-                             <bool>false</bool>
+                             <bool>true</bool>
                             </attribute>
                             <attribute name="horizontalHeaderDefaultSectionSize">
                              <number>200</number>
                             </attribute>
-                            <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-                             <bool>false</bool>
-                            </attribute>
                             <attribute name="horizontalHeaderStretchLastSection">
                              <bool>true</bool>
+                            </attribute>
+                            <attribute name="verticalHeaderVisible">
+                             <bool>false</bool>
                             </attribute>
                             <attribute name="verticalHeaderCascadingSectionResizes">
                              <bool>false</bool>
@@ -3063,30 +2962,15 @@ p, li { white-space: pre-wrap; }
                             <attribute name="verticalHeaderHighlightSections">
                              <bool>false</bool>
                             </attribute>
-                            <attribute name="verticalHeaderShowSortIndicator" stdset="0">
-                             <bool>false</bool>
-                            </attribute>
                             <attribute name="verticalHeaderStretchLastSection">
-                             <bool>false</bool>
+                             <bool>true</bool>
                             </attribute>
                             <row>
                              <property name="text">
                               <string>New Row</string>
                              </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
-                             </property>
-                            </row>
-                            <row>
-                             <property name="text">
-                              <string>New Row</string>
+                             <property name="font">
+                              <font/>
                              </property>
                             </row>
                             <row>
@@ -3166,29 +3050,44 @@ p, li { white-space: pre-wrap; }
                             </row>
                             <column>
                              <property name="text">
-                              <string>Day 1</string>
+                              <string>0</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>Day 2</string>
+                              <string>1</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>Day 3</string>
+                              <string>2</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>Day 4</string>
+                              <string>3</string>
                              </property>
                             </column>
-                            <column>
+                            <item row="0" column="0">
                              <property name="text">
-                              <string>Day 5</string>
+                              <string>Test</string>
                              </property>
-                            </column>
+                            </item>
+                            <item row="0" column="1">
+                             <property name="text">
+                              <string>Text</string>
+                             </property>
+                            </item>
+                            <item row="0" column="2">
+                             <property name="text">
+                              <string>Cell</string>
+                             </property>
+                            </item>
+                            <item row="0" column="3">
+                             <property name="text">
+                              <string>Line</string>
+                             </property>
+                            </item>
                            </widget>
                           </item>
                          </layout>

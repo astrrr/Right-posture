@@ -18,23 +18,21 @@ import sys
 import os
 import numpy as np
 
-
 from modules import *
 from widgets import *
 
-from PySide6 import QtGui
+from PySide6 import QtCore, QtGui, QtCharts
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
 
 from modules.Version_control import version
-
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
-version.thisVersion = "1.1.1.3"
+version.thisVersion = "1.1.2.0"
 # /////////////////////////////////////////////
 counter = 0
 CircularProgress_timer = 300
@@ -54,14 +52,13 @@ class AuthWindow(QMainWindow):
     def open_main(self):
         username = self.ui.username.text()
         self.main = MainWindow()
-        f = open("temp.txt", "w")
-        f.write(username)
-        f.close()
+        if username == "":
+            username = "Guest"
+        Camera_detail.user = username
         print('write '+username+' in temp')
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
         self.main.show()
         self.close()
-
 
     # ENTER EVENT
     # ///////////////////////////////////////////////////////////////
@@ -100,6 +97,33 @@ class MainWindow(QMainWindow):
         self.show()
         Main_buttons.set_custom_theme(self)
         # Main_table.Load_Table(self)
+
+        self.Donut_charts()
+        self.ui.Donut_Frame_Layout.addWidget(self.chartview)
+
+        self.ui.Line_Frame_Layout.addWidget(Line_charts())
+
+    def Donut_charts(self):
+        data = {
+            "Correct 70%": (70, QtGui.QColor("#bd93f9")),
+            "Incorrect 30%": (30, QtGui.QColor("#ff79c6")),
+        }
+
+        series = QtCharts.QPieSeries()
+        series.setHoleSize(0.4)
+        for name, (value, color) in data.items():
+            _slice = series.append(name, value)
+            _slice.setBrush(color)
+
+        chart = QtCharts.QChart()
+        chart.setContentsMargins(-10, -10, -10, -10)
+        chart.addSeries(series)
+        chart.setTitle("Test donut chart")
+        chart.legend().setAlignment(QtCore.Qt.AlignBottom)
+        chart.legend().setFont(QtGui.QFont("Arial", 10))
+
+        self.chartview = QtCharts.QChartView(chart)
+        self.chartview.setRenderHint(QtGui.QPainter.Antialiasing)
 
     # UPDATE PROGRESS BAR
     def update(self):

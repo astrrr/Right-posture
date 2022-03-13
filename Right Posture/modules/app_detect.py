@@ -175,10 +175,7 @@ class VideoThread(QThread):
                 end_time = time.asctime(time.localtime(time.time()))
                 
 
-                
-                f = open('temp.txt','r')
-                user = f.read()
-                print(f.read())
+                user = Camera_detail.user
                 t_total = time.time() - t_start
                 t_incorrect_total = (inc_count/(inc_count+cor_count))*t_total
                 t_cor = (cor_count/(inc_count+cor_count))*t_total
@@ -190,7 +187,7 @@ class VideoThread(QThread):
                 print('t_total           : {} sec'.format(t_total))
                 print('inc_per           : {} %'.format(inc_per))
                 print('cor_per           : {} %'.format(cor_per))
-                cur.execute("UPDATE sessions SET time_end = ? , user_id = ? , incorrect_time = ? , correct_time = ? , total_time = ? , incorrect_per = ? , correct_per = ? WHERE session_id = ?",(end_time, user, t_incorrect_total, t_cor, t_total, inc_per, cor_per, sess_id,))
+                cur.execute("UPDATE sessions SET time_end = ? , user_id = ? , incorrect_time = ? , correct_time = ? , total_time = ? , incorrect_per = ? , correct_per = ? WHERE session_id = ?", (end_time, user, t_incorrect_total, t_cor, t_total, inc_per, cor_per, sess_id,))
                 conn.commit()
                 cap.release()
                 cv2.destroyAllWindows()
@@ -228,8 +225,8 @@ class VideoThread(QThread):
             Camera_detail.Finish_load_model = True
             Camera_detail.model_status = "Loaded"
             print("Finish load model")
-            
-            
+
+
 
 class WorkerSignals(QObject):
     finished = Signal()
@@ -261,7 +258,9 @@ class Worker(QRunnable):
             self.signals.result.emit(result)  # Return the result of the processing
         finally:
             self.signals.finished.emit()  # Done
+
 class Camera_detail:
+    user = ""
     log = ""
     traceback = ""
     get_model_name = model_name
@@ -269,7 +268,6 @@ class Camera_detail:
     First_load_model = True
     Finish_load_model = False
     Error_load_model = False
-
 
 class Camera:
     
