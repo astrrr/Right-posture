@@ -7,14 +7,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>842</height>
+    <width>1400</width>
+    <height>860</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1280</width>
-    <height>760</height>
+    <width>1400</width>
+    <height>860</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -1893,6 +1893,12 @@ border: 2px solid #ff79c6;</string>
                            <height>0</height>
                           </size>
                          </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>352</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">/*border: 1px solid #73AD21;</string>
                          </property>
@@ -2312,9 +2318,15 @@ p, li { white-space: pre-wrap; }
                               <verstretch>0</verstretch>
                              </sizepolicy>
                             </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>384</width>
+                              <height>0</height>
+                             </size>
+                            </property>
                             <property name="maximumSize">
                              <size>
-                              <width>500</width>
+                              <width>600</width>
                               <height>16777215</height>
                              </size>
                             </property>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainbvfato.ui'
+## Form generated from reading UI file 'mainvMdfeE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -28,8 +28,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 842)
-        MainWindow.setMinimumSize(QSize(1280, 760))
+        MainWindow.resize(1400, 860)
+        MainWindow.setMinimumSize(QSize(1400, 860))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
         font = QFont()
@@ -1077,6 +1077,7 @@ class Ui_MainWindow(object):
         self.frame = QFrame(self.Status)
         self.frame.setObjectName(u"frame")
         self.frame.setMinimumSize(QSize(0, 0))
+        self.frame.setMaximumSize(QSize(16777215, 352))
         self.frame.setStyleSheet(u"/*border: 1px solid #73AD21;")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
@@ -1258,7 +1259,8 @@ class Ui_MainWindow(object):
         self.frame_donut.setObjectName(u"frame_donut")
         sizePolicy2.setHeightForWidth(self.frame_donut.sizePolicy().hasHeightForWidth())
         self.frame_donut.setSizePolicy(sizePolicy2)
-        self.frame_donut.setMaximumSize(QSize(500, 16777215))
+        self.frame_donut.setMinimumSize(QSize(384, 0))
+        self.frame_donut.setMaximumSize(QSize(600, 16777215))
         self.frame_donut.setStyleSheet(u"#frame_donut{\n"
 "	border: 2px solid #bd93f9;\n"
 "}")
