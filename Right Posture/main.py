@@ -105,6 +105,7 @@ class MainWindow(QMainWindow):
 
         self.charts()
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)
+
     def charts(self):
         data = {
             "Correct 70%": (70, QtGui.QColor("#bd93f9")),
@@ -125,7 +126,6 @@ class MainWindow(QMainWindow):
 
         self.chartview = QtCharts.QChartView(chart)
         self.chartview.setRenderHint(QtGui.QPainter.Antialiasing)
-
 
     # UPDATE PROGRESS BAR
     def update(self):

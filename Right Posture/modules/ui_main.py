@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainbvfato.ui'
+## Form generated from reading UI file 'mainTttLDQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 842)
+        MainWindow.resize(1280, 871)
         MainWindow.setMinimumSize(QSize(1280, 760))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1077,6 +1077,7 @@ class Ui_MainWindow(object):
         self.frame = QFrame(self.Status)
         self.frame.setObjectName(u"frame")
         self.frame.setMinimumSize(QSize(0, 0))
+        self.frame.setMaximumSize(QSize(16777215, 352))
         self.frame.setStyleSheet(u"/*border: 1px solid #73AD21;")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
