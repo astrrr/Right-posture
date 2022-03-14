@@ -24,6 +24,9 @@ import time
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
+
+cwd = os.getcwd()
 
 # E-mail
 username = 'rightposture.kmitl.team@gmail.com'
@@ -62,7 +65,7 @@ class AppFunctions(MainWindow):
             title=title,
             message=message,
             timeout=10,
-            app_icon="bin/Icon/iconTimer.ico"
+            app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
         )
 
     # Discord Rich Presence

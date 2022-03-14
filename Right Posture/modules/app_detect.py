@@ -1,5 +1,6 @@
 from main import *
-
+from modules.app_functions import AppFunctions
+from plyer import notification
 
 import os
 import cv2
@@ -23,6 +24,8 @@ cur = conn.cursor()
 
 
 t_start = time.time()
+t_last = time.time()
+t_checkpoint = time.time()
 
 t_incorrect_total = 0
 t_total = 0
@@ -98,7 +101,7 @@ class VideoThread(QThread):
 
     # QThreadのrunメソッドを定義
     def run(self):
-        global t_incorrect_last, t_start, t_incorrect_total, t_total, tick_flag, cor_count, inc_count
+        global t_start, t_last, t_checkpoint, t_incorrect_total, t_total, cor_count, inc_count
         
         if Camera_detail.First_load_model:
             print("Start Load model")
@@ -136,19 +139,24 @@ class VideoThread(QThread):
                     if pred == 0:
                         cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
                         cor_count+=1
-                        # if tick_flag==1 :
-                        #     t_incorrect_total = t_incorrect_total + (time.time() - t_incorrect_last)
-                        # tick_flag = 0
+                        t_checkpoint = time.time()
                         
                     if pred == 1:
                         cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
                         inc_count+=1
-                        # if tick_flag == 0:
-                        #     t_incorrect_last = time.time()
-                        # tick_flag = 1
+                        t_last = time.time() - t_checkpoint
+                    
                         
+                        if int(t_last)%5 ==0:
+                            # notification.notify(
+                            #     title='หลอนๆ',
+                            #     message='โหลอน',
+                            #     timeout=10,
+                            #     app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
+                            # )
                             
-
+                            AppFunctions.notifyMe(self, 'หลอนๆ', 'หลอนๆ')
+       
                     # capture pic ture for data set
                     img_name = "temp_{}.png".format(img_counter_cor)
                     cv2.imwrite(img_name, image)
@@ -157,6 +165,8 @@ class VideoThread(QThread):
                     print("{} written!".format(img_name))
                     # ///////////////////////////////////////////////////////////////////////////////
                     img_counter_cor += 1
+                    
+                    # set preriod of incorrect notification
 
                     for i in os.listdir(cwd):
                         if '.png' in i:
