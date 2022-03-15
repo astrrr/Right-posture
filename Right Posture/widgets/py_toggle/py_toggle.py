@@ -25,7 +25,6 @@ from PySide6.QtWidgets import *
 Toggle1 = None
 Toggle2 = None
 Toggle3 = None
-Toggle4 = None
 loaded_object = load_data()
 
 class PyToggle(QCheckBox):
