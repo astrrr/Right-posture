@@ -235,7 +235,7 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPosition().toPoint()
         
     def Logout(self):
-        QTimer.singleShot(1200, lambda: open_Login())
+        QTimer.singleShot(500, lambda: open_Login())
         def open_Login():
             self.Login = AuthWindow()
             self.Login.show()

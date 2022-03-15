@@ -162,13 +162,6 @@ Extra Tab */
 	background-color: rgb(189, 147, 249)
 }
 
-/* Icon */
-#extraIcon {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-image: url(:/icons/images/icons/icon_settings.png);
-}
-
 /* Label */
 #extraLabel { color: rgb(255, 255, 255); }
 
@@ -894,7 +887,7 @@ Button */
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_Status">
+                 <widget class="QPushButton" name="btn_Log">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -924,12 +917,12 @@ Button */
                    <string notr="true">background-image: url(:/icons/images/icons/cil-browser);</string>
                   </property>
                   <property name="text">
-                   <string>Status</string>
+                   <string>Log</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_Posture">
+                 <widget class="QPushButton" name="btn_Setting">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -956,15 +949,15 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-user);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-settings.png);</string>
                   </property>
                   <property name="text">
-                   <string>Posture</string>
+                   <string>Setting</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_Tutorial">
+                 <widget class="QPushButton" name="btn_Logout">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -991,10 +984,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-layers.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-account-logout.png);</string>
                   </property>
                   <property name="text">
-                   <string>Tutorial</string>
+                   <string>Log out</string>
                   </property>
                  </widget>
                 </item>
@@ -1053,10 +1046,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/icon_settings.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-user.png);</string>
                   </property>
                   <property name="text">
-                   <string>Setting</string>
+                   <string>About</string>
                   </property>
                  </widget>
                 </item>
@@ -1169,6 +1162,14 @@ Button */
                    <height>20</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">/* Icon */
+#extraIcon {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(:/icons/images/icons/cil-user.png);
+}</string>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::NoFrame</enum>
                  </property>
@@ -1186,7 +1187,7 @@ Button */
                   </size>
                  </property>
                  <property name="text">
-                  <string>Setting</string>
+                  <string>About</string>
                  </property>
                 </widget>
                </item>
@@ -1254,7 +1255,7 @@ Button */
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item alignment="Qt::AlignTop">
+             <item>
               <widget class="QFrame" name="extraTopMenu">
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
@@ -1279,7 +1280,7 @@ Button */
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="btn_Camera">
+                 <widget class="QPushButton" name="btn_debugger">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1306,80 +1307,10 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-camera.png);</string>
+                   <string notr="true">background-image: url(:/icons/images/icons/cil-terminal.png);</string>
                   </property>
                   <property name="text">
-                   <string>Camera</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_Notification">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>45</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-bell.png);</string>
-                  </property>
-                  <property name="text">
-                   <string>Notification</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_Logout">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>45</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                    <italic>false</italic>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-account-logout.png);</string>
-                  </property>
-                  <property name="text">
-                   <string>Logout</string>
+                   <string>Debug</string>
                   </property>
                  </widget>
                 </item>
@@ -1828,9 +1759,9 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>2</number>
                      </property>
-                     <widget class="QWidget" name="Status">
+                     <widget class="QWidget" name="Home">
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
@@ -1875,7 +1806,7 @@ border-radius: 5px;
 border: 2px solid #ff79c6;</string>
                             </property>
                             <property name="text">
-                             <string>Status History</string>
+                             <string>Home</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -2403,7 +2334,7 @@ p, li { white-space: pre-wrap; }
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="Notification">
+                     <widget class="QWidget" name="Setting">
                       <layout class="QVBoxLayout" name="_2">
                        <item>
                         <widget class="QFrame" name="row_6">
@@ -3196,12 +3127,445 @@ p, li { white-space: pre-wrap; }
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="Home">
+                     <widget class="QWidget" name="Log">
                       <property name="styleSheet">
-                       <string notr="true">background-image: url(:/images/images/images/Logo_Big (8).png);
-background-position: center;
-background-repeat: no-repeat;</string>
+                       <string notr="true"/>
                       </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_7">
+                       <item>
+                        <widget class="QFrame" name="row_8">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_37">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>8</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>10</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>11</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QLabel" name="label_4">
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                              <italic>false</italic>
+                              <bold>true</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+font-weight: bold;
+border-radius: 5px;
+border: 2px solid #ff79c6;</string>
+                            </property>
+                            <property name="text">
+                             <string>Log</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QTableWidget" name="Status_Widgets_2">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="palette">
+                          <palette>
+                           <active>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="0">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Text">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ButtonText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="NoBrush">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="0">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="PlaceholderText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </active>
+                           <inactive>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="0">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Text">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ButtonText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="NoBrush">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="0">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="PlaceholderText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </inactive>
+                           <disabled>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="0">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Text">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ButtonText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="NoBrush">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="0">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="PlaceholderText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>221</red>
+                               <green>221</green>
+                               <blue>221</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </disabled>
+                          </palette>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="verticalScrollBarPolicy">
+                          <enum>Qt::ScrollBarAlwaysOn</enum>
+                         </property>
+                         <property name="sizeAdjustPolicy">
+                          <enum>QAbstractScrollArea::AdjustToContents</enum>
+                         </property>
+                         <property name="editTriggers">
+                          <set>QAbstractItemView::NoEditTriggers</set>
+                         </property>
+                         <property name="selectionMode">
+                          <enum>QAbstractItemView::SingleSelection</enum>
+                         </property>
+                         <property name="selectionBehavior">
+                          <enum>QAbstractItemView::SelectRows</enum>
+                         </property>
+                         <property name="showGrid">
+                          <bool>true</bool>
+                         </property>
+                         <property name="gridStyle">
+                          <enum>Qt::SolidLine</enum>
+                         </property>
+                         <property name="sortingEnabled">
+                          <bool>false</bool>
+                         </property>
+                         <attribute name="horizontalHeaderVisible">
+                          <bool>true</bool>
+                         </attribute>
+                         <attribute name="horizontalHeaderCascadingSectionResizes">
+                          <bool>false</bool>
+                         </attribute>
+                         <attribute name="horizontalHeaderDefaultSectionSize">
+                          <number>200</number>
+                         </attribute>
+                         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                          <bool>false</bool>
+                         </attribute>
+                         <attribute name="horizontalHeaderStretchLastSection">
+                          <bool>true</bool>
+                         </attribute>
+                         <attribute name="verticalHeaderCascadingSectionResizes">
+                          <bool>false</bool>
+                         </attribute>
+                         <attribute name="verticalHeaderHighlightSections">
+                          <bool>false</bool>
+                         </attribute>
+                         <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+                          <bool>false</bool>
+                         </attribute>
+                         <attribute name="verticalHeaderStretchLastSection">
+                          <bool>false</bool>
+                         </attribute>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>New Row</string>
+                          </property>
+                         </row>
+                         <column>
+                          <property name="text">
+                           <string>Day 1</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Day 2</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Day 3</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Day 4</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Day 5</string>
+                          </property>
+                         </column>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                      <widget class="QWidget" name="Widgets">
                       <property name="styleSheet">
@@ -3496,7 +3860,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>218</width>
+                                 <width>413</width>
                                  <height>218</height>
                                 </rect>
                                </property>
@@ -4034,40 +4398,6 @@ background-repeat: no-repeat;</string>
                            </widget>
                           </item>
                          </layout>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                     <widget class="QWidget" name="Posture">
-                      <layout class="QVBoxLayout" name="verticalLayout_20">
-                       <item>
-                        <widget class="QLabel" name="label">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="text">
-                          <string>This is Posture Page !!</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                     <widget class="QWidget" name="Tutorial">
-                      <layout class="QVBoxLayout" name="verticalLayout_21">
-                       <item>
-                        <widget class="QLabel" name="label_2">
-                         <property name="text">
-                          <string>This is Tutorial Page !!!</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
                         </widget>
                        </item>
                       </layout>
