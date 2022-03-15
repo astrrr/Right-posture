@@ -11,8 +11,8 @@ def load_data():
         return loaded_object
 
     except FileNotFoundError:
-        new_file = {"Night": 0, "Close": 0, "Sound": 0, "Discord": 0, "PreCam1": 0}
-        with open(f"{cwd}/Right Posture/bin/Data/save_setting.json", 'w') as write_file:
+        new_file = {"Night": 0, "DND": 0, "Discord": 0, "PreCam1": 0}
+        with open('bin/Data/save_setting.json', 'w') as write_file:
             json.dump(new_file, write_file)
         print("File not found we will create a default file")
 
