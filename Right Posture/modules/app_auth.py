@@ -3,8 +3,11 @@ from modules.ui_login_function import UILoginFunctions
 from modules import AppFunctions
 import sqlite3
 from email_validator import validate_email, EmailNotValidError
+import os
 
 auth_key = None
+cwd = os.getcwd()
+acc_path = f"{cwd}/Right Posture/bin/Data/Accounts.db"
 
 class Auth_system(AuthWindow):
 
@@ -14,7 +17,7 @@ class Auth_system(AuthWindow):
         email = self.ui.Forget_Email.text()
         if self.ui.Auth_key.text() == str(auth_key):
             try:
-                conn = sqlite3.connect("bin/Data/Accounts.db")
+                conn = sqlite3.connect(acc_path)
                 cur = conn.cursor()
                 query = f"UPDATE login_info set password  = \'{new_password}\' WHERE email = \'{email}\'"
                 cur.execute(query)
@@ -47,7 +50,7 @@ class Auth_system(AuthWindow):
                 valid = validate_email(email)
                 email = valid.email
                 # SQL
-                conn = sqlite3.connect("bin/Data/Accounts.db")
+                conn = sqlite3.connect(acc_path)
                 cur = conn.cursor()
                 query = f"SELECT email FROM login_info WHERE username = \'{username}\'"
                 cur.execute(query)
@@ -92,7 +95,7 @@ class Auth_system(AuthWindow):
                 self.ui.Login_Status.setText("Please input all fields.")
                 Auth_system.login_fail(self)
             else:
-                conn = sqlite3.connect("bin/Data/Accounts.db")
+                conn = sqlite3.connect(acc_path)
                 cur = conn.cursor()
                 query = f"SELECT password FROM login_info WHERE username = \'{username}\'"
                 cur.execute(query)
@@ -125,7 +128,7 @@ class Auth_system(AuthWindow):
             self.ui.Reg_Status.setText("Passwords do not match.")
             Auth_system.regis_fail(self)
         else:
-            conn = sqlite3.connect("bin/Data/Accounts.db")
+            conn = sqlite3.connect(acc_path)
             cur = conn.cursor()
             user_info = [username, password, email]
             try:

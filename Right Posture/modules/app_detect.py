@@ -1,8 +1,7 @@
 from main import *
 
 
-
-
+import os
 import cv2
 import traceback
 import mediapipe as mp
@@ -20,14 +19,16 @@ conn = sqlite3.connect('sessions.db', check_same_thread=False)
 print('connect DB')
 cur = conn.cursor()
 
-#cur.execute("CREATE TABLE sessions (session_id INT PRIMARY KEY, user_id TEXT , time_start TEXT, time_end TEXT, incorrect_time FLOAT, correct_time FLOAT, totol_time FLOAT, incorrect_per FLOAT, correct_per FLOAT)")
+#cur.execute("CREATE TABLE sessions (session_id INT PRIMARY KEY, user_id TEXT , time_start TEXT, time_end TEXT, incorrect_time FLOAT, correct_time FLOAT, total_time FLOAT, incorrect_per FLOAT, correct_per FLOAT)")
 
 
 t_start = time.time()
-t_incorrect_last = 0
+
 t_incorrect_total = 0
 t_total = 0
-tick_flag = 0
+
+cor_count = 0
+inc_count = 0
 
 start_time = time.asctime(time.localtime(time.time()))
 
@@ -44,6 +45,8 @@ cwd = os.getcwd()
 model = None
 #model_name = 'MNv2_V3'
 model_name = 'MN_Fix_angle_augmented_model3_3'
+
+
 VideoCapture = 0
 
 def Print_exception():
@@ -95,7 +98,7 @@ class VideoThread(QThread):
 
     # QThreadのrunメソッドを定義
     def run(self):
-        global t_incorrect_last, t_start, t_incorrect_total, t_total, tick_flag
+        global t_incorrect_last, t_start, t_incorrect_total, t_total, tick_flag, cor_count, inc_count
         
         if Camera_detail.First_load_model:
             print("Start Load model")
@@ -132,15 +135,17 @@ class VideoThread(QThread):
                     
                     if pred == 0:
                         cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
-                        if tick_flag==1 :
-                            t_incorrect_total = t_incorrect_total + (time.time() - t_incorrect_last)
-                        tick_flag = 0
+                        cor_count+=1
+                        # if tick_flag==1 :
+                        #     t_incorrect_total = t_incorrect_total + (time.time() - t_incorrect_last)
+                        # tick_flag = 0
                         
                     if pred == 1:
                         cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
-                        if tick_flag == 0:
-                            t_incorrect_last = time.time()
-                        tick_flag = 1
+                        inc_count+=1
+                        # if tick_flag == 0:
+                        #     t_incorrect_last = time.time()
+                        # tick_flag = 1
                         
                             
 
@@ -169,14 +174,15 @@ class VideoThread(QThread):
                         self.change_pixmap_signal.emit(image)
                 
                 end_time = time.asctime(time.localtime(time.time()))
-                t_incorrect_total = t_incorrect_total + (time.time() - t_incorrect_last)
+                
 
                 user = Camera_detail.user
                 t_total = time.time() - t_start
-                t_cor = t_total - t_incorrect_total
-                inc_per = (t_incorrect_total/t_total)*100
-                cor_per = ((t_total-t_incorrect_total)/t_total)*100
-                print('t_incorrect_last  : ',t_incorrect_last)
+                t_incorrect_total = (inc_count/(inc_count+cor_count))*t_total
+                t_cor = (cor_count/(inc_count+cor_count))*t_total
+                inc_per = (inc_count/(inc_count+cor_count))*100
+                cor_per = (cor_count/(inc_count+cor_count))*100
+                
                 print('t_incorrect       : {} sec'.format(t_incorrect_total))
                 print('t_cor             : {} sec'.format(t_cor))
                 print('t_total           : {} sec'.format(t_total))
@@ -199,7 +205,7 @@ class VideoThread(QThread):
 
     def execute_this_fn(self):
         global model
-        dir_model = f"bin/Model/{model_name}"
+        dir_model = f"{cwd}/Right Posture/bin/Model/{model_name}"
         try:
             modeling = tf.keras.models.load_model(dir_model)
             model = modeling
