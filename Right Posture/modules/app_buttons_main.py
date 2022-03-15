@@ -76,7 +76,7 @@ class Main_buttons(MainWindow):
             AppFunctions.notifyMe(self, "ไปนอนซะ", button.notifyword.text())
 
         if btnName == "btn_print":
-            AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])
+            # AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])
             AppFunctions.notifyMe(self, "Notification", "Send email")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
