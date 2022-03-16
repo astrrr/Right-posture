@@ -30,6 +30,8 @@ t_checkpoint = time.time()
 t_incorrect_total = 0
 t_total = 0
 
+t_noti_checkpoint = time.time()
+
 cor_count = 0
 inc_count = 0
 
@@ -101,7 +103,7 @@ class VideoThread(QThread):
 
     # QThreadのrunメソッドを定義
     def run(self):
-        global t_start, t_last, t_checkpoint, t_incorrect_total, t_total, cor_count, inc_count
+        global t_start, t_last, t_checkpoint, t_incorrect_total, t_total, cor_count, inc_count, t_noti_checkpoint
         
         if Camera_detail.First_load_model:
             print("Start Load model")
@@ -146,18 +148,19 @@ class VideoThread(QThread):
                         inc_count+=1
                         t_last = time.time() - t_checkpoint
                     
-                        
-                        if int(t_last)%5 ==0:
-                            # notification.notify(
-                            #     title='หลอนๆ',
-                            #     message='โหลอน',
-                            #     timeout=10,
-                            #     app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
-                            # )
-                            
-                    ######### ดัก send noti รัวๆ ๒๒#####################################################################
-                            AppFunctions.notifyMe(self, 'หลอนๆ', 'หลอนๆ')
-       
+                        if time.time() - t_noti_checkpoint >= 60: 
+                            if int(t_last)%5 ==0:
+                                # notification.notify(
+                                #     title='หลอนๆ',
+                                #     message='โหลอน',
+                                #     timeout=10,
+                                #     app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
+                                # )
+                                
+                        ######### ดัก send noti รัวๆ ๒๒#####################################################################
+                                AppFunctions.notifyMe(self, 'หลอนๆ', 'หลอนๆ')
+                                t_noti_checkpoint = time.time()
+                    
                     # capture pic ture for data set
                     img_name = "temp_{}.png".format(img_counter_cor)
                     cv2.imwrite(img_name, image)
