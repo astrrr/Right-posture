@@ -50,11 +50,11 @@ class UIFunctions(MainWindow):
             UIFunctions.toggleLeftBox(self, True)
         self.ui.toggleLeftBox.clicked.connect(openCloseLeftBox)
         self.ui.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
-        autoClose = True  # Toggle Auto Close Left Box when click.
-        if autoClose:
-            self.ui.btn_Camera.clicked.connect(openCloseLeftBox)
-            self.ui.btn_Notification.clicked.connect(openCloseLeftBox)
-            self.ui.btn_Logout.clicked.connect(openCloseLeftBox)
+        # autoClose = True  # Toggle Auto Close Left Box when click.
+        # if autoClose:
+        #     self.ui.btn_Camera.clicked.connect(openCloseLeftBox)
+        #     self.ui.btn_Notification.clicked.connect(openCloseLeftBox)
+        #     self.ui.btn_Logout.clicked.connect(openCloseLeftBox)
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():

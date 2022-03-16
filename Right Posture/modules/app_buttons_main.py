@@ -8,11 +8,8 @@ class Main_buttons(MainWindow):
         button = self.ui
         loaded_object = load_data()
         button.btn_Home.clicked.connect(self.Main_button_Interface)
-        button.btn_Status.clicked.connect(self.Main_button_Interface)
-        button.btn_Posture.clicked.connect(self.Main_button_Interface)
-        button.btn_Tutorial.clicked.connect(self.Main_button_Interface)
-        button.btn_Camera.clicked.connect(self.Main_button_Interface)
-        button.btn_Notification.clicked.connect(self.Main_button_Interface)
+        button.btn_Log.clicked.connect(self.Main_button_Interface)
+        button.btn_Setting.clicked.connect(self.Main_button_Interface)
         button.btn_Logout.clicked.connect(self.Main_button_Interface)
         button.btn_saveNotify.clicked.connect(self.Main_button_Interface)
         button.btn_print.clicked.connect(self.Main_button_Interface)
@@ -60,31 +57,26 @@ class Main_buttons(MainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        if btnName == "btn_Status":
-            button.stackedWidget.setCurrentWidget(button.Status)
+        if btnName == "btn_Log":
+            button.stackedWidget.setCurrentWidget(button.Log)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        if btnName == "btn_Posture":
-            button.stackedWidget.setCurrentWidget(button.Posture)  # SET PAGE
+        if btnName == "btn_Setting":
+            button.stackedWidget.setCurrentWidget(button.Setting)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
-        if btnName == "btn_Tutorial":
-            button.stackedWidget.setCurrentWidget(button.Tutorial)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-
-        if btnName == "btn_Notification":
-            button.stackedWidget.setCurrentWidget(button.Notification)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+        # if btnName == "btn_Notification":
+        #     button.stackedWidget.setCurrentWidget(button.Notification)  # SET PAGE
+        #     UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
 
         if btnName == "btn_saveNotify":
             print(button.notifyword.text())
             AppFunctions.notifyMe(self, "ไปนอนซะ", button.notifyword.text())
 
         if btnName == "btn_print":
-            AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])
+            # AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])
             AppFunctions.notifyMe(self, "Notification", "Send email")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
@@ -105,5 +97,5 @@ class Main_buttons(MainWindow):
             AppFunctions.setThemeHack(self)
 
         # SET HOME PAGE AND SELECT MENU
-        self.ui.stackedWidget.setCurrentWidget(self.ui.Status)
-        self.ui.btn_Status.setStyleSheet(UIFunctions.selectMenu(self.ui.btn_Status.styleSheet()))
+        self.ui.stackedWidget.setCurrentWidget(self.ui.Home)
+        self.ui.btn_Home.setStyleSheet(UIFunctions.selectMenu(self.ui.btn_Home.styleSheet()))

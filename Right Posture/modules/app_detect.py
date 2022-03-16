@@ -155,6 +155,7 @@ class VideoThread(QThread):
                             #     app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
                             # )
                             
+                    ######### ดัก send noti รัวๆ ๒๒#####################################################################
                             AppFunctions.notifyMe(self, 'หลอนๆ', 'หลอนๆ')
        
                     # capture pic ture for data set

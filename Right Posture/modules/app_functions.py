@@ -17,6 +17,7 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 from main import MainWindow, Settings
+from modules.app_data import load_data
 from plyer import notification
 from pypresence import Presence
 from random import randint
@@ -61,12 +62,14 @@ class AppFunctions(MainWindow):
 
     # Notification function
     def notifyMe(self, title, message):
-        notification.notify(
-            title=title,
-            message=message,
-            timeout=10,
-            app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
-        )
+        loaded_object = load_data()
+        if not loaded_object["DND"]:
+            notification.notify(
+                title=title,
+                message=message,
+                timeout=10,
+                app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
+            )
 
     # Discord Rich Presence
     def discordRichPresence(self):

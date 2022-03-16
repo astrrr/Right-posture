@@ -25,7 +25,6 @@ from PySide6.QtWidgets import *
 Toggle1 = None
 Toggle2 = None
 Toggle3 = None
-Toggle4 = None
 loaded_object = load_data()
 
 class PyToggle(QCheckBox):
@@ -50,11 +49,10 @@ class PyToggle(QCheckBox):
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
         self.ui = Ui_MainWindow()
-        global Toggle1, Toggle2, Toggle3, Toggle4
+        global Toggle1, Toggle2, Toggle3
         Toggle1 = self.setup_animation_1
         Toggle2 = self.setup_animation_2
         Toggle3 = self.setup_animation_3
-        Toggle4 = self.setup_animation_4
 
     def Toggle_Switch(self):
         Toggle = self.ui
@@ -65,21 +63,15 @@ class PyToggle(QCheckBox):
         Light = loaded_object["Light"]
         Toggle_LightMode.setChecked(Light)
 
-        Toggle_Close = PyToggle()
-        Toggle.Toggle_Close_Layout.addWidget(Toggle_Close)
-        Toggle_Close.stateChanged.connect(Toggle2)
-        Close = loaded_object["Close"]
-        Toggle_Close.setChecked(Close)
-
-        Toggle_Sound = PyToggle()
-        Toggle.Toggle_Sound_Layout.addWidget(Toggle_Sound)
-        Toggle_Sound.stateChanged.connect(Toggle3)
-        Sound = loaded_object["Sound"]
-        Toggle_Sound.setChecked(Sound)
+        Toggle_DND = PyToggle()
+        Toggle.Toggle_DND_Layout.addWidget(Toggle_DND)
+        Toggle_DND.stateChanged.connect(Toggle3)
+        DND = loaded_object["DND"]
+        Toggle_DND.setChecked(DND)
 
         Toggle_Discord = PyToggle()
         Toggle.Toggle_Discord_Layout.addWidget(Toggle_Discord)
-        Toggle_Discord.stateChanged.connect(Toggle4)
+        Toggle_Discord.stateChanged.connect(Toggle2)
         Discord = loaded_object["Discord"]
         Toggle_Discord.setChecked(Discord)
 
@@ -99,36 +91,24 @@ class PyToggle(QCheckBox):
         self.animation.stop()
         if value:
             self.animation.setEndValue(self.width() - 26)
-            print("Status : ON Auto Close")
-            save_data("Close", 1)
-        else:
-            self.animation.setEndValue(4)
-            print("Status : OFF Close")
-            save_data("Close", 0)
-        self.animation.start()
-
-    def setup_animation_3(self, value):
-        self.animation.stop()
-        if value:
-            self.animation.setEndValue(self.width() - 26)
-            print("Status : ON Sound")
-            save_data("Sound", 1)
-        else:
-            self.animation.setEndValue(4)
-            print("Status : OFF Sound")
-            save_data("Sound", 0)
-        self.animation.start()
-
-    def setup_animation_4(self, value):
-        self.animation.stop()
-        if value:
-            self.animation.setEndValue(self.width() - 26)
             print("Status : ON Discord")
             save_data("Discord", 1)
         else:
             self.animation.setEndValue(4)
             print("Status : OFF Discord")
             save_data("Discord", 0)
+        self.animation.start()
+
+    def setup_animation_3(self, value):
+        self.animation.stop()
+        if value:
+            self.animation.setEndValue(self.width() - 26)
+            print("Status : ON DND")
+            save_data("DND", 1)
+        else:
+            self.animation.setEndValue(4)
+            print("Status : OFF DND")
+            save_data("DND", 0)
         self.animation.start()
 
     @Property(float)
