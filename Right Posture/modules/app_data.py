@@ -7,7 +7,6 @@ def load_data():
     try:
         with open(f"{cwd}{Debug_path.path}/bin/Data/save_setting.json", "r") as read_file:
             loaded_object = json.load(read_file)
-        print(cwd)
         return loaded_object
 
     except FileNotFoundError:
