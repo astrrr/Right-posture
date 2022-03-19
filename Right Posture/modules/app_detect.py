@@ -10,11 +10,8 @@ import tensorflow as tf
 import numpy as np
 import sqlite3
 import time
-<<<<<<< HEAD
 import math
-=======
 from modules.Version_control import Debug_path
->>>>>>> a4a9c632e08c66465a7056e93973fde742dbff11
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -157,10 +154,10 @@ class VideoThread(QThread):
                         t_last = (time.time()) - t_checkpoint
 
                         # preriod of notification
-                        pon = 10
+                        pon = 30
                         if time.time() - t_noti_checkpoint >= pon and rest_flag ==0: 
                             # incorrect sensitive
-                            sensitive = 5
+                            sensitive = 7
                             if int((t_last))%sensitive ==0:
                                 # notification.notify(
                                 #     title='หลอนๆ',
@@ -170,11 +167,12 @@ class VideoThread(QThread):
                                 # )
                                 
                         ######### ดัก send noti รัวๆ ๒๒#####################################################################
-                                AppFunctions.notifyMe(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
+                                AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
                                 t_noti_checkpoint = time.time()
                     
                     # timer of sitting 10 m  (10 m * 60s)
                     tos = 1
+                    # >= 10 คือเอาไว้ดัก แจ้งเตือนรัวๆ และต้องค่าน้อยกว่า pon
                     if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
                         if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
                             AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')

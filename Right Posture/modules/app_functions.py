@@ -70,6 +70,16 @@ class AppFunctions(MainWindow):
                 app_icon=f"{cwd}{Debug_path.path}/bin/Icon/iconTimer.ico"
             )
 
+    def notifyIncorrect(self, title, message):
+        loaded_object = load_data()
+        if not loaded_object["DND"]:
+            notification.notify(
+                title=title,
+                message=message,
+                timeout=10,
+                app_icon=f"{cwd}{Debug_path.path}/bin/Icon/iconIncorrect.ico"
+            )
+
     # Discord Rich Presence
     def discordRichPresence(self):
         if self:
