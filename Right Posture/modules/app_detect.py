@@ -10,11 +10,8 @@ import tensorflow as tf
 import numpy as np
 import sqlite3
 import time
-<<<<<<< HEAD
 import math
-=======
 from modules.Version_control import Debug_path
->>>>>>> a4a9c632e08c66465a7056e93973fde742dbff11
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
