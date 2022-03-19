@@ -9,7 +9,7 @@ import tensorflow as tf
 import numpy as np
 import sqlite3
 import time
-
+from modules.Version_control import Debug_path
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -205,7 +205,7 @@ class VideoThread(QThread):
 
     def execute_this_fn(self):
         global model
-        dir_model = f"{cwd}/bin/Model/{model_name}"
+        dir_model = f"{cwd}{Debug_path.path}/bin/Model/{model_name}"
         try:
             modeling = tf.keras.models.load_model(dir_model)
             model = modeling

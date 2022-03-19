@@ -26,12 +26,13 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
 
-from modules.Version_control import version
+from modules.Version_control import version, Debug_path
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
+path_fix = 0
 version.thisVersion = "1.1.3.9"
 # /////////////////////////////////////////////
 counter = 0
@@ -245,7 +246,14 @@ def set_counter(value):
     global counter
     counter = value
 
+class patch:
+    if path_fix:
+        Debug_path.path = "/Right Posture"
+    else:
+        Debug_path.path = ""
+
 if __name__ == "__main__":
+    patch()
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("icon.ico"))
 
