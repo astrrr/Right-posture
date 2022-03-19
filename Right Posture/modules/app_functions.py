@@ -16,23 +16,29 @@
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
+import time
+import smtplib
+import os
+import base64
 from main import MainWindow, Settings
-from modules.app_data import load_data
+from modules.app_data import load_data, load_password
 from plyer import notification
 from pypresence import Presence
 from random import randint
-import time
-import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+<<<<<<< HEAD
 import os
 
 cwd = os.getcwd()
 
+=======
+from modules.Version_control import Debug_path
+>>>>>>> a4a9c632e08c66465a7056e93973fde742dbff11
 # E-mail
 username = 'rightposture.kmitl.team@gmail.com'
-password = 'admin159123'
-
+password = load_password()
+cwd = os.getcwd()
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 class AppFunctions(MainWindow):
@@ -51,7 +57,7 @@ class AppFunctions(MainWindow):
         server = smtplib.SMTP(host='smtp.gmail.com', port=587)
         server.ehlo()
         server.starttls()
-        server.login(username, password)
+        server.login(username, base64.b64decode(password).decode("utf-8"))
         server.sendmail(from_email, to_emails, msg_str)
         server.quit()
 
@@ -68,7 +74,11 @@ class AppFunctions(MainWindow):
                 title=title,
                 message=message,
                 timeout=10,
+<<<<<<< HEAD
                 app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
+=======
+                app_icon=f"{cwd}{Debug_path.path}/bin/Icon/iconTimer.ico"
+>>>>>>> a4a9c632e08c66465a7056e93973fde742dbff11
             )
 
     # Discord Rich Presence
