@@ -205,7 +205,7 @@ class VideoThread(QThread):
 
     def execute_this_fn(self):
         global model
-        dir_model = f"{cwd}/Right Posture/bin/Model/{model_name}"
+        dir_model = f"{cwd}/bin/Model/{model_name}"
         try:
             modeling = tf.keras.models.load_model(dir_model)
             model = modeling
