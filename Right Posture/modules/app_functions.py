@@ -27,14 +27,7 @@ from pypresence import Presence
 from random import randint
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-<<<<<<< HEAD
-import os
-
-cwd = os.getcwd()
-
-=======
 from modules.Version_control import Debug_path
->>>>>>> a4a9c632e08c66465a7056e93973fde742dbff11
 # E-mail
 username = 'rightposture.kmitl.team@gmail.com'
 password = load_password()
@@ -74,11 +67,7 @@ class AppFunctions(MainWindow):
                 title=title,
                 message=message,
                 timeout=10,
-<<<<<<< HEAD
-                app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
-=======
                 app_icon=f"{cwd}{Debug_path.path}/bin/Icon/iconTimer.ico"
->>>>>>> a4a9c632e08c66465a7056e93973fde742dbff11
             )
 
     # Discord Rich Presence
