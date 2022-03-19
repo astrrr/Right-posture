@@ -10,7 +10,7 @@ import tensorflow as tf
 import numpy as np
 import sqlite3
 import time
-
+import math
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -26,6 +26,7 @@ cur = conn.cursor()
 t_start = time.time()
 t_last = time.time()
 t_checkpoint = time.time()
+t_correct_start = time.time()
 
 t_incorrect_total = 0
 t_total = 0
@@ -34,6 +35,7 @@ t_noti_checkpoint = time.time()
 
 cor_count = 0
 inc_count = 0
+rest_flag = 0
 
 start_time = time.asctime(time.localtime(time.time()))
 
@@ -103,7 +105,7 @@ class VideoThread(QThread):
 
     # QThreadのrunメソッドを定義
     def run(self):
-        global t_start, t_last, t_checkpoint, t_incorrect_total, t_total, cor_count, inc_count, t_noti_checkpoint
+        global t_start, t_last, t_checkpoint, t_incorrect_total, t_total, cor_count, inc_count, t_noti_checkpoint, rest_flag, t_correct_start
         
         if Camera_detail.First_load_model:
             print("Start Load model")
@@ -142,14 +144,20 @@ class VideoThread(QThread):
                         cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
                         cor_count+=1
                         t_checkpoint = time.time()
-                        
+                        if rest_flag == 1:
+                            t_correct_start = time.time() + 1
+                            rest_flag = 0
                     if pred == 1:
                         cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
                         inc_count+=1
-                        t_last = time.time() - t_checkpoint
-                    
-                        if time.time() - t_noti_checkpoint >= 60: 
-                            if int(t_last)%5 ==0:
+                        t_last = (time.time()) - t_checkpoint
+
+                        # preriod of notification
+                        pon = 10
+                        if time.time() - t_noti_checkpoint >= pon and rest_flag ==0: 
+                            # incorrect sensitive
+                            sensitive = 5
+                            if int((t_last))%sensitive ==0:
                                 # notification.notify(
                                 #     title='หลอนๆ',
                                 #     message='โหลอน',
@@ -158,9 +166,18 @@ class VideoThread(QThread):
                                 # )
                                 
                         ######### ดัก send noti รัวๆ ๒๒#####################################################################
-                                AppFunctions.notifyMe(self, 'หลอนๆ', 'หลอนๆ')
+                                AppFunctions.notifyMe(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
                                 t_noti_checkpoint = time.time()
                     
+                    # timer of sitting 10 m  (10 m * 60s)
+                    tos = 1
+                    if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
+                        if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
+                            AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')
+                            t_noti_checkpoint = time.time()
+                            t_correct_start = time.time()+1
+                            rest_flag = 1
+
                     # capture pic ture for data set
                     img_name = "temp_{}.png".format(img_counter_cor)
                     cv2.imwrite(img_name, image)
