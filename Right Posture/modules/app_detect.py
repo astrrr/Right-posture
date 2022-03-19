@@ -43,7 +43,7 @@ start_time = time.asctime(time.localtime(time.time()))
 cur.execute("SELECT * FROM sessions")
 sess_items = cur.fetchall()
 
-print('item : ', sess_items[-1])
+# print('item : ', sess_items[-1])
 
 sess_id = int(sess_items[-1][0])+1
 session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
@@ -80,14 +80,14 @@ def predict(img):
         if float(val[0][0]) > float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
             Camera_detail.log = (Camera_detail.log + '\nmodel prediction : correct')
-            print('model prediction : correct')
+            # print('model prediction : correct')
             # ///////////////////////////////////////////////////////////////////////////////
             return 0
             # incorrect > correct
         elif float(val[0][0]) < float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
             Camera_detail.log = (Camera_detail.log + '\nmodel prediction : incorrect')
-            print('model prediction : incorrect')
+            # print('model prediction : incorrect')
             # ///////////////////////////////////////////////////////////////////////////////
             return 1
     except:
@@ -185,7 +185,7 @@ class VideoThread(QThread):
                     cv2.imwrite(img_name, image)
                     # ///////////////////////////////////////////////////////////////////////////////
                     Camera_detail.log = ("{} written!".format(img_name))
-                    print("{} written!".format(img_name))
+                    # print("{} written!".format(img_name))
                     # ///////////////////////////////////////////////////////////////////////////////
                     img_counter_cor += 1
                     
@@ -195,7 +195,7 @@ class VideoThread(QThread):
                         if '.png' in i:
                             # ///////////////////////////////////////////////////////////////////////////////
                             Camera_detail.log = (Camera_detail.log + '\n=======================')
-                            print('=======================')
+                            # print('=======================')
                             # ///////////////////////////////////////////////////////////////////////////////
                             pred = predict(i)
                             #     print(pred)
