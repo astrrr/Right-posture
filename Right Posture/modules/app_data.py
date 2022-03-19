@@ -21,6 +21,11 @@ def load_data():
         print("Loaded setting from new file")
         return loaded_object
 
+def load_password():
+    with open(f"{cwd}{Debug_path.path}/bin/Data/password.txt", "r") as read_file:
+        loaded_object = read_file.readline()
+    return loaded_object
+
 def save_data(setting, value):
     loaded_object = load_data()
     loaded_object[setting] = value

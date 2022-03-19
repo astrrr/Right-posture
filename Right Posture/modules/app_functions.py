@@ -16,20 +16,21 @@
 
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
-from main import MainWindow, Settings
-from modules.app_data import load_data
-from plyer import notification
-from pypresence import Presence
-from random import randint
 import time
 import smtplib
 import os
+import base64
+from main import MainWindow, Settings
+from modules.app_data import load_data, load_password
+from plyer import notification
+from pypresence import Presence
+from random import randint
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from modules.Version_control import Debug_path
 # E-mail
 username = 'rightposture.kmitl.team@gmail.com'
-password = 'admin159123'
+password = load_password()
 cwd = os.getcwd()
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -49,7 +50,7 @@ class AppFunctions(MainWindow):
         server = smtplib.SMTP(host='smtp.gmail.com', port=587)
         server.ehlo()
         server.starttls()
-        server.login(username, password)
+        server.login(username, base64.b64decode(password).decode("utf-8"))
         server.sendmail(from_email, to_emails, msg_str)
         server.quit()
 
