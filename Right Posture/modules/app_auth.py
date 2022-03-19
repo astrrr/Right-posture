@@ -7,7 +7,7 @@ import os
 
 auth_key = None
 cwd = os.getcwd()
-acc_path = f"{cwd}/Right Posture/bin/Data/Accounts.db"
+acc_path = f"{cwd}/bin/Data/Accounts.db"
 
 class Auth_system(AuthWindow):
 
