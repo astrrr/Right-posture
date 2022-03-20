@@ -2428,7 +2428,33 @@ border: 2px solid #ff79c6;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_4">
-                          <item row="11" column="0" colspan="2">
+                          <item row="5" column="0" colspan="2">
+                           <widget class="QLabel" name="label_6">
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="10" column="0">
+                           <widget class="QLabel" name="label_7">
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="12" column="0" colspan="2">
                            <widget class="QLabel" name="label_8">
                             <property name="font">
                              <font>
@@ -2451,215 +2477,6 @@ border-bottom: 2px solid #bd93f9;*/
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item row="12" column="0" colspan="2">
-                           <widget class="QPushButton" name="btn_test_notify">
-                            <property name="minimumSize">
-                             <size>
-                              <width>150</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="cursor">
-                             <cursorShape>PointingHandCursor</cursorShape>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-color: rgb(52, 59, 72);</string>
-                            </property>
-                            <property name="text">
-                             <string>Notification</string>
-                            </property>
-                            <property name="icon">
-                             <iconset resource="resources.qrc">
-                              <normaloff>:/icons/images/icons/cil-bell.png</normaloff>:/icons/images/icons/cil-bell.png</iconset>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="3" column="0">
-                           <widget class="QLabel" name="labelBoxBlenderInstalation_18">
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string>Notification duration after the first notification.</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="9" column="0" colspan="2">
-                           <widget class="QComboBox" name="combo_sitting">
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="autoFillBackground">
-                             <bool>false</bool>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-color: rgb(33, 37, 43);</string>
-                            </property>
-                            <property name="iconSize">
-                             <size>
-                              <width>16</width>
-                              <height>16</height>
-                             </size>
-                            </property>
-                            <property name="frame">
-                             <bool>true</bool>
-                            </property>
-                            <item>
-                             <property name="text">
-                              <string>40</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>50</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>60</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>70</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>80</string>
-                             </property>
-                            </item>
-                           </widget>
-                          </item>
-                          <item row="6" column="0" colspan="2">
-                           <widget class="QLabel" name="label_2">
-                            <property name="font">
-                             <font>
-                              <pointsize>12</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                              <underline>true</underline>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
-border-top: 1px solid  #bd93f9;
-/*font-weight: bold;
-border-bottom: 2px solid #bd93f9;*/
-</string>
-                            </property>
-                            <property name="text">
-                             <string>--- Sitting ---</string>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="7" column="0">
-                           <widget class="QLabel" name="labelBoxBlenderInstalation_19">
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string>How long to be notified when sitting for a long time.</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="5" column="0" colspan="2">
-                           <widget class="QLabel" name="label_6">
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
-                            <property name="text">
-                             <string/>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="4" column="0">
-                           <widget class="QComboBox" name="combo_period">
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="autoFillBackground">
-                             <bool>false</bool>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-color: rgb(33, 37, 43);</string>
-                            </property>
-                            <property name="iconSize">
-                             <size>
-                              <width>16</width>
-                              <height>16</height>
-                             </size>
-                            </property>
-                            <property name="frame">
-                             <bool>true</bool>
-                            </property>
-                            <item>
-                             <property name="text">
-                              <string>30</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>1</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>2</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>3</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>4</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>5</string>
-                             </property>
-                            </item>
                            </widget>
                           </item>
                           <item row="4" column="1">
@@ -2718,6 +2535,62 @@ border-bottom: 2px solid #bd93f9;*/
                             </item>
                            </widget>
                           </item>
+                          <item row="4" column="0">
+                           <widget class="QComboBox" name="combo_period">
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="autoFillBackground">
+                             <bool>false</bool>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(33, 37, 43);</string>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>16</width>
+                              <height>16</height>
+                             </size>
+                            </property>
+                            <property name="frame">
+                             <bool>true</bool>
+                            </property>
+                            <item>
+                             <property name="text">
+                              <string>30</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>1</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>2</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>3</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>4</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>5</string>
+                             </property>
+                            </item>
+                           </widget>
+                          </item>
                           <item row="2" column="0" colspan="2">
                            <widget class="QLabel" name="label">
                             <property name="font">
@@ -2746,6 +2619,104 @@ border-bottom: 2px solid #bd93f9;*/
                             </property>
                            </widget>
                           </item>
+                          <item row="9" column="0" colspan="2">
+                           <widget class="QComboBox" name="combo_sitting">
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="autoFillBackground">
+                             <bool>false</bool>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(33, 37, 43);</string>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>16</width>
+                              <height>16</height>
+                             </size>
+                            </property>
+                            <property name="frame">
+                             <bool>true</bool>
+                            </property>
+                            <item>
+                             <property name="text">
+                              <string>40</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>50</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>60</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>70</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>80</string>
+                             </property>
+                            </item>
+                           </widget>
+                          </item>
+                          <item row="13" column="0" colspan="2">
+                           <widget class="QPushButton" name="btn_test_notify">
+                            <property name="minimumSize">
+                             <size>
+                              <width>150</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Notification</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-bell.png</normaloff>:/icons/images/icons/cil-bell.png</iconset>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="0">
+                           <widget class="QLabel" name="labelBoxBlenderInstalation_18">
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="text">
+                             <string>Notification duration after the first notification.</string>
+                            </property>
+                           </widget>
+                          </item>
                           <item row="3" column="1">
                            <widget class="QLabel" name="labelBoxBlenderInstalation_17">
                             <property name="font">
@@ -2763,8 +2734,50 @@ border-bottom: 2px solid #bd93f9;*/
                             </property>
                            </widget>
                           </item>
-                          <item row="10" column="0">
-                           <widget class="QLabel" name="label_7">
+                          <item row="7" column="0">
+                           <widget class="QLabel" name="labelBoxBlenderInstalation_19">
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="text">
+                             <string>How long to be notified when sitting for a long time.</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="6" column="0" colspan="2">
+                           <widget class="QLabel" name="label_2">
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                              <underline>true</underline>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+border-top: 1px solid  #bd93f9;
+/*font-weight: bold;
+border-bottom: 2px solid #bd93f9;*/
+</string>
+                            </property>
+                            <property name="text">
+                             <string>--- Sitting ---</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="14" column="0">
+                           <widget class="QLabel" name="label_9">
                             <property name="styleSheet">
                              <string notr="true"/>
                             </property>
@@ -2773,6 +2786,36 @@ border-bottom: 2px solid #bd93f9;*/
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="15" column="0" colspan="2">
+                           <widget class="QPushButton" name="btn_save_setting">
+                            <property name="minimumSize">
+                             <size>
+                              <width>150</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Save</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-save.png</normaloff>:/icons/images/icons/cil-save.png</iconset>
                             </property>
                            </widget>
                           </item>

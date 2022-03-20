@@ -1,7 +1,7 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
 from modules.app_checkbox import Main_checkbox
-
+from modules.app_setting_page import Main_setting
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
@@ -14,6 +14,8 @@ class Main_buttons(MainWindow):
         button.btn_test_notify.clicked.connect(self.Main_button_Interface)
         button.btn_print.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
+
+        button.btn_save_setting.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
         button.show_detail.setChecked(loaded_object["PreDetail"])
@@ -70,8 +72,15 @@ class Main_buttons(MainWindow):
             # button.combo_period.setCurrentIndex(2)
             # AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
+        if btnName == "btn_save_setting":
+            Main_setting.save_setting(self, "period", button.combo_period.currentIndex())
+            print("save complete")
+            # print(button.combo_period.currentText())
+            # button.combo_period.setCurrentIndex(2)
+            # AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+
         if btnName == "btn_print":
-            # AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])
+            AppFunctions.send_Email(self, text='Test Email', to_emails=['inwpbmak@gmail.com'])
             AppFunctions.notifyMe(self, "Notification", "Send email")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')

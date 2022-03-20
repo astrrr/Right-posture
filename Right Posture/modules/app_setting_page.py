@@ -3,16 +3,19 @@ import os
 import sqlite3
 
 cwd = os.getcwd()
+user_now = ""
 
 class Main_setting(MainWindow):
 
-    def save_setting(self, user_setting, save_setting, save_index):
+    def save_setting(self, save_setting, save_index):
         setting = self.ui
-        print("save")
         try:
             conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
             cur = conn.cursor()
-            query = f"UPDATE login_info set {save_setting}  = \'{save_index}\' WHERE username = \'{user_setting}\'"
+            period = setting.combo_period.currentIndex()
+            sensitive = setting.combo_sensitive.currentIndex()
+            sitting = setting.combo_sitting.currentIndex()
+            query = f"UPDATE login_info set period={period}, sensitive={sensitive}, sitting={sitting} WHERE username = \'{user_now}\'"
             cur.execute(query)
             cur.execute(query)
             conn.commit()
@@ -22,6 +25,8 @@ class Main_setting(MainWindow):
             print(e)
 
     def load_setting(self, user_setting):
+        global user_now
+        user_now = user_setting
         setting = self.ui
         conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
         cur = conn.cursor()
