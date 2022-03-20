@@ -14,7 +14,6 @@ class Main_buttons(MainWindow):
         button.btn_test_notify.clicked.connect(self.Main_button_Interface)
         button.btn_print.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
-
         button.btn_save_setting.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
@@ -68,12 +67,10 @@ class Main_buttons(MainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "btn_test_notify":
-            print(button.combo_period.currentText())
-            # button.combo_period.setCurrentIndex(2)
-            # AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+            AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
         if btnName == "btn_save_setting":
-            Main_setting.save_setting(self, "period", button.combo_period.currentIndex())
+            Main_setting.save_setting(self)
             print("save complete")
             # print(button.combo_period.currentText())
             # button.combo_period.setCurrentIndex(2)

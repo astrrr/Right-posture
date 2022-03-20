@@ -7,7 +7,7 @@ user_now = ""
 
 class Main_setting(MainWindow):
 
-    def save_setting(self, save_setting, save_index):
+    def save_setting(self):
         setting = self.ui
         try:
             conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
