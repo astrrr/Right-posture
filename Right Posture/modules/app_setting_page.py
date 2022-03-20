@@ -29,7 +29,7 @@ class Main_setting(MainWindow):
         cur.execute(query)
         try:
             result = cur.fetchall()
-            print(result)
+            # print(result)
             set_Index = result[0]
             setting.combo_period.setCurrentIndex(set_Index[0])
             setting.combo_sensitive.setCurrentIndex(set_Index[1])

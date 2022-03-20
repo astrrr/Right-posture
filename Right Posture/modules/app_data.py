@@ -2,7 +2,7 @@ import json
 import os
 from modules.Version_control import Debug_path
 cwd = os.getcwd()
-import main
+
 def load_data():
     try:
         with open(f"{cwd}{Debug_path.path}/bin/Data/save_setting.json", "r") as read_file:

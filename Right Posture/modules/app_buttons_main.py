@@ -1,6 +1,5 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
-from modules.app_setting_page import Main_setting
 from modules.app_checkbox import Main_checkbox
 
 class Main_buttons(MainWindow):
