@@ -1,5 +1,6 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
+from modules.app_setting_page import Main_setting
 from modules.app_checkbox import Main_checkbox
 
 class Main_buttons(MainWindow):
@@ -66,7 +67,9 @@ class Main_buttons(MainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "btn_test_notify":
-            AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+            print(button.combo_period.currentText())
+            # button.combo_period.setCurrentIndex(2)
+            # AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
         if btnName == "btn_print":
             # AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])
