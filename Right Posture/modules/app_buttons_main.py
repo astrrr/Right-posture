@@ -11,11 +11,9 @@ class Main_buttons(MainWindow):
         button.btn_Log.clicked.connect(self.Main_button_Interface)
         button.btn_Setting.clicked.connect(self.Main_button_Interface)
         button.btn_Logout.clicked.connect(self.Main_button_Interface)
-        button.btn_saveNotify.clicked.connect(self.Main_button_Interface)
+        button.btn_test_notify.clicked.connect(self.Main_button_Interface)
         button.btn_print.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
-
-        # button.Test_radioButton_1.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
         button.show_detail.setChecked(loaded_object["PreDetail"])
@@ -67,13 +65,8 @@ class Main_buttons(MainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
-        # if btnName == "btn_Notification":
-        #     button.stackedWidget.setCurrentWidget(button.Notification)  # SET PAGE
-        #     UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-
-        if btnName == "btn_saveNotify":
-            print(button.notifyword.text())
-            AppFunctions.notifyMe(self, "ไปนอนซะ", button.notifyword.text())
+        if btnName == "btn_test_notify":
+            AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
         if btnName == "btn_print":
             # AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])

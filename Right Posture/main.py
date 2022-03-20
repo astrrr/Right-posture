@@ -31,8 +31,7 @@ from modules.Version_control import version, Debug_path
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
-main = 0
-
+main = 1
 version.thisVersion = "1.1.3.9"
 # /////////////////////////////////////////////
 counter = 0
@@ -56,7 +55,6 @@ class AuthWindow(QMainWindow):
         if username == "":
             username = "Guest"
         Camera_detail.user = username
-        print('write '+username+' in temp')
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
         self.main.show()
         self.close()
