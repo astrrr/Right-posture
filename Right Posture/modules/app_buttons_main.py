@@ -71,7 +71,6 @@ class Main_buttons(MainWindow):
 
         if btnName == "btn_save_setting":
             Main_setting.save_setting(self)
-            print("save complete")
             # print(button.combo_period.currentText())
             # button.combo_period.setCurrentIndex(2)
             # AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")

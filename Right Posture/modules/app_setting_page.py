@@ -1,4 +1,5 @@
 from main import MainWindow
+from modules.app_detect import Camera_detail
 import os
 import sqlite3
 
@@ -20,7 +21,8 @@ class Main_setting(MainWindow):
             cur.execute(query)
             conn.commit()
             conn.close()
-            setting.labelBoxBlenderInstalation_19.setText("save_complete")
+            Main_setting.apply_setting(self)
+            print("save complete")
         except Exception as e:
             print(e)
 
@@ -39,5 +41,27 @@ class Main_setting(MainWindow):
             setting.combo_period.setCurrentIndex(set_Index[0])
             setting.combo_sensitive.setCurrentIndex(set_Index[1])
             setting.combo_sitting.setCurrentIndex(set_Index[2])
+            Main_setting.apply_setting(self)
+
         except Exception as e:
             print(e)
+
+    def apply_setting(self):
+        setting = self.ui
+        period_raw = setting.combo_period.currentText()
+        period_time = [int(s) for s in period_raw.split() if s.isdigit()]
+        if setting.combo_period.currentIndex() == 0:
+            Camera_detail.period = 30
+        else:
+            Camera_detail.period = period_time[0] * 60
+        print(f"Period = {Camera_detail.period}")
+
+        sensitive_raw = setting.combo_sensitive.currentText()
+        sensitive_time = [int(s) for s in sensitive_raw.split() if s.isdigit()]
+        Camera_detail.sensitive = sensitive_time[0]
+        print(f"Sensitive = {Camera_detail.sensitive}")
+
+        sitting_raw = setting.combo_sitting.currentText()
+        sitting_time = [int(s) for s in sitting_raw.split() if s.isdigit()]
+        Camera_detail.sitting = sitting_time[0]
+        print(f"Sitting = {Camera_detail.sitting}")

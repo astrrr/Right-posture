@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainfwMiOI.ui'
+## Form generated from reading UI file 'mainkbSYZt.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1394,6 +1394,8 @@ class Ui_MainWindow(object):
         self.combo_sitting.addItem("")
         self.combo_sitting.addItem("")
         self.combo_sitting.addItem("")
+        self.combo_sitting.addItem("")
+        self.combo_sitting.addItem("")
         self.combo_sitting.setObjectName(u"combo_sitting")
         self.combo_sitting.setFont(font)
         self.combo_sitting.setAutoFillBackground(False)
@@ -2273,11 +2275,13 @@ class Ui_MainWindow(object):
         self.combo_period.setItemText(5, QCoreApplication.translate("MainWindow", u"5", None))
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"--- Wrong posture ---", None))
-        self.combo_sitting.setItemText(0, QCoreApplication.translate("MainWindow", u"40", None))
-        self.combo_sitting.setItemText(1, QCoreApplication.translate("MainWindow", u"50", None))
-        self.combo_sitting.setItemText(2, QCoreApplication.translate("MainWindow", u"60", None))
-        self.combo_sitting.setItemText(3, QCoreApplication.translate("MainWindow", u"70", None))
-        self.combo_sitting.setItemText(4, QCoreApplication.translate("MainWindow", u"80", None))
+        self.combo_sitting.setItemText(0, QCoreApplication.translate("MainWindow", u"1 (for test only)", None))
+        self.combo_sitting.setItemText(1, QCoreApplication.translate("MainWindow", u"2 (for test only)", None))
+        self.combo_sitting.setItemText(2, QCoreApplication.translate("MainWindow", u"40", None))
+        self.combo_sitting.setItemText(3, QCoreApplication.translate("MainWindow", u"50", None))
+        self.combo_sitting.setItemText(4, QCoreApplication.translate("MainWindow", u"60", None))
+        self.combo_sitting.setItemText(5, QCoreApplication.translate("MainWindow", u"70", None))
+        self.combo_sitting.setItemText(6, QCoreApplication.translate("MainWindow", u"80", None))
 
         self.btn_test_notify.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
         self.labelBoxBlenderInstalation_18.setText(QCoreApplication.translate("MainWindow", u"Notification duration after the first notification.", None))

@@ -2645,6 +2645,16 @@ border-bottom: 2px solid #bd93f9;*/
                             </property>
                             <item>
                              <property name="text">
+                              <string>1 (for test only)</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>2 (for test only)</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
                               <string>40</string>
                              </property>
                             </item>

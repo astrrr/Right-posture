@@ -154,10 +154,10 @@ class VideoThread(QThread):
                         t_last = (time.time()) - t_checkpoint
 
                         # preriod of notification
-                        pon = 30
+                        pon = Camera_detail.period
                         if time.time() - t_noti_checkpoint >= pon and rest_flag ==0: 
                             # incorrect sensitive
-                            sensitive = 7
+                            sensitive = Camera_detail.sensitive
                             if int((t_last))%sensitive ==0:
                                 # notification.notify(
                                 #     title='หลอนๆ',
@@ -171,7 +171,8 @@ class VideoThread(QThread):
                                 t_noti_checkpoint = time.time()
                     
                     # timer of sitting 10 m  (10 m * 60s)
-                    tos = 1
+
+                    tos = Camera_detail.sitting
                     # >= 10 คือเอาไว้ดัก แจ้งเตือนรัวๆ และต้องค่าน้อยกว่า pon
                     if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
                         if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
@@ -302,6 +303,10 @@ class Camera_detail:
     First_load_model = True
     Finish_load_model = False
     Error_load_model = False
+    # Setting sections
+    period = 30
+    sensitive = 7
+    sitting = 1
 
 class Camera:
     
