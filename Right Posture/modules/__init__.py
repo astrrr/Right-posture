@@ -58,3 +58,6 @@ from .app_auth import Auth_system
 
 # APP CHARTS
 from .app_charts import Line_charts
+
+# APP SETTING
+from .app_setting_page import Main_setting

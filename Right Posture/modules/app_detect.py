@@ -43,7 +43,7 @@ start_time = time.asctime(time.localtime(time.time()))
 cur.execute("SELECT * FROM sessions")
 sess_items = cur.fetchall()
 
-print('item : ', sess_items[-1])
+# print('item : ', sess_items[-1])
 
 sess_id = int(sess_items[-1][0])+1
 session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
@@ -80,14 +80,14 @@ def predict(img):
         if float(val[0][0]) > float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
             Camera_detail.log = (Camera_detail.log + '\nmodel prediction : correct')
-            print('model prediction : correct')
+            # print('model prediction : correct')
             # ///////////////////////////////////////////////////////////////////////////////
             return 0
             # incorrect > correct
         elif float(val[0][0]) < float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
             Camera_detail.log = (Camera_detail.log + '\nmodel prediction : incorrect')
-            print('model prediction : incorrect')
+            # print('model prediction : incorrect')
             # ///////////////////////////////////////////////////////////////////////////////
             return 1
     except:
@@ -154,10 +154,10 @@ class VideoThread(QThread):
                         t_last = (time.time()) - t_checkpoint
 
                         # preriod of notification
-                        pon = 30
+                        pon = Camera_detail.period
                         if time.time() - t_noti_checkpoint >= pon and rest_flag ==0: 
                             # incorrect sensitive
-                            sensitive = 7
+                            sensitive = Camera_detail.sensitive
                             if int((t_last))%sensitive ==0:
                                 # notification.notify(
                                 #     title='หลอนๆ',
@@ -171,7 +171,8 @@ class VideoThread(QThread):
                                 t_noti_checkpoint = time.time()
                     
                     # timer of sitting 10 m  (10 m * 60s)
-                    tos = 1
+
+                    tos = Camera_detail.sitting
                     # >= 10 คือเอาไว้ดัก แจ้งเตือนรัวๆ และต้องค่าน้อยกว่า pon
                     if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
                         if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
@@ -185,7 +186,7 @@ class VideoThread(QThread):
                     cv2.imwrite(img_name, image)
                     # ///////////////////////////////////////////////////////////////////////////////
                     Camera_detail.log = ("{} written!".format(img_name))
-                    print("{} written!".format(img_name))
+                    # print("{} written!".format(img_name))
                     # ///////////////////////////////////////////////////////////////////////////////
                     img_counter_cor += 1
                     
@@ -195,7 +196,7 @@ class VideoThread(QThread):
                         if '.png' in i:
                             # ///////////////////////////////////////////////////////////////////////////////
                             Camera_detail.log = (Camera_detail.log + '\n=======================')
-                            print('=======================')
+                            # print('=======================')
                             # ///////////////////////////////////////////////////////////////////////////////
                             pred = predict(i)
                             #     print(pred)
@@ -302,6 +303,10 @@ class Camera_detail:
     First_load_model = True
     Finish_load_model = False
     Error_load_model = False
+    # Setting sections
+    period = 30
+    sensitive = 7
+    sitting = 1
 
 class Camera:
     

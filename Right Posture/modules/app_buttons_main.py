@@ -1,7 +1,7 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
 from modules.app_checkbox import Main_checkbox
-
+from modules.app_setting_page import Main_setting
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
@@ -11,11 +11,10 @@ class Main_buttons(MainWindow):
         button.btn_Log.clicked.connect(self.Main_button_Interface)
         button.btn_Setting.clicked.connect(self.Main_button_Interface)
         button.btn_Logout.clicked.connect(self.Main_button_Interface)
-        button.btn_saveNotify.clicked.connect(self.Main_button_Interface)
+        button.btn_test_notify.clicked.connect(self.Main_button_Interface)
         button.btn_print.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
-
-        # button.Test_radioButton_1.clicked.connect(self.Main_button_Interface)
+        button.btn_save_setting.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
         button.show_detail.setChecked(loaded_object["PreDetail"])
@@ -67,16 +66,17 @@ class Main_buttons(MainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
-        # if btnName == "btn_Notification":
-        #     button.stackedWidget.setCurrentWidget(button.Notification)  # SET PAGE
-        #     UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+        if btnName == "btn_test_notify":
+            AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
-        if btnName == "btn_saveNotify":
-            print(button.notifyword.text())
-            AppFunctions.notifyMe(self, "ไปนอนซะ", button.notifyword.text())
+        if btnName == "btn_save_setting":
+            Main_setting.save_setting(self)
+            # print(button.combo_period.currentText())
+            # button.combo_period.setCurrentIndex(2)
+            # AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
         if btnName == "btn_print":
-            # AppFunctions.send_Email(self, text='12345 is your auth', to_emails=['inwpbmak@gmail.com'])
+            AppFunctions.send_Email(self, text='Test Email', to_emails=['inwpbmak@gmail.com'])
             AppFunctions.notifyMe(self, "Notification", "Send email")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
