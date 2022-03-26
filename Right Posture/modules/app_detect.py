@@ -65,13 +65,10 @@ def Print_exception():
 def predict(img):
     cur.executemany("INSERT OR IGNORE INTO sessions VALUES (?,?,?,?,?,?,?,?,?)", session)
     conn.commit()
-    img = tf.keras.preprocessing.image.load_img(cwd + '//' + img, target_size=(224, 224))
-    # img = tf.keras.preprocessing.image.load_img(img, target_size=(224,224))
-
-    # resized = cv2.resize(img, (224, 224), interpolation = cv2.INTER_AREA)
+    
     X = tf.keras.preprocessing.image.img_to_array(img)
 
-    # X= tf.keras.preprocessing.image.img_to_array(resized)
+    
     X = np.expand_dims(X, axis=0)
     image = np.vstack([X])
     try:
@@ -131,16 +128,19 @@ class VideoThread(QThread):
                     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
                     results = pose.process(image)
 
+                    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
                     # Draw the pose annotation on the image.
                     image.flags.writeable = True
-                    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-                    # image = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
                     mp_drawing.draw_landmarks(
                         image,
                         results.pose_landmarks,
                         mp_pose.POSE_CONNECTIONS,
                         landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
                     
+                    # prediction
+                    image_resize = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
+                    pred = predict(image_resize)
+
                     if pred == 0:
                         cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
                         cor_count+=1
@@ -159,12 +159,7 @@ class VideoThread(QThread):
                             # incorrect sensitive
                             sensitive = 7
                             if int((t_last))%sensitive ==0:
-                                # notification.notify(
-                                #     title='หลอนๆ',
-                                #     message='โหลอน',
-                                #     timeout=10,
-                                #     app_icon=f"{cwd}/Right Posture/bin/Icon/iconTimer.ico"
-                                # )
+                                
                                 
                         ######### ดัก send noti รัวๆ ๒๒#####################################################################
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
@@ -180,26 +175,7 @@ class VideoThread(QThread):
                             t_correct_start = time.time()+1
                             rest_flag = 1
 
-                    # capture pic ture for data set
-                    img_name = "temp_{}.png".format(img_counter_cor)
-                    cv2.imwrite(img_name, image)
-                    # ///////////////////////////////////////////////////////////////////////////////
-                    Camera_detail.log = ("{} written!".format(img_name))
-                    print("{} written!".format(img_name))
-                    # ///////////////////////////////////////////////////////////////////////////////
-                    img_counter_cor += 1
                     
-                    # set preriod of incorrect notification
-
-                    for i in os.listdir(cwd):
-                        if '.png' in i:
-                            # ///////////////////////////////////////////////////////////////////////////////
-                            Camera_detail.log = (Camera_detail.log + '\n=======================')
-                            print('=======================')
-                            # ///////////////////////////////////////////////////////////////////////////////
-                            pred = predict(i)
-                            #     print(pred)
-                            os.remove(i)
 
                     # 新たなフレームを取得できたら
                     # シグナル発信(cv_imgオブジェクトを発信)
