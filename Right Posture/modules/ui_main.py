@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainkbSYZt.ui'
+## Form generated from reading UI file 'mainSiBCmL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -604,7 +604,7 @@ class Ui_MainWindow(object):
         self.topLogo.setMaximumSize(QSize(42, 42))
         self.topLogo.setStyleSheet(u"#topLogo {\n"
 "	background-color: rgb(33, 37, 43);\n"
-"	background-image: url(:/images/images/images/Logo_Small (5).png);\n"
+"	background-image: url(:/images/images/images/Logo_newer _small.png);\n"
 "	background-position: centered;\n"
 "	background-repeat: no-repeat;\n"
 "}")
@@ -2190,7 +2190,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginyIlVfc.ui'
+## Form generated from reading UI file 'loginSCoZoY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -518,8 +518,7 @@ class Ui_Login(object):
         self.topLogo.setMinimumSize(QSize(42, 42))
         self.topLogo.setMaximumSize(QSize(42, 42))
         self.topLogo.setStyleSheet(u"background-color: rgb(33, 37, 43);\n"
-"background-image: url(:/images/images/images/Logo_Small (5).png);\n"
-"/*background-image: url(:/images/images/images/PyDracula.png);*/\n"
+"background-image: url(:/images/images/images/Logo_newer _small.png);\n"
 "background-position: centered;\n"
 "background-repeat: no-repeat;")
         self.topLogo.setFrameShape(QFrame.NoFrame)

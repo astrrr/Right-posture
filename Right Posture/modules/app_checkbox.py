@@ -18,7 +18,7 @@ class Main_checkbox(MainWindow):
 
     def Detect_Log(self):
         if self.ui.show_log.isChecked():
-            self.ui.Detect_LOG.append(Camera_detail.log)
+            self.ui.Detect_LOG.setText(Camera_detail.log)
             save_data("PreLog", 1)
             # print("Start Logging")
         else:

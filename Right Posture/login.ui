@@ -1266,8 +1266,7 @@ QPushButton:pressed {
           </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(33, 37, 43);
-background-image: url(:/images/images/images/Logo_Small (5).png);
-/*background-image: url(:/images/images/images/PyDracula.png);*/
+background-image: url(:/images/images/images/Logo_newer _small.png);
 background-position: centered;
 background-repeat: no-repeat;</string>
           </property>

@@ -1,6 +1,14 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/Logo_newer _small.png</file>
+    <file>images/images/Logo_newer.png</file>
+    <file>images/images/Logo_new_big.png</file>
+    <file>images/images/Logo_new_small.png</file>
     <file>images/images/Logo_Big (8).png</file>
+    <file>images/images/Logo_new.png</file>
+    <file>images/images/Logo_new_border.png</file>
+    <file>images/images/Logo_new_border_origin.png</file>
+    <file>images/images/Logo_new_origin.png</file>
     <file>images/images/Logo_Small (8).png</file>
     <file>images/images/Logo_Big (1).png</file>
     <file>images/images/Logo_Big (2).png</file>

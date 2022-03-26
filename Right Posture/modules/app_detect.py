@@ -1,6 +1,6 @@
 from main import *
 from modules.app_functions import AppFunctions
-from plyer import notification
+from datetime import datetime
 
 import os
 import cv2
@@ -76,14 +76,14 @@ def predict(img):
         # correct > incorrect
         if float(val[0][0]) > float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
-            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : correct')
+            # Camera_detail.log = (Camera_detail.log + '\n model prediction : correct')
             # print('model prediction : correct')
             # ///////////////////////////////////////////////////////////////////////////////
             return 0
             # incorrect > correct
         elif float(val[0][0]) < float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
-            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : incorrect')
+            # Camera_detail.log = (Camera_detail.log + '\n model prediction : incorrect')
             # print('model prediction : incorrect')
             # ///////////////////////////////////////////////////////////////////////////////
             return 1
@@ -163,6 +163,8 @@ class VideoThread(QThread):
                                 
                         ######### ดัก send noti รัวๆ ๒๒#####################################################################
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
+                                log_detail = f"{datetime.now()} \n Incorrect posture \n"
+                                Camera_detail.log = (Camera_detail.log + log_detail)
                                 t_noti_checkpoint = time.time()
                     
                     # timer of sitting 10 m  (10 m * 60s)
@@ -176,7 +178,7 @@ class VideoThread(QThread):
                             t_correct_start = time.time()+1
                             rest_flag = 1
 
-                    
+
 
                     # 新たなフレームを取得できたら
                     # シグナル発信(cv_imgオブジェクトを発信)
