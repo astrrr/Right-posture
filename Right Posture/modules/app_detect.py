@@ -176,26 +176,7 @@ class VideoThread(QThread):
                             t_correct_start = time.time()+1
                             rest_flag = 1
 
-                    # capture pic ture for data set
-                    img_name = "temp_{}.png".format(img_counter_cor)
-                    cv2.imwrite(img_name, image)
-                    # ///////////////////////////////////////////////////////////////////////////////
-                    Camera_detail.log = ("{} written!".format(img_name))
-                    # print("{} written!".format(img_name))
-                    # ///////////////////////////////////////////////////////////////////////////////
-                    img_counter_cor += 1
                     
-                    # set preriod of incorrect notification
-
-                    for i in os.listdir(cwd):
-                        if '.png' in i:
-                            # ///////////////////////////////////////////////////////////////////////////////
-                            Camera_detail.log = (Camera_detail.log + '\n=======================')
-                            # print('=======================')
-                            # ///////////////////////////////////////////////////////////////////////////////
-                            pred = predict(i)
-                            #     print(pred)
-                            os.remove(i)
 
                     # 新たなフレームを取得できたら
                     # シグナル発信(cv_imgオブジェクトを発信)
