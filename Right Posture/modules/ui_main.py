@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainsTXpNH.ui'
+## Form generated from reading UI file 'mainxLfJgL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1196,12 +1196,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.Detect_LOG)
 
-        self.show_log = QCheckBox(self.frame_2)
-        self.show_log.setObjectName(u"show_log")
-        self.show_log.setMaximumSize(QSize(320, 16777215))
-
-        self.verticalLayout_28.addWidget(self.show_log)
-
         self.btn_clear_log = QPushButton(self.frame_2)
         self.btn_clear_log.setObjectName(u"btn_clear_log")
         self.btn_clear_log.setMinimumSize(QSize(150, 30))
@@ -2192,7 +2186,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2256,7 +2250,6 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-        self.show_log.setText(QCoreApplication.translate("MainWindow", u"Show detect log", None))
         self.btn_clear_log.setText(QCoreApplication.translate("MainWindow", u"Clear log", None))
         self.label_6.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"Wrong posture", None))

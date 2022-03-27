@@ -160,14 +160,14 @@ class VideoThread(QThread):
                             sensitive = Camera_detail.sensitive
                             if int((t_last))%sensitive ==0:
                                 
-                                
+                                print("noti")
                         ######### ดัก send noti รัวๆ ๒๒#####################################################################
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
                                 date_time = datetime.datetime.now()
                                 date_now = date_time.strftime("%x")
                                 time_now = date_time.strftime("%X")
-                                log_detail = f"{date_now} {time_now} Incorrect posture \n"
-                                Camera_detail.log = (Camera_detail.log + log_detail)
+                                Camera_detail.log = f"{date_now} {time_now} Incorrect posture \n"
+                                Camera_detail.Update_log = True
                                 t_noti_checkpoint = time.time()
                     
                     # timer of sitting 10 m  (10 m * 60s)
@@ -207,7 +207,7 @@ class VideoThread(QThread):
                 conn.commit()
                 cap.release()
                 cv2.destroyAllWindows()
-                
+
             # videoCaptureのリリース処理
 
     # スレッドが終了するまでwaitをかける
@@ -284,6 +284,7 @@ class Camera_detail:
     First_load_model = True
     Finish_load_model = False
     Error_load_model = False
+    Update_log = None
     # Setting sections
     period = 30
     sensitive = 7

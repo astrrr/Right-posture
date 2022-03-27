@@ -31,7 +31,7 @@ from modules.Version_control import version, Debug_path
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
-main = 0
+main = 1
 version.thisVersion = "1.1.4.7"
 # /////////////////////////////////////////////
 counter = 0
@@ -214,7 +214,8 @@ class MainWindow(QMainWindow):
                                 QtGui.QImage.Format.Format_BGR888)
             qPix = QPixmap.fromImage(qImg)
             self.image_label.setPixmap(qPix)
-            Main_checkbox.Detect_Log(self)
+            if Camera_detail.Update_log:
+                Main_checkbox.Detect_Log(self)
             if Camera_detail.Error_load_model:
                 Main_checkbox.Show_Detail(self)
         except:

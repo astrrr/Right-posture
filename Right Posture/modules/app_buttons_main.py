@@ -20,10 +20,6 @@ class Main_buttons(MainWindow):
         button.show_detail.setChecked(loaded_object["PreDetail"])
         button.show_detail.clicked.connect(self.Main_button_Interface)
 
-        # Preview Detect log
-        button.show_log.setChecked(loaded_object["PreLog"])
-        button.show_log.clicked.connect(self.Main_button_Interface)
-
         # Preview Camera 1
         button.pre_cam_1.setChecked(loaded_object["PreCam1"])
         button.pre_cam_1.clicked.connect(self.Camera_1)
@@ -38,9 +34,6 @@ class Main_buttons(MainWindow):
         btnName = btn.objectName()
 
         # ////////// CHECK BOX ZONE //////////
-        if btnName == "show_log":
-            Main_checkbox.Detect_Log(self)
-
         if btnName == "show_detail":
             Main_checkbox.Show_Detail(self)
         # ////////////////////////////////////
