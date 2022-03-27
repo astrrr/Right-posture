@@ -22,7 +22,7 @@ class Main_setting(MainWindow):
             conn.commit()
             conn.close()
             Main_setting.apply_setting(self)
-            print("save complete")
+            setting.Setting_log.append("Save complete !")
         except Exception as e:
             print(e)
 
@@ -50,18 +50,31 @@ class Main_setting(MainWindow):
         setting = self.ui
         period_raw = setting.combo_period.currentText()
         period_time = [int(s) for s in period_raw.split() if s.isdigit()]
-        if setting.combo_period.currentIndex() == 0:
-            Camera_detail.period = 30
+
+        show_setting = "Apply setting\n"
+        if setting.combo_period.currentIndex() <= 1:
+            Camera_detail.period = period_time[0]
+            period_text = f"Period = {setting.combo_period.currentText()} = {Camera_detail.period} Second\n"
+            show_setting = show_setting + period_text
+            print(f"Period = {period_time[0]} = {Camera_detail.period} Second")
         else:
             Camera_detail.period = period_time[0] * 60
-        print(f"Period = {Camera_detail.period}")
+            period_text = f"Period = {setting.combo_period.currentText()} = {Camera_detail.period} Second\n"
+            show_setting = show_setting + period_text
+            print(f"Period = {period_time[0]} = {Camera_detail.period} Second")
 
         sensitive_raw = setting.combo_sensitive.currentText()
         sensitive_time = [int(s) for s in sensitive_raw.split() if s.isdigit()]
         Camera_detail.sensitive = sensitive_time[0]
-        print(f"Sensitive = {Camera_detail.sensitive}")
+        sensitive_text = f"Sensitive = {setting.combo_sensitive.currentText()} = {Camera_detail.sensitive} Second\n"
+        show_setting = show_setting + sensitive_text
+        print(f"Sensitive = {sensitive_time[0]} = {Camera_detail.sensitive} Second")
 
         sitting_raw = setting.combo_sitting.currentText()
         sitting_time = [int(s) for s in sitting_raw.split() if s.isdigit()]
         Camera_detail.sitting = sitting_time[0]
-        print(f"Sitting = {Camera_detail.sitting}")
+        sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Second\n"
+        show_setting = show_setting + sitting_text
+        print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Second")
+
+        setting.Setting_log.setText(show_setting)
