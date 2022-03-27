@@ -2,4 +2,4 @@ class version:
     thisVersion = None
 
 class Debug_path:
-    path = ""
+    path = "/Right Posture"
