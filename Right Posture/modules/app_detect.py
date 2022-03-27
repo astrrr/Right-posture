@@ -1,6 +1,6 @@
 from main import *
 from modules.app_functions import AppFunctions
-from datetime import datetime
+import datetime
 
 import os
 import cv2
@@ -163,7 +163,10 @@ class VideoThread(QThread):
                                 
                         ######### ดัก send noti รัวๆ ๒๒#####################################################################
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
-                                log_detail = f"{datetime.now()} \n Incorrect posture \n"
+                                date_time = datetime.datetime.now()
+                                date_now = date_time.strftime("%x")
+                                time_now = date_time.strftime("%X")
+                                log_detail = f"{date_now} {time_now} Incorrect posture \n"
                                 Camera_detail.log = (Camera_detail.log + log_detail)
                                 t_noti_checkpoint = time.time()
                     
