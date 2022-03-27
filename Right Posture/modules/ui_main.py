@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainxLfJgL.ui'
+## Form generated from reading UI file 'mainduPXPl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1331,6 +1331,7 @@ class Ui_MainWindow(object):
         self.combo_sitting.addItem("")
         self.combo_sitting.addItem("")
         self.combo_sitting.addItem("")
+        self.combo_sitting.addItem("")
         self.combo_sitting.setObjectName(u"combo_sitting")
         self.combo_sitting.setFont(font)
         self.combo_sitting.setAutoFillBackground(False)
@@ -1401,6 +1402,7 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.labelBoxBlenderInstalation_19, 9, 0, 1, 1)
 
         self.combo_period = QComboBox(self.frame_4)
+        self.combo_period.addItem("")
         self.combo_period.addItem("")
         self.combo_period.addItem("")
         self.combo_period.addItem("")
@@ -2186,7 +2188,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2255,11 +2257,12 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Wrong posture", None))
         self.btn_test_notify.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
         self.labelBoxBlenderInstalation_18.setText(QCoreApplication.translate("MainWindow", u"Notification duration after the first notification.", None))
-        self.combo_sitting.setItemText(0, QCoreApplication.translate("MainWindow", u"1 (DEMO)", None))
-        self.combo_sitting.setItemText(1, QCoreApplication.translate("MainWindow", u"2 (DEMO)", None))
+        self.combo_sitting.setItemText(0, QCoreApplication.translate("MainWindow", u"1 Minute (DEMO)", None))
+        self.combo_sitting.setItemText(1, QCoreApplication.translate("MainWindow", u"2 Minute (DEMO)", None))
         self.combo_sitting.setItemText(2, QCoreApplication.translate("MainWindow", u"40 Minute", None))
         self.combo_sitting.setItemText(3, QCoreApplication.translate("MainWindow", u"50 Minute", None))
         self.combo_sitting.setItemText(4, QCoreApplication.translate("MainWindow", u"1 Hour", None))
+        self.combo_sitting.setItemText(5, QCoreApplication.translate("MainWindow", u"2 Hour", None))
 
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Test", None))
         self.label_7.setText("")
@@ -2270,19 +2273,20 @@ class Ui_MainWindow(object):
         self.labelBoxBlenderInstalation_19.setText(QCoreApplication.translate("MainWindow", u"How long to be notified when sitting for a long time.", None))
         self.combo_period.setItemText(0, QCoreApplication.translate("MainWindow", u"5 Second (DEMO)", None))
         self.combo_period.setItemText(1, QCoreApplication.translate("MainWindow", u"10 Second (DEMO)", None))
-        self.combo_period.setItemText(2, QCoreApplication.translate("MainWindow", u"30 Second", None))
-        self.combo_period.setItemText(3, QCoreApplication.translate("MainWindow", u"1 Minute", None))
-        self.combo_period.setItemText(4, QCoreApplication.translate("MainWindow", u"2 Minute", None))
-        self.combo_period.setItemText(5, QCoreApplication.translate("MainWindow", u"3 Minute", None))
-        self.combo_period.setItemText(6, QCoreApplication.translate("MainWindow", u"4 Minute", None))
-        self.combo_period.setItemText(7, QCoreApplication.translate("MainWindow", u"5 Minute", None))
+        self.combo_period.setItemText(2, QCoreApplication.translate("MainWindow", u"20 Second (DEMO)", None))
+        self.combo_period.setItemText(3, QCoreApplication.translate("MainWindow", u"30 Second", None))
+        self.combo_period.setItemText(4, QCoreApplication.translate("MainWindow", u"1 Minute", None))
+        self.combo_period.setItemText(5, QCoreApplication.translate("MainWindow", u"2 Minute", None))
+        self.combo_period.setItemText(6, QCoreApplication.translate("MainWindow", u"3 Minute", None))
+        self.combo_period.setItemText(7, QCoreApplication.translate("MainWindow", u"4 Minute", None))
+        self.combo_period.setItemText(8, QCoreApplication.translate("MainWindow", u"5 Minute", None))
 
-        self.combo_sensitive.setItemText(0, QCoreApplication.translate("MainWindow", u"5 Second", None))
+        self.combo_sensitive.setItemText(0, QCoreApplication.translate("MainWindow", u"7 Second", None))
         self.combo_sensitive.setItemText(1, QCoreApplication.translate("MainWindow", u"10 Second", None))
-        self.combo_sensitive.setItemText(2, QCoreApplication.translate("MainWindow", u"15 Second", None))
-        self.combo_sensitive.setItemText(3, QCoreApplication.translate("MainWindow", u"20 Second", None))
-        self.combo_sensitive.setItemText(4, QCoreApplication.translate("MainWindow", u"25 Second", None))
-        self.combo_sensitive.setItemText(5, QCoreApplication.translate("MainWindow", u"30 Second", None))
+        self.combo_sensitive.setItemText(2, QCoreApplication.translate("MainWindow", u"13 Second", None))
+        self.combo_sensitive.setItemText(3, QCoreApplication.translate("MainWindow", u"16 Second", None))
+        self.combo_sensitive.setItemText(4, QCoreApplication.translate("MainWindow", u"19 Second", None))
+        self.combo_sensitive.setItemText(5, QCoreApplication.translate("MainWindow", u"22 Second", None))
 
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Setting", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Setting Log", None))

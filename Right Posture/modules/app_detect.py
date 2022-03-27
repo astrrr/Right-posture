@@ -57,6 +57,14 @@ model_name = 'MN_Fix_angle_augmented_model3_3'
 
 VideoCapture = 0
 
+def Print_log(text):
+    date_time = datetime.datetime.now()
+    week_now = date_time.strftime("%a")
+    time_now = date_time.strftime("%X")
+    Camera_detail.log = f"{week_now} {time_now} {text}"
+    Camera_detail.Update_log = True
+    Camera_detail.setting = f"Pe {Camera_detail.period} \n Se {Camera_detail.sensitive} \n Si {Camera_detail.sitting}"
+
 def Print_exception():
     traceback.print_exc()
     excType, value = sys.exc_info()[:2]
@@ -162,11 +170,7 @@ class VideoThread(QThread):
 
                                 # ดัก send noti รัวๆ #
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
-                                date_time = datetime.datetime.now()
-                                date_now = date_time.strftime("%x")
-                                time_now = date_time.strftime("%X")
-                                Camera_detail.log = f"{date_now} {time_now} Incorrect posture"
-                                Camera_detail.Update_log = True
+                                Print_log("Incorrect posture.")
                                 t_noti_checkpoint = time.time()
                     
                     # timer of sitting 10 m  (10 m * 60s)
@@ -176,6 +180,7 @@ class VideoThread(QThread):
                     if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
                         if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
                             AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')
+                            Print_log("Sitting too long.")
                             t_noti_checkpoint = time.time()
                             t_correct_start = time.time()+1
                             rest_flag = 1

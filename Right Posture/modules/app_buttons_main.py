@@ -64,9 +64,6 @@ class Main_buttons(MainWindow):
 
         if btnName == "btn_save_setting":
             Main_setting.save_setting(self)
-            # print(button.combo_period.currentText())
-            # button.combo_period.setCurrentIndex(2)
-            # AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
         if btnName == "btn_print":
             AppFunctions.send_Email(self, text='Test Email', to_emails=['inwpbmak@gmail.com'])

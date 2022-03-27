@@ -1,5 +1,6 @@
 from main import MainWindow
 from modules.app_detect import Camera_detail
+from modules.app_checkbox import Main_checkbox
 import os
 import sqlite3
 
@@ -48,11 +49,11 @@ class Main_setting(MainWindow):
 
     def apply_setting(self):
         setting = self.ui
+        show_setting = "Apply setting\n"
+
         period_raw = setting.combo_period.currentText()
         period_time = [int(s) for s in period_raw.split() if s.isdigit()]
-
-        show_setting = "Apply setting\n"
-        if setting.combo_period.currentIndex() <= 1:
+        if setting.combo_period.currentIndex() <= 3:
             Camera_detail.period = period_time[0]
             period_text = f"Period = {setting.combo_period.currentText()} = {Camera_detail.period} Second\n"
             show_setting = show_setting + period_text
@@ -72,9 +73,16 @@ class Main_setting(MainWindow):
 
         sitting_raw = setting.combo_sitting.currentText()
         sitting_time = [int(s) for s in sitting_raw.split() if s.isdigit()]
-        Camera_detail.sitting = sitting_time[0]
-        sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Second\n"
-        show_setting = show_setting + sitting_text
-        print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Second")
+        if setting.combo_sitting.currentIndex() <= 1:
+            Camera_detail.sitting = sitting_time[0]
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            show_setting = show_setting + sitting_text
+            print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
+        else:
+            Camera_detail.sitting = sitting_time[0] * 60
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            show_setting = show_setting + sitting_text
+            print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
 
+        Main_checkbox.Show_Detail(self)
         setting.Setting_log.setText(show_setting)
