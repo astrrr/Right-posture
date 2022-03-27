@@ -13,6 +13,7 @@ class Main_checkbox(MainWindow):
                                         f"Sensitive = {self.ui.combo_sensitive.currentText()}\n"
                                         f"Sitting = {self.ui.combo_sitting.currentText()}\n"
                                         f"{Camera_detail.traceback}")
+            self.ui.Setting_log.append(Camera_detail.traceback)
             save_data("PreDetail", 1)
             # print("Start Detail")
         else:
