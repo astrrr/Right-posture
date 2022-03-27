@@ -159,14 +159,13 @@ class VideoThread(QThread):
                             # incorrect sensitive
                             sensitive = Camera_detail.sensitive
                             if int((t_last))%sensitive ==0:
-                                
-                                print("noti")
-                        ######### ดัก send noti รัวๆ ๒๒#####################################################################
+
+                                # ดัก send noti รัวๆ #
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
                                 date_time = datetime.datetime.now()
                                 date_now = date_time.strftime("%x")
                                 time_now = date_time.strftime("%X")
-                                Camera_detail.log = f"{date_now} {time_now} Incorrect posture \n"
+                                Camera_detail.log = f"{date_now} {time_now} Incorrect posture"
                                 Camera_detail.Update_log = True
                                 t_noti_checkpoint = time.time()
                     

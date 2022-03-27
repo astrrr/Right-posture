@@ -17,10 +17,6 @@ class Main_checkbox(MainWindow):
             # print("Stop Detail")
 
     def Detect_Log(self):
-        if self.ui.show_log.isChecked():
-            self.ui.Detect_LOG.append(Camera_detail.log)
-            Camera_detail.Update_log = False
-            # print("Start Logging")
-        else:
-            Camera_detail.Update_log = False
-            # print("Stop Logging")
+        self.ui.Detect_LOG.append(Camera_detail.log)
+        Camera_detail.Update_log = False
+        # print("Print Log")

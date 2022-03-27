@@ -31,7 +31,7 @@ from modules.Version_control import version, Debug_path
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
-main = 1
+main = 0
 version.thisVersion = "1.1.4.7"
 # /////////////////////////////////////////////
 counter = 0
