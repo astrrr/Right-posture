@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainSiBCmL.ui'
+## Form generated from reading UI file 'mainefzvaK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QScrollArea, QScrollBar, QSizePolicy, QSlider,
     QStackedWidget, QTableWidget, QTableWidgetItem, QTextBrowser,
     QTextEdit, QVBoxLayout, QWidget)
-from .resources_rc import *
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1178,7 +1178,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_28 = QVBoxLayout(self.frame_2)
         self.verticalLayout_28.setSpacing(6)
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
-        self.verticalLayout_28.setContentsMargins(-1, 10, -1, 10)
+        self.verticalLayout_28.setContentsMargins(-1, 10, -1, 12)
         self.labelBoxBlenderInstalation_8 = QLabel(self.frame_2)
         self.labelBoxBlenderInstalation_8.setObjectName(u"labelBoxBlenderInstalation_8")
         sizePolicy3.setHeightForWidth(self.labelBoxBlenderInstalation_8.sizePolicy().hasHeightForWidth())
@@ -1229,7 +1229,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10 = QHBoxLayout(self.frame_charts)
         self.horizontalLayout_10.setSpacing(6)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(-1, -1, -1, 10)
+        self.horizontalLayout_10.setContentsMargins(-1, -1, -1, 0)
         self.frame_donut = QFrame(self.frame_charts)
         self.frame_donut.setObjectName(u"frame_donut")
         sizePolicy2.setHeightForWidth(self.frame_donut.sizePolicy().hasHeightForWidth())
