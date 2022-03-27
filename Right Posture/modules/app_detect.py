@@ -1,6 +1,6 @@
 from main import *
 from modules.app_functions import AppFunctions
-from plyer import notification
+import datetime
 
 import os
 import cv2
@@ -57,6 +57,14 @@ model_name = 'MN_Fix_angle_augmented_model3_3'
 
 VideoCapture = 0
 
+def Print_log(text):
+    date_time = datetime.datetime.now()
+    week_now = date_time.strftime("%a")
+    time_now = date_time.strftime("%X")
+    Camera_detail.log = f"{week_now} {time_now} {text}"
+    Camera_detail.Update_log = True
+    Camera_detail.setting = f"Pe {Camera_detail.period} \n Se {Camera_detail.sensitive} \n Si {Camera_detail.sitting}"
+
 def Print_exception():
     traceback.print_exc()
     excType, value = sys.exc_info()[:2]
@@ -76,14 +84,14 @@ def predict(img):
         # correct > incorrect
         if float(val[0][0]) > float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
-            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : correct')
+            # Camera_detail.log = (Camera_detail.log + '\n model prediction : correct')
             # print('model prediction : correct')
             # ///////////////////////////////////////////////////////////////////////////////
             return 0
             # incorrect > correct
         elif float(val[0][0]) < float(val[0][1]):
             # ///////////////////////////////////////////////////////////////////////////////
-            Camera_detail.log = (Camera_detail.log + '\nmodel prediction : incorrect')
+            # Camera_detail.log = (Camera_detail.log + '\n model prediction : incorrect')
             # print('model prediction : incorrect')
             # ///////////////////////////////////////////////////////////////////////////////
             return 1
@@ -159,10 +167,10 @@ class VideoThread(QThread):
                             # incorrect sensitive
                             sensitive = Camera_detail.sensitive
                             if int((t_last))%sensitive ==0:
-                                
-                                
-                        ######### ดัก send noti รัวๆ ๒๒#####################################################################
+
+                                # ดัก send noti รัวๆ #
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
+                                Print_log("Incorrect posture.")
                                 t_noti_checkpoint = time.time()
                     
                     # timer of sitting 10 m  (10 m * 60s)
@@ -172,11 +180,12 @@ class VideoThread(QThread):
                     if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
                         if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
                             AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')
+                            Print_log("Sitting too long.")
                             t_noti_checkpoint = time.time()
                             t_correct_start = time.time()+1
                             rest_flag = 1
 
-                    
+
 
                     # 新たなフレームを取得できたら
                     # シグナル発信(cv_imgオブジェクトを発信)
@@ -202,7 +211,7 @@ class VideoThread(QThread):
                 conn.commit()
                 cap.release()
                 cv2.destroyAllWindows()
-                
+
             # videoCaptureのリリース処理
 
     # スレッドが終了するまでwaitをかける
@@ -279,6 +288,7 @@ class Camera_detail:
     First_load_model = True
     Finish_load_model = False
     Error_load_model = False
+    Update_log = None
     # Setting sections
     period = 30
     sensitive = 7

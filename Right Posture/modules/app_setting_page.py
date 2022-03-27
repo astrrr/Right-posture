@@ -1,5 +1,6 @@
 from main import MainWindow
 from modules.app_detect import Camera_detail
+from modules.app_checkbox import Main_checkbox
 import os
 import sqlite3
 
@@ -22,7 +23,7 @@ class Main_setting(MainWindow):
             conn.commit()
             conn.close()
             Main_setting.apply_setting(self)
-            print("save complete")
+            setting.Setting_log.append("Save complete !")
         except Exception as e:
             print(e)
 
@@ -48,20 +49,40 @@ class Main_setting(MainWindow):
 
     def apply_setting(self):
         setting = self.ui
+        show_setting = "Apply setting\n"
+
         period_raw = setting.combo_period.currentText()
         period_time = [int(s) for s in period_raw.split() if s.isdigit()]
-        if setting.combo_period.currentIndex() == 0:
-            Camera_detail.period = 30
+        if setting.combo_period.currentIndex() <= 3:
+            Camera_detail.period = period_time[0]
+            period_text = f"Period = {setting.combo_period.currentText()} = {Camera_detail.period} Second\n"
+            show_setting = show_setting + period_text
+            print(f"Period = {period_time[0]} = {Camera_detail.period} Second")
         else:
             Camera_detail.period = period_time[0] * 60
-        print(f"Period = {Camera_detail.period}")
+            period_text = f"Period = {setting.combo_period.currentText()} = {Camera_detail.period} Second\n"
+            show_setting = show_setting + period_text
+            print(f"Period = {period_time[0]} = {Camera_detail.period} Second")
 
         sensitive_raw = setting.combo_sensitive.currentText()
         sensitive_time = [int(s) for s in sensitive_raw.split() if s.isdigit()]
         Camera_detail.sensitive = sensitive_time[0]
-        print(f"Sensitive = {Camera_detail.sensitive}")
+        sensitive_text = f"Sensitive = {setting.combo_sensitive.currentText()} = {Camera_detail.sensitive} Second\n"
+        show_setting = show_setting + sensitive_text
+        print(f"Sensitive = {sensitive_time[0]} = {Camera_detail.sensitive} Second")
 
         sitting_raw = setting.combo_sitting.currentText()
         sitting_time = [int(s) for s in sitting_raw.split() if s.isdigit()]
-        Camera_detail.sitting = sitting_time[0]
-        print(f"Sitting = {Camera_detail.sitting}")
+        if setting.combo_sitting.currentIndex() <= 1:
+            Camera_detail.sitting = sitting_time[0]
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            show_setting = show_setting + sitting_text
+            print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
+        else:
+            Camera_detail.sitting = sitting_time[0] * 60
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            show_setting = show_setting + sitting_text
+            print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
+
+        Main_checkbox.Show_Detail(self)
+        setting.Setting_log.setText(show_setting)
