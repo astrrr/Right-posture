@@ -19,11 +19,10 @@ class Main_setting(MainWindow):
             period = setting.combo_period.currentIndex()
             sensitive = setting.combo_sensitive.currentIndex()
             sitting = setting.combo_sitting.currentIndex()
-            light = Setting_func.Light
             dnd = Setting_func.DND
             discord = Setting_func.Discord
             query = f"UPDATE login_info set period={period}, sensitive={sensitive}, sitting={sitting}, " \
-                    f"light={light}, dnd={dnd}, discord={discord} WHERE username = \'{user_now}\'"
+                    f"dnd={dnd}, discord={discord} WHERE username = \'{user_now}\'"
             cur.execute(query)
             cur.execute(query)
             conn.commit()
@@ -39,7 +38,7 @@ class Main_setting(MainWindow):
         setting = self.ui
         conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
         cur = conn.cursor()
-        query = f"SELECT period,sensitive,sitting,light,dnd,discord " \
+        query = f"SELECT period,sensitive,sitting,dnd,discord " \
                 f"FROM login_info WHERE username = \'{user_setting}\'"
         cur.execute(query)
         try:
@@ -49,12 +48,10 @@ class Main_setting(MainWindow):
             setting.combo_period.setCurrentIndex(set_Index[0])
             setting.combo_sensitive.setCurrentIndex(set_Index[1])
             setting.combo_sitting.setCurrentIndex(set_Index[2])
-            Setting_func.Light = set_Index[3]
-            Setting_func.DND = set_Index[4]
-            Setting_func.Discord = set_Index[5]
+            Setting_func.DND = set_Index[3]
+            Setting_func.Discord = set_Index[4]
             PyToggle.Toggle_Switch(self)
             Main_setting.apply_setting(self)
-
         except Exception as e:
             print(e)
 

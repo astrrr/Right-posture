@@ -65,10 +65,10 @@ class Main_buttons(MainWindow):
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
 
-    def set_custom_theme(self):
+    def set_custom_theme(self, enable):
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
-        useCustomTheme = Setting_func.Light
+        useCustomTheme = enable
         themeFile = "themes\py_dracula_light.qss"
 
         # SET THEME AND HACKS
