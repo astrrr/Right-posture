@@ -21,13 +21,13 @@ import smtplib
 import os
 import base64
 from main import MainWindow, Settings
-from modules.app_data import load_data, load_password
+from modules.app_data import load_password
 from plyer import notification
 from pypresence import Presence
 from random import randint
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from modules.Version_control import Debug_path
+from modules.Version_control import Debug_path, DND
 # E-mail
 username = 'rightposture.kmitl.team@gmail.com'
 password = load_password()
@@ -61,8 +61,7 @@ class AppFunctions(MainWindow):
 
     # Notification function
     def notifyMe(self, title, message):
-        loaded_object = load_data()
-        if not loaded_object["DND"]:
+        if not DND.status:
             notification.notify(
                 title=title,
                 message=message,
@@ -71,8 +70,7 @@ class AppFunctions(MainWindow):
             )
 
     def notifyIncorrect(self, title, message):
-        loaded_object = load_data()
-        if not loaded_object["DND"]:
+        if not DND.status:
             notification.notify(
                 title=title,
                 message=message,

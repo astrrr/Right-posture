@@ -1,6 +1,7 @@
 from main import MainWindow
 from modules.app_detect import Camera_detail
 from modules.app_checkbox import Main_checkbox
+from modules.Version_control import DND
 import os
 import sqlite3
 
@@ -50,7 +51,7 @@ class Main_setting(MainWindow):
     def apply_setting(self):
         setting = self.ui
         show_setting = "Apply setting\n"
-
+        DND.status = False
         period_raw = setting.combo_period.currentText()
         period_time = [int(s) for s in period_raw.split() if s.isdigit()]
         if setting.combo_period.currentIndex() <= 3:
