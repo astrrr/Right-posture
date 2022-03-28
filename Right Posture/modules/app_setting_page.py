@@ -5,6 +5,7 @@ import os
 import sqlite3
 
 cwd = os.getcwd()
+user_now = ""
 
 class Main_setting(MainWindow):
 
@@ -27,6 +28,8 @@ class Main_setting(MainWindow):
             print(e)
 
     def load_setting(self, user_setting):
+        global user_now
+        user_now = user_setting
         setting = self.ui
         conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
         cur = conn.cursor()
