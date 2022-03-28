@@ -3,6 +3,7 @@ from modules.app_detect import Camera_detail
 from modules.app_checkbox import Main_checkbox
 from modules.Version_control import Setting_func
 from widgets import PyToggle
+from modules.app_functions import AppFunctions
 import os
 import sqlite3
 cwd = os.getcwd()
@@ -96,3 +97,5 @@ class Main_setting(MainWindow):
 
         Main_checkbox.Show_Detail(self)
         setting.Setting_log.setText(show_setting)
+        # Discord Rich Presence
+        AppFunctions.discordRichPresence(self, Setting_func.Discord)

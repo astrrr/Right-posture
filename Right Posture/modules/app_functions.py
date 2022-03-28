@@ -79,8 +79,8 @@ class AppFunctions(MainWindow):
             )
 
     # Discord Rich Presence
-    def discordRichPresence(self):
-        if self:
+    def discordRichPresence(self, enable):
+        if enable:
             try:
                 rpc = Presence("902601121124728884")
                 rpc.connect()
@@ -95,9 +95,11 @@ class AppFunctions(MainWindow):
                     party_size=[35, 100],
                     start=time.time()
                 )
+                self.ui.Setting_log.append("Discord Rich Presence Connected")
                 print("Discord Rich Presence Connected")
-            except:
-                print("Pipe Not Found - Is Discord Running?")
+            except Exception as e:
+                self.ui.Setting_log.append("Pipe Not Found - Is Discord Running?")
+                print(e)
 
     # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
     Settings.ENABLE_CUSTOM_TITLE_BAR = True

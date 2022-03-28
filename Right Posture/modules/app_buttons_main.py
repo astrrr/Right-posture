@@ -25,9 +25,6 @@ class Main_buttons(MainWindow):
         button.pre_cam_1.clicked.connect(self.Camera_1)
         self.Camera_1()
 
-        # Discord Rich Presence
-        AppFunctions.discordRichPresence(loaded_object["Discord"])
-
     def buttonClick(self):
         button = self.ui
         btn = self.sender()
