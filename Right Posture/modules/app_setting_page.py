@@ -97,7 +97,5 @@ class Main_setting(MainWindow):
 
         Main_checkbox.Show_Detail(self)
         setting.Setting_log.setText(show_setting)
-        # Do not disturb
-        Setting_func.DND = Setting_func.DND_temp
         # Discord Rich Presence
         AppFunctions.discordRichPresence(self, Setting_func.Discord)

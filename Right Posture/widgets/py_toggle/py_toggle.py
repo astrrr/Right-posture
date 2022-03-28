@@ -91,11 +91,11 @@ class PyToggle(QCheckBox):
         if value:
             self.animation.setEndValue(self.width() - 26)
             # print("Status : ON DND")
-            Setting_func.DND_temp = 1
+            Setting_func.DND = 1
         else:
             self.animation.setEndValue(4)
             # print("Status : OFF DND")
-            Setting_func.DND_temp = 0
+            Setting_func.DND = 0
         self.animation.start()
 
     def setup_animation_3(self, value):
