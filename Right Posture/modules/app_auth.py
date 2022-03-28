@@ -130,9 +130,10 @@ class Auth_system(AuthWindow):
         else:
             conn = sqlite3.connect(acc_path)
             cur = conn.cursor()
-            user_info = [username, password, email, 0, 0, 0]
+            user_info = [username, password, email, 0, 0, 0, 0, 0, 0]
             try:
-                cur.execute('INSERT INTO login_info (username, password, email, period, sensitive, sitting) VALUES (?,?,?,?,?,?)', user_info)
+                cur.execute('INSERT INTO login_info (username, password, email, period, sensitive, sitting, '
+                            'light, dnd, discord) VALUES (?,?,?,?,?,?,?,?,?)', user_info)
                 conn.commit()
                 conn.close()
                 self.ui.Reg_username.clear()

@@ -27,7 +27,7 @@ from pypresence import Presence
 from random import randint
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from modules.Version_control import Debug_path, DND
+from modules.Version_control import Debug_path, Setting_func
 # E-mail
 username = 'rightposture.kmitl.team@gmail.com'
 password = load_password()
@@ -61,7 +61,7 @@ class AppFunctions(MainWindow):
 
     # Notification function
     def notifyMe(self, title, message):
-        if not DND.status:
+        if not Setting_func.DND:
             notification.notify(
                 title=title,
                 message=message,
@@ -70,7 +70,7 @@ class AppFunctions(MainWindow):
             )
 
     def notifyIncorrect(self, title, message):
-        if not DND.status:
+        if not Setting_func.DND:
             notification.notify(
                 title=title,
                 message=message,
@@ -84,6 +84,7 @@ class AppFunctions(MainWindow):
             try:
                 rpc = Presence("902601121124728884")
                 rpc.connect()
+
                 rpc.update(  # details="Make Life Better.",
                     state="Dev GUI",
                     large_image="right_posture",
