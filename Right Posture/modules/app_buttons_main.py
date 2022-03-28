@@ -2,6 +2,7 @@ from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
 from modules.app_checkbox import Main_checkbox
 from modules.app_setting_page import Main_setting
+from modules.Version_control import Setting_func
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
@@ -12,7 +13,6 @@ class Main_buttons(MainWindow):
         button.btn_Setting.clicked.connect(self.Main_button_Interface)
         button.btn_Logout.clicked.connect(self.Main_button_Interface)
         button.btn_test_notify.clicked.connect(self.Main_button_Interface)
-        button.btn_print.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
         button.btn_save_setting.clicked.connect(self.Main_button_Interface)
 
@@ -62,17 +62,13 @@ class Main_buttons(MainWindow):
         if btnName == "btn_save_setting":
             Main_setting.save_setting(self)
 
-        if btnName == "btn_print":
-            AppFunctions.send_Email(self, text='Test Email', to_emails=['inwpbmak@gmail.com'])
-            AppFunctions.notifyMe(self, "Notification", "Send email")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
 
     def set_custom_theme(self):
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
-        loaded_object = load_data()
-        useCustomTheme = loaded_object["Light"]
+        useCustomTheme = Setting_func.Light
         themeFile = "themes\py_dracula_light.qss"
 
         # SET THEME AND HACKS
