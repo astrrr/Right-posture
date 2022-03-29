@@ -31,7 +31,7 @@ from modules.Version_control import version, Debug_path
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
-main = 0
+main = 1
 version.thisVersion = "1.1.6.9"
 # /////////////////////////////////////////////
 counter = 0
@@ -95,7 +95,7 @@ class MainWindow(QMainWindow):
         Main_buttons.defineButtons(self)
         self.show()
         Main_buttons.set_custom_theme(self, False)
-        # Main_table.Load_Table(self)
+        Main_table.load_test(self, 'sekson')
 
         self.Donut_charts()
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)
