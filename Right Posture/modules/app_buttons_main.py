@@ -1,6 +1,6 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions
-from modules.app_setting_page import Main_data
+from modules.app_data import Main_data
 
 class Main_buttons(MainWindow):
 
