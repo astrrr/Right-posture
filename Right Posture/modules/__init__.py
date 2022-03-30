@@ -41,9 +41,6 @@ from . app_detect import Camera, Camera_detail
 # MAIN BUTTONS
 from . app_buttons_main import Main_buttons
 
-# MAIN CHECKBOX
-from .app_checkbox import Main_checkbox
-
 # LOGIN BUTTONS
 from .app_buttons_login import Auth_buttons
 

@@ -1,6 +1,5 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions
-from modules.app_checkbox import Main_checkbox
 from modules.app_setting_page import Main_data
 
 class Main_buttons(MainWindow):
@@ -16,11 +15,11 @@ class Main_buttons(MainWindow):
         button.btn_save_setting.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
+
         button.show_detail.clicked.connect(self.Main_button_Interface)
 
         # Preview Camera 1
         button.show_camera.clicked.connect(self.Camera_1)
-        self.Camera_1()
 
     def buttonClick(self):
         button = self.ui
@@ -29,7 +28,7 @@ class Main_buttons(MainWindow):
 
         # ////////// CHECK BOX ZONE //////////
         if btnName == "show_detail":
-            Main_checkbox.Show_Detail(self)
+            Main_data.Show_Detail(self)
         # ////////////////////////////////////
 
         if btnName == "btn_Logout":

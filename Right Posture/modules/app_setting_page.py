@@ -1,6 +1,5 @@
 from main import MainWindow
 from modules.app_detect import Camera_detail
-from modules.app_checkbox import Main_checkbox
 from modules.Version_control import Setting_func
 from modules.app_functions import AppFunctions
 from PySide6 import QtWidgets
@@ -26,6 +25,32 @@ def save_checkbox():
         print(e)
 
 class Main_data(MainWindow):
+    camera_status = ''
+
+    def Detect_Log(self):
+        self.ui.Detect_LOG.append(Camera_detail.log)
+        Camera_detail.Update_log = False
+        print("Print Log")
+
+    def Show_Detail(self):
+        if self.ui.show_detail.isChecked():
+            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {Main_data.camera_status}\n\n"
+                                        f"Models: {Camera_detail.get_model_name}\n"
+                                        f"Models Status: {Camera_detail.model_status}\n\n"
+                                        f"Notification setup\n"
+                                        f"Period = {self.ui.combo_period.currentText()}\n"
+                                        f"Sensitive = {self.ui.combo_sensitive.currentText()}\n"
+                                        f"Sitting = {self.ui.combo_sitting.currentText()}\n"
+                                        f"{Camera_detail.traceback}")
+            self.ui.Setting_log.append(Camera_detail.traceback)
+            Setting_func.S_detail = 1
+            save_checkbox()
+            # print("Start Detail")
+        else:
+            self.ui.Detail_text.clear()
+            Setting_func.S_detail = 0
+            save_checkbox()
+            # print("Stop Detail")
 
     def save_setting(self):
         setting = self.ui
@@ -67,6 +92,7 @@ class Main_data(MainWindow):
             Setting_func.Discord = set_Index[4]
             setting.show_camera.setChecked(set_Index[5])
             setting.show_detail.setChecked(set_Index[6])
+            self.Camera_1()
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
         except Exception as e:
@@ -109,7 +135,7 @@ class Main_data(MainWindow):
             show_setting = show_setting + sitting_text
             # print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
 
-        Main_checkbox.Show_Detail(self)
+        Main_data.Show_Detail(self)
         setting.Setting_log.setText(show_setting)
         # Discord Rich Presence
         AppFunctions.discordRichPresence(self, Setting_func.Discord)

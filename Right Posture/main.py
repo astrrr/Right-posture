@@ -138,12 +138,12 @@ class MainWindow(QMainWindow):
                 Camera.detect(self, True)
                 self.progress.setParent(None)
                 self.progress.close()
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
                 self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
                 self.ui.show_camera.setEnabled(True)
             else:
                 Camera_detail.model_status = "Waiting for model."
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
         else:
             if Camera_detail.Finish_load_model:
                 if counter < 50:
@@ -155,7 +155,7 @@ class MainWindow(QMainWindow):
 
             if Camera_detail.Error_load_model:
                 self.timer.stop()
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
                 self.ui.show_camera.setEnabled(True)
             counter += 1
 
@@ -170,7 +170,7 @@ class MainWindow(QMainWindow):
             if Camera_detail.First_load_model:
                 counter = 0
                 Camera_detail.model_status = "Loading model"
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
                 self.ui.show_camera.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
                 self.timer = QTimer()
@@ -178,8 +178,8 @@ class MainWindow(QMainWindow):
                 self.timer.start(CircularProgress_timer)
                 self.progress.setParent(self.ui.Camera_Frame_1)
                 self.progress.show()
-            Main_checkbox.camera_status = "ON"
-            Main_checkbox.Show_Detail(self)
+            Main_data.camera_status = "ON"
+            Main_data.Show_Detail(self)
             self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
             Camera.detect(self, True)
             Setting_func.S_cam = 1
@@ -187,8 +187,8 @@ class MainWindow(QMainWindow):
             # print("Start Camera_1")
         else:
             counter = 0
-            Main_checkbox.camera_status = "OFF"
-            Main_checkbox.Show_Detail(self)
+            Main_data.camera_status = "OFF"
+            Main_data.Show_Detail(self)
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             self.progress.setParent(None)
@@ -216,9 +216,9 @@ class MainWindow(QMainWindow):
             qPix = QPixmap.fromImage(qImg)
             self.image_label.setPixmap(qPix)
             if Camera_detail.Update_log:
-                Main_checkbox.Detect_Log(self)
+                Main_data.Detect_Log(self)
             if Camera_detail.Error_load_model:
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
         except:
             pass
 
