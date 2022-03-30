@@ -1761,7 +1761,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="Home">
                       <property name="styleSheet">
@@ -3186,8 +3186,71 @@ p, li { white-space: pre-wrap; }
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_7">
-                       <item>
+                      <layout class="QGridLayout" name="gridLayout_6">
+                       <item row="2" column="0">
+                        <widget class="QFrame" name="row_9">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_39">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>8</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>10</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>11</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QPushButton" name="btn_reload">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Reload</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-reload.png</normaloff>:/icons/images/icons/cil-reload.png</iconset>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
                         <widget class="QFrame" name="row_8">
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
@@ -3237,7 +3300,7 @@ border: 2px solid #ff79c6;</string>
                          </layout>
                         </widget>
                        </item>
-                       <item>
+                       <item row="1" column="0">
                         <widget class="QTableWidget" name="Log_table">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -3835,7 +3898,7 @@ border: 2px solid #ff79c6;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>413</width>
+                                 <width>218</width>
                                  <height>218</height>
                                 </rect>
                                </property>

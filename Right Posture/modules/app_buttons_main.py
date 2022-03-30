@@ -12,7 +12,7 @@ class Main_buttons(MainWindow):
         button.btn_Logout.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
         button.btn_save_setting.clicked.connect(self.Main_button_Interface)
-
+        button.btn_reload.clicked.connect(self.Main_button_Interface)
         button.btn_test_notify.clicked.connect(self.Main_button_Interface)
         button.btn_test_email.clicked.connect(self.Main_button_Interface)
         # Show Camera
@@ -57,6 +57,10 @@ class Main_buttons(MainWindow):
 
         if btnName == "btn_test_notify":
             AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+
+        if btnName == "btn_reload":
+            Main_data.Load_table(self)
+            print("Reloaded")
 
         if btnName == "btn_save_setting":
             Main_data.save_setting(self)

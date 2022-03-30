@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainzWifrb.ui'
+## Form generated from reading UI file 'mainKlQusE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1623,8 +1623,33 @@ class Ui_MainWindow(object):
         self.Log = QWidget()
         self.Log.setObjectName(u"Log")
         self.Log.setStyleSheet(u"")
-        self.verticalLayout_7 = QVBoxLayout(self.Log)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.gridLayout_6 = QGridLayout(self.Log)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.row_9 = QFrame(self.Log)
+        self.row_9.setObjectName(u"row_9")
+        self.row_9.setFrameShape(QFrame.StyledPanel)
+        self.row_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_39 = QVBoxLayout(self.row_9)
+        self.verticalLayout_39.setSpacing(0)
+        self.verticalLayout_39.setObjectName(u"verticalLayout_39")
+        self.verticalLayout_39.setContentsMargins(8, 10, 11, 0)
+        self.btn_reload = QPushButton(self.row_9)
+        self.btn_reload.setObjectName(u"btn_reload")
+        sizePolicy3.setHeightForWidth(self.btn_reload.sizePolicy().hasHeightForWidth())
+        self.btn_reload.setSizePolicy(sizePolicy3)
+        self.btn_reload.setMinimumSize(QSize(0, 30))
+        self.btn_reload.setFont(font)
+        self.btn_reload.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_reload.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/images/icons/cil-reload.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_reload.setIcon(icon7)
+
+        self.verticalLayout_39.addWidget(self.btn_reload)
+
+
+        self.gridLayout_6.addWidget(self.row_9, 2, 0, 1, 1)
+
         self.row_8 = QFrame(self.Log)
         self.row_8.setObjectName(u"row_8")
         self.row_8.setFrameShape(QFrame.StyledPanel)
@@ -1645,7 +1670,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_37.addWidget(self.label_4)
 
 
-        self.verticalLayout_7.addWidget(self.row_8)
+        self.gridLayout_6.addWidget(self.row_8, 0, 0, 1, 1)
 
         self.Log_table = QTableWidget(self.Log)
         if (self.Log_table.columnCount() < 8):
@@ -1727,7 +1752,7 @@ class Ui_MainWindow(object):
         self.Log_table.verticalHeader().setProperty("showSortIndicator", False)
         self.Log_table.verticalHeader().setStretchLastSection(False)
 
-        self.verticalLayout_7.addWidget(self.Log_table)
+        self.gridLayout_6.addWidget(self.Log_table, 1, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.Log)
         self.Widgets = QWidget()
@@ -1794,9 +1819,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon8)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -1871,7 +1896,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 413, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1919,9 +1944,9 @@ class Ui_MainWindow(object):
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"")
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton.setIcon(icon9)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
 
@@ -2248,7 +2273,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2360,6 +2385,7 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.btn_reload.setText(QCoreApplication.translate("MainWindow", u"Reload", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Log", None))
         ___qtablewidgetitem = self.Log_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Username", None));
