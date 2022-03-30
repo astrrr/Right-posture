@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainKlQusE.ui'
+## Form generated from reading UI file 'mainTlxyum.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -835,18 +835,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.btn_debugger = QPushButton(self.extraTopMenu)
-        self.btn_debugger.setObjectName(u"btn_debugger")
-        sizePolicy.setHeightForWidth(self.btn_debugger.sizePolicy().hasHeightForWidth())
-        self.btn_debugger.setSizePolicy(sizePolicy)
-        self.btn_debugger.setMinimumSize(QSize(0, 45))
-        self.btn_debugger.setFont(font)
-        self.btn_debugger.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_debugger.setLayoutDirection(Qt.LeftToRight)
-        self.btn_debugger.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-terminal.png);")
-
-        self.verticalLayout_11.addWidget(self.btn_debugger)
-
 
         self.verticalLayout_12.addWidget(self.extraTopMenu)
 
@@ -2197,17 +2185,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_14.addWidget(self.DND)
 
-        self.btn_print = QPushButton(self.topMenus)
-        self.btn_print.setObjectName(u"btn_print")
-        sizePolicy.setHeightForWidth(self.btn_print.sizePolicy().hasHeightForWidth())
-        self.btn_print.setSizePolicy(sizePolicy)
-        self.btn_print.setMinimumSize(QSize(0, 45))
-        self.btn_print.setFont(font)
-        self.btn_print.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_print.setLayoutDirection(Qt.LeftToRight)
-        self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-terminal.png);")
+        self.btn_debug = QPushButton(self.topMenus)
+        self.btn_debug.setObjectName(u"btn_debug")
+        sizePolicy.setHeightForWidth(self.btn_debug.sizePolicy().hasHeightForWidth())
+        self.btn_debug.setSizePolicy(sizePolicy)
+        self.btn_debug.setMinimumSize(QSize(0, 45))
+        self.btn_debug.setFont(font)
+        self.btn_debug.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_debug.setLayoutDirection(Qt.LeftToRight)
+        self.btn_debug.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-terminal.png);")
 
-        self.verticalLayout_14.addWidget(self.btn_print)
+        self.verticalLayout_14.addWidget(self.btn_debug)
 
 
         self.verticalLayout_13.addWidget(self.topMenus, 0, Qt.AlignTop)
@@ -2294,7 +2282,6 @@ class Ui_MainWindow(object):
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
 #endif // QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setText("")
-        self.btn_debugger.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
         self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -2472,7 +2459,7 @@ class Ui_MainWindow(object):
         self.btn_LightMode.setText(QCoreApplication.translate("MainWindow", u"Light Mode", None))
         self.btn_logout_10.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
         self.btn_logout_9.setText(QCoreApplication.translate("MainWindow", u"Do Not Disturb", None))
-        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
+        self.btn_debug.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Right Posture Team", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"Demo", None))
     # retranslateUi

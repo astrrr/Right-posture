@@ -64,7 +64,7 @@ class Main_buttons(MainWindow):
             cur.execute(query)
             try:
                 email = cur.fetchone()[0]
-                print(email)
+                # print(email)
                 AppFunctions.send_Email(self, text=f"This is test e-mail", to_emails=[email])
                 self.ui.Setting_log.append(f"E-mail has been send to {email}")
             except Exception as e:
