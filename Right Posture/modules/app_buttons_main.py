@@ -1,13 +1,12 @@
 from main import MainWindow
-from modules import UIFunctions, AppFunctions, load_data
+from modules import UIFunctions, AppFunctions
 from modules.app_checkbox import Main_checkbox
 from modules.app_setting_page import Main_data
-from modules.Version_control import Setting_func
+
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
         button = self.ui
-        loaded_object = load_data()
         button.btn_Home.clicked.connect(self.Main_button_Interface)
         button.btn_Log.clicked.connect(self.Main_button_Interface)
         button.btn_Setting.clicked.connect(self.Main_button_Interface)
@@ -17,12 +16,10 @@ class Main_buttons(MainWindow):
         button.btn_save_setting.clicked.connect(self.Main_button_Interface)
 
         # Preview Detail
-        button.show_detail.setChecked(loaded_object["PreDetail"])
         button.show_detail.clicked.connect(self.Main_button_Interface)
 
         # Preview Camera 1
-        button.pre_cam_1.setChecked(loaded_object["PreCam1"])
-        button.pre_cam_1.clicked.connect(self.Camera_1)
+        button.show_camera.clicked.connect(self.Camera_1)
         self.Camera_1()
 
     def buttonClick(self):

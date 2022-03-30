@@ -1,5 +1,8 @@
 from main import MainWindow
-from modules import *
+from modules.app_detect import Camera_detail
+from modules.app_checkbox import Main_checkbox
+from modules.Version_control import Setting_func
+from modules.app_functions import AppFunctions
 from PySide6 import QtWidgets
 from widgets import PyToggle
 import os
@@ -7,6 +10,20 @@ import sqlite3
 
 cwd = os.getcwd()
 user_now = ""
+
+def save_checkbox():
+    try:
+        conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
+        cur = conn.cursor()
+        show_cam = Setting_func.S_cam
+        show_detail = Setting_func.S_detail
+        query = f"UPDATE login_info set s_cam={show_cam}, s_detail={show_detail} WHERE username = \'{user_now}\'"
+        cur.execute(query)
+        conn.commit()
+        conn.close()
+        print("Save complete !")
+    except Exception as e:
+        print(e)
 
 class Main_data(MainWindow):
 
@@ -23,7 +40,6 @@ class Main_data(MainWindow):
             query = f"UPDATE login_info set period={period}, sensitive={sensitive}, sitting={sitting}, " \
                     f"dnd={dnd}, discord={discord} WHERE username = \'{user_now}\'"
             cur.execute(query)
-            cur.execute(query)
             conn.commit()
             conn.close()
             Main_data.apply_setting(self)
@@ -37,7 +53,7 @@ class Main_data(MainWindow):
         setting = self.ui
         conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
         cur = conn.cursor()
-        query = f"SELECT period,sensitive,sitting,dnd,discord " \
+        query = f"SELECT period,sensitive,sitting,dnd,discord, s_cam, s_detail " \
                 f"FROM login_info WHERE username = \'{user_setting}\'"
         cur.execute(query)
         try:
@@ -49,6 +65,8 @@ class Main_data(MainWindow):
             setting.combo_sitting.setCurrentIndex(set_Index[2])
             Setting_func.DND = set_Index[3]
             Setting_func.Discord = set_Index[4]
+            setting.show_camera.setChecked(set_Index[5])
+            setting.show_detail.setChecked(set_Index[6])
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
         except Exception as e:
@@ -115,9 +133,3 @@ class Main_data(MainWindow):
             print("loaded")
         except Exception as e:
             print(e)
-
-def load_password():
-    with open(f"{cwd}{Debug_path.path}/bin/Data/password.txt", "r") as read_file:
-        loaded_object = read_file.readline()
-        # print("Password_loaded")
-    return loaded_object

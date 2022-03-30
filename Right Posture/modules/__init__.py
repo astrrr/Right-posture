@@ -54,4 +54,4 @@ from .app_auth import Auth_system
 from .app_charts import Line_charts
 
 # APP SETTING
-from .app_setting_page import Main_data
+from .app_setting_page import Main_data, save_checkbox

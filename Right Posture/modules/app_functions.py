@@ -21,7 +21,7 @@ import smtplib
 import os
 import base64
 from main import MainWindow, Settings
-from modules.app_setting_page import load_password
+from modules.app_data import load_password
 from plyer import notification
 from pypresence import Presence
 from random import randint

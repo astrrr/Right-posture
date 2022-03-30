@@ -1,6 +1,6 @@
 from main import MainWindow
-from modules import Camera_detail, save_data
-
+from modules import Camera_detail
+from modules.Version_control import Setting_func
 class Main_checkbox(MainWindow):
     camera_status = ""
     def Show_Detail(self):
@@ -14,11 +14,11 @@ class Main_checkbox(MainWindow):
                                         f"Sitting = {self.ui.combo_sitting.currentText()}\n"
                                         f"{Camera_detail.traceback}")
             self.ui.Setting_log.append(Camera_detail.traceback)
-            save_data("PreDetail", 1)
+            Setting_func.S_detail = 1
             # print("Start Detail")
         else:
             self.ui.Detail_text.clear()
-            save_data("PreDetail", 0)
+            Setting_func.S_detail = 0
             # print("Stop Detail")
 
     def Detect_Log(self):
