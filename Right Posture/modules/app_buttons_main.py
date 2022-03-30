@@ -69,7 +69,7 @@ class Main_buttons(MainWindow):
                 self.ui.Setting_log.append(f"E-mail has been send to {email}")
             except Exception as e:
                 print(e)
-                self.ui.Setting_log.append(e)
+                self.ui.Setting_log.append(f"Fail to send e-mail please check your internet connection.\n{str(e)}")
 
         if btnName == "btn_test_notify":
             try:
@@ -77,7 +77,7 @@ class Main_buttons(MainWindow):
                 self.ui.Setting_log.append(f"Notification work correctly")
             except Exception as e:
                 print(e)
-                self.ui.Setting_log.append(e)
+                self.ui.Setting_log.append(f"Fail to notify unknown error.\n{str(e)}")
 
         if btnName == "btn_reload":
             Main_data.Load_table(self)

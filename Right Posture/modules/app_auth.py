@@ -120,6 +120,14 @@ class Auth_system(AuthWindow):
         password = self.ui.Reg_password.text()
         con_Password = self.ui.Reg_password_2.text()
         email = self.ui.Reg_email.text()
+        try:
+            # E-mail
+            valid = validate_email(email)
+            email = valid.email
+        except EmailNotValidError as e:
+            # email is not valid, exception message is human-readable
+            self.ui.Reg_Status.setText(str(e))
+            Auth_system.regis_fail(self)
 
         if len(username) == 0 or len(password) == 0 or len(con_Password) == 0 or len(email) == 0:
             self.ui.Reg_Status.setText("Please fill in all inputs.")
@@ -130,8 +138,11 @@ class Auth_system(AuthWindow):
         else:
             conn = sqlite3.connect(acc_path)
             cur = conn.cursor()
-            user_info = [username, password, email, 0, 0, 0, 0, 0, 0, 0]
             try:
+                # E-mail
+                valid = validate_email(email)
+                email = valid.email
+                user_info = [username, password, email, 0, 0, 0, 0, 0, 0, 0]
                 cur.execute('INSERT INTO login_info (username, password, email, period, sensitive, sitting, '
                             'dnd, discord, s_cam, s_detail) VALUES (?,?,?,?,?,?,?,?,?,?)', user_info)
                 conn.commit()
@@ -146,6 +157,9 @@ class Auth_system(AuthWindow):
                 self.ui.Reg_password_2.setStyleSheet("#Reg_password_2:focus { border: 2px solid rgb(91, 101, 124); }")
                 self.ui.Reg_email.setStyleSheet("#Reg_email:focus { border: 2px solid rgb(91, 101, 124); }")
                 self.ui.Reg_Status.setText("Register Complete !")
+            except EmailNotValidError as e:
+                self.ui.Reg_Status.setText(str(e))
+                Auth_system.regis_fail(self)
             except Exception as e:
                 print(e)
                 self.ui.Reg_Status.setText("This username is already registered in the database.")
