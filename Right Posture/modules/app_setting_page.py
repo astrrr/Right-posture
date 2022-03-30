@@ -1,15 +1,14 @@
 from main import MainWindow
-from modules.app_detect import Camera_detail
-from modules.app_checkbox import Main_checkbox
-from modules.Version_control import Setting_func
+from modules import *
+from PySide6 import QtWidgets
 from widgets import PyToggle
-from modules.app_functions import AppFunctions
 import os
 import sqlite3
+
 cwd = os.getcwd()
 user_now = ""
 
-class Main_setting(MainWindow):
+class Main_data(MainWindow):
 
     def save_setting(self):
         setting = self.ui
@@ -27,7 +26,7 @@ class Main_setting(MainWindow):
             cur.execute(query)
             conn.commit()
             conn.close()
-            Main_setting.apply_setting(self)
+            Main_data.apply_setting(self)
             setting.Setting_log.append("Save complete !")
         except Exception as e:
             print(e)
@@ -51,7 +50,7 @@ class Main_setting(MainWindow):
             Setting_func.DND = set_Index[3]
             Setting_func.Discord = set_Index[4]
             PyToggle.Toggle_Switch(self)
-            Main_setting.apply_setting(self)
+            Main_data.apply_setting(self)
         except Exception as e:
             print(e)
 
@@ -96,3 +95,29 @@ class Main_setting(MainWindow):
         setting.Setting_log.setText(show_setting)
         # Discord Rich Presence
         AppFunctions.discordRichPresence(self, Setting_func.Discord)
+
+    def Load_table(self, user_id):
+        conn = sqlite3.connect('sessions.db')
+        cur = conn.cursor()
+        query = f"SELECT user_id, time_start, time_end, incorrect_time, correct_time, total_time, incorrect_per,correct_per " \
+                f"FROM sessions WHERE user_id = \'{user_id}\'"
+        cur.execute(query)
+        try:
+            results = cur.fetchall()
+            self.ui.Log_table.setRowCount(0)
+            for row_number, row_data in enumerate(results):
+                self.ui.Log_table.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    if column_number < 6:
+                        self.ui.Log_table.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)))
+                    else:
+                        self.ui.Log_table.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)+' %'))
+            print("loaded")
+        except Exception as e:
+            print(e)
+
+def load_password():
+    with open(f"{cwd}{Debug_path.path}/bin/Data/password.txt", "r") as read_file:
+        loaded_object = read_file.readline()
+        # print("Password_loaded")
+    return loaded_object

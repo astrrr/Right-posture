@@ -55,7 +55,7 @@ class AuthWindow(QMainWindow):
         if username == "":
             username = "Guest"
         Camera_detail.user = username
-        Main_setting.load_setting(self.main, username)
+        Main_data.load_setting(self.main, username)
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
         self.main.show()
         self.close()
@@ -95,8 +95,7 @@ class MainWindow(QMainWindow):
         Main_buttons.defineButtons(self)
         self.show()
         Main_buttons.set_custom_theme(self, False)
-        Main_table.Load_table(self, 'a')
-        # Main_table.Load_Table(self)
+        Main_data.Load_table(self, 'a')
 
         self.Donut_charts()
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)

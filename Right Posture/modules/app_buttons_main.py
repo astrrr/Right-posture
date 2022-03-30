@@ -1,7 +1,7 @@
 from main import MainWindow
 from modules import UIFunctions, AppFunctions, load_data
 from modules.app_checkbox import Main_checkbox
-from modules.app_setting_page import Main_setting
+from modules.app_setting_page import Main_data
 from modules.Version_control import Setting_func
 class Main_buttons(MainWindow):
 
@@ -60,7 +60,7 @@ class Main_buttons(MainWindow):
             AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
 
         if btnName == "btn_save_setting":
-            Main_setting.save_setting(self)
+            Main_data.save_setting(self)
 
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')

@@ -47,9 +47,6 @@ from . app_buttons_main import Main_buttons
 # MAIN CHECKBOX
 from .app_checkbox import Main_checkbox
 
-# APP TABLE
-from .app_table import Main_table
-
 # LOGIN BUTTONS
 from .app_buttons_login import Auth_buttons
 
@@ -60,4 +57,4 @@ from .app_auth import Auth_system
 from .app_charts import Line_charts
 
 # APP SETTING
-from .app_setting_page import Main_setting
+from .app_setting_page import Main_data, load_password
