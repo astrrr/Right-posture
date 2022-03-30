@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainXyURAU.ui'
+## Form generated from reading UI file 'mainzWifrb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1114,11 +1114,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_22.addWidget(self.Camera_Frame_1, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
-        self.pre_cam_1 = QCheckBox(self.frame_3)
-        self.pre_cam_1.setObjectName(u"pre_cam_1")
-        self.pre_cam_1.setMaximumSize(QSize(16777215, 16777215))
+        self.show_camera = QCheckBox(self.frame_3)
+        self.show_camera.setObjectName(u"show_camera")
+        self.show_camera.setMaximumSize(QSize(16777215, 16777215))
 
-        self.verticalLayout_22.addWidget(self.pre_cam_1)
+        self.verticalLayout_22.addWidget(self.show_camera)
 
 
         self.horizontalLayout_8.addWidget(self.frame_3)
@@ -1871,7 +1871,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 413, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -2248,7 +2248,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2298,7 +2298,7 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.labelBoxBlenderInstalation_7.setText(QCoreApplication.translate("MainWindow", u"Camera", None))
         self.Camera1_label.setText("")
-        self.pre_cam_1.setText(QCoreApplication.translate("MainWindow", u"Preview camera", None))
+        self.show_camera.setText(QCoreApplication.translate("MainWindow", u"Show camera", None))
         self.labelBoxBlenderInstalation_10.setText(QCoreApplication.translate("MainWindow", u"Detail", None))
         self.Detail_text.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"

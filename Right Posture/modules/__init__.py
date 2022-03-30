@@ -38,9 +38,6 @@ from . app_functions import *
 # DETECT FUNCTIONS
 from . app_detect import Camera, Camera_detail
 
-# APP DATA
-from . app_data import *
-
 # MAIN BUTTONS
 from . app_buttons_main import Main_buttons
 
@@ -57,4 +54,4 @@ from .app_auth import Auth_system
 from .app_charts import Line_charts
 
 # APP SETTING
-from .app_setting_page import Main_data, load_password
+from .app_setting_page import Main_data

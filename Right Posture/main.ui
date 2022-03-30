@@ -1761,7 +1761,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="Home">
                       <property name="styleSheet">
@@ -1983,7 +1983,7 @@ color: #E6E6E6;</string>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QCheckBox" name="pre_cam_1">
+                              <widget class="QCheckBox" name="show_camera">
                                <property name="maximumSize">
                                 <size>
                                  <width>16777215</width>
@@ -1991,7 +1991,7 @@ color: #E6E6E6;</string>
                                 </size>
                                </property>
                                <property name="text">
-                                <string>Preview camera</string>
+                                <string>Show camera</string>
                                </property>
                               </widget>
                              </item>
@@ -3835,7 +3835,7 @@ border: 2px solid #ff79c6;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>218</width>
+                                 <width>413</width>
                                  <height>218</height>
                                 </rect>
                                </property>
