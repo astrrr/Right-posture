@@ -1,6 +1,12 @@
+import os
+import sqlite3
 from main import MainWindow
 from modules import UIFunctions, AppFunctions
 from modules.app_data import Main_data
+from modules.app_temp import superuser
+
+cwd = os.getcwd()
+acc_path = f"{cwd}/bin/Data/Accounts.db"
 
 class Main_buttons(MainWindow):
 
@@ -52,11 +58,26 @@ class Main_buttons(MainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "btn_test_email":
-            AppFunctions.send_Email(self, text=f"This is test e-mail", to_emails=['inwpbmak@gmail.com'])
-            AppFunctions.notifyMe(self, "Test E-mail", "E-mail has been sent")
+            conn = sqlite3.connect(acc_path)
+            cur = conn.cursor()
+            query = f"SELECT email FROM login_info WHERE username = \'{superuser.user}\'"
+            cur.execute(query)
+            try:
+                email = cur.fetchone()[0]
+                print(email)
+                AppFunctions.send_Email(self, text=f"This is test e-mail", to_emails=[email])
+                self.ui.Setting_log.append(f"E-mail has been send to {email}")
+            except Exception as e:
+                print(e)
+                self.ui.Setting_log.append(e)
 
         if btnName == "btn_test_notify":
-            AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+            try:
+                AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+                self.ui.Setting_log.append(f"Notification work correctly")
+            except Exception as e:
+                print(e)
+                self.ui.Setting_log.append(e)
 
         if btnName == "btn_reload":
             Main_data.Load_table(self)
