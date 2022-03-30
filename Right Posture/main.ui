@@ -1761,7 +1761,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="Home">
                       <property name="styleSheet">
@@ -3238,7 +3238,7 @@ border: 2px solid #ff79c6;</string>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QTableWidget" name="Status_Widgets_2">
+                        <widget class="QTableWidget" name="Log_table">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -3498,124 +3498,44 @@ border: 2px solid #ff79c6;</string>
                          <attribute name="verticalHeaderStretchLastSection">
                           <bool>false</bool>
                          </attribute>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
                          <column>
                           <property name="text">
-                           <string>Day 1</string>
+                           <string>Username</string>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Day 2</string>
+                           <string>Start time </string>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Day 3</string>
+                           <string>Stop time</string>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Day 4</string>
+                           <string>Incorrect time</string>
                           </property>
                          </column>
                          <column>
                           <property name="text">
-                           <string>Day 5</string>
+                           <string>Correct time</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Total time</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Incorrect %</string>
+                          </property>
+                         </column>
+                         <column>
+                          <property name="text">
+                           <string>Correct %</string>
                           </property>
                          </column>
                         </widget>

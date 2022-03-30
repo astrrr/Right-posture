@@ -95,7 +95,8 @@ class MainWindow(QMainWindow):
         Main_buttons.defineButtons(self)
         self.show()
         Main_buttons.set_custom_theme(self, False)
-        Main_table.load_test(self, 'sekson')
+        Main_table.Load_table(self, 'a')
+        # Main_table.Load_Table(self)
 
         self.Donut_charts()
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)
