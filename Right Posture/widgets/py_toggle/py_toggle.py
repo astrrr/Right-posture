@@ -17,7 +17,7 @@
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
 from main import Ui_MainWindow
-from modules.Version_control import Setting_func
+from modules.app_temp import Setting_func
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *

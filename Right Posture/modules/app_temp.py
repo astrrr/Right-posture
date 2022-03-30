@@ -1,6 +1,9 @@
 class version:
     thisVersion = None
 
+class superuser:
+    user = ""
+
 class Setting_func:
     DND = False
     Discord = False

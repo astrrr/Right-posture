@@ -1,6 +1,6 @@
 from main import MainWindow
 from modules.app_detect import Camera_detail
-from modules.Version_control import Setting_func
+from modules.app_temp import Setting_func, superuser
 from modules.app_functions import AppFunctions
 from PySide6 import QtWidgets
 from widgets import PyToggle
@@ -8,7 +8,6 @@ import os
 import sqlite3
 
 cwd = os.getcwd()
-user_now = ""
 
 def save_checkbox():
     try:
@@ -16,7 +15,7 @@ def save_checkbox():
         cur = conn.cursor()
         show_cam = Setting_func.S_cam
         show_detail = Setting_func.S_detail
-        query = f"UPDATE login_info set s_cam={show_cam}, s_detail={show_detail} WHERE username = \'{user_now}\'"
+        query = f"UPDATE login_info set s_cam={show_cam}, s_detail={show_detail} WHERE username = \'{superuser.user}\'"
         cur.execute(query)
         conn.commit()
         conn.close()
@@ -63,7 +62,7 @@ class Main_data(MainWindow):
             dnd = Setting_func.DND
             discord = Setting_func.Discord
             query = f"UPDATE login_info set period={period}, sensitive={sensitive}, sitting={sitting}, " \
-                    f"dnd={dnd}, discord={discord} WHERE username = \'{user_now}\'"
+                    f"dnd={dnd}, discord={discord} WHERE username = \'{superuser.user}\'"
             cur.execute(query)
             conn.commit()
             conn.close()
@@ -72,14 +71,12 @@ class Main_data(MainWindow):
         except Exception as e:
             print(e)
 
-    def load_setting(self, user_setting):
-        global user_now
-        user_now = user_setting
+    def load_setting(self):
         setting = self.ui
         conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
         cur = conn.cursor()
         query = f"SELECT period,sensitive,sitting,dnd,discord, s_cam, s_detail " \
-                f"FROM login_info WHERE username = \'{user_setting}\'"
+                f"FROM login_info WHERE username = \'{superuser.user}\'"
         cur.execute(query)
         try:
             result = cur.fetchall()
@@ -140,11 +137,11 @@ class Main_data(MainWindow):
         # Discord Rich Presence
         AppFunctions.discordRichPresence(self, Setting_func.Discord)
 
-    def Load_table(self, user_id):
+    def Load_table(self):
         conn = sqlite3.connect('sessions.db')
         cur = conn.cursor()
         query = f"SELECT user_id, time_start, time_end, incorrect_time, correct_time, total_time, incorrect_per,correct_per " \
-                f"FROM sessions WHERE user_id = \'{user_id}\'"
+                f"FROM sessions WHERE user_id = \'{superuser.user}\'"
         cur.execute(query)
         try:
             results = cur.fetchall()
@@ -156,6 +153,6 @@ class Main_data(MainWindow):
                         self.ui.Log_table.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)))
                     else:
                         self.ui.Log_table.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)+' %'))
-            print("loaded")
+            # print("Table loaded")
         except Exception as e:
             print(e)

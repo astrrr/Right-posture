@@ -26,7 +26,7 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
 
-from modules.Version_control import version, Debug_path
+from modules.app_temp import version, Debug_path, superuser
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -54,8 +54,9 @@ class AuthWindow(QMainWindow):
         self.main = MainWindow()
         if username == "":
             username = "Guest"
-        Camera_detail.user = username
-        Main_data.load_setting(self.main, username)
+        superuser.user = username
+        Main_data.load_setting(self.main)
+        Main_data.Load_table(self.main)
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
         self.main.show()
         self.close()
@@ -95,7 +96,6 @@ class MainWindow(QMainWindow):
         Main_buttons.defineButtons(self)
         self.show()
         Main_buttons.set_custom_theme(self, False)
-        # Main_data.Load_table(self, 'a')
 
         self.Donut_charts()
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)

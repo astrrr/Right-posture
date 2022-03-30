@@ -26,7 +26,7 @@ from pypresence import Presence
 from random import randint
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from modules.Version_control import Debug_path, Setting_func
+from modules.app_temp import Debug_path, Setting_func
 
 cwd = os.getcwd()
 
