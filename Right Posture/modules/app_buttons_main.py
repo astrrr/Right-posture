@@ -10,16 +10,15 @@ class Main_buttons(MainWindow):
         button.btn_Log.clicked.connect(self.Main_button_Interface)
         button.btn_Setting.clicked.connect(self.Main_button_Interface)
         button.btn_Logout.clicked.connect(self.Main_button_Interface)
-        button.btn_test_notify.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
         button.btn_save_setting.clicked.connect(self.Main_button_Interface)
 
-        # Preview Detail
-
-        button.show_detail.clicked.connect(self.Main_button_Interface)
-
-        # Preview Camera 1
+        button.btn_test_notify.clicked.connect(self.Main_button_Interface)
+        button.btn_test_email.clicked.connect(self.Main_button_Interface)
+        # Show Camera
         button.show_camera.clicked.connect(self.Camera_1)
+        # Show Detail
+        button.show_detail.clicked.connect(self.Main_button_Interface)
 
     def buttonClick(self):
         button = self.ui
@@ -51,6 +50,10 @@ class Main_buttons(MainWindow):
             button.stackedWidget.setCurrentWidget(button.Setting)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+
+        if btnName == "btn_test_email":
+            AppFunctions.send_Email(self, text=f"This is test e-mail", to_emails=['inwpbmak@gmail.com'])
+            AppFunctions.notifyMe(self, "Test E-mail", "E-mail has been sent")
 
         if btnName == "btn_test_notify":
             AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")

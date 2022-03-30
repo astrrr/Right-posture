@@ -20,7 +20,7 @@ def save_checkbox():
         cur.execute(query)
         conn.commit()
         conn.close()
-        print("Save complete !")
+        # print("Save complete !")
     except Exception as e:
         print(e)
 
