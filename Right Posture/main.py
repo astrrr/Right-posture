@@ -26,13 +26,13 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
 
-from modules.Version_control import version, Debug_path
+from modules.app_temp import version, Debug_path, superuser
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
-version.thisVersion = "1.1.6.9"
+version.thisVersion = "1.1.7.9"
 # /////////////////////////////////////////////
 counter = 0
 CircularProgress_timer = 300
@@ -54,8 +54,9 @@ class AuthWindow(QMainWindow):
         self.main = MainWindow()
         if username == "":
             username = "Guest"
-        Camera_detail.user = username
-        Main_setting.load_setting(self.main, username)
+        superuser.user = username
+        Main_data.load_setting(self.main)
+        Main_data.Load_table(self.main)
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
         self.main.show()
         self.close()
@@ -93,10 +94,8 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         UIFunctions.Function_Main_Setup(self)
         Main_buttons.defineButtons(self)
-        PyToggle.Toggle_Switch(self)
         self.show()
-        Main_buttons.set_custom_theme(self)
-        # Main_table.Load_Table(self)
+        Main_buttons.set_custom_theme(self, False)
 
         self.Donut_charts()
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)
@@ -139,12 +138,12 @@ class MainWindow(QMainWindow):
                 Camera.detect(self, True)
                 self.progress.setParent(None)
                 self.progress.close()
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
                 self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
-                self.ui.pre_cam_1.setEnabled(True)
+                self.ui.show_camera.setEnabled(True)
             else:
                 Camera_detail.model_status = "Waiting for model."
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
         else:
             if Camera_detail.Finish_load_model:
                 if counter < 50:
@@ -156,8 +155,8 @@ class MainWindow(QMainWindow):
 
             if Camera_detail.Error_load_model:
                 self.timer.stop()
-                Main_checkbox.Show_Detail(self)
-                self.ui.pre_cam_1.setEnabled(True)
+                Main_data.Show_Detail(self)
+                self.ui.show_camera.setEnabled(True)
             counter += 1
 
     def Camera_1(self):
@@ -167,35 +166,37 @@ class MainWindow(QMainWindow):
         else:
             self.ui.Camera1_label.setText("The model is loaded.")
 
-        if self.ui.pre_cam_1.isChecked():
+        if self.ui.show_camera.isChecked():
             if Camera_detail.First_load_model:
                 counter = 0
                 Camera_detail.model_status = "Loading model"
-                Main_checkbox.Show_Detail(self)
-                self.ui.pre_cam_1.setEnabled(False)
+                Main_data.Show_Detail(self)
+                self.ui.show_camera.setEnabled(False)
                 self.ui.Camera1_label.setText(" ")
                 self.timer = QTimer()
                 self.timer.timeout.connect(self.update)
                 self.timer.start(CircularProgress_timer)
                 self.progress.setParent(self.ui.Camera_Frame_1)
                 self.progress.show()
-            Main_checkbox.camera_status = "ON"
-            Main_checkbox.Show_Detail(self)
+            Main_data.camera_status = "ON"
+            Main_data.Show_Detail(self)
             self.ui.Camera_Frame_1_Layout.removeWidget(self.ui.Camera1_label)
             Camera.detect(self, True)
-            save_data("PreCam1", 1)
+            Setting_func.S_cam = 1
+            save_checkbox()
             # print("Start Camera_1")
         else:
             counter = 0
-            Main_checkbox.camera_status = "OFF"
-            Main_checkbox.Show_Detail(self)
+            Main_data.camera_status = "OFF"
+            Main_data.Show_Detail(self)
             self.ui.Camera_Frame_1_Layout.addWidget(self.ui.Camera1_label)
             self.ui.Camera1_label.setAlignment(Qt.AlignCenter)
             self.progress.setParent(None)
             self.progress.close()
             Camera_detail.Error_load_model = False
             Camera.detect(self, False)
-            save_data("PreCam1", 0)
+            Setting_func.S_cam = 0
+            save_checkbox()
             # print("Stop Camera_1")
 
     def closeEvent(self, event):
@@ -215,9 +216,9 @@ class MainWindow(QMainWindow):
             qPix = QPixmap.fromImage(qImg)
             self.image_label.setPixmap(qPix)
             if Camera_detail.Update_log:
-                Main_checkbox.Detect_Log(self)
+                Main_data.Detect_Log(self)
             if Camera_detail.Error_load_model:
-                Main_checkbox.Show_Detail(self)
+                Main_data.Show_Detail(self)
         except:
             pass
 

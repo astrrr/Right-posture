@@ -11,7 +11,7 @@ import numpy as np
 import sqlite3
 import time
 import math
-from modules.Version_control import Debug_path
+from modules.app_temp import Debug_path, superuser
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -195,7 +195,7 @@ class VideoThread(QThread):
                 end_time = time.asctime(time.localtime(time.time()))
                 
 
-                user = Camera_detail.user
+                user = superuser.user
                 t_total = time.time() - t_start
                 t_incorrect_total = (inc_count/(inc_count+cor_count))*t_total
                 t_cor = (cor_count/(inc_count+cor_count))*t_total
@@ -280,7 +280,6 @@ class Worker(QRunnable):
             self.signals.finished.emit()  # Done
 
 class Camera_detail:
-    user = ""
     log = ""
     traceback = ""
     get_model_name = model_name
