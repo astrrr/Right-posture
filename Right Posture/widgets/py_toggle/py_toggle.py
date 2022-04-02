@@ -17,15 +17,13 @@
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
 from main import Ui_MainWindow
-from modules.app_data import *
+from modules.app_temp import Setting_func
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
 Toggle1 = None
 Toggle2 = None
-Toggle3 = None
-loaded_object = load_data()
 
 class PyToggle(QCheckBox):
     def __init__(
@@ -49,66 +47,47 @@ class PyToggle(QCheckBox):
         self.animation.setEasingCurve(animation_curve)
         self.animation.setDuration(500)
         self.ui = Ui_MainWindow()
-        global Toggle1, Toggle2, Toggle3
+        global Toggle1, Toggle2
         Toggle1 = self.setup_animation_1
         Toggle2 = self.setup_animation_2
-        Toggle3 = self.setup_animation_3
 
     def Toggle_Switch(self):
         Toggle = self.ui
 
-        Toggle_LightMode = PyToggle()
-        Toggle.Toggle_Light_Layout.addWidget(Toggle_LightMode)
-        Toggle_LightMode.stateChanged.connect(Toggle1)
-        Light = loaded_object["Light"]
-        Toggle_LightMode.setChecked(Light)
-
         Toggle_DND = PyToggle()
         Toggle.Toggle_DND_Layout.addWidget(Toggle_DND)
-        Toggle_DND.stateChanged.connect(Toggle3)
-        DND = loaded_object["DND"]
+        Toggle_DND.stateChanged.connect(Toggle1)
+        DND = Setting_func.DND
         Toggle_DND.setChecked(DND)
 
         Toggle_Discord = PyToggle()
         Toggle.Toggle_Discord_Layout.addWidget(Toggle_Discord)
         Toggle_Discord.stateChanged.connect(Toggle2)
-        Discord = loaded_object["Discord"]
+        Discord = Setting_func.Discord
         Toggle_Discord.setChecked(Discord)
 
     def setup_animation_1(self, value):
         self.animation.stop()
         if value:
             self.animation.setEndValue(self.width() - 26)
-            print("Status : ON Light Mode")
-            save_data("Light", 1)
+            # print("Status : ON DND")
+            Setting_func.DND = 1
         else:
             self.animation.setEndValue(4)
-            print("Status : OFF Light Mode")
-            save_data("Light", 0)
+            # print("Status : OFF DND")
+            Setting_func.DND = 0
         self.animation.start()
 
     def setup_animation_2(self, value):
         self.animation.stop()
         if value:
             self.animation.setEndValue(self.width() - 26)
-            print("Status : ON Discord")
-            save_data("Discord", 1)
+            # print("Status : ON Discord")
+            Setting_func.Discord = 1
         else:
             self.animation.setEndValue(4)
-            print("Status : OFF Discord")
-            save_data("Discord", 0)
-        self.animation.start()
-
-    def setup_animation_3(self, value):
-        self.animation.stop()
-        if value:
-            self.animation.setEndValue(self.width() - 26)
-            print("Status : ON DND")
-            save_data("DND", 1)
-        else:
-            self.animation.setEndValue(4)
-            print("Status : OFF DND")
-            save_data("DND", 0)
+            # print("Status : OFF Discord")
+            Setting_func.Discord = 0
         self.animation.start()
 
     @Property(float)

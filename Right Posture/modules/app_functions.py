@@ -21,17 +21,15 @@ import smtplib
 import os
 import base64
 from main import MainWindow, Settings
-from modules.app_data import load_data, load_password
 from plyer import notification
 from pypresence import Presence
 from random import randint
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from modules.Version_control import Debug_path
-# E-mail
-username = 'rightposture.kmitl.team@gmail.com'
-password = load_password()
+from modules.app_temp import Debug_path, Setting_func
+
 cwd = os.getcwd()
+
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 class AppFunctions(MainWindow):
@@ -47,6 +45,9 @@ class AppFunctions(MainWindow):
         msg_str = msg.as_string()
 
         # login to my smtp server
+        username = 'rightposture.kmitl.team@gmail.com'
+        with open(f"{cwd}{Debug_path.path}/bin/Data/password.txt", "r") as read_file:
+            password = read_file.readline()
         server = smtplib.SMTP(host='smtp.gmail.com', port=587)
         server.ehlo()
         server.starttls()
@@ -61,8 +62,7 @@ class AppFunctions(MainWindow):
 
     # Notification function
     def notifyMe(self, title, message):
-        loaded_object = load_data()
-        if not loaded_object["DND"]:
+        if not Setting_func.DND:
             notification.notify(
                 title=title,
                 message=message,
@@ -71,8 +71,7 @@ class AppFunctions(MainWindow):
             )
 
     def notifyIncorrect(self, title, message):
-        loaded_object = load_data()
-        if not loaded_object["DND"]:
+        if not Setting_func.DND:
             notification.notify(
                 title=title,
                 message=message,
@@ -81,11 +80,12 @@ class AppFunctions(MainWindow):
             )
 
     # Discord Rich Presence
-    def discordRichPresence(self):
-        if self:
+    def discordRichPresence(self, enable):
+        if enable:
             try:
                 rpc = Presence("902601121124728884")
                 rpc.connect()
+
                 rpc.update(  # details="Make Life Better.",
                     state="Dev GUI",
                     large_image="right_posture",
@@ -96,9 +96,11 @@ class AppFunctions(MainWindow):
                     party_size=[35, 100],
                     start=time.time()
                 )
+                self.ui.Setting_log.append("Discord Rich Presence Connected")
                 print("Discord Rich Presence Connected")
-            except:
-                print("Pipe Not Found - Is Discord Running?")
+            except Exception as e:
+                self.ui.Setting_log.append("Pipe Not Found - Is Discord Running?")
+                print(e)
 
     # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
     Settings.ENABLE_CUSTOM_TITLE_BAR = True
@@ -119,3 +121,9 @@ class AppFunctions(MainWindow):
         self.ui.horizontalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.verticalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.commandLinkButton.setStyleSheet("color: #ff79c6;")
+
+    def load_password():
+        with open(f"{cwd}{Debug_path.path}/bin/Data/password.txt", "r") as read_file:
+            loaded_object = read_file.readline()
+            # print("Password_loaded")
+        return loaded_object

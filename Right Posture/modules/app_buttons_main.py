@@ -1,32 +1,30 @@
+import os
+import sqlite3
 from main import MainWindow
-from modules import UIFunctions, AppFunctions, load_data
-from modules.app_checkbox import Main_checkbox
-from modules.app_setting_page import Main_setting
+from modules import UIFunctions, AppFunctions
+from modules.app_data import Main_data
+from modules.app_temp import superuser
+
+cwd = os.getcwd()
+acc_path = f"{cwd}/bin/Data/Accounts.db"
+
 class Main_buttons(MainWindow):
 
     def defineButtons(self):
         button = self.ui
-        loaded_object = load_data()
         button.btn_Home.clicked.connect(self.Main_button_Interface)
         button.btn_Log.clicked.connect(self.Main_button_Interface)
         button.btn_Setting.clicked.connect(self.Main_button_Interface)
         button.btn_Logout.clicked.connect(self.Main_button_Interface)
-        button.btn_test_notify.clicked.connect(self.Main_button_Interface)
-        button.btn_print.clicked.connect(self.Main_button_Interface)
         button.btn_clear_log.clicked.connect(self.Main_button_Interface)
         button.btn_save_setting.clicked.connect(self.Main_button_Interface)
-
-        # Preview Detail
-        button.show_detail.setChecked(loaded_object["PreDetail"])
+        button.btn_reload.clicked.connect(self.Main_button_Interface)
+        button.btn_test_notify.clicked.connect(self.Main_button_Interface)
+        button.btn_test_email.clicked.connect(self.Main_button_Interface)
+        # Show Camera
+        button.show_camera.clicked.connect(self.Camera_1)
+        # Show Detail
         button.show_detail.clicked.connect(self.Main_button_Interface)
-
-        # Preview Camera 1
-        button.pre_cam_1.setChecked(loaded_object["PreCam1"])
-        button.pre_cam_1.clicked.connect(self.Camera_1)
-        self.Camera_1()
-
-        # Discord Rich Presence
-        AppFunctions.discordRichPresence(loaded_object["Discord"])
 
     def buttonClick(self):
         button = self.ui
@@ -35,7 +33,7 @@ class Main_buttons(MainWindow):
 
         # ////////// CHECK BOX ZONE //////////
         if btnName == "show_detail":
-            Main_checkbox.Show_Detail(self)
+            Main_data.Show_Detail(self)
         # ////////////////////////////////////
 
         if btnName == "btn_Logout":
@@ -59,23 +57,42 @@ class Main_buttons(MainWindow):
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
+        if btnName == "btn_test_email":
+            conn = sqlite3.connect(acc_path)
+            cur = conn.cursor()
+            query = f"SELECT email FROM login_info WHERE username = \'{superuser.user}\'"
+            cur.execute(query)
+            try:
+                email = cur.fetchone()[0]
+                # print(email)
+                AppFunctions.send_Email(self, text=f"This is test e-mail", to_emails=[email])
+                self.ui.Setting_log.append(f"E-mail has been send to {email}")
+            except Exception as e:
+                print(e)
+                self.ui.Setting_log.append(f"Fail to send e-mail please check your internet connection.\n{str(e)}")
+
         if btnName == "btn_test_notify":
-            AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+            try:
+                AppFunctions.notifyMe(self, "Test notify", "Notification work correctly")
+                self.ui.Setting_log.append(f"Notification work correctly")
+            except Exception as e:
+                print(e)
+                self.ui.Setting_log.append(f"Fail to notify unknown error.\n{str(e)}")
+
+        if btnName == "btn_reload":
+            Main_data.Load_table(self)
+            print("Reloaded")
 
         if btnName == "btn_save_setting":
-            Main_setting.save_setting(self)
+            Main_data.save_setting(self)
 
-        if btnName == "btn_print":
-            AppFunctions.send_Email(self, text='Test Email', to_emails=['inwpbmak@gmail.com'])
-            AppFunctions.notifyMe(self, "Notification", "Send email")
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
 
-    def set_custom_theme(self):
+    def set_custom_theme(self, enable):
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
-        loaded_object = load_data()
-        useCustomTheme = loaded_object["Light"]
+        useCustomTheme = enable
         themeFile = "themes\py_dracula_light.qss"
 
         # SET THEME AND HACKS

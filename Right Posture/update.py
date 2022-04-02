@@ -2,7 +2,7 @@ import glob
 import sys
 import os
 from cx_Freeze import setup, Executable
-from modules.Version_control import version
+from modules.app_temp import version
 
 Compile_version = version.thisVersion
 if Compile_version is None:
