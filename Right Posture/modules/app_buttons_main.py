@@ -6,6 +6,7 @@ from modules.app_data import Main_data
 from modules.app_temp import superuser
 
 cwd = os.getcwd()
+cwd = cwd+'/Right Posture'
 acc_path = f"{cwd}/bin/Data/Accounts.db"
 
 class Main_buttons(MainWindow):

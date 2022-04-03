@@ -27,7 +27,8 @@ cur = conn.cursor()
 t_start = time.time()
 t_last = time.time()
 t_checkpoint = time.time()
-t_correct_start = time.time()
+t_correct_start = time.time() # need to initial value more than first condition for don't show sitting_too_ long_noti in start time
+#t_correct_start = time.time()
 
 t_incorrect_total = 0
 t_total = 0
@@ -50,6 +51,7 @@ session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
 
 
 cwd = os.getcwd()
+cwd = cwd+'/Right Posture'
 model = None
 #model_name = 'MNv2_V3'
 model_name = 'MN_Fix_angle_augmented_model3_3'
@@ -154,7 +156,7 @@ class VideoThread(QThread):
                         cor_count+=1
                         t_checkpoint = time.time()
                         if rest_flag == 1:
-                            t_correct_start = time.time() + 1
+                            t_correct_start = time.time()
                             rest_flag = 0
                     if pred == 1:
                         cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
@@ -163,9 +165,11 @@ class VideoThread(QThread):
 
                         # preriod of notification
                         pon = Camera_detail.period
+                        #pon = 30
                         if time.time() - t_noti_checkpoint >= pon and rest_flag ==0: 
                             # incorrect sensitive
                             sensitive = Camera_detail.sensitive
+                            #sensitive = 7
                             if int((t_last))%sensitive ==0:
 
                                 # ดัก send noti รัวๆ #
@@ -175,14 +179,16 @@ class VideoThread(QThread):
                     
                     # timer of sitting 10 m  (10 m * 60s)
 
-                    tos = Camera_detail.sitting
+                    tos = Camera_detail.sitting * 60
+                    #tos = 60
+                    
                     # >= 10 คือเอาไว้ดัก แจ้งเตือนรัวๆ และต้องค่าน้อยกว่า pon
-                    if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
-                        if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
-                            AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')
+                    if (time.time()) - t_noti_checkpoint >= 3 and rest_flag == 0:
+                        if int(math.floor((time.time()) - t_correct_start)) >= tos :
+                            AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos/60} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')
                             Print_log("Sitting too long.")
                             t_noti_checkpoint = time.time()
-                            t_correct_start = time.time()+1
+                            t_correct_start = time.time()
                             rest_flag = 1
 
 
@@ -289,6 +295,7 @@ class Camera_detail:
     Error_load_model = False
     Update_log = None
     # Setting sections
+
     period = 30
     sensitive = 7
     sitting = 1
