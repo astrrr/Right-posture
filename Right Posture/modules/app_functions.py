@@ -29,6 +29,7 @@ from email.mime.multipart import MIMEMultipart
 from modules.app_temp import Debug_path, Setting_func
 
 cwd = os.getcwd()
+cwd = cwd+'/Right Posture'
 
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
