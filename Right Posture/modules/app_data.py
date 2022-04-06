@@ -8,6 +8,7 @@ import os
 import sqlite3
 
 cwd = os.getcwd()
+cwd = cwd+'/Right Posture'
 
 def save_checkbox():
     try:
