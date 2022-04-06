@@ -48,7 +48,7 @@ class Main_data(MainWindow):
 
             # Add new charts
             self.Donut_charts(results[-1])
-            self.ui.Line_Frame_Layout.addWidget(Line_charts(results[-1]))
+            self.ui.Line_Frame_Layout.addWidget(Line_charts(results))
             Charts.Loaded = True
 
             # Add new table

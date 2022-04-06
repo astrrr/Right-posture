@@ -14,8 +14,10 @@ class Line_charts(QWidget):
         self.init_ui(result_line)
 
     def init_ui(self, result):
+        # Data from sessions
+        print(result)
+
         # Example dataframe
-        # print(result)
         df = pd.DataFrame({
             'Sample': list(range(1, 11)),
             'Y': [9.030, 8.810, 9.402, 8.664, 8.773, 8.774, 8.416, 9.101, 8.687, 8.767]
