@@ -8,7 +8,7 @@ import os
 import sqlite3
 
 cwd = os.getcwd()
-cwd = cwd+'/Right Posture'
+cwd = cwd+Debug_path.path
 
 def save_checkbox():
     try:
@@ -30,7 +30,7 @@ class Main_data(MainWindow):
     def Detect_Log(self):
         self.ui.Detect_LOG.append(Camera_detail.log)
         Camera_detail.Update_log = False
-        print("Print Log")
+        # print("Print Log")
 
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():

@@ -19,7 +19,8 @@ mp_pose = mp.solutions.pose
 
 
 cwd = os.getcwd()
-conn = sqlite3.connect(f"{cwd}{Debug_path.path}/bin/Data/Sessions.db", check_same_thread=False)
+cwd = cwd+Debug_path.path
+conn = sqlite3.connect(f"{cwd}/bin/Data/Sessions.db", check_same_thread=False)
 # print('connect DB')
 cur = conn.cursor()
 
@@ -226,7 +227,7 @@ class VideoThread(QThread):
 
     def execute_this_fn(self):
         global model
-        dir_model = f"{cwd}{Debug_path.path}/bin/Model/{model_name}"
+        dir_model = f"{cwd}/bin/Model/{model_name}"
         try:
             modeling = tf.keras.models.load_model(dir_model)
             model = modeling
