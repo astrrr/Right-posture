@@ -122,9 +122,3 @@ class AppFunctions(MainWindow):
         self.ui.horizontalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.verticalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.commandLinkButton.setStyleSheet("color: #ff79c6;")
-
-    def load_password():
-        with open(f"{cwd}/bin/Data/password.txt", "r") as read_file:
-            loaded_object = read_file.readline()
-            # print("Password_loaded")
-        return loaded_object

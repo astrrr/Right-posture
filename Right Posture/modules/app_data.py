@@ -27,31 +27,29 @@ def save_checkbox():
 class Main_data(MainWindow):
     camera_status = ''
 
-    def Detect_Log(self):
-        self.ui.Detect_LOG.append(Camera_detail.log)
-        Camera_detail.Update_log = False
-        # print("Print Log")
+    # ////////////////////////////// Table & Charts data //////////////////////////////
+    def Load_table(self):
+        conn = sqlite3.connect(f"{cwd}{Debug_path.path}/bin/Data/Sessions.db")
+        cur = conn.cursor()
+        query = f"SELECT user_id, time_start, time_end, incorrect_time, correct_time, total_time, incorrect_per,correct_per " \
+                f"FROM sessions WHERE user_id = \'{superuser.user}\'"
+        cur.execute(query)
+        try:
+            results = cur.fetchall()
+            self.ui.Log_table.setRowCount(0)
+            for row_number, row_data in enumerate(results):
+                self.ui.Log_table.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    if column_number < 6:
+                        self.ui.Log_table.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)))
+                    else:
+                        self.ui.Log_table.setItem(row_number, column_number,
+                                                  QtWidgets.QTableWidgetItem(str(data) + ' %'))
+            # print("Table loaded")
+        except Exception as e:
+            print(e)
 
-    def Show_Detail(self):
-        if self.ui.show_detail.isChecked():
-            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {Main_data.camera_status}\n\n"
-                                        f"Models: {Camera_detail.get_model_name}\n"
-                                        f"Models Status: {Camera_detail.model_status}\n\n"
-                                        f"Notification setup\n"
-                                        f"Period = {self.ui.combo_period.currentText()}\n"
-                                        f"Sensitive = {self.ui.combo_sensitive.currentText()}\n"
-                                        f"Sitting = {self.ui.combo_sitting.currentText()}\n"
-                                        f"{Camera_detail.traceback}")
-            self.ui.Setting_log.append(Camera_detail.traceback)
-            Setting_func.S_detail = 1
-            save_checkbox()
-            # print("Start Detail")
-        else:
-            self.ui.Detail_text.clear()
-            Setting_func.S_detail = 0
-            save_checkbox()
-            # print("Stop Detail")
-
+    # //////////////////////////////  Setting data //////////////////////////////
     def save_setting(self):
         setting = self.ui
         try:
@@ -138,22 +136,28 @@ class Main_data(MainWindow):
         # Discord Rich Presence
         AppFunctions.discordRichPresence(self, Setting_func.Discord)
 
-    def Load_table(self):
-        conn = sqlite3.connect(f"{cwd}{Debug_path.path}/bin/Data/Sessions.db")
-        cur = conn.cursor()
-        query = f"SELECT user_id, time_start, time_end, incorrect_time, correct_time, total_time, incorrect_per,correct_per " \
-                f"FROM sessions WHERE user_id = \'{superuser.user}\'"
-        cur.execute(query)
-        try:
-            results = cur.fetchall()
-            self.ui.Log_table.setRowCount(0)
-            for row_number, row_data in enumerate(results):
-                self.ui.Log_table.insertRow(row_number)
-                for column_number, data in enumerate(row_data):
-                    if column_number < 6:
-                        self.ui.Log_table.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)))
-                    else:
-                        self.ui.Log_table.setItem(row_number, column_number, QtWidgets.QTableWidgetItem(str(data)+' %'))
-            # print("Table loaded")
-        except Exception as e:
-            print(e)
+    # //////////////////////////////  Home data //////////////////////////////
+    def Detect_Log(self):
+        self.ui.Detect_LOG.append(Camera_detail.log)
+        Camera_detail.Update_log = False
+        # print("Print Log")
+
+    def Show_Detail(self):
+        if self.ui.show_detail.isChecked():
+            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {Main_data.camera_status}\n\n"
+                                        f"Models: {Camera_detail.get_model_name}\n"
+                                        f"Models Status: {Camera_detail.model_status}\n\n"
+                                        f"Notification setup\n"
+                                        f"Period = {self.ui.combo_period.currentText()}\n"
+                                        f"Sensitive = {self.ui.combo_sensitive.currentText()}\n"
+                                        f"Sitting = {self.ui.combo_sitting.currentText()}\n"
+                                        f"{Camera_detail.traceback}")
+            self.ui.Setting_log.append(Camera_detail.traceback)
+            Setting_func.S_detail = 1
+            save_checkbox()
+            # print("Start Detail")
+        else:
+            self.ui.Detail_text.clear()
+            Setting_func.S_detail = 0
+            save_checkbox()
+            # print("Stop Detail")
