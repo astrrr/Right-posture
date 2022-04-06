@@ -98,13 +98,6 @@ class MainWindow(QMainWindow):
         self.show()
         Main_buttons.set_custom_theme(self, False)
 
-        # Main_data.Load_session(self)
-        # self.Donut_charts()
-        # self.ui.Donut_Frame_Layout.addWidget(self.chartview)
-
-        # self.ui.Line_Frame_Layout.addWidget(Line_charts(r))
-
-
     def Donut_charts(self, result):
         correct = result[-1]
         incorrect = result[-2]
