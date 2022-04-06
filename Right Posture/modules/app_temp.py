@@ -4,6 +4,9 @@ class version:
 class superuser:
     user = ""
 
+class Charts:
+    First_donut = True
+
 class Setting_func:
     DND = False
     Discord = False

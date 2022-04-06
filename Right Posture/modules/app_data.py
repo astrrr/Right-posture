@@ -1,6 +1,6 @@
 from main import MainWindow
 from modules.app_detect import Camera_detail
-from modules.app_temp import Setting_func, superuser, Debug_path
+from modules.app_temp import Setting_func, superuser, Debug_path, Charts
 from modules.app_functions import AppFunctions
 from PySide6 import QtWidgets
 from widgets import PyToggle
@@ -36,6 +36,12 @@ class Main_data(MainWindow):
         cur.execute(query)
         try:
             results = cur.fetchall()
+            if not Charts.First_donut:
+                self.ui.Donut_Frame_Layout.removeWidget(self.chartview)
+                print("remove")
+            self.Donut_charts(results[-1])
+
+
             self.ui.Log_table.setRowCount(0)
             for row_number, row_data in enumerate(results):
                 self.ui.Log_table.insertRow(row_number)
