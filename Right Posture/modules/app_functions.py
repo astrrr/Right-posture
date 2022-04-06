@@ -29,7 +29,7 @@ from email.mime.multipart import MIMEMultipart
 from modules.app_temp import Debug_path, Setting_func
 
 cwd = os.getcwd()
-cwd = cwd+'/Right Posture'
+cwd = cwd+Debug_path.path
 
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -47,7 +47,7 @@ class AppFunctions(MainWindow):
 
         # login to my smtp server
         username = 'rightposture.kmitl.team@gmail.com'
-        with open(f"{cwd}{Debug_path.path}/bin/Data/password.txt", "r") as read_file:
+        with open(f"{cwd}/bin/Data/password.txt", "r") as read_file:
             password = read_file.readline()
         server = smtplib.SMTP(host='smtp.gmail.com', port=587)
         server.ehlo()
@@ -68,7 +68,7 @@ class AppFunctions(MainWindow):
                 title=title,
                 message=message,
                 timeout=10,
-                app_icon=f"{cwd}{Debug_path.path}/bin/Icon/iconTimer.ico"
+                app_icon=f"{cwd}/bin/Icon/iconTimer.ico"
             )
 
     def notifyIncorrect(self, title, message):
@@ -77,7 +77,7 @@ class AppFunctions(MainWindow):
                 title=title,
                 message=message,
                 timeout=10,
-                app_icon=f"{cwd}{Debug_path.path}/bin/Icon/iconIncorrect.ico"
+                app_icon=f"{cwd}/bin/Icon/iconIncorrect.ico"
             )
 
     # Discord Rich Presence
@@ -122,9 +122,3 @@ class AppFunctions(MainWindow):
         self.ui.horizontalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.verticalScrollBar.setStyleSheet("background-color: #6272a4;")
         self.ui.commandLinkButton.setStyleSheet("color: #ff79c6;")
-
-    def load_password():
-        with open(f"{cwd}{Debug_path.path}/bin/Data/password.txt", "r") as read_file:
-            loaded_object = read_file.readline()
-            # print("Password_loaded")
-        return loaded_object

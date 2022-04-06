@@ -3,10 +3,10 @@ import sqlite3
 from main import MainWindow
 from modules import UIFunctions, AppFunctions
 from modules.app_data import Main_data
-from modules.app_temp import superuser
+from modules.app_temp import superuser, Debug_path
 
 cwd = os.getcwd()
-cwd = cwd+'/Right Posture'
+cwd = cwd+Debug_path.path
 acc_path = f"{cwd}/bin/Data/Accounts.db"
 
 class Main_buttons(MainWindow):

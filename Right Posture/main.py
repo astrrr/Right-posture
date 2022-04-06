@@ -26,7 +26,7 @@ from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
 
-from modules.app_temp import version, Debug_path, superuser
+from modules.app_temp import version, superuser, Charts
 
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -97,15 +97,19 @@ class MainWindow(QMainWindow):
         self.show()
         Main_buttons.set_custom_theme(self, False)
 
-        self.Donut_charts()
-        self.ui.Donut_Frame_Layout.addWidget(self.chartview)
+        # Main_data.Load_session(self)
+        # self.Donut_charts()
+        # self.ui.Donut_Frame_Layout.addWidget(self.chartview)
 
         self.ui.Line_Frame_Layout.addWidget(Line_charts())
 
-    def Donut_charts(self):
+
+    def Donut_charts(self, result):
+        correct = result[-1]
+        incorrect = result[-2]
         data = {
-            "Correct 70%": (70, QtGui.QColor("#bd93f9")),
-            "Incorrect 30%": (30, QtGui.QColor("#ff79c6")),
+            f"Correct {correct:.2f}%": (correct, QtGui.QColor("#bd93f9")),
+            f"Incorrect {incorrect:.2f}%": (incorrect, QtGui.QColor("#ff79c6")),
         }
 
         series = QtCharts.QPieSeries()
@@ -117,12 +121,15 @@ class MainWindow(QMainWindow):
         chart = QtCharts.QChart()
         chart.setContentsMargins(-10, -10, -10, -10)
         chart.addSeries(series)
-        chart.setTitle("Test donut chart")
+        chart.setTitle("Latest sit percent")
         chart.legend().setAlignment(QtCore.Qt.AlignBottom)
         chart.legend().setFont(QtGui.QFont("Arial", 10))
 
         self.chartview = QtCharts.QChartView(chart)
         self.chartview.setRenderHint(QtGui.QPainter.Antialiasing)
+
+        self.ui.Donut_Frame_Layout.addWidget(self.chartview)
+        Charts.First_donut = False
 
     # UPDATE PROGRESS BAR
     def update(self):
