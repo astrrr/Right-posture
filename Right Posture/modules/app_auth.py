@@ -1,13 +1,15 @@
 from main import AuthWindow, QTimer
-from modules.ui_login_function import UILoginFunctions
 from modules import AppFunctions
+from modules.app_temp import Debug_path
+from modules.ui_login_function import UILoginFunctions
+
 import sqlite3
 from email_validator import validate_email, EmailNotValidError
 import os
 
 auth_key = None
 cwd = os.getcwd()
-cwd = cwd+'/Right Posture'
+cwd = cwd+Debug_path.path
 acc_path = f"{cwd}/bin/Data/Accounts.db"
 
 class Auth_system(AuthWindow):
@@ -84,7 +86,7 @@ class Auth_system(AuthWindow):
                 self.ui.Forget_Status.setText(str(e))
 
     def check_login(self, guest):
-        print('acc_path : ', acc_path )
+        # print('acc_path : ', acc_path )
         if guest:
             self.ui.Login_Status.setText(f"Welcome Guest !")
             self.ui.Login_Status.setStyleSheet("#Login_Status { color: #50fa7b }")
