@@ -17,8 +17,10 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
-conn = sqlite3.connect('sessions.db', check_same_thread=False)
-print('connect DB')
+
+cwd = os.getcwd()
+conn = sqlite3.connect(f"{cwd}{Debug_path.path}/bin/Data/Sessions.db", check_same_thread=False)
+# print('connect DB')
 cur = conn.cursor()
 
 #cur.execute("CREATE TABLE sessions (session_id INT PRIMARY KEY, user_id TEXT , time_start TEXT, time_end TEXT, incorrect_time FLOAT, correct_time FLOAT, total_time FLOAT, incorrect_per FLOAT, correct_per FLOAT)")
@@ -49,7 +51,7 @@ sess_id = int(sess_items[-1][0])+1
 session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
 
 
-cwd = os.getcwd()
+
 model = None
 #model_name = 'MNv2_V3'
 model_name = 'MN_Fix_angle_augmented_model3_3'

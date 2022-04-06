@@ -1,6 +1,6 @@
 from main import MainWindow
 from modules.app_detect import Camera_detail
-from modules.app_temp import Setting_func, superuser
+from modules.app_temp import Setting_func, superuser, Debug_path
 from modules.app_functions import AppFunctions
 from PySide6 import QtWidgets
 from widgets import PyToggle
@@ -138,7 +138,7 @@ class Main_data(MainWindow):
         AppFunctions.discordRichPresence(self, Setting_func.Discord)
 
     def Load_table(self):
-        conn = sqlite3.connect('sessions.db')
+        conn = sqlite3.connect(f"{cwd}{Debug_path.path}/bin/Data/Sessions.db")
         cur = conn.cursor()
         query = f"SELECT user_id, time_start, time_end, incorrect_time, correct_time, total_time, incorrect_per,correct_per " \
                 f"FROM sessions WHERE user_id = \'{superuser.user}\'"

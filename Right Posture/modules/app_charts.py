@@ -20,7 +20,7 @@ from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as Navigation
 class Line_charts(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Test line charts')
+        self.setWindowTitle('Latest use')
         self.init_ui()
 
     def init_ui(self):
@@ -41,10 +41,10 @@ class Line_charts(QWidget):
         plt.subplots_adjust(bottom=0.2, left=0.2, right=0.8, top=0.9)
         ax.grid(True)
         # Horizontal Lines for SPC metrics
-        ax.axhline(y=spec_usl, linewidth=1, color='red', label='USL')
-        ax.axhline(y=spec_target, linewidth=1, color='blue', label='Target')
-        ax.axhline(y=spec_lsl, linewidth=1, color='red', label='LSL')
-        ax.axhline(y=value_mean, linewidth=1, color='green', label='Avg')
+        # ax.axhline(y=spec_usl, linewidth=1, color='red', label='USL')
+        # ax.axhline(y=spec_target, linewidth=1, color='blue', label='Target')
+        # ax.axhline(y=spec_lsl, linewidth=1, color='red', label='LSL')
+        # ax.axhline(y=value_mean, linewidth=1, color='green', label='Avg')
         # Trend
         ax.plot(df['Sample'], df['Y'], color="gray", marker="o", markersize=10)
         ax.yaxis.label.set_color('gray')
@@ -56,9 +56,9 @@ class Line_charts(QWidget):
         # Labels
         labels = [item.get_text() for item in ax.get_yticklabels()]
         n = len(labels)
-        labels[n - 3] = 'LSL = ' + str(spec_lsl)
-        labels[n - 2] = 'Target = ' + str(spec_target)
-        labels[n - 1] = 'USL = ' + str(spec_usl)
+        # labels[n - 3] = 'LSL = ' + str(spec_lsl)
+        # labels[n - 2] = 'Target = ' + str(spec_target)
+        # labels[n - 1] = 'USL = ' + str(spec_usl)
         ax.set_yticklabels(labels)
         # Color
         yticklabels = ax.get_yticklabels()
