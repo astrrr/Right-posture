@@ -24,7 +24,7 @@ from widgets import *
 from PySide6 import QtCore, QtGui, QtCharts
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QApplication
 
 from modules.app_temp import version, superuser, Charts
 
@@ -55,6 +55,7 @@ class AuthWindow(QMainWindow):
         if username == "":
             username = "Guest"
         superuser.user = username
+        Charts.Loaded = False
         Main_data.load_setting(self.main)
         Main_data.Load_table(self.main)
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
@@ -101,7 +102,7 @@ class MainWindow(QMainWindow):
         # self.Donut_charts()
         # self.ui.Donut_Frame_Layout.addWidget(self.chartview)
 
-        self.ui.Line_Frame_Layout.addWidget(Line_charts())
+        # self.ui.Line_Frame_Layout.addWidget(Line_charts(r))
 
 
     def Donut_charts(self, result):
@@ -129,7 +130,6 @@ class MainWindow(QMainWindow):
         self.chartview.setRenderHint(QtGui.QPainter.Antialiasing)
 
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)
-        Charts.First_donut = False
 
     # UPDATE PROGRESS BAR
     def update(self):

@@ -5,7 +5,7 @@ class superuser:
     user = ""
 
 class Charts:
-    First_donut = True
+    Loaded = False
 
 class Setting_func:
     DND = False
