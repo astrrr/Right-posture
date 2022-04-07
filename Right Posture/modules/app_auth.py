@@ -90,7 +90,7 @@ class Auth_system(AuthWindow):
         if guest:
             self.ui.Login_Status.setText(f"Welcome Guest !")
             self.ui.Login_Status.setStyleSheet("#Login_Status { color: #50fa7b }")
-            QTimer.singleShot(1200, lambda: self.open_main())
+            QTimer.singleShot(1200, lambda: self.open_main(True))
         if not guest:
             username = self.ui.username.text()
             password = self.ui.password.text()
@@ -110,7 +110,7 @@ class Auth_system(AuthWindow):
                         self.ui.Login_Status.setStyleSheet("#Login_Status { color: #50fa7b }")
                         self.ui.username.setStyleSheet("#username:focus { border: 2px solid #50fa7b; }")
                         self.ui.password.setStyleSheet("#password:focus { border: 2px solid #50fa7b; }")
-                        QTimer.singleShot(1200, lambda: self.open_main())
+                        QTimer.singleShot(1200, lambda: self.open_main(False))
                     else:
                         self.ui.Login_Status.setText("Invalid username or password")
                         Auth_system.login_fail(self)

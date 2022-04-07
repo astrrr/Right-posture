@@ -5,11 +5,12 @@ class superuser:
     user = ""
 
 class Charts:
-    First_donut = True
+    Loaded = False
 
 class Setting_func:
     DND = False
     Discord = False
+    DND_apply = False
     S_cam = False
     S_detail = False
 

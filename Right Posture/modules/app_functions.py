@@ -63,7 +63,7 @@ class AppFunctions(MainWindow):
 
     # Notification function
     def notifyMe(self, title, message):
-        if not Setting_func.DND:
+        if not Setting_func.DND_apply:
             notification.notify(
                 title=title,
                 message=message,
@@ -72,7 +72,7 @@ class AppFunctions(MainWindow):
             )
 
     def notifyIncorrect(self, title, message):
-        if not Setting_func.DND:
+        if not Setting_func.DND_apply:
             notification.notify(
                 title=title,
                 message=message,

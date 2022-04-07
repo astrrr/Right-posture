@@ -2,6 +2,7 @@ from main import MainWindow
 from modules.app_detect import Camera_detail
 from modules.app_temp import Setting_func, superuser, Debug_path, Charts
 from modules.app_functions import AppFunctions
+from modules.app_charts import Line_charts
 from PySide6 import QtWidgets
 from widgets import PyToggle
 import os
@@ -36,12 +37,21 @@ class Main_data(MainWindow):
         cur.execute(query)
         try:
             results = cur.fetchall()
-            if not Charts.First_donut:
-                self.ui.Donut_Frame_Layout.removeWidget(self.chartview)
-                print("remove")
+            if Charts.Loaded:
+                # Remove donut charts
+                remove_donut = self.ui.Donut_Frame_Layout.takeAt(0)
+                remove_donut.widget().deleteLater()
+                # Remove line charts
+                remove_line = self.ui.Line_Frame_Layout.takeAt(0)
+                remove_line.widget().deleteLater()
+                # print("Removed")
+
+            # Add new charts
             self.Donut_charts(results[-1])
+            self.ui.Line_Frame_Layout.addWidget(Line_charts(results))
+            Charts.Loaded = True
 
-
+            # Add new table
             self.ui.Log_table.setRowCount(0)
             for row_number, row_data in enumerate(results):
                 self.ui.Log_table.insertRow(row_number)
@@ -53,6 +63,8 @@ class Main_data(MainWindow):
                                                   QtWidgets.QTableWidgetItem(str(data) + ' %'))
             # print("Table loaded")
         except Exception as e:
+            self.Donut_charts([50, 50])
+            self.ui.Line_Frame_Layout.addWidget(Line_charts([0, 0]))
             print(e)
 
     # //////////////////////////////  Setting data //////////////////////////////
@@ -98,6 +110,13 @@ class Main_data(MainWindow):
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
         except Exception as e:
+            Setting_func.DND = 0
+            Setting_func.Discord = 0
+            setting.show_camera.setChecked(1)
+            setting.show_detail.setChecked(1)
+            self.Camera_1()
+            PyToggle.Toggle_Switch(self)
+            Main_data.apply_setting(self)
             print(e)
 
     def apply_setting(self):
@@ -139,6 +158,8 @@ class Main_data(MainWindow):
 
         Main_data.Show_Detail(self)
         setting.Setting_log.setText(show_setting)
+        # Do not disturb
+        Setting_func.DND_apply = Setting_func.DND
         # Discord Rich Presence
         AppFunctions.discordRichPresence(self, Setting_func.Discord)
 

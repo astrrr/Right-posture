@@ -225,7 +225,8 @@ class VideoThread(QThread):
                 print('t_total           : {} sec'.format(t_total))
                 print('inc_per           : {} %'.format(inc_per))
                 print('cor_per           : {} %'.format(cor_per))
-                cur.execute("UPDATE sessions SET time_end = ? , user_id = ? , incorrect_time = ? , correct_time = ? , total_time = ? , incorrect_per = ? , correct_per = ? WHERE session_id = ?", (end_time, user, t_incorrect_total, t_cor, t_total, inc_per, cor_per, sess_id,))
+                if not user == "Guest":
+                    cur.execute("UPDATE sessions SET time_end = ? , user_id = ? , incorrect_time = ? , correct_time = ? , total_time = ? , incorrect_per = ? , correct_per = ? WHERE session_id = ?", (end_time, user, t_incorrect_total, t_cor, t_total, inc_per, cor_per, sess_id,))
                 conn.commit()
                 cap.release()
                 cv2.destroyAllWindows()
