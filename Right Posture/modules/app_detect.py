@@ -13,6 +13,7 @@ import time
 import math
 from modules.app_temp import Debug_path, superuser
 
+
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
@@ -74,7 +75,7 @@ def Print_exception():
     Camera_detail.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
 
 def predict_img(dir_img):
-    img = tf.keras.preprocessing.image.load_img(dir_path, target_size=(224,224))
+    img = tf.keras.preprocessing.image.load_img(dir_img, target_size=(224,224))
     X = tf.keras.preprocessing.image.img_to_array(img)
 
     
@@ -82,9 +83,11 @@ def predict_img(dir_img):
     image = np.vstack([X])
     
     val = model(image)
+    val = np.array(val)
     # val[0][0] : correct ////// val[0][1] : incorrect
-    val[0][0] = round(val[0][0]*100 ,3)
-    val[0][1] = round(val[0][1]*100 ,3)
+    val[0][0] = '%.4f'%(float(val[0][0]*100))
+    val[0][1] = '%.4f'%(float(val[0][1]*100))
+
     return val
         
 
@@ -163,6 +166,7 @@ class VideoThread(QThread):
                         mp_pose.POSE_CONNECTIONS,
                         landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
                     
+                                      
                     # prediction
                     image_resize = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
                     pred = predict(image_resize)
