@@ -15,7 +15,7 @@ class Line_charts(QWidget):
 
     def init_ui(self, result):
         # Data from sessions
-        print(f"Data from line charts\n{result}")
+        # print(f"Data from line charts\n{result}")
 
         # Example dataframe
         df = pd.DataFrame({
