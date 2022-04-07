@@ -158,6 +158,8 @@ class Main_data(MainWindow):
 
         Main_data.Show_Detail(self)
         setting.Setting_log.setText(show_setting)
+        # Do not disturb
+        Setting_func.DND_apply = Setting_func.DND
         # Discord Rich Presence
         AppFunctions.discordRichPresence(self, Setting_func.Discord)
 
