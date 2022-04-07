@@ -63,6 +63,8 @@ class Main_data(MainWindow):
                                                   QtWidgets.QTableWidgetItem(str(data) + ' %'))
             # print("Table loaded")
         except Exception as e:
+            self.Donut_charts([50, 50])
+            self.ui.Line_Frame_Layout.addWidget(Line_charts([0, 0]))
             print(e)
 
     # //////////////////////////////  Setting data //////////////////////////////
@@ -108,6 +110,13 @@ class Main_data(MainWindow):
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
         except Exception as e:
+            Setting_func.DND = 0
+            Setting_func.Discord = 0
+            setting.show_camera.setChecked(1)
+            setting.show_detail.setChecked(1)
+            self.Camera_1()
+            PyToggle.Toggle_Switch(self)
+            Main_data.apply_setting(self)
             print(e)
 
     def apply_setting(self):

@@ -81,7 +81,8 @@ class Main_buttons(MainWindow):
                 self.ui.Setting_log.append(f"Fail to notify unknown error.\n{str(e)}")
 
         if btnName == "btn_reload":
-            Main_data.Load_table(self)
+            if not superuser.user == "Guest":
+                Main_data.Load_table(self)
             print("Reloaded")
 
         if btnName == "btn_save_setting":
