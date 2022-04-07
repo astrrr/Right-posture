@@ -49,10 +49,10 @@ class AuthWindow(QMainWindow):
         self.ui.Reg_Status.setText("Register")
         self.show()
 
-    def open_main(self):
+    def open_main(self, guest):
         username = self.ui.username.text()
         self.main = MainWindow()
-        if username == "":
+        if guest:
             username = "Guest"
         superuser.user = username
         Charts.Loaded = False
