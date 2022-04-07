@@ -113,7 +113,7 @@ class MainWindow(QMainWindow):
             _slice.setBrush(color)
 
         chart = QtCharts.QChart()
-        chart.setContentsMargins(-10, -10, -10, -10)
+        chart.setContentsMargins(-11, -11, -11, -11)
         chart.addSeries(series)
         chart.setTitle("Latest sit percent")
         chart.legend().setAlignment(QtCore.Qt.AlignBottom)
