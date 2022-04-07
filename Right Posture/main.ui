@@ -1726,7 +1726,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="Home">
                       <property name="styleSheet">
@@ -3062,6 +3062,59 @@ border: 2px solid #bd93f9;</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="20" column="0">
+                           <widget class="QPushButton" name="btn_open_file">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Open file</string>
+                            </property>
+                            <property name="icon">
+                             <iconset>
+                              <normaloff>images/icons/cil-folder-open.png</normaloff>images/icons/cil-folder-open.png</iconset>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="20" column="1">
+                           <widget class="QLabel" name="label_file">
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="text">
+                             <string>Open file : </string>
                             </property>
                            </widget>
                           </item>

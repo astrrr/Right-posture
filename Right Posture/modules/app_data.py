@@ -28,6 +28,11 @@ def save_checkbox():
 class Main_data(MainWindow):
     camera_status = ''
 
+    def Load_file(self):
+        file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", "", "All File (*)")
+        if file_name:
+            self.ui.label_file.setText(f"Open file: {file_name}")
+
     # ////////////////////////////// Table & Charts data //////////////////////////////
     def Load_table(self):
         conn = sqlite3.connect(f"{cwd}{Debug_path.path}/bin/Data/Sessions.db")
@@ -112,7 +117,7 @@ class Main_data(MainWindow):
         except Exception as e:
             Setting_func.DND = 0
             Setting_func.Discord = 0
-            setting.show_camera.setChecked(1)
+            setting.show_camera.setChecked(0)
             setting.show_detail.setChecked(1)
             self.Camera_1()
             PyToggle.Toggle_Switch(self)
