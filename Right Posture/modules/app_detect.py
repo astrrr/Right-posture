@@ -73,6 +73,21 @@ def Print_exception():
     excType, value = sys.exc_info()[:2]
     Camera_detail.traceback = f"\nException error\n{excType}\n{value}\n{traceback.format_exc()}"
 
+def predict_img(dir_img):
+    img = tf.keras.preprocessing.image.load_img(dir_path, target_size=(224,224))
+    X = tf.keras.preprocessing.image.img_to_array(img)
+
+    
+    X = np.expand_dims(X, axis=0)
+    image = np.vstack([X])
+    
+    val = model(image)
+    # val[0][0] : correct ////// val[0][1] : incorrect
+    val[0][0] = round(val[0][0]*100 ,3)
+    val[0][1] = round(val[0][1]*100 ,3)
+    return val
+        
+
 def predict(img):
     cur.executemany("INSERT OR IGNORE INTO sessions VALUES (?,?,?,?,?,?,?,?,?)", session)
     conn.commit()
