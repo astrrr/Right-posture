@@ -15,4 +15,4 @@ class Setting_func:
     S_detail = False
 
 class Debug_path:
-    path = ""
+    path = "/Right Posture"
