@@ -24,7 +24,7 @@ from widgets import *
 from PySide6 import QtCore, QtGui, QtCharts
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QApplication, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QApplication
 
 from modules.app_temp import version, superuser, Charts
 
@@ -49,12 +49,13 @@ class AuthWindow(QMainWindow):
         self.ui.Reg_Status.setText("Register")
         self.show()
 
-    def open_main(self):
+    def open_main(self, guest):
         username = self.ui.username.text()
         self.main = MainWindow()
-        if username == "":
+        if guest:
             username = "Guest"
         superuser.user = username
+        Charts.Loaded = False
         Main_data.load_setting(self.main)
         Main_data.Load_table(self.main)
         self.main.ui.titleRightInfo.setText(f"Welcome {username.capitalize()} to Right Posture")
@@ -97,13 +98,6 @@ class MainWindow(QMainWindow):
         self.show()
         Main_buttons.set_custom_theme(self, False)
 
-        # Main_data.Load_session(self)
-        # self.Donut_charts()
-        # self.ui.Donut_Frame_Layout.addWidget(self.chartview)
-
-        self.ui.Line_Frame_Layout.addWidget(Line_charts())
-
-
     def Donut_charts(self, result):
         correct = result[-1]
         incorrect = result[-2]
@@ -119,7 +113,7 @@ class MainWindow(QMainWindow):
             _slice.setBrush(color)
 
         chart = QtCharts.QChart()
-        chart.setContentsMargins(-10, -10, -10, -10)
+        chart.setContentsMargins(-11, -11, -11, -11)
         chart.addSeries(series)
         chart.setTitle("Latest sit percent")
         chart.legend().setAlignment(QtCore.Qt.AlignBottom)
@@ -129,7 +123,6 @@ class MainWindow(QMainWindow):
         self.chartview.setRenderHint(QtGui.QPainter.Antialiasing)
 
         self.ui.Donut_Frame_Layout.addWidget(self.chartview)
-        Charts.First_donut = False
 
     # UPDATE PROGRESS BAR
     def update(self):

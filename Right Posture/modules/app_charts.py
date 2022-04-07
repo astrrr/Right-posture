@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-import PySide6
-from PySide6.QtWidgets import (
-    QApplication,
-    QVBoxLayout,
-    QWidget
-)
-import sys
+from PySide6.QtWidgets import QVBoxLayout, QWidget
 import pandas as pd
-# Reference
-# https://qiita.com/hiroyuki_kageyama/items/cb87a0bee98c0262a35e
 import matplotlib
 
 matplotlib.use('Agg')
@@ -18,12 +8,15 @@ from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 
 class Line_charts(QWidget):
-    def __init__(self):
+    def __init__(self, result_line):
         super().__init__()
         self.setWindowTitle('Latest use')
-        self.init_ui()
+        self.init_ui(result_line)
 
-    def init_ui(self):
+    def init_ui(self, result):
+        # Data from sessions
+        print(result)
+
         # Example dataframe
         df = pd.DataFrame({
             'Sample': list(range(1, 11)),
