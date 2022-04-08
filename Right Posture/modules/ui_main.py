@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainbRVoHR.ui'
+## Form generated from reading UI file 'mainQHyNjv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1254,27 +1254,41 @@ class Ui_MainWindow(object):
         self.Setting.setObjectName(u"Setting")
         self.gridLayout_5 = QGridLayout(self.Setting)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.label_setting = QFrame(self.Setting)
-        self.label_setting.setObjectName(u"label_setting")
-        self.label_setting.setFrameShape(QFrame.StyledPanel)
-        self.label_setting.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_38 = QVBoxLayout(self.label_setting)
-        self.verticalLayout_38.setSpacing(0)
-        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
-        self.verticalLayout_38.setContentsMargins(8, 10, 11, 0)
-        self.label_5 = QLabel(self.label_setting)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font3)
-        self.label_5.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
-"font-weight: bold;\n"
+        self.Setting_log_frame = QFrame(self.Setting)
+        self.Setting_log_frame.setObjectName(u"Setting_log_frame")
+        self.Setting_log_frame.setMinimumSize(QSize(500, 0))
+        self.Setting_log_frame.setFrameShape(QFrame.StyledPanel)
+        self.Setting_log_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_21 = QVBoxLayout(self.Setting_log_frame)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.label_11 = QLabel(self.Setting_log_frame)
+        self.label_11.setObjectName(u"label_11")
+        font4 = QFont()
+        font4.setPointSize(12)
+        font4.setBold(False)
+        font4.setItalic(False)
+        font4.setUnderline(False)
+        self.label_11.setFont(font4)
+        self.label_11.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
 "border-radius: 5px;\n"
-"border: 2px solid #ff79c6;")
-        self.label_5.setAlignment(Qt.AlignCenter)
+"border: 2px solid #bd93f9;\n"
+"")
+        self.label_11.setAlignment(Qt.AlignCenter)
+        self.label_11.setWordWrap(False)
 
-        self.verticalLayout_38.addWidget(self.label_5)
+        self.verticalLayout_21.addWidget(self.label_11)
+
+        self.Setting_log = QTextBrowser(self.Setting_log_frame)
+        self.Setting_log.setObjectName(u"Setting_log")
+        self.Setting_log.setStyleSheet(u"#Setting_log{\n"
+"	border: 2px solid #bd93f9;\n"
+"}")
+        self.Setting_log.setReadOnly(True)
+
+        self.verticalLayout_21.addWidget(self.Setting_log)
 
 
-        self.gridLayout_5.addWidget(self.label_setting, 0, 0, 1, 2)
+        self.gridLayout_5.addWidget(self.Setting_log_frame, 1, 1, 2, 1)
 
         self.frame_4 = QFrame(self.Setting)
         self.frame_4.setObjectName(u"frame_4")
@@ -1349,11 +1363,6 @@ class Ui_MainWindow(object):
 
         self.label_2 = QLabel(self.frame_4)
         self.label_2.setObjectName(u"label_2")
-        font4 = QFont()
-        font4.setPointSize(12)
-        font4.setBold(False)
-        font4.setItalic(False)
-        font4.setUnderline(False)
         self.label_2.setFont(font4)
         self.label_2.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
 "border-radius: 5px;\n"
@@ -1424,20 +1433,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.label_7, 12, 0, 1, 1)
 
-        self.btn_test_notify = QPushButton(self.frame_4)
-        self.btn_test_notify.setObjectName(u"btn_test_notify")
-        sizePolicy.setHeightForWidth(self.btn_test_notify.sizePolicy().hasHeightForWidth())
-        self.btn_test_notify.setSizePolicy(sizePolicy)
-        self.btn_test_notify.setMinimumSize(QSize(0, 30))
-        self.btn_test_notify.setFont(font)
-        self.btn_test_notify.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_test_notify.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/images/icons/cil-bell.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_test_notify.setIcon(icon4)
-
-        self.gridLayout_4.addWidget(self.btn_test_notify, 19, 0, 1, 1)
-
         self.DND_frame = QFrame(self.frame_4)
         self.DND_frame.setObjectName(u"DND_frame")
         sizePolicy4.setHeightForWidth(self.DND_frame.sizePolicy().hasHeightForWidth())
@@ -1486,20 +1481,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.DND_frame, 15, 0, 1, 1)
 
-        self.btn_test_email = QPushButton(self.frame_4)
-        self.btn_test_email.setObjectName(u"btn_test_email")
-        sizePolicy.setHeightForWidth(self.btn_test_email.sizePolicy().hasHeightForWidth())
-        self.btn_test_email.setSizePolicy(sizePolicy)
-        self.btn_test_email.setMinimumSize(QSize(0, 30))
-        self.btn_test_email.setFont(font)
-        self.btn_test_email.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_test_email.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/images/icons/cil-envelope-closed.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_test_email.setIcon(icon5)
-
-        self.gridLayout_4.addWidget(self.btn_test_email, 19, 1, 1, 1)
-
         self.label = QLabel(self.frame_4)
         self.label.setObjectName(u"label")
         self.label.setFont(font4)
@@ -1519,25 +1500,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.label_12, 26, 0, 1, 1)
 
-        self.label_8 = QLabel(self.frame_4)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font4)
-        self.label_8.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
-"border-radius: 5px;\n"
-"border: 2px solid #bd93f9;")
-        self.label_8.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_4.addWidget(self.label_8, 17, 0, 1, 2)
-
         self.btn_save_setting = QPushButton(self.frame_4)
         self.btn_save_setting.setObjectName(u"btn_save_setting")
         self.btn_save_setting.setMinimumSize(QSize(150, 30))
         self.btn_save_setting.setFont(font)
         self.btn_save_setting.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_save_setting.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/images/icons/cil-save.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_save_setting.setIcon(icon6)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/images/icons/cil-save.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_save_setting.setIcon(icon4)
 
         self.gridLayout_4.addWidget(self.btn_save_setting, 27, 0, 1, 2)
 
@@ -1573,9 +1544,9 @@ class Ui_MainWindow(object):
         self.btn_open_file.setFont(font)
         self.btn_open_file.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_open_file.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon7 = QIcon()
-        icon7.addFile(u"images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_open_file.setIcon(icon7)
+        icon5 = QIcon()
+        icon5.addFile(u"images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_open_file.setIcon(icon5)
 
         self.gridLayout_4.addWidget(self.btn_open_file, 20, 0, 1, 1)
 
@@ -1586,38 +1557,68 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.label_file, 20, 1, 1, 1)
 
+        self.btn_test_email = QPushButton(self.frame_4)
+        self.btn_test_email.setObjectName(u"btn_test_email")
+        sizePolicy.setHeightForWidth(self.btn_test_email.sizePolicy().hasHeightForWidth())
+        self.btn_test_email.setSizePolicy(sizePolicy)
+        self.btn_test_email.setMinimumSize(QSize(0, 30))
+        self.btn_test_email.setFont(font)
+        self.btn_test_email.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_test_email.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/images/icons/cil-envelope-closed.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_test_email.setIcon(icon6)
+
+        self.gridLayout_4.addWidget(self.btn_test_email, 19, 1, 1, 1)
+
+        self.btn_test_notify = QPushButton(self.frame_4)
+        self.btn_test_notify.setObjectName(u"btn_test_notify")
+        sizePolicy.setHeightForWidth(self.btn_test_notify.sizePolicy().hasHeightForWidth())
+        self.btn_test_notify.setSizePolicy(sizePolicy)
+        self.btn_test_notify.setMinimumSize(QSize(0, 30))
+        self.btn_test_notify.setFont(font)
+        self.btn_test_notify.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_test_notify.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/images/icons/cil-bell.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_test_notify.setIcon(icon7)
+
+        self.gridLayout_4.addWidget(self.btn_test_notify, 19, 0, 1, 1)
+
+        self.label_8 = QLabel(self.frame_4)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setFont(font4)
+        self.label_8.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
+"border-radius: 5px;\n"
+"border: 2px solid #bd93f9;")
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_4.addWidget(self.label_8, 17, 0, 1, 2)
+
 
         self.gridLayout_5.addWidget(self.frame_4, 1, 0, 1, 1)
 
-        self.Setting_log_frame = QFrame(self.Setting)
-        self.Setting_log_frame.setObjectName(u"Setting_log_frame")
-        self.Setting_log_frame.setMinimumSize(QSize(500, 0))
-        self.Setting_log_frame.setFrameShape(QFrame.StyledPanel)
-        self.Setting_log_frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_21 = QVBoxLayout(self.Setting_log_frame)
-        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.label_11 = QLabel(self.Setting_log_frame)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font4)
-        self.label_11.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
+        self.label_setting = QFrame(self.Setting)
+        self.label_setting.setObjectName(u"label_setting")
+        self.label_setting.setFrameShape(QFrame.StyledPanel)
+        self.label_setting.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_38 = QVBoxLayout(self.label_setting)
+        self.verticalLayout_38.setSpacing(0)
+        self.verticalLayout_38.setObjectName(u"verticalLayout_38")
+        self.verticalLayout_38.setContentsMargins(8, 10, 11, 0)
+        self.label_5 = QLabel(self.label_setting)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font3)
+        self.label_5.setStyleSheet(u"font: 12pt \"Segoe UI\";\n"
+"font-weight: bold;\n"
 "border-radius: 5px;\n"
-"border: 2px solid #bd93f9;\n"
-"")
-        self.label_11.setAlignment(Qt.AlignCenter)
-        self.label_11.setWordWrap(False)
+"border: 2px solid #ff79c6;")
+        self.label_5.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_21.addWidget(self.label_11)
-
-        self.Setting_log = QTextBrowser(self.Setting_log_frame)
-        self.Setting_log.setObjectName(u"Setting_log")
-        self.Setting_log.setStyleSheet(u"#Setting_log{\n"
-"	border: 2px solid #bd93f9;\n"
-"}")
-
-        self.verticalLayout_21.addWidget(self.Setting_log)
+        self.verticalLayout_38.addWidget(self.label_5)
 
 
-        self.gridLayout_5.addWidget(self.Setting_log_frame, 1, 1, 2, 1)
+        self.gridLayout_5.addWidget(self.label_setting, 0, 0, 1, 2)
 
         self.frame_6 = QFrame(self.Setting)
         self.frame_6.setObjectName(u"frame_6")
@@ -2346,7 +2347,12 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.btn_clear_log.setText(QCoreApplication.translate("MainWindow", u"Clear log", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Setting", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Setting Log", None))
+        self.Setting_log.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.labelBoxBlenderInstalation_18.setText(QCoreApplication.translate("MainWindow", u"Notification duration after the first notification.", None))
         self.combo_period.setItemText(0, QCoreApplication.translate("MainWindow", u"5 Second (DEMO)", None))
         self.combo_period.setItemText(1, QCoreApplication.translate("MainWindow", u"10 Second (DEMO)", None))
@@ -2377,24 +2383,19 @@ class Ui_MainWindow(object):
         self.btn_logout_12.setText(QCoreApplication.translate("MainWindow", u"Discord", None))
         self.label_6.setText("")
         self.label_7.setText("")
-        self.btn_test_notify.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
         self.btn_logout_11.setText(QCoreApplication.translate("MainWindow", u"Do Not Disturb", None))
-        self.btn_test_email.setText(QCoreApplication.translate("MainWindow", u"E-mail", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Wrong posture", None))
         self.label_12.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Test system", None))
         self.btn_save_setting.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.labelBoxBlenderInstalation_17.setText(QCoreApplication.translate("MainWindow", u"Notification sensitive.", None))
         self.label_9.setText("")
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Optional", None))
         self.btn_open_file.setText(QCoreApplication.translate("MainWindow", u"Open file", None))
         self.label_file.setText(QCoreApplication.translate("MainWindow", u"Open file : ", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Setting Log", None))
-        self.Setting_log.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.btn_test_email.setText(QCoreApplication.translate("MainWindow", u"E-mail", None))
+        self.btn_test_notify.setText(QCoreApplication.translate("MainWindow", u"Notification", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Test system", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Setting", None))
         self.btn_reload.setText(QCoreApplication.translate("MainWindow", u"Reload", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Log", None))
         ___qtablewidgetitem = self.Log_table.horizontalHeaderItem(0)

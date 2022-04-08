@@ -4,7 +4,7 @@ from modules.app_temp import Setting_func, superuser, Debug_path, Charts
 from modules.app_functions import AppFunctions
 from modules.app_charts import Line_charts
 from modules.app_detect import predict_img
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtGui
 from widgets import PyToggle
 import os
 import sqlite3
@@ -33,10 +33,17 @@ class Main_data(MainWindow):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", "", "All File (*)")
         if file_name[0]:
             results = predict_img(file_name[0])
+            # Add images to setting log
+            document = self.ui.Setting_log.document()
+            cursor = QtGui.QTextCursor(document)
+            cursor.movePosition(cursor.End)
+            cursor.select(cursor.LineUnderCursor)
+            cursor.insertImage(file_name[0])
+            # Read file and print result
             show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
             self.ui.label_file.setText(f"Open file: {file_name[0]}")
             self.ui.Setting_log.append(show_result)
-            print(show_result)
+            # print(show_result)
 
     # ////////////////////////////// Table & Charts data //////////////////////////////
     def Load_table(self):
