@@ -22,6 +22,7 @@ class Main_buttons(MainWindow):
         button.btn_reload.clicked.connect(self.Main_button_Interface)
         button.btn_test_notify.clicked.connect(self.Main_button_Interface)
         button.btn_test_email.clicked.connect(self.Main_button_Interface)
+        button.btn_open_file.clicked.connect(self.Main_button_Interface)
         # Show Camera
         button.show_camera.clicked.connect(self.Camera_1)
         # Show Detail
@@ -87,6 +88,9 @@ class Main_buttons(MainWindow):
 
         if btnName == "btn_save_setting":
             Main_data.save_setting(self)
+
+        if btnName == "btn_open_file":
+            Main_data.Load_file(self)
 
         # PRINT BTN NAME
         # print(f'Button "{btnName}" pressed!')
