@@ -102,7 +102,7 @@ class Main_data(MainWindow):
             conn.commit()
             conn.close()
             Main_data.apply_setting(self)
-            setting.Setting_log.append("Save complete !")
+            setting.Setting_log.append("\nSave complete !")
         except Exception as e:
             print(e)
 
@@ -165,12 +165,12 @@ class Main_data(MainWindow):
         sitting_time = [int(s) for s in sitting_raw.split() if s.isdigit()]
         if setting.combo_sitting.currentIndex() <= 1:
             Camera_detail.sitting = sitting_time[0]
-            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute"
             show_setting = show_setting + sitting_text
             # print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
         else:
             Camera_detail.sitting = sitting_time[0] * 60
-            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute"
             show_setting = show_setting + sitting_text
             # print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
 
