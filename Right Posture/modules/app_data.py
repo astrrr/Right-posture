@@ -104,6 +104,7 @@ class Main_data(MainWindow):
             Main_data.apply_setting(self)
             setting.Setting_log.append("\nSave complete !")
         except Exception as e:
+            setting.Setting_log.append(e)
             print(e)
 
     def load_setting(self):
@@ -135,6 +136,7 @@ class Main_data(MainWindow):
             self.Camera_1()
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
+            setting.Setting_log.append("Apply log to default in guest mode")
             print(e)
 
     def apply_setting(self):
