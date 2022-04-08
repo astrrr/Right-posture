@@ -31,7 +31,7 @@ class Main_data(MainWindow):
 
     def Load_file(self):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", "", "All File (*)")
-        if file_name:
+        if file_name[0]:
             results = predict_img(file_name[0])
             show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
             self.ui.label_file.setText(f"Open file: {file_name[0]}")
