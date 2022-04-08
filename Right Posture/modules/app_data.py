@@ -33,6 +33,7 @@ class Main_data(MainWindow):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", "", "All File (*)")
         if file_name[0]:
             results = predict_img(file_name[0])
+            self.ui.Setting_log.append('\n')
             # Add images to setting log
             document = self.ui.Setting_log.document()
             cursor = QtGui.QTextCursor(document)
@@ -196,7 +197,6 @@ class Main_data(MainWindow):
                                         f"Sensitive = {self.ui.combo_sensitive.currentText()}\n"
                                         f"Sitting = {self.ui.combo_sitting.currentText()}\n"
                                         f"{Camera_detail.traceback}")
-            self.ui.Setting_log.append(Camera_detail.traceback)
             Setting_func.S_detail = 1
             save_checkbox()
             # print("Start Detail")
