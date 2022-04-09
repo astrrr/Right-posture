@@ -52,9 +52,9 @@ class Main_data(MainWindow):
         cur = conn.cursor()
         query = f"SELECT user_id, time_start, time_end, incorrect_time, correct_time, total_time, incorrect_per,correct_per " \
                 f"FROM sessions WHERE user_id = \'{superuser.user}\'"
-        cur.execute(query)
         try:
-            results = cur.fetchall()
+            results_exe = cur.execute(query)
+            results = results_exe.fetchall()
             if Charts.Loaded:
                 # Remove donut charts
                 remove_donut = self.ui.Donut_Frame_Layout.takeAt(0)
@@ -66,7 +66,7 @@ class Main_data(MainWindow):
 
             # Add new charts
             self.Donut_charts(results[-1])
-            self.ui.Line_Frame_Layout.addWidget(Line_charts(results))
+            self.ui.Line_Frame_Layout.addWidget(Line_charts(results_exe.description, results))
             Charts.Loaded = True
 
             # Add new table
