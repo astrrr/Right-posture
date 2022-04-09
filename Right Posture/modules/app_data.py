@@ -3,6 +3,7 @@ from modules.app_detect import Camera_detail
 from modules.app_temp import Setting_func, superuser, Debug_path, Charts
 from modules.app_functions import AppFunctions
 from modules.app_charts import Line_charts
+from modules.app_detect import predict_img
 from PySide6 import QtWidgets
 from widgets import PyToggle
 import os
@@ -27,6 +28,15 @@ def save_checkbox():
 
 class Main_data(MainWindow):
     camera_status = ''
+
+    def Load_file(self):
+        file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", "", "All File (*)")
+        if file_name:
+            results = predict_img(file_name[0])
+            show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
+            self.ui.label_file.setText(f"Open file: {file_name[0]}")
+            self.ui.Setting_log.append(show_result)
+            print(show_result)
 
     # ////////////////////////////// Table & Charts data //////////////////////////////
     def Load_table(self):
@@ -112,7 +122,7 @@ class Main_data(MainWindow):
         except Exception as e:
             Setting_func.DND = 0
             Setting_func.Discord = 0
-            setting.show_camera.setChecked(1)
+            setting.show_camera.setChecked(0)
             setting.show_detail.setChecked(1)
             self.Camera_1()
             PyToggle.Toggle_Switch(self)

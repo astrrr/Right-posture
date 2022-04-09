@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainTlxyum.ui'
+## Form generated from reading UI file 'mainbRVoHR.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1565,6 +1565,27 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.label_10, 14, 0, 1, 2)
 
+        self.btn_open_file = QPushButton(self.frame_4)
+        self.btn_open_file.setObjectName(u"btn_open_file")
+        sizePolicy.setHeightForWidth(self.btn_open_file.sizePolicy().hasHeightForWidth())
+        self.btn_open_file.setSizePolicy(sizePolicy)
+        self.btn_open_file.setMinimumSize(QSize(0, 30))
+        self.btn_open_file.setFont(font)
+        self.btn_open_file.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_open_file.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        icon7 = QIcon()
+        icon7.addFile(u"images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_open_file.setIcon(icon7)
+
+        self.gridLayout_4.addWidget(self.btn_open_file, 20, 0, 1, 1)
+
+        self.label_file = QLabel(self.frame_4)
+        self.label_file.setObjectName(u"label_file")
+        self.label_file.setFont(font)
+        self.label_file.setStyleSheet(u"")
+
+        self.gridLayout_4.addWidget(self.label_file, 20, 1, 1, 1)
+
 
         self.gridLayout_5.addWidget(self.frame_4, 1, 0, 1, 1)
 
@@ -1629,9 +1650,9 @@ class Ui_MainWindow(object):
         self.btn_reload.setFont(font)
         self.btn_reload.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_reload.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/images/icons/cil-reload.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_reload.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/images/icons/cil-reload.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_reload.setIcon(icon8)
 
         self.verticalLayout_39.addWidget(self.btn_reload)
 
@@ -1807,9 +1828,9 @@ class Ui_MainWindow(object):
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/images/icons/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon9)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -1932,9 +1953,9 @@ class Ui_MainWindow(object):
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.commandLinkButton.setStyleSheet(u"")
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/images/icons/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton.setIcon(icon10)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
 
@@ -2261,7 +2282,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2366,6 +2387,8 @@ class Ui_MainWindow(object):
         self.labelBoxBlenderInstalation_17.setText(QCoreApplication.translate("MainWindow", u"Notification sensitive.", None))
         self.label_9.setText("")
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Optional", None))
+        self.btn_open_file.setText(QCoreApplication.translate("MainWindow", u"Open file", None))
+        self.label_file.setText(QCoreApplication.translate("MainWindow", u"Open file : ", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Setting Log", None))
         self.Setting_log.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
