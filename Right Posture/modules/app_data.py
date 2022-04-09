@@ -32,19 +32,23 @@ class Main_data(MainWindow):
     def Load_file(self):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", "", "All File (*)")
         if file_name[0]:
-            results = predict_img(file_name[0])
-            self.ui.Setting_log.append('\n')
-            # Add images to setting log
-            document = self.ui.Setting_log.document()
-            cursor = QtGui.QTextCursor(document)
-            cursor.movePosition(cursor.End)
-            cursor.select(cursor.LineUnderCursor)
-            cursor.insertImage(file_name[0])
-            # Read file and print result
-            show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
-            self.ui.label_file.setText(f"Open file: {file_name[0]}")
-            self.ui.Setting_log.append(show_result)
-            # print(show_result)
+            try:
+                results = predict_img(file_name[0])
+                self.ui.Setting_log.append('\n')
+                # Add images to setting log
+                document = self.ui.Setting_log.document()
+                cursor = QtGui.QTextCursor(document)
+                cursor.movePosition(cursor.End)
+                cursor.select(cursor.LineUnderCursor)
+                cursor.insertImage(file_name[0])
+                # Read file and print result
+                show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
+                self.ui.label_file.setText(f"Open file: {file_name[0]}")
+                self.ui.Setting_log.append(show_result)
+                # print(show_result)
+            except Exception as e:
+                self.ui.Setting_log.append("\nThe model hasn't loaded please open camera first.")
+                print(e)
 
     # ////////////////////////////// Table & Charts data //////////////////////////////
     def Load_table(self):
