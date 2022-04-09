@@ -2296,50 +2296,64 @@ p, li { white-space: pre-wrap; }
                      </widget>
                      <widget class="QWidget" name="Setting">
                       <layout class="QGridLayout" name="gridLayout_5">
-                       <item row="0" column="0" colspan="2">
-                        <widget class="QFrame" name="label_setting">
+                       <item row="1" column="1" rowspan="2">
+                        <widget class="QFrame" name="Setting_log_frame">
+                         <property name="minimumSize">
+                          <size>
+                           <width>500</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_38">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
-                          <property name="leftMargin">
-                           <number>8</number>
-                          </property>
-                          <property name="topMargin">
-                           <number>10</number>
-                          </property>
-                          <property name="rightMargin">
-                           <number>11</number>
-                          </property>
-                          <property name="bottomMargin">
-                           <number>0</number>
-                          </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_21">
                           <item>
-                           <widget class="QLabel" name="label_5">
+                           <widget class="QLabel" name="label_11">
                             <property name="font">
                              <font>
                               <pointsize>12</pointsize>
                               <italic>false</italic>
-                              <bold>true</bold>
+                              <bold>false</bold>
+                              <underline>false</underline>
                              </font>
                             </property>
                             <property name="styleSheet">
                              <string notr="true">font: 12pt &quot;Segoe UI&quot;;
-font-weight: bold;
 border-radius: 5px;
-border: 2px solid #ff79c6;</string>
+border: 2px solid #bd93f9;
+</string>
                             </property>
                             <property name="text">
-                             <string>Setting</string>
+                             <string>Setting Log</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>false</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QTextBrowser" name="Setting_log">
+                            <property name="styleSheet">
+                             <string notr="true">#Setting_log{
+	border: 2px solid #bd93f9;
+}</string>
+                            </property>
+                            <property name="readOnly">
+                             <bool>true</bool>
+                            </property>
+                            <property name="html">
+                             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
@@ -2734,42 +2748,6 @@ padding-left: 44px;</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="19" column="0">
-                           <widget class="QPushButton" name="btn_test_notify">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="cursor">
-                             <cursorShape>PointingHandCursor</cursorShape>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-color: rgb(52, 59, 72);</string>
-                            </property>
-                            <property name="text">
-                             <string>Notification</string>
-                            </property>
-                            <property name="icon">
-                             <iconset resource="resources.qrc">
-                              <normaloff>:/icons/images/icons/cil-bell.png</normaloff>:/icons/images/icons/cil-bell.png</iconset>
-                            </property>
-                           </widget>
-                          </item>
                           <item row="15" column="0">
                            <widget class="QFrame" name="DND_frame">
                             <property name="sizePolicy">
@@ -2883,42 +2861,6 @@ padding-left: 44px;</string>
                             </layout>
                            </widget>
                           </item>
-                          <item row="19" column="1">
-                           <widget class="QPushButton" name="btn_test_email">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <pointsize>10</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                             </font>
-                            </property>
-                            <property name="cursor">
-                             <cursorShape>PointingHandCursor</cursorShape>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-color: rgb(52, 59, 72);</string>
-                            </property>
-                            <property name="text">
-                             <string>E-mail</string>
-                            </property>
-                            <property name="icon">
-                             <iconset resource="resources.qrc">
-                              <normaloff>:/icons/images/icons/cil-envelope-closed.png</normaloff>:/icons/images/icons/cil-envelope-closed.png</iconset>
-                            </property>
-                           </widget>
-                          </item>
                           <item row="2" column="0" colspan="2">
                            <widget class="QLabel" name="label">
                             <property name="font">
@@ -2953,29 +2895,6 @@ border: 2px solid #bd93f9;
                             </property>
                             <property name="text">
                              <string/>
-                            </property>
-                            <property name="alignment">
-                             <set>Qt::AlignCenter</set>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="17" column="0" colspan="2">
-                           <widget class="QLabel" name="label_8">
-                            <property name="font">
-                             <font>
-                              <pointsize>12</pointsize>
-                              <italic>false</italic>
-                              <bold>false</bold>
-                              <underline>false</underline>
-                             </font>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
-border-radius: 5px;
-border: 2px solid #bd93f9;</string>
-                            </property>
-                            <property name="text">
-                             <string>Test system</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -3118,26 +3037,80 @@ border: 2px solid #bd93f9;</string>
                             </property>
                            </widget>
                           </item>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item row="1" column="1" rowspan="2">
-                        <widget class="QFrame" name="Setting_log_frame">
-                         <property name="minimumSize">
-                          <size>
-                           <width>500</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_21">
-                          <item>
-                           <widget class="QLabel" name="label_11">
+                          <item row="19" column="1">
+                           <widget class="QPushButton" name="btn_test_email">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>E-mail</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-envelope-closed.png</normaloff>:/icons/images/icons/cil-envelope-closed.png</iconset>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="19" column="0">
+                           <widget class="QPushButton" name="btn_test_notify">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>10</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Notification</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-bell.png</normaloff>:/icons/images/icons/cil-bell.png</iconset>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="17" column="0" colspan="2">
+                           <widget class="QLabel" name="label_8">
                             <property name="font">
                              <font>
                               <pointsize>12</pointsize>
@@ -3149,33 +3122,63 @@ border: 2px solid #bd93f9;</string>
                             <property name="styleSheet">
                              <string notr="true">font: 12pt &quot;Segoe UI&quot;;
 border-radius: 5px;
-border: 2px solid #bd93f9;
-</string>
+border: 2px solid #bd93f9;</string>
                             </property>
                             <property name="text">
-                             <string>Setting Log</string>
+                             <string>Test system</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
                             </property>
-                            <property name="wordWrap">
-                             <bool>false</bool>
-                            </property>
                            </widget>
                           </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item row="0" column="0" colspan="2">
+                        <widget class="QFrame" name="label_setting">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_38">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>8</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>10</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>11</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
                           <item>
-                           <widget class="QTextBrowser" name="Setting_log">
-                            <property name="styleSheet">
-                             <string notr="true">#Setting_log{
-	border: 2px solid #bd93f9;
-}</string>
+                           <widget class="QLabel" name="label_5">
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                              <italic>false</italic>
+                              <bold>true</bold>
+                             </font>
                             </property>
-                            <property name="html">
-                             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            <property name="styleSheet">
+                             <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+font-weight: bold;
+border-radius: 5px;
+border: 2px solid #ff79c6;</string>
+                            </property>
+                            <property name="text">
+                             <string>Setting</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
                           </item>

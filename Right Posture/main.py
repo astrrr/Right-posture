@@ -32,7 +32,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # main "1" = MainWindow , main "0" = AuthWindow
 main = 0
-version.thisVersion = "1.1.7.9"
+version.thisVersion = "1.1.8.5"
 # /////////////////////////////////////////////
 counter = 0
 CircularProgress_timer = 300
@@ -162,7 +162,7 @@ class MainWindow(QMainWindow):
     def Camera_1(self):
         global counter
         if Camera_detail.First_load_model:
-            self.ui.Camera1_label.setText("The model hasn't loaded yet.")
+            self.ui.Camera1_label.setText("The model hasn't loaded.")
         else:
             self.ui.Camera1_label.setText("The model is loaded.")
 

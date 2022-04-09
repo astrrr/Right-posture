@@ -4,7 +4,7 @@ from modules.app_temp import Setting_func, superuser, Debug_path, Charts
 from modules.app_functions import AppFunctions
 from modules.app_charts import Line_charts
 from modules.app_detect import predict_img
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtGui
 from widgets import PyToggle
 import os
 import sqlite3
@@ -31,12 +31,24 @@ class Main_data(MainWindow):
 
     def Load_file(self):
         file_name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", "", "All File (*)")
-        if file_name:
-            results = predict_img(file_name[0])
-            show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
-            self.ui.label_file.setText(f"Open file: {file_name[0]}")
-            self.ui.Setting_log.append(show_result)
-            print(show_result)
+        if file_name[0]:
+            try:
+                results = predict_img(file_name[0])
+                self.ui.Setting_log.append('\n')
+                # Add images to setting log
+                document = self.ui.Setting_log.document()
+                cursor = QtGui.QTextCursor(document)
+                cursor.movePosition(cursor.End)
+                cursor.select(cursor.LineUnderCursor)
+                cursor.insertImage(file_name[0])
+                # Read file and print result
+                show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
+                self.ui.label_file.setText(f"Open file: {file_name[0]}")
+                self.ui.Setting_log.append(show_result)
+                # print(show_result)
+            except Exception as e:
+                self.ui.Setting_log.append("\nThe model hasn't loaded please open camera first.")
+                print(e)
 
     # ////////////////////////////// Table & Charts data //////////////////////////////
     def Load_table(self):
@@ -44,9 +56,9 @@ class Main_data(MainWindow):
         cur = conn.cursor()
         query = f"SELECT user_id, time_start, time_end, incorrect_time, correct_time, total_time, incorrect_per,correct_per " \
                 f"FROM sessions WHERE user_id = \'{superuser.user}\'"
-        cur.execute(query)
         try:
-            results = cur.fetchall()
+            results_exe = cur.execute(query)
+            results = results_exe.fetchall()
             if Charts.Loaded:
                 # Remove donut charts
                 remove_donut = self.ui.Donut_Frame_Layout.takeAt(0)
@@ -58,7 +70,7 @@ class Main_data(MainWindow):
 
             # Add new charts
             self.Donut_charts(results[-1])
-            self.ui.Line_Frame_Layout.addWidget(Line_charts(results))
+            self.ui.Line_Frame_Layout.addWidget(Line_charts(results_exe.description, results))
             Charts.Loaded = True
 
             # Add new table
@@ -94,8 +106,9 @@ class Main_data(MainWindow):
             conn.commit()
             conn.close()
             Main_data.apply_setting(self)
-            setting.Setting_log.append("Save complete !")
+            setting.Setting_log.append("\nSave complete !")
         except Exception as e:
+            setting.Setting_log.append(e)
             print(e)
 
     def load_setting(self):
@@ -127,6 +140,7 @@ class Main_data(MainWindow):
             self.Camera_1()
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
+            setting.Setting_log.append("Apply log to default in guest mode")
             print(e)
 
     def apply_setting(self):
@@ -157,12 +171,12 @@ class Main_data(MainWindow):
         sitting_time = [int(s) for s in sitting_raw.split() if s.isdigit()]
         if setting.combo_sitting.currentIndex() <= 1:
             Camera_detail.sitting = sitting_time[0]
-            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute"
             show_setting = show_setting + sitting_text
             # print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
         else:
             Camera_detail.sitting = sitting_time[0] * 60
-            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute\n"
+            sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute"
             show_setting = show_setting + sitting_text
             # print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
 
@@ -189,7 +203,6 @@ class Main_data(MainWindow):
                                         f"Sensitive = {self.ui.combo_sensitive.currentText()}\n"
                                         f"Sitting = {self.ui.combo_sitting.currentText()}\n"
                                         f"{Camera_detail.traceback}")
-            self.ui.Setting_log.append(Camera_detail.traceback)
             Setting_func.S_detail = 1
             save_checkbox()
             # print("Start Detail")
