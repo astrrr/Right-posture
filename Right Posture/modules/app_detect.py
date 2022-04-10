@@ -218,12 +218,18 @@ class VideoThread(QThread):
                 
 
                 user = superuser.user
-                t_total = time.time() - t_start
+                t_total = (time.time() - t_start)
                 t_incorrect_total = (inc_count/(inc_count+cor_count))*t_total
                 t_cor = (cor_count/(inc_count+cor_count))*t_total
                 inc_per = (inc_count/(inc_count+cor_count))*100
                 cor_per = (cor_count/(inc_count+cor_count))*100
                 
+                t_total = '{:.2f}'.format(t_total)
+                t_incorrect_total = '{:.2f}'.format(t_incorrect_total)
+                t_cor = '{:.2f}'.format(t_cor)
+                inc_per = '{:.2f}'.format(inc_per)
+                cor_per = '{:.2f}'.format(cor_per)
+ 
                 print('t_incorrect       : {} sec'.format(t_incorrect_total))
                 print('t_cor             : {} sec'.format(t_cor))
                 print('t_total           : {} sec'.format(t_total))
