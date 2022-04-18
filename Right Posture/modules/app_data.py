@@ -85,8 +85,22 @@ class Main_data(MainWindow):
                                                   QtWidgets.QTableWidgetItem(str(data) + ' %'))
             # print("Table loaded")
         except Exception as e:
-            self.Donut_charts([50, 50])
-            self.ui.Line_Frame_Layout.addWidget(Line_charts([0, 0]))
+            Donut_label = QtWidgets.QLabel(self)
+            Line_label = QtWidgets.QLabel(self)
+
+            Donut_label.setText("Not found")
+            Line_label.setText("Hello World")
+
+            Donut_label.setAlignment(QtGui.Qt.AlignCenter)
+            Line_label.setAlignment(QtGui.Qt.AlignCenter)
+
+            self.ui.Donut_Frame_Layout.addWidget(Donut_label)
+            self.ui.Line_Frame_Layout.addWidget(Line_label)
+
+            self.ui.btn_reload.setIcon(QtGui.QIcon())
+            self.ui.btn_reload.setEnabled(False)
+            self.ui.btn_reload.setText("No data")
+            self.ui.btn_save_setting.setText("Apply")
             print(e)
 
     # //////////////////////////////  Setting data //////////////////////////////
@@ -140,7 +154,7 @@ class Main_data(MainWindow):
             self.Camera_1()
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
-            setting.Setting_log.append("Apply log to default in guest mode")
+            setting.Setting_log.append("\nApply log to default in guest mode")
             print(e)
 
     def apply_setting(self):
