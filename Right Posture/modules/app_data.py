@@ -7,6 +7,7 @@ from modules.app_detect import predict_img
 from PySide6 import QtWidgets, QtGui
 from widgets import PyToggle
 import os
+import cv2
 import sqlite3
 
 cwd = os.getcwd()
@@ -42,7 +43,7 @@ class Main_data(MainWindow):
                 cursor.select(cursor.LineUnderCursor)
                 cursor.insertImage(file_name[0])
                 # Read file and print result
-                show_result = f"Correct : {results[0][0]:.4f} || Incorrect : {results[0][1]:.4f}"
+                show_result = f"Correct : {results[0][0]:.2f} || Incorrect : {results[0][1]:.2f}"
                 self.ui.label_file.setText(f"Open file: {file_name[0]}")
                 self.ui.Setting_log.append(show_result)
                 # print(show_result)
@@ -88,8 +89,8 @@ class Main_data(MainWindow):
             Donut_label = QtWidgets.QLabel(self)
             Line_label = QtWidgets.QLabel(self)
 
-            Donut_label.setText("Not found")
-            Line_label.setText("Hello World")
+            Donut_label.setText("Donut charts will not show in guest mode.")
+            Line_label.setText("Line charts will not show in guest mode.")
 
             Donut_label.setAlignment(QtGui.Qt.AlignCenter)
             Line_label.setAlignment(QtGui.Qt.AlignCenter)
@@ -99,8 +100,8 @@ class Main_data(MainWindow):
 
             self.ui.btn_reload.setIcon(QtGui.QIcon())
             self.ui.btn_reload.setEnabled(False)
-            self.ui.btn_reload.setText("No data")
-            self.ui.btn_save_setting.setText("Apply")
+            self.ui.btn_reload.setText("No data in guest mode")
+            self.ui.btn_save_setting.setText("Apply in guest mode")
             print(e)
 
     # //////////////////////////////  Setting data //////////////////////////////
