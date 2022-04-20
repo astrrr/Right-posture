@@ -53,12 +53,9 @@ sess_id = int(sess_items[-1][0])+1
 session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
 
 
-
 model = None
 model_name = 'VGG19_Fix_angle_no_aug'
 
-
-VideoCapture = Setting_func.Camera
 
 def Print_log(text):
     date_time = datetime.datetime.now()
@@ -141,7 +138,7 @@ class VideoThread(QThread):
             worker.signals.finished.connect(self.thread_complete)
             self.threadpool.start(worker)
         if Camera_detail.Finish_load_model:
-            cap = cv2.VideoCapture(VideoCapture, cv2.CAP_DSHOW)
+            cap = cv2.VideoCapture(Setting_func.Camera, cv2.CAP_DSHOW)
             pred = 3
             img_counter_cor = 0
             with mp_pose.Pose(
@@ -320,7 +317,6 @@ class Camera_detail:
     period = 30
     sensitive = 7
     sitting = 1
-    Camera = VideoCapture
 
 class Camera:
     
