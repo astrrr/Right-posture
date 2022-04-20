@@ -202,7 +202,7 @@ class VideoThread(QThread):
                     except Exception as e:
                         # print(e)
                         Camera_detail.Error_load_model = True
-                        Camera_detail.traceback = "Camera error"
+                        Camera_detail.traceback = "\nCamera not found please try to change in setting"
 
                 if not Camera_detail.Error_load_model:
                     end_time = time.asctime(time.localtime(time.time()))

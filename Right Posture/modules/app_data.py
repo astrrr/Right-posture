@@ -107,6 +107,7 @@ class Main_data(MainWindow):
     def save_setting(self):
         setting = self.ui
         try:
+            Camera_detail.traceback = ""
             conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
             cur = conn.cursor()
             period = setting.combo_period.currentIndex()
