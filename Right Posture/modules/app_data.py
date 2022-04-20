@@ -226,7 +226,7 @@ class Main_data(MainWindow):
                                         f"{Camera_detail.traceback}")
             Setting_func.S_detail = 1
             save_checkbox()
-            # print("Start Detail")
+            print("Start Detail")
         else:
             self.ui.Detail_text.clear()
             Setting_func.S_detail = 0
