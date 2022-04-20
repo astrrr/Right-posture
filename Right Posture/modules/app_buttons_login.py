@@ -68,7 +68,7 @@ class Auth_buttons(AuthWindow):
             button.Login_stackedWidget.setCurrentWidget(button.Login_page)
 
         if btnName == "btn_Forget_Email":
-            Auth_system.check_email(self)
+            Auth_system.check_forget(self)
 
         if btnName == "btn_Auth_back":
             UILoginFunctions.animation_back(self)

@@ -74,7 +74,7 @@ class AuthWindow(QMainWindow):
 
     def enter_forget(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
-            Auth_system.check_email(self)
+            Auth_system.check_forget(self)
 
     def enter_auth(self, event):
         if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
