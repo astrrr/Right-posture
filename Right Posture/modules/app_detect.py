@@ -100,17 +100,9 @@ def predict(img):
         val = model(image)
         # correct > incorrect
         if float(val[0][0]) > float(val[0][1]):
-            # ///////////////////////////////////////////////////////////////////////////////
-            # Camera_detail.log = (Camera_detail.log + '\n model prediction : correct')
-            # print('model prediction : correct')
-            # ///////////////////////////////////////////////////////////////////////////////
             return 0
             # incorrect > correct
         elif float(val[0][0]) < float(val[0][1]):
-            # ///////////////////////////////////////////////////////////////////////////////
-            # Camera_detail.log = (Camera_detail.log + '\n model prediction : incorrect')
-            # print('model prediction : incorrect')
-            # ///////////////////////////////////////////////////////////////////////////////
             return 1
     except:
         Camera_detail.Error_load_model = True
@@ -139,8 +131,6 @@ class VideoThread(QThread):
             self.threadpool.start(worker)
         if Camera_detail.Finish_load_model:
             cap = cv2.VideoCapture(Setting_func.Camera, cv2.CAP_DSHOW)
-            pred = 3
-            img_counter_cor = 0
             with mp_pose.Pose(
                     min_detection_confidence=0.5,
                     min_tracking_confidence=0.5) as pose:
@@ -161,8 +151,8 @@ class VideoThread(QThread):
                         results.pose_landmarks,
                         mp_pose.POSE_CONNECTIONS,
                         landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
-                    
-                                      
+
+
                     # prediction
                     image_resize = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
                     pred = predict(image_resize)
@@ -181,7 +171,7 @@ class VideoThread(QThread):
 
                         # preriod of notification
                         pon = Camera_detail.period
-                        if time.time() - t_noti_checkpoint >= pon and rest_flag ==0: 
+                        if time.time() - t_noti_checkpoint >= pon and rest_flag ==0:
                             # incorrect sensitive
                             sensitive = Camera_detail.sensitive
                             if int((t_last))%sensitive ==0:
@@ -190,7 +180,7 @@ class VideoThread(QThread):
                                 AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
                                 Print_log("Incorrect posture.")
                                 t_noti_checkpoint = time.time()
-                    
+
                     # timer of sitting 10 m  (10 m * 60s)
 
                     tos = Camera_detail.sitting
@@ -211,7 +201,7 @@ class VideoThread(QThread):
                         self.change_pixmap_signal.emit(image)
                 
                 end_time = time.asctime(time.localtime(time.time()))
-                
+
 
                 user = superuser.user
                 t_total = (time.time() - t_start)
@@ -219,13 +209,13 @@ class VideoThread(QThread):
                 t_cor = (cor_count/(inc_count+cor_count))*t_total
                 inc_per = (inc_count/(inc_count+cor_count))*100
                 cor_per = (cor_count/(inc_count+cor_count))*100
-                
+
                 t_total = '{:.2f}'.format(t_total)
                 t_incorrect_total = '{:.2f}'.format(t_incorrect_total)
                 t_cor = '{:.2f}'.format(t_cor)
                 inc_per = '{:.2f}'.format(inc_per)
                 cor_per = '{:.2f}'.format(cor_per)
- 
+
                 print('t_incorrect       : {} sec'.format(t_incorrect_total))
                 print('t_cor             : {} sec'.format(t_cor))
                 print('t_total           : {} sec'.format(t_total))
