@@ -1,3 +1,4 @@
+import main
 from main import *
 from modules.app_functions import AppFunctions
 import datetime
@@ -332,6 +333,11 @@ class Camera:
             self.thread.change_pixmap_signal.connect(self.update_image)
 
             self.thread.start()  # スレッドを起動
+
+            # Delay to update detail
+            if VideoThread != 0:
+                QTimer.singleShot(1000, lambda: self.Update_detail())
+
         else:
             try:
                 self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
