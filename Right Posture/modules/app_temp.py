@@ -13,6 +13,7 @@ class Setting_func:
     DND_apply = False
     S_cam = False
     S_detail = False
+    Camera = 0
 
 class Debug_path:
     path = ""

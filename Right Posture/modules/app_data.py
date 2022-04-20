@@ -7,7 +7,6 @@ from modules.app_detect import predict_img
 from PySide6 import QtWidgets, QtGui
 from widgets import PyToggle
 import os
-import cv2
 import sqlite3
 
 cwd = os.getcwd()
@@ -108,6 +107,7 @@ class Main_data(MainWindow):
     def save_setting(self):
         setting = self.ui
         try:
+            Camera_detail.traceback = ""
             conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
             cur = conn.cursor()
             period = setting.combo_period.currentIndex()
@@ -115,8 +115,9 @@ class Main_data(MainWindow):
             sitting = setting.combo_sitting.currentIndex()
             dnd = Setting_func.DND
             discord = Setting_func.Discord
+            camera = setting.combo_camera.currentIndex()
             query = f"UPDATE login_info set period={period}, sensitive={sensitive}, sitting={sitting}, " \
-                    f"dnd={dnd}, discord={discord} WHERE username = \'{superuser.user}\'"
+                    f"dnd={dnd}, discord={discord}, camera={camera} WHERE username = \'{superuser.user}\'"
             cur.execute(query)
             conn.commit()
             conn.close()
@@ -130,7 +131,7 @@ class Main_data(MainWindow):
         setting = self.ui
         conn = sqlite3.connect(f"{cwd}/bin/Data/Accounts.db")
         cur = conn.cursor()
-        query = f"SELECT period,sensitive,sitting,dnd,discord, s_cam, s_detail " \
+        query = f"SELECT period,sensitive,sitting,dnd,discord, s_cam, s_detail, camera " \
                 f"FROM login_info WHERE username = \'{superuser.user}\'"
         cur.execute(query)
         try:
@@ -144,6 +145,7 @@ class Main_data(MainWindow):
             Setting_func.Discord = set_Index[4]
             setting.show_camera.setChecked(set_Index[5])
             setting.show_detail.setChecked(set_Index[6])
+            setting.combo_camera.setCurrentIndex(set_Index[7])
             self.Camera_1()
             PyToggle.Toggle_Switch(self)
             Main_data.apply_setting(self)
@@ -195,6 +197,10 @@ class Main_data(MainWindow):
             show_setting = show_setting + sitting_text
             # print(f"Sitting = {sitting_time[0]} = {Camera_detail.sitting} Minute")
 
+        Setting_func.Camera = setting.combo_camera.currentIndex()
+        camera_text = f"\ncamera = {setting.combo_camera.currentText()}"
+        show_setting = show_setting + camera_text
+
         Main_data.Show_Detail(self)
         setting.Setting_log.setText(show_setting)
         # Do not disturb
@@ -210,7 +216,7 @@ class Main_data(MainWindow):
 
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():
-            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {Main_data.camera_status}\n\n"
+            self.ui.Detail_text.setText(f"Camera VideoCapture({Setting_func.Camera}): {Main_data.camera_status}\n\n"
                                         f"Models: {Camera_detail.get_model_name}\n"
                                         f"Models Status: {Camera_detail.model_status}\n\n"
                                         f"Notification setup\n"
@@ -220,7 +226,7 @@ class Main_data(MainWindow):
                                         f"{Camera_detail.traceback}")
             Setting_func.S_detail = 1
             save_checkbox()
-            # print("Start Detail")
+            print("Start Detail")
         else:
             self.ui.Detail_text.clear()
             Setting_func.S_detail = 0

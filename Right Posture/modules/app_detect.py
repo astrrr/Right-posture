@@ -1,3 +1,4 @@
+import main
 from main import *
 from modules.app_functions import AppFunctions
 import datetime
@@ -11,7 +12,7 @@ import numpy as np
 import sqlite3
 import time
 import math
-from modules.app_temp import Debug_path, superuser
+from modules.app_temp import Debug_path, superuser, Setting_func
 
 
 mp_drawing = mp.solutions.drawing_utils
@@ -53,12 +54,9 @@ sess_id = int(sess_items[-1][0])+1
 session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
 
 
-
 model = None
 model_name = 'VGG19_Fix_angle_no_aug'
 
-
-VideoCapture = 0
 
 def Print_log(text):
     date_time = datetime.datetime.now()
@@ -103,17 +101,9 @@ def predict(img):
         val = model(image)
         # correct > incorrect
         if float(val[0][0]) > float(val[0][1]):
-            # ///////////////////////////////////////////////////////////////////////////////
-            # Camera_detail.log = (Camera_detail.log + '\n model prediction : correct')
-            # print('model prediction : correct')
-            # ///////////////////////////////////////////////////////////////////////////////
             return 0
             # incorrect > correct
         elif float(val[0][0]) < float(val[0][1]):
-            # ///////////////////////////////////////////////////////////////////////////////
-            # Camera_detail.log = (Camera_detail.log + '\n model prediction : incorrect')
-            # print('model prediction : incorrect')
-            # ///////////////////////////////////////////////////////////////////////////////
             return 1
     except:
         Camera_detail.Error_load_model = True
@@ -141,102 +131,105 @@ class VideoThread(QThread):
             worker.signals.finished.connect(self.thread_complete)
             self.threadpool.start(worker)
         if Camera_detail.Finish_load_model:
-            cap = cv2.VideoCapture(VideoCapture, cv2.CAP_DSHOW)
-            pred = 3
-            img_counter_cor = 0
+            cap = cv2.VideoCapture(Setting_func.Camera, cv2.CAP_DSHOW)
             with mp_pose.Pose(
                     min_detection_confidence=0.5,
                     min_tracking_confidence=0.5) as pose:
                 while self._run_flag:
                     success, raw = cap.read()
-                    resize = cv2.resize(raw, (384, 288))
-                    image = cv2.flip(resize, 1)
+                    # Check camera available
+                    try:
+                        resize = cv2.resize(raw, (384, 288))
+                        image = cv2.flip(resize, 1)
 
-                    image.flags.writeable = False
-                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                    results = pose.process(image)
+                        image.flags.writeable = False
+                        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                        results = pose.process(image)
 
-                    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-                    # Draw the pose annotation on the image.
-                    image.flags.writeable = True
-                    mp_drawing.draw_landmarks(
-                        image,
-                        results.pose_landmarks,
-                        mp_pose.POSE_CONNECTIONS,
-                        landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
-                    
-                                      
-                    # prediction
-                    image_resize = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
-                    pred = predict(image_resize)
+                        image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+                        # Draw the pose annotation on the image.
+                        image.flags.writeable = True
+                        mp_drawing.draw_landmarks(
+                            image,
+                            results.pose_landmarks,
+                            mp_pose.POSE_CONNECTIONS,
+                            landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
 
-                    if pred == 0:
-                        cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
-                        cor_count+=1
-                        t_checkpoint = time.time()
-                        if rest_flag == 1:
-                            t_correct_start = time.time() + 1
-                            rest_flag = 0
-                    if pred == 1:
-                        cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
-                        inc_count+=1
-                        t_last = (time.time()) - t_checkpoint
+                        # prediction
+                        image_resize = cv2.resize(image, (224, 224), interpolation = cv2.INTER_AREA)
+                        pred = predict(image_resize)
 
-                        # preriod of notification
-                        pon = Camera_detail.period
-                        if time.time() - t_noti_checkpoint >= pon and rest_flag ==0: 
-                            # incorrect sensitive
-                            sensitive = Camera_detail.sensitive
-                            if int((t_last))%sensitive ==0:
+                        if pred == 0:
+                            cv2.putText(image, "Correct", (20, 20), 2, 0.5, (0, 255, 0), 1)
+                            cor_count+=1
+                            t_checkpoint = time.time()
+                            if rest_flag == 1:
+                                t_correct_start = time.time() + 1
+                                rest_flag = 0
+                        if pred == 1:
+                            cv2.putText(image, "Incorrect", (20, 20), 2, 0.5, (0, 0, 255), 1)
+                            inc_count+=1
+                            t_last = (time.time()) - t_checkpoint
 
-                                # ดัก send noti รัวๆ #
-                                AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
-                                Print_log("Incorrect posture.")
+                            # preriod of notification
+                            pon = Camera_detail.period
+                            if time.time() - t_noti_checkpoint >= pon and rest_flag ==0:
+                                # incorrect sensitive
+                                sensitive = Camera_detail.sensitive
+                                if int((t_last))%sensitive ==0:
+
+                                    # ดัก send noti รัวๆ #
+                                    AppFunctions.notifyIncorrect(self, 'พบการนั่งที่ผิดท่า!!!', 'กรุณาปรับเปลี่ยนท่านั่งของท่านให้ถูกต้อง')
+                                    Print_log("Incorrect posture.")
+                                    t_noti_checkpoint = time.time()
+
+                        # timer of sitting 10 m  (10 m * 60s)
+
+                        tos = Camera_detail.sitting
+                        # >= 10 คือเอาไว้ดัก แจ้งเตือนรัวๆ และต้องค่าน้อยกว่า pon
+                        if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
+                            if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
+                                AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')
+                                Print_log("Sitting too long.")
                                 t_noti_checkpoint = time.time()
-                    
-                    # timer of sitting 10 m  (10 m * 60s)
+                                t_correct_start = time.time()+1
+                                rest_flag = 1
 
-                    tos = Camera_detail.sitting
-                    # >= 10 คือเอาไว้ดัก แจ้งเตือนรัวๆ และต้องค่าน้อยกว่า pon
-                    if (time.time()) - t_noti_checkpoint >= 10 and rest_flag == 0:
-                        if int(math.ceil((time.time()+2) - t_correct_start)) % (tos*60) == 0:
-                            AppFunctions.notifyMe(self, f'คุณนั่งมาเป็นเวลา {tos} นาทีแล้ว', 'กรุณาลุกไปยืดเส้น ยืดสาย')
-                            Print_log("Sitting too long.")
-                            t_noti_checkpoint = time.time()
-                            t_correct_start = time.time()+1
-                            rest_flag = 1
+                        # 新たなフレームを取得できたら
+                        # シグナル発信(cv_imgオブジェクトを発信)
+                        if success:
+                            self.change_pixmap_signal.emit(image)
 
+                    except Exception as e:
+                        # print(e)
+                        Camera_detail.Error_load_model = True
+                        Camera_detail.traceback = "\nCamera not found please try to change in setting"
 
+                if not Camera_detail.Error_load_model:
+                    end_time = time.asctime(time.localtime(time.time()))
 
-                    # 新たなフレームを取得できたら
-                    # シグナル発信(cv_imgオブジェクトを発信)
-                    if success:
-                        self.change_pixmap_signal.emit(image)
-                
-                end_time = time.asctime(time.localtime(time.time()))
-                
+                    user = superuser.user
+                    t_total = (time.time() - t_start)
+                    t_incorrect_total = (inc_count/(inc_count+cor_count))*t_total
+                    t_cor = (cor_count/(inc_count+cor_count))*t_total
+                    inc_per = (inc_count/(inc_count+cor_count))*100
+                    cor_per = (cor_count/(inc_count+cor_count))*100
 
-                user = superuser.user
-                t_total = (time.time() - t_start)
-                t_incorrect_total = (inc_count/(inc_count+cor_count))*t_total
-                t_cor = (cor_count/(inc_count+cor_count))*t_total
-                inc_per = (inc_count/(inc_count+cor_count))*100
-                cor_per = (cor_count/(inc_count+cor_count))*100
-                
-                t_total = '{:.2f}'.format(t_total)
-                t_incorrect_total = '{:.2f}'.format(t_incorrect_total)
-                t_cor = '{:.2f}'.format(t_cor)
-                inc_per = '{:.2f}'.format(inc_per)
-                cor_per = '{:.2f}'.format(cor_per)
- 
-                print('t_incorrect       : {} sec'.format(t_incorrect_total))
-                print('t_cor             : {} sec'.format(t_cor))
-                print('t_total           : {} sec'.format(t_total))
-                print('inc_per           : {} %'.format(inc_per))
-                print('cor_per           : {} %'.format(cor_per))
-                if not user == "Guest":
-                    cur.execute("UPDATE sessions SET time_end = ? , user_id = ? , incorrect_time = ? , correct_time = ? , total_time = ? , incorrect_per = ? , correct_per = ? WHERE session_id = ?", (end_time, user, t_incorrect_total, t_cor, t_total, inc_per, cor_per, sess_id,))
-                conn.commit()
+                    t_total = '{:.2f}'.format(t_total)
+                    t_incorrect_total = '{:.2f}'.format(t_incorrect_total)
+                    t_cor = '{:.2f}'.format(t_cor)
+                    inc_per = '{:.2f}'.format(inc_per)
+                    cor_per = '{:.2f}'.format(cor_per)
+
+                    print('t_incorrect       : {} sec'.format(t_incorrect_total))
+                    print('t_cor             : {} sec'.format(t_cor))
+                    print('t_total           : {} sec'.format(t_total))
+                    print('inc_per           : {} %'.format(inc_per))
+                    print('cor_per           : {} %'.format(cor_per))
+                    if not user == "Guest":
+                        cur.execute("UPDATE sessions SET time_end = ? , user_id = ? , incorrect_time = ? , correct_time = ? , total_time = ? , incorrect_per = ? , correct_per = ? WHERE session_id = ?", (end_time, user, t_incorrect_total, t_cor, t_total, inc_per, cor_per, sess_id,))
+                    conn.commit()
+
                 cap.release()
                 cv2.destroyAllWindows()
 
@@ -340,6 +333,11 @@ class Camera:
             self.thread.change_pixmap_signal.connect(self.update_image)
 
             self.thread.start()  # スレッドを起動
+
+            # Delay to update detail
+            if VideoThread != 0:
+                QTimer.singleShot(1000, lambda: self.Update_detail())
+
         else:
             try:
                 self.ui.Camera_Frame_1_Layout.removeWidget(self.image_label)
