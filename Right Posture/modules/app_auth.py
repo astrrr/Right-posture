@@ -146,9 +146,9 @@ class Auth_system(AuthWindow):
                 # E-mail
                 valid = validate_email(email)
                 email = valid.email
-                user_info = [username, password, email, 0, 0, 0, 0, 0, 0, 0]
+                user_info = [username, password, email, 0, 0, 0, 0, 0, 0, 0, 0]
                 cur.execute('INSERT INTO login_info (username, password, email, period, sensitive, sitting, '
-                            'dnd, discord, s_cam, s_detail) VALUES (?,?,?,?,?,?,?,?,?,?)', user_info)
+                            'dnd, discord, s_cam, s_detail, camera) VALUES (?,?,?,?,?,?,?,?,?,?,?)', user_info)
                 conn.commit()
                 conn.close()
                 self.ui.Reg_username.clear()
