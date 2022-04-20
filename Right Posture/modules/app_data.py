@@ -210,7 +210,7 @@ class Main_data(MainWindow):
 
     def Show_Detail(self):
         if self.ui.show_detail.isChecked():
-            self.ui.Detail_text.setText(f"Camera VideoCapture(0): {Main_data.camera_status}\n\n"
+            self.ui.Detail_text.setText(f"Camera VideoCapture({Camera_detail.Camera}): {Main_data.camera_status}\n\n"
                                         f"Models: {Camera_detail.get_model_name}\n"
                                         f"Models Status: {Camera_detail.model_status}\n\n"
                                         f"Notification setup\n"

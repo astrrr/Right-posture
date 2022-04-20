@@ -11,7 +11,7 @@ import numpy as np
 import sqlite3
 import time
 import math
-from modules.app_temp import Debug_path, superuser
+from modules.app_temp import Debug_path, superuser, Setting_func
 
 
 mp_drawing = mp.solutions.drawing_utils
@@ -58,7 +58,7 @@ model = None
 model_name = 'VGG19_Fix_angle_no_aug'
 
 
-VideoCapture = 0
+VideoCapture = Setting_func.Camera
 
 def Print_log(text):
     date_time = datetime.datetime.now()
@@ -320,6 +320,7 @@ class Camera_detail:
     period = 30
     sensitive = 7
     sitting = 1
+    Camera = VideoCapture
 
 class Camera:
     
