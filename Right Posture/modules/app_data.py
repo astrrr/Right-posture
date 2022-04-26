@@ -88,8 +88,8 @@ class Main_data(MainWindow):
             Donut_label = QtWidgets.QLabel(self)
             Line_label = QtWidgets.QLabel(self)
 
-            Donut_label.setText("Donut charts will not show in guest mode.")
-            Line_label.setText("Line charts will not show in guest mode.")
+            Donut_label.setText("Donut charts not found.")
+            Line_label.setText("Line charts not found.")
 
             Donut_label.setAlignment(QtGui.Qt.AlignCenter)
             Line_label.setAlignment(QtGui.Qt.AlignCenter)
@@ -186,7 +186,7 @@ class Main_data(MainWindow):
 
         sitting_raw = setting.combo_sitting.currentText()
         sitting_time = [int(s) for s in sitting_raw.split() if s.isdigit()]
-        if setting.combo_sitting.currentIndex() <= 1:
+        if setting.combo_sitting.currentIndex() != 6:
             Camera_detail.sitting = sitting_time[0]
             sitting_text = f"Sitting = {setting.combo_sitting.currentText()} = {Camera_detail.sitting} Minute"
             show_setting = show_setting + sitting_text
@@ -226,7 +226,7 @@ class Main_data(MainWindow):
                                         f"{Camera_detail.traceback}")
             Setting_func.S_detail = 1
             save_checkbox()
-            print("Start Detail")
+            # print("Start Detail")
         else:
             self.ui.Detail_text.clear()
             Setting_func.S_detail = 0

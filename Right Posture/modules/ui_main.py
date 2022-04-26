@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainCIHPZL.ui'
+## Form generated from reading UI file 'mainNWorpF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -1507,6 +1507,7 @@ class Ui_MainWindow(object):
         self.combo_sitting.addItem("")
         self.combo_sitting.addItem("")
         self.combo_sitting.addItem("")
+        self.combo_sitting.addItem("")
         self.combo_sitting.setObjectName(u"combo_sitting")
         self.combo_sitting.setFont(font)
         self.combo_sitting.setAutoFillBackground(False)
@@ -2409,10 +2410,11 @@ class Ui_MainWindow(object):
         self.btn_open_file.setText(QCoreApplication.translate("MainWindow", u"Open file", None))
         self.combo_sitting.setItemText(0, QCoreApplication.translate("MainWindow", u"1 Minute (DEMO)", None))
         self.combo_sitting.setItemText(1, QCoreApplication.translate("MainWindow", u"2 Minute (DEMO)", None))
-        self.combo_sitting.setItemText(2, QCoreApplication.translate("MainWindow", u"40 Minute", None))
-        self.combo_sitting.setItemText(3, QCoreApplication.translate("MainWindow", u"50 Minute", None))
-        self.combo_sitting.setItemText(4, QCoreApplication.translate("MainWindow", u"1 Hour", None))
-        self.combo_sitting.setItemText(5, QCoreApplication.translate("MainWindow", u"2 Hour", None))
+        self.combo_sitting.setItemText(2, QCoreApplication.translate("MainWindow", u"20 Minute", None))
+        self.combo_sitting.setItemText(3, QCoreApplication.translate("MainWindow", u"30 Minute", None))
+        self.combo_sitting.setItemText(4, QCoreApplication.translate("MainWindow", u"40 Minute", None))
+        self.combo_sitting.setItemText(5, QCoreApplication.translate("MainWindow", u"50 Minute", None))
+        self.combo_sitting.setItemText(6, QCoreApplication.translate("MainWindow", u"1 Hour", None))
 
         self.label_file.setText(QCoreApplication.translate("MainWindow", u"Open file : ", None))
         self.btn_test_email.setText(QCoreApplication.translate("MainWindow", u"E-mail", None))
