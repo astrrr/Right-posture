@@ -2923,6 +2923,16 @@ padding-left: 44px;</string>
                             </item>
                             <item>
                              <property name="text">
+                              <string>20 Minute</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
+                              <string>30 Minute</string>
+                             </property>
+                            </item>
+                            <item>
+                             <property name="text">
                               <string>40 Minute</string>
                              </property>
                             </item>
@@ -2934,11 +2944,6 @@ padding-left: 44px;</string>
                             <item>
                              <property name="text">
                               <string>1 Hour</string>
-                             </property>
-                            </item>
-                            <item>
-                             <property name="text">
-                              <string>2 Hour</string>
                              </property>
                             </item>
                            </widget>

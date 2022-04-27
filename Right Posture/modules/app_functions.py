@@ -88,13 +88,13 @@ class AppFunctions(MainWindow):
                 rpc.connect()
 
                 rpc.update(  # details="Make Life Better.",
-                    state="Dev GUI",
-                    large_image="right_posture",
-                    large_text="อยากรู้ล่ะสิ",
+                    state="Make life better",
+                    large_image="logo_new",
+                    large_text="Right_posture",
                     small_image="verify",
-                    small_text="Verify by me",
+                    small_text="Verify by right posture team",
                     buttons=[{"label": "Github", "url": "https://github.com/ussnllmn"}],
-                    party_size=[35, 100],
+                    # party_size=[100, 100],
                     start=time.time()
                 )
                 self.ui.Setting_log.append("Discord Rich Presence Connected")
