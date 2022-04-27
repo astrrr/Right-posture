@@ -96,7 +96,7 @@ class MainWindow(QMainWindow):
         UIFunctions.Function_Main_Setup(self)
         Main_buttons.defineButtons(self)
         self.show()
-        Main_buttons.set_custom_theme(self, False)
+        Main_buttons.set_custom_theme(self, True)
 
     def Donut_charts(self, result):
         correct = result[-1]
