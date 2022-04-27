@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginSCoZoY.ui'
+## Form generated from reading UI file 'loginETYVRJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -650,7 +650,7 @@ class Ui_Login(object):
     # setupUi
 
     def retranslateUi(self, Login):
-        Login.setWindowTitle(QCoreApplication.translate("Login", u"Login. PyBlackBOX", None))
+        Login.setWindowTitle(QCoreApplication.translate("Login", u"Right Posture", None))
         self.Login_Status.setText(QCoreApplication.translate("Login", u"Login (Pass: 123456)", None))
         self.username.setText("")
         self.username.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))

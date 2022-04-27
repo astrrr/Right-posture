@@ -57,8 +57,8 @@ session = [(sess_id, '1', start_time, start_time, 0, 0, 0, 0, 0)]
 model = None
 
 # Switch model
-model_name = 'MN_Fix_angle_augmented_model3_3'
-# model_name = 'VGG19_Fix_angle_no_aug'
+# model_name = 'MN_Fix_angle_augmented_model3_3'
+model_name = 'VGG19_Fix_angle_no_aug'
 
 
 def Print_log(text):

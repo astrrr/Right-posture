@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainNWorpF.ui'
+## Form generated from reading UI file 'mainEYhLpY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.2.1
 ##
@@ -2314,7 +2314,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Right Posture", None))
         self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"Right Posture", None))
         self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Make life better", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
