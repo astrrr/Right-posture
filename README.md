@@ -17,7 +17,7 @@ pip install -r requirements.txt
 <!-- # Screenshot
 ![Status_Page](https://sv1.picz.in.th/images/2021/11/17/6duwqq.png) -->
 
-# High DPI
+## High DPI
 > Qt Widgets is an old technology and does not have a good support for high DPI settings, making these images look distorted when your system has DPI applied above 100%.
 You can minimize this problem using a workaround by applying this code below in "main.py" just below the import of the Qt modules.
 ```python
@@ -28,7 +28,7 @@ from widgets import *
 os.environ["QT_FONT_DPI"] = "96"
 ```
 
-# Running
+## Running
 > Inside your preferred terminal run the commands below depending on your system, remembering before installing Python 3.9> and PySide6 "pip install PySide6".
 > ## **Windows**:
 ```console
@@ -38,13 +38,13 @@ python main.py
 ```console
 python3 main.py
 ```
-# Compiling
+## Compiling
 > ## **Windows**:
 ```console
 python setup.py build
 ```
 
-# Project Files And Folders
+## Project Files And Folders
 > **main.py**: application initialization file.
 
 > **main.ui**: Qt Designer project.
@@ -69,4 +69,3 @@ Up
 After expoting in .py and change the line "import resources_rc" to "from. Resoucers_rc import *" to use as a module.
 
 > **images/**: put all your images and icons here before converting to Python (resources_re.py) ```pyside6-rcc resources.qrc -o resources_rc.py```.
->>>>>>> f3214219cbeee99176ae65f8dcb5d86f1f027ec7
