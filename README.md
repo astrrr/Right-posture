@@ -3,20 +3,19 @@
 
 ระบบแจ้งเตือนลักษณะการนั่งทำงานที่ไม่ถูกต้องด้วยระบบการเรียนรู้ของเครื่อง (เฉพาะนักศึกษาต่อเนื่อง)
 
-[![MediaPipe](https://google.github.io/mediapipe/images/mediapipe_small.png)](https://google.github.io/mediapipe/)
+<!-- [![MediaPipe](https://google.github.io/mediapipe/images/mediapipe_small.png)](https://google.github.io/mediapipe/) -->
 
 ## Remove ".ipynb_checkpoints"
 ```sh
 rm -rf `find -type d -name .ipynb_checkpoints`
 ```
-<<<<<<< HEAD
 ## Install lib
 ```
 pip install -r requirements.txt
 ```
-=======
-# Screenshot
-![Status_Page](https://sv1.picz.in.th/images/2021/11/17/6duwqq.png)
+
+<!-- # Screenshot
+![Status_Page](https://sv1.picz.in.th/images/2021/11/17/6duwqq.png) -->
 
 # High DPI
 > Qt Widgets is an old technology and does not have a good support for high DPI settings, making these images look distorted when your system has DPI applied above 100%.
