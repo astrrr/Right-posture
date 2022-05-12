@@ -10,7 +10,7 @@ from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as Navigation
 class Line_charts(QWidget):
     def __init__(self, result_des, result_fet):
         super().__init__()
-        self.setWindowTitle('Latest use')
+        self.setWindowTitle('Overall used')
         self.init_ui(result_des, result_fet)
 
     def init_ui(self, results_description, results_fetch):
